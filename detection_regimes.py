@@ -58,6 +58,15 @@ REGIMES = {
 
     # Droughts: pre-1850 paleoclimate-only; EM-DAT from 1950; satellite from 1979
     "droughts": [1850, 1950, 1979],
+
+    # Refugees: UNHCR systematic tracking begins 1950
+    "refugees": [1947, 1980, 2000],
+
+    # Economic crises: post-1800 modern; banking regulation eras 1913 (Fed), 1971 (Bretton Woods end)
+    "economic_crises": [1800, 1913, 1971],
+
+    # Coups: Powell-Thyne starts 1950; "third wave democratization" 1974+ inflection
+    "coups": [1950, 1974, 2000],
 }
 
 

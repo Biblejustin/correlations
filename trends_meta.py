@@ -46,6 +46,10 @@ from correlate_events import (
     load_yearly_cyclone_deaths,
     load_yearly_droughts,
     load_yearly_drought_intensity,
+    load_yearly_refugee_displaced,
+    load_yearly_economic_crises,
+    load_yearly_coups,
+    load_yearly_coup_deaths,
 )
 
 
@@ -90,6 +94,9 @@ def main():
     ap.add_argument("--volcanoes-csv", default="data/volcanoes.csv")
     ap.add_argument("--cyclones-csv", default="data/cyclones.csv")
     ap.add_argument("--droughts-csv", default="data/droughts.csv")
+    ap.add_argument("--refugees-csv", default="data/refugees.csv")
+    ap.add_argument("--economic-csv", default="data/economic_crises.csv")
+    ap.add_argument("--coups-csv", default="data/coups.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
@@ -169,6 +176,21 @@ def main():
             load_yearly_drought_intensity(args.droughts_csv, 1850, 2025), True, "human"),
         ("Drought intensity log10", "1979+ (satellite era)",
             load_yearly_drought_intensity(args.droughts_csv, 1979, 2025), True, "human"),
+        # New: refugees / economic crises / coups
+        ("Refugees displaced log10", "1947+ (UNHCR era)",
+            load_yearly_refugee_displaced(args.refugees_csv, 1947, 2025), True, "human"),
+        ("Refugees displaced log10", "1980+ (modern)",
+            load_yearly_refugee_displaced(args.refugees_csv, 1980, 2025), True, "human"),
+        ("Economic crises (all)", "1800+ (full)",
+            load_yearly_economic_crises(args.economic_csv, 1800, 2025), False, "human"),
+        ("Economic crises (severe+)", "1913+ (Fed era)",
+            load_yearly_economic_crises(args.economic_csv, 1913, 2025, severity_min="severe"),
+            False, "human"),
+        ("Coups (all)", "1950+ (Powell-Thyne)",
+            load_yearly_coups(args.coups_csv, 1950, 2025), False, "human"),
+        ("Successful coups", "1950+ (Powell-Thyne)",
+            load_yearly_coups(args.coups_csv, 1950, 2025, outcome="successful"),
+            False, "human"),
     ]
 
     results = []
@@ -213,6 +235,9 @@ def main():
         "Flood events >=1000d", "Flood deaths",
         "Cyclones >=1000d", "Cyclone deaths",
         "Active droughts", "Drought intensity log10",
+        "Refugees displaced log10",
+        "Economic crises (all)", "Economic crises (severe+)",
+        "Coups (all)", "Successful coups",
     ]
     group_idx = {g: i for i, g in enumerate(group_order)}
     results.sort(key=lambda r: (group_idx.get(r["group"], 99), r["era"]))

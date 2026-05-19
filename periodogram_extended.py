@@ -44,6 +44,9 @@ from correlate_events import (
     load_yearly_cyclones,
     load_yearly_droughts,
     load_yearly_drought_intensity,
+    load_yearly_refugee_displaced,
+    load_yearly_economic_crises,
+    load_yearly_coups,
 )
 
 
@@ -117,6 +120,9 @@ def main():
     ap.add_argument("--volcanoes-csv", default="data/volcanoes.csv")
     ap.add_argument("--cyclones-csv", default="data/cyclones.csv")
     ap.add_argument("--droughts-csv", default="data/droughts.csv")
+    ap.add_argument("--refugees-csv", default="data/refugees.csv")
+    ap.add_argument("--economic-csv", default="data/economic_crises.csv")
+    ap.add_argument("--coups-csv", default="data/coups.csv")
     ap.add_argument("--n-boot", type=int, default=1000)
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
@@ -143,6 +149,9 @@ def main():
         ("Cyclone deaths (log10)", np.log10(load_yearly_cyclone_deaths(args.cyclones_csv, 1850, 2025) + 1), "human"),
         ("Active droughts (1850+)", load_yearly_droughts(args.droughts_csv, 1850, 2025, intensity_min=1e5), "human"),
         ("Drought intensity (log10)", np.log10(load_yearly_drought_intensity(args.droughts_csv, 1850, 2025) + 1), "human"),
+        ("Refugees displaced (log10)", np.log10(load_yearly_refugee_displaced(args.refugees_csv, 1947, 2025) + 1), "human"),
+        ("Economic crises (all)", load_yearly_economic_crises(args.economic_csv, 1800, 2025), "human"),
+        ("Coups (all)", load_yearly_coups(args.coups_csv, 1950, 2025), "human"),
     ]
 
     common_periods = np.logspace(np.log10(2.5), np.log10(60), 100)

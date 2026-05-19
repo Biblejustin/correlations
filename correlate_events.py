@@ -339,6 +339,71 @@ def load_yearly_droughts(droughts_csv: str, year_lo=1850, year_hi=2025,
     return counts
 
 
+def load_yearly_refugee_displaced(refugees_csv: str, year_lo=1947, year_hi=2025,
+                                    log10_transform: bool = False) -> pd.Series:
+    """Yearly displaced totals from refugee/displacement crisis events, spread
+    across each crisis's active years."""
+    df = pd.read_csv(refugees_csv)
+    df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
+    df["end_year"] = pd.to_numeric(df["end_year"], errors="coerce").fillna(df["start_year"])
+    df["displaced_estimate"] = pd.to_numeric(df["displaced_estimate"], errors="coerce").fillna(0)
+    years = range(year_lo, year_hi + 1)
+    out = pd.Series(0.0, index=years, name="refugee_displaced")
+    for _, row in df.iterrows():
+        s = int(max(row["start_year"], year_lo))
+        e = int(min(row["end_year"], year_hi))
+        if e < year_lo or s > year_hi or row["displaced_estimate"] == 0:
+            continue
+        duration = e - s + 1
+        per_year = float(row["displaced_estimate"]) / duration
+        for y in range(s, e + 1):
+            out.loc[y] += per_year
+    if log10_transform:
+        out = np.log10(out + 1.0)
+        out.name = "log10_refugee_displaced"
+    return out
+
+
+def load_yearly_economic_crises(crises_csv: str, year_lo=1800, year_hi=2025,
+                                  severity_min: str = None) -> pd.Series:
+    """Yearly count of financial crisis events. severity_min ∈ {None, 'medium', 'severe', 'extreme'}.
+    If filter is set, only crises at or above the severity are counted."""
+    df = pd.read_csv(crises_csv)
+    if severity_min:
+        order = {"medium": 0, "severe": 1, "extreme": 2}
+        min_rank = order[severity_min]
+        df = df[df["severity"].map(order).fillna(-1) >= min_rank]
+    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = f"economic_crises_{severity_min or 'all'}"
+    return s
+
+
+def load_yearly_coups(coups_csv: str, year_lo=1950, year_hi=2025,
+                       outcome: str = None) -> pd.Series:
+    """Yearly count of coups. outcome ∈ {None, 'successful', 'failed'}."""
+    df = pd.read_csv(coups_csv)
+    if outcome:
+        df = df[df["outcome"] == outcome]
+    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = f"coups_{outcome or 'all'}"
+    return s
+
+
+def load_yearly_coup_deaths(coups_csv: str, year_lo=1950, year_hi=2025,
+                              log10_transform: bool = False) -> pd.Series:
+    """Yearly summed coup-attributed deaths."""
+    df = pd.read_csv(coups_csv)
+    df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
+    yearly = df.groupby("year")["deaths_estimate"].sum().reindex(
+        range(year_lo, year_hi + 1), fill_value=0)
+    if log10_transform:
+        yearly = np.log10(yearly + 1.0)
+        yearly.name = "log10_coup_deaths"
+    else:
+        yearly.name = "coup_deaths"
+    return yearly
+
+
 def load_yearly_drought_intensity(droughts_csv: str, year_lo=1850, year_hi=2025,
                                     log10_transform: bool = False) -> pd.Series:
     """Yearly intensity (max deaths or affected), spread across active years."""
