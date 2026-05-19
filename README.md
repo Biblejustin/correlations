@@ -112,6 +112,10 @@ The famines-lead-quakes-by-1-year result at p=0.005 is the lowest raw p in the l
 
 Marginal raw, doesn't survive Bonferroni. Pattern is consistent with wars × flares — both modern timelines have rising counts (better recording for wars/famines, real solar cycle for flares), and the residual correlation after detrending is weak.
 
+![Wars and famines vs flares scatter](figures/10_wars_famines_scatter.png)
+
+In both detrended scatter plots above, 2024 is the high-flare outlier (the May 2024 X-class swarm puts that year ~18 flares above its regime baseline) — pulling the OLS fit positive on its own. Drop the 2024 point and the Wars × flares correlation drops to near zero; the Famines × flares correlation also weakens substantially. This is exactly the kind of "leverage point dominates the result" failure mode that Bonferroni catches when interpreted as a guard against over-interpretation.
+
 ### Israel × {global M≥7, Levant M≥4, X1+ flares}
 
 25 hand-curated Israeli notable dates (modern: 1948 founding, all wars, all major peace treaties; pre-1948: state-history milestones with year precision). The statistical test uses the 19 date-precise modern events in the 1965–2025 quake window and the 15 in the 1976–2025 flare window.
@@ -151,6 +155,8 @@ Marginal raw, doesn't survive Bonferroni. Pattern is consistent with wars × fla
 
 Across 18 window tests, the smallest p is 0.30 — flat. No tendency for global M≥7 quakes, Levant M≥4 quakes, or X1+ flares to cluster around Israeli wars, treaties, or founding dates.
 
+![Israel window ratios](figures/08_israel_window_ratios.png)
+
 ### Solar flares × M≥7 earthquakes
 
 Same daily-window logic as the existing storm-day test in `analyze.py`, but using X1+ flare peak times (n=156 in 1976–2025) against M≥7 quakes (n=696 same window).
@@ -178,6 +184,8 @@ Unlike Kp (which is measured at Earth and already includes propagation), flares 
 The +14d-after window shows ratio 1.25× at raw p=0.032 — interesting at face value, but with 12 windows tested here plus the 8-headline-test grid, Bonferroni p ≈ 0.38. The same-day window's 1.51× ratio (only 9 events vs 6 expected) is suggestive but n is small.
 
 This is the closest the data comes to a real signal: same-day and +14d windows both tilt above chance, but neither survives correction. Worth flagging for future revisits as Cycle 25 plays out and the X1+ event count grows.
+
+![Flares × M≥7 windows](figures/09_flares_quakes_windows.png)
 
 ### Space weather × earthquakes (recap)
 
@@ -249,6 +257,7 @@ python famines.py             # famines × {M>=7, X1+ flares}
 python israel.py              # Israel events × {global M>=7, Levant M>=4, X1+ flares}
 python flares_quakes.py       # X1+ flares × M>=7 quakes daily-window
 python make_figures.py        # regenerates figures/01 and /02
+python make_more_figures.py   # regenerates figures/08, /09, /10
 ```
 
 All scripts default to a sibling-directory layout and take `--sw-db` / `--eq-db-1900` / `--eq-db-modern` / `--flares-csv` / `--wars-csv` etc. overrides.
