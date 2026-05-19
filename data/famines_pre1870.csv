@@ -1,0 +1,76 @@
+year_start,year_end,location,region,deaths_estimate,source_tradition,notes
+-2700,,Egypt (Djoser tradition),Africa,,Famine Stela (Ptolemaic inscription),"Seven-year famine tradition; parallels Genesis 41. Stela is late but preserves older tradition."
+-2200,-2100,Egypt / Akkad / wider Near East,Multi-regional,,"4.2-kiloyear event (paleoclimate); Butzer 1976","Drought episode tied to Old Kingdom and Akkadian Empire collapse."
+-1700,,Egypt (Joseph tradition),Africa,,Genesis 41,"Seven-year famine; not externally dated. Often discussed in Hyksos-period context."
+-850,,Israel / Phoenicia,Levant,,1 Kings 17-18; Menander of Ephesus (via Josephus Ant. 8.13.2),"Elijah's drought; Menander records a one-year drought under Ithobaal of Tyre, often correlated."
+-701,,Judah (Sennacherib siege),Levant,,2 Kings 18-19; Sennacherib's annals,"Siege-induced shortage in Jerusalem."
+-587,-586,Jerusalem (Babylonian siege),Levant,,2 Kings 25; Jeremiah 52; Lamentations 2:11-12; 4:9-10,"Siege famine; widely attested in biblical text."
+-496,,Rome (early Republic),Europe,,Livy 2.34; Dionysius Hal. 7.1,"First major Roman grain crisis; Coriolanus episode."
+-440,-439,Rome,Europe,,Livy 4.12-13,"Spurius Maelius episode."
+-411,,Athens,Europe,,Thucydides 8; Xenophon Hell.,"Late Peloponnesian War shortage."
+-329,-325,Greek world,Europe,,Cyrene grain inscription (SEG IX.2),"Wide Mediterranean shortage; Cyrene distributed grain to 41 cities."
+-43,-42,Roman Republic / Egypt / Han China,Multi-regional,,"Okmok volcanic event; Plutarch; Han records","Volcanic winter following Okmok eruption (Alaska)."
+-25,-22,Rome,Europe,,Dio Cassius 54.1; Suetonius Aug. 41,"Augustan-era food crisis."
+26,,Judea,Levant,"20,000+",Josephus Ant. 20.2.5 (Helena of Adiabene),"Often conflated with the Claudian famine; mortality figure approximate."
+5,7,Rome,Europe,,Dio Cassius 55.26-27,"Augustus established the praefectus annonae in response."
+19,,Rome,Europe,,Tacitus Ann. 2.87; Suetonius Tib. 8,"Tiberius intervened in grain prices."
+41,54,Roman Empire (multiple),Multi-regional,,"Acts 11:28; Suetonius Claud. 18; Tacitus Ann. 12.43; Josephus Ant. 20.2.5, 20.5.2","Series of food crises under Claudius; the Judean famine (~46-48 CE) is the one Agabus predicts in Acts."
+68,69,Rome,Europe,,Tacitus Hist. 1; Suetonius,"Year of the Four Emperors disruption."
+92,93,Pisidian Antioch,Anatolia,,"Antioch inscription (AE 1925, 126)","L. Antistius Rusticus relieves famine under Domitian."
+165,180,Roman Empire,Multi-regional,,"Galen; SHA Marcus Aurelius","Antonine Plague era; food disruption follows plague."
+312,313,Eastern Roman provinces,Anatolia/Levant,,Eusebius HE 9.8,"Tied to Maximinus Daia's persecution era."
+333,,Antioch / Syria,Levant,,Various Byzantine sources,
+360,370,Cappadocia,Anatolia,,"Basil of Caesarea homilies (esp. Hom. 8)","Basil's famous preaching during the famine."
+535,536,Mediterranean / global,Multi-regional,,"Procopius; Cassiodorus; Michael the Syrian","Volcanic dust veil event; widespread crop failure."
+618,619,Constantinople,Europe,,Byzantine chronicles,
+639,,Arabia (Year of Ashes),Arabia,,"Tabari; al-Baladhuri","Famine under Caliph Umar."
+698,700,Ireland,Europe,,Annals of Ulster,
+762,764,Carolingian Francia,Europe,,Frankish annals,"Severe winters."
+800,1000,Maya lowlands,Mesoamerica,"1,000,000+ (very rough)",Archaeological,"Drought tied to Classic Maya collapse."
+927,928,Byzantine Empire,Europe,,"Theophanes Continuatus","'Great Winter' famine."
+1004,1007,Egypt / Maghreb,Africa,,Fatimid chronicles,
+1016,,Northern Europe,Europe,,Various annals,
+1064,1072,Egypt (Mustansirite Shidda),Africa,"40,000+",al-Maqrizi Itti'az,"Seven-year Nile failure; cannibalism reported."
+1069,1070,Northern England (Harrying of the North),Europe,"100,000",Orderic Vitalis,"Norman scorched-earth campaign."
+1097,,France,Europe,"100,000",Sigebert of Gembloux,"Plague concurrent."
+1124,1126,Low Countries / N. France,Europe,,Galbert of Bruges,
+1180,1182,Japan (Yōwa famine),Asia,"42,300+ in Kyoto",Hōjōki (Kamo no Chōmei),
+1199,1202,Egypt,Africa,"100,000+",al-Maqrizi,"Nile flood failure."
+1229,1232,Japan (Kanki famine),Asia,"~2,000,000",Japanese chronicles,
+1235,,England (London),Europe,"20,000",English chronicles,
+1257,1260,Japan / Europe,Multi-regional,,"Samalas eruption (Indonesia)","1257 Samalas event triggered global cooling."
+1315,1317,Northern Europe,Europe,"~7,500,000","Jordan, The Great Famine (1996)","Great Famine; rainfall and rinderpest."
+1333,1337,Yuan China,Asia,"~6,000,000",Yuan shi (dynastic history),
+1344,1345,Delhi Sultanate (India),South Asia,,Persian chronicles,"Muhammad bin Tughluq period."
+1396,1407,Deccan (India),South Asia,,"Durga Devi famine",
+1410,,Ireland,Europe,,Irish annals,
+1450,1454,Aztec Empire (One Rabbit famine),Mesoamerica,,Aztec codices,"Followed by reorganization under Moctezuma I."
+1500,,China,Asia,,Ming chronicles,
+1523,,Ireland,Europe,,Irish annals,
+1540,1545,Hungary / Holy Roman Empire,Europe,,Various,"Series of dearth years."
+1601,1603,Russia,Europe,"~2,000,000","Russian chronicles; Massa","Time of Troubles famine after Huaynaputina eruption."
+1630,1632,Deccan (India),South Asia,"~7,400,000",Mughal sources; Peter Mundy,
+1640,1643,Japan (Kan'ei famine),Asia,"50,000-100,000",Tokugawa records,
+1648,1660,Poland-Lithuania,Europe,,Various,"Deluge wars."
+1670,1671,Joseon Korea (Gyeongsin),Asia,"1,000,000-1,500,000","Joseon Wangjo Sillok","~10% of population."
+1680,,Sardinia,Europe,"80,000",Italian sources,
+1693,1694,France,Europe,"700,000-1,300,000",Lachiver; Goubert,
+1695,1697,Finland / Sweden / Estonia,Europe,"~150,000 (Finland alone)",Nordic records,"~25-33% of Finnish population."
+1702,1704,Deccan (India),South Asia,"~2,000,000",Mughal sources,
+1740,1741,Ireland (Bliain an Áir),Europe,"300,000-480,000","Dickson, Arctic Ireland",
+1769,1773,Bengal,South Asia,"~10,000,000","Hunter, Annals of Rural Bengal","Under early EIC rule."
+1770,1772,Saxony / Bohemia / Central Europe,Europe,"60,000+ in Saxony",German records,
+1782,1784,Iceland (Móðuharðindin),Europe,"~10,000 (~20% of pop.)",Icelandic chronicles,"Laki eruption."
+1783,1784,North India (Chalisa famine),South Asia,"~11,000,000",British/Mughal records,
+1789,1793,South India (Doji bara / Skull famine),South Asia,"~11,000,000",British records,
+1809,1815,Joseon Korea,Asia,"~2,000,000",Joseon records,
+1816,1817,Europe / China (Yunnan) / NE US,Multi-regional,"65,000+ in Europe",Various,"Year Without a Summer; Tambora 1815."
+1830,1833,Cape Verde,Africa,"~30,000",Portuguese records,"~42% of population."
+1832,1833,Madras (Guntur famine),South Asia,"150,000+",British records,
+1837,1838,Agra (NW Provinces, India),South Asia,"~800,000",British records,
+1845,1852,Ireland (An Gorta Mór),Europe,"~1,000,000 deaths; ~1,000,000 emigrated","Census of Ireland 1851; Ó Gráda",
+1845,1857,Scottish Highlands,Europe,"~150,000 (lower bound)","Devine, The Great Highland Famine",
+1846,1848,Newfoundland,North America,,British records,
+1860,1861,Iran / NW India,Multi-regional,,Various,
+1866,,Orissa (India),South Asia,"~1,000,000","Famine Commission Report 1867",
+1866,1868,Finland (Suuret nälkävuodet),Europe,"150,000+","Finnish records","~8-15% of pop."

@@ -117,6 +117,114 @@ def load_yearly_famine_deaths_active(famines_csv: str, year_lo=1500, year_hi=202
     return out
 
 
+def load_yearly_famine_deaths_wpf(deaths_by_year_csv: str, year_lo=1870, year_hi=2025,
+                                    log10_transform: bool = False) -> pd.Series:
+    """
+    Authoritative WPF/OWID yearly famine deaths.
+
+    The deaths-by-region-year.csv (from Biblejustin/famines-tracking) has
+    annual famine deaths already attributed to specific years by region.
+    Sum across regions to get global yearly famine deaths.
+    """
+    df = pd.read_csv(deaths_by_year_csv)
+    df = df[~df["entity"].str.startswith("World", na=False)]  # avoid double-counting
+    yearly = df.groupby("year")["famine_deaths"].sum()
+    s = yearly.reindex(range(year_lo, year_hi + 1), fill_value=0).astype(float)
+    if log10_transform:
+        s = np.log10(s + 1.0)
+        s.name = "log10_wpf_famine_deaths"
+    else:
+        s.name = "wpf_famine_deaths"
+    return s
+
+
+# ---------- Flood data loaders ----------
+
+def load_yearly_flood_events(floods_csv: str, year_lo=1900, year_hi=2025,
+                              deaths_min: float = 0,
+                              dedupe_match_groups: bool = True) -> pd.Series:
+    """
+    Yearly flood event counts. By default, deaths_min=0 returns all events
+    (very detection-bias-sensitive). Use deaths_min=1000 for the detection-
+    clean band.
+
+    dedupe_match_groups: if True, when EM-DAT and Dartmouth record the same
+    event (match_group_id matches), count once.
+    """
+    df = pd.read_csv(floods_csv, low_memory=False)
+    df["year"] = pd.to_datetime(df["start_date"], errors="coerce").dt.year
+    df["deaths"] = pd.to_numeric(df["deaths"], errors="coerce").fillna(0)
+
+    if dedupe_match_groups and "match_group_id" in df.columns:
+        # Keep one row per match_group_id; for unmatched (NaN), keep all
+        with_group = df[df["match_group_id"].notna()].drop_duplicates(subset=["match_group_id"])
+        without_group = df[df["match_group_id"].isna()]
+        df = pd.concat([with_group, without_group], ignore_index=True)
+
+    if deaths_min > 0:
+        df = df[df["deaths"] >= deaths_min]
+
+    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = f"flood_events_deaths_ge_{int(deaths_min)}"
+    return s
+
+
+def load_yearly_flood_deaths(floods_csv: str, year_lo=1900, year_hi=2025,
+                              log10_transform: bool = False,
+                              dedupe_match_groups: bool = True) -> pd.Series:
+    """Yearly total flood deaths, spread across active days (start_date..end_date)."""
+    df = pd.read_csv(floods_csv, low_memory=False)
+    df["start"] = pd.to_datetime(df["start_date"], errors="coerce")
+    df["end"] = pd.to_datetime(df["end_date"], errors="coerce")
+    df["end"] = df["end"].fillna(df["start"])
+    df["deaths"] = pd.to_numeric(df["deaths"], errors="coerce").fillna(0)
+    df = df.dropna(subset=["start"])
+
+    if dedupe_match_groups and "match_group_id" in df.columns:
+        with_group = df[df["match_group_id"].notna()].drop_duplicates(subset=["match_group_id"])
+        without_group = df[df["match_group_id"].isna()]
+        df = pd.concat([with_group, without_group], ignore_index=True)
+
+    years = range(year_lo, year_hi + 1)
+    out = pd.Series(0.0, index=years, name="flood_deaths_active")
+    for _, row in df.iterrows():
+        s = row["start"].year; e = row["end"].year
+        if e < year_lo or s > year_hi or row["deaths"] == 0:
+            continue
+        s = max(s, year_lo); e = min(e, year_hi)
+        duration = e - s + 1
+        per_year = float(row["deaths"]) / duration
+        for y in range(s, e + 1):
+            out.loc[y] += per_year
+    if log10_transform:
+        out = np.log10(out + 1.0)
+        out.name = "log10_flood_deaths"
+    return out
+
+
+def load_flood_event_dates(floods_csv: str, deaths_min: float = 1000,
+                            exclude_tsunami: bool = True):
+    """Date-precise flood event starts (for daily-window tests).
+
+    exclude_tsunami=True (default) drops events where `cause` matches tsunami
+    or tidal surge — these are quake-caused and would contaminate any
+    earthquake-flood window test (reverse causation).
+    """
+    df = pd.read_csv(floods_csv, low_memory=False)
+    df["start"] = pd.to_datetime(df["start_date"], errors="coerce")
+    df["deaths"] = pd.to_numeric(df["deaths"], errors="coerce").fillna(0)
+    df = df.dropna(subset=["start"])
+    df = df[df["deaths"] >= deaths_min]
+    if exclude_tsunami and "cause" in df.columns:
+        mask = df["cause"].astype(str).str.contains("tsunami|tidal", case=False, na=False)
+        df = df[~mask]
+    if "match_group_id" in df.columns:
+        with_group = df[df["match_group_id"].notna()].drop_duplicates(subset=["match_group_id"])
+        without_group = df[df["match_group_id"].isna()]
+        df = pd.concat([with_group, without_group], ignore_index=True)
+    return df["start"].dt.normalize().tolist()
+
+
 def load_levant_quakes(eq_db_modern: str, lat=31.78, lon=35.21, radius_km=500,
                         mag_min=4.0):
     """Load modern Levant quakes from USGS M>=4 1965+ catalog (spatial filter)."""

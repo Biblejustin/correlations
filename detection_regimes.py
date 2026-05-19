@@ -36,6 +36,11 @@ REGIMES = {
 
     # GOES X-ray sensor came online 1975; before that, H-alpha only.
     "flares_x": [1975],
+
+    # Floods: EM-DAT pre-1985 severely undercounts; Dartmouth Flood Observatory
+    # (satellite era) starts 1985. For >=1000-deaths events, EM-DAT is mostly
+    # complete from ~1950.
+    "floods": [1950, 1985],
 }
 
 

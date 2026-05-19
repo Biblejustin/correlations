@@ -18,6 +18,10 @@ This repo expands the original `sw-eq-correlation` work into a multi-topic corre
 | Famines (onsets) × M≥7 quakes | r = −0.03 detrended | 0.74 | no |
 | Famines (onsets) × X1+ flares | r = +0.31 detrended | 0.027 | no |
 | **Famine deaths (log10) × X1+ flares** | **r = +0.020 detrended** | **0.89** | **no — collapses to 0** |
+| Floods (≥1000 deaths/yr count) × M≥7 quakes | r = +0.04 detrended | 0.67 | no |
+| Flood deaths (log10) × X1+ flares | r = −0.001 detrended | 0.99 | no |
+| **Floods (tsunamis IN) × M≥7 same-day** | **3.83× chance** | **<0.001** | **caused by reverse-causation tsunamis** |
+| **Floods (tsunamis OUT) × M≥7 same-day** | **2.15× chance** | **0.064** | **no — strongest residual but borderline** |
 | Israel events × global M≥7 | best window ratio 1.02× | ≥ 0.30 | no |
 | Israel events × Levant M≥4 | best window ratio 1.16× | ≥ 0.30 | no |
 | Israel events × X1+ flares | best window ratio 1.36× | ≥ 0.47 | no |
@@ -190,6 +194,63 @@ Across 18 window tests, the smallest p is 0.30 — flat. No tendency for global 
 
 ![Israel window ratios](figures/08_israel_window_ratios.png)
 
+### Floods × {M≥7 quakes, X1+ flares, wars, famines}
+
+Data source: [Biblejustin/flood-data](https://github.com/Biblejustin/flood-data) — merged Dartmouth Flood Observatory + EM-DAT catalog, 11,712 events 1900–2026. Detection-clean band: events with **≥1000 deaths** (117 globally).
+
+![Floods overview](figures/13_floods_overview.png)
+
+**Yearly tests** (1900–2025, n=126 years):
+
+| Test | Detrended r | p |
+|---|---|---|
+| Floods (≥1000-death/yr count) × M≥7 quakes | +0.039 | 0.668 |
+| Flood deaths (log10, active) × M≥7 quakes | +0.123 | 0.171 |
+| Floods (≥1000-death/yr count) × X1+ flares | +0.028 | 0.847 |
+| Flood deaths (log10) × X1+ flares | −0.001 | 0.993 |
+| Flood deaths (log10) × War deaths (log10) | −0.156 | 0.082 |
+| Flood deaths (log10) × WPF Famine deaths (log10) | −0.056 | 0.536 |
+
+All null at any reasonable α.
+
+**Daily-window test — and a methodological cautionary tale.**
+
+The first daily-window test of M≥7 quakes within ±N days of major floods showed a **massive same-day signal: ratio 3.83×, p<0.001**. Worth investigating before celebrating:
+
+| Window | M≥7 obs | Expected | Ratio | One-sided p |
+|---|---|---|---|---|
+| ±0 d | 11 | 2.87 | **3.83×** | **<0.001** |
+| ±1 d | 18 | 8.53 | **2.11×** | **0.003** |
+| ±3 d | 23 | 19.67 | 1.17× | 0.252 |
+
+Inspecting the 11 same-day matches reveals **5 are tsunami-related**: the 2004 Sumatra–Andaman M9.1 event (paired with the Thailand "Tidal surge" entry, twice — once for the M7.2 foreshock and once for the M9.1 mainshock), the 2011 Tōhoku M9.1 + tsunami (paired with three quakes on that date: M7.7, M7.9, M9.1). These are **reverse causation**: the earthquake caused the flood-cataloged event. EM-DAT and Dartmouth both classify large tsunamis under "Flood" (cause: Tsunami, Tidal surge).
+
+After filtering out `cause ∈ {tsunami, tidal*}` (74 events remain):
+
+| Window | M≥7 obs | Expected | Ratio | One-sided p |
+|---|---|---|---|---|
+| ±0 d | 6 | 2.79 | 2.15× | 0.064 |
+| ±1 d | 13 | 8.30 | 1.57× | 0.079 |
+| ±3 d | 16 | 19.14 | 0.84× | 0.797 |
+| ±7 d | 31 | 40.20 | 0.77× | 0.946 |
+| ±14 d | 83 | 75.27 | 1.10× | 0.190 |
+| ±30 d | 157 | 140.12 | 1.12× | 0.066 |
+
+The cleaned ±0 d ratio of 2.15× (p=0.064 raw) is the strongest non-tsunami residual signal in the entire repo. **Still doesn't survive Bonferroni for the ~140-test grid** (corrected p ≈ 9.0), and given that none of the larger ±3–±14d windows back it up, the most likely explanation is small-N chance or undetected residual reverse causation (e.g. quakes triggering landslides that block rivers, where the flood is misclassified as not-quake-caused).
+
+Either way, the original p<0.001 was almost entirely an artifact of how the EM-DAT/Dartmouth catalogs lump tsunamis under floods. Honest reporting requires showing both numbers and the reason for the difference.
+
+### Famines: authoritative WPF data swap-in
+
+The `famines.py` analysis also now consumes the authoritative WPF/OWID yearly famine deaths from [Biblejustin/famines-tracking](https://github.com/Biblejustin/famines-tracking) (`data/famine_deaths_by_year.csv`) in addition to the hand-curated list. The WPF data has annual death attributions already done correctly (not spread artificially across catalog event spans), making it the more honest test.
+
+| Test | Detrended r | p |
+|---|---|---|
+| WPF famine deaths (log10) × M≥7 quakes (1900–2025) | +0.068 | 0.446 |
+| WPF famine deaths (log10) × X1+ flares (1976–2025) | −0.050 | 0.733 |
+
+Same conclusion as my hand-curated data, with a more defensible data source.
+
 ### Solar flares × M≥7 earthquakes
 
 Same daily-window logic as the existing storm-day test in `analyze.py`, but using X1+ flare peak times (n=156 in 1976–2025) against M≥7 quakes (n=696 same window).
@@ -289,8 +350,9 @@ python wars.py                # wars × {M>=7, X1+ flares}
 python famines.py             # famines × {M>=7, X1+ flares}
 python israel.py              # Israel events × {global M>=7, Levant M>=4, X1+ flares}
 python flares_quakes.py       # X1+ flares × M>=7 quakes daily-window
+python floods.py              # floods × {M>=7, X1+, wars, famines} (needs flood-data CSV)
 python make_figures.py        # regenerates figures/01 and /02
-python make_more_figures.py   # regenerates figures/08, /09, /10
+python make_more_figures.py   # regenerates figures/08-12
 ```
 
 All scripts default to a sibling-directory layout and take `--sw-db` / `--eq-db-1900` / `--eq-db-modern` / `--flares-csv` / `--wars-csv` etc. overrides.
@@ -299,8 +361,12 @@ All scripts default to a sibling-directory layout and take `--sw-db` / `--eq-db-
 
 | File | Source | Notes |
 |---|---|---|
-| `data/wars.csv` | Compiled from Brecke (pre-1816), COW (1816–2007), UCDP/PRIO (1946–) | ~180 wars, sources cited per-row |
-| `data/famines.csv` | Compiled from WPF list (1870–) + Ó Gráda historical (pre-1870) | ~60 events |
+| `data/wars.csv` | Compiled from Brecke (pre-1816), COW (1816–2007), UCDP/PRIO (1946–) | ~180 wars with start/end years, sources cited per-row |
+| `data/famines.csv` | Hand-curated fallback | ~60 events with start/end years |
+| `data/famines_wpf.csv` | Authoritative WPF/OWID from [famines-tracking](https://github.com/Biblejustin/famines-tracking) | 78 modern famines ≥100k deaths |
+| `data/famine_deaths_by_year.csv` | WPF per-year regional famine deaths | 1870–present, OWID-published |
+| `data/famines_pre1870.csv` | Research index of pre-1870 famines | ~70 entries c. 2700 BC – 1868 |
+| `data/floods.csv` | Merged Dartmouth + EM-DAT from [flood-data](https://github.com/Biblejustin/flood-data) | 11,712 flood events 1900–2026 |
 | `data/flares_xclass.csv` | NOAA SWPC GOES X-ray catalog | ~165 X1+ flares 1976–2026 |
 | `data/israel_dates.json` | Hand-curated state-history dates | 25 modern + 19 ancient context |
 | `data/levant_historical.csv` | Ambraseys, Guidoboni, Marco et al. historical Levant seismicity | 31 major Levant events from antiquity |
