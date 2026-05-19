@@ -429,30 +429,58 @@ For each indicator, fit OLS slope on the detection-bias-clean window only, with 
 
 ![Trends meta-comparison](figures/19_trends_meta_comparison.png)
 
-**In plain English:** Each horizontal bar is one type of event (earthquakes, wars, famines, etc.). The bar shows how much that category has changed per decade, as a percentage. To the right of zero means increasing; to the left means decreasing. The thin black line on each bar is the "we're 95% sure the real trend is somewhere in this range" interval. If that range crosses zero (grey bars), we can't actually tell whether the trend is up or down. Bars that don't cross zero (colored) are real signals. Reading the chart: cyclone deaths, X-class flares, pandemic deaths, and large earthquakes are increasing measurably; floods and famines lean down but not enough to be sure; wars and volcanic eruptions are essentially flat.
+**In plain English:** Each horizontal bar is one type of event measured over a specific era. Where it made sense, the same category gets *multiple bars* — one for the full available catalog and one (or more) for tighter "detection-clean" eras (modern monitoring, satellite era, etc.). Comparing the two within a category tells you whether an apparent rise is real or just a catalog-improvement artifact.
 
-### Significantly increasing (95% CI excludes 0)
+To the right of zero means increasing; to the left means decreasing. The thin black line is the "95% confidence range" — if it crosses zero (grey bars), we can't say whether the trend is up or down. Colored bars are statistically significant.
 
-| Indicator | Trend (%/decade) | Notes |
+Patterns to notice:
+
+- **Volcanoes**: full 1500+ catalog shows a small +3.3% (significant), but the modern-detection 1900+ era is −2.1% (flat). Classic detection bias — apparent increase was just better records.
+- **Floods**: same flip, but huge. Full EM-DAT span (1900+) shows +63% (probably mostly detection improvement); the satellite-clean 1985+ era is −15% point estimate (flat to declining). Real flood deaths in the modern monitoring window are not rising.
+- **Cyclones**: the *opposite* pattern. Each tighter era shows a *steeper* increase (full +11% → aircraft-era +22% → satellite-era +24%). If this were a detection-bias artifact, the tighter eras would show *less* increase, not more. The signal is real (driven by exposure, possibly intensification, or both).
+- **Pandemics**: similar to cyclones — 1950+ WHO era shows +34% vs 1900+ at +11%. Two specific events (HIV/AIDS, COVID-19) concentrated in late 20th C drive most of this.
+- **Wars and earthquakes**: flat in every era. Both Pinker (war hasn't been rising) and the earthquakes-repo conclusion (M≥7 rate is steady) hold up.
+
+### Era comparisons within indicators
+
+Where a category has multiple defensible monitoring eras, both are shown so you can see how much of the apparent change is real vs. catalog-improvement.
+
+| Indicator | Era | Trend (%/dec) | What it means |
+|---|---|---|---|
+| **VEI≥5 eruptions** | Full catalog 1500+ | +3.3% [+0, +5] | Significant — but… |
+|  | Modern detection 1900+ | −2.1% [−20, +14] | …flat in the clean era. The 1500+ rise was detection improvement. |
+| **Flood deaths** | Full EM-DAT 1900+ | +63.1% [+44, +83] | Significant — but… |
+|  | Satellite era 1985+ | −14.6% [−42, +14] | …drops to flat-to-declining in the satellite era. Most of the apparent rise was catalog completeness. |
+| **Cyclone deaths** | Full 1850+ | +14.3% [+4, +25] | Significant. |
+|  | Aircraft+satellite 1950+ | +48.7% [+12, +86] | **Larger** in tighter era — not a detection artifact. Population growth in exposed regions + possible intensification. |
+| **Cyclones ≥1000d** | Full 1850+ | +10.9% [+3, +17] | Significant. |
+|  | Aircraft 1944+ | +21.7% [+5, +33] | Steeper in modern detection era. |
+|  | Satellite 1979+ | +24.2% [+0, +56] | Steepest, but CI just touches zero (low n). |
+| **Pandemic deaths** | Germ theory era 1900+ | +10.6% [+3, +17] | Significant. |
+|  | WHO era 1950+ | +34.5% [+14, +63] | Steeper in modern era — HIV/AIDS and COVID concentrated in the second half. |
+| **WPF famine deaths** | 1900+ | −14.7% [−39, +8] | Flat (direction: down). |
+|  | 1950+ (post-WWII) | +63.7% [−5, +124] | Direction: up but CI wide — dominated by 1958–62 Great Chinese Famine at the era start. |
+| **War onsets** | 1900+ | +4.5% | Flat. |
+| **War deaths** | 1900+ | +7.2% | Flat. |
+| **M≥7 quakes** | 1900+ (only era) | +1.7% [+0.2, +3.4] | Marginally significant. |
+| **M≥8 quakes** | 1900+ (control) | +1.7% [−4, +8] | Flat — the super-clean control. |
+| **X1+ flares** | 1976+ (cyclic) | +43.1% [+15, +83] | Significant but reflects solar-cycle phase (Cycle 21 → mid-25), not a long-term trend. |
+
+### Key insight: detection artifacts flip, real signals strengthen
+
+The era-comparison view reveals a useful diagnostic. When the *tighter detection-clean era* shows a *smaller* trend than the full catalog, the apparent rise was mostly catalog-improvement (volcanoes, floods). When the tighter era shows a *larger* trend, the signal is real (cyclones, pandemics) — because cleaner data magnifies a true increase rather than diluting it.
+
+| Indicator | Full → tighter era | Verdict |
 |---|---|---|
-| Cyclone deaths log10 (1950+) | **+48.7%** [+12, +86] | Real and large. Contributing factors include rising coastal population exposure (especially Bay of Bengal megacities) and possibly storm intensification — the catalog can't separate those. Either way, the body count attributed to cyclones has gone up substantially. |
-| X1+ flares/yr (1976+) | **+43.1%** [+15, +83] | Caveat: 1976–2025 spans Cycle 21 → mid-Cycle 25, and we're currently in a rising-to-peak phase. The slope partly reflects solar-cycle phase rather than a long-term secular trend. With another full cycle of data this would moderate. |
-| Pandemic deaths log10 (1900+) | **+10.6%** [+3, +17] | Real signal. HIV/AIDS (42M cumulative, ongoing since 1981) and COVID-19 (7M confirmed, 15–30M excess) account for most of the recent-decade increase. The 1968–1981 gap (no ≥1M-death pandemics) was followed by two of the largest pandemic events in modern history within ~50 years. |
-| M≥7 quakes (1900+) | **+1.7%** [+0.2, +3.4] | Marginally significant. Reflects the early-21st-century clustering of large quakes (Sumatra 2004, Chile 2010, Tōhoku 2011). The M≥8 super-clean control is flat, which leans toward "real but small." |
-
-### Flat (95% CI crosses 0, sorted by direction)
-
-| Indicator | Point estimate (%/decade) |
-|---|---|
-| WPF famine deaths log10 (1950+, post-WWII) | +63.7% (dominated by Great Chinese Famine 1958–62) |
-| Cyclones ≥1000 deaths/yr (1950+) | +19.0% |
-| War deaths log10 (1900+) | +7.2% |
-| War onsets/yr (1900+) | +4.5% |
-| M≥8 quakes (1900+) | +1.7% |
-| **VEI≥5 eruptions/yr (1900+)** | **−2.1%** (no expected trend; confirms catalog-detection cleanup worked) |
-| Flood events ≥1000 deaths/yr (1985+) | −12.0% |
-| Flood deaths log10 (1985+) | −14.6% |
-| **WPF famine deaths log10 (1900+, full span)** | **−14.7%** |
+| Volcanoes | +3.3% → −2.1% | **Apparent rise was catalog improvement** (flat in clean era) |
+| Floods (deaths) | +63% → −15% | **Apparent rise was catalog improvement** (flat-to-down in satellite era) |
+| Floods (event count) | +12.5% → −12% | Same pattern (down in satellite era) |
+| Cyclone deaths | +14.3% → +48.7% | **Real signal** (steeper in modern era) |
+| Cyclone events | +10.9% → +21.7% → +24.2% | **Real signal** (each tighter era steeper) |
+| Pandemic deaths | +10.6% → +34.5% | **Real signal** (HIV/AIDS + COVID concentrated late) |
+| War deaths | +7.2% (one era) | Flat |
+| Earthquakes M≥7 | +1.7% (one era) | Marginal |
+| Earthquakes M≥8 control | +1.7% (one era) | Flat |
 
 ### What this means
 
