@@ -8,11 +8,15 @@ The purpose is to make the analysis falsifiable going forward. If the birth-pain
 
 ## 1. Contractions
 
-Current detected contractions (multi-year periods of high consensus z):
-1. 1916–1920 (peak z = 0.52)
-2. 1939–1945 (peak z = 0.45)
-3. 2011–2013 (peak z = 0.34)
-4. 2022–2025 (peak z = 0.30) — ongoing as of 2026
+Current detected contractions (13-indicator consensus z, 5-year smoothing, threshold 0.25):
+1. 1918–1920 (peak z = 0.31)
+2. 1930–1933 (peak z = 0.36) — Great Depression era
+3. 1940–1944 (peak z = 0.33) — WWII
+4. 1990–1993 (peak z = 0.30) — Yugoslav wars + Soviet dissolution
+5. 2009–2013 (peak z = 0.43) — GFC + Arab Spring + Tōhoku + Haiyan
+6. 2019–2025 (peak z = 0.52) — ongoing; COVID + Ukraine + Israel-Hamas + Sudan + Tigray + Türkiye-Syria
+
+*Note: the older 9-indicator (disasters + space) run found only 4 contractions and showed declining intensity. The 13-indicator version above adds refugees, economic crises, and coups — which makes the modern era more visible. The flip in direction is itself a finding: birth-pains-like intensification appears only when human-system indicators are included in the consensus.*
 
 ### Birth-pains predictions for 2030 revisit:
 

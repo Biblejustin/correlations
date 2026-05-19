@@ -174,6 +174,38 @@ def load_indicator(name, args):
         years = df["year"].astype(int).tolist()
         yc = df.groupby(df["year"].astype(int)).size().reindex(range(1900, 2026), fill_value=0)
         return years, yc, "1900-2025"
+    if name == "Major droughts (>=1M affected)":
+        df = pd.read_csv(args.droughts_csv)
+        df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
+        df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
+        df["people_affected"] = pd.to_numeric(df["people_affected"], errors="coerce").fillna(0)
+        df["intensity"] = df[["deaths_estimate", "people_affected"]].max(axis=1)
+        df = df[(df["intensity"] >= 1_000_000) & df["start_year"].between(1850, 2025)]
+        years = df["start_year"].astype(int).tolist()
+        yc = df.groupby(df["start_year"].astype(int)).size().reindex(range(1850, 2026), fill_value=0)
+        return years, yc, "1850-2025"
+    if name == "Major refugee crises (>=1M)":
+        df = pd.read_csv(args.refugees_csv)
+        df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
+        df["displaced_estimate"] = pd.to_numeric(df["displaced_estimate"], errors="coerce").fillna(0)
+        df = df[(df["displaced_estimate"] >= 1_000_000) & df["start_year"].between(1947, 2025)]
+        years = df["start_year"].astype(int).tolist()
+        yc = df.groupby(df["start_year"].astype(int)).size().reindex(range(1947, 2026), fill_value=0)
+        return years, yc, "1947-2025"
+    if name == "Severe economic crises":
+        df = pd.read_csv(args.economic_csv)
+        order = {"medium": 0, "severe": 1, "extreme": 2}
+        df["sev_rank"] = df["severity"].map(order).fillna(-1)
+        df = df[(df["sev_rank"] >= 1) & df["year"].between(1800, 2025)]
+        years = df["year"].astype(int).tolist()
+        yc = df.groupby(df["year"].astype(int)).size().reindex(range(1800, 2026), fill_value=0)
+        return years, yc, "1800-2025"
+    if name == "Successful coups":
+        df = pd.read_csv(args.coups_csv)
+        df = df[(df["outcome"] == "successful") & df["year"].between(1950, 2025)]
+        years = df["year"].astype(int).tolist()
+        yc = df.groupby(df["year"].astype(int)).size().reindex(range(1950, 2026), fill_value=0)
+        return years, yc, "1950-2025"
     raise ValueError(name)
 
 
@@ -187,6 +219,10 @@ def main():
     ap.add_argument("--pandemics-csv", default="data/pandemics.csv")
     ap.add_argument("--volcanoes-csv", default="data/volcanoes.csv")
     ap.add_argument("--cyclones-csv", default="data/cyclones.csv")
+    ap.add_argument("--droughts-csv", default="data/droughts.csv")
+    ap.add_argument("--refugees-csv", default="data/refugees.csv")
+    ap.add_argument("--economic-csv", default="data/economic_crises.csv")
+    ap.add_argument("--coups-csv", default="data/coups.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
@@ -195,7 +231,9 @@ def main():
         "M>=7 quakes", "M>=8 quakes", "VEI>=6 eruptions", "X1+ flares",
         "Big wars (>=1M deaths)", "Great famines (>=1M deaths)",
         "Great pandemics (>=1M deaths)", "Great cyclones (>=10k deaths)",
-        "Major floods (>=1000 deaths)",
+        "Major floods (>=1000 deaths)", "Major droughts (>=1M affected)",
+        "Major refugee crises (>=1M)", "Severe economic crises",
+        "Successful coups",
     ]
 
     results = []
