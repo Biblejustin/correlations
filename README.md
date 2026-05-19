@@ -825,6 +825,28 @@ The wars × famines coupling is one of many possible cross-category chains. `cha
 
 **Above vs. below zero (the reference line):** A dot *above* zero with error bars excluding zero is a significant positive coupling (cause leads effect in the same direction). *Below* zero excluding zero is significant negative coupling. Crossing zero (the bulk of cells) means we can't distinguish from coincidence at that lag.
 
+## Canonical data sources (BACKLOG #3 — major progress via proxy)
+
+The hand-curated catalogs in this repo were the only option when canonical sources were unreachable from the sandbox. With Webshare proxy access, several authoritative datasets are now in `data/`:
+
+| Hand-curated | Canonical replacement | Coverage gain |
+|---|---|---|
+| `wars.csv` (modern, ~73 events 1946+) | `ucdp_prio_conflicts.csv` (2,686 conflict-years) | ~37× granularity post-1946 |
+| `wars.csv` (interstate, ~95 events) | `cow_interstate_wars_v4.csv` (95 unique wars, 337 state-participations 1823–2003) | Canonical academic source with battle-deaths |
+| `wars.csv` (intrastate) | `cow_intrastate_wars_v4.csv` (~700 events) | Canonical academic source |
+| `volcanoes.csv` (32 VEI≥5 events) | `noaa_volcanic_events.csv` (900 events, 4360 BCE → 2026) | ~28× events; full historical span |
+| (No pre-1900 quake data) | `noaa_significant_earthquakes.csv` (4,200 events, **2150 BCE → 2005**) | Extends quake history by 4,000+ years |
+
+![Canonical comparison](figures/31_canonical_compare.png)
+
+**Technical:** Three-panel comparison. Top: yearly USGS M≥7 (blue, full) vs NGDC M≥7 'significant' subset (red, 1900-2005 overlap). Inset shows NGDC pre-1900 M≥7 binned by century back to 2150 BCE. Middle: hand-curated VEI≥5 vs NGDC ≥100-death volcanic events 1500-2025. Bottom: interstate war yearly onsets — hand-curated vs COW v4 (1816-2003) vs UCDP/10 (1946-2023).
+
+**In plain English:** Each panel overlays our hand-curated catalog with the canonical peer-reviewed source. Where they overlap, the canonical source usually has more events (because it has lower inclusion thresholds). For quakes especially, the NGDC catalog extends *thousands of years before* USGS instrumentation begins, opening historical-era analysis that wasn't possible before.
+
+**Above vs. below the line:** In each panel, where a yearly catalog bar sticks above the other, that source counts more events that year. The bigger picture: hand-curated catalogs systematically undercount because they were a "top of the iceberg" selection; canonical sources have far more events at the lower threshold.
+
+**The headline finding (ethnos rising, basileia flat) holds in both source families.** Hand-curated, UCDP, and COW all agree on direction; UCDP shows the rise as statistically clearest because of its granularity. The other canonical sources (NGDC quakes/volcanoes) extend the historical span but don't change current modern-era conclusions.
+
 ## Canonical wars source: UCDP/PRIO
 
 To check whether the ethnos/basileia split result holds under a more authoritative source than the hand-curated catalog, I integrated the **UCDP/PRIO Armed Conflict Dataset v24.1** — the standard peer-reviewed conflict database. UCDP has **2,686 conflict-years 1946–2023** (vs ~73 modern war onsets in `wars.csv`), making it ~37× more granular.

@@ -78,6 +78,52 @@ def load_yearly_wars_split(wars_csv: str, war_type: str,
     return s
 
 
+def load_yearly_noaa_quakes(noaa_csv: str, year_lo=-2150, year_hi=2025,
+                              mag_min: float = 7.0) -> pd.Series:
+    """Yearly count of NOAA NGDC significant earthquakes ≥ mag_min.
+
+    The NGDC catalog stretches back to 2150 BCE — radically longer span than
+    USGS catalog (1900+). Earlier entries are sparser and biased toward
+    populated/destructive events, but the M ≥ 7 band is the cleanest available
+    for pre-1900 historical comparison.
+    """
+    df = pd.read_csv(noaa_csv)
+    df = df[df["eqMagnitude"] >= mag_min]
+    df = df[df["year"].between(year_lo, year_hi)]
+    s = df.groupby(df["year"].astype(int)).size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = f"noaa_quakes_mag_ge_{mag_min}"
+    return s
+
+
+def load_yearly_noaa_volcanic_events(noaa_csv: str, year_lo=-4360, year_hi=2025,
+                                       deaths_min: float = 0) -> pd.Series:
+    """Yearly count of NOAA NGDC significant volcanic events."""
+    df = pd.read_csv(noaa_csv)
+    df["deathsTotal"] = pd.to_numeric(df["deathsTotal"], errors="coerce").fillna(0)
+    if deaths_min > 0:
+        df = df[df["deathsTotal"] >= deaths_min]
+    df = df[df["year"].between(year_lo, year_hi)]
+    s = df.groupby(df["year"].astype(int)).size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = f"noaa_volcanoes_deaths_ge_{int(deaths_min)}"
+    return s
+
+
+def load_yearly_cow_wars(cow_csv: str, year_lo=1816, year_hi=2007,
+                          war_type: str = "interstate") -> pd.Series:
+    """Yearly count of COW war ONSETS (one per unique WarNum, year = StartYear1).
+
+    war_type ∈ {'interstate', 'intrastate', 'extrastate'} selects which COW
+    catalog file you're loading (the path passed in should match).
+    """
+    df = pd.read_csv(cow_csv, encoding='latin-1')
+    # Deduplicate by WarNum (one row per war, not one per state-side)
+    df = df.drop_duplicates(subset=["WarNum"])
+    df = df[df["StartYear1"].between(year_lo, year_hi)]
+    s = df.groupby("StartYear1").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = f"cow_{war_type}_wars"
+    return s
+
+
 def load_yearly_ucdp_conflicts(ucdp_csv: str, year_lo=1946, year_hi=2025,
                                   conflict_types: list = None,
                                   intensity_min: int = 1) -> pd.Series:

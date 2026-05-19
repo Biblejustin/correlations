@@ -48,12 +48,18 @@ The contraction-period analysis identified 4 multi-year clusters (1916–20, 193
 - ✅ **Wars: UCDP/PRIO Armed Conflict Dataset v24.1 (2,686 conflict-years 1946-2023)** added as `data/ucdp_prio_conflicts.csv`. See `ucdp_compare.py` and figure 30. The canonical source dramatically strengthens the *ethnos epi ethnos* result: intrastate conflicts +4.66/decade [CI +1.85, +7.67] vs hand-curated +0.038/decade (CI nearly crossing 0). Both agree on direction; UCDP shows the rise is far more statistically significant.
 
 Remaining and blocked:
-- **Brecke Conflict Catalog (1400-2000)**: would extend the historical span; site access from this sandbox returns 403/404. Open.
-- **Smithsonian GVP eruption catalog**: server returned HTTP 403. Open.
-- **OWID pandemic mortality CSV**: direct grapher URL returns 404. Open.
-- **NOAA NGDC catalogs**: timed out repeatedly. Open.
+- ❌ **Brecke Conflict Catalog (1400-2000)**: original Georgia Tech URL returns 404; mirrors also gone. **Permanently unavailable** as of 2026-05-19.
+- ❌ **Smithsonian GVP eruption catalog**: server returned HTTP 403 even via proxy. Bot-protected.
+- ❌ **OWID pandemic mortality CSV**: grapher URL returns 404 regardless of proxy. **URL has changed; would need re-investigation.**
+- ✅ **NOAA NGDC catalogs**: now reachable via Webshare proxy. **Successfully fetched**:
+  - `noaa_significant_earthquakes.csv` — 4,200 events, 2150 BCE → 2005
+  - `noaa_volcanic_events.csv` — 900 events, 4360 BCE → 2026
+- ✅ **COW v4 (Correlates of War)**: now reachable via proxy. Successfully fetched:
+  - `cow_interstate_wars_v4.csv` — 95 unique wars 1823-2003
+  - `cow_intrastate_wars_v4.csv` — ~700 events 1816+
+  - `cow_extrastate_wars_v4.csv` — 198 rows
 
-The hand-curated catalogs remain in place for these; UCDP integration is the single biggest replacement completed.
+See `canonical_compare.py` and figure 31 for the comparison. The headline ethnos/basileia finding holds in both source families.
 
 ---
 
