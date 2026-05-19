@@ -1,16 +1,41 @@
 # Correlations
 
-Do earthquakes, solar flares, wars, famines, floods, pandemics, volcanoes, tropical cyclones, astronomical events, and notable Israeli dates correlate with each other? A statistical test using long-running operational catalogs and authoritative published timelines.
+This repo is the **central analysis hub** for a 10-repo project testing whether the disasters described in Matthew 24 — wars, famines, pestilences, earthquakes, plus floods, volcanoes, cyclones, droughts, refugees, economic crises, coups, and astronomical signs — covary, increase in frequency, accelerate, cluster, or otherwise show the "birth pains" pattern.
 
-Sister-repo data sources (some public, some private):
-- [`earthquakes`](https://github.com/Biblejustin/earthquakes) (public) — USGS M≥4 catalog
-- [`spaceweather`](https://github.com/Biblejustin/spaceweather) (public) — SILSO sunspot + GFZ Kp
-- [`famines-tracking`](https://github.com/Biblejustin/famines-tracking) (public) — WPF/OWID famines
-- [`flood-data`](https://github.com/Biblejustin/flood-data) (public) — Dartmouth + EM-DAT floods
-- `pandemics-tracking` (private) — major epidemics/pandemics
-- `volcanic-eruptions` (private) — Smithsonian VEI≥5
-- `tropical-cyclones` (private) — major hurricanes/typhoons
-- `astronomical-signs` (private) — eclipses, comets, supernovae
+## Project map
+
+| Repo | Visibility | Contents | Headline finding |
+|---|---|---|---|
+| [`earthquakes`](https://github.com/Biblejustin/earthquakes) | public | USGS M ≥ 4 catalog + analysis | M ≥ 7 rate is flat; M ≥ 4 apparent rise is detection |
+| [`spaceweather`](https://github.com/Biblejustin/spaceweather) | public | SILSO sunspot + GFZ Kp | Solar cycle peaks well-characterized; ≥ Kp 7 declining slightly |
+| [`famines-tracking`](https://github.com/Biblejustin/famines-tracking) | public | WPF/OWID famines 1870+ | No ≥ 1M-death famine since 1979 |
+| [`flood-data`](https://github.com/Biblejustin/flood-data) | public | Dartmouth + EM-DAT floods | Death rate flat post-1985 satellite-era |
+| [`pandemics-tracking`](https://github.com/Biblejustin/pandemics-tracking) | private | ~36 pandemics, Plague of Athens → COVID | Power-law tail; HIV/COVID drive recent counts |
+| [`volcanic-eruptions`](https://github.com/Biblejustin/volcanic-eruptions) | private | VEI ≥ 5 catalog 1500+ | Rate flat; Tambora 1815 only VEI 7 |
+| [`tropical-cyclones`](https://github.com/Biblejustin/tropical-cyclones) | private | Major cyclones ≥ 1000 deaths, 1737+ | Bay of Bengal dominates; deaths rising |
+| [`droughts-tracking`](https://github.com/Biblejustin/droughts-tracking) | private | Major droughts, 4.2-kyr event → 2024 | **11-year solar cycle peak above noise** |
+| [`astronomical-signs`](https://github.com/Biblejustin/astronomical-signs) | private | Eclipses, comets, supernovae | Selection-bias dominated; no terrestrial correlation |
+| `correlations` (this repo) | public | Cross-topic analyses | **Wars × famines r = +0.43 (FDR-significant)** |
+
+See [METHODOLOGY.md](METHODOLOGY.md) for shared analytical concepts (detection-bias bands, regime detrending, bootstrap CIs, periodogram nulls, FDR vs Bonferroni, wavelet coherence, tail-event sensitivity, dispersion index).
+
+See [PREDICTIONS.md](PREDICTIONS.md) for **pre-registered predictions** to revisit at 2030 / 2035 / 2040.
+
+See [BACKLOG.md](BACKLOG.md) for tracked future-work items.
+
+## TL;DR across all 10 repos
+
+1. **Cross-correlation matrix (figure 18)**: of 28 pairwise detrended tests, only **wars × famines** survives FDR correction at r = +0.43 (p < 0.001). Every other indicator pair is statistically independent.
+2. **Trends (figure 19)**: cyclone deaths, pandemic deaths, M ≥ 7 quakes are significantly rising; floods + famines lean down (not significant); wars + volcanoes are flat. The diagnostic test is whether tighter detection-clean eras show *bigger* trends (real signal) or *smaller* trends (catalog artifact). Cyclones and pandemics pass that test; floods and volcanoes fail it.
+3. **Birth-pains pattern (figure 20)**: no indicator shows all three signatures (acceleration + shrinking gaps + clustering) together.
+4. **Signs overlay (figure 21)**: no single year has more than 4 of 9 indicators simultaneously above 1 σ. Maximum consensus z = +1.46 (1991).
+5. **Contractions (figure 22)**: four multi-year contractions detected (1916–20, 1939–45, 2011–13, 2022–25). Peak intensity is *declining* over time (opposite the birth-pains prediction); gap-shrinking is in the predicted direction but underpowered.
+6. **Periodogram (figure 23)**: only solar indicators carry the 11-year cycle, plus **droughts at 3.26× the noise floor** — a paleoclimate-attested solar-drought link.
+7. **Sensitivity (figure 24)**: wars × famines coupling holds through dropping top-5 events but collapses by top-10 — *real but concentrated* signal driven by 1908–1945 war-famine clustering.
+8. **Wavelet coherence (figure 25)**: wars × famines coupling strongest pre-WWII (~0.6), weakest post-WWII through Cold War (~0.17), partial recovery post-1990 (~0.35).
+9. **Chains (figure 26)**: drought → famine (+0.22 at +10y); war → famine (+0.43 at 0); war → refugees (+0.28 at +9y); economic crisis → coups (+0.20 at +1y).
+
+The data tells a mixed story: some indicators rising, others flat or declining, no synchronized acceleration, and one real cross-category coupling (wars → famines, the historically attested one). Whether that pattern is consistent with "birth pains" is an interpretive question; the README sections below report the data honestly.
 
 ## Bottom line
 
