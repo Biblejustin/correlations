@@ -26,6 +26,7 @@ from scipy import signal
 
 from correlate_events import (
     load_yearly_war_deaths_active,
+    load_yearly_war_deaths_split,
     load_yearly_famine_deaths_wpf,
 )
 
@@ -103,9 +104,11 @@ def main():
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
 
-    # Load both series 1900-2025
+    # Load both series 1900-2025; also split by war type for follow-up panels
     wars = load_yearly_war_deaths_active(args.wars_csv, 1900, 2025)
     famines = load_yearly_famine_deaths_wpf(args.famines_wpf_csv, 1900, 2025)
+    wars_intra = load_yearly_war_deaths_split(args.wars_csv, "intrastate", 1900, 2025)
+    wars_inter = load_yearly_war_deaths_split(args.wars_csv, "interstate", 1900, 2025)
     wars_log = np.log10(wars + 1).values
     famines_log = np.log10(famines + 1).values
     years = wars.index.values
@@ -179,6 +182,19 @@ def main():
         if sub.size > 0:
             print(f"  {name:<20} ({s}-{e}): mean coh = {sub.mean():.3f}, "
                     f"peak = {sub.max():.3f}")
+
+    # Also compute intrastate and interstate coherence with famines and report
+    print("\nComparison: wavelet coherence wars vs famines, by war type")
+    for label, war_series in [("Combined", wars), ("Interstate (basileia)", wars_inter),
+                                ("Intrastate (ethnos)", wars_intra)]:
+        x_l = np.log10(war_series.values + 1)
+        x_l = (x_l - x_l.mean()) / x_l.std()
+        coh_split, _ = cwt_coherence(x_l, y, scales)
+        for s, e, era_name in eras:
+            y_mask = (years >= s) & (years <= e)
+            sub = coh_split[band_mask][:, y_mask]
+            if sub.size > 0:
+                print(f"  {label:<28} {era_name:<18}: mean coh = {sub.mean():.3f}")
 
 
 if __name__ == "__main__":

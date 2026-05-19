@@ -24,6 +24,7 @@ from scipy import stats
 
 from correlate_events import (
     load_yearly_war_deaths_active,
+    load_yearly_war_deaths_split,
     load_yearly_famine_deaths_wpf,
     load_yearly_flood_deaths,
     load_yearly_drought_intensity,
@@ -82,6 +83,8 @@ def main():
 
     yr_lo, yr_hi = 1900, 2025
     wars = np.log10(load_yearly_war_deaths_active(args.wars_csv, yr_lo, yr_hi) + 1)
+    wars_inter = np.log10(load_yearly_war_deaths_split(args.wars_csv, "interstate", yr_lo, yr_hi) + 1)
+    wars_intra = np.log10(load_yearly_war_deaths_split(args.wars_csv, "intrastate", yr_lo, yr_hi) + 1)
     famines = np.log10(load_yearly_famine_deaths_wpf(args.famines_wpf_csv, yr_lo, yr_hi) + 1)
     floods = np.log10(load_yearly_flood_deaths(args.floods_csv, yr_lo, yr_hi) + 1)
     droughts = np.log10(load_yearly_drought_intensity(args.droughts_csv, yr_lo, yr_hi) + 1)
@@ -93,11 +96,13 @@ def main():
     lags = list(range(-2, 11))
     chains = [
         ("Drought → Famine deaths", droughts, famines, "droughts", "famines"),
-        ("War → Famine deaths", wars, famines, "wars_global", "famines"),
-        ("War → Refugees", wars, refugees, "wars_global", "refugees"),
-        ("War → Flood deaths", wars, floods, "wars_global", "floods"),
+        ("Interstate (basileia) → Famine deaths", wars_inter, famines, "wars_global", "famines"),
+        ("Intrastate (ethnos) → Famine deaths", wars_intra, famines, "wars_global", "famines"),
+        ("War (combined) → Refugees", wars, refugees, "wars_global", "refugees"),
+        ("Intrastate (ethnos) → Refugees", wars_intra, refugees, "wars_global", "refugees"),
         ("Volcano (VEI≥5) → Famine deaths", volcs, famines, "volcanoes", "famines"),
         ("Economic crisis → Coups", econ, coups, "economic_crises", "coups"),
+        ("Economic crisis → Intrastate war", econ, wars_intra, "economic_crises", "wars_global"),
     ]
 
     results = {}
@@ -114,8 +119,8 @@ def main():
         ci = f"[{row['ci_lo']:+.3f}, {row['ci_hi']:+.3f}]"
         print(f"{name:<40} {int(row['lag']):>+10d} {row['r']:>+10.3f} {ci:>22}")
 
-    # ---- Figure: 6-panel grid ----
-    fig, axes = plt.subplots(2, 3, figsize=(15, 8))
+    # ---- Figure: 4×2 grid ----
+    fig, axes = plt.subplots(2, 4, figsize=(20, 8))
     for ax, (name, df) in zip(axes.flat, results.items()):
         ax.errorbar(df["lag"], df["r"],
                       yerr=[df["r"] - df["ci_lo"], df["ci_hi"] - df["r"]],

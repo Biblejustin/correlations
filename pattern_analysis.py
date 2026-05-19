@@ -139,6 +139,20 @@ def load_indicator(name, args):
         years = df["start_year"].tolist()
         yc = df.groupby("start_year").size().reindex(range(1500, 2026), fill_value=0)
         return years, yc, "1500-2025"
+    if name == "Big intrastate wars (ethnos, >=100k deaths)":
+        df = pd.read_csv(args.wars_csv)
+        df = df[(df["war_type"] == "intrastate") & (df["deaths_estimate"] >= 100_000) &
+                (df["start_year"] >= 1500) & (df["start_year"] <= 2025)]
+        years = df["start_year"].tolist()
+        yc = df.groupby("start_year").size().reindex(range(1500, 2026), fill_value=0)
+        return years, yc, "1500-2025"
+    if name == "Big interstate wars (basileia, >=100k deaths)":
+        df = pd.read_csv(args.wars_csv)
+        df = df[(df["war_type"] == "interstate") & (df["deaths_estimate"] >= 100_000) &
+                (df["start_year"] >= 1500) & (df["start_year"] <= 2025)]
+        years = df["start_year"].tolist()
+        yc = df.groupby("start_year").size().reindex(range(1500, 2026), fill_value=0)
+        return years, yc, "1500-2025"
     if name == "Great famines (>=1M deaths)":
         df = pd.read_csv(args.famines_wpf_orig)  # famines_wpf.csv has per-event totals
         df = df[df["wpf_authoritative_mortality_estimate"] >= 1_000_000]
@@ -229,7 +243,10 @@ def main():
 
     indicators = [
         "M>=7 quakes", "M>=8 quakes", "VEI>=6 eruptions", "X1+ flares",
-        "Big wars (>=1M deaths)", "Great famines (>=1M deaths)",
+        "Big wars (>=1M deaths)",
+        "Big interstate wars (basileia, >=100k deaths)",
+        "Big intrastate wars (ethnos, >=100k deaths)",
+        "Great famines (>=1M deaths)",
         "Great pandemics (>=1M deaths)", "Great cyclones (>=10k deaths)",
         "Major floods (>=1000 deaths)", "Major droughts (>=1M affected)",
         "Major refugee crises (>=1M)", "Severe economic crises",

@@ -428,6 +428,43 @@ def load_yearly_coups(coups_csv: str, year_lo=1950, year_hi=2025,
     return s
 
 
+def load_yearly_heat_wave_deaths(heat_csv: str, year_lo=1880, year_hi=2025,
+                                   log10_transform: bool = False) -> pd.Series:
+    """Yearly heat-wave deaths from event catalog, spread across [start, end]."""
+    df = pd.read_csv(heat_csv)
+    df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
+    df["end_year"] = pd.to_numeric(df["end_year"], errors="coerce").fillna(df["start_year"])
+    df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
+    years = range(year_lo, year_hi + 1)
+    out = pd.Series(0.0, index=years, name="heat_wave_deaths")
+    for _, row in df.iterrows():
+        s = int(max(row["start_year"], year_lo))
+        e = int(min(row["end_year"], year_hi))
+        if e < year_lo or s > year_hi or row["deaths_estimate"] == 0:
+            continue
+        duration = e - s + 1
+        per_year = float(row["deaths_estimate"]) / duration
+        for y in range(s, e + 1):
+            out.loc[y] += per_year
+    if log10_transform:
+        out = np.log10(out + 1.0)
+        out.name = "log10_heat_wave_deaths"
+    return out
+
+
+def load_yearly_heat_wave_events(heat_csv: str, year_lo=1880, year_hi=2025,
+                                   deaths_min: float = 0) -> pd.Series:
+    """Yearly count of heat-wave events (filter optionally by deaths)."""
+    df = pd.read_csv(heat_csv)
+    df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
+    df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
+    if deaths_min > 0:
+        df = df[df["deaths_estimate"] >= deaths_min]
+    s = df.groupby("start_year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = f"heat_wave_events_deaths_ge_{int(deaths_min)}"
+    return s
+
+
 def load_yearly_coup_deaths(coups_csv: str, year_lo=1950, year_hi=2025,
                               log10_transform: bool = False) -> pd.Series:
     """Yearly summed coup-attributed deaths."""

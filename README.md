@@ -825,6 +825,77 @@ The wars × famines coupling is one of many possible cross-category chains. `cha
 
 **Above vs. below zero (the reference line):** A dot *above* zero with error bars excluding zero is a significant positive coupling (cause leads effect in the same direction). *Below* zero excluding zero is significant negative coupling. Crossing zero (the bulk of cells) means we can't distinguish from coincidence at that lag.
 
+## Granger causality on wars↔famines
+
+The cross-correlation matrix and wavelet showed *when* wars and famines couple. Granger causality formalizes *which leads which*: does past war activity help predict future famines beyond what the famine series' own past predicts?
+
+`granger.py` runs the test on the regime-detrended series (both confirmed stationary by ADF, p < 0.005 for all four). Output: F-test p-value per lag for each direction.
+
+![Granger causality wars vs famines](figures/28_granger_wars_famines.png)
+
+**Technical:** Y-axis is the Granger F-test p-value (log scale). Below the red dashed line at α = 0.05 means: that direction of causality is statistically detected at that lag. X-axis is lag in years.
+
+**In plain English:** A line *below* the red threshold at any lag means "past values of the cause help predict future values of the effect, beyond what the effect's own history says." A line *above* the threshold means "no Granger causality at that lag." If wars Granger-cause famines but not vice versa, that's evidence for the direction commonly assumed.
+
+**Results:**
+
+| Direction | lag 1 | lag 2 | lag 3 | lag 4 | lag 5 |
+|---|---|---|---|---|---|
+| **Wars (combined) → Famines** | **0.026** | **0.041** | 0.10 | 0.17 | **0.043** |
+| Famines → Wars (combined) | 0.66 | 0.49 | 0.80 | 0.78 | 0.94 |
+| Interstate → Famines | 0.60 | 0.57 | 0.18 | 0.12 | **0.036** |
+| Famines → Interstate | 0.38 | 0.64 | 0.64 | 0.77 | 0.82 |
+| Intrastate → Famines | 0.27 | 0.20 | 0.50 | 0.56 | 0.58 |
+| Famines → Intrastate | 0.71 | 0.17 | 0.40 | 0.61 | 0.75 |
+
+**Wars Granger-cause famines at lags 1, 2, and 5** (p < 0.05). The reverse direction is never significant (all p ≥ 0.17). The split versions are weaker — only interstate at lag 5 reaches significance — because splitting one strong signal into two weaker ones reduces statistical power. **The combined direction is robust and asymmetric: wars precede famines, not the other way around.**
+
+This complements the wavelet finding (the coupling was strongest in eras with war-driven famines) and the chains finding (the coupling lives at lag 0). The Granger result formalizes the temporal precedence: when you measure them separately at multiple lags, the predictive relationship runs from wars to famines, not the reverse.
+
+## Regional drought disaggregation
+
+The droughts-×-11y peak in the global periodogram (3.26× null) was the only non-solar indicator with a real 11-year cycle. Where is that signal coming from? Paleoclimate literature suggests jet-stream / ENSO modulation acts strongest in monsoon regions and ENSO-teleconnected continents.
+
+`regional.py` splits the droughts catalog by region and reruns the 9–13y periodogram per region.
+
+![Regional drought periodograms](figures/29_regional_drought_periodograms.png)
+
+**Technical:** Per-region 9-13y band peak power/null ratio. Red bars (≥ 1.0) indicate real 11-year peak. Annotated with peak period in years and n_events per region.
+
+**In plain English:** Each region's drought catalog tested separately for an 11-year rhythm. Bars *above* the 1.0 null bound have a real solar-cycle signal; bars *below* don't.
+
+**Results:**
+
+| Region | n events | Peak period | Power / null |
+|---|---|---|---|
+| **South Asia (monsoon)** | 8 | 10.7 y | **3.03×** — strongest regional signal |
+| **Europe** | 12 | 9.7 y | **2.96×** |
+| **East Asia** | 5 | 10.7 y | **2.61×** |
+| **Russia / Central Asia** | 5 | 9.9 y | **1.92×** |
+| **Africa (Sahel + East)** | 12 | 10.1 y | **1.61×** |
+| **North America (incl Mexico)** | 5 | 9.1 y | 0.11× (NS) |
+| South America | 4 | n/a | insufficient data |
+| Middle East / Levant | 1 | n/a | insufficient data |
+
+**Surprise: the solar-cycle drought signal is strongest in Asia and Europe, weakest in North America.** The conventional paleoclimate literature emphasizes the western US / Mexico effect (PDO, ENSO teleconnection), but our hand-curated catalog shows monsoon regions (South Asia, East Asia) and Europe as the dominant carriers. This is partly catalog bias (the Indian famine-droughts of 1769, 1782, 1791, 1876, 1899 cluster at solar-cycle frequencies because British colonial records emphasized them), and partly real (Indian monsoon variability is genuinely modulated by the solar cycle through Walker Circulation feedback). North America's low ratio reflects sparse pre-modern records — only 5 catalogued events covering 1850-present.
+
+## Heat waves added — fastest-rising indicator
+
+Hand-curated catalog of 25 major heat wave events 1896–2024 added as `data/heat_waves.csv`. The indicator is included in trends_meta.py.
+
+**Trend results:**
+
+| Era | Heat wave deaths /decade | CI | Verdict |
+|---|---|---|---|
+| Full 1880+ | **+21.2%** | [+0.04, +0.15] log10/dec | Significantly rising |
+| **1980+ (modern surveillance)** | **+99.5%** | [+0.06, +0.78] log10/dec | **Doubling every decade** — significantly rising |
+
+This is **the steepest rising trend across all 20+ indicators in this project.** Heat wave death toll has approximately doubled every decade since 1980 in this catalog (1995 Chicago ~739, 2003 Europe ~70k, 2010 Russia ~56k, 2022 Europe ~62k, 2024 Hajj 1300+).
+
+**Caveat:** like cyclone deaths, this is partly exposure-driven (population growth + aging populations + urbanization + heat-vulnerable older adults), partly attribution improvement (modern excess-deaths methodology vs older "directly killed by heat" counts), and partly real heatwave intensification (well-documented in climate science). The catalog can't separate these three.
+
+But the *direction* is unambiguous: by any reading of the modern data, heat wave deaths are rising sharply. If "famines and pestilences" in Mt 24 is read broadly to include climate-related mass mortality, heat waves are the indicator most clearly consistent with the prediction.
+
 ## Bonferroni summary
 
 The 8 "headline" tests in the full grid (one per topic pair / direction):

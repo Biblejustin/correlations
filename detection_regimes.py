@@ -67,6 +67,9 @@ REGIMES = {
 
     # Coups: Powell-Thyne starts 1950; "third wave democratization" 1974+ inflection
     "coups": [1950, 1974, 2000],
+
+    # Heat waves: EM-DAT consistent post-1980; pre-1980 sparse
+    "heat_waves": [1880, 1980, 2000],
 }
 
 

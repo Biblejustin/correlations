@@ -54,7 +54,7 @@ The contraction-period analysis identified 4 multi-year clusters (1916–20, 193
 
 ## 4. Regional disaggregation
 
-**Status:** Not started.
+**Status:** ✅ **DONE 2026-05-19 for droughts.** See `regional.py` and figure 29. Key result: the global drought-×-11y peak (3.26× null) is carried strongest by **South Asia (3.03×)**, Europe (2.96×), East Asia (2.61×), and weakest by **North America (0.11×, NS)** — opposite to the conventional paleoclimate literature emphasis on the western US. Earthquake regional disaggregation remains open.
 
 Global yearly counts may average out regional patterns. The Israel-Levant analysis already does this for one region. Could be extended:
 
@@ -79,7 +79,7 @@ The current coherence test (figure 05) measures a single coherence value at each
 
 ## 6. Granger-causality tests on the wars-famines pair
 
-**Status:** Not started.
+**Status:** ✅ **DONE 2026-05-19.** See `granger.py` and figure 28. Key result: wars Granger-cause famines at lags 1, 2, and 5 (p < 0.05); the reverse direction is never significant (all p > 0.17). The direction is asymmetric — wars predict future famines, not the reverse. The combined series gives the strongest signal; split-by-war-type signals are weaker due to reduced power.
 
 The wars-famines r = +0.43 is the only FDR-surviving correlation in the cross-correlation matrix. We've inferred direction from the well-established causal mechanism (war causes famine), but a formal Granger causality test on the detrended time series would put numbers on it.
 
@@ -97,7 +97,7 @@ The wars-famines r = +0.43 is the only FDR-surviving correlation in the cross-co
 
 Still open candidates:
 
-- **Heat waves** (separable from droughts) — EM-DAT has them
+- ✅ **Heat waves** — DONE 2026-05-19. `data/heat_waves.csv` with 25 events 1896-2024. Trend: **+99.5%/decade since 1980** (fastest-rising indicator in the project).
 - **Stock market crashes** (S&P 500 drawdowns ≥ 20%, separable from full financial crises)
 - **Major terrorism events** (GTD database)
 - **Mass extinction / biodiversity loss events** (very long timescale)

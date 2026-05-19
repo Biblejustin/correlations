@@ -50,6 +50,8 @@ from correlate_events import (
     load_yearly_economic_crises,
     load_yearly_coups,
     load_yearly_coup_deaths,
+    load_yearly_heat_wave_deaths,
+    load_yearly_heat_wave_events,
 )
 
 
@@ -97,6 +99,7 @@ def main():
     ap.add_argument("--refugees-csv", default="data/refugees.csv")
     ap.add_argument("--economic-csv", default="data/economic_crises.csv")
     ap.add_argument("--coups-csv", default="data/coups.csv")
+    ap.add_argument("--heat-csv", default="data/heat_waves.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
@@ -191,6 +194,11 @@ def main():
         ("Successful coups", "1950+ (Powell-Thyne)",
             load_yearly_coups(args.coups_csv, 1950, 2025, outcome="successful"),
             False, "human"),
+        # Heat waves
+        ("Heat wave deaths log10", "1880+ (full catalog)",
+            load_yearly_heat_wave_deaths(args.heat_csv, 1880, 2025), True, "human"),
+        ("Heat wave deaths log10", "1980+ (modern surveillance)",
+            load_yearly_heat_wave_deaths(args.heat_csv, 1980, 2025), True, "human"),
     ]
 
     results = []
@@ -238,6 +246,7 @@ def main():
         "Refugees displaced log10",
         "Economic crises (all)", "Economic crises (severe+)",
         "Coups (all)", "Successful coups",
+        "Heat wave deaths log10",
     ]
     group_idx = {g: i for i, g in enumerate(group_order)}
     results.sort(key=lambda r: (group_idx.get(r["group"], 99), r["era"]))
