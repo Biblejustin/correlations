@@ -6,7 +6,7 @@ Analytical improvements identified during the work but not currently implemented
 
 ## 1. Extreme tail-event sensitivity analysis
 
-**Status:** Not started. Listed in the Caveats section of the main README.
+**Status:** ✅ **DONE 2026-05-19.** See `sensitivity.py` and figure 24 in the correlations repo. Key result: wars × famines r = +0.43 holds through dropping top-5 events (drops to +0.25, still significant) but collapses by top-10 (+0.15, no longer significant). Real but concentrated signal driven by 1908–1945 war-famine clustering. The X1+ flare trend is the most tail-sensitive (drops from +1.4/dec to +0.4/dec when dropping top-5 — confirming the "cyclic, not secular" caveat).
 
 Single very large events dominate yearly counts in several indicators:
 - **WWII (1939–45)** dominates war deaths — without those 7 years the war-deaths trend over the 20th C reverses direction.
@@ -69,7 +69,7 @@ Would let us ask "does the solar cycle affect drought differently in different r
 
 ## 5. Wavelet coherence (time-resolved coupling)
 
-**Status:** Not started.
+**Status:** ✅ **DONE 2026-05-19.** See `wavelet.py` and figure 25. Key result: the wars × famines coupling was strongest pre-WWII (mean coherence ~0.61), nearly absent during the Cold War (~0.17 — the "long peace" decoupled them), partial recovery post-1990 (~0.35) as war-driven famines (Syria, Yemen, Tigray, Sudan, Gaza) returned. The full-span r = +0.43 hides this temporal structure.
 
 The current coherence test (figure 05) measures a single coherence value at each frequency over the full span. Wavelet coherence (continuous, time-localized) would reveal whether, e.g., the wars-↔-famines coupling was stronger during specific eras (WWII?) than the time-averaged r = +0.43 suggests.
 
@@ -89,15 +89,25 @@ The wars-famines r = +0.43 is the only FDR-surviving correlation in the cross-co
 
 ## 7. Add additional indicator categories
 
-**Status:** Open.
+**Status:** ⏳ **Partial.** Three indicators added 2026-05-19:
 
-Candidates that have been discussed but not added:
+- ✅ **Refugees / mass displacement** — `data/refugees.csv`, ~40 events 1915–2025
+- ✅ **Economic crises** — `data/economic_crises.csv`, ~45 events 1797–2023 (Reinhart-Rogoff-style)
+- ✅ **Coups d'état** — `data/coups.csv`, ~75 events 1950–2023 (Powell-Thyne-style)
 
-- **Refugee crises / mass displacement** (UNHCR data 1950+)
-- **Climate extremes** (heatwaves, cold spells from EM-DAT)
-- **Economic crises** (Reinhart-Rogoff financial crises database)
-- **Stock market crashes** (S&P 500 drawdowns ≥20%)
-- **Coups d'état** (Powell-Thyne dataset)
+Still open candidates:
+
+- **Heat waves** (separable from droughts) — EM-DAT has them
+- **Stock market crashes** (S&P 500 drawdowns ≥ 20%, separable from full financial crises)
 - **Major terrorism events** (GTD database)
+- **Mass extinction / biodiversity loss events** (very long timescale)
 
-Each addition expands the cross-correlation matrix and tests whether any new pair shares a periodic rhythm.
+## 8. Cross-category chain analyses
+
+**Status:** ✅ **DONE 2026-05-19.** See `chains.py` and figure 26. Lag-correlation tests on six chain hypotheses. Significant findings:
+- Drought → famine deaths peaks at lag +10y (r = +0.22)
+- War → famine deaths at lag 0 (r = +0.43)
+- War → refugees at lag +9y (r = +0.28)
+- War → flood-deaths at lag +2y (r = −0.29, opposite direction — war zones lose flood reporting)
+- Economic crisis → coups at lag +1y (r = +0.20, marginal)
+- Volcano → famine at lag +3y (NS — Tambora-mechanism doesn't show in post-1900 catalog)

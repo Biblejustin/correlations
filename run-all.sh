@@ -37,29 +37,32 @@ fi
 source .venv/bin/activate
 pip install -q -r requirements.txt
 
+# Capture absolute path to the venv python so sister-repo invocations use it.
+PY=$(realpath .venv/bin/python)
+
 if [ $SKIP_SOURCE -eq 0 ]; then
     # ---- Source-repo catalog builds ----
     if [ $SKIP_FETCH -eq 0 ]; then
         echo "==> Building spaceweather.sqlite (fast)"
-        (cd ../spaceweather && python fetch_spaceweather.py)
+        (cd ../spaceweather && "$PY" fetch_spaceweather.py)
 
         echo "==> Building quakes.sqlite (M>=4 since 1965, ~10-15 min)"
-        (cd ../earthquakes && python fetch_quakes.py)
+        (cd ../earthquakes && "$PY" fetch_quakes.py)
 
         echo "==> Building quakes_1900.sqlite (M>=6 since 1900, ~2 min)"
-        (cd ../earthquakes && python fetch_quakes.py --start-year 1900 --min-mag 6.0 --db quakes_1900.sqlite)
+        (cd ../earthquakes && "$PY" fetch_quakes.py --start-year 1900 --min-mag 6.0 --db quakes_1900.sqlite)
     fi
 
     echo "==> Regenerating per-repo plots"
     for repo in famines-tracking pandemics-tracking volcanic-eruptions tropical-cyclones droughts-tracking astronomical-signs; do
         if [ -d "../$repo" ]; then
             echo "    $repo"
-            (cd ../$repo && python make_plots.py 2>&1 | tail -3) || echo "      (skipped or failed)"
+            (cd ../$repo && "$PY" make_plots.py 2>&1 | tail -3) || echo "      (skipped or failed)"
         fi
     done
     if [ -d "../flood-data" ]; then
         echo "    flood-data"
-        (cd ../flood-data && python build_plots.py 2>&1 | tail -3) || true
+        (cd ../flood-data && "$PY" build_plots.py 2>&1 | tail -3) || true
     fi
 fi
 

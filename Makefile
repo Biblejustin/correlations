@@ -8,8 +8,8 @@
 #   make clean     — delete generated figures
 
 VENV    := .venv
-PY      := $(VENV)/bin/python
-PIP     := $(VENV)/bin/pip
+PY      := $(abspath $(VENV)/bin/python)
+PIP     := $(abspath $(VENV)/bin/pip)
 
 SOURCE_REPOS := famines-tracking pandemics-tracking volcanic-eruptions \
                 tropical-cyclones droughts-tracking astronomical-signs
@@ -33,21 +33,21 @@ venv: $(VENV)
 
 catalogs: venv
 	@echo "==> Building source catalogs (SQLite DBs)"
-	cd ../spaceweather && python fetch_spaceweather.py
-	cd ../earthquakes && python fetch_quakes.py
-	cd ../earthquakes && python fetch_quakes.py --start-year 1900 --min-mag 6.0 --db quakes_1900.sqlite
+	cd ../spaceweather && $(PY) fetch_spaceweather.py
+	cd ../earthquakes && $(PY) fetch_quakes.py
+	cd ../earthquakes && $(PY) fetch_quakes.py --start-year 1900 --min-mag 6.0 --db quakes_1900.sqlite
 
 plots: venv
 	@echo "==> Regenerating per-repo plots"
 	@for repo in $(SOURCE_REPOS); do \
 	    if [ -d ../$$repo ]; then \
 	        echo "    $$repo"; \
-	        (cd ../$$repo && python make_plots.py > /dev/null 2>&1) || echo "      (skipped)"; \
+	        (cd ../$$repo && $(PY) make_plots.py > /dev/null 2>&1) || echo "      (skipped)"; \
 	    fi; \
 	done
 	@if [ -d ../flood-data ]; then \
 	    echo "    flood-data"; \
-	    (cd ../flood-data && python build_plots.py > /dev/null 2>&1) || true; \
+	    (cd ../flood-data && $(PY) build_plots.py > /dev/null 2>&1) || true; \
 	fi
 
 correlations: venv

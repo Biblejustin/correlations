@@ -716,6 +716,61 @@ The honest answer from this data:
 
 This mixed picture neither confirms nor refutes the framing. Whether you read "some real increases, some flat, some declining" as consistent with rising birth pains or as showing the pattern hasn't yet materialized is a question of interpretation that the data doesn't settle on its own.
 
+## Does the wars × famines coupling hinge on a few tail events?
+
+The FDR-significant result was wars × famines, r = +0.43. To check whether this is a steady-state coupling or driven by a handful of devastating years, `sensitivity.py` jackknifes the result after dropping the top-N years from each series.
+
+![Tail-event sensitivity](figures/24_tail_event_sensitivity.png)
+
+**Technical:** Left panel: detrended Pearson r between wars and famines as a function of how many top-N years are dropped from each series. Right panel: each indicator's per-decade trend slope before/after dropping top-1/3/5 years. The grey horizontal reference is the full-sample r = +0.434.
+
+**In plain English:** The chart asks: "if we throw out the most extreme war-and-famine years (WWI/WWII era, Russian Civil War, Soviet famines), does the +0.43 correlation survive?" The answer is: yes for the top-5, no for the top-10. Drop the top 5 most-extreme years on each side and the correlation drops from +0.43 to +0.25 (still real). Drop the top 10 and it falls to +0.15 (now consistent with chance). **The wars↔famines coupling is real but concentrated — it lives in the 1908–1945 cluster of war-driven famines** (Russian Civil War + Volga; WWI; WWII Bengal/Greek/Dutch/Vietnamese famines). It is not a smooth long-run pattern.
+
+**Above vs. below the trend lines (right panel):** Each indicator's slope before/after dropping top events. Indicators whose bars barely move when you drop top events have stable trends (M ≥ 8 quakes, famine deaths, war deaths). Indicators whose bars shift a lot are tail-driven — most notably **X1+ flares**, where the +1.4/decade slope drops to +0.4/decade just by removing the top-5 flare years (the May 2024 swarm dominates). That confirms the X1+ flares trend is mostly cyclic, not secular.
+
+## When did wars × famines actually couple?
+
+Pearson r = +0.43 averaged over 1900–2025 hides whether the coupling was constant or concentrated. Wavelet coherence (`wavelet.py`) decomposes the relationship into a 2D map: time × frequency × coherence.
+
+![Wavelet coherence wars vs famines](figures/25_wavelet_coherence_wars_famines.png)
+
+**Technical:** Top: yearly log-deaths z-scored for wars (red) and famines (orange), with shaded era markers. Bottom: Morlet wavelet coherence heatmap (Torrence-Compo smoothing). Color = coherence at each (year, period). Cone-of-influence (edge artifacts) shaded.
+
+**In plain English:** The top panel shows the two time series. The bottom panel asks "at each year, at each cycle-length, how tightly are wars and famines moving together?" Red = tightly coupled; blue = independent. The hot red zones are the WWI–Interwar–WWII era at 5–20-year cycles; the cold blue zone is the Cold War decades (1946–1989) when famines decoupled from wars due to food aid and policy-driven famines like the Great Chinese Famine 1958–62.
+
+**Era-wise mean coherence (5–20yr band):**
+
+| Era | Mean coherence | Interpretation |
+|---|---|---|
+| Pre-WWI (1900–1913) | 0.56 | Moderate baseline |
+| **WWI era (1914–1923)** | **0.61** | Peak coupling (WWI + Russian Civil War + Volga famine) |
+| Interwar (1924–1938) | 0.56 | Sustained |
+| **WWII era (1939–1945)** | 0.40 | Slight drop — Bengal/Greek/Vietnamese famines partially decouple |
+| **Post-WWII / GCF (1946–1962)** | **0.24** | Major drop — Great Chinese Famine wasn't war-caused |
+| **Cold War late (1963–1989)** | **0.17** | Lowest — "long peace" + food aid decoupled the pair |
+| Post-Cold-War (1990–2025) | 0.35 | Partial recovery — Syria/Yemen/Sudan/Tigray war-caused famines return |
+
+So the full-span r = +0.43 was really "0.6 pre-WWII, 0.2 in the Cold War, 0.35 today." The mechanism is alive in eras where wars cause famines (early 20th C, again now); it goes quiet when famines are policy-driven (1958–62) or food aid breaks the chain.
+
+## Cross-category chain analyses
+
+The wars × famines coupling is one of many possible cross-category chains. `chains.py` tests several lagged-causal hypotheses:
+
+![Cross-category chains](figures/26_chains.png)
+
+**Technical:** Six lag-correlation panels. Each shows Pearson r between two detrended log-deaths series at lags −2 to +10 years, with 95% bootstrap CI error bars at each lag.
+
+**In plain English:** Each panel asks "if a disaster of type A happens this year, how much does type B happen N years later?" Looking at the peaks:
+
+- **Drought → famine** peaks at lag +10 years (r = +0.22, significant) — droughts have cumulative downstream effects that show up in famine deaths a decade later.
+- **War → famine** peaks at lag 0 (r = +0.43, significant) — same-year coupling, the FDR-significant result.
+- **War → refugees** peaks at lag +9 years (r = +0.28, significant) — displacement accumulates over the duration of conflict, peaking ~9 years after onset.
+- **War → flood-deaths** peaks at lag +2 years with r = **−0.29** (significant, *negative direction*) — flood reporting decreases in war years (war zones lose detection capacity, not floods becoming less deadly).
+- **Volcano → famine** peaks at +3 years (r = +0.09, NS) — the Tambora-1815 "year without summer → famine" mechanism does not show up in the post-1900 record (Pinatubo 1991, Hunga Tonga 2022 didn't cause global famines).
+- **Economic crisis → coups** peaks at +1 year (r = +0.20, CI just barely crosses 0) — weak evidence that financial crises trigger political instability the following year.
+
+**Above vs. below zero (the reference line):** A dot *above* zero with error bars excluding zero is a significant positive coupling (cause leads effect in the same direction). *Below* zero excluding zero is significant negative coupling. Crossing zero (the bulk of cells) means we can't distinguish from coincidence at that lag.
+
 ## Bonferroni summary
 
 The 8 "headline" tests in the full grid (one per topic pair / direction):
