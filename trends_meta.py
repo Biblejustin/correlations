@@ -51,6 +51,8 @@ from correlate_events import (
     load_yearly_coups,
     load_yearly_terrorism_deaths,
     load_yearly_terrorism_events,
+    load_yearly_stock_crashes,
+    load_yearly_stock_drawdown_intensity,
     load_yearly_coup_deaths,
     load_yearly_heat_wave_deaths,
     load_yearly_heat_wave_events,
@@ -103,6 +105,7 @@ def main():
     ap.add_argument("--coups-csv", default="data/coups.csv")
     ap.add_argument("--heat-csv", default="data/heat_waves.csv")
     ap.add_argument("--terrorism-csv", default="data/terrorism.csv")
+    ap.add_argument("--crashes-csv", default="data/stock_crashes.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
@@ -211,6 +214,17 @@ def main():
             load_yearly_terrorism_deaths(args.terrorism_csv, 1970, 2021), True, "human"),
         ("Terrorism deaths log10", "1998+ (post-methodology shift)",
             load_yearly_terrorism_deaths(args.terrorism_csv, 1998, 2021), True, "human"),
+        # Stock crashes (S&P 500 / DJIA / Cowles pre-1957)
+        ("Stock crashes >=20% (count)", "1900+ (full catalog)",
+            load_yearly_stock_crashes(args.crashes_csv, 1900, 2025, drawdown_min=20.0),
+            False, "human"),
+        ("Stock crashes >=20% (count)", "1971+ (post-Bretton-Woods)",
+            load_yearly_stock_crashes(args.crashes_csv, 1971, 2025, drawdown_min=20.0),
+            False, "human"),
+        ("Stock crash intensity log10", "1900+ (full catalog)",
+            load_yearly_stock_drawdown_intensity(args.crashes_csv, 1900, 2025), True, "human"),
+        ("Stock crash intensity log10", "1971+ (post-Bretton-Woods)",
+            load_yearly_stock_drawdown_intensity(args.crashes_csv, 1971, 2025), True, "human"),
     ]
 
     results = []
@@ -260,6 +274,7 @@ def main():
         "Coups (all)", "Successful coups",
         "Heat wave deaths log10",
         "Terrorism events", "Terrorism deaths log10",
+        "Stock crashes >=20% (count)", "Stock crash intensity log10",
     ]
     group_idx = {g: i for i, g in enumerate(group_order)}
     results.sort(key=lambda r: (group_idx.get(r["group"], 99), r["era"]))

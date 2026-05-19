@@ -30,6 +30,7 @@ from correlate_events import (
     load_yearly_cyclones,
     load_yearly_cyclone_deaths,
     load_yearly_terrorism_deaths,
+    load_yearly_stock_drawdown_intensity,
 )
 from detection_regimes import REGIMES, piecewise_detrend
 
@@ -196,6 +197,10 @@ def run_cross_corr_matrix(args, out):
     terror_padded.name = "terrorism"
     series_dict["Terrorism deaths log10"] = (terror_padded, "terrorism")
 
+    # Stock crashes (S&P 500 / pre-1957 equivalents): peak-to-trough drawdown sum per year
+    crashes_d = load_yearly_stock_drawdown_intensity(args.crashes_csv, 1900, 2025, log10_transform=True)
+    series_dict["Stock crash intensity log10"] = (crashes_d, "stock_crashes")
+
     names = list(series_dict.keys())
     n = len(names)
     R = np.full((n, n), np.nan)
@@ -320,6 +325,7 @@ def main():
     ap.add_argument("--volcanoes-csv", default="data/volcanoes.csv")
     ap.add_argument("--cyclones-csv", default="data/cyclones.csv")
     ap.add_argument("--terrorism-csv", default="data/terrorism.csv")
+    ap.add_argument("--crashes-csv", default="data/stock_crashes.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)

@@ -132,11 +132,42 @@ The GTD via Our World in Data covers 1970–2021 with a deep gap in 1993 (record
 
 ---
 
+## 6b. Stock-market crashes (S&P 500 / DJIA / pre-1957 Cowles index, 1900+)
+
+24 bear markets (≥20% drawdowns) 1906–2025. Biggest: 1929 Great Depression (86.2%). Threaded into the cross-correlation matrix, periodogram, signs overlay, contractions, and pattern analysis.
+
+**P12b.** Stock-crash count (≥20% drawdowns/decade) over the next 15 years matches the historical mean of ~2 crashes/decade, not 3+ (which would imply "intensification").
+- *Currently:* count and intensity trends both flat (CIs cross 0). No 11y peak. No FDR-significant cross-correlation with any other indicator.
+- *Birth-pains expectation:* FALSE — crashes intensify by 2035.
+- *Long-financial-stability expectation:* TRUE — current flat trend continues.
+
+**P12c.** Stock-crash intensity × X1+ flare correlation remains NS at p > 0.05 through 2035.
+- *Currently:* r = −0.27, raw p = 0.06 (NS after FDR over 45 tests).
+- *Mechanism:* the "solar minimum causes crashes" claim popular in some traditions. If real, this would be negative AND significant (crashes track solar minima not maxima).
+- *Expected:* stays NS — the borderline raw p is multiple-comparison artifact.
+
+---
+
+## 6c. Regional earthquake disaggregation (NGDC 1900–2005)
+
+The NGDC catalog (selection-biased toward consequential events) shows a **significantly DECLINING** global M≥7 trend (−0.28 events/decade, CI excludes 0) — opposite to the USGS-derived global +1.7%/decade. The Ring of Fire drives the decline.
+
+**P14.** NGDC M≥7 declining trend reflects vulnerability reduction (better buildings, warning systems) rather than tectonic change. By 2035, if vulnerability gains continue, the trend should remain declining; if construction quality stalls, it could flatten.
+- *Currently:* −0.28/dec [−0.49, −0.07] over 1900–2005.
+- *Expected:* still declining or flat in 2035.
+- *Birth-pains expectation:* TRUE only if NGDC trend reverses to positive in 2035 update — a reversal would imply real tectonic intensification, not just vulnerability noise.
+
+**P15.** Indo-Asian region's modest 11y peak (1.51× null at 11.8y) does NOT survive 2035 update.
+- *Currently:* one significant region out of four tested = multiple-comparison concern.
+- *Expected:* peak drops below 1.0× as 2026–35 data fills in.
+
+---
+
 ## 7. Methodological commitments
 
 To prevent post-hoc reframing:
 
-**M1.** Analyses will be re-run at 2030, 2035, 2040 with the SAME scripts (`analyze.py`, `trends_meta.py`, `signs_overlay.py`, `contractions_analysis.py`, `pattern_analysis.py`, `periodogram_extended.py`, `wavelet.py`, `chains.py`, `sensitivity.py`, `meta_analysis.py`, `wars_split.py`, `granger.py`, `regional.py`, `heat_waves.py`, `canonical_compare.py`, `ucdp_compare.py`, `dashboard.py`, and the new `terrorism.py`).
+**M1.** Analyses will be re-run at 2030, 2035, 2040 with the SAME scripts (`analyze.py`, `trends_meta.py`, `signs_overlay.py`, `contractions_analysis.py`, `pattern_analysis.py`, `periodogram_extended.py`, `wavelet.py`, `chains.py`, `sensitivity.py`, `meta_analysis.py`, `wars_split.py`, `granger.py`, `regional.py`, `regional_quakes.py`, `canonical_compare.py`, `ucdp_compare.py`, `dashboard.py`).
 
 **M2.** New indicators added between now and revisit dates will be analyzed *both* including and excluding them, so trend changes can be attributed to new data rather than new methodology.
 

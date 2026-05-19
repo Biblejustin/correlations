@@ -74,6 +74,10 @@ REGIMES = {
     # Terrorism: GTD starts 1970; pre-1998 less complete (collection methodology improved);
     # 1993 records lost (gap); ISIS surge 2014. 1993 hole + 1998 methodology shift = piecewise.
     "terrorism": [1970, 1998, 2010],
+
+    # Stock crashes: pre-1957 used DJIA / Cowles index; S&P 500 = 1957+; post-1971 (Bretton Woods
+    # end) is the float-currency era; post-2000 includes algorithmic trading regime shift.
+    "stock_crashes": [1900, 1957, 1971, 2000],
 }
 
 

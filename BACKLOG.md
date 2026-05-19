@@ -65,7 +65,15 @@ See `canonical_compare.py` and figure 31 for the comparison. The headline ethnos
 
 ## 4. Regional disaggregation
 
-**Status:** ✅ **DONE 2026-05-19 for droughts.** See `regional.py` and figure 29. Key result: the global drought-×-11y peak (3.26× null) is carried strongest by **South Asia (3.03×)**, Europe (2.96×), East Asia (2.61×), and weakest by **North America (0.11×, NS)** — opposite to the conventional paleoclimate literature emphasis on the western US. Earthquake regional disaggregation remains open.
+**Status:** ✅ **DONE 2026-05-19 for droughts AND earthquakes.**
+
+Droughts (`regional.py`, figure 29): the global drought-×-11y peak (3.26× null) is carried strongest by **South Asia (3.03×)**, Europe (2.96×), East Asia (2.61×), and weakest by **North America (0.11×, NS)** — opposite to the conventional paleoclimate literature emphasis on the western US.
+
+Earthquakes (`regional_quakes.py`, figure 33): NGDC M≥7 catalog 1900-2005 split by NOAA `regionCode` into tectonic groups (Pacific Ring of Fire, Alpide belt, Indo-Asian, Caribbean, Atlantic/MOR, African/rift). Key results:
+- **Global NGDC M≥7 trend is SIGNIFICANTLY DECLINING at −0.28 events/decade** (CI [−0.49, −0.07]) — contrast with USGS-derived global +1.7%/decade. NGDC is selection-biased toward consequential events (deaths/damage/tsunami) so declining trend partly reflects improved building codes + warning systems, paralleling the cyclone-deaths-flat post-1985 story.
+- **Pacific Ring of Fire trend: −0.25/decade** (CI excludes 0) — drives the global decline.
+- **Indo-Asian region (Indonesia + India): 1.51× null at 11.8y** — the only region with a modest 11y peak above noise floor. With n=60 and one significant region out of four tested, multiple-comparison concerns apply.
+- Alpide belt and Caribbean show no 11y signal.
 
 Global yearly counts may average out regional patterns. The Israel-Levant analysis already does this for one region. Could be extended:
 
@@ -110,8 +118,8 @@ Still open candidates:
 
 - ✅ **Heat waves** — DONE 2026-05-19. `data/heat_waves.csv` with 25 events 1896-2024. Trend: **+99.5%/decade since 1980** (fastest-rising indicator in the project).
 - ✅ **Terrorism** — DONE 2026-05-19. `data/terrorism.csv` from OWID/GTD aggregator, 1970–2021 (1993 missing — known GTD data-loss gap), 211k events, 488k deaths, peak 2014 (ISIS). Threaded through `trends_meta`, `signs_overlay`, `contractions_analysis`, `periodogram_extended`, `pattern_analysis`, and `meta_analysis` (cross-correlation matrix). Trend: **+92.4%/decade for deaths in the 1998+ post-methodology-shift window** (2nd fastest after heat waves). No 11-year peak (0.62× null at 11.2y). No FDR-significant correlation with any other indicator in the cross-correlation matrix. Adding terrorism to the contractions consensus drops the marginal 1930–33 and 1990–93 contractions just below the 0.25 threshold — the four robust contractions (1918–21, 1940–44, 2009–14, 2019–22) remain.
-- **Stock market crashes** (S&P 500 drawdowns ≥ 20%, separable from full financial crises)
-- **Mass extinction / biodiversity loss events** (very long timescale)
+- ✅ **Stock market crashes** — DONE 2026-05-19. `data/stock_crashes.csv`: 24 bear markets 1906–2025, S&P 500 / DJIA / pre-1957 Cowles index peak-to-trough drawdowns ≥ 20%. Biggest: 1929 Great Depression (86.2%). Threaded through all six multi-indicator scripts. Trend: **flat** (count −1.8%/decade NS; intensity +2.7%/decade NS; both CIs cross 0). No 11y peak (0.99× null at 10.5y). Pattern: neither accelerating nor clustered. **Cross-correlation matrix (10 indicators, 45 tests)**: crashes are independent of every other indicator at FDR. Most negatively correlated to X1+ flares (r = −0.27, raw p = 0.06, NS after FDR) — note this is opposite to "solar minimum causes crashes" claims. Wars × famines remains the only FDR-significant correlation across now 45 tests.
+- **Mass extinction / biodiversity loss events** — *skipped* (poor fit for yearly-series framework; geological timescales).
 
 ## 8. Cross-category chain analyses
 

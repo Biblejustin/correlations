@@ -46,6 +46,7 @@ from correlate_events import (
     load_yearly_economic_crises,
     load_yearly_coups,
     load_yearly_terrorism_deaths,
+    load_yearly_stock_drawdown_intensity,
 )
 
 
@@ -101,6 +102,7 @@ def main():
     ap.add_argument("--economic-csv", default="data/economic_crises.csv")
     ap.add_argument("--coups-csv", default="data/coups.csv")
     ap.add_argument("--terrorism-csv", default="data/terrorism.csv")
+    ap.add_argument("--crashes-csv", default="data/stock_crashes.csv")
     ap.add_argument("--threshold", type=float, default=0.25)
     ap.add_argument("--rolling", type=int, default=5)
     ap.add_argument("--min-duration", type=int, default=3)
@@ -139,6 +141,8 @@ def main():
             load_yearly_coups(args.coups_csv, 1950, 2025)),
         ("Terrorism deaths log10",
             np.log10(load_yearly_terrorism_deaths(args.terrorism_csv, 1970, 2025) + 1)),
+        ("Stock crash intensity log10",
+            np.log10(load_yearly_stock_drawdown_intensity(args.crashes_csv, 1900, 2025) + 1)),
     ]
 
     common_years = np.arange(1900, 2026)

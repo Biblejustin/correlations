@@ -536,6 +536,37 @@ def load_yearly_heat_wave_events(heat_csv: str, year_lo=1880, year_hi=2025,
     return s
 
 
+def load_yearly_stock_crashes(crashes_csv: str, year_lo=1900, year_hi=2025,
+                                drawdown_min: float = 0.0) -> pd.Series:
+    """Yearly count of stock-market crashes (S&P 500 / DJIA / pre-1957 equivalent
+    peak-to-trough drawdowns >= drawdown_min %). Year = crash start year."""
+    df = pd.read_csv(crashes_csv)
+    df["year"] = pd.to_numeric(df["year"], errors="coerce")
+    df["pct_drawdown"] = pd.to_numeric(df["pct_drawdown"], errors="coerce").fillna(0)
+    if drawdown_min > 0:
+        df = df[df["pct_drawdown"] >= drawdown_min]
+    s = df.groupby(df["year"].astype(int)).size().reindex(
+        range(year_lo, year_hi + 1), fill_value=0).astype(float)
+    s.name = f"stock_crashes_dd_ge_{int(drawdown_min)}"
+    return s
+
+
+def load_yearly_stock_drawdown_intensity(crashes_csv: str, year_lo=1900, year_hi=2025,
+                                            log10_transform: bool = False) -> pd.Series:
+    """Yearly summed % drawdown for crashes starting in that year (multiple crashes
+    in one year sum)."""
+    df = pd.read_csv(crashes_csv)
+    df["year"] = pd.to_numeric(df["year"], errors="coerce")
+    df["pct_drawdown"] = pd.to_numeric(df["pct_drawdown"], errors="coerce").fillna(0)
+    s = df.groupby(df["year"].astype(int))["pct_drawdown"].sum().reindex(
+        range(year_lo, year_hi + 1), fill_value=0).astype(float)
+    s.name = "stock_drawdown_pct"
+    if log10_transform:
+        s = np.log10(s + 1.0)
+        s.name = "log10_stock_drawdown_pct"
+    return s
+
+
 def load_yearly_terrorism_events(terror_csv: str, year_lo=1970, year_hi=2025) -> pd.Series:
     """Yearly terrorist attack counts (OWID/GTD)."""
     df = pd.read_csv(terror_csv)

@@ -245,6 +245,14 @@ def load_indicator(name, args):
         # For acceleration / clustering we want event-style: each qualifying year is one "event"
         yc = (yc > 0).astype(int)
         return years, yc, "1970-2025"
+    if name == "Major stock crashes (>=20% drawdown)":
+        df = pd.read_csv(args.crashes_csv)
+        df["year"] = pd.to_numeric(df["year"], errors="coerce")
+        df["pct_drawdown"] = pd.to_numeric(df["pct_drawdown"], errors="coerce").fillna(0)
+        df = df[(df["pct_drawdown"] >= 20) & df["year"].between(1900, 2025)]
+        years = df["year"].astype(int).tolist()
+        yc = df.groupby(df["year"].astype(int)).size().reindex(range(1900, 2026), fill_value=0)
+        return years, yc, "1900-2025"
     raise ValueError(name)
 
 
@@ -265,6 +273,7 @@ def main():
     ap.add_argument("--noaa-quakes-csv", default="data/noaa_significant_earthquakes.csv")
     ap.add_argument("--noaa-volcanoes-csv", default="data/noaa_volcanic_events.csv")
     ap.add_argument("--terrorism-csv", default="data/terrorism.csv")
+    ap.add_argument("--crashes-csv", default="data/stock_crashes.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
@@ -282,6 +291,7 @@ def main():
         "NGDC M>=7 (1500+, canonical long-span)",
         "NGDC ≥100-death volcanoes (1500+)",
         "Mass-casualty terrorism (>=100 deaths/year)",
+        "Major stock crashes (>=20% drawdown)",
     ]
 
     results = []

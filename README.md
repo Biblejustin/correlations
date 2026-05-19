@@ -33,7 +33,7 @@ See [BACKLOG.md](BACKLOG.md) for tracked future-work items.
 
 ## TL;DR across all 10 repos
 
-1. **Cross-correlation matrix (figure 18)**: of 36 pairwise detrended tests across 9 indicators (now including terrorism via OWID/GTD), only **wars × famines** survives FDR correction at r = +0.43 (p < 0.001). Every other indicator pair is statistically independent — terrorism in particular has no FDR-significant coupling with any other indicator.
+1. **Cross-correlation matrix (figure 18)**: of 45 pairwise detrended tests across 10 indicators (now including terrorism via OWID/GTD and S&P 500 / DJIA bear-market drawdowns), only **wars × famines** survives FDR correction at r = +0.43 (p < 0.001). Every other indicator pair is statistically independent — terrorism and stock crashes both end up uncoupled to everything else despite hopes/fears in either direction.
 2. **Trends (figure 19)**: cyclone deaths, pandemic deaths, M ≥ 7 quakes are significantly rising; floods + famines lean down (not significant); wars + volcanoes are flat. The diagnostic test is whether tighter detection-clean eras show *bigger* trends (real signal) or *smaller* trends (catalog artifact). Cyclones and pandemics pass that test; floods and volcanoes fail it.
 3. **Birth-pains pattern (figure 20)**: no indicator shows all three signatures (acceleration + shrinking gaps + clustering) together.
 4. **Signs overlay (figure 21)**: with 13 indicators, max single-year fraction simultaneously above 1 σ reaches 6 of 13 (1991, 2023). Maximum consensus z = +1.23 (1991).
@@ -53,7 +53,7 @@ The data tells a mixed story: some indicators rising, others flat or declining, 
 
 This is the classic mechanism — wars cause famines (WWII-era Bengal, Greek, Vietnamese, and Dutch Hunger Winter; Russian Civil War; Lebanon; etc.). It's a real, expected, mechanistically grounded coupling, and the methodology correctly identifies it.
 
-**Every other pairwise correlation across the 36-cell symmetric matrix is null.** This includes everything we hoped/feared to find: solar flares don't cause earthquakes, war years don't have more quakes, volcano years don't cluster with anything, eclipse dates are independent of seismicity, the 11-year solar cycle doesn't modulate M≥7 quakes, and terrorism is independent of every other catalog despite tracking the same era as wars/coups/economic crises. The framework validates itself by finding the one real coupling and rejecting the noise.
+**Every other pairwise correlation across the 45-cell symmetric matrix is null.** This includes everything we hoped/feared to find: solar flares don't cause earthquakes, war years don't have more quakes, volcano years don't cluster with anything, eclipse dates are independent of seismicity, the 11-year solar cycle doesn't modulate M≥7 quakes, terrorism is independent of every other catalog despite tracking the same era as wars/coups/economic crises, and stock-market crashes don't covary with anything else (most negatively correlated to X1+ flares at r = −0.27 — opposite to "solar minimum causes crashes" claims, and still NS after FDR). The framework validates itself by finding the one real coupling and rejecting the noise.
 
 ![Cross-correlation matrix](figures/18_cross_correlation_matrix.png)
 

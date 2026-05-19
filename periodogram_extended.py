@@ -50,6 +50,8 @@ from correlate_events import (
     load_yearly_noaa_quakes,
     load_yearly_noaa_volcanic_events,
     load_yearly_terrorism_deaths,
+    load_yearly_stock_drawdown_intensity,
+    load_yearly_stock_crashes,
 )
 
 
@@ -129,6 +131,7 @@ def main():
     ap.add_argument("--noaa-quakes-csv", default="data/noaa_significant_earthquakes.csv")
     ap.add_argument("--noaa-volcanoes-csv", default="data/noaa_volcanic_events.csv")
     ap.add_argument("--terrorism-csv", default="data/terrorism.csv")
+    ap.add_argument("--crashes-csv", default="data/stock_crashes.csv")
     ap.add_argument("--n-boot", type=int, default=1000)
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
@@ -159,6 +162,8 @@ def main():
         ("Economic crises (all)", load_yearly_economic_crises(args.economic_csv, 1800, 2025), "human"),
         ("Coups (all)", load_yearly_coups(args.coups_csv, 1950, 2025), "human"),
         ("Terrorism deaths (log10)", np.log10(load_yearly_terrorism_deaths(args.terrorism_csv, 1970, 2025) + 1), "human"),
+        ("Stock crash intensity (log10)", np.log10(load_yearly_stock_drawdown_intensity(args.crashes_csv, 1900, 2025) + 1), "human"),
+        ("Stock crashes >=20% (count)", load_yearly_stock_crashes(args.crashes_csv, 1900, 2025, drawdown_min=20.0), "human"),
         # Canonical NGDC extended series — long historical span
         ("NGDC M>=7 quakes (1500+)", load_yearly_noaa_quakes(args.noaa_quakes_csv, 1500, 2005, mag_min=7.0), "geo"),
         ("NGDC ≥100-death volcanoes (1500+)", load_yearly_noaa_volcanic_events(args.noaa_volcanoes_csv, 1500, 2025, deaths_min=100), "geo"),
