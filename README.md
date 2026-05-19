@@ -1,209 +1,280 @@
-# Space Weather × Earthquakes
+# Correlations
 
-Does space weather correlate with earthquakes? A statistical test using the long-running operational catalogs from the [spaceweather](https://github.com/Biblejustin/spaceweather) and [earthquakes](https://github.com/Biblejustin/earthquakes) repos.
+Do earthquakes, solar flares, wars, famines, and notable Israeli dates correlate with each other? A statistical test using long-running operational catalogs and authoritative published timelines.
+
+This repo expands the original `sw-eq-correlation` work into a multi-topic correlation analysis, all using the same detection-bias-clean methodology applied across each topic's catalog completeness eras.
 
 ## Bottom line
 
-**No measurable coupling at any tested timescale or lag.**
+**Across ~125 statistical tests covering 6 topic pairs, no correlation survives Bonferroni correction.** All Pearson r values on regime-detrended yearly series fall in [-0.16, +0.32]. The strongest raw results (famines × X1+ flares r=+0.31 p=0.027 detrended; famines lag-1y vs quakes p=0.005) do not survive correction for the test grid size. Daily-window tests on Israel events × {global M≥7, Levant M≥4, X1+ flares} sit at 0.6×–1.4× of chance, none significant.
 
-- Yearly counts (1965–2025): r = −0.16 (p = 0.21) for M ≥ 7 quakes vs G3+ storm days. Wrong sign for the popular hypothesis, not significant.
-- Detrended yearly: |r| < 0.14 across all pairs, all p > 0.3.
-- Lag correlations −3y to +3y on detrended series: nothing.
-- Daily-level: M ≥ 7 events fall inside ±0 to ±30 day windows around G3+ storms at 0.84×–1.04× of the chance expectation, none significant.
-- Sun-side test with explicit Sun → Earth propagation lags (light, +1d, +2..+5d CME transit, +1..+14d): all in 0.72×–1.03× of chance, none significant.
-- **11-year cycle: phase fold, high/low-half, and ascending/descending tests all flat. Periodogram of M ≥ 7 has no 11y peak, while G3+ days and sunspot number both do. Coherence with sunspot at 9–13y is well below the null bound.**
+| Topic pair | Headline result | Raw p | Survives Bonferroni? |
+|---|---|---|---|
+| Space weather × M≥7 quakes | r = −0.16 | 0.21 | n/a (null) |
+| 11-year solar cycle × M≥7 | χ² = 10.75 (phase fold) | 0.29 | n/a |
+| Wars × M≥7 quakes | r = −0.08 detrended | 0.38 | no |
+| Wars × X1+ flares | r = +0.27 detrended | 0.058 | no |
+| Famines × M≥7 quakes | r = −0.03 detrended | 0.74 | no |
+| Famines × X1+ flares | r = +0.31 detrended | 0.027 | no |
+| Israel events × global M≥7 | best window ratio 1.02× | ≥ 0.30 | no |
+| Israel events × Levant M≥4 | best window ratio 1.16× | ≥ 0.30 | no |
+| Israel events × X1+ flares | best window ratio 1.36× | ≥ 0.47 | no |
+| X1+ flares × M≥7 quakes | ±0 day ratio 1.51× | 0.15 | no |
 
-If solar activity triggered earthquakes at a level large enough to matter at the global scale, the closely-spaced lag windows would be the place to find it. They're flat. The 11-year cycle is loud and clear in the space-weather indices and silent in seismicity.
+The Matthew 24 framing — wars, famines, and earthquakes co-varying — gets no statistical support from any combination of catalogs tested here. Each series has its own dynamics. They do not share variance once shared detection trends are removed.
 
-## What this tests
+## Methodology
 
-Both source repos pick a **detection-bias-clean band** — a magnitude/intensity threshold above which their catalogs have been globally complete for the entire span, so trends reflect the physical signal and not the network. This repo joins them on those bands:
+Three principles drive everything below:
 
-| Catalog | Detection-clean band | Why it's clean |
-|---|---|---|
-| [USGS earthquakes](https://github.com/Biblejustin/earthquakes) | M ≥ 7 | Energy radiated by M7+ events is detected by every station on Earth; ~100% global completeness back to ~1900. |
-| [GFZ Kp index](https://github.com/Biblejustin/spaceweather) | Peak Kp ≥ 7 (G3+ storms) | A G3+ storm disturbs every mid-latitude magnetometer; Kp network methodology has been stable since 1932. |
+### 1. Detection-bias-clean bands per catalog
 
-Comparison window is 1965–2025 (the earthquake catalog start).
+Each catalog has well-known completeness breakpoints. We use the cleanest available band for each:
 
-## Results
+| Catalog | Detection-clean band | Span | Why it's clean |
+|---|---|---|---|
+| USGS earthquakes | M ≥ 7 | 1900–present | Energy radiated by M7+ events is detected by every station on Earth; ~100% global completeness back to ~1900. |
+| GFZ Kp index | Peak Kp ≥ 7 (G3+ storms) | 1932–present | A G3+ storm disturbs every mid-latitude magnetometer; Kp network methodology stable since 1932. |
+| GOES X-ray flares | X1+ class | 1976–present | GOES X-ray sensors are continuously calibrated; X1+ flares unambiguously detected. |
+| COW interstate wars | wars ≥ 1000 battle deaths | 1816–2007 | Project's own inclusion threshold; well-curated by political scientists. |
+| UCDP/PRIO | armed conflicts ≥ 25 battle deaths | 1946–present | Best-curated modern conflict database. |
+| WPF famines | famine deaths ≥ 100,000 | 1870–present | World Peace Foundation curated list. |
+| Pre-modern catalogs (Brecke wars, historical famines, Ambraseys Levant quakes) | — | varies | Heavy completeness gaps; used for context, not statistical fitting beyond piecewise regimes. |
 
-### 1. Yearly counts (n = 61 years)
+### 2. Per-regime piecewise trend lines
 
-![Yearly overlay](figures/01_yearly_overlay.png)
+Each catalog gets piecewise-linear trend lines fit across its detection regimes:
 
-| Pair | Pearson r | p | Spearman ρ | p |
-|---|---|---|---|---|
-| **M ≥ 7 vs G3+ storm days** | **−0.164** | **0.207** | −0.196 | 0.130 |
-| M ≥ 7 vs mean Ap | −0.223 | 0.084 | −0.188 | 0.146 |
-| M ≥ 7 vs mean sunspot number | −0.158 | 0.223 | −0.091 | 0.485 |
-| M ≥ 7 vs mean F10.7 | −0.146 | 0.262 | −0.094 | 0.473 |
-| M ≥ 6 vs G3+ storm days | −0.294 | 0.022 | −0.270 | 0.036 |
-| M ≥ 8 vs G3+ storm days | −0.303 | 0.018 | −0.248 | 0.054 |
-
-The M ≥ 7 row is the headline because both bands are detection-clean. The M ≥ 6 result *is* statistically significant — but the sign is opposite to the trigger hypothesis ("more storms → more quakes"), and M ≥ 6 is not detection-complete pre-2000, so the negative correlation almost certainly reflects shared trends (declining solar activity since the Modern Maximum + rising M ≥ 6 detection from network upgrades) rather than physics. Detrending confirms this:
-
-### 2. Detrended
-
-| Pair | Pearson r | p |
-|---|---|---|
-| M ≥ 7 vs G3+ days (detrended) | −0.088 | 0.501 |
-| M ≥ 7 vs sunspot number (detrended) | −0.105 | 0.421 |
-| M ≥ 7 vs Ap (detrended) | −0.132 | 0.309 |
-
-Once linear time trends are removed from both series, every correlation collapses to |r| < 0.14, all p > 0.3. The marginal raw-yearly results were spurious shared-trend artifacts.
-
-### 3. Lag correlations on detrended series
-
-| Lag (years) | r | p |
-|---|---|---|
-| −3 (SW lags EQ) | −0.156 | 0.244 |
-| −2 | −0.124 | 0.349 |
-| −1 | +0.004 | 0.975 |
-| 0 | −0.088 | 0.501 |
-| +1 (SW leads EQ) | −0.087 | 0.510 |
-| +2 | −0.054 | 0.684 |
-| +3 | −0.078 | 0.559 |
-
-No lag preference in either direction.
-
-### 4. Daily-level: storm-window test
-
-For each G3+ storm day in 1965–2025 (n = 406), count how many of the 841 M ≥ 7 events fall inside ±N days of it, vs the random-chance expectation.
-
-![Window ratios](figures/02_window_ratios.png)
-
-| Window | M ≥ 7 in window | Expected (chance) | Ratio | One-sided binomial p |
-|---|---|---|---|---|
-| same day | 14 | 15.3 | 0.91× | 0.67 |
-| ±1 day | 32 | 38.2 | 0.84× | 0.87 |
-| ±3 days | 79 | 80.3 | 0.98× | 0.58 |
-| ±7 days | 159 | 153.9 | 1.03× | 0.34 |
-| ±14 days | 269 | 258.8 | 1.04× | 0.23 |
-| ±30 days | 417 | 419.1 | 0.99× | 0.57 |
-
-The "after only" variant (storm to +N days, not centered) sits at 0.85×–1.02× across the same widths. Neither version is significant at any width.
-
-## Sun → Earth propagation delay
-
-Kp is measured on Earth — by the time it spikes, the CME has already arrived, so propagation is built in. But to confirm there's nothing in a Sun-side test with explicit lags, this repo also runs `lag_test.py`, which treats high-sunspot and high-F10.7 days as upstream events and looks for elevated M ≥ 7 occurrence at lag windows chosen to match each propagation regime:
-
-| Lag window | Physical regime |
+| Catalog | Regime breakpoints |
 |---|---|
-| +0 d | EM (light, X-ray, UV) — arrives in 8 minutes |
-| +1 d | 1-day-fast CME or integrated SEP |
-| +2..+5 d | typical CME transit (1–4 days, slow ones up to 5) |
-| +1..+5 d | full CME-arrival window |
-| +1..+14 d | extended for delayed effects post-impact |
+| Quakes M≥7 | 1900 (USGS catalog start) |
+| Quakes M≥4 | 1965 (WWSSN), 2000 (ANSS) |
+| Wars (global) | 1816 (COW), 1946 (UCDP), 1989 (post-Cold-War) |
+| Famines | 1870 (WPF), 1945 (post-WWII), 1985 (FEWS NET era) |
+| Flares | 1975 (GOES X-ray) |
 
-| Index → lag window | Ratio | p |
-|---|---|---|
-| High SSN day → same-day | 0.84× | 0.77 |
-| High SSN day → +1 d | 0.78× | 0.85 |
-| **High SSN day → +2..+5 d (CME transit)** | **0.72×** | 0.95 |
-| High SSN day → +1..+14 d | 0.78× | 0.97 |
-| High F10.7 day → same-day | 0.72× | 0.90 |
-| High F10.7 day → +2..+5 d (CME transit) | 1.03× | 0.46 |
-| High F10.7 day → +1..+14 d | 0.95× | 0.66 |
-| G3+ at Earth → +0 d (impact) | 0.91× | 0.67 |
-| G3+ at Earth → +1..+5 d | 0.94× | 0.72 |
+Correlations are reported both raw (against trend-confounded baseline) **and** after subtracting the regime-piecewise fit from each series. Where the two disagree, the detrended residual is the trustworthy answer.
 
-Top-1.82% thresholds (matching the G3+ base rate exactly): SSN ≥ 279, F10.7 ≥ 246. Sample sizes: 409 high-SSN days, 406 high-F10.7 days, 406 G3+ days.
+### 3. Bonferroni correction across the test grid
 
-Every plausible propagation regime is covered, and the answer is the same as before: ratios in 0.72×–1.03× of chance, none significant. The high-SSN windows actually trend slightly *below* chance, which is the wrong direction for the trigger hypothesis.
+With ~125 statistical tests across the topic pairs, ~6 raw p < 0.05 are expected by chance alone. Each topic section reports raw p; the summary table at the top applies Bonferroni for the 8-headline-test grid. Anything reported as "significant" without that qualifier means *raw p < 0.05 only — not surviving correction*.
 
-## 11-year solar cycle
+## Results by topic
 
-The lag tests above can only catch coupling on timescales of days to a few years. A different question: does the 11-year cycle leave **any** imprint on global M ≥ 7 seismicity? Three independent tests in `cycle_fold.py` and `spectral.py`.
+### Wars × earthquakes and flares
 
-Cycle boundaries are detected from the 13-month tapered Wolf smoothed monthly SILSO series and match the official SILSO dates to within smoothing-window accuracy (cycles 20–24 complete inside the 1965–2025 window — five full cycles; cycle 25 is still ongoing and excluded from the fold).
+![Wars overview](figures/06_wars_overview.png)
 
-### Phase fold (757 M ≥ 7 quakes across 5 complete cycles)
+Yearly war-start counts compared to M≥7 quakes (1900+) and X1+ flares (1976+).
 
-![Cycle fold](figures/03_cycle_fold.png)
+**Wars × M≥7 quakes** (1900–2025, n=126 years):
 
-For each quake, phase 0 = preceding cycle min, ~0.5 = solar max, 1 = next min. Counts per 0.1-wide bin range from 65 to 91 against an expected 75.7. Neither test against uniform finds anything:
+| Metric | Value |
+|---|---|
+| Raw Pearson r | −0.066 |
+| Raw Spearman ρ | −0.059 |
+| Regime-detrended r | **−0.078, p = 0.383** |
+| Best lag (−10 .. +10) | +4y: r = +0.189, raw p = 0.038 (NS after Bonferroni for 21 lags) |
 
-| Test | Statistic | p |
-|---|---|---|
-| Chi-squared (10 bins vs uniform) | χ² = 10.75 | 0.293 |
-| Rayleigh (uniformity on circle) | z = 0.27, R̄ = 0.019 | 0.766 |
+**Wars × X1+ flares** (1976–2025, n=50 years):
 
-The mean phase is 0.21 — nominally toward the ascending phase but the R̄ is small enough that this is consistent with a flat distribution.
+| Metric | Value |
+|---|---|
+| Raw Pearson r | +0.186 |
+| Raw Spearman ρ | +0.223 |
+| Regime-detrended r | **+0.270, p = 0.058** |
+| Best lag (−10 .. +10) | +9y: r = +0.348, raw p = 0.026 (NS after correction) |
 
-### High vs low sunspot half
+The +0.27 detrended correlation between wars and X1+ flares is the largest "interesting" result in the entire analysis. It's marginal at raw α=0.05, doesn't survive Bonferroni for the 8-headline-test grid (corrected p ≈ 0.46), and has no plausible mechanism. Most likely chance.
 
-Split the 61 years on the median yearly mean sunspot number (80.8). M ≥ 7 rate in the high-SSN years is 13.68/yr; in the low-SSN years it's 13.90/yr. Ratio 0.984×, p = 0.836.
+### Famines × earthquakes and flares
 
-### Ascending vs descending phase
+![Famines overview](figures/07_famines_overview.png)
 
-Aggregating across all five complete cycles: 14.13 M ≥ 7/yr in the rising phase (min → max, 21.6 years total), 13.56/yr in the falling phase (max → next min, 33.3 years total). Ratio 1.04×, p = 0.58.
+Yearly famine-start counts compared to M≥7 quakes (1900+) and X1+ flares (1976+).
 
-### Periodogram — the most diagnostic test
+**Famines × M≥7 quakes** (1900–2025, n=126 years):
 
-![Periodogram](figures/04_periodogram.png)
+| Metric | Value |
+|---|---|
+| Raw Pearson r | −0.024 |
+| Regime-detrended r | **−0.030, p = 0.742** |
+| Best lag | +1y: r = +0.251, raw p = 0.005 (NS after Bonferroni for 21 lags) |
 
-Yearly periodograms of three series, each normalized to its own max:
+The famines-lead-quakes-by-1-year result at p=0.005 is the lowest raw p in the lag scan, but Bonferroni-corrected = 0.105, and there's no physical mechanism. Treat as chance.
 
-- **Sunspot number** (orange triangles): a textbook peak at ~10–11 years. Sanity check ✓
-- **G3+ storm days** (blue squares): peaks in the same 9–13y band with very high power. Positive control — the cycle drives geomagnetic activity, as it should. ✓
-- **M ≥ 7 quakes** (red dots): no peak in the 9–13y band. The 9–13y band peak power equals the phase-randomized 95% null bound exactly (18.81 = 18.81), i.e. chance-level. The M ≥ 7 series is statistically indistinguishable from coloured noise at the solar-cycle frequency.
+**Famines × X1+ flares** (1976–2025, n=50 years):
 
-This is the cleanest possible negative result: the same spectral test detects the 11-year cycle loud and clear in two space-weather series and finds nothing in M ≥ 7.
+| Metric | Value |
+|---|---|
+| Raw Pearson r | +0.321 |
+| Regime-detrended r | **+0.313, p = 0.027** |
 
-### Coherence with sunspot number
+Marginal raw, doesn't survive Bonferroni. Pattern is consistent with wars × flares — both modern timelines have rising counts (better recording for wars/famines, real solar cycle for flares), and the residual correlation after detrending is weak.
 
-![Coherence](figures/05_coherence.png)
+### Israel × {global M≥7, Levant M≥4, X1+ flares}
 
-Magnitude-squared coherence between yearly M ≥ 7 counts and yearly mean sunspot number, with a phase-randomized 95% null bound. In the 9–13y band the observed coherence is 0.073 against a null bound of 0.43 — flat. The series do not share variance at the solar-cycle frequency.
+25 hand-curated Israeli notable dates (modern: 1948 founding, all wars, all major peace treaties; pre-1948: state-history milestones with year precision). The statistical test uses the 19 date-precise modern events in the 1965–2025 quake window and the 15 in the 1976–2025 flare window.
+
+**Global M≥7 quakes within ±N days of an Israeli event:**
+
+| Window | Observed | Expected | Ratio | Two-sided binom p |
+|---|---|---|---|---|
+| ±7 d | 8 | 7.83 | 1.02× | 1.00 |
+| ±14 d | 12 | 12.00 | 1.00× | 1.00 |
+| ±30 d | 15 | 16.52 | 0.91× | 0.30 |
+| ±60 d | 19 | 18.60 | 1.02× | 1.00 |
+| ±90 d | 19 | 18.98 | 1.00× | 1.00 |
+| ±180 d | 19 | 19.00 | 1.00× | 1.00 |
+
+**Levant M≥4 quakes (within ~500 km of Jerusalem) within ±N days of an Israeli event:**
+
+| Window | Observed | Expected | Ratio | Two-sided binom p |
+|---|---|---|---|---|
+| ±7 d | 4 | 4.01 | 1.00× | 1.00 |
+| ±14 d | 4 | 6.55 | 0.61× | 0.33 |
+| ±30 d | 12 | 10.37 | 1.16× | 0.50 |
+| ±60 d | 15 | 13.68 | 1.10× | 0.62 |
+| ±90 d | 15 | 15.10 | 0.99× | 1.00 |
+| ±180 d | 15 | 16.47 | 0.91× | 0.31 |
+
+**X1+ flares within ±N days of an Israeli event:**
+
+| Window | Observed | Expected | Ratio | Two-sided binom p |
+|---|---|---|---|---|
+| ±7 d | 1 | 1.26 | 0.79× | 1.00 |
+| ±14 d | 3 | 2.20 | 1.36× | 0.47 |
+| ±30 d | 4 | 3.74 | 1.07× | 0.77 |
+| ±60 d | 6 | 5.82 | 1.03× | 1.00 |
+| ±90 d | 7 | 7.19 | 0.97× | 1.00 |
+| ±180 d | 9 | 9.54 | 0.94× | 0.79 |
+
+Across 18 window tests, the smallest p is 0.30 — flat. No tendency for global M≥7 quakes, Levant M≥4 quakes, or X1+ flares to cluster around Israeli wars, treaties, or founding dates.
+
+### Solar flares × M≥7 earthquakes
+
+Same daily-window logic as the existing storm-day test in `analyze.py`, but using X1+ flare peak times (n=156 in 1976–2025) against M≥7 quakes (n=696 same window).
+
+Unlike Kp (which is measured at Earth and already includes propagation), flares are emitted at the Sun — light/X-rays arrive in 8 minutes — so day-of windows are physically meaningful here in a way they weren't for Kp.
+
+| Window centered on flare | M≥7 observed | Expected | Ratio | One-sided binom p |
+|---|---|---|---|---|
+| ±0 d | 9 | 5.95 | **1.51×** | 0.146 |
+| ±1 d | 15 | 15.66 | 0.96× | 0.602 |
+| ±3 d | 31 | 31.17 | 0.99× | 0.538 |
+| ±7 d | 62 | 58.65 | 1.06× | 0.343 |
+| ±14 d | 115 | 102.17 | 1.13× | 0.095 |
+| ±30 d | 191 | 173.44 | 1.10× | 0.069 |
+
+| Days after flare (0..+N) | M≥7 observed | Expected | Ratio | One-sided binom p |
+|---|---|---|---|---|
+| +0 d | 9 | 5.95 | 1.51× | 0.146 |
+| +1 d | 13 | 11.05 | 1.18× | 0.316 |
+| +3 d | 22 | 19.78 | 1.11× | 0.336 |
+| +7 d | 38 | 34.72 | 1.10× | 0.307 |
+| +14 d | 73 | 58.65 | **1.25×** | 0.032 |
+| +30 d | 122 | 107.81 | 1.13× | 0.077 |
+
+The +14d-after window shows ratio 1.25× at raw p=0.032 — interesting at face value, but with 12 windows tested here plus the 8-headline-test grid, Bonferroni p ≈ 0.38. The same-day window's 1.51× ratio (only 9 events vs 6 expected) is suggestive but n is small.
+
+This is the closest the data comes to a real signal: same-day and +14d windows both tilt above chance, but neither survives correction. Worth flagging for future revisits as Cycle 25 plays out and the X1+ event count grows.
+
+### Space weather × earthquakes (recap)
+
+| Test | Result |
+|---|---|
+| Yearly r, M≥7 vs G3+ storm days, 1965–2025 | r = −0.16, p = 0.21 |
+| Detrended yearly r (all space weather indices) | abs(r) < 0.14, all p > 0.3 |
+| Lag −3y to +3y on detrended | nothing |
+| Daily ±0 to ±30 day storm-window test | 0.84×–1.04× of chance, none significant |
+| Sun-side propagation-aware lag test | 0.72×–1.03× of chance, none significant |
+| 11-year cycle phase fold (757 M≥7 events) | χ² p=0.29, Rayleigh p=0.77 |
+| Periodogram of M≥7 at 9–13y band | flat (chance-level; null bound matched) |
+| Coherence M≥7 vs sunspot at 9–13y | 0.07 vs null bound 0.43 |
+
+Same conclusion at every timescale: no measurable coupling between space weather and global seismicity.
+
+## Bonferroni summary
+
+The 8 "headline" tests in the full grid (one per topic pair / direction):
+
+| # | Test | Raw p | Bonferroni p (× 8) |
+|---|---|---|---|
+| 1 | Space weather × M≥7 quakes (yearly r) | 0.21 | 1.00 |
+| 2 | 11-year cycle × M≥7 phase fold | 0.29 | 1.00 |
+| 3 | Wars × M≥7 quakes (detrended r) | 0.38 | 1.00 |
+| 4 | Wars × X1+ flares (detrended r) | 0.058 | 0.46 |
+| 5 | Famines × M≥7 quakes (detrended r) | 0.74 | 1.00 |
+| 6 | Famines × X1+ flares (detrended r) | 0.027 | 0.22 |
+| 7 | Israel events × {M≥7, Levant, flares} best window | ≥ 0.30 | 1.00 |
+| 8 | X1+ flares × M≥7 quakes (±0d window) | 0.146 | 1.00 |
+
+Nothing survives.
 
 ## Caveats
 
-What this analysis does **not** test, and where claims of weak correlation in the literature still live:
+What this analysis does **not** test:
 
-- **Smaller magnitude bands** (M2–M3 microseismicity in specific tectonic regions). The published claims of solar-seismic coupling (e.g. Marchitelli et al. 2020) work on much smaller bands in the Italian and Chilean catalogs, not global M ≥ 7. Those bands are detection-floor sensitive and a different question.
-- **Specific storm sub-classes** — e.g. high-speed solar wind streams from coronal holes vs CMEs. This analysis treats all G3+ days as one event class.
-- **Very long lags** (> 3 years). Possible in principle; not supported by anything in the lag scan up to 3y.
-- **Regional / depth-stratified slicing.** A hidden coupling that only acts on certain plate boundaries or crustal depths could be averaged out at global scale.
+- **Sub-yearly war/famine onsets**. We're testing year-level series, not week-level. Some hypotheses (e.g. solar flares triggering political instability within weeks) need event-day-resolution conflict data, which doesn't exist in well-curated form for the historical span.
+- **Specific sub-types**. We treat all wars the same way (intra- or interstate, large or small); same for famines. A hidden coupling restricted to e.g. famines-with-displacement might be averaged out.
+- **Regional disaggregation**. Global quake counts may mask regional patterns. The Israel section partially addresses this for the Levant.
+- **Extreme tail events**. Single very large events (Carrington 1859, 1755 Lisbon, WWII, 1958 Great Chinese Famine) dominate yearly counts. Bootstrap or jackknife sensitivity analysis would add robustness; not currently included.
+- **Causal direction or mechanism**. Even where a correlation exists, the analysis doesn't speak to whether one causes the other vs both being driven by a third factor.
 
-Within the global-scale, lag-aware test the data supports, the answer is null.
+The Matthew 24 framing — "wars and rumors of wars, famines, pestilences, and earthquakes in divers places" as an end-times sign — would predict synchronized rises in all three. The detrended residuals show no such synchronization; the apparent rises over the 20th C are dominated by improved record-keeping rather than a real shared signal.
 
 ## Setup and reproduction
 
-This repo expects the source databases built by the two parent repos. Clone all three side by side:
-
 ```bash
+# Clone all three source repos side by side, plus this one
 git clone https://github.com/Biblejustin/spaceweather.git
 git clone https://github.com/Biblejustin/earthquakes.git
-git clone https://github.com/Biblejustin/sw-eq-correlation.git
-```
+git clone https://github.com/Biblejustin/sw-eq-correlation.git correlations
 
-Build the source databases (the earthquake fetch takes ~10–15 minutes; space weather is ~30 seconds):
-
-```bash
+# Build source databases
 cd spaceweather && pip install -r requirements.txt && python fetch_spaceweather.py && cd ..
-cd earthquakes  && pip install -r requirements.txt && python fetch_quakes.py        && cd ..
-```
+cd earthquakes  && pip install -r requirements.txt && \
+    python fetch_quakes.py && \
+    python fetch_quakes.py --start-year 1900 --min-mag 6.0 --db quakes_1900.sqlite && cd ..
 
-Then run the analyses:
-
-```bash
-cd sw-eq-correlation
+# Run all analyses
+cd correlations
 pip install -r requirements.txt
-python analyze.py            # yearly + detrended + lag + daily-window tests
-python lag_test.py           # Sun-side propagation-aware lag test
-python cycle_fold.py         # 11y cycle phase fold + half/phase splits
-python spectral.py           # periodogram + coherence with surrogate nulls
-python make_figures.py       # regenerates figures/01 and figures/02
+python analyze.py             # space weather × M>=7 (existing)
+python lag_test.py            # propagation-aware lag (existing)
+python cycle_fold.py          # 11y cycle (existing)
+python spectral.py            # periodogram + coherence (existing)
+python wars.py                # wars × {M>=7, X1+ flares}
+python famines.py             # famines × {M>=7, X1+ flares}
+python israel.py              # Israel events × {global M>=7, Levant M>=4, X1+ flares}
+python flares_quakes.py       # X1+ flares × M>=7 quakes daily-window
+python make_figures.py        # regenerates figures/01 and /02
 ```
 
-All scripts default to `../spaceweather/spaceweather.sqlite` and `../earthquakes/quakes.sqlite`. Override with `--sw-db PATH --eq-db PATH` if you cloned somewhere else.
+All scripts default to a sibling-directory layout and take `--sw-db` / `--eq-db-1900` / `--eq-db-modern` / `--flares-csv` / `--wars-csv` etc. overrides.
+
+## Data files
+
+| File | Source | Notes |
+|---|---|---|
+| `data/wars.csv` | Compiled from Brecke (pre-1816), COW (1816–2007), UCDP/PRIO (1946–) | ~180 wars, sources cited per-row |
+| `data/famines.csv` | Compiled from WPF list (1870–) + Ó Gráda historical (pre-1870) | ~60 events |
+| `data/flares_xclass.csv` | NOAA SWPC GOES X-ray catalog | ~165 X1+ flares 1976–2026 |
+| `data/israel_dates.json` | Hand-curated state-history dates | 25 modern + 19 ancient context |
+| `data/levant_historical.csv` | Ambraseys, Guidoboni, Marco et al. historical Levant seismicity | 31 major Levant events from antiquity |
+
+External catalogs (SQLite databases) are built by the source repos and are not committed (see `.gitignore`).
 
 ## Data citations
 
-(Inherited from the source repos.)
-
-- SILSO World Data Center (1818–present). *International Sunspot Number Monthly Bulletin and online catalogue.* Royal Observatory of Belgium. https://www.sidc.be/SILSO/ (CC BY-NC 4.0)
-- Matzka, J., Bronkalla, O., Tornow, K., Elger, K., Stolle, C. (2021). *Geomagnetic Kp index.* GFZ Helmholtz Centre. https://doi.org/10.5880/Kp.0001 (CC BY 4.0)
-- Tapping, K. F. (2013). *The 10.7 cm solar radio flux (F10.7).* Space Weather, 11, 394–406. https://doi.org/10.1002/swe.20064
-- USGS Earthquake Hazards Program. *USGS FDSN Event Web Service.* https://earthquake.usgs.gov/fdsnws/event/1/
+- SILSO World Data Center. *International Sunspot Number.* Royal Observatory of Belgium. https://www.sidc.be/SILSO/ (CC BY-NC 4.0)
+- Matzka, J. et al. (2021). *Geomagnetic Kp index.* GFZ Helmholtz. https://doi.org/10.5880/Kp.0001 (CC BY 4.0)
+- Tapping, K. F. (2013). *The 10.7 cm solar radio flux (F10.7).* Space Weather, 11, 394–406.
+- USGS Earthquake Hazards Program. *USGS FDSN Event Web Service.*
+- NOAA SWPC. *GOES X-ray flare event lists.*
+- Brecke, P. (2012). *Notes regarding the Conflict Catalog.* Center for Conflict Resolution.
+- Singer, J. D. & Small, M. *Correlates of War Project.* http://correlatesofwar.org
+- Pettersson, T. et al. *UCDP/PRIO Armed Conflict Dataset.* https://ucdp.uu.se
+- de Waal, A. et al. *World Peace Foundation Famines List.* https://sites.tufts.edu/wpf/
+- Ambraseys, N. N. (2009). *Earthquakes in the Mediterranean and Middle East.*
+- Guidoboni, E. & Comastri, A. (2005). *Catalogue of Earthquakes and Tsunamis in the Mediterranean Area.*
