@@ -536,6 +536,30 @@ def load_yearly_heat_wave_events(heat_csv: str, year_lo=1880, year_hi=2025,
     return s
 
 
+def load_yearly_terrorism_events(terror_csv: str, year_lo=1970, year_hi=2025) -> pd.Series:
+    """Yearly terrorist attack counts (OWID/GTD)."""
+    df = pd.read_csv(terror_csv)
+    df["year"] = pd.to_numeric(df["year"], errors="coerce")
+    df["events"] = pd.to_numeric(df["events"], errors="coerce").fillna(0)
+    s = df.set_index("year")["events"].reindex(range(year_lo, year_hi + 1), fill_value=0).astype(float)
+    s.name = "terrorism_events"
+    return s
+
+
+def load_yearly_terrorism_deaths(terror_csv: str, year_lo=1970, year_hi=2025,
+                                   log10_transform: bool = False) -> pd.Series:
+    """Yearly terrorism deaths (OWID/GTD)."""
+    df = pd.read_csv(terror_csv)
+    df["year"] = pd.to_numeric(df["year"], errors="coerce")
+    df["deaths"] = pd.to_numeric(df["deaths"], errors="coerce").fillna(0)
+    s = df.set_index("year")["deaths"].reindex(range(year_lo, year_hi + 1), fill_value=0).astype(float)
+    s.name = "terrorism_deaths"
+    if log10_transform:
+        s = np.log10(s + 1.0)
+        s.name = "log10_terrorism_deaths"
+    return s
+
+
 def load_yearly_coup_deaths(coups_csv: str, year_lo=1950, year_hi=2025,
                               log10_transform: bool = False) -> pd.Series:
     """Yearly summed coup-attributed deaths."""

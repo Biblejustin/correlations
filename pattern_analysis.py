@@ -234,6 +234,17 @@ def load_indicator(name, args):
         years = df["year"].astype(int).tolist()
         yc = df.groupby(df["year"].astype(int)).size().reindex(range(1500, 2026), fill_value=0)
         return years, yc, "1500-2025"
+    if name == "Mass-casualty terrorism (>=100 deaths/year)":
+        df = pd.read_csv(args.terrorism_csv)
+        df["year"] = pd.to_numeric(df["year"], errors="coerce")
+        df["deaths"] = pd.to_numeric(df["deaths"], errors="coerce").fillna(0)
+        df = df[(df["deaths"] >= 100) & df["year"].between(1970, 2025)]
+        # "years" semantics here = list of qualifying years (one per row); yc = same series
+        years = df["year"].astype(int).tolist()
+        yc = df.set_index("year")["deaths"].reindex(range(1970, 2026), fill_value=0)
+        # For acceleration / clustering we want event-style: each qualifying year is one "event"
+        yc = (yc > 0).astype(int)
+        return years, yc, "1970-2025"
     raise ValueError(name)
 
 
@@ -253,6 +264,7 @@ def main():
     ap.add_argument("--coups-csv", default="data/coups.csv")
     ap.add_argument("--noaa-quakes-csv", default="data/noaa_significant_earthquakes.csv")
     ap.add_argument("--noaa-volcanoes-csv", default="data/noaa_volcanic_events.csv")
+    ap.add_argument("--terrorism-csv", default="data/terrorism.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
@@ -269,6 +281,7 @@ def main():
         "Successful coups",
         "NGDC M>=7 (1500+, canonical long-span)",
         "NGDC ≥100-death volcanoes (1500+)",
+        "Mass-casualty terrorism (>=100 deaths/year)",
     ]
 
     results = []

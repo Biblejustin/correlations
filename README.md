@@ -17,6 +17,14 @@ This repo is the **central analysis hub** for a 10-repo project testing whether 
 | [`astronomical-signs`](https://github.com/Biblejustin/astronomical-signs) | private | Eclipses, comets, supernovae | Selection-bias dominated; no terrestrial correlation |
 | `correlations` (this repo) | public | Cross-topic analyses | **Wars × famines r = +0.43 (FDR-significant)** |
 
+## Dashboard — one image, six headlines
+
+If you only have a minute, this is the project:
+
+![Headline dashboard](figures/32_dashboard.png)
+
+Six panels in one image: (1) the cross-correlation matrix with the lone wars↔famines red square; (2) per-indicator trends with cyclones/pandemics/quakes rising and wars/volcanoes flat; (3) contractions through time with 2019–25 standing out as the longest and most intense; (4) the periodogram showing only solar indicators and droughts carrying an 11-year peak; (5) the wars↔famines coupling's time-varying strength (pre-WWII strong, Cold War decoupled, post-1990 recovery); (6) the Greek-typology split with intrastate (*ethnos*) rising and interstate (*basileia*) flat. Built by `dashboard.py` from the existing figures, so it stays in sync with re-runs.
+
 See [METHODOLOGY.md](METHODOLOGY.md) for shared analytical concepts (detection-bias bands, regime detrending, bootstrap CIs, periodogram nulls, FDR vs Bonferroni, wavelet coherence, tail-event sensitivity, dispersion index).
 
 See [PREDICTIONS.md](PREDICTIONS.md) for **pre-registered predictions** to revisit at 2030 / 2035 / 2040.
@@ -25,7 +33,7 @@ See [BACKLOG.md](BACKLOG.md) for tracked future-work items.
 
 ## TL;DR across all 10 repos
 
-1. **Cross-correlation matrix (figure 18)**: of 28 pairwise detrended tests, only **wars × famines** survives FDR correction at r = +0.43 (p < 0.001). Every other indicator pair is statistically independent.
+1. **Cross-correlation matrix (figure 18)**: of 36 pairwise detrended tests across 9 indicators (now including terrorism via OWID/GTD), only **wars × famines** survives FDR correction at r = +0.43 (p < 0.001). Every other indicator pair is statistically independent — terrorism in particular has no FDR-significant coupling with any other indicator.
 2. **Trends (figure 19)**: cyclone deaths, pandemic deaths, M ≥ 7 quakes are significantly rising; floods + famines lean down (not significant); wars + volcanoes are flat. The diagnostic test is whether tighter detection-clean eras show *bigger* trends (real signal) or *smaller* trends (catalog artifact). Cyclones and pandemics pass that test; floods and volcanoes fail it.
 3. **Birth-pains pattern (figure 20)**: no indicator shows all three signatures (acceleration + shrinking gaps + clustering) together.
 4. **Signs overlay (figure 21)**: with 13 indicators, max single-year fraction simultaneously above 1 σ reaches 6 of 13 (1991, 2023). Maximum consensus z = +1.23 (1991).
@@ -45,7 +53,7 @@ The data tells a mixed story: some indicators rising, others flat or declining, 
 
 This is the classic mechanism — wars cause famines (WWII-era Bengal, Greek, Vietnamese, and Dutch Hunger Winter; Russian Civil War; Lebanon; etc.). It's a real, expected, mechanistically grounded coupling, and the methodology correctly identifies it.
 
-**Every other pairwise correlation across the 28-cell symmetric matrix is null.** This includes everything we hoped/feared to find: solar flares don't cause earthquakes, war years don't have more quakes, volcano years don't cluster with anything, eclipse dates are independent of seismicity, the 11-year solar cycle doesn't modulate M≥7 quakes, and so on. The framework validates itself by finding the one real coupling and rejecting the noise.
+**Every other pairwise correlation across the 36-cell symmetric matrix is null.** This includes everything we hoped/feared to find: solar flares don't cause earthquakes, war years don't have more quakes, volcano years don't cluster with anything, eclipse dates are independent of seismicity, the 11-year solar cycle doesn't modulate M≥7 quakes, and terrorism is independent of every other catalog despite tracking the same era as wars/coups/economic crises. The framework validates itself by finding the one real coupling and rejecting the noise.
 
 ![Cross-correlation matrix](figures/18_cross_correlation_matrix.png)
 
@@ -74,7 +82,7 @@ This is the classic mechanism — wars cause famines (WWII-era Bengal, Greek, Vi
 
 Two separate questions that the data answers differently:
 
-1. **Do these categories *co-vary in time* (rise and fall together)?** Mostly no. Across 28 detrended pairwise tests, only wars↔famines covary above noise, and that's the well-attested causal coupling (war causes famine). Earthquakes, solar flares, volcanoes, eclipses, and pandemics each move on their own timetables.
+1. **Do these categories *co-vary in time* (rise and fall together)?** Mostly no. Across 36 detrended pairwise tests, only wars↔famines covary above noise, and that's the well-attested causal coupling (war causes famine). Earthquakes, solar flares, volcanoes, eclipses, pandemics, and terrorism each move on their own timetables.
 
 2. **Are these categories *each rising over time*?** Some are, some aren't — see the meta-trend section below. This is the question more directly relevant to the "birth pains" framing in Matthew 24, which describes increasing frequency/intensity rather than synchronization. The data is mixed: cyclone deaths and pandemic deaths are rising at significant rates; M≥7 quakes are barely-significantly up; famines and floods are flat-to-declining; wars are flat.
 

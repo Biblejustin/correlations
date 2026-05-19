@@ -49,6 +49,8 @@ from correlate_events import (
     load_yearly_refugee_displaced,
     load_yearly_economic_crises,
     load_yearly_coups,
+    load_yearly_terrorism_deaths,
+    load_yearly_terrorism_events,
     load_yearly_coup_deaths,
     load_yearly_heat_wave_deaths,
     load_yearly_heat_wave_events,
@@ -100,6 +102,7 @@ def main():
     ap.add_argument("--economic-csv", default="data/economic_crises.csv")
     ap.add_argument("--coups-csv", default="data/coups.csv")
     ap.add_argument("--heat-csv", default="data/heat_waves.csv")
+    ap.add_argument("--terrorism-csv", default="data/terrorism.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
@@ -199,6 +202,15 @@ def main():
             load_yearly_heat_wave_deaths(args.heat_csv, 1880, 2025), True, "human"),
         ("Heat wave deaths log10", "1980+ (modern surveillance)",
             load_yearly_heat_wave_deaths(args.heat_csv, 1980, 2025), True, "human"),
+        # Terrorism (GTD via OWID; 1993 missing — known data gap)
+        ("Terrorism events", "1970+ (GTD full)",
+            load_yearly_terrorism_events(args.terrorism_csv, 1970, 2021), False, "human"),
+        ("Terrorism events", "1998+ (post-methodology shift)",
+            load_yearly_terrorism_events(args.terrorism_csv, 1998, 2021), False, "human"),
+        ("Terrorism deaths log10", "1970+ (GTD full)",
+            load_yearly_terrorism_deaths(args.terrorism_csv, 1970, 2021), True, "human"),
+        ("Terrorism deaths log10", "1998+ (post-methodology shift)",
+            load_yearly_terrorism_deaths(args.terrorism_csv, 1998, 2021), True, "human"),
     ]
 
     results = []
@@ -247,6 +259,7 @@ def main():
         "Economic crises (all)", "Economic crises (severe+)",
         "Coups (all)", "Successful coups",
         "Heat wave deaths log10",
+        "Terrorism events", "Terrorism deaths log10",
     ]
     group_idx = {g: i for i, g in enumerate(group_order)}
     results.sort(key=lambda r: (group_idx.get(r["group"], 99), r["era"]))

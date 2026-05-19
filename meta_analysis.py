@@ -29,6 +29,7 @@ from correlate_events import (
     load_yearly_volcanoes,
     load_yearly_cyclones,
     load_yearly_cyclone_deaths,
+    load_yearly_terrorism_deaths,
 )
 from detection_regimes import REGIMES, piecewise_detrend
 
@@ -188,6 +189,13 @@ def run_cross_corr_matrix(args, out):
     xf_padded.name = "xflare_count"
     series_dict["X1+ flares"] = (xf_padded, "flares_x")
 
+    # Terrorism: GTD via OWID, 1970-2021. Pad with NaN for 1900-2025 matrix alignment.
+    terror_only = load_yearly_terrorism_deaths(args.terrorism_csv, 1970, 2021, log10_transform=True)
+    terror_padded = pd.Series(np.nan, index=range(1900, 2026))
+    terror_padded.loc[terror_only.index] = terror_only.values
+    terror_padded.name = "terrorism"
+    series_dict["Terrorism deaths log10"] = (terror_padded, "terrorism")
+
     names = list(series_dict.keys())
     n = len(names)
     R = np.full((n, n), np.nan)
@@ -311,6 +319,7 @@ def main():
     ap.add_argument("--pandemics-csv", default="data/pandemics.csv")
     ap.add_argument("--volcanoes-csv", default="data/volcanoes.csv")
     ap.add_argument("--cyclones-csv", default="data/cyclones.csv")
+    ap.add_argument("--terrorism-csv", default="data/terrorism.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)

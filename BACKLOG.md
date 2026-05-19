@@ -109,8 +109,8 @@ The wars-famines r = +0.43 is the only FDR-surviving correlation in the cross-co
 Still open candidates:
 
 - ✅ **Heat waves** — DONE 2026-05-19. `data/heat_waves.csv` with 25 events 1896-2024. Trend: **+99.5%/decade since 1980** (fastest-rising indicator in the project).
+- ✅ **Terrorism** — DONE 2026-05-19. `data/terrorism.csv` from OWID/GTD aggregator, 1970–2021 (1993 missing — known GTD data-loss gap), 211k events, 488k deaths, peak 2014 (ISIS). Threaded through `trends_meta`, `signs_overlay`, `contractions_analysis`, `periodogram_extended`, `pattern_analysis`, and `meta_analysis` (cross-correlation matrix). Trend: **+92.4%/decade for deaths in the 1998+ post-methodology-shift window** (2nd fastest after heat waves). No 11-year peak (0.62× null at 11.2y). No FDR-significant correlation with any other indicator in the cross-correlation matrix. Adding terrorism to the contractions consensus drops the marginal 1930–33 and 1990–93 contractions just below the 0.25 threshold — the four robust contractions (1918–21, 1940–44, 2009–14, 2019–22) remain.
 - **Stock market crashes** (S&P 500 drawdowns ≥ 20%, separable from full financial crises)
-- **Major terrorism events** (GTD database)
 - **Mass extinction / biodiversity loss events** (very long timescale)
 
 ## 8. Cross-category chain analyses

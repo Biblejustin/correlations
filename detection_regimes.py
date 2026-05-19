@@ -70,6 +70,10 @@ REGIMES = {
 
     # Heat waves: EM-DAT consistent post-1980; pre-1980 sparse
     "heat_waves": [1880, 1980, 2000],
+
+    # Terrorism: GTD starts 1970; pre-1998 less complete (collection methodology improved);
+    # 1993 records lost (gap); ISIS surge 2014. 1993 hole + 1998 methodology shift = piecewise.
+    "terrorism": [1970, 1998, 2010],
 }
 
 
