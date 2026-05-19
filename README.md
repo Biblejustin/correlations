@@ -423,6 +423,37 @@ Same conclusion at every timescale: no measurable coupling between space weather
 
 **In plain English:** Coherence asks: at a specific repeating-cycle length (like 11 years), do these two series rise and fall in step with each other? A coherence of 1.0 means perfect lockstep; 0 means independent. The dashed grey line shows how high coherence would be even by random chance. The red line stays below the grey line everywhere — at the 11-year mark, earthquake counts and sunspot counts don't share a rhythm at all.
 
+## Do the signs line up as one pattern?
+
+The cross-correlation matrix already showed that pairs of indicators don't move together (except wars↔famines). But "do they line up?" is a slightly different question — it asks whether the *same years* tend to be unusually bad across *many* indicators simultaneously. To test this directly, we z-score each indicator within its own detection-clean window and stack them on a common time axis.
+
+![Signs overlay](figures/21_signs_overlay.png)
+
+**Technical:** Top: heatmap. Rows = nine indicators; columns = years 1900–2025; cell color = that year's z-score within that indicator's detection-clean window (clipped at ±3 σ). Grey cells = indicator not yet measured (X1+ flares only from 1976, flood deaths 1985+, cyclone deaths 1950+). Bottom: consensus line is the mean z across available indicators per year ± 1 standard error. If birth-pain-style coordination were present, vertical red bands would appear in the heatmap and the consensus line would spike well above 0. Maximum observed consensus = +1.46 in 1991.
+
+**In plain English:** Each row is one type of event. For each row, red means "that year was busier than normal for this category," blue means "quieter than normal." Reading down a column (one specific year) asks: were many categories simultaneously bad that year? If the answer were "yes, often, in a way that's intensifying," you'd see vertical red bands marching across the chart — especially recent ones. What we actually see is mostly mottled noise. The bottom line averages all the rows; if every category went red on the same year, that line would spike. Instead it wobbles within a narrow band, rarely reaching 1.5 even at its peaks.
+
+The **top "consensus years"** that emerged:
+
+| Year | Consensus z | What was happening |
+|---|---|---|
+| 1991 | +1.46 | Cycle 22 solar peak (X1+ flares high) + Bangladesh cyclone (138k) + Yugoslav Wars + Sierra Leone + Algerian Civil War begins |
+| 1918 | +0.96 | End of WWI + Spanish Flu pandemic + Russian famine |
+| 1938 | +0.82 | Pre-WWII Munich + Italo-Ethiopian aftermath |
+| 1970 | +0.73 | Bhola cyclone (500k) + Biafran famine + Cycle 20 peak |
+| 2011 | +0.72 | Tōhoku M9.1 + Syrian Civil War starts + Libyan Civil War + Tigray-precursor |
+| 2013 | +0.66 | Typhoon Haiyan + ISIS expansion + South Sudan war begins |
+| 2023 | +0.62 | Israel–Hamas + Sudan + Türkiye–Syria quake |
+
+A few years legitimately had multiple things going wrong at once (1991, 1918, WWII years). But:
+
+- Even the worst "everything bad" year (1991) reached only +1.46 z — meaning indicators were on average ~1.5 standard deviations above their own means. That's elevated, but not extraordinary.
+- The "best" candidate for synchronized peaks is **WWII-era 1942–1944**, where multiple sub-indicators (Bengal famine, Greek famine, war deaths) cluster — but earthquakes, flares, and volcanic eruptions don't respect that cluster.
+- **At no year do more than 4 of 9 indicators simultaneously exceed 1 SD above their own means.** Synchronized birth-pains would put more like 7–9 of 9 in a coordinated spike.
+- **The consensus line shows no acceleration toward present.** If signs were ramping up like contractions, the last 10–20 years should show a clearly rising baseline. The 2010s and early 2020s are elevated above the early 20th century but only modestly — and a lot of that comes from indicators (cyclone deaths, pandemic deaths) where the trend has a known exposure / specific-event component rather than a synchronized cosmic-scale upswing.
+
+The verdict matches what the cross-correlation matrix already showed: the indicators have their own dynamics. Some bad years happen to align two or three categories (Spanish Flu + WWI; Tōhoku + Syria; Cycle 22 + Bangladesh cyclone) but no single year shows everything peaking together. They're not running on one clock.
+
 ## Birth-pains pattern test (not just trend — pattern)
 
 Linear trends only ask "is the line going up?" Labor pains have a much more specific signature. Real birth pains:
