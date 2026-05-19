@@ -78,6 +78,31 @@ def load_yearly_wars_split(wars_csv: str, war_type: str,
     return s
 
 
+def load_yearly_ucdp_conflicts(ucdp_csv: str, year_lo=1946, year_hi=2025,
+                                  conflict_types: list = None,
+                                  intensity_min: int = 1) -> pd.Series:
+    """Yearly count of UCDP/PRIO active conflict-years.
+
+    UCDP type_of_conflict codes:
+      1 = extrasystemic (colonial era)
+      2 = interstate (state vs state)         [basileia analog]
+      3 = intrastate (within a state)         [ethnos analog]
+      4 = internationalized intrastate        [ethnos analog with external intervention]
+
+    intensity_level: 1 = minor armed conflict (25-999 battle deaths)
+                     2 = war (>=1000 battle deaths)
+
+    Each row is one conflict-year, so the count is "active conflicts in year Y."
+    """
+    df = pd.read_csv(ucdp_csv)
+    df = df[df["intensity_level"] >= intensity_min]
+    if conflict_types:
+        df = df[df["type_of_conflict"].isin(conflict_types)]
+    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = "ucdp_active_conflicts"
+    return s
+
+
 def load_yearly_war_deaths_split(wars_csv: str, war_type: str,
                                     year_lo=1400, year_hi=2025,
                                     log10_transform: bool = False) -> pd.Series:

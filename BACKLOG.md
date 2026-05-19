@@ -42,13 +42,18 @@ The contraction-period analysis identified 4 multi-year clusters (1916–20, 193
 
 ## 3. Replace hand-curated CSVs with canonical published datasets where possible
 
-**Status:** Partially done (famines + floods now use authoritative WPF / Dartmouth + EM-DAT sources). Remaining:
+**Status:** ⏳ **Partial — substantial progress 2026-05-19.** Authoritative sources now in use:
+- ✅ Famines: WPF/OWID via `famines-tracking` repo
+- ✅ Floods: Dartmouth + EM-DAT via `flood-data` repo
+- ✅ **Wars: UCDP/PRIO Armed Conflict Dataset v24.1 (2,686 conflict-years 1946-2023)** added as `data/ucdp_prio_conflicts.csv`. See `ucdp_compare.py` and figure 30. The canonical source dramatically strengthens the *ethnos epi ethnos* result: intrastate conflicts +4.66/decade [CI +1.85, +7.67] vs hand-curated +0.038/decade (CI nearly crossing 0). Both agree on direction; UCDP shows the rise is far more statistically significant.
 
-- **Wars**: currently hand-curated from Brecke + COW + UCDP/PRIO knowledge. The full Brecke Conflict Catalog (~3,700 events) would meaningfully increase statistical power. The CSV is publicly available but was not accessible from this sandbox.
-- **Volcanoes**: hand-curated from Smithsonian GVP. The full GVP dataset has ~10,000 eruptions with VEI ≥ 0 — more than we need but the canonical source.
-- **Pandemics**: hand-curated. The Our World in Data pandemic mortality dataset is the closest canonical source.
+Remaining and blocked:
+- **Brecke Conflict Catalog (1400-2000)**: would extend the historical span; site access from this sandbox returns 403/404. Open.
+- **Smithsonian GVP eruption catalog**: server returned HTTP 403. Open.
+- **OWID pandemic mortality CSV**: direct grapher URL returns 404. Open.
+- **NOAA NGDC catalogs**: timed out repeatedly. Open.
 
-**Why it matters:** replaces "my judgment of which events are major" with "a published research consensus."
+The hand-curated catalogs remain in place for these; UCDP integration is the single biggest replacement completed.
 
 ---
 
