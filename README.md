@@ -1,12 +1,30 @@
 # Correlations
 
-Do earthquakes, solar flares, wars, famines, and notable Israeli dates correlate with each other? A statistical test using long-running operational catalogs and authoritative published timelines.
+Do earthquakes, solar flares, wars, famines, floods, pandemics, volcanoes, tropical cyclones, astronomical events, and notable Israeli dates correlate with each other? A statistical test using long-running operational catalogs and authoritative published timelines.
 
-This repo expands the original `sw-eq-correlation` work into a multi-topic correlation analysis, all using the same detection-bias-clean methodology applied across each topic's catalog completeness eras.
+Sister-repo data sources (some public, some private):
+- [`earthquakes`](https://github.com/Biblejustin/earthquakes) (public) — USGS M≥4 catalog
+- [`spaceweather`](https://github.com/Biblejustin/spaceweather) (public) — SILSO sunspot + GFZ Kp
+- [`famines-tracking`](https://github.com/Biblejustin/famines-tracking) (public) — WPF/OWID famines
+- [`flood-data`](https://github.com/Biblejustin/flood-data) (public) — Dartmouth + EM-DAT floods
+- `pandemics-tracking` (private) — major epidemics/pandemics
+- `volcanic-eruptions` (private) — Smithsonian VEI≥5
+- `tropical-cyclones` (private) — major hurricanes/typhoons
+- `astronomical-signs` (private) — eclipses, comets, supernovae
 
 ## Bottom line
 
-**Across ~125 statistical tests covering 6 topic pairs, no correlation survives Bonferroni correction.** All Pearson r values on regime-detrended yearly series fall in [-0.16, +0.32]. The strongest raw results (famines × X1+ flares r=+0.31 p=0.027 detrended; famines lag-1y vs quakes p=0.005) do not survive correction for the test grid size. Daily-window tests on Israel events × {global M≥7, Levant M≥4, X1+ flares} sit at 0.6×–1.4× of chance, none significant.
+**Across ~160 statistical tests, exactly ONE correlation survives FDR (Benjamini-Hochberg) correction:**
+
+> **War deaths × Famine deaths, regime-detrended r = +0.434, raw p < 0.001, BH p_adj < 0.001**
+
+This is the classic mechanism — wars cause famines (WWII-era Bengal, Greek, Vietnamese, and Dutch Hunger Winter; Russian Civil War; Lebanon; etc.). It's a real, expected, mechanistically grounded coupling, and the methodology correctly identifies it.
+
+**Every other pairwise correlation across the 28-cell symmetric matrix is null.** This includes everything we hoped/feared to find: solar flares don't cause earthquakes, war years don't have more quakes, volcano years don't cluster with anything, eclipse dates are independent of seismicity, the 11-year solar cycle doesn't modulate M≥7 quakes, and so on. The framework validates itself by finding the one real coupling and rejecting the noise.
+
+![Cross-correlation matrix](figures/18_cross_correlation_matrix.png)
+
+ All Pearson r values on regime-detrended yearly series fall in [-0.16, +0.32]. The strongest raw results (famines × X1+ flares r=+0.31 p=0.027 detrended; famines lag-1y vs quakes p=0.005) do not survive correction for the test grid size. Daily-window tests on Israel events × {global M≥7, Levant M≥4, X1+ flares} sit at 0.6×–1.4× of chance, none significant.
 
 | Topic pair | Headline result | Raw p | Survives Bonferroni? |
 |---|---|---|---|
@@ -27,7 +45,20 @@ This repo expands the original `sw-eq-correlation` work into a multi-topic corre
 | Israel events × X1+ flares | best window ratio 1.36× | ≥ 0.47 | no |
 | X1+ flares × M≥7 quakes | ±0 day ratio 1.51× | 0.15 | no |
 
-The Matthew 24 framing — wars, famines, and earthquakes co-varying — gets no statistical support from any combination of catalogs tested here. Each series has its own dynamics. They do not share variance once shared detection trends are removed. And the two raw "hints" (+0.27 and +0.31) collapse when we use the more honest death-weighted intensity measure instead of onset counts.
+The Matthew 24 framing — wars, famines, pestilences, and earthquakes co-varying as a sign of the times — gets no statistical support from any combination of catalogs tested here. The one real coupling that emerges (wars → famines) is exactly the historically-attested mechanism where war causes famine, not a synchronized cosmic-scale increase in disasters.
+
+## Updated headline (with new categories + methodological deepening)
+
+The added categories (pandemics, volcanoes, cyclones, astronomical signs) and the four methodological upgrades (bootstrap CIs, drop-1 leverage, full N×N cross-correlation matrix, FDR replacement of Bonferroni) all reinforce the conclusion. Specifically:
+
+- **Pandemics** (Plague of Athens → COVID-19) show no detrended correlation with quakes, flares, wars, famines, or floods (all p > 0.16).
+- **Volcanic eruptions** (VEI≥5 since 1500) show no yearly-scale correlation with M≥7 quakes despite the well-known shared subduction-zone tectonics — the real coupling is at much shorter timescales than yearly counts.
+- **Tropical cyclones** (≥1000 deaths since 1737) show no detrended correlation with anything (cyclone deaths × flares is r = +0.29 raw / +0.19 detrended, NS after correction).
+- **Astronomical events** (total eclipses, comets, supernovae) show no clustering with quakes — exactly as celestial mechanics predicts.
+- **Bootstrap CIs** on the strongest residuals confirm they're consistent with chance.
+- **Drop-1 leverage** confirms the ~0 correlations aren't hiding leverage-driven results.
+- **The cross-correlation matrix** is dominated by ~0 off-diagonal cells, with the wars × famines result the only standout.
+- **FDR (28 tests)** finds 1 significant pair; Bonferroni (28 tests) finds the same 1 pair. Methods agree on the headline result.
 
 ## Methodology
 
@@ -350,7 +381,12 @@ python wars.py                # wars × {M>=7, X1+ flares}
 python famines.py             # famines × {M>=7, X1+ flares}
 python israel.py              # Israel events × {global M>=7, Levant M>=4, X1+ flares}
 python flares_quakes.py       # X1+ flares × M>=7 quakes daily-window
-python floods.py              # floods × {M>=7, X1+, wars, famines} (needs flood-data CSV)
+python floods.py              # floods × {M>=7, X1+, wars, famines}
+python pandemics.py           # pandemics × {M>=7, X1+, wars, floods, famines}
+python volcanoes.py           # volcanoes × {M>=7, X1+} + daily-window
+python cyclones.py            # cyclones × {M>=7, X1+} + daily-window
+python astronomy.py           # eclipses, comets, supernovae × M>=7
+python meta_analysis.py       # bootstrap + drop-1 + cross-corr matrix + FDR
 python make_figures.py        # regenerates figures/01 and /02
 python make_more_figures.py   # regenerates figures/08-12
 ```
@@ -361,6 +397,10 @@ All scripts default to a sibling-directory layout and take `--sw-db` / `--eq-db-
 
 | File | Source | Notes |
 |---|---|---|
+| `data/pandemics.csv` | From [`pandemics-tracking`](https://github.com/Biblejustin/pandemics-tracking) (private) | ~36 major epidemics, Plague of Athens (430 BC) → COVID-19 |
+| `data/volcanoes.csv` | From [`volcanic-eruptions`](https://github.com/Biblejustin/volcanic-eruptions) (private) | ~32 VEI≥5 eruptions 1500–2022 |
+| `data/cyclones.csv` | From [`tropical-cyclones`](https://github.com/Biblejustin/tropical-cyclones) (private) | ~37 ≥1000-death tropical cyclones 1737–2024 |
+| `data/astronomical_signs.csv` | From [`astronomical-signs`](https://github.com/Biblejustin/astronomical-signs) (private) | ~60 eclipses + comets + supernovae + meteor storms |
 | `data/wars.csv` | Compiled from Brecke (pre-1816), COW (1816–2007), UCDP/PRIO (1946–) | ~180 wars with start/end years, sources cited per-row |
 | `data/famines.csv` | Hand-curated fallback | ~60 events with start/end years |
 | `data/famines_wpf.csv` | Authoritative WPF/OWID from [famines-tracking](https://github.com/Biblejustin/famines-tracking) | 78 modern famines ≥100k deaths |

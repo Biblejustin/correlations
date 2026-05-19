@@ -202,6 +202,118 @@ def load_yearly_flood_deaths(floods_csv: str, year_lo=1900, year_hi=2025,
     return out
 
 
+# ---------- Pandemics, volcanoes, cyclones, astronomical signs ----------
+
+def load_yearly_pandemic_deaths(pandemics_csv: str, year_lo=1500, year_hi=2025,
+                                 log10_transform: bool = False) -> pd.Series:
+    """Yearly pandemic deaths spread across [start_year, end_year]."""
+    df = pd.read_csv(pandemics_csv)
+    years = range(year_lo, year_hi + 1)
+    out = pd.Series(0.0, index=years, name="pandemic_deaths")
+    for _, row in df.iterrows():
+        try:
+            s = int(row["start_year"])
+            e = int(row["end_year"]) if pd.notna(row["end_year"]) else s
+        except (ValueError, TypeError):
+            continue
+        if e < year_lo or s > year_hi:
+            continue
+        s = max(s, year_lo); e = min(e, year_hi)
+        duration = e - s + 1
+        per_year = float(row["deaths_estimate"]) / duration
+        for y in range(s, e + 1):
+            out.loc[y] += per_year
+    if log10_transform:
+        out = np.log10(out + 1.0)
+        out.name = "log10_pandemic_deaths"
+    return out
+
+
+def load_yearly_pandemic_starts(pandemics_csv: str, year_lo=1500, year_hi=2025) -> pd.Series:
+    df = pd.read_csv(pandemics_csv)
+    df = df[df["start_year"].between(year_lo, year_hi)]
+    s = df.groupby("start_year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = "pandemic_starts"
+    return s
+
+
+def load_yearly_volcanoes(volcanoes_csv: str, year_lo=1500, year_hi=2025,
+                           vei_min: int = 5) -> pd.Series:
+    df = pd.read_csv(volcanoes_csv)
+    df = df[df["vei"].astype(str).str.extract(r"(\d+)")[0].astype(float) >= vei_min]
+    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = f"volcanoes_vei_ge_{vei_min}"
+    return s
+
+
+def load_volcano_dates(volcanoes_csv: str, vei_min: int = 5):
+    df = pd.read_csv(volcanoes_csv)
+    df = df[df["vei"].astype(str).str.extract(r"(\d+)")[0].astype(float) >= vei_min]
+    df = df[df["month"].notna()]
+    df["date"] = pd.to_datetime(
+        df["year"].astype(str) + "-" + df["month"].astype(int).astype(str) + "-15",
+        errors="coerce",
+    )
+    return df.dropna(subset=["date"])["date"].tolist()
+
+
+def load_yearly_cyclones(cyclones_csv: str, year_lo=1700, year_hi=2025,
+                          deaths_min: float = 1000) -> pd.Series:
+    df = pd.read_csv(cyclones_csv)
+    if deaths_min > 0:
+        df = df[df["deaths_estimate"] >= deaths_min]
+    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = f"cyclones_deaths_ge_{int(deaths_min)}"
+    return s
+
+
+def load_yearly_cyclone_deaths(cyclones_csv: str, year_lo=1700, year_hi=2025,
+                                log10_transform: bool = False) -> pd.Series:
+    df = pd.read_csv(cyclones_csv)
+    yearly = df.groupby("year")["deaths_estimate"].sum().reindex(
+        range(year_lo, year_hi + 1), fill_value=0
+    )
+    if log10_transform:
+        yearly = np.log10(yearly + 1.0)
+        yearly.name = "log10_cyclone_deaths"
+    else:
+        yearly.name = "cyclone_deaths"
+    return yearly
+
+
+def load_cyclone_dates(cyclones_csv: str, deaths_min: float = 1000):
+    df = pd.read_csv(cyclones_csv)
+    df = df[df["deaths_estimate"] >= deaths_min]
+    df = df[df["month"].notna()]
+    df["date"] = pd.to_datetime(
+        df["year"].astype(str) + "-" + df["month"].astype(int).astype(str) + "-15",
+        errors="coerce",
+    )
+    return df.dropna(subset=["date"])["date"].tolist()
+
+
+def load_astronomical_signs(astro_csv: str, year_lo=1500, year_hi=2025,
+                              types: list = None):
+    """Load astronomical events. Returns dataframe with date column.
+    types: filter to specific kinds (e.g. ['total_solar', 'comet']).
+    """
+    df = pd.read_csv(astro_csv)
+    df["date"] = pd.to_datetime(df["date"], errors="coerce")
+    df["year"] = df["date"].dt.year
+    df = df[df["year"].between(year_lo, year_hi)]
+    if types:
+        df = df[df["type"].isin(types)]
+    return df
+
+
+def load_yearly_astro_events(astro_csv: str, year_lo=1500, year_hi=2025,
+                              types: list = None) -> pd.Series:
+    df = load_astronomical_signs(astro_csv, year_lo, year_hi, types=types)
+    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = "astro_events"
+    return s
+
+
 def load_flood_event_dates(floods_csv: str, deaths_min: float = 1000,
                             exclude_tsunami: bool = True):
     """Date-precise flood event starts (for daily-window tests).

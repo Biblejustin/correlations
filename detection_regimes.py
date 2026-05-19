@@ -41,6 +41,20 @@ REGIMES = {
     # (satellite era) starts 1985. For >=1000-deaths events, EM-DAT is mostly
     # complete from ~1950.
     "floods": [1950, 1985],
+
+    # Pandemics: pre-1900 anecdotal; WHO-monitored 1950+
+    "pandemics": [1500, 1900, 1950],
+
+    # Volcanoes: VEI>=5 detection-clean since ~1500 globally; ~1850 for
+    # remote regions
+    "volcanoes": [1500, 1850, 1950],
+
+    # Cyclones: pre-1850 fragmentary; aircraft recon 1944+; satellite 1979+
+    "cyclones": [1850, 1944, 1979],
+
+    # Astronomical: detection independent of network upgrades (celestial mechanics)
+    # but recording bias is real in pre-modern era
+    "astro": [1500, 1900],
 }
 
 
