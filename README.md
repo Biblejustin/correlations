@@ -423,6 +423,48 @@ Same conclusion at every timescale: no measurable coupling between space weather
 
 **In plain English:** Coherence asks: at a specific repeating-cycle length (like 11 years), do these two series rise and fall in step with each other? A coherence of 1.0 means perfect lockstep; 0 means independent. The dashed grey line shows how high coherence would be even by random chance. The red line stays below the grey line everywhere — at the 11-year mark, earthquake counts and sunspot counts don't share a rhythm at all.
 
+## Does any human-system indicator share the 11-year solar cycle?
+
+The original figure 04 looked at sunspot vs G3+ storm days vs M≥7 quakes only. This extends the same spectral analysis to **all** human-system and disaster indicators — wars, famines, pandemics, floods, cyclones, plus the M≥8 quake super-clean control. If any disaster category secretly ran on an 11-year rhythm (or any other regular cycle), the periodogram would show it.
+
+![Extended periodogram heatmap](figures/23_periodogram_extended.png)
+
+**Technical:** Top: heatmap. Rows = 14 indicators; columns = period in years (log scale, 2.5–60y); color = (observed power) / (bootstrap-resample 95% null at that frequency). Cells with red color ≥ 1.0 indicate a periodogram peak above the shuffled-noise floor at that period. Bottom: bar chart of the peak power/null ratio within the 9–13y band per indicator. Red bars (≥ 1.0) are real 11y-band peaks; grey bars (< 1.0) are at-or-below the noise floor.
+
+**In plain English:** A "periodogram" decomposes a wavy signal into the different repeating-pattern lengths inside it. Each row of the heatmap is one type of event. Each column is a different cycle length, from 2.5 years (very fast wiggles) to 60 years (slow waves). Cells light up red when a particular cycle length is stronger than chance for that row. The two dashed vertical lines mark the 11-year solar cycle and the 22-year Hale magnetic cycle — the obvious candidates for a "cosmic clock" affecting Earth.
+
+The bottom bar chart is the focused version: "for each indicator, how loud is the 11-year cycle compared to noise?" Anything above 1.0 means real signal at the solar-cycle period.
+
+**Results in the 9–13 year band (the solar cycle window):**
+
+| Indicator | Peak period | Power / null | Verdict |
+|---|---|---|---|
+| Sunspot number | 10.5 y | **13.8×** | **Loud 11-year peak (sanity check ✓)** |
+| X1+ flares | 10.0 y | **1.77×** | Real solar-cycle signature |
+| G3+ storm days | 12.2 y | **1.42×** | Real solar-cycle signature (weaker — geomagnetic storms are more chaotic) |
+| War onsets | 9.0 y | 0.92× | Below noise floor |
+| Famine deaths log10 | 12.6 y | 0.94× | Below noise floor |
+| M≥7 quakes | 10.5 y | 0.88× | Below noise floor |
+| Pandemic deaths log10 | 9.0 y | 0.99× | Below noise floor |
+| M≥8 quakes | 12.6 y | 0.90× | Below noise floor |
+| Flood events ≥1000d | 9.0 y | 0.74× | Below noise floor |
+| War deaths log10 | 11.5 y | 0.69× | Below noise floor |
+| VEI≥5 eruptions | 9.7 y | 0.84× | Below noise floor |
+| Flood deaths log10 | 12.6 y | 0.69× | Below noise floor |
+| Cyclone events ≥1000d | 9.8 y | 0.23× | Far below noise floor |
+| Cyclone deaths log10 | 9.8 y | 0.17× | Far below noise floor |
+
+**The result is unambiguous: only the three solar indicators (sunspot, X1+ flares, G3+ storm days) carry the 11-year rhythm.** Wars, famines, pandemics, floods, cyclones, earthquakes, and volcanoes are *all* at-or-below the shuffled-noise floor at 11 years. None of them runs on a solar clock.
+
+Looking across the whole heatmap (all periods, not just 11y):
+
+- The **sunspot row** is overwhelmingly dominated by its 11y peak — exactly what 200 years of solar science predicts.
+- **War deaths** has one notable red cell around 22 years (the Hale magnetic cycle period, but more plausibly the WWI–WWII spacing of 21 years), and another diffuse cluster around 8–10y that may relate to Cold War conflict cycles. Neither survives at the strict significance threshold.
+- **Flood deaths** has a stray red cell near 22y as well, which could be related to ENSO multi-decadal modulation — but again under the threshold.
+- The other human-system rows are mostly blue throughout, meaning no preferred period at all. They're statistically indistinguishable from random shuffles of their own values.
+
+If you wanted any non-solar disaster category to share the 11-year cycle, this is the cleanest negative result possible. The cycle is real, it's strong in space-weather indicators, and it has zero detectable echo in terrestrial disasters at the resolution this catalog supports.
+
 ## Do the signs line up as one pattern?
 
 The cross-correlation matrix already showed that pairs of indicators don't move together (except wars↔famines). But "do they line up?" is a slightly different question — it asks whether the *same years* tend to be unusually bad across *many* indicators simultaneously. To test this directly, we z-score each indicator within its own detection-clean window and stack them on a common time axis.
