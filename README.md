@@ -45,7 +45,13 @@ This is the classic mechanism — wars cause famines (WWII-era Bengal, Greek, Vi
 | Israel events × X1+ flares | best window ratio 1.36× | ≥ 0.47 | no |
 | X1+ flares × M≥7 quakes | ±0 day ratio 1.51× | 0.15 | no |
 
-The Matthew 24 framing — wars, famines, pestilences, and earthquakes co-varying as a sign of the times — gets no statistical support from any combination of catalogs tested here. The one real coupling that emerges (wars → famines) is exactly the historically-attested mechanism where war causes famine, not a synchronized cosmic-scale increase in disasters.
+Two separate questions that the data answers differently:
+
+1. **Do these categories *co-vary in time* (rise and fall together)?** Mostly no. Across 28 detrended pairwise tests, only wars↔famines covary above noise, and that's the well-attested causal coupling (war causes famine). Earthquakes, solar flares, volcanoes, eclipses, and pandemics each move on their own timetables.
+
+2. **Are these categories *each rising over time*?** Some are, some aren't — see the meta-trend section below. This is the question more directly relevant to the "birth pains" framing in Matthew 24, which describes increasing frequency/intensity rather than synchronization. The data is mixed: cyclone deaths and pandemic deaths are rising at significant rates; M≥7 quakes are barely-significantly up; famines and floods are flat-to-declining; wars are flat.
+
+The repo doesn't take a position on what the pattern *means*. It reports what the catalogs show.
 
 ## Updated headline (with new categories + methodological deepening)
 
@@ -337,10 +343,10 @@ For each indicator, fit OLS slope on the detection-bias-clean window only, with 
 
 | Indicator | Trend (%/decade) | Notes |
 |---|---|---|
-| Cyclone deaths log10 (1950+) | **+48.7%** [+12, +86] | Real signal, but heavily confounded by **rising coastal population exposure** — not more/stronger storms, but more people in their path. Bay of Bengal megacities are the dominant driver. |
-| X1+ flares/yr (1976+) | **+43.1%** [+15, +83] | **Cyclic, not secular.** 1976–2025 spans roughly Cycle 21 → mid-Cycle 25; we're currently in a rising-to-peak phase of Cycle 25. With another full cycle of data this would average toward 0. |
-| Pandemic deaths log10 (1900+) | **+10.6%** [+3, +17] | Driven primarily by **COVID-19 and HIV/AIDS** in the modern era. Without those two, the trend would be slightly negative. |
-| M≥7 quakes (1900+) | **+1.7%** [+0.2, +3.4] | Marginally significant; reflects the clustering of large quakes in the 2000s (Sumatra 2004, Tōhoku 2011) and Chile 2010. M≥8 control is flat — likely chance. |
+| Cyclone deaths log10 (1950+) | **+48.7%** [+12, +86] | Real and large. Contributing factors include rising coastal population exposure (especially Bay of Bengal megacities) and possibly storm intensification — the catalog can't separate those. Either way, the body count attributed to cyclones has gone up substantially. |
+| X1+ flares/yr (1976+) | **+43.1%** [+15, +83] | Caveat: 1976–2025 spans Cycle 21 → mid-Cycle 25, and we're currently in a rising-to-peak phase. The slope partly reflects solar-cycle phase rather than a long-term secular trend. With another full cycle of data this would moderate. |
+| Pandemic deaths log10 (1900+) | **+10.6%** [+3, +17] | Real signal. HIV/AIDS (42M cumulative, ongoing since 1981) and COVID-19 (7M confirmed, 15–30M excess) account for most of the recent-decade increase. The 1968–1981 gap (no ≥1M-death pandemics) was followed by two of the largest pandemic events in modern history within ~50 years. |
+| M≥7 quakes (1900+) | **+1.7%** [+0.2, +3.4] | Marginally significant. Reflects the early-21st-century clustering of large quakes (Sumatra 2004, Chile 2010, Tōhoku 2011). The M≥8 super-clean control is flat, which leans toward "real but small." |
 
 ### Flat (95% CI crosses 0, sorted by direction)
 
@@ -403,7 +409,7 @@ What this analysis does **not** test:
 - **Extreme tail events**. Single very large events (Carrington 1859, 1755 Lisbon, WWII, 1958 Great Chinese Famine) dominate yearly counts. Bootstrap or jackknife sensitivity analysis would add robustness; not currently included.
 - **Causal direction or mechanism**. Even where a correlation exists, the analysis doesn't speak to whether one causes the other vs both being driven by a third factor.
 
-The Matthew 24 framing — "wars and rumors of wars, famines, pestilences, and earthquakes in divers places" as an end-times sign — would predict synchronized rises in all three. The detrended residuals show no such synchronization; the apparent rises over the 20th C are dominated by improved record-keeping rather than a real shared signal.
+The Matthew 24 passage describes wars, famines, pestilences, and earthquakes increasing as "the beginning of birth pains." The passage doesn't claim these will rise in synchronized lock-step, and it doesn't specify mechanism — natural causation isn't excluded. The repo's correlation analysis (do these events covary in time?) and the meta-trend analysis (is each category rising?) test different aspects of the framing and reach different conclusions. The correlation analysis says: only wars↔famines covary above noise. The trend analysis says: some categories (cyclone deaths, pandemic deaths, marginally M≥7 quakes) are rising; some (famines, floods) are flat-to-declining; wars and volcanic eruptions are flat. Readers can judge for themselves whether that pattern is consistent with their framing of "birth pains."
 
 ## Setup and reproduction
 
