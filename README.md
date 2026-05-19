@@ -24,6 +24,8 @@ This is the classic mechanism — wars cause famines (WWII-era Bengal, Greek, Vi
 
 ![Cross-correlation matrix](figures/18_cross_correlation_matrix.png)
 
+**In plain English:** This is a heat map of how much pairs of phenomena rise and fall together. Each row and column is one category (earthquakes, war deaths, etc.). Each cell is a number between −1 and +1: +1 means they rise and fall in perfect lockstep, 0 means no relationship, −1 means when one goes up the other goes down. Red = positive, blue = negative, white-ish = near zero. The bright red square at "War deaths × Famine deaths" (+0.43) is the only one that stands out — meaning bloody war years also tend to be bad famine years, exactly as you'd expect from history. Every other cell is washed-out, meaning the categories run on independent clocks.
+
  All Pearson r values on regime-detrended yearly series fall in [-0.16, +0.32]. The strongest raw results (famines × X1+ flares r=+0.31 p=0.027 detrended; famines lag-1y vs quakes p=0.005) do not survive correction for the test grid size. Daily-window tests on Israel events × {global M≥7, Levant M≥4, X1+ flares} sit at 0.6×–1.4× of chance, none significant.
 
 | Topic pair | Headline result | Raw p | Survives Bonferroni? |
@@ -108,6 +110,8 @@ With ~125 statistical tests across the topic pairs, ~6 raw p < 0.05 are expected
 
 ![Wars overview](figures/06_wars_overview.png)
 
+**In plain English:** Three stacked panels sharing the same time axis. Top: how many wars started in each year, going back to 1400. Middle: how many big earthquakes (magnitude 7 or higher) occurred each year since 1900. Bottom: how many strong solar flares each year since 1976. Shaded zones show when each catalog is considered complete enough to trust. If wars caused earthquakes (or vice versa, or both rose together), you'd see the patterns visibly track. They don't.
+
 Yearly war-start counts compared to M≥7 quakes (1900+) and X1+ flares (1976+).
 
 **Wars × M≥7 quakes** (1900–2025, n=126 years):
@@ -134,6 +138,8 @@ The +0.27 detrended correlation between wars and X1+ flares is the largest "inte
 
 ![Famines overview](figures/07_famines_overview.png)
 
+**In plain English:** Same idea as the wars chart but with famines on top. Each bar is one famine that started that year. Below: earthquakes year by year. Again no visible tracking between the two series.
+
 Yearly famine-start counts compared to M≥7 quakes (1900+) and X1+ flares (1976+).
 
 **Famines × M≥7 quakes** (1900–2025, n=126 years):
@@ -157,6 +163,8 @@ Marginal raw, doesn't survive Bonferroni. Pattern is consistent with wars × fla
 
 ![Wars and famines vs flares scatter](figures/10_wars_famines_scatter.png)
 
+**In plain English:** Each dot is one year, labeled with that year for the outliers. Left panel: did high-solar-flare years also have lots of wars start? Right panel: did high-solar-flare years also have lots of famines start? The dashed line is the best-fit slope. The numbers r=+0.27 and r=+0.31 measure "how tightly the dots lean together" — small positive values that look slightly upward but with huge scatter around the line. The 2024 dot is in the far right of both because that single year had a huge solar-flare swarm; remove that one year and the lean disappears.
+
 In both detrended scatter plots above, 2024 is the high-flare outlier (the May 2024 X-class swarm puts that year ~18 flares above its regime baseline) — pulling the OLS fit positive on its own. Drop the 2024 point and the Wars × flares correlation drops to near zero; the Famines × flares correlation also weakens substantially. This is exactly the kind of "leverage point dominates the result" failure mode that Bonferroni catches when interpreted as a guard against over-interpretation.
 
 ### Death-weighted variants — the marginal correlations collapse
@@ -166,6 +174,8 @@ Counting wars or famines by *onset year* treats WWII the same as the Quasi-War o
 I added `end_year` to both CSVs, then computed yearly active-deaths series. Tests are run on both **linear deaths** and **log10(deaths+1)** — the log transform compresses the 4–5 orders of magnitude range so single events like WWII don't dominate.
 
 ![Death-weighted overview](figures/11_deaths_overview.png)
+
+**In plain English:** Same data as before but instead of "did a war/famine start this year?" we're showing "how many people died from war/famine this year?" on a log scale. WWI and WWII tower over everything in the war panel; the 1958–62 Great Chinese Famine and 1876–79 Great Famine tower over the famine panel. Quakes and flares panels below show no visible alignment with the deadly years.
 
 War deaths peak hard at WWI, WWII, Taiping, Thirty Years; famine deaths at the 1958–62 Great Chinese Famine, 1876–79 Great Famine of India/China, 1932–33 Holodomor. M≥7 quakes and X1+ flares show no visible tracking of either.
 
@@ -183,6 +193,8 @@ War deaths peak hard at WWI, WWII, Taiping, Thirty Years; famine deaths at the 1
 | Famine deaths (log10) × X1+ flares | **+0.020** | 0.893 |
 
 ![Deaths vs flares scatter](figures/12_deaths_vs_flares_scatter.png)
+
+**In plain English:** Same kind of plot as figure 10 (each dot is one year), but now using actual death counts instead of event counts. The dashed line is now nearly flat — r=+0.013 and +0.020, meaning essentially zero relationship. The marginal correlation we saw in figure 10 was being driven by "more small wars get catalogued" not "more dying in wars," and switching to a death-based measure makes the apparent pattern vanish.
 
 **This is the most diagnostic result in the repo.** The two largest raw correlations in the onset-count analysis (Wars × X1+ flares r=+0.27 and Famines × X1+ flares r=+0.31) **completely evaporate** when re-weighted by deaths: r = +0.014 and +0.020 respectively, p ≈ 0.93 and 0.89.
 
@@ -231,11 +243,15 @@ Across 18 window tests, the smallest p is 0.30 — flat. No tendency for global 
 
 ![Israel window ratios](figures/08_israel_window_ratios.png)
 
+**In plain English:** Three panels — global earthquakes, Levant-region earthquakes, and solar flares — testing whether any of these cluster around the dates of notable Israeli events (wars, treaties, founding). For each, we look at increasingly wide windows around the events: ±7 days, ±14 days, etc. The horizontal line at 1.0 is "what we'd expect by pure chance." Bars hovering near 1.0 mean: no clustering, just chance. None of the panels show a meaningful spike, and the small "p=" numbers above each bar (which measure "could this be coincidence?") are all very high — meaning yes, it's all consistent with coincidence.
+
 ### Floods × {M≥7 quakes, X1+ flares, wars, famines}
 
 Data source: [Biblejustin/flood-data](https://github.com/Biblejustin/flood-data) — merged Dartmouth Flood Observatory + EM-DAT catalog, 11,712 events 1900–2026. Detection-clean band: events with **≥1000 deaths** (117 globally).
 
 ![Floods overview](figures/13_floods_overview.png)
+
+**In plain English:** Top: count of major floods (≥1000 deaths) per year since 1900. Middle: total flood deaths per year on a log scale (the 1931 China floods are the bright spike). Bottom: earthquakes and solar flares per year for comparison. No visible coordination between the panels.
 
 **Yearly tests** (1900–2025, n=126 years):
 
@@ -318,6 +334,8 @@ This is the closest the data comes to a real signal: same-day and +14d windows b
 
 ![Flares × M≥7 windows](figures/09_flares_quakes_windows.png)
 
+**In plain English:** Same idea as the Israel chart but testing "do big earthquakes happen near solar flares?" Each bar is one window width (same day, ±1 day, ±3 days, etc.). The horizontal line at 1.0 is "what chance alone would produce." The same-day bar sits at 1.5× — that means 1.5 times as many earthquakes happened on flare days as you'd expect by coincidence. The "p" number above it (0.15) means there's still about a 15% chance this is just luck of the draw, which is too high to call it a real signal. We'd want that probability under 5% (and after accounting for how many other tests we ran, even lower) before claiming a real effect.
+
 ### Space weather × earthquakes (recap)
 
 | Test | Result |
@@ -338,6 +356,8 @@ Same conclusion at every timescale: no measurable coupling between space weather
 For each indicator, fit OLS slope on the detection-bias-clean window only, with 2,000-bootstrap 95% CIs. Results expressed as **% change per decade**. Generated by `trends_meta.py`.
 
 ![Trends meta-comparison](figures/19_trends_meta_comparison.png)
+
+**In plain English:** Each horizontal bar is one type of event (earthquakes, wars, famines, etc.). The bar shows how much that category has changed per decade, as a percentage. To the right of zero means increasing; to the left means decreasing. The thin black line on each bar is the "we're 95% sure the real trend is somewhere in this range" interval. If that range crosses zero (grey bars), we can't actually tell whether the trend is up or down. Bars that don't cross zero (colored) are real signals. Reading the chart: cyclone deaths, X-class flares, pandemic deaths, and large earthquakes are increasing measurably; floods and famines lean down but not enough to be sure; wars and volcanic eruptions are essentially flat.
 
 ### Significantly increasing (95% CI excludes 0)
 
