@@ -26,8 +26,11 @@ from correlate_events import (
     load_levant_quakes,
     load_modern_quakes_dates,
     load_yearly_famines,
+    load_yearly_famine_deaths_active,
     load_yearly_flares_x1,
+    load_yearly_quakes_m7,
     load_yearly_wars,
+    load_yearly_war_deaths_active,
 )
 from detection_regimes import REGIMES, piecewise_detrend
 
@@ -199,9 +202,103 @@ def wars_famines_scatter(args, out):
     print(f"Wrote {out/'10_wars_famines_scatter.png'}")
 
 
+def deaths_overview(args, out):
+    """Death-weighted yearly time series for wars and famines (log10)."""
+    wars_log = load_yearly_war_deaths_active(args.wars_csv, 1500, 2025, log10_transform=True)
+    fam_log = load_yearly_famine_deaths_active(args.famines_csv, 1500, 2025, log10_transform=True)
+    m7 = load_yearly_quakes_m7(args.eq_db_1900, 1900, 2025)
+    xf = load_yearly_flares_x1(args.flares_csv, 1976, 2025)
+
+    fig, axes = plt.subplots(4, 1, figsize=(13, 12), sharex=True)
+    ax = axes[0]
+    ax.fill_between(wars_log.index, 0, wars_log.values, color="#aa3322", alpha=0.65)
+    ax.set_ylabel("log10(war deaths/yr + 1)", fontsize=10)
+    ax.set_title("Death-weighted yearly time series (deaths spread evenly across active years)", fontsize=12)
+    # annotate WWII, WWI, Taiping, 30 Years
+    for yr, label in [(1942, "WWII"), (1916, "WWI"), (1857, "Taiping"), (1633, "30 Years")]:
+        if yr in wars_log.index and wars_log.loc[yr] > 5:
+            ax.annotate(label, (yr, wars_log.loc[yr]),
+                        xytext=(0, 5), textcoords="offset points",
+                        ha="center", fontsize=9, alpha=0.8)
+    ax.set_xlim(1500, 2030)
+
+    ax = axes[1]
+    ax.fill_between(fam_log.index, 0, fam_log.values, color="#995533", alpha=0.65)
+    ax.set_ylabel("log10(famine deaths/yr + 1)", fontsize=10)
+    for yr, label in [(1960, "Gt Chinese"), (1877, "Gt Famine"), (1942, "Bengal"), (1932, "Holodomor")]:
+        if yr in fam_log.index and fam_log.loc[yr] > 5:
+            ax.annotate(label, (yr, fam_log.loc[yr]),
+                        xytext=(0, 5), textcoords="offset points",
+                        ha="center", fontsize=9, alpha=0.8)
+    ax.set_xlim(1500, 2030)
+
+    ax = axes[2]
+    ax.bar(m7.index, m7.values, color="#3355aa", alpha=0.75, width=1.0)
+    ax.set_ylabel("M>=7 quakes / yr", fontsize=10)
+    ax.set_xlim(1500, 2030)
+    ax.axvspan(1900, 2025, color="lightblue", alpha=0.15)
+
+    ax = axes[3]
+    ax.bar(xf.index, xf.values, color="#ee8833", alpha=0.85, width=1.0)
+    ax.set_ylabel("X1+ flares / yr", fontsize=10)
+    ax.set_xlabel("Year")
+    ax.set_xlim(1500, 2030)
+    ax.axvspan(1976, 2025, color="lightblue", alpha=0.15)
+
+    plt.tight_layout()
+    plt.savefig(out / "11_deaths_overview.png", dpi=120)
+    plt.close()
+    print(f"Wrote {out/'11_deaths_overview.png'}")
+
+
+def deaths_vs_flares_scatter(args, out):
+    """Detrended death-weighted scatter vs flares — shows the collapse vs onset scatter."""
+    from detection_regimes import REGIMES, piecewise_detrend
+    wars_log = load_yearly_war_deaths_active(args.wars_csv, 1976, 2025, log10_transform=True)
+    fam_log = load_yearly_famine_deaths_active(args.famines_csv, 1976, 2025, log10_transform=True)
+    xf = load_yearly_flares_x1(args.flares_csv, 1976, 2025)
+
+    wars_d = piecewise_detrend(wars_log, REGIMES["wars_global"])
+    fam_d = piecewise_detrend(fam_log, REGIMES["famines"])
+    xf_d = piecewise_detrend(xf.astype(float), REGIMES["flares_x"])
+
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5.5))
+    for ax, y, ylabel, color, title in [
+        (axes[0], wars_d, "log10 war deaths (detrended)", "#aa3322",
+         "War deaths (log10) × X1+ flares"),
+        (axes[1], fam_d, "log10 famine deaths (detrended)", "#995533",
+         "Famine deaths (log10) × X1+ flares"),
+    ]:
+        mask = ~(xf_d.isna() | y.isna())
+        x, yv = xf_d[mask], y[mask]
+        r, p = stats.pearsonr(x, yv)
+        ax.scatter(x, yv, s=60, alpha=0.7, color=color, edgecolor="black")
+        slope, intercept = np.polyfit(x, yv, 1)
+        xs = np.linspace(x.min(), x.max(), 50)
+        ax.plot(xs, slope * xs + intercept, color="black", linestyle="--", alpha=0.6,
+                label=f"OLS  r={r:+.3f}, p={p:.3f}")
+        ax.axhline(0, color="gray", linewidth=0.5)
+        ax.axvline(0, color="gray", linewidth=0.5)
+        ax.set_xlabel("X1+ flares/yr (detrended)")
+        ax.set_ylabel(ylabel)
+        ax.set_title(title)
+        ax.legend(fontsize=9)
+
+    plt.suptitle(
+        "When weighted by ACTUAL DEATHS (not just event counts), both marginal "
+        "correlations collapse to ~0",
+        fontsize=11,
+    )
+    plt.tight_layout()
+    plt.savefig(out / "12_deaths_vs_flares_scatter.png", dpi=120)
+    plt.close()
+    print(f"Wrote {out/'12_deaths_vs_flares_scatter.png'}")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--eq-db-modern", default="../earthquakes/quakes.sqlite")
+    ap.add_argument("--eq-db-1900", default="../earthquakes/quakes_1900.sqlite")
     ap.add_argument("--flares-csv", default="data/flares_xclass.csv")
     ap.add_argument("--wars-csv", default="data/wars.csv")
     ap.add_argument("--famines-csv", default="data/famines.csv")
@@ -213,6 +310,8 @@ def main():
     israel_windows(args, out)
     flares_quakes_windows(args, out)
     wars_famines_scatter(args, out)
+    deaths_overview(args, out)
+    deaths_vs_flares_scatter(args, out)
 
 
 if __name__ == "__main__":

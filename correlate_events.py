@@ -55,18 +55,66 @@ def load_yearly_flares_x1(flares_csv: str, year_lo=1976, year_hi=2025) -> pd.Ser
 
 def load_yearly_wars(wars_csv: str, year_lo=1400, year_hi=2025,
                      include_ongoing: bool = True) -> pd.Series:
-    """Yearly count of war start-years."""
+    """Yearly count of war ONSETS (groupby start_year)."""
     df = pd.read_csv(wars_csv)
-    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s = df.groupby("start_year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
     s.name = "war_starts"
     return s
 
 
+def load_yearly_war_deaths_active(wars_csv: str, year_lo=1400, year_hi=2025,
+                                   log10_transform: bool = False) -> pd.Series:
+    """
+    Yearly war deaths attributed to ACTIVE years: each war contributes
+    deaths_estimate / duration_years to every year it was active
+    [start_year, end_year] inclusive.
+
+    If log10_transform=True, returns log10(deaths + 1) per year.
+    """
+    df = pd.read_csv(wars_csv)
+    years = range(year_lo, year_hi + 1)
+    out = pd.Series(0.0, index=years, name="war_deaths_active")
+    for _, row in df.iterrows():
+        s = int(row["start_year"]); e = int(row["end_year"])
+        if e < year_lo or s > year_hi:
+            continue
+        s = max(s, year_lo); e = min(e, year_hi)
+        duration = e - s + 1
+        per_year = float(row["deaths_estimate"]) / duration
+        for y in range(s, e + 1):
+            out.loc[y] += per_year
+    if log10_transform:
+        out = np.log10(out + 1.0)
+        out.name = "log10_war_deaths"
+    return out
+
+
 def load_yearly_famines(famines_csv: str, year_lo=1500, year_hi=2025) -> pd.Series:
     df = pd.read_csv(famines_csv)
-    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s = df.groupby("start_year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
     s.name = "famine_starts"
     return s
+
+
+def load_yearly_famine_deaths_active(famines_csv: str, year_lo=1500, year_hi=2025,
+                                      log10_transform: bool = False) -> pd.Series:
+    """Same spreading logic as wars."""
+    df = pd.read_csv(famines_csv)
+    years = range(year_lo, year_hi + 1)
+    out = pd.Series(0.0, index=years, name="famine_deaths_active")
+    for _, row in df.iterrows():
+        s = int(row["start_year"]); e = int(row["end_year"])
+        if e < year_lo or s > year_hi:
+            continue
+        s = max(s, year_lo); e = min(e, year_hi)
+        duration = e - s + 1
+        per_year = float(row["deaths_estimate"]) / duration
+        for y in range(s, e + 1):
+            out.loc[y] += per_year
+    if log10_transform:
+        out = np.log10(out + 1.0)
+        out.name = "log10_famine_deaths"
+    return out
 
 
 def load_levant_quakes(eq_db_modern: str, lat=31.78, lon=35.21, radius_km=500,

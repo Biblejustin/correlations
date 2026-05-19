@@ -17,6 +17,7 @@ from correlate_events import (
     load_yearly_quakes_m7,
     load_yearly_flares_x1,
     load_yearly_wars,
+    load_yearly_war_deaths_active,
     yearly_corr,
     lag_corr,
 )
@@ -32,6 +33,8 @@ def main():
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
 
     wars = load_yearly_wars(args.wars_csv, 1400, 2025)
+    wars_d = load_yearly_war_deaths_active(args.wars_csv, 1400, 2025, log10_transform=False)
+    wars_log = load_yearly_war_deaths_active(args.wars_csv, 1400, 2025, log10_transform=True)
     m7 = load_yearly_quakes_m7(args.eq_db_1900, 1900, 2025)
     xf = load_yearly_flares_x1(args.flares_csv, 1976, 2025)
 
@@ -62,6 +65,44 @@ def main():
     lc2 = lag_corr(wars, xf, range(-10, 11),
                    regime_key_a="wars_global", regime_key_b="flares_x")
     print(lc2.to_string(index=False, float_format=lambda v: f"{v:+.3f}" if pd.notna(v) else "nan"))
+
+    # === DEATH-WEIGHTED VARIANTS ===
+    print("\n" + "=" * 80)
+    print("WAR DEATHS (active, linear) × M>=7 QUAKES")
+    print("=" * 80)
+    r = yearly_corr(wars_d, m7, regime_key_a="wars_global", regime_key_b="quakes_m7")
+    print(f"  Raw Pearson r      : {r['raw_r']:+.3f}  p={r['raw_p']:.3f}")
+    print(f"  Raw Spearman rho   : {r['raw_rho']:+.3f}  p={r['raw_p_spear']:.3f}")
+    print(f"  Regime-detrended r : {r['det_r']:+.3f}  p={r['det_p']:.3f}")
+
+    print("\n" + "=" * 80)
+    print("WAR DEATHS (log10) × M>=7 QUAKES")
+    print("=" * 80)
+    r = yearly_corr(wars_log, m7, regime_key_a="wars_global", regime_key_b="quakes_m7")
+    print(f"  Raw Pearson r      : {r['raw_r']:+.3f}  p={r['raw_p']:.3f}")
+    print(f"  Raw Spearman rho   : {r['raw_rho']:+.3f}  p={r['raw_p_spear']:.3f}")
+    print(f"  Regime-detrended r : {r['det_r']:+.3f}  p={r['det_p']:.3f}")
+
+    print("\nLag (log10 deaths vs M>=7, positive = deaths lead quakes):")
+    lcd = lag_corr(wars_log, m7, range(-10, 11),
+                   regime_key_a="wars_global", regime_key_b="quakes_m7")
+    print(lcd.to_string(index=False, float_format=lambda v: f"{v:+.3f}" if pd.notna(v) else "nan"))
+
+    print("\n" + "=" * 80)
+    print("WAR DEATHS (linear) × X1+ FLARES")
+    print("=" * 80)
+    r = yearly_corr(wars_d, xf, regime_key_a="wars_global", regime_key_b="flares_x")
+    print(f"  Raw Pearson r      : {r['raw_r']:+.3f}  p={r['raw_p']:.3f}")
+    print(f"  Raw Spearman rho   : {r['raw_rho']:+.3f}  p={r['raw_p_spear']:.3f}")
+    print(f"  Regime-detrended r : {r['det_r']:+.3f}  p={r['det_p']:.3f}")
+
+    print("\n" + "=" * 80)
+    print("WAR DEATHS (log10) × X1+ FLARES")
+    print("=" * 80)
+    r = yearly_corr(wars_log, xf, regime_key_a="wars_global", regime_key_b="flares_x")
+    print(f"  Raw Pearson r      : {r['raw_r']:+.3f}  p={r['raw_p']:.3f}")
+    print(f"  Raw Spearman rho   : {r['raw_rho']:+.3f}  p={r['raw_p_spear']:.3f}")
+    print(f"  Regime-detrended r : {r['det_r']:+.3f}  p={r['det_p']:.3f}")
 
     # ---- Figure ----
     fig, axes = plt.subplots(3, 1, figsize=(12, 10), sharex=False)

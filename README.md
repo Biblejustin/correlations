@@ -12,16 +12,18 @@ This repo expands the original `sw-eq-correlation` work into a multi-topic corre
 |---|---|---|---|
 | Space weather × M≥7 quakes | r = −0.16 | 0.21 | n/a (null) |
 | 11-year solar cycle × M≥7 | χ² = 10.75 (phase fold) | 0.29 | n/a |
-| Wars × M≥7 quakes | r = −0.08 detrended | 0.38 | no |
-| Wars × X1+ flares | r = +0.27 detrended | 0.058 | no |
-| Famines × M≥7 quakes | r = −0.03 detrended | 0.74 | no |
-| Famines × X1+ flares | r = +0.31 detrended | 0.027 | no |
+| Wars (onsets) × M≥7 quakes | r = −0.08 detrended | 0.38 | no |
+| Wars (onsets) × X1+ flares | r = +0.27 detrended | 0.058 | no |
+| **War deaths (log10) × X1+ flares** | **r = +0.014 detrended** | **0.93** | **no — collapses to 0** |
+| Famines (onsets) × M≥7 quakes | r = −0.03 detrended | 0.74 | no |
+| Famines (onsets) × X1+ flares | r = +0.31 detrended | 0.027 | no |
+| **Famine deaths (log10) × X1+ flares** | **r = +0.020 detrended** | **0.89** | **no — collapses to 0** |
 | Israel events × global M≥7 | best window ratio 1.02× | ≥ 0.30 | no |
 | Israel events × Levant M≥4 | best window ratio 1.16× | ≥ 0.30 | no |
 | Israel events × X1+ flares | best window ratio 1.36× | ≥ 0.47 | no |
 | X1+ flares × M≥7 quakes | ±0 day ratio 1.51× | 0.15 | no |
 
-The Matthew 24 framing — wars, famines, and earthquakes co-varying — gets no statistical support from any combination of catalogs tested here. Each series has its own dynamics. They do not share variance once shared detection trends are removed.
+The Matthew 24 framing — wars, famines, and earthquakes co-varying — gets no statistical support from any combination of catalogs tested here. Each series has its own dynamics. They do not share variance once shared detection trends are removed. And the two raw "hints" (+0.27 and +0.31) collapse when we use the more honest death-weighted intensity measure instead of onset counts.
 
 ## Methodology
 
@@ -115,6 +117,37 @@ Marginal raw, doesn't survive Bonferroni. Pattern is consistent with wars × fla
 ![Wars and famines vs flares scatter](figures/10_wars_famines_scatter.png)
 
 In both detrended scatter plots above, 2024 is the high-flare outlier (the May 2024 X-class swarm puts that year ~18 flares above its regime baseline) — pulling the OLS fit positive on its own. Drop the 2024 point and the Wars × flares correlation drops to near zero; the Famines × flares correlation also weakens substantially. This is exactly the kind of "leverage point dominates the result" failure mode that Bonferroni catches when interpreted as a guard against over-interpretation.
+
+### Death-weighted variants — the marginal correlations collapse
+
+Counting wars or famines by *onset year* treats WWII the same as the Quasi-War of 1798. A more honest test weights each year by the **active conflict/famine deaths attributable to it** — total deaths spread evenly across the war/famine's duration. This handles the obvious case (WWII contributes ~10.7M deaths/yr × 7 years, not 75M in 1939 alone) and gives a much better proxy for "how intense was the warfare/starvation in this year."
+
+I added `end_year` to both CSVs, then computed yearly active-deaths series. Tests are run on both **linear deaths** and **log10(deaths+1)** — the log transform compresses the 4–5 orders of magnitude range so single events like WWII don't dominate.
+
+![Death-weighted overview](figures/11_deaths_overview.png)
+
+War deaths peak hard at WWI, WWII, Taiping, Thirty Years; famine deaths at the 1958–62 Great Chinese Famine, 1876–79 Great Famine of India/China, 1932–33 Holodomor. M≥7 quakes and X1+ flares show no visible tracking of either.
+
+**Results with death-weighting:**
+
+| Test | Detrended r | p |
+|---|---|---|
+| War deaths (linear) × M≥7 quakes | +0.064 | 0.479 |
+| War deaths (log10) × M≥7 quakes | +0.067 | 0.455 |
+| War deaths (linear) × X1+ flares | **+0.018** | 0.903 |
+| War deaths (log10) × X1+ flares | **+0.014** | 0.925 |
+| Famine deaths (linear) × M≥7 quakes | −0.071 | 0.430 |
+| Famine deaths (log10) × M≥7 quakes | +0.008 | 0.929 |
+| Famine deaths (linear) × X1+ flares | **−0.076** | 0.601 |
+| Famine deaths (log10) × X1+ flares | **+0.020** | 0.893 |
+
+![Deaths vs flares scatter](figures/12_deaths_vs_flares_scatter.png)
+
+**This is the most diagnostic result in the repo.** The two largest raw correlations in the onset-count analysis (Wars × X1+ flares r=+0.27 and Famines × X1+ flares r=+0.31) **completely evaporate** when re-weighted by deaths: r = +0.014 and +0.020 respectively, p ≈ 0.93 and 0.89.
+
+What this says: the marginal "signals" in the onset-count tests were driven by *count of conflicts/famines starting in a given year* (which rose in the late 20th C as smaller conflicts got catalogued), not by *intensity of warfare/starvation*. When we weight by actual deaths — a much better proxy for whether the year was unusually bad — there is **no correlation at all** with solar flare activity.
+
+The conclusion strengthens: at the global yearly scale, war intensity, famine intensity, M≥7 seismicity, and X-class solar flare activity are statistically independent.
 
 ### Israel × {global M≥7, Levant M≥4, X1+ flares}
 

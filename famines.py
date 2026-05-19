@@ -13,6 +13,7 @@ from correlate_events import (
     load_yearly_quakes_m7,
     load_yearly_flares_x1,
     load_yearly_famines,
+    load_yearly_famine_deaths_active,
     yearly_corr,
     lag_corr,
 )
@@ -28,6 +29,8 @@ def main():
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
 
     famines = load_yearly_famines(args.famines_csv, 1500, 2025)
+    fam_d = load_yearly_famine_deaths_active(args.famines_csv, 1500, 2025, log10_transform=False)
+    fam_log = load_yearly_famine_deaths_active(args.famines_csv, 1500, 2025, log10_transform=True)
     m7 = load_yearly_quakes_m7(args.eq_db_1900, 1900, 2025)
     xf = load_yearly_flares_x1(args.flares_csv, 1976, 2025)
 
@@ -50,6 +53,39 @@ def main():
     print("=" * 80)
     r = yearly_corr(famines, xf, regime_key_a="famines", regime_key_b="flares_x")
     print(f"  n_years            : {r['n']}")
+    print(f"  Raw Pearson r      : {r['raw_r']:+.3f}  p={r['raw_p']:.3f}")
+    print(f"  Raw Spearman rho   : {r['raw_rho']:+.3f}  p={r['raw_p_spear']:.3f}")
+    print(f"  Regime-detrended r : {r['det_r']:+.3f}  p={r['det_p']:.3f}")
+
+    # === DEATH-WEIGHTED VARIANTS ===
+    print("\n" + "=" * 80)
+    print("FAMINE DEATHS (active, linear) × M>=7 QUAKES")
+    print("=" * 80)
+    r = yearly_corr(fam_d, m7, regime_key_a="famines", regime_key_b="quakes_m7")
+    print(f"  Raw Pearson r      : {r['raw_r']:+.3f}  p={r['raw_p']:.3f}")
+    print(f"  Raw Spearman rho   : {r['raw_rho']:+.3f}  p={r['raw_p_spear']:.3f}")
+    print(f"  Regime-detrended r : {r['det_r']:+.3f}  p={r['det_p']:.3f}")
+
+    print("\n" + "=" * 80)
+    print("FAMINE DEATHS (log10) × M>=7 QUAKES")
+    print("=" * 80)
+    r = yearly_corr(fam_log, m7, regime_key_a="famines", regime_key_b="quakes_m7")
+    print(f"  Raw Pearson r      : {r['raw_r']:+.3f}  p={r['raw_p']:.3f}")
+    print(f"  Raw Spearman rho   : {r['raw_rho']:+.3f}  p={r['raw_p_spear']:.3f}")
+    print(f"  Regime-detrended r : {r['det_r']:+.3f}  p={r['det_p']:.3f}")
+
+    print("\n" + "=" * 80)
+    print("FAMINE DEATHS (linear) × X1+ FLARES")
+    print("=" * 80)
+    r = yearly_corr(fam_d, xf, regime_key_a="famines", regime_key_b="flares_x")
+    print(f"  Raw Pearson r      : {r['raw_r']:+.3f}  p={r['raw_p']:.3f}")
+    print(f"  Raw Spearman rho   : {r['raw_rho']:+.3f}  p={r['raw_p_spear']:.3f}")
+    print(f"  Regime-detrended r : {r['det_r']:+.3f}  p={r['det_p']:.3f}")
+
+    print("\n" + "=" * 80)
+    print("FAMINE DEATHS (log10) × X1+ FLARES")
+    print("=" * 80)
+    r = yearly_corr(fam_log, xf, regime_key_a="famines", regime_key_b="flares_x")
     print(f"  Raw Pearson r      : {r['raw_r']:+.3f}  p={r['raw_p']:.3f}")
     print(f"  Raw Spearman rho   : {r['raw_rho']:+.3f}  p={r['raw_p_spear']:.3f}")
     print(f"  Regime-detrended r : {r['det_r']:+.3f}  p={r['det_p']:.3f}")
