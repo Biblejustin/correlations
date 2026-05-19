@@ -364,23 +364,35 @@ For each indicator, fit OLS slope on the detection-bias-clean window only, with 
 
 ### What this means
 
-**The headline "is the world getting worse" answer is: mostly no, but two real things are happening:**
+The data shows a mixed picture. Three indicators are *significantly increasing*, four are *flat with downward direction*, and the rest sit at zero.
 
-1. **Population growth in cyclone-exposed areas means more cyclone deaths per decade** (+48.7%). This is real but it's an exposure effect, not a hazard intensification. Per-capita cyclone mortality is actually declining.
+**Significantly rising:**
+- **Cyclone deaths** (+48.7%/decade since 1950) — likely a combination of coastal population growth in cyclone-exposed regions and possibly storm intensification. The deaths themselves are real either way.
+- **Pandemic deaths** (+10.6%/decade since 1900) — HIV/AIDS and COVID-19 drive most of the recent increase. Whether you treat them as two specific events or as evidence that emerging-disease impact is rising, the death toll is real.
+- **M≥7 quakes** (+1.7%/decade since 1900) — marginally significant. The clustering of large quakes in the 2000s (Sumatra, Chile, Tōhoku) drives this. M≥8 (the strictest control) is flat, so this could be chance or a real small effect.
 
-2. **Pandemic mortality is up** (+10.6%/decade) — but the entire effect is driven by HIV/AIDS (cumulative 42M over ~45 years) and COVID-19 (~7M confirmed, 15–30M excess). Without these two unprecedented events, the trend reverses.
+**Flat with downward direction (CI crosses zero):**
+- **WPF famine deaths** (−14.7%/decade point estimate, full span) — no ≥1M-death famine since Cambodia 1975–79.
+- **Flood deaths in the satellite era** (−14.6%/decade point estimate since 1985) — modern warning systems probably contributing.
+- **Flood events ≥1000 deaths** (−12.0%/decade point estimate since 1985).
+- **VEI≥5 eruptions** (−2.1%/decade since 1900) — the expected null result for a geophysical baseline.
 
-**Geophysical indicators are flat as expected:**
-- M≥7 quakes: barely-significant +1.7% (M≥8 is flat — likely chance, consistent with earthquakes-repo finding)
-- VEI≥5 eruptions: −2.1% (tightening cutoff to post-1900 eliminates the detection-bias inflation)
+**Flat with upward direction (CI crosses zero):**
+- **War onsets and war deaths** (+4.5% and +7.2%/decade since 1900) — direction up but not statistically distinguishable from chance. Notable that the 20th century includes the two World Wars and the Holodomor, and even those don't pull the trend significantly upward in this sample.
 
-**Famine deaths are *trending down*** (full span point estimate −14.7%/decade), but the 1950+-only fit is dominated by the Great Chinese Famine. The longer span is more honest: no ≥1M-death famine since Cambodia 1975–79.
+**On the "are these increasing like birth pains" question:**
 
-**War deaths and onsets are flat over the 20th–21st centuries** despite popular perception — Steven Pinker territory; the data backs it up.
+Matthew 24 describes wars, famines, pestilences, and earthquakes as signs that will appear and increase as "the beginning of birth pains" — rising in frequency and intensity over time. The passage doesn't specify mechanism; it doesn't require that the causation be supernatural rather than human-system. So the question this section addresses isn't "are these events caused by direct divine intervention" but the narrower observable claim: **are these categories of events increasing?**
 
-**Flood metrics in the satellite era are *down*** in direction (−12% to −14% point estimates) but CIs are too wide to call.
+The honest answer from this data:
 
-The Matthew-24 hypothesis of synchronized increase in disasters finds support in exactly one category — *deaths from natural disasters where coastal/population exposure has grown* — and even there the result is about exposure, not the events themselves intensifying. Earthquakes, eruptions, and (death-corrected) famines are flat or declining.
+- **Pandemics**: yes, deaths are up significantly. Whatever the mechanism (zoonotic spillover from human population pressure, globalization, novel pathogens), the body count trend is real.
+- **Disaster deaths** (cyclones in particular): yes, up significantly. Population growth in exposed regions is part of why, but the deaths attributed to these events have nonetheless risen.
+- **Wars and famines**: flat over the past century by death-count. War deaths and famine deaths *do* covary together (the FDR-significant result), so when wars escalate, famines follow.
+- **Earthquakes**: barely-significant upward at M≥7; flat at M≥8.
+- **Volcanoes**: flat — no global upward trend.
+
+This mixed picture neither confirms nor refutes the framing. Whether you read "some real increases, some flat, some declining" as consistent with rising birth pains or as showing the pattern hasn't yet materialized is a question of interpretation that the data doesn't settle on its own.
 
 ## Bonferroni summary
 
