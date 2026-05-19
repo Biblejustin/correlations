@@ -304,6 +304,38 @@ The `famines.py` analysis also now consumes the authoritative WPF/OWID yearly fa
 
 Same conclusion as my hand-curated data, with a more defensible data source.
 
+### Pandemics × everything
+
+![Pandemics overview](figures/14_pandemics_overview.png)
+
+**Technical:** 36 catalogued pandemics from Plague of Athens to mpox. Death-weighted yearly series (log10 deaths spread evenly across each event's active years). Tested against M≥7 quakes, X1+ flares, war deaths, flood deaths, and WPF famine deaths. All detrended correlations |r| < 0.13 with all p > 0.16.
+
+**In plain English:** Top panel: how deadly was each year for pandemics, on a log scale where each step up is 10× more deaths. Three big spikes are labeled — the 1918 Spanish Flu, the 1981+ HIV/AIDS pandemic spread across decades, and COVID-19 starting 2020. Bottom: big earthquakes by year for comparison. The two panels don't track each other — pandemic-heavy years and earthquake-heavy years are independent. We ran statistical tests connecting pandemics to wars, famines, floods, and solar flares as well; none came back showing a real connection.
+
+### Volcanoes × earthquakes
+
+![Volcanoes overview](figures/15_volcanoes_overview.png)
+
+**Technical:** VEI≥5 yearly count vs M≥7 quakes (1900–2025). Detrended r = −0.062. Daily-window test on the 6 VEI≥5 eruptions with month-precision dates 1965–2025 vs all M≥7 quakes: ratios 0.80–1.02× at chance, all p > 0.4.
+
+**In plain English:** Large volcanic eruptions (VEI 5 or larger) versus large earthquakes (M≥7), year by year. Subduction-zone tectonics ties volcanoes and earthquakes together at very short timescales (seconds to minutes), but when you ask the broader "do years with big eruptions also have more big earthquakes," the answer is no. The two run on independent yearly clocks even though they share underlying plate tectonics. The events labeled in the top panel (Tambora, Krakatau, Pinatubo, Hunga Tonga) are the biggest in recorded history.
+
+### Tropical cyclones × earthquakes and flares
+
+![Cyclones overview](figures/16_cyclones_overview.png)
+
+**Technical:** 37 ≥1000-death cyclones 1900–2024. Detrended r for cyclone deaths × M≥7 quakes = +0.009 (p = 0.92). Detrended r for cyclone deaths × X1+ flares = +0.193 (raw p = 0.18 after detrending). Daily window test: all ratios 0.87–1.18×, all p > 0.26.
+
+**In plain English:** Total deaths from major cyclones each year (log scale — each step is 10× more deaths). The labeled events are the deadliest in modern history: Bhola 1970 in Bangladesh, the 1991 Bangladesh cyclone, Nargis 2008 in Myanmar, Haiyan 2013 in the Philippines. Like with the other tests, the cyclone curve doesn't track the earthquake or solar-flare series.
+
+### Astronomical "signs" × earthquakes
+
+![Astronomy overview](figures/17_astronomy_overview.png)
+
+**Technical:** 63 catalogued astronomical events (eclipses, comets, supernovae, meteor storms). Detrended r vs M≥7 quakes for: all astro = −0.028 (p = 0.76), total solar eclipses = −0.078 (p = 0.39), comets = +0.090 (p = 0.32). Daily-window test ±0 days around total solar eclipses: 0 of 6 eclipses had an M≥7 quake on the same day.
+
+**In plain English:** Years that had a notable astronomical event (eclipse, bright comet, etc.) compared to years with big earthquakes. Eclipses happen on predictable orbital schedules that have nothing to do with what's happening on Earth, so any correlation would be coincidence. Sure enough, the data shows none — eclipse days have *no more* big earthquakes than random days. The Mt 24:29 "signs in the heavens" framing finds no statistical fingerprint.
+
 ### Solar flares × M≥7 earthquakes
 
 Same daily-window logic as the existing storm-day test in `analyze.py`, but using X1+ flare peak times (n=156 in 1976–2025) against M≥7 quakes (n=696 same window).
@@ -350,6 +382,46 @@ This is the closest the data comes to a real signal: same-day and +14d windows b
 | Coherence M≥7 vs sunspot at 9–13y | 0.07 vs null bound 0.43 |
 
 Same conclusion at every timescale: no measurable coupling between space weather and global seismicity.
+
+#### Yearly overlay: M≥7 quakes vs G3+ storm days
+
+![Yearly overlay](figures/01_yearly_overlay.png)
+
+**Technical:** Dual-axis bar/line plot. Red bars = M≥7 quakes per year (left axis); blue line = G3+ storm days per year (right axis), 1965–2025. Pearson r = −0.16, p = 0.21.
+
+**In plain English:** Red bars are big earthquakes per year. Blue line is the count of geomagnetically stormy days per year. If solar storms caused earthquakes, the blue line should rise during years where the red bars are tall. It doesn't — the two go up and down independently. The blue line shows the 11-year solar cycle (low around 2008, climbing now); the red bars look about the same in cycle troughs as in cycle peaks.
+
+#### Daily windows: M≥7 in storm windows vs chance
+
+![Window ratios](figures/02_window_ratios.png)
+
+**Technical:** Each pair of bars shows the ratio of observed-to-expected M≥7 quakes in a window of N days around (centered) or after each G3+ storm day. Horizontal line at 1.0 = chance level. All bars hug 1.0; the closest is the 1.5× same-day from flares (figure 9) which doesn't pass significance correction.
+
+**In plain English:** For each window size (same day, within 1 day, within 3 days, etc.), the bars show how many big earthquakes happened near solar storms compared to chance alone. A bar at exactly 1.0 means "happens at chance rate." Higher means above chance; lower means below. All bars are within a hair of 1.0 — exactly what coincidence would produce.
+
+#### 11-year solar cycle phase fold
+
+![Cycle fold](figures/03_cycle_fold.png)
+
+**Technical:** Top: 13-month smoothed sunspot number (blue) with detected cycle minima (vertical lines) and M≥7 event ticks (red, scattered along y=0.5). Bottom: M≥7 events grouped by phase across all 5 complete cycles (1965–2025). Chi-squared p = 0.29; Rayleigh p = 0.77; mean phase = 0.21.
+
+**In plain English:** The 11-year solar cycle goes from quiet to loud and back. If big earthquakes happened more often at solar maximum or solar minimum, this chart would show bunching. Instead the earthquake bars are roughly the same height across all phases of the cycle — they don't care where the Sun is in its rhythm.
+
+#### Periodogram (frequency analysis)
+
+![Periodogram](figures/04_periodogram.png)
+
+**Technical:** Welch periodograms (normalized to each series' max) of yearly M≥7 quakes (red), yearly G3+ days (blue), and yearly sunspot number (orange) on a log period axis. The dashed gray line is the M≥7 series' phase-randomized 95% null. Sunspot and G3+ both peak hard at ~11 yr; M≥7 has no peak in the 9–13 yr band.
+
+**In plain English:** "Periodogram" means: take a wavy signal and ask which repeating patterns (cycles) are inside it. The orange line shows sunspot data has a huge peak at "11-year cycle" — that's the known solar cycle. Blue line (geomagnetic storms) also peaks there because storms follow the Sun. Red line (earthquakes) has *no* peak at 11 years — meaning if you go looking for solar-cycle echoes in the quake data, there aren't any.
+
+#### Coherence between M≥7 and sunspots
+
+![Coherence](figures/05_coherence.png)
+
+**Technical:** Magnitude-squared coherence between yearly M≥7 count and yearly mean sunspot number (Welch, nperseg=20). The red line is the observed coherence; the dashed gray is the phase-randomized 95% null. Coherence in the 9–13 yr band = 0.07 vs null bound 0.43.
+
+**In plain English:** Coherence asks: at a specific repeating-cycle length (like 11 years), do these two series rise and fall in step with each other? A coherence of 1.0 means perfect lockstep; 0 means independent. The dashed grey line shows how high coherence would be even by random chance. The red line stays below the grey line everywhere — at the 11-year mark, earthquake counts and sunspot counts don't share a rhythm at all.
 
 ## Are things getting worse? Meta-trend comparison
 
