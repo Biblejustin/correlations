@@ -454,6 +454,54 @@ A few years legitimately had multiple things going wrong at once (1991, 1918, WW
 
 The verdict matches what the cross-correlation matrix already showed: the indicators have their own dynamics. Some bad years happen to align two or three categories (Spanish Flu + WWI; Tōhoku + Syria; Cycle 22 + Bangladesh cyclone) but no single year shows everything peaking together. They're not running on one clock.
 
+## Are WW1, WW2, and the modern era the "contractions"?
+
+The signs-overlay showed the consensus line rarely spikes, but a few multi-year stretches do stay elevated. If those stretches are the "contractions" in the birth-pains analogy, then the testable predictions are:
+
+1. **Multiple contractions exist** — distinct, identifiable multi-year periods where many indicators run hot together
+2. **Each successive contraction is more intense** than the last (peak z rising)
+3. **Gaps between contractions shrink** (less rest between bursts)
+
+`contractions_analysis.py` smooths the consensus line with a 5-year centered rolling mean and finds continuous stretches above 0.25 σ (with ≥3-year duration). Four contractions emerge:
+
+![Contractions](figures/22_contractions.png)
+
+**Technical:** Top: yearly consensus z (grey) and 5-year rolling mean (red), with dashed threshold at 0.25 σ. Red-shaded vertical bands mark detected contractions. Bottom: peak rolling z (red bars) and duration (blue bars) per contraction. Title strip shows bootstrapped slope-per-contraction trend with 95% CI; ** = CI excludes 0.
+
+**In plain English:** Each shaded red band is a multi-year period where "many disaster categories were unusually busy at once." The chart found four of them: WWI+Spanish Flu (1916–1920), WWII era (1939–1945), the 2011–2013 cluster, and 2022–2025. The bottom panel shows how big each contraction's peak was (red) and how long it lasted (blue). If the birth-pains prediction were right, each red bar would be *taller* than the one before. Instead, they're getting *shorter*.
+
+**Detected contractions:**
+
+| # | Years | Duration | Peak z | What was happening |
+|---|---|---|---|---|
+| 1 | 1916–1920 | 5 yr | **0.52** (1918) | WWI ending + Spanish Flu + Russian Civil War + Russian famine |
+| 2 | 1939–1945 | 7 yr | **0.45** (1940) | WWII + Bengal/Greek/Vietnamese famines + Holocaust |
+| 3 | 2011–2013 | 3 yr | **0.34** (2013) | Tōhoku M9.1 + Syrian Civil War + Libyan War + Typhoon Haiyan + ISIS + Cycle 24 peak |
+| 4 | 2022–2025 | 4 yr | **0.30** (2023) | Russia-Ukraine + Sudan + Israel-Hamas + Türkiye-Syria quake + COVID tail + Cycle 25 active |
+
+**Tests of the birth-pains prediction:**
+
+| Prediction | Result | Verdict |
+|---|---|---|
+| Each contraction more intense | Peak z trend: **−0.08 per contraction [CI −0.11, −0.05]** | **OPPOSITE** of prediction (CI excludes 0) |
+| Each contraction longer | Duration trend: −0.7 yr/contraction [CI −4.0, +2.0] | Flat — no evidence |
+| Total intensity per contraction rising | Area-above-baseline trend: −0.31 [CI −0.71, −0.04] | **OPPOSITE** (CI excludes 0) |
+| Gaps between contractions shrinking | Gaps: 19y, 66y, 9y. Slope −5 yr/contraction [CI −57, +47] | **Direction matches** (gaps trending shorter) but n=3 gaps, CI too wide to call |
+
+**Mixed result.** Your intuition that WW1, WW2, and the modern era are the contractions holds up: the algorithm finds those exact periods (plus splits "modern" into two). But the strict birth-pains prediction has problems:
+
+- **Intensification fails decisively.** Each contraction peaks at a lower z-score than the previous one. The 1918 contraction (WWI + Spanish Flu) had the highest peak rolling z in the modern catalog at 0.52; the 1939–45 peak was 0.45; the modern contractions are 0.34 and 0.30. This is statistically significant (CI excludes 0).
+
+  *Caveat:* z-scoring normalizes within indicator. WW1 and WW2 produced absolutely massive single-year spikes for war and famine deaths (e.g. 1918's Spanish Flu killed 50M out of a 1.8B world population — 2.8%). Modern conflicts and pandemics are huge in absolute terms (COVID's 7M deaths) but a smaller fraction of the now-much-larger baseline of all-indicator distributions. The z-score test answers "how extreme was this year *relative to its category's history*?" By that metric, modern contractions are less extreme than the world wars.
+
+- **Gap-shrinking is suggestive but underpowered.** Three gaps (19, 66, 9 years) is too few data points to fit a trend with confidence. The point-estimate direction matches the prediction (gaps getting smaller), and the 9-year gap between the 2011 and 2022 contractions is the shortest in the catalog. But with n=3 gaps the CI is enormous. A fifth contraction in the next decade or two would actually let us test this properly.
+
+- **The 66-year gap from WWII to 2011 cuts against the "accelerating" framing.** That's the long stretch Steven Pinker and others have called "the long peace." If birth pains were accelerating monotonically, we shouldn't see a 66-year quiet between bursts.
+
+So: your hypothesis identifies the right *periods*, but the data within those periods doesn't yet support the strict "more intense, closer together" prediction. The modern contractions are real but smaller, and the spacing is irregular rather than monotonically tightening.
+
+If a new contraction emerges around, say, 2030–2034 with peak z above 0.30, *that* would be the first data point clearly consistent with the gap-shrinking prediction (giving us a 5-year-or-less inter-contraction interval). And if its intensity exceeded the 2022–25 peak, that would start to flip the intensification trend. So the hypothesis remains testable going forward — the next ~10 years' data will decide it.
+
 ## Birth-pains pattern test (not just trend — pattern)
 
 Linear trends only ask "is the line going up?" Labor pains have a much more specific signature. Real birth pains:
