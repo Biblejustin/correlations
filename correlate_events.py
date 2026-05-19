@@ -62,6 +62,45 @@ def load_yearly_wars(wars_csv: str, year_lo=1400, year_hi=2025,
     return s
 
 
+def load_yearly_wars_split(wars_csv: str, war_type: str,
+                              year_lo=1400, year_hi=2025) -> pd.Series:
+    """Yearly count of war ONSETS filtered to war_type ∈ {'interstate','intrastate'}.
+
+    The Greek of Mt 24:7 / Mk 13:8 / Lk 21:10 distinguishes:
+      - ethnos vs ethnos  (intrastate / ethnic / sectarian conflict)
+      - basileia vs basileia  (interstate / state-vs-state war)
+    The COW/UCDP war_type column maps directly onto this distinction.
+    """
+    df = pd.read_csv(wars_csv)
+    df = df[df["war_type"] == war_type]
+    s = df.groupby("start_year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    s.name = f"war_starts_{war_type}"
+    return s
+
+
+def load_yearly_war_deaths_split(wars_csv: str, war_type: str,
+                                    year_lo=1400, year_hi=2025,
+                                    log10_transform: bool = False) -> pd.Series:
+    """Active-deaths series filtered to war_type."""
+    df = pd.read_csv(wars_csv)
+    df = df[df["war_type"] == war_type]
+    years = range(year_lo, year_hi + 1)
+    out = pd.Series(0.0, index=years, name=f"war_deaths_{war_type}")
+    for _, row in df.iterrows():
+        s = int(row["start_year"]); e = int(row["end_year"])
+        if e < year_lo or s > year_hi:
+            continue
+        s = max(s, year_lo); e = min(e, year_hi)
+        duration = e - s + 1
+        per_year = float(row["deaths_estimate"]) / duration
+        for y in range(s, e + 1):
+            out.loc[y] += per_year
+    if log10_transform:
+        out = np.log10(out + 1.0)
+        out.name = f"log10_war_deaths_{war_type}"
+    return out
+
+
 def load_yearly_war_deaths_active(wars_csv: str, year_lo=1400, year_hi=2025,
                                    log10_transform: bool = False) -> pd.Series:
     """

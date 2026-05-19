@@ -720,6 +720,56 @@ The honest answer from this data:
 
 This mixed picture neither confirms nor refutes the framing. Whether you read "some real increases, some flat, some declining" as consistent with rising birth pains or as showing the pattern hasn't yet materialized is a question of interpretation that the data doesn't settle on its own.
 
+## Wars split by Greek typology: ethnos vs basileia
+
+Matthew 24:7 / Mark 13:8 / Luke 21:10 in Greek:
+
+> "ἐγερθήσεται γὰρ ἔθνος ἐπὶ ἔθνος, καὶ βασιλεία ἐπὶ βασιλείαν"
+> *egerthēsetai gar ethnos epi ethnos, kai basileia epi basileian*
+
+The doubling is deliberate. **Two different kinds of conflict are named:**
+
+- *ethnos vs ethnos* — people-group vs people-group (tribe, ethnicity, sect). Modern analog: **intrastate / civil / ethnic conflict** (Rwanda, Yugoslav Wars, Tigray, Sudan/Darfur, Syria, Yemen, Burma/Rohingya, Israel-Hamas).
+- *basileia vs basileia* — kingdom vs kingdom (sovereign realm vs sovereign realm). Modern analog: **interstate war** (WWI, WWII, Russia-Ukraine, Iran-Iraq, Israel's '48/'67/'73 wars, the First Gulf War).
+
+The COW / UCDP `war_type` column in `data/wars.csv` distinguishes these as `intrastate` (192 wars, 69 intrastate) and `interstate` (123). Treating "wars" as one bucket combines two phenomena that move in **opposite directions** in modern times.
+
+![Wars split by ethnos vs basileia](figures/27_wars_split_ethnos_basileia.png)
+
+**Technical:** Top: stacked yearly onset bars 1400–2025 (blue = basileia/interstate, red = ethnos/intrastate). Middle: decadal counts side-by-side with separate trend lines fitted on the 1900+ era for each type. Bottom: log10 active-deaths intensity series for each type.
+
+**In plain English:** The Greek of Mt 24:7 actually names *two* kinds of conflict, not one. Wars between *peoples* (ethnos — ethnic and civil conflicts) are a different kind of event from wars between *kingdoms* (basileia — sovereign states fighting each other). The data shows they don't behave the same way. **Above vs. below the trend lines (middle panel):** a decade bar above the corresponding-color trend line had more conflicts of that type than the modern-era average predicts.
+
+### Decadal trends per era (with 95% bootstrap CIs)
+
+| Era | Interstate (basileia) /decade | Intrastate (ethnos) /decade |
+|---|---|---|
+| Full catalog 1400+ | +0.007 [+0.005, +0.009] | +0.006 [+0.003, +0.009] |
+| **COW era 1816+** | **+0.006 [−0.005, +0.020]** (flat) | **+0.028 [+0.016, +0.045] (significantly rising)** |
+| Modern 1900+ | +0.002 [−0.046, +0.046] (flat) | +0.038 [−0.000, +0.085] (point positive; CI just touches 0) |
+| UCDP era 1946+ | −0.014 [−0.121, +0.037] (point negative; CI crosses 0) | +0.046 [−0.027, +0.196] (point positive; CI crosses 0) |
+| Post-Cold-War 1989+ | −0.050 [−0.100, +0.000] | −0.250 [−0.700, +0.200] (noisy, only 3 complete decades) |
+
+**Key finding:** Across the 1816+ COW era, **intrastate (ethnos) conflict rate is significantly rising (CI excludes 0); interstate (basileia) rate is flat.** This is consistent with the conventional finding (Pinker, Goldstein) that interstate wars have declined while intrastate / ethnic conflicts have not.
+
+### Wars × famines coupling, split by type (1900–2025, detrended)
+
+| Pair | Pearson r | Spearman ρ |
+|---|---|---|
+| **Interstate (basileia) deaths × Famine deaths** | +0.307 (p = 0.0005) | +0.107 (p = 0.23 — NS) |
+| **Intrastate (ethnos) deaths × Famine deaths** | +0.295 (p = 0.0008) | **+0.283 (p = 0.0013)** |
+
+Both have similar Pearson correlations, but **intrastate has a far stronger Spearman ρ** (+0.28 vs +0.11). Spearman is the rank correlation — robust to outliers. The interpretation: the interstate-famine coupling is dominated by tail events (WWI + WWII, when massive interstate wars caused massive famines). The intrastate-famine coupling is *robust across the entire distribution* — it shows up in ordinary years too, not just at the extreme tail. **Modern famines (Syria, Yemen, Tigray, Sudan, Somalia, South Sudan, Biafra) are intrastate-driven, and that pattern is statistically detectable.**
+
+### What this means for the Mt 24 reading
+
+The Greek doubling — *ethnos AND basileia* — predicts that both kinds of conflict will rise. The data partially supports this:
+
+- ✅ **ethnos vs ethnos (intrastate)**: trend is significantly rising over the long COW span; coupling with famines is robust.
+- ❌ **basileia vs basileia (interstate)**: trend is flat or declining; coupling with famines is tail-driven (WWII), not pervasive.
+
+So one half of the doubled prediction matches the data, the other doesn't. If you read Mt 24 as predicting *increases in either kind*, the rising intrastate signal partially fulfills it. If you read it as predicting *both* must rise in lockstep, the divergence is a problem. The conventional "declining interstate, persistent intrastate" pattern of modern conflict scholarship is what the data shows, regardless of religious framing.
+
 ## Does the wars × famines coupling hinge on a few tail events?
 
 The FDR-significant result was wars × famines, r = +0.43. To check whether this is a steady-state coupling or driven by a handful of devastating years, `sensitivity.py` jackknifes the result after dropping the top-N years from each series.
