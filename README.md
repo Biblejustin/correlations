@@ -163,7 +163,7 @@ Marginal raw, doesn't survive Bonferroni. Pattern is consistent with wars × fla
 
 ![Wars and famines vs flares scatter](figures/10_wars_famines_scatter.png)
 
-**In plain English:** Each dot is one year, labeled with that year for the outliers. Left panel: did high-solar-flare years also have lots of wars start? Right panel: did high-solar-flare years also have lots of famines start? The dashed line is the best-fit slope. The numbers r=+0.27 and r=+0.31 measure "how tightly the dots lean together" — small positive values that look slightly upward but with huge scatter around the line. The 2024 dot is in the far right of both because that single year had a huge solar-flare swarm; remove that one year and the lean disappears.
+**In plain English:** Each dot is one year, labeled with that year for the outliers. Left panel: did high-solar-flare years also have lots of wars start? Right panel: did high-solar-flare years also have lots of famines start? The dashed line is the best-fit slope. The numbers r=+0.27 and r=+0.31 measure "how tightly the dots lean together" — small positive values that look slightly upward but with huge scatter around the line. **Above vs. below the line:** dots *above* the dashed line are years where the indicator (wars or famines) was *more* than the flare count would predict; dots *below* are years where it was *less*. If the relationship were strong, dots would hug the line tightly. They don't — there are roughly as many dots above as below at every flare count, and the spread is wide. The 2024 dot is in the far right of both because that single year had a huge solar-flare swarm; remove that one year and the lean disappears.
 
 In both detrended scatter plots above, 2024 is the high-flare outlier (the May 2024 X-class swarm puts that year ~18 flares above its regime baseline) — pulling the OLS fit positive on its own. Drop the 2024 point and the Wars × flares correlation drops to near zero; the Famines × flares correlation also weakens substantially. This is exactly the kind of "leverage point dominates the result" failure mode that Bonferroni catches when interpreted as a guard against over-interpretation.
 
@@ -194,7 +194,7 @@ War deaths peak hard at WWI, WWII, Taiping, Thirty Years; famine deaths at the 1
 
 ![Deaths vs flares scatter](figures/12_deaths_vs_flares_scatter.png)
 
-**In plain English:** Same kind of plot as figure 10 (each dot is one year), but now using actual death counts instead of event counts. The dashed line is now nearly flat — r=+0.013 and +0.020, meaning essentially zero relationship. The marginal correlation we saw in figure 10 was being driven by "more small wars get catalogued" not "more dying in wars," and switching to a death-based measure makes the apparent pattern vanish.
+**In plain English:** Same kind of plot as figure 10 (each dot is one year), but now using actual death counts instead of event counts. The dashed line is now nearly flat — r=+0.013 and +0.020, meaning essentially zero relationship. **Above vs. below the line:** dots split roughly evenly above and below the near-horizontal line, with no systematic lean. That's exactly what "no relationship" looks like. The marginal correlation we saw in figure 10 was being driven by "more small wars get catalogued" not "more dying in wars," and switching to a death-based measure makes the apparent pattern vanish.
 
 **This is the most diagnostic result in the repo.** The two largest raw correlations in the onset-count analysis (Wars × X1+ flares r=+0.27 and Famines × X1+ flares r=+0.31) **completely evaporate** when re-weighted by deaths: r = +0.014 and +0.020 respectively, p ≈ 0.93 and 0.89.
 
@@ -243,7 +243,7 @@ Across 18 window tests, the smallest p is 0.30 — flat. No tendency for global 
 
 ![Israel window ratios](figures/08_israel_window_ratios.png)
 
-**In plain English:** Three panels — global earthquakes, Levant-region earthquakes, and solar flares — testing whether any of these cluster around the dates of notable Israeli events (wars, treaties, founding). For each, we look at increasingly wide windows around the events: ±7 days, ±14 days, etc. The horizontal line at 1.0 is "what we'd expect by pure chance." Bars hovering near 1.0 mean: no clustering, just chance. None of the panels show a meaningful spike, and the small "p=" numbers above each bar (which measure "could this be coincidence?") are all very high — meaning yes, it's all consistent with coincidence.
+**In plain English:** Three panels — global earthquakes, Levant-region earthquakes, and solar flares — testing whether any of these cluster around the dates of notable Israeli events (wars, treaties, founding). For each, we look at increasingly wide windows around the events: ±7 days, ±14 days, etc. The horizontal line at 1.0 is "what we'd expect by pure chance." **Above vs. below the line:** a bar *above* 1.0 means events cluster around Israeli dates more than coincidence would produce; a bar *below* 1.0 means they cluster *less* than coincidence (which is also a real signal in the opposite direction). Bars hovering near 1.0 mean: no clustering, just chance. None of the panels show a meaningful spike, and the small "p=" numbers above each bar (which measure "could this be coincidence?") are all very high — meaning yes, it's all consistent with coincidence.
 
 ### Floods × {M≥7 quakes, X1+ flares, wars, famines}
 
@@ -366,7 +366,7 @@ This is the closest the data comes to a real signal: same-day and +14d windows b
 
 ![Flares × M≥7 windows](figures/09_flares_quakes_windows.png)
 
-**In plain English:** Same idea as the Israel chart but testing "do big earthquakes happen near solar flares?" Each bar is one window width (same day, ±1 day, ±3 days, etc.). The horizontal line at 1.0 is "what chance alone would produce." The same-day bar sits at 1.5× — that means 1.5 times as many earthquakes happened on flare days as you'd expect by coincidence. The "p" number above it (0.15) means there's still about a 15% chance this is just luck of the draw, which is too high to call it a real signal. We'd want that probability under 5% (and after accounting for how many other tests we ran, even lower) before claiming a real effect.
+**In plain English:** Same idea as the Israel chart but testing "do big earthquakes happen near solar flares?" Each bar is one window width (same day, ±1 day, ±3 days, etc.). The horizontal line at 1.0 is "what chance alone would produce." **Above vs. below the line:** a bar *above* 1.0 means quakes cluster near flares more than chance — possible solar-trigger signal. A bar *below* 1.0 means quakes happen *less* near flares than chance — anti-signal (which would also be meaningful). The same-day bar sits at 1.5× — 1.5 times as many earthquakes happened on flare days as coincidence would produce. The "p" number above it (0.15) means there's still about a 15% chance this is just luck of the draw, which is too high to call it a real signal. We'd want that probability under 5% (and after correcting for how many other tests we ran, even lower) before claiming a real effect.
 
 ### Space weather × earthquakes (recap)
 
@@ -397,7 +397,7 @@ Same conclusion at every timescale: no measurable coupling between space weather
 
 **Technical:** Each pair of bars shows the ratio of observed-to-expected M≥7 quakes in a window of N days around (centered) or after each G3+ storm day. Horizontal line at 1.0 = chance level. All bars hug 1.0; the closest is the 1.5× same-day from flares (figure 9) which doesn't pass significance correction.
 
-**In plain English:** For each window size (same day, within 1 day, within 3 days, etc.), the bars show how many big earthquakes happened near solar storms compared to chance alone. A bar at exactly 1.0 means "happens at chance rate." Higher means above chance; lower means below. All bars are within a hair of 1.0 — exactly what coincidence would produce.
+**In plain English:** For each window size (same day, within 1 day, within 3 days, etc.), the bars show how many big earthquakes happened near solar storms compared to chance alone. A bar at exactly 1.0 means "happens at chance rate." **Above vs. below the line:** A bar *above* 1.0 means "more earthquakes near solar storms than coincidence would produce" — possible signal. A bar *below* 1.0 means "fewer earthquakes near solar storms than coincidence" — opposite signal. All bars are within a hair of 1.0 — exactly what coincidence would produce.
 
 #### 11-year solar cycle phase fold
 
@@ -607,6 +607,8 @@ For each indicator, fit OLS slope on the detection-bias-clean window only, with 
 **In plain English:** Each horizontal bar is one type of event measured over a specific era. Where it made sense, the same category gets *multiple bars* — one for the full available catalog and one (or more) for tighter "detection-clean" eras (modern monitoring, satellite era, etc.). Comparing the two within a category tells you whether an apparent rise is real or just a catalog-improvement artifact.
 
 To the right of zero means increasing; to the left means decreasing. The thin black line is the "95% confidence range" — if it crosses zero (grey bars), we can't say whether the trend is up or down. Colored bars are statistically significant.
+
+**Above vs. below the zero line:** Each bar's distance from the vertical "0%" line tells you direction and size of trend. Bars to the right (red) mean the indicator has been *rising* over its detection-clean era; bars to the left (green) mean *falling*; grey bars span the zero line and can't be called either way.
 
 Patterns to notice:
 
