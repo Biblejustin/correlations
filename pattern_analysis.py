@@ -220,6 +220,20 @@ def load_indicator(name, args):
         years = df["year"].astype(int).tolist()
         yc = df.groupby(df["year"].astype(int)).size().reindex(range(1950, 2026), fill_value=0)
         return years, yc, "1950-2025"
+    if name == "NGDC M>=7 (1500+, canonical long-span)":
+        df = pd.read_csv(args.noaa_quakes_csv)
+        df["eqMagnitude"] = pd.to_numeric(df["eqMagnitude"], errors="coerce")
+        df = df[(df["eqMagnitude"] >= 7) & df["year"].between(1500, 2005)]
+        years = df["year"].astype(int).tolist()
+        yc = df.groupby(df["year"].astype(int)).size().reindex(range(1500, 2006), fill_value=0)
+        return years, yc, "1500-2005"
+    if name == "NGDC ≥100-death volcanoes (1500+)":
+        df = pd.read_csv(args.noaa_volcanoes_csv)
+        df["deathsTotal"] = pd.to_numeric(df["deathsTotal"], errors="coerce").fillna(0)
+        df = df[(df["deathsTotal"] >= 100) & df["year"].between(1500, 2025)]
+        years = df["year"].astype(int).tolist()
+        yc = df.groupby(df["year"].astype(int)).size().reindex(range(1500, 2026), fill_value=0)
+        return years, yc, "1500-2025"
     raise ValueError(name)
 
 
@@ -237,6 +251,8 @@ def main():
     ap.add_argument("--refugees-csv", default="data/refugees.csv")
     ap.add_argument("--economic-csv", default="data/economic_crises.csv")
     ap.add_argument("--coups-csv", default="data/coups.csv")
+    ap.add_argument("--noaa-quakes-csv", default="data/noaa_significant_earthquakes.csv")
+    ap.add_argument("--noaa-volcanoes-csv", default="data/noaa_volcanic_events.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
@@ -251,6 +267,8 @@ def main():
         "Major floods (>=1000 deaths)", "Major droughts (>=1M affected)",
         "Major refugee crises (>=1M)", "Severe economic crises",
         "Successful coups",
+        "NGDC M>=7 (1500+, canonical long-span)",
+        "NGDC ≥100-death volcanoes (1500+)",
     ]
 
     results = []
