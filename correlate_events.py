@@ -314,6 +314,57 @@ def load_yearly_astro_events(astro_csv: str, year_lo=1500, year_hi=2025,
     return s
 
 
+def load_yearly_droughts(droughts_csv: str, year_lo=1850, year_hi=2025,
+                          intensity_min: float = 0) -> pd.Series:
+    """Yearly count of ACTIVE drought-years (a 5-year drought contributes
+    to 5 years' count). intensity_min filters on max(deaths, people_affected).
+    """
+    df = pd.read_csv(droughts_csv)
+    df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
+    df["end_year"] = pd.to_numeric(df["end_year"], errors="coerce").fillna(df["start_year"])
+    df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
+    df["people_affected"] = pd.to_numeric(df["people_affected"], errors="coerce").fillna(0)
+    df["intensity"] = df[["deaths_estimate", "people_affected"]].max(axis=1)
+    if intensity_min > 0:
+        df = df[df["intensity"] >= intensity_min]
+    years = range(year_lo, year_hi + 1)
+    counts = pd.Series(0, index=years, name=f"drought_active_intensity_ge_{int(intensity_min)}")
+    for _, row in df.iterrows():
+        s = int(max(row["start_year"], year_lo))
+        e = int(min(row["end_year"], year_hi))
+        if e < year_lo or s > year_hi:
+            continue
+        for y in range(s, e + 1):
+            counts.loc[y] += 1
+    return counts
+
+
+def load_yearly_drought_intensity(droughts_csv: str, year_lo=1850, year_hi=2025,
+                                    log10_transform: bool = False) -> pd.Series:
+    """Yearly intensity (max deaths or affected), spread across active years."""
+    df = pd.read_csv(droughts_csv)
+    df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
+    df["end_year"] = pd.to_numeric(df["end_year"], errors="coerce").fillna(df["start_year"])
+    df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
+    df["people_affected"] = pd.to_numeric(df["people_affected"], errors="coerce").fillna(0)
+    df["intensity"] = df[["deaths_estimate", "people_affected"]].max(axis=1)
+    years = range(year_lo, year_hi + 1)
+    out = pd.Series(0.0, index=years, name="drought_intensity_active")
+    for _, row in df.iterrows():
+        s = int(max(row["start_year"], year_lo))
+        e = int(min(row["end_year"], year_hi))
+        if e < year_lo or s > year_hi or row["intensity"] == 0:
+            continue
+        duration = e - s + 1
+        per_year = float(row["intensity"]) / duration
+        for y in range(s, e + 1):
+            out.loc[y] += per_year
+    if log10_transform:
+        out = np.log10(out + 1.0)
+        out.name = "log10_drought_intensity"
+    return out
+
+
 def load_flood_event_dates(floods_csv: str, deaths_min: float = 1000,
                             exclude_tsunami: bool = True):
     """Date-precise flood event starts (for daily-window tests).

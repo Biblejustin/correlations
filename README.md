@@ -435,26 +435,40 @@ The original figure 04 looked at sunspot vs G3+ storm days vs M≥7 quakes only.
 
 The bottom bar chart is the focused version: "for each indicator, how loud is the 11-year cycle compared to noise?" Anything above 1.0 means real signal at the solar-cycle period.
 
-**Results in the 9–13 year band (the solar cycle window):**
+**Full results in the 9–13 year band (the solar cycle window), sorted by power/null ratio:**
 
 | Indicator | Peak period | Power / null | Verdict |
 |---|---|---|---|
-| Sunspot number | 10.5 y | **13.8×** | **Loud 11-year peak (sanity check ✓)** |
-| X1+ flares | 10.0 y | **1.77×** | Real solar-cycle signature |
-| G3+ storm days | 12.2 y | **1.42×** | Real solar-cycle signature (weaker — geomagnetic storms are more chaotic) |
-| War onsets | 9.0 y | 0.92× | Below noise floor |
-| Famine deaths log10 | 12.6 y | 0.94× | Below noise floor |
-| M≥7 quakes | 10.5 y | 0.88× | Below noise floor |
+| **Sunspot number** | 10.5 y | **13.8×** | **Loud 11-year peak (sanity check ✓)** |
+| **Drought intensity log10** | 10.4 y | **3.26×** | **Real 11y peak — solar→drought link** |
+| **X1+ flares** | 10.0 y | **1.77×** | Real solar-cycle signature |
+| **Active droughts** | 10.4 y | **1.71×** | Same as drought intensity |
+| **G3+ storm days** | 12.2 y | **1.42×** | Real solar-cycle signature (weaker — geomagnetic storms are more chaotic) |
 | Pandemic deaths log10 | 9.0 y | 0.99× | Below noise floor |
+| Famine deaths log10 | 12.6 y | 0.94× | Below noise floor |
+| War onsets | 9.0 y | 0.92× | Below noise floor |
 | M≥8 quakes | 12.6 y | 0.90× | Below noise floor |
+| M≥7 quakes | 10.5 y | 0.88× | Below noise floor |
+| VEI≥5 eruptions | 9.7 y | 0.84× | Below noise floor |
 | Flood events ≥1000d | 9.0 y | 0.74× | Below noise floor |
 | War deaths log10 | 11.5 y | 0.69× | Below noise floor |
-| VEI≥5 eruptions | 9.7 y | 0.84× | Below noise floor |
 | Flood deaths log10 | 12.6 y | 0.69× | Below noise floor |
 | Cyclone events ≥1000d | 9.8 y | 0.23× | Far below noise floor |
 | Cyclone deaths log10 | 9.8 y | 0.17× | Far below noise floor |
 
-**The result is unambiguous: only the three solar indicators (sunspot, X1+ flares, G3+ storm days) carry the 11-year rhythm.** Wars, famines, pandemics, floods, cyclones, earthquakes, and volcanoes are *all* at-or-below the shuffled-noise floor at 11 years. None of them runs on a solar clock.
+**Headline: only the three solar indicators carry the 11-year rhythm at high amplitude — but droughts also show a real 11-year-band peak.**
+
+| Indicator | 9–13y band peak | Power / null | Notes |
+|---|---|---|---|
+| Sunspot number | 10.5 y | **13.8×** | Textbook solar cycle |
+| **Drought intensity (log10)** | **10.4 y** | **3.26×** | **First non-solar indicator with real 11-year power** |
+| X1+ flares | 10.0 y | 1.77× | Real solar-cycle signature |
+| **Active droughts (≥100k affected)** | **10.4 y** | **1.71×** | Drought count also peaks at solar-cycle frequency |
+| G3+ storm days | 12.2 y | 1.42× | Real solar-cycle signature (storms are noisier) |
+
+This is the only non-solar indicator in the entire analysis with a 9–13y-band peak above the noise floor. The result is consistent with a known body of paleoclimate research linking solar variability to drought patterns — particularly via the solar cycle's influence on jet stream position, ENSO modulation, and Pacific Decadal Oscillation, which in turn drive drought in the western US, Mexico, and parts of Africa. With only ~64 catalogued events, the signal is noisier than the solar indicators, but it does exceed the 1.0× null threshold meaningfully.
+
+All other indicators — wars, famines, pandemics, floods, cyclones, earthquakes, volcanoes — are at or below the shuffled-noise floor at 11 years. None of them runs on a solar clock.
 
 Looking across the whole heatmap (all periods, not just 11y):
 
@@ -750,6 +764,7 @@ All scripts default to a sibling-directory layout and take `--sw-db` / `--eq-db-
 | `data/cyclones.csv` | From [`tropical-cyclones`](https://github.com/Biblejustin/tropical-cyclones) (private) | ~37 ≥1000-death tropical cyclones 1737–2024 |
 | `data/astronomical_signs.csv` | From [`astronomical-signs`](https://github.com/Biblejustin/astronomical-signs) (private) | ~60 eclipses + comets + supernovae + meteor storms |
 | `data/wars.csv` | Compiled from Brecke (pre-1816), COW (1816–2007), UCDP/PRIO (1946–) | ~180 wars with start/end years, sources cited per-row |
+| `data/droughts.csv` | From [`droughts-tracking`](https://github.com/Biblejustin/droughts-tracking) (private) | ~64 major droughts, 2200 BCE to 2024 |
 | `data/famines.csv` | Hand-curated fallback | ~60 events with start/end years |
 | `data/famines_wpf.csv` | Authoritative WPF/OWID from [famines-tracking](https://github.com/Biblejustin/famines-tracking) | 78 modern famines ≥100k deaths |
 | `data/famine_deaths_by_year.csv` | WPF per-year regional famine deaths | 1870–present, OWID-published |

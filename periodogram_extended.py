@@ -42,6 +42,8 @@ from correlate_events import (
     load_yearly_volcanoes,
     load_yearly_cyclone_deaths,
     load_yearly_cyclones,
+    load_yearly_droughts,
+    load_yearly_drought_intensity,
 )
 
 
@@ -114,6 +116,7 @@ def main():
     ap.add_argument("--pandemics-csv", default="data/pandemics.csv")
     ap.add_argument("--volcanoes-csv", default="data/volcanoes.csv")
     ap.add_argument("--cyclones-csv", default="data/cyclones.csv")
+    ap.add_argument("--droughts-csv", default="data/droughts.csv")
     ap.add_argument("--n-boot", type=int, default=1000)
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
@@ -138,6 +141,8 @@ def main():
         ("Flood deaths (log10)", np.log10(load_yearly_flood_deaths(args.floods_csv, 1900, 2025) + 1), "human"),
         ("Cyclone events >=1000d", load_yearly_cyclones(args.cyclones_csv, 1850, 2025, deaths_min=1000), "human"),
         ("Cyclone deaths (log10)", np.log10(load_yearly_cyclone_deaths(args.cyclones_csv, 1850, 2025) + 1), "human"),
+        ("Active droughts (1850+)", load_yearly_droughts(args.droughts_csv, 1850, 2025, intensity_min=1e5), "human"),
+        ("Drought intensity (log10)", np.log10(load_yearly_drought_intensity(args.droughts_csv, 1850, 2025) + 1), "human"),
     ]
 
     common_periods = np.logspace(np.log10(2.5), np.log10(60), 100)

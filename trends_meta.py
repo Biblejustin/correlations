@@ -44,6 +44,8 @@ from correlate_events import (
     load_yearly_volcanoes,
     load_yearly_cyclones,
     load_yearly_cyclone_deaths,
+    load_yearly_droughts,
+    load_yearly_drought_intensity,
 )
 
 
@@ -87,6 +89,7 @@ def main():
     ap.add_argument("--pandemics-csv", default="data/pandemics.csv")
     ap.add_argument("--volcanoes-csv", default="data/volcanoes.csv")
     ap.add_argument("--cyclones-csv", default="data/cyclones.csv")
+    ap.add_argument("--droughts-csv", default="data/droughts.csv")
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
@@ -155,6 +158,17 @@ def main():
             load_yearly_cyclone_deaths(args.cyclones_csv, 1850, 2025), True, "human"),
         ("Cyclone deaths", "1950+ (aircraft+satellite)",
             load_yearly_cyclone_deaths(args.cyclones_csv, 1950, 2025), True, "human"),
+        # Droughts — full and satellite era
+        ("Active droughts", "1850+ (full catalog)",
+            load_yearly_droughts(args.droughts_csv, 1850, 2025, intensity_min=1e5),
+            False, "human"),
+        ("Active droughts", "1979+ (satellite era)",
+            load_yearly_droughts(args.droughts_csv, 1979, 2025, intensity_min=1e5),
+            False, "human"),
+        ("Drought intensity log10", "1850+ (full catalog)",
+            load_yearly_drought_intensity(args.droughts_csv, 1850, 2025), True, "human"),
+        ("Drought intensity log10", "1979+ (satellite era)",
+            load_yearly_drought_intensity(args.droughts_csv, 1979, 2025), True, "human"),
     ]
 
     results = []
@@ -198,6 +212,7 @@ def main():
         "WPF famine deaths", "Pandemic deaths",
         "Flood events >=1000d", "Flood deaths",
         "Cyclones >=1000d", "Cyclone deaths",
+        "Active droughts", "Drought intensity log10",
     ]
     group_idx = {g: i for i, g in enumerate(group_order)}
     results.sort(key=lambda r: (group_idx.get(r["group"], 99), r["era"]))

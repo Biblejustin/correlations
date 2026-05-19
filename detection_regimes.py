@@ -55,6 +55,9 @@ REGIMES = {
     # Astronomical: detection independent of network upgrades (celestial mechanics)
     # but recording bias is real in pre-modern era
     "astro": [1500, 1900],
+
+    # Droughts: pre-1850 paleoclimate-only; EM-DAT from 1950; satellite from 1979
+    "droughts": [1850, 1950, 1979],
 }
 
 
