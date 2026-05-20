@@ -65,7 +65,7 @@ When we run K tests and one returns p < 0.05, we have to ask: is this a real eff
 
 - **FDR (Benjamini-Hochberg)**: more permissive, controls the *expected proportion* of false discoveries among rejections rather than the family-wise error rate. Better when some real effects exist in the data.
 
-Across the 28 pairwise tests in the cross-correlation matrix, only `wars × famines` (r = +0.43, raw p < 0.001) survives both Bonferroni and FDR — and that's the well-known causal mechanism where war causes famine.
+Across the 45 pairwise tests in the cross-correlation matrix (10 indicators after terrorism and stock crashes were added), only `wars × famines` (r = +0.434, raw p < 0.001) survives both Bonferroni and FDR — and that's the well-known causal mechanism where war causes famine.
 
 ---
 
@@ -73,7 +73,7 @@ Across the 28 pairwise tests in the cross-correlation matrix, only `wars × fami
 
 To compare "is this year unusually busy" across categories with vastly different units (deaths, counts, magnitudes), we z-score each series within its detection-clean window: `(x − mean(x)) / std(x)`. A year with z = +2 is "2 standard deviations above this category's normal level."
 
-The **consensus z** (figures 21 and 22) is the average z-score across all available indicators per year. If birth-pain-style synchronization were present, the consensus would spike well above 0 during shared "bad years." Observed maximum: +1.46 in 1991.
+The **consensus z** (figures 21 and 22) is the average z-score across all available indicators per year. If birth-pain-style synchronization were present, the consensus would spike well above 0 during shared "bad years." Observed maximum across the 16-indicator pool is in the 1.0–1.3 range (varies slightly by which indicators are included; see `signs_overlay.py` output) — high enough to flag specific years (1991, 2014, 2021) but well short of the 2+ consensus that synchronized birth-pains would predict.
 
 ---
 
@@ -95,7 +95,29 @@ See figure 25 (wars × famines wavelet coherence) for the headline application.
 
 ---
 
-## 9. Tail-event sensitivity (jackknife)
+## 9. Granger causality (asymmetric prediction)
+
+Pearson r is symmetric: r(A, B) tells you A and B covary, not which one moves first. **Granger causality** asks whether past values of series A help predict series B *beyond* what B's own past already predicts. It's a forward-looking statistical test of directional precedence — not metaphysical causation, but a useful check that the wars-cause-famines mechanism shows up in the data and not just the reverse.
+
+We use the statsmodels `grangercausalitytests` on detrended series, lags 1 through 5 years, and report p-values for both directions.
+
+See figure 28 + `granger.py`. Key result: wars → famines significant at lags 1, 2, 5 (p < 0.05); famines → wars never significant (all p > 0.17). The asymmetry confirms the causal direction.
+
+---
+
+## 10. Regional disaggregation
+
+Global yearly counts may average across regions that behave very differently. Two examples:
+
+- **Droughts × 11-year solar cycle** (`regional.py`, figure 29): the global 3.26× null peak is dominated by South Asia (3.03×), Europe (2.96×), and East Asia (2.61×). North America is essentially flat (0.11×), the *opposite* of the western-US emphasis in the popular paleoclimate framing.
+
+- **M ≥ 7 earthquakes** (`regional_quakes.py`, figure 33): NGDC events 1900–2005 split by NOAA `regionCode` into Pacific Ring of Fire, Alpide belt, Indo-Asian, Caribbean, Atlantic/MOR, African/rift. The Pacific Ring of Fire's significantly declining trend (-0.25/decade, CI excludes 0) drives the global signal. Only the Indo-Asian region shows a modest 11y peak (1.51× null at 11.8y), with multiple-comparison caveats.
+
+Disaggregation can either reveal hidden patterns (drought 11y is region-specific) or confirm that the global pattern is region-aggregated noise.
+
+---
+
+## 11. Tail-event sensitivity (jackknife)
 
 The strongest correlations and trends may depend on a handful of dominant single events (WWII, 1918 Spanish Flu, 1958 Great Chinese Famine, Sumatra+Tōhoku, May 2024 X-class flares). To test robustness, we drop the top-N years (by absolute residual from each series' mean) and recompute the result. If r collapses, the original was driven by tail events; if r holds, the coupling is a steady long-run pattern.
 
@@ -103,7 +125,7 @@ See figure 24 + `sensitivity.py`. Wars↔famines r = +0.43 holds up through drop
 
 ---
 
-## 10. Common reference-line interpretation
+## 12. Common reference-line interpretation
 
 Across all plots, any reference line on a chart has a consistent meaning:
 

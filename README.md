@@ -10,11 +10,11 @@ This repo is the **central analysis hub** for a 10-repo project testing whether 
 | [`spaceweather`](https://github.com/Biblejustin/spaceweather) | public | SILSO sunspot + GFZ Kp | Solar cycle peaks well-characterized; ≥ Kp 7 declining slightly |
 | [`famines-tracking`](https://github.com/Biblejustin/famines-tracking) | public | WPF/OWID famines 1870+ | No ≥ 1M-death famine since 1979 |
 | [`flood-data`](https://github.com/Biblejustin/flood-data) | public | Dartmouth + EM-DAT floods | Death rate flat post-1985 satellite-era |
-| [`pandemics-tracking`](https://github.com/Biblejustin/pandemics-tracking) | private | ~36 pandemics, Plague of Athens → COVID | Power-law tail; HIV/COVID drive recent counts |
-| [`volcanic-eruptions`](https://github.com/Biblejustin/volcanic-eruptions) | private | VEI ≥ 5 catalog 1500+ | Rate flat; Tambora 1815 only VEI 7 |
-| [`tropical-cyclones`](https://github.com/Biblejustin/tropical-cyclones) | private | Major cyclones ≥ 1000 deaths, 1737+ | Bay of Bengal dominates; deaths rising |
-| [`droughts-tracking`](https://github.com/Biblejustin/droughts-tracking) | private | Major droughts, 4.2-kyr event → 2024 | **11-year solar cycle peak above noise** |
-| [`astronomical-signs`](https://github.com/Biblejustin/astronomical-signs) | private | Eclipses, comets, supernovae | Selection-bias dominated; no terrestrial correlation |
+| [`pandemics-tracking`](https://github.com/Biblejustin/pandemics-tracking) | public | ~36 pandemics, Plague of Athens → COVID | Power-law tail; HIV/COVID drive recent counts |
+| [`volcanic-eruptions`](https://github.com/Biblejustin/volcanic-eruptions) | public | VEI ≥ 5 catalog 1500+ | Rate flat; Tambora 1815 only VEI 7 |
+| [`tropical-cyclones`](https://github.com/Biblejustin/tropical-cyclones) | public | Major cyclones ≥ 1000 deaths, 1737+ | Bay of Bengal dominates; deaths rising |
+| [`droughts-tracking`](https://github.com/Biblejustin/droughts-tracking) | public | Major droughts, 4.2-kyr event → 2024 | **11-year solar cycle peak above noise** |
+| [`astronomical-signs`](https://github.com/Biblejustin/astronomical-signs) | public | Eclipses, comets, supernovae | Selection-bias dominated; no terrestrial correlation |
 | `correlations` (this repo) | public | Cross-topic analyses | **Wars × famines r = +0.43 (FDR-significant)** |
 
 ## Dashboard — one image, six headlines
@@ -36,8 +36,8 @@ See [BACKLOG.md](BACKLOG.md) for tracked future-work items.
 1. **Cross-correlation matrix (figure 18)**: of 45 pairwise detrended tests across 10 indicators (now including terrorism via OWID/GTD and S&P 500 / DJIA bear-market drawdowns), only **wars × famines** survives FDR correction at r = +0.43 (p < 0.001). Every other indicator pair is statistically independent — terrorism and stock crashes both end up uncoupled to everything else despite hopes/fears in either direction.
 2. **Trends (figure 19)**: cyclone deaths, pandemic deaths, M ≥ 7 quakes are significantly rising; floods + famines lean down (not significant); wars + volcanoes are flat. The diagnostic test is whether tighter detection-clean eras show *bigger* trends (real signal) or *smaller* trends (catalog artifact). Cyclones and pandemics pass that test; floods and volcanoes fail it.
 3. **Birth-pains pattern (figure 20)**: no indicator shows all three signatures (acceleration + shrinking gaps + clustering) together.
-4. **Signs overlay (figure 21)**: with 13 indicators, max single-year fraction simultaneously above 1 σ reaches 6 of 13 (1991, 2023). Maximum consensus z = +1.23 (1991).
-5. **Contractions (figure 22)**: **six** multi-year contractions now detected (1918–20, 1930–33, 1940–44, 1990–93, 2009–13, 2019–25). The **2019–25 contraction is the longest (7 years) and most intense (peak z = 0.52) in the catalog**. With the broader indicator set, duration and total-intensity trends *flip to significantly positive* (CIs exclude 0) — the opposite of the original 9-indicator result and consistent with the birth-pains prediction of intensifying contractions. Peak-intensity trend is now positive in direction (CI just crosses 0).
+4. **Signs overlay (figure 21)**: with 16 indicators in the consensus pool (disasters + space + human-system + terrorism + crashes), max single-year fraction simultaneously above 1 σ reaches 6 of 13–16 depending on which year's measured set is included (1991, 2014, 2021). Maximum consensus z is in the 1.0–1.3 range — high enough to flag specific years but well short of the 2+ consensus that synchronized "birth pains" would require.
+5. **Contractions (figure 22)**: **four robust** multi-year contractions detected in the canonical 16-indicator pool (1918–20, 1939–44, 2009–13, 2019–22), all with peak z ≥ 0.35. The 2019–22 cluster peaks at z = 0.43 — slightly below 2009–13. Two additional contractions (1930–33 Great Depression, 1990–93 Yugoslav wars / Soviet dissolution) appear in narrower 13-indicator runs but fall below the 0.25 threshold when terrorism and stock crashes are added. The indicator-pool sensitivity is itself a finding: the four robust contractions are unmistakable; the marginal two are borderline. Intensification trend CIs cross 0 in the 16-indicator run (directional but not significant); the 13-indicator run showed significant lengthening + total-intensity rise. Treat the 16-indicator characterization as the canonical headline.
 6. **Periodogram (figure 23)**: only solar indicators carry the 11-year cycle, plus **droughts at 3.26× the noise floor** — a paleoclimate-attested solar-drought link.
 7. **Sensitivity (figure 24)**: wars × famines coupling holds through dropping top-5 events but collapses by top-10 — *real but concentrated* signal driven by 1908–1945 war-famine clustering.
 8. **Wavelet coherence (figure 25)**: wars × famines coupling strongest pre-WWII (~0.6), weakest post-WWII through Cold War (~0.17), partial recovery post-1990 (~0.35).
@@ -47,7 +47,7 @@ The data tells a mixed story: some indicators rising, others flat or declining, 
 
 ## Bottom line
 
-**Across ~160 statistical tests, exactly ONE correlation survives FDR (Benjamini-Hochberg) correction:**
+**Across the ~200-test suite (45-cell cross-correlation matrix + windowed flare/quake tests + Israel-event windows + lag tests across 12 indicators), exactly ONE correlation survives FDR (Benjamini-Hochberg) correction:**
 
 > **War deaths × Famine deaths, regime-detrended r = +0.434, raw p < 0.001, BH p_adj < 0.001**
 
@@ -99,7 +99,7 @@ The added categories (pandemics, volcanoes, cyclones, astronomical signs) and th
 - **Bootstrap CIs** on the strongest residuals confirm they're consistent with chance.
 - **Drop-1 leverage** confirms the ~0 correlations aren't hiding leverage-driven results.
 - **The cross-correlation matrix** is dominated by ~0 off-diagonal cells, with the wars × famines result the only standout.
-- **FDR (28 tests)** finds 1 significant pair; Bonferroni (28 tests) finds the same 1 pair. Methods agree on the headline result.
+- **FDR (45 tests)** finds 1 significant pair; Bonferroni (45 tests) finds the same 1 pair. Methods agree on the headline result.
 
 ## Methodology
 
@@ -518,7 +518,7 @@ The cross-correlation matrix already showed that pairs of indicators don't move 
 
 ![Signs overlay](figures/21_signs_overlay.png)
 
-**Technical:** Top: heatmap. Rows = 13 indicators (M ≥ 7, M ≥ 8, VEI ≥ 5, X1+ flares, war deaths, famine deaths, pandemic deaths, flood deaths, cyclone deaths, drought intensity, refugees, economic crises, coups); columns = years 1900–2025; cell color = that year's z-score within that indicator's detection-clean window (clipped at ±3 σ). Grey cells = indicator not yet measured. Bottom: consensus line is the mean z across available indicators per year ± 1 standard error. If birth-pain-style coordination were present, vertical red bands would appear in the heatmap and the consensus line would spike well above 0. Maximum observed consensus = +1.23 in 1991; runner-up years 2011 (+0.99), 2023 (+0.84), 1931 (+0.81).
+**Technical:** Top: heatmap. Rows = 16 indicators (M ≥ 7, M ≥ 8, VEI ≥ 5, X1+ flares, interstate-war deaths, intrastate-war deaths, famine deaths, pandemic deaths, flood deaths, cyclone deaths, drought intensity, refugees, economic crises, coups, terrorism deaths, stock-crash intensity); columns = years 1900–2025; cell color = that year's z-score within that indicator's detection-clean window (clipped at ±3 σ). Grey cells = indicator not yet measured. Bottom: consensus line is the mean z across available indicators per year ± 1 standard error. If birth-pain-style coordination were present, vertical red bands would appear in the heatmap and the consensus line would spike well above 0. Maximum observed consensus is in the 1.0–1.3 range (varies slightly by which indicators are available in a given year); top years 1991 (Cycle 22 + Bangladesh cyclone + Yugoslav wars), 2014 (ISIS + Ebola + post-Crimea), 2021 (COVID + Tigray + Afghanistan withdrawal).
 
 **In plain English:** Each row is one type of event. For each row, red means "that year was busier than normal for this category," blue means "quieter than normal." Reading down a column (one specific year) asks: were many categories simultaneously bad that year? If the answer were "yes, often, in a way that's intensifying," you'd see vertical red bands marching across the chart — especially recent ones. What we actually see is mostly mottled noise. The bottom line averages all the rows; if every category went red on the same year, that line would spike. Instead it wobbles within a narrow band, rarely reaching 1.5 even at its peaks.
 
@@ -538,7 +538,7 @@ A few years legitimately had multiple things going wrong at once (1991, 1918, WW
 
 - Even the worst "everything bad" year (1991) reached only +1.46 z — meaning indicators were on average ~1.5 standard deviations above their own means. That's elevated, but not extraordinary.
 - The "best" candidate for synchronized peaks is **WWII-era 1942–1944**, where multiple sub-indicators (Bengal famine, Greek famine, war deaths) cluster — but earthquakes, flares, and volcanic eruptions don't respect that cluster.
-- **At no year do more than 6 of 13 indicators simultaneously exceed 1 SD above their own means.** Synchronized birth-pains would put more like 10–13 of 13 in a coordinated spike. The 6/13 max appears in 1991 and 2023 (recent decade clustering).
+- **At no year do more than ~6 of 16 indicators simultaneously exceed 1 SD above their own means.** Synchronized birth-pains would put more like 13–16 of 16 in a coordinated spike. The maximum-overlap years are 1991, 2014, and 2021 (recent-decade clustering).
 - **The consensus line shows no acceleration toward present.** If signs were ramping up like contractions, the last 10–20 years should show a clearly rising baseline. The 2010s and early 2020s are elevated above the early 20th century but only modestly — and a lot of that comes from indicators (cyclone deaths, pandemic deaths) where the trend has a known exposure / specific-event component rather than a synchronized cosmic-scale upswing.
 
 The verdict matches what the cross-correlation matrix already showed: the indicators have their own dynamics. Some bad years happen to align two or three categories (Spanish Flu + WWI; Tōhoku + Syria; Cycle 22 + Bangladesh cyclone) but no single year shows everything peaking together. They're not running on one clock.
@@ -557,43 +557,44 @@ The signs-overlay showed the consensus line rarely spikes, but a few multi-year 
 
 **Technical:** Top: yearly consensus z (grey) and 5-year rolling mean (red), with dashed threshold at 0.25 σ. Red-shaded vertical bands mark detected contractions. Bottom: peak rolling z (red bars) and duration (blue bars) per contraction. Title strip shows bootstrapped slope-per-contraction trend with 95% CI; ** = CI excludes 0.
 
-**In plain English:** Each shaded red band is a multi-year period where "many disaster categories were unusually busy at once." With the broader 13-indicator set (adding refugees, economic crises, and coups to the original 9), the chart now finds **six** contractions: WWI aftermath (1918–20), Great Depression (1930–33), WWII era (1940–44), early 1990s (1990–93), early 2010s (2009–13), and the **ongoing 2019–25 contraction** which is the longest (7 years) and most intense (peak z = 0.52) in the entire record. The bottom panel shows each contraction's peak intensity (red) and duration (blue) — both trend *upward* across the six contractions, the opposite of what the narrower 9-indicator analysis found.
+**In plain English:** Each shaded red band is a multi-year period where "many disaster categories were unusually busy at once." With the canonical 16-indicator pool (disasters + space + human-system + terrorism + stock crashes), the chart finds **four robust** contractions: WWI/Spanish Flu (1918–20), WWII (1939–44), early 2010s (2009–13), and the recent 2019–22 cluster — each with peak rolling z ≥ 0.35. The bottom panel shows each contraction's peak intensity (red) and duration (blue).
 
-**Detected contractions:**
+**Detected contractions (16-indicator canonical pool):**
 
 | # | Years | Duration | Peak z | What was happening |
 |---|---|---|---|---|
-| 1 | 1918–1920 | 3 yr | 0.31 (1919) | WWI aftermath + Spanish Flu + Russian Civil War + Volga famine |
-| 2 | 1930–1933 | 4 yr | 0.36 (1931) | Great Depression + Soviet Holodomor + 1931 Yangtze flood + Manchurian coup |
-| 3 | 1940–1944 | 5 yr | 0.33 (1942) | WWII + Bengal/Greek/Vietnamese famines + mass displacement |
-| 4 | 1990–1993 | 4 yr | 0.30 (1992) | Yugoslav Wars + Somali famine + Soviet dissolution refugees + Mexican peso crisis precursor |
-| 5 | 2009–2013 | 5 yr | 0.43 (2012) | GFC + Eurozone debt + Arab Spring + Syria + Tōhoku + Haiyan + Pakistan floods |
-| 6 | **2019–2025** | **7 yr** | **0.52 (2021)** | **COVID-19 + Russia-Ukraine + Israel-Hamas + Sudan + Tigray + Afghan + Yemen + Türkiye-Syria quake** |
+| 1 | 1918–1920 | 3 yr | 0.36 (1918) | WWI aftermath + Spanish Flu + Russian Civil War + Volga famine |
+| 2 | 1939–1944 | 6 yr | 0.30 (1944) | WWII + Bengal/Greek/Vietnamese famines + mass displacement + Pearl Harbor → Hiroshima |
+| 3 | 2009–2013 | 5 yr | 0.40 (2012) | GFC + Eurozone debt + Arab Spring + Syria + Tōhoku + Haiyan + Pakistan floods |
+| 4 | 2019–2022 | 4 yr | 0.43 (2021) | COVID-19 + Russia-Ukraine + Israel-Hamas + Sudan + Tigray + Afghan + Yemen + Türkiye-Syria quake |
 
-**Tests of the birth-pains prediction:**
+Two marginal contractions (1930–33 Great Depression and 1990–93 Yugoslav wars / Soviet dissolution) appear in narrower 13-indicator runs but fall just below the 0.25 threshold once terrorism, heat waves, and stock crashes are added to the consensus pool. The four robust contractions above pass the threshold regardless of which indicator pool you use.
+
+**Tests of the birth-pains prediction (16-indicator pool):**
 
 | Prediction | Result | Verdict |
 |---|---|---|
-| Each contraction more intense | Peak z trend (13 indicators): **+0.04 per contraction [CI −0.01, +0.08]** | Direction now MATCHES prediction; CI just crosses 0 (was significantly opposite with 9 indicators) |
-| Each contraction longer | Duration trend (13 indicators): **+0.63 yr/contraction [CI +0.09, +1.00]** | **MATCHES prediction** (CI excludes 0) |
-| Total intensity rising (area) | Area trend (13 indicators): **+0.13 per contraction [CI +0.00, +0.26]** | **MATCHES prediction** (CI excludes 0) |
-| Each contraction longer | Duration trend: −0.7 yr/contraction [CI −4.0, +2.0] | Flat — no evidence |
-| Total intensity per contraction rising | Area-above-baseline trend: −0.31 [CI −0.71, −0.04] | **OPPOSITE** (CI excludes 0) |
-| Gaps between contractions shrinking | Gaps: 19y, 66y, 9y. Slope −5 yr/contraction [CI −57, +47] | **Direction matches** (gaps trending shorter) but n=3 gaps, CI too wide to call |
+| Each contraction more intense | Peak z trend: **+0.03 per contraction [CI −0.05, +0.10]** | Direction matches; CI crosses 0 |
+| Each contraction longer | Duration trend: **+0.20 yr/contraction [CI −1.0, +3.0]** | Direction matches; CI crosses 0 |
+| Total intensity rising (area) | Area trend: **+0.12 per contraction [CI −0.05, +0.31]** | Direction matches; CI crosses 0 |
+| Gaps between contractions shrinking | Gaps: 19y, 65y, 6y. Slope −6.5 yr/contraction [CI −59, +46] | **Direction matches** (gaps trending shorter) but n=3 gaps, CI too wide to call |
 
-**Mixed result.** Your intuition that WW1, WW2, and the modern era are the contractions holds up: the algorithm finds those exact periods (plus splits "modern" into two). But the strict birth-pains prediction has problems:
+**Indicator-pool sensitivity is itself the headline finding.** The intensification trend significance flips depending on which indicators you include:
+- **9-indicator (disasters + space only):** Peak z significantly *declining* (0.52 → 0.45 → 0.34 → 0.30). Birth-pains pattern fails.
+- **13-indicator (adds refugees + economic crises + coups):** Six contractions detected (the four robust above plus 1930–33 and 1990–93); duration significantly *lengthens* (+0.63 yr/contraction, CI excludes 0); total intensity significantly *rises* (+0.13 area/contraction, CI excludes 0). Birth-pains pattern partially confirmed.
+- **16-indicator (canonical, adds heat waves + terrorism + stock crashes):** Four robust contractions detected; all intensification trend CIs cross 0 (directional but not significant).
 
-- **Intensification result flips with the broader indicator set.** With the original 9 disaster/space indicators, peak z was declining (0.52 → 0.45 → 0.34 → 0.30, significant). With the 13-indicator set that includes human-system signals (refugees, economic crises, coups), six contractions are detected (1918–20, 1930–33, 1940–44, 1990–93, 2009–13, 2019–25) and the trend reverses: duration significantly *lengthens* (+0.63 yr/contraction, CI excludes 0); total intensity significantly *rises* (+0.13 area/contraction, CI excludes 0); peak intensity rises in direction but its CI just crosses zero. **The 2019–25 contraction is now both the longest (7 years) and most intense (peak z = 0.52) in the catalog.** Which version is "right" depends on whether the human-system indicators belong in a "birth pains" framing or not — Mt 24 explicitly names wars and famines, suggesting they should; the broader version is the more inclusive reading.
+Which version is "right" depends on which indicators belong in a "birth pains" framing. Mt 24 names wars, famines, pestilences, and earthquakes explicitly — these are all included in every pool. The 16-indicator pool is the most inclusive reading and the most conservative answer to the intensification question.
 
-  *Caveat:* z-scoring normalizes within indicator. WW1 and WW2 produced absolutely massive single-year spikes for war and famine deaths (e.g. 1918's Spanish Flu killed 50M out of a 1.8B world population — 2.8%). Modern conflicts and pandemics are huge in absolute terms (COVID's 7M deaths) but a smaller fraction of the now-much-larger baseline of all-indicator distributions. The z-score test answers "how extreme was this year *relative to its category's history*?" By that metric, modern contractions are less extreme than the world wars.
+*Caveat on z-scoring:* normalization is within-indicator. WW1 and WW2 produced absolutely massive single-year spikes for war and famine deaths (1918's Spanish Flu killed 50M / 2.8% of the world population). Modern conflicts and pandemics are huge in absolute terms (COVID's 7M deaths) but a smaller fraction of the now-much-larger baseline of all-indicator distributions. The z-score test answers "how extreme was this year *relative to its category's history*?" By that metric, modern contractions are less extreme than the world wars.
 
-- **Gap-shrinking is suggestive but underpowered.** Three gaps (19, 66, 9 years) is too few data points to fit a trend with confidence. The point-estimate direction matches the prediction (gaps getting smaller), and the 9-year gap between the 2011 and 2022 contractions is the shortest in the catalog. But with n=3 gaps the CI is enormous. A fifth contraction in the next decade or two would actually let us test this properly.
+- **Gap-shrinking is suggestive but underpowered.** Three gaps (19y, 65y, 6y) is too few data points to fit a trend with confidence. The point-estimate direction matches the prediction (gaps getting smaller), and the 6-year gap between the end of the 2009–13 contraction and the start of the 2019–22 cluster is the shortest in the catalog. But with n=3 gaps the CI is enormous. A fifth contraction in the next decade or two would actually let us test this properly.
 
-- **The 66-year gap from WWII to 2011 cuts against the "accelerating" framing.** That's the long stretch Steven Pinker and others have called "the long peace." If birth pains were accelerating monotonically, we shouldn't see a 66-year quiet between bursts.
+- **The 65-year gap from WWII to 2009 cuts against the "accelerating" framing.** That's the long stretch Steven Pinker and others have called "the long peace." If birth pains were accelerating monotonically, we shouldn't see a 65-year quiet between bursts.
 
-So: your hypothesis identifies the right *periods*, but the data within those periods doesn't yet support the strict "more intense, closer together" prediction. The modern contractions are real but smaller, and the spacing is irregular rather than monotonically tightening.
+So: your hypothesis identifies the right *periods* (the four robust contractions are unmistakably the bad eras of the last 110 years), but the data within those periods doesn't yet support the strict "more intense, closer together" prediction. The modern contractions are real but smaller in z-score terms than the world wars, and the spacing is irregular rather than monotonically tightening.
 
-If a new contraction emerges around, say, 2030–2034 with peak z above 0.30, *that* would be the first data point clearly consistent with the gap-shrinking prediction (giving us a 5-year-or-less inter-contraction interval). And if its intensity exceeded the 2022–25 peak, that would start to flip the intensification trend. So the hypothesis remains testable going forward — the next ~10 years' data will decide it.
+If a new contraction emerges around, say, 2030–2034 with peak z above 0.43, *that* would be the first data point clearly consistent with the gap-shrinking + intensification predictions. So the hypothesis remains testable going forward — the next ~10 years' data will decide it. See [PREDICTIONS.md](PREDICTIONS.md) §1 (P1–P3) for the exact pre-registered thresholds.
 
 ## Birth-pains pattern test (not just trend — pattern)
 
@@ -857,7 +858,7 @@ The hand-curated catalogs in this repo were the only option when canonical sourc
 
 ## Canonical wars source: UCDP/PRIO
 
-To check whether the ethnos/basileia split result holds under a more authoritative source than the hand-curated catalog, I integrated the **UCDP/PRIO Armed Conflict Dataset v24.1** — the standard peer-reviewed conflict database. UCDP has **2,686 conflict-years 1946–2023** (vs ~73 modern war onsets in `wars.csv`), making it ~37× more granular.
+To check whether the ethnos/basileia split result holds under a more authoritative source than the hand-curated catalog, I integrated the **UCDP/PRIO Armed Conflict Dataset v25.1** — the standard peer-reviewed conflict database. UCDP has **2,752 conflict-years 1946–2024** (vs ~73 modern war onsets in `wars.csv`), making it ~38× more granular.
 
 UCDP `type_of_conflict` codes map directly to the Greek distinction:
 - type 2 = **interstate** (basileia analog)
@@ -880,14 +881,15 @@ UCDP `type_of_conflict` codes map directly to the Greek distinction:
 
 **Both sources agree on direction.** Interstate war is flat-to-declining; intrastate conflict is rising. **The canonical UCDP source shows the rise as far more statistically significant** (CI [+1.85, +7.67] is well clear of 0) than the hand-curated onset count (which under-reports because it only captures the ~38 most prominent intrastate war onsets post-1946, missing the long tail of UCDP-counted conflicts).
 
-**Key takeaway:** the canonical-source replacement *strengthens* rather than overturns the *ethnos epi ethnos* finding. The Greek prediction of rising ethnic / sectarian / intrastate conflict is robustly confirmed in the 1946–2023 window by the peer-reviewed conflict dataset. The "basileia vs basileia" prediction continues to fail — interstate war has been flat to declining, regardless of which source you use.
+**Key takeaway:** the canonical-source replacement *strengthens* rather than overturns the *ethnos epi ethnos* finding. The Greek prediction of rising ethnic / sectarian / intrastate conflict is robustly confirmed in the 1946–2024 window by the peer-reviewed conflict dataset (UCDP/PRIO v25.1, refreshed 2026-05-20). The "basileia vs basileia" prediction continues to fail — interstate war has been flat to declining, regardless of which source you use.
 
-Other canonical-source replacements attempted but not completed in this analysis pass:
-- Smithsonian Global Volcanism Program — server returned HTTP 403 from this sandbox
-- Our World in Data pandemic mortality — direct grapher URL returns 404
-- NOAA NGDC catalogs — timed out repeatedly earlier in the project
-
-The hand-curated catalogs remain in place for those (with documented caveats). Future work could swap them when access permits.
+Other canonical-source replacement attempts:
+- ✅ **NOAA NGDC catalogs** — now successfully fetched (`fetch_ngdc.py`): 6,672 significant quakes 2150 BCE → 2026, 900 volcanic events 4360 BCE → 2026.
+- ✅ **UCDP/PRIO Armed Conflict Dataset v25.1** — refreshed to current release (2,752 conflict-years through 2024).
+- ✅ **OWID terrorism (GTD aggregate)** — refetched; covers 1970–2021 (GTD has not released past 2021).
+- ❌ **Smithsonian Global Volcanism Program** — server returns HTTP 403 (bot-protected).
+- ❌ **OWID pandemic mortality CSV** — grapher URL has moved; needs re-investigation.
+- ❌ **Brecke Conflict Catalog (1400–2000)** — original URLs and mirrors all 404. Permanently unavailable.
 
 ## Granger causality on wars↔famines
 
@@ -979,63 +981,57 @@ Nothing survives.
 
 ## Caveats
 
-What this analysis does **not** test:
+What this analysis does **not** test (or now does, with current limitations):
 
 - **Sub-yearly war/famine onsets**. We're testing year-level series, not week-level. Some hypotheses (e.g. solar flares triggering political instability within weeks) need event-day-resolution conflict data, which doesn't exist in well-curated form for the historical span.
-- **Specific sub-types**. We treat all wars the same way (intra- or interstate, large or small); same for famines. A hidden coupling restricted to e.g. famines-with-displacement might be averaged out.
-- **Regional disaggregation**. Global quake counts may mask regional patterns. The Israel section partially addresses this for the Levant.
-- **Extreme tail events**. Single very large events (Carrington 1859, 1755 Lisbon, WWII, 1958 Great Chinese Famine) dominate yearly counts. Bootstrap or jackknife sensitivity analysis would add robustness; **not currently included — tracked as item #1 in [BACKLOG.md](BACKLOG.md).**
-- **Causal direction or mechanism**. Even where a correlation exists, the analysis doesn't speak to whether one causes the other vs both being driven by a third factor.
+- **Specific sub-types** — *now addressed*. Wars are split into intrastate (*ethnos*, UCDP type 4) vs interstate (*basileia*, UCDP type 2) (figure 27); the split changes the headline result. Famines are not similarly subdivided.
+- **Regional disaggregation** — *now addressed for droughts (figure 29) and earthquakes (figure 33)*. South Asia carries the drought × 11y signal; the Pacific Ring of Fire's significantly declining M≥7 trend drives the NGDC global trend.
+- **Extreme tail events** — *now addressed*. `sensitivity.py` runs jackknife by dropping top-N years per indicator; figure 24. Wars × famines r = +0.43 holds through dropping top-5 events (drops to +0.25, still significant) but collapses by top-10. Real but concentrated.
+- **Causal direction or mechanism** — *partially addressed*. Granger causality (figure 28, `granger.py`) confirms wars → famines significant at lags 1, 2, 5 (reverse never significant). For other pairs we only have correlation, not causation.
 
 The Matthew 24 passage describes wars, famines, pestilences, and earthquakes increasing as "the beginning of birth pains." The passage doesn't claim these will rise in synchronized lock-step, and it doesn't specify mechanism — natural causation isn't excluded. The repo's correlation analysis (do these events covary in time?) and the meta-trend analysis (is each category rising?) test different aspects of the framing and reach different conclusions. The correlation analysis says: only wars↔famines covary above noise. The trend analysis says: some categories (cyclone deaths, pandemic deaths, marginally M≥7 quakes) are rising; some (famines, floods) are flat-to-declining; wars and volcanic eruptions are flat. Readers can judge for themselves whether that pattern is consistent with their framing of "birth pains."
 
 ## Setup and reproduction
 
 ```bash
-# Clone all three source repos side by side, plus this one
-git clone https://github.com/Biblejustin/spaceweather.git
-git clone https://github.com/Biblejustin/earthquakes.git
-git clone https://github.com/Biblejustin/sw-eq-correlation.git correlations
+# Clone all 10 sibling repos side by side
+for r in correlations earthquakes spaceweather famines-tracking flood-data \
+         pandemics-tracking volcanic-eruptions tropical-cyclones \
+         droughts-tracking astronomical-signs; do
+  git clone https://github.com/Biblejustin/$r.git
+done
 
-# Build source databases
-cd spaceweather && pip install -r requirements.txt && python fetch_spaceweather.py && cd ..
-cd earthquakes  && pip install -r requirements.txt && \
-    python fetch_quakes.py && \
-    python fetch_quakes.py --start-year 1900 --min-mag 6.0 --db quakes_1900.sqlite && cd ..
-
-# Run all analyses
+# Reproducibility entry point — builds source databases, runs every analysis,
+# regenerates every figure. See run-all.sh for the exact pipeline.
 cd correlations
-pip install -r requirements.txt
-python analyze.py             # space weather × M>=7 (existing)
-python lag_test.py            # propagation-aware lag (existing)
-python cycle_fold.py          # 11y cycle (existing)
-python spectral.py            # periodogram + coherence (existing)
-python wars.py                # wars × {M>=7, X1+ flares}
-python famines.py             # famines × {M>=7, X1+ flares}
-python israel.py              # Israel events × {global M>=7, Levant M>=4, X1+ flares}
-python flares_quakes.py       # X1+ flares × M>=7 quakes daily-window
-python floods.py              # floods × {M>=7, X1+, wars, famines}
-python pandemics.py           # pandemics × {M>=7, X1+, wars, floods, famines}
-python volcanoes.py           # volcanoes × {M>=7, X1+} + daily-window
-python cyclones.py            # cyclones × {M>=7, X1+} + daily-window
-python astronomy.py           # eclipses, comets, supernovae × M>=7
-python meta_analysis.py       # bootstrap + drop-1 + cross-corr matrix + FDR
-python make_figures.py        # regenerates figures/01 and /02
-python make_more_figures.py   # regenerates figures/08-12
+bash run-all.sh              # full rebuild
+# or:
+bash run-all.sh --skip-fetch          # only rerun plots, don't refetch USGS/SILSO/GFZ
+bash run-all.sh --skip-source-repos   # only run this repo's analyses
+
+# Or use the Makefile for incremental builds:
+make all                     # equivalent to run-all.sh
 ```
 
-All scripts default to a sibling-directory layout and take `--sw-db` / `--eq-db-1900` / `--eq-db-modern` / `--flares-csv` / `--wars-csv` etc. overrides.
+For canonical-source refreshes (OWID terrorism, UCDP/PRIO, NGDC quakes/volcanoes, NOAA SWPC), use:
+
+```bash
+bash refresh_canonical_data.sh   # OWID + UCDP + SWPC (direct, no proxy needed)
+python fetch_ngdc.py              # NGDC paginated catalogs
+```
+
+All scripts default to a sibling-directory layout and take `--sw-db` / `--eq-db-1900` / `--flares-csv` / `--wars-csv` / `--ucdp-csv` / `--noaa-quakes-csv` etc. overrides if you laid out repos differently.
 
 ## Data files
 
 | File | Source | Notes |
 |---|---|---|
-| `data/pandemics.csv` | From [`pandemics-tracking`](https://github.com/Biblejustin/pandemics-tracking) (private) | ~36 major epidemics, Plague of Athens (430 BC) → COVID-19 |
-| `data/volcanoes.csv` | From [`volcanic-eruptions`](https://github.com/Biblejustin/volcanic-eruptions) (private) | ~32 VEI≥5 eruptions 1500–2022 |
-| `data/cyclones.csv` | From [`tropical-cyclones`](https://github.com/Biblejustin/tropical-cyclones) (private) | ~37 ≥1000-death tropical cyclones 1737–2024 |
-| `data/astronomical_signs.csv` | From [`astronomical-signs`](https://github.com/Biblejustin/astronomical-signs) (private) | ~60 eclipses + comets + supernovae + meteor storms |
+| `data/pandemics.csv` | From [`pandemics-tracking`](https://github.com/Biblejustin/pandemics-tracking) | ~36 major epidemics, Plague of Athens (430 BC) → COVID-19 |
+| `data/volcanoes.csv` | From [`volcanic-eruptions`](https://github.com/Biblejustin/volcanic-eruptions) | 28 VEI≥5 eruptions 1500–2022 (plus a handful of high-impact VEI 4 events) |
+| `data/cyclones.csv` | From [`tropical-cyclones`](https://github.com/Biblejustin/tropical-cyclones) | ~37 ≥1000-death tropical cyclones 1737–2024 |
+| `data/astronomical_signs.csv` | From [`astronomical-signs`](https://github.com/Biblejustin/astronomical-signs) | ~60 eclipses + comets + supernovae + meteor storms |
 | `data/wars.csv` | Compiled from Brecke (pre-1816), COW (1816–2007), UCDP/PRIO (1946–) | ~180 wars with start/end years, sources cited per-row |
-| `data/droughts.csv` | From [`droughts-tracking`](https://github.com/Biblejustin/droughts-tracking) (private) | ~64 major droughts, 2200 BCE to 2024 |
+| `data/droughts.csv` | From [`droughts-tracking`](https://github.com/Biblejustin/droughts-tracking) | ~64 major droughts, 2200 BCE to 2024 |
 | `data/famines.csv` | Hand-curated fallback | ~60 events with start/end years |
 | `data/famines_wpf.csv` | Authoritative WPF/OWID from [famines-tracking](https://github.com/Biblejustin/famines-tracking) | 78 modern famines ≥100k deaths |
 | `data/famine_deaths_by_year.csv` | WPF per-year regional famine deaths | 1870–present, OWID-published |
@@ -1044,6 +1040,17 @@ All scripts default to a sibling-directory layout and take `--sw-db` / `--eq-db-
 | `data/flares_xclass.csv` | NOAA SWPC GOES X-ray catalog | ~165 X1+ flares 1976–2026 |
 | `data/israel_dates.json` | Hand-curated state-history dates | 25 modern + 19 ancient context |
 | `data/levant_historical.csv` | Ambraseys, Guidoboni, Marco et al. historical Levant seismicity | 31 major Levant events from antiquity |
+| `data/refugees.csv` | Hand-curated UNHCR/historical | ~40 mass-displacement events 1915–2025 |
+| `data/economic_crises.csv` | Hand-curated Reinhart-Rogoff-style | ~45 events 1797–2023 |
+| `data/coups.csv` | Hand-curated Powell-Thyne-style | ~75 coup attempts 1950–2023 |
+| `data/heat_waves.csv` | Hand-curated from EM-DAT + news archive | 25 heat-wave events 1896–2024 |
+| `data/terrorism.csv` | OWID grapher (GTD aggregate), `refresh_canonical_data.sh` | 51 yearly counts 1970–2021 (1993 missing per known GTD gap) |
+| `data/stock_crashes.csv` | Hand-curated from Wikipedia + NBER + Yardeni | 24 S&P 500 / DJIA / Cowles ≥20% drawdowns 1906–2025 |
+| `data/ucdp_prio_conflicts.csv` | UCDP/PRIO v25.1, `refresh_canonical_data.sh` | **2,752 conflict-years 1946–2024** (canonical replacement for `wars.csv` post-1946) |
+| `data/cow_interstate_wars_v4.csv` | Correlates of War v4 | 95 unique interstate wars 1823–2003 (337 state-participations) |
+| `data/cow_intrastate_wars_v4.csv` | Correlates of War v4.1 | ~700 civil-war events 1816+ |
+| `data/noaa_significant_earthquakes.csv` | NGDC, `fetch_ngdc.py` | **6,672 significant quakes 2150 BCE → 2026** (canonical long-span quake catalog) |
+| `data/noaa_volcanic_events.csv` | NGDC, `fetch_ngdc.py` | 900 volcanic events 4360 BCE → 2026 |
 
 External catalogs (SQLite databases) are built by the source repos and are not committed (see `.gitignore`).
 

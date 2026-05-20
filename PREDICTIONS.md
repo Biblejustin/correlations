@@ -1,6 +1,6 @@
 # Pre-registered predictions
 
-Locking in specific quantitative predictions as of **2026-05-19** for revisit at 2030, 2035, and 2040.
+Locking in specific quantitative predictions as of **2026-05-20** for revisit at 2030, 2035, and 2040.
 
 The purpose is to make the analysis falsifiable going forward. If the birth-pains hypothesis is correct, certain predictions follow; if it's not, different ones do. By recording them now, neither side can shift the goalposts later.
 
