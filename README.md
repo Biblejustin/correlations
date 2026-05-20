@@ -833,17 +833,17 @@ The wars × famines coupling is one of many possible cross-category chains. `cha
 
 **Above vs. below zero (the reference line):** A dot *above* zero with error bars excluding zero is a significant positive coupling (cause leads effect in the same direction). *Below* zero excluding zero is significant negative coupling. Crossing zero (the bulk of cells) means we can't distinguish from coincidence at that lag.
 
-## Canonical data sources (BACKLOG #3 — major progress via proxy)
+## Canonical data sources (BACKLOG #3)
 
-The hand-curated catalogs in this repo were the only option when canonical sources were unreachable from the sandbox. With Webshare proxy access, several authoritative datasets are now in `data/`:
+The hand-curated catalogs in this repo were the only option when canonical sources were unreachable from the sandbox. Several authoritative datasets are now in `data/`, and all of them turned out to be reachable direct (no proxy required from a US IP). Refresh via `bash refresh_canonical_data.sh` for OWID + UCDP + SWPC and `python fetch_ngdc.py` for the NGDC paginated catalogs.
 
 | Hand-curated | Canonical replacement | Coverage gain |
 |---|---|---|
-| `wars.csv` (modern, ~73 events 1946+) | `ucdp_prio_conflicts.csv` (2,686 conflict-years) | ~37× granularity post-1946 |
+| `wars.csv` (modern, ~73 events 1946+) | `ucdp_prio_conflicts.csv` v25.1 (2,752 conflict-years 1946–2024) | ~38× granularity post-1946 |
 | `wars.csv` (interstate, ~95 events) | `cow_interstate_wars_v4.csv` (95 unique wars, 337 state-participations 1823–2003) | Canonical academic source with battle-deaths |
 | `wars.csv` (intrastate) | `cow_intrastate_wars_v4.csv` (~700 events) | Canonical academic source |
 | `volcanoes.csv` (32 VEI≥5 events) | `noaa_volcanic_events.csv` (900 events, 4360 BCE → 2026) | ~28× events; full historical span |
-| (No pre-1900 quake data) | `noaa_significant_earthquakes.csv` (4,200 events, **2150 BCE → 2005**) | Extends quake history by 4,000+ years |
+| (No pre-1900 quake data) | `noaa_significant_earthquakes.csv` (6,672 events, **2150 BCE → 2026**) | Extends quake history by 4,000+ years |
 
 ![Canonical comparison](figures/31_canonical_compare.png)
 

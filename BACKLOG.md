@@ -42,19 +42,21 @@ The contraction-period analysis identified 4 multi-year clusters (1916–20, 193
 
 ## 3. Replace hand-curated CSVs with canonical published datasets where possible
 
-**Status:** ⏳ **Partial — substantial progress 2026-05-19.** Authoritative sources now in use:
+**Status:** ⏳ **Partial — substantial progress 2026-05-19, refreshed 2026-05-20.** Authoritative sources now in use:
 - ✅ Famines: WPF/OWID via `famines-tracking` repo
 - ✅ Floods: Dartmouth + EM-DAT via `flood-data` repo
-- ✅ **Wars: UCDP/PRIO Armed Conflict Dataset v24.1 (2,686 conflict-years 1946-2023)** added as `data/ucdp_prio_conflicts.csv`. See `ucdp_compare.py` and figure 30. The canonical source dramatically strengthens the *ethnos epi ethnos* result: intrastate conflicts +4.66/decade [CI +1.85, +7.67] vs hand-curated +0.038/decade (CI nearly crossing 0). Both agree on direction; UCDP shows the rise is far more statistically significant.
+- ✅ **Wars: UCDP/PRIO Armed Conflict Dataset v25.1 (2,752 conflict-years 1946-2024)** at `data/ucdp_prio_conflicts.csv` (upgraded from v24.1 → v25.1 on 2026-05-20, +66 conflict-years from 2024). See `ucdp_compare.py` and figure 30. The canonical source dramatically strengthens the *ethnos epi ethnos* result: intrastate conflicts +4.66/decade [CI +1.85, +7.67] vs hand-curated +0.038/decade (CI nearly crossing 0). Both agree on direction; UCDP shows the rise is far more statistically significant.
+
+**Note on fetching:** all the canonical sources here turned out to work direct from a US IP (no proxy required). The Webshare proxy account was used during initial exploration but is now **exhausted** (HTTP 402 quota error). The `refresh_canonical_data.sh` script defaults to direct mode; set `USE_PROXY=1` to opt in if needed.
 
 Remaining and blocked:
 - ❌ **Brecke Conflict Catalog (1400-2000)**: original Georgia Tech URL returns 404; mirrors also gone. **Permanently unavailable** as of 2026-05-19.
-- ❌ **Smithsonian GVP eruption catalog**: server returned HTTP 403 even via proxy. Bot-protected.
-- ❌ **OWID pandemic mortality CSV**: grapher URL returns 404 regardless of proxy. **URL has changed; would need re-investigation.**
-- ✅ **NOAA NGDC catalogs**: now reachable via Webshare proxy. **Successfully fetched**:
-  - `noaa_significant_earthquakes.csv` — 4,200 events, 2150 BCE → 2005
+- ❌ **Smithsonian GVP eruption catalog**: server returned HTTP 403. Bot-protected.
+- ❌ **OWID pandemic mortality CSV**: grapher URL returns 404. **URL has changed; would need re-investigation.**
+- ✅ **NOAA NGDC catalogs**: reachable direct (no proxy needed); volcano endpoint moved from `/v1/volcanoes/events` → `/v1/volcanoes` (caught on 2026-05-20 refresh). **Successfully fetched**:
+  - `noaa_significant_earthquakes.csv` — **6,672 events** (refreshed 2026-05-20, was 4,200)
   - `noaa_volcanic_events.csv` — 900 events, 4360 BCE → 2026
-- ✅ **COW v4 (Correlates of War)**: now reachable via proxy. Successfully fetched:
+- ✅ **COW v4 (Correlates of War)**: fetched 2026-05-19. Frozen at 2003, no further updates from the project. Files:
   - `cow_interstate_wars_v4.csv` — 95 unique wars 1823-2003
   - `cow_intrastate_wars_v4.csv` — ~700 events 1816+
   - `cow_extrastate_wars_v4.csv` — 198 rows
