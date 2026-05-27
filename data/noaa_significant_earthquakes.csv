@@ -6671,3 +6671,6 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 10992,2026,JAPAN:  OFF NORTHEAST COAST HONSHU,39.953,143.046,7.4,,,True,JAPAN,30,,,6159,,35,,,,,,,4,20,,,,10,1,10,1,7,,53,7.4,,,,,,0,,,,,,,,
 10993,1766,"GOREE ISLAND, SENEGAL",14.67,-17.4,,1,,True,SENEGAL,10,,,,,,,,,,1,,10,,,,,,,,,,,,,,,,,,,,,,,,,,
 10994,1772,PORTUGAL:  LISBON,38,-9,,1,,True,PORTUGAL,130,,,505,,,,,,,1,,4,5,,,,,,,,,,,,,,,,,,,,,,,,,
+10995,1885,AUSTRALIA:  GERALDTON,-29,113.4,5.8,,,True,AUSTRALIA,60,5,,6134,,,,,6.5,,,,1,5,,6.5,,,,,,14,,42,5.8,,,,,,,,,,,,,,
+10996,1765,DOMINICA,15.4,-61.4,,,,True,DOMINICA,90,4,,6170,,,,,,,,,4,,,,,,,,,,,,,,,,,,,,,,,,,,
+10997,2026,CHINA:  GUANGXI PROVINCE,24.457,109.218,5,2,,True,CHINA,30,,1,,1,10,2,,,2,2,,5,17,,,,,,,,16,,21,5,,,,,,6,,,1,1,1,1,,
