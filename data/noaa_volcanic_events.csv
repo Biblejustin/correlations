@@ -798,13 +798,13 @@ id,year,month,day,tsunamiEventId,earthquakeEventId,volcanoLocationId,volcanoLoca
 6646,-2420,,,,,10102,211020,0101-02=,Vesuvius,Italy,Italy,40.821,14.426,1281,Complex volcano,"P,T",,,,True,False,True,Historical,D2,5,,,,,,,,,,,,,,,,,
 6664,1892,8,30,5608,,40306,243060,0403-06=,Tofua,Tonga-SW Pacific,Tonga,-19.75,-175.07,515,Caldera,,,,,True,False,True,Historical,D2,2,,,,,,,,,,,,,,,,,
 6684,1897,3,26,5629,,50601,256010,0506-01=,Tinakula,Santa Cruz Is-SW Pac,Solomon Is.,-10.386,165.804,796,Stratovolcano,W,,,1,True,False,True,Historical,D1,2,,,1,,,,,,,,,,,,,,
-6704,2016,9,27,,,60403,264030,0604-03=,Rinjani,Lesser Sunda Is,Indonesia,-8.42,116.47,3726,Stratovolcano,,,,,True,False,True,Historical,D1,,,,,,,,,,,,,1,1,44,44,,
+6704,2016,9,27,,,60403,264030,0604-03=,Rinjani,Lesser Sunda Is,Indonesia,-8.42,116.47,3726,Stratovolcano,,,,,True,False,True,Historical,D1,2,,,,,,,,,,,,1,1,44,44,,
 6724,2016,6,9,,,120501,325010,1205-01-,Yellowstone,US-Wyoming,United States,44.43,-110.67,2805,Caldera,,1,1,,True,False,False,Tephrochronology,D7,,1,,,1,,,,,,,,,,,,,
-6744,2016,10,8,,,80211,282110,0802-11=,Asosan,Kyushu-Japan,Japan,32.885,131.085,1592,Caldera,T,,,1,True,False,True,Historical,D1,,,1,,,,,,,,,,,,,,,
+6744,2016,10,8,,,80211,282110,0802-11=,Asosan,Kyushu-Japan,Japan,32.885,131.085,1592,Caldera,T,,,1,True,False,True,Historical,D1,3,,1,,,,,,,,,,,,,,,
 6764,2017,4,13,,,60108,261080,0601-08=,Sinabung,Sumatra,Indonesia,3.17,98.392,2460,Stratovolcano,P,,,1,True,False,True,Holocene,U,3,,1,2,,,,,,2,,,,,,,,
-6784,2017,7,1,,,60320,263200,0603-20=,Dieng Volcanic Complex,Java,Indonesia,-7.2,109.879,2565,Complex volcano,,8,1,,True,False,True,Historical,D1,,1,,,8,11,1,11,1,,,,,,,,,
-6804,2017,9,12,,,10101,211010,0101-01=,Campi Flegrei,Italy,Italy,40.827,14.139,458,Caldera,,3,1,,True,False,True,Historical,D5,,1,,,3,,,,,,,,,,,,,
-6824,2017,9,23,,,50703,257030,0507-03=,Ambae,Vanuatu-SW Pacific,Vanuatu,-15.389,167.835,1496,Shield volcano,T,,,1,True,False,True,Historical,D1,,,1,,,,,,,,,,,,,,,
+6784,2017,7,1,,,60320,263200,0603-20=,Dieng Volcanic Complex,Java,Indonesia,-7.2,109.879,2565,Complex volcano,,8,1,,True,False,True,Historical,D1,1,1,,,8,11,1,11,1,,,,,,,,,
+6804,2017,9,12,,,10101,211010,0101-01=,Campi Flegrei,Italy,Italy,40.827,14.139,458,Caldera,,3,1,,True,False,False,Historical,D5,,1,,,3,,,,,,,,,,,,,
+6824,2017,9,23,,,50703,257030,0507-03=,Ambae,Vanuatu-SW Pacific,Vanuatu,-15.389,167.835,1496,Shield volcano,T,,,1,True,False,True,Historical,D1,3,,1,,,,,,,,,,,,,,,
 6844,2015,10,,,,40105,241050,0401-05=,Okataina,New Zealand,New Zealand,-38.157,176.507,1111,Lava dome,I,1,1,,True,False,False,Historical,D1,,1,,,1,,,,,,,,,,,,,
 6845,2013,12,13,,,40105,241050,0401-05=,Okataina,New Zealand,New Zealand,-38.157,176.507,1111,Lava dome,G,1,1,,True,False,False,Historical,D1,,1,,,1,,,,,,,,,,,,,
 6864,2018,4,28,5678,10332,130201,332010,1302-01-,Kilauea,Hawaiian Is,United States,19.421,-155.287,1222,Shield volcano,L,,,4,True,False,True,Historical,D1,1,,4,3,,1,1,1,1,3,716,716,,,,,370,370
@@ -826,7 +826,7 @@ id,year,month,day,tsunamiEventId,earthquakeEventId,volcanoLocationId,volcanoLoca
 7204,2018,8,25,,,50102,251020,0501-02=,Manam,New Guinea-NE of,Papua New Guinea,-4.08,145.037,1807,Stratovolcano,"L,T",,,3,True,False,True,Historical,D1,4,,3,3,,,,,,3,164,164,,,,,,
 7224,1939,7,24,5694,,160016,360160,1600-16=,Kick 'em Jenny,W Indies,Netherlands,12.3,-61.64,-185,Submarine volcano,T,,,,True,False,True,Historical,D1,1,,,,,,,,,,,,,,,,,
 7244,2018,12,15,,10382,50704,257040,0507-04=,Ambrym,Vanuatu-SW Pacific,Vanuatu,-16.25,168.12,1334,Pyroclastic shield,"S,T,G",,,2,True,False,True,Historical,D1,2,,2,1,,,,,,1,,,,,,,,
-7264,2018,12,22,5699,,60200,262000,0602-00=,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,W,437,3,4,True,False,True,Historical,D1,3,,,4,,,,31943,4,,,2844,,1,,10,,250
+7264,2018,12,22,5699,,60200,262000,0602-00=,Krakatau,Indonesia,Indonesia,-6.101,105.423,285,Caldera,W,437,3,4,True,False,True,Historical,D1,4,,,4,,,,31943,4,,,2844,,1,,10,,250
 7284,2018,12,26,,10383,10106,211060,0101-06=,Etna,Italy,Italy,37.748,14.999,3357,Stratovolcano,S,,,4,True,False,True,Historical,D1,2,,,1,,,,28,1,,,15,,,,,,115
 7304,2019,1,7,,,50102,251020,0501-02=,Manam,New Guinea-NE of,Papua New Guinea,-4.08,145.037,1807,Stratovolcano,T,,,1,True,False,True,Historical,D1,4,,1,,,,,,,,,,,,,,,
 7324,2019,5,7,,,60108,261080,0601-08=,Sinabung,Sumatra,Indonesia,3.17,98.392,2460,Stratovolcano,T,,,2,True,False,True,Holocene,U,4,,2,,,,,,,,,,,,,,,
@@ -872,7 +872,7 @@ id,year,month,day,tsunamiEventId,earthquakeEventId,volcanoLocationId,volcanoLoca
 7559,2022,12,4,,,60330,263300,0603-30=,Semeru,Java,Indonesia,-8.108,112.922,3657,Stratovolcano,"T,M",,,1,True,False,True,Historical,D1,4,,1,,,,,,,,,,,,,,,
 7560,2023,7,7,,,50502,255020,0505-02=,Bagana,Bougainville-SW Paci,Papua New Guinea,-6.137,155.196,1855,Lava cone,"T,G",,,1,True,False,True,Historical,D1,2,,1,1,,,,,,1,,,,,,,,
 7561,2023,12,3,,,60114,261140,0601-14=,Marapi,Sumatra,Indonesia,-0.38,100.474,2885,Complex volcano,"P,T",23,1,,True,False,True,Historical,D1,,1,,,23,12,1,12,1,,,,,,0,0,,
-7562,2023,1,31,5906,,50706,257060,0507-06=,East Epi,Vanuatu-SW Pacific,Vanuatu,-16.68,168.389,833,Stratovolcano,W,,,,True,False,True,Historical,D1,,,,,,,,,,,,,,,,,,
+7562,2023,1,31,5906,,50706,257060,0507-06=,East Epi,Vanuatu-SW Pacific,Vanuatu,-16.68,168.389,833,Stratovolcano,W,,,,True,False,True,Historical,D1,1,,,,,,,,,,,,,,,,,
 7563,2023,12,18,,,170102,371020,1701-02=,Reykjanes,Iceland-SW,Iceland,63.817,-22.717,140,Crater rows,"S,L",1,1,2,True,False,True,Historical,D6,,1,2,1,1,,,,,1,3,3,,,,,,
 7564,1902,6,6,5696,,160012,360120,1600-12=,Pelee,W Indies,Martinique,14.809,-61.166,1372,Stratovolcano,"W,P",,,,True,False,True,Historical,D2,4,,,,,,,,,,,,,,,,,
 7565,1902,7,10,5697,,160012,360120,1600-12=,Pelee,W Indies,Martinique,14.809,-61.166,1372,Stratovolcano,"P,W",,,,True,False,True,Historical,D2,4,,,,,,,,,,,,,,,,,
@@ -886,7 +886,7 @@ id,year,month,day,tsunamiEventId,earthquakeEventId,volcanoLocationId,volcanoLoca
 7573,1994,9,18,5927,10747,50214,252140,0502-14=,Rabaul,New Britain-SW Pac,Papua New Guinea,-4.246,152.194,688,Pyroclastic shield,"W,S",,,,True,False,False,Historical,D1,,,,,,,,,,,,,,,,,,
 7574,1952,9,17,5928,,80407,284070,0804-07=,Myojinsho,Izu Is-Japan,Japan,31.888,139.918,11,Submarine volcano,,,,,True,False,True,Historical,D1,2,,,,,,,,,,,,,,,,,
 7575,2019,5,2,5930,,140506,345060,1405-06=,Irazu,Costa Rica,Costa Rica,9.979,-83.852,3436,Stratovolcano,W,,,,True,False,False,Historical,D1,,,,,,,,,,,,,,,,,,
-7576,2024,11,3,,,60418,264180,0604-18=,Lewotobi,Lesser Sunda Is,Indonesia,-8.542,122.775,1703,Stratovolcano,"T,P,L",9,1,,True,False,True,Historical,D1,,1,,1,9,64,,64,2,1,23,23,,,,,,
+7576,2024,11,3,,,60418,264180,0604-18=,Lewotobi,Lesser Sunda Is,Indonesia,-8.542,122.775,1703,Stratovolcano,"T,P,L",9,1,,True,False,True,Historical,D1,2,1,,1,9,64,,64,2,1,23,23,,,,,,
 7577,2024,12,9,,,70202,272020,0702-02=,Kanlaon,Philippines-C,Philippines,10.41,123.13,2422,Stratovolcano,"T,P",,0,2,True,False,True,Historical,D1,2,0,2,1,,,,,,1,1,1,,,,,2.2,2.2
 7578,1979,4,30,,,60114,261140,0601-14=,Marapi,Sumatra,Indonesia,-0.38,100.474,2885,Complex volcano,M,80,2,,True,False,True,Historical,D1,2,2,,,80,,,,,,,,,,,,,
 7579,1541,9,11,,,140210,342100,1402-10=,Agua,Guatemala,Guatemala,14.465,-90.743,3760,Stratovolcano,m,1300,4,,True,False,False,Holocene,U,,4,,,1300,,,,,,,,,,,,,
@@ -896,6 +896,6 @@ id,year,month,day,tsunamiEventId,earthquakeEventId,volcanoLocationId,volcanoLoca
 7583,2025,11,23,,,201091,221091,0201-091,Hayli Gubbi,Africa-NE,Ethiopia,13.51,40.722,493,Shield volcano,T,,0,1,True,False,True,Holocene,U,,0,1,,,,,,,,,,,,,,,
 7584,2023,10,8,5891,10709,804091,284091,0804-091,Sofugan,Izu Is-Japan,Japan,29.794,140.342,99,Submarine volcano,"S,W",,,,True,False,True,Uncertain,Unknown,,,,,,,,,,,,,,,,,,
 7585,2024,7,4,6084,,10104,211040,0101-04=,Stromboli,Italy,Italy,38.789,15.213,924,Stratovolcano,,,,,True,False,True,Historical,D1,2,,,,,,,,,,,,,,,,,
-7586,2025,3,20,,,60418,264180,0604-18=,Lewotobi,Lesser Sunda Is,Indonesia,-8.542,122.775,1703,Stratovolcano,"T,P",1,1,,True,False,True,Historical,D1,,1,,,1,1,1,1,1,,,,,,,,,
+7586,2025,3,20,,,60418,264180,0604-18=,Lewotobi,Lesser Sunda Is,Indonesia,-8.542,122.775,1703,Stratovolcano,"T,P",1,1,,True,False,True,Historical,D1,2,1,,,1,1,1,1,1,,,,,,,,,
 7587,2000,10,13,6167,,1502824,352824,,Altar,Ecuador,Ecuador,-1.67,-78.42,5321,Stratovolcano,"W,A",13,1,2,True,False,False,Pleistocene,Unknown,,,,1,,,,,,,,10,,,,,,
 7588,2026,5,7,,,60801,268010,0608-01=,Dukono,Halmahera-Indonesia,Indonesia,1.699,127.878,1273,Complex volcano,T,3,1,,True,False,True,Historical,D1,,1,,,3,15,1,15,1,,,,,,,,,
