@@ -43,9 +43,15 @@ if [ ! -x "$PY" ]; then
 fi
 
 # ---- pull all repos so we build on the latest data commits ----
+# Regenerable artifacts (figures/plots/notebooks) left dirty by an earlier
+# run (e.g. a --dry-run) would make pull fail, so drop that churn first.
+# data/ and code are never auto-reverted here.
 echo "==> Pulling all repos"
 for r in "${REPOS[@]}"; do
     if [ -d "$ROOT/$r" ]; then
+        for spec in figures plots ':(glob)*.ipynb'; do
+            git -C "$ROOT/$r" checkout -q -- "$spec" 2>/dev/null
+        done
         git -C "$ROOT/$r" pull --ff-only -q || echo "    ! $r pull failed (diverged?)"
     else
         git -C "$ROOT" clone -q "git@github.com:Biblejustin/$r.git"
