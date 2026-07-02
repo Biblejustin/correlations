@@ -1001,24 +1001,31 @@ for r in correlations earthquakes spaceweather famines-tracking flood-data \
   git clone https://github.com/Biblejustin/$r.git
 done
 
-# Reproducibility entry point — builds source databases, runs every analysis,
-# regenerates every figure. See run-all.sh for the exact pipeline.
+# THE entry point — fetch all catalogs, run every analysis, regenerate every
+# figure, commit + push each repo whose data actually changed. Safe to run
+# on a schedule or by hand; repos with no data change are left untouched
+# (figure-only byte churn is reverted, not committed). Creates a shared,
+# version-pinned venv at ../venv on first run.
 cd correlations
-bash run-all.sh              # full rebuild
-# or:
-bash run-all.sh --skip-fetch          # only rerun plots, don't refetch USGS/SILSO/GFZ
-bash run-all.sh --skip-source-repos   # only run this repo's analyses
-
-# Or use the Makefile for incremental builds:
-make all                     # equivalent to run-all.sh
+bash weekly_update.sh
+# variants:
+bash weekly_update.sh --dry-run      # everything except commit/push
+bash weekly_update.sh --skip-fetch   # only re-run analyses + figures
 ```
 
-For canonical-source refreshes (OWID terrorism, UCDP/PRIO, NGDC quakes/volcanoes, NOAA SWPC), use:
+The pieces `weekly_update.sh` orchestrates can also be run individually:
 
 ```bash
-bash refresh_canonical_data.sh   # OWID + UCDP + SWPC (direct, no proxy needed)
-python fetch_ngdc.py              # NGDC paginated catalogs
+bash run-all.sh                   # legacy full rebuild (no commits)
+bash refresh_canonical_data.sh    # OWID + UCDP + SWPC (guarded; direct, no proxy)
+python fetch_ngdc.py               # NGDC paginated catalogs (guarded)
+python refresh_report.py           # delta table + M6.0-6.4 close-calls digest
+python predictions_scorecard.py    # append current P8-P14 inputs to PREDICTIONS_LOG.md
 ```
+
+Every catalog replacement goes through `fetch_guard.py`: a download that
+doesn't parse, loses expected columns, or shrinks the catalog by more than
+~2% is refused, leaving the old file (plus a `.bak`) in place.
 
 All scripts default to a sibling-directory layout and take `--sw-db` / `--eq-db-1900` / `--flares-csv` / `--wars-csv` / `--ucdp-csv` / `--noaa-quakes-csv` etc. overrides if you laid out repos differently.
 

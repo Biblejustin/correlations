@@ -100,7 +100,8 @@ def main():
     try:
         years, m7, g3, ssn = load_yearly(args.sw_db, args.eq_db)
     except sqlite3.OperationalError as e:
-        sys.exit(f"Could not open databases ({e}); see README.")
+        print(f"SKIPPED: could not open databases ({e}); skipping this analysis.")
+        sys.exit(0)
 
     f_m7,  P_m7  = raw_periodogram(m7)
     f_g3,  P_g3  = raw_periodogram(g3)

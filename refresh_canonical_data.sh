@@ -65,7 +65,7 @@ fetch "https://services.swpc.noaa.gov/json/goes/primary/xray-flares-7-day.json" 
       "data/_swpc_xray_7day.json" "NOAA SWPC X-ray flares (recent)"
 
 echo ""
-echo "Done — fetched _* prefix files. Post-processing notes:"
-echo "  - OWID: merge attacks+deaths on year + Code=OWID_WRL → data/terrorism.csv"
-echo "  - UCDP: unzip data/_ucdp_prio_v25_1.zip → data/ucdp_prio_conflicts.csv"
-echo "  - NGDC: run 'python fetch_ngdc.py' separately (paginated)"
+echo "Post-processing raw downloads into working catalogs (guarded)..."
+PY="${PYTHON:-python3}"
+"$PY" process_canonical.py
+echo "Done. NGDC catalogs are separate: run '$PY fetch_ngdc.py' (paginated + guarded)."

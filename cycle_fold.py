@@ -198,7 +198,8 @@ def main():
         )
         quakes = pd.read_sql("SELECT time_ms, mag FROM quakes", sqlite3.connect(args.eq_db))
     except sqlite3.OperationalError as e:
-        sys.exit(f"Could not open databases ({e}); see README.")
+        print(f"SKIPPED: could not open databases ({e}); skipping this analysis.")
+        sys.exit(0)
 
     quakes["date"] = pd.to_datetime(quakes["time_ms"], unit="ms", utc=True).dt.tz_localize(None)
     quakes["year"] = quakes["date"].dt.year

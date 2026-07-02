@@ -11,6 +11,8 @@ from pathlib import Path
 
 import requests
 
+from fetch_guard import guard_or_exit
+
 EARTHQUAKE_URL = "https://www.ngdc.noaa.gov/hazel/hazard-service/api/v1/earthquakes"
 VOLCANO_EVENTS_URL = "https://www.ngdc.noaa.gov/hazel/hazard-service/api/v1/volcanoes"
 
@@ -45,40 +47,31 @@ def main():
     args = ap.parse_args()
     out = Path(args.data_dir); out.mkdir(parents=True, exist_ok=True)
 
+    def write_guarded(items: list[dict], target_name: str, required: list[str]):
+        keys: list[str] = []
+        seen = set()
+        for it in items:
+            for k in it.keys():
+                if k not in seen:
+                    keys.append(k); seen.add(k)
+        tmp = out / f"_{target_name}.tmp"
+        with open(tmp, "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=keys)
+            w.writeheader()
+            for it in items:
+                w.writerow(it)
+        guard_or_exit(tmp, out / target_name, required_cols=required)
+
     print(f"Fetching NGDC significant earthquakes (maxYear={args.max_year})...")
     quakes = fetch_all(EARTHQUAKE_URL, {"maxYear": args.max_year})
     if quakes:
-        # Union of all keys so we don't drop columns
-        keys: list[str] = []
-        seen = set()
-        for q in quakes:
-            for k in q.keys():
-                if k not in seen:
-                    keys.append(k); seen.add(k)
-        out_path = out / "noaa_significant_earthquakes.csv"
-        with open(out_path, "w", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=keys)
-            w.writeheader()
-            for q in quakes:
-                w.writerow(q)
-        print(f"Wrote {out_path}: {len(quakes)} rows, {len(keys)} columns")
+        write_guarded(quakes, "noaa_significant_earthquakes.csv",
+                        ["year", "eqMagnitude", "latitude", "longitude"])
 
     print(f"\nFetching NGDC volcanic events (maxYear={args.max_year})...")
     volcs = fetch_all(VOLCANO_EVENTS_URL, {"maxYear": args.max_year})
     if volcs:
-        keys = []
-        seen = set()
-        for v in volcs:
-            for k in v.keys():
-                if k not in seen:
-                    keys.append(k); seen.add(k)
-        out_path = out / "noaa_volcanic_events.csv"
-        with open(out_path, "w", newline="") as f:
-            w = csv.DictWriter(f, fieldnames=keys)
-            w.writeheader()
-            for v in volcs:
-                w.writerow(v)
-        print(f"Wrote {out_path}: {len(volcs)} rows, {len(keys)} columns")
+        write_guarded(volcs, "noaa_volcanic_events.csv", ["year", "name"])
 
 
 if __name__ == "__main__":

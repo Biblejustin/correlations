@@ -137,6 +137,12 @@ def main():
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
 
+    missing = [p for p in (args.sw_db, args.eq_db_1900) if not Path(p).exists()]
+    if missing:
+        print(f"SKIPPED: missing sibling database(s) {missing}; "
+              f"run the fetchers in those repos first.")
+        return
+
     # Load each indicator on its detection-clean window (yearly)
     indicators = [
         # Solar

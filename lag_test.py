@@ -46,7 +46,8 @@ def main():
             parse_dates=["date_iso"],
         )
     except sqlite3.OperationalError as e:
-        sys.exit(f"Could not open {args.sw_db} ({e}); see README.")
+        print(f"SKIPPED: could not open {args.sw_db} ({e}); skipping this analysis.")
+        sys.exit(0)
 
     gfz["date"] = gfz["date_iso"].dt.normalize()
     gfz["peak_kp"] = gfz[[f"kp{i}" for i in range(1, 9)]].max(axis=1)

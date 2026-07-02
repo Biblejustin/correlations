@@ -151,10 +151,9 @@ def main():
     try:
         gfz, quakes = load_data(args.sw_db, args.eq_db)
     except sqlite3.OperationalError as e:
-        sys.exit(
-            f"Could not open databases ({e}). "
-            f"Build them first: see README for clone+fetch instructions."
-        )
+        print(f"SKIPPED: could not open databases ({e}). "
+              f"Build them first (see README); skipping this analysis.")
+        sys.exit(0)
 
     print("=" * 80)
     print(f"YEARLY-COUNT ANALYSIS ({args.year_lo}-{args.year_hi})")
