@@ -13,6 +13,8 @@
 # which is version-pinned so figures render identically across machines).
 set -u
 
+export MPLBACKEND="${MPLBACKEND:-Agg}"   # headless-safe (VPS has no display)
+
 DRY_RUN=0
 SKIP_FETCH=0
 for arg in "$@"; do
