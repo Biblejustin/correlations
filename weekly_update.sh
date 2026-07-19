@@ -28,7 +28,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"   # .../correlations
 ROOT="$(dirname "$HERE")"
 REPOS=(correlations earthquakes spaceweather famines-tracking flood-data
        pandemics-tracking volcanic-eruptions tropical-cyclones
-       droughts-tracking astronomical-signs)
+       droughts-tracking astronomical-signs israel-pressure-disasters)
 
 echo "==> Workspace: $ROOT"
 
@@ -78,6 +78,9 @@ if [ $SKIP_FETCH -eq 0 ]; then
 
     echo "==> Fetching OWID / UCDP / SWPC (guarded)"
     (cd "$HERE" && PYTHON="$PY" bash refresh_canonical_data.sh | tail -4)
+
+    echo "==> Israel-pressure disaster correlation (guarded fetch + test + figure)"
+    (cd "$ROOT/israel-pressure-disasters" && bash update.sh | tail -4)
 fi
 
 # ---- delta report + change flags (before analyses, so we can skip work) ----
@@ -192,7 +195,8 @@ fi
 
 # Hand-curated sisters: commit only when a non-plot file changed
 for r in famines-tracking flood-data pandemics-tracking volcanic-eruptions \
-         tropical-cyclones droughts-tracking astronomical-signs; do
+         tropical-cyclones droughts-tracking astronomical-signs \
+         israel-pressure-disasters; do
     NONPLOT=$(git -C "$ROOT/$r" status --porcelain | grep -vE "(plots/|figures/|\.ipynb)" || true)
     if [ -n "$NONPLOT" ]; then
         commit_repo "$r" "Update data through $TODAY"
