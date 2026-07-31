@@ -15,7 +15,7 @@ This repo is the **central analysis hub** for a 10-repo project testing whether 
 | [`tropical-cyclones`](https://github.com/Biblejustin/tropical-cyclones) | public | Major cyclones ≥ 1000 deaths, 1737+ | Bay of Bengal dominates; deaths rising |
 | [`droughts-tracking`](https://github.com/Biblejustin/droughts-tracking) | public | Major droughts, 4.2-kyr event → 2024 | **11-year solar cycle peak above noise** |
 | [`astronomical-signs`](https://github.com/Biblejustin/astronomical-signs) | public | Eclipses, comets, supernovae | Selection-bias dominated; no terrestrial correlation |
-| `correlations` (this repo) | public | Cross-topic analyses | **Wars × famines r = +0.43 (FDR-significant)** |
+| `correlations` (this repo) | public | Cross-topic analyses | **Wars × famines r = +0.450 (FDR-significant)** |
 
 ## Dashboard — one image, six headlines
 
@@ -41,7 +41,7 @@ See [BACKLOG.md](BACKLOG.md) for tracked future-work items.
 6. **Periodogram (figure 23)**: only solar indicators carry the 11-year cycle, plus **droughts at 3.26× the noise floor** — a paleoclimate-attested solar-drought link.
 7. **Sensitivity (figure 24)**: wars × famines coupling holds through dropping top-5 events but collapses by top-10 — *real but concentrated* signal driven by 1908–1945 war-famine clustering.
 8. **Wavelet coherence (figure 25)**: wars × famines coupling strongest pre-WWII (~0.6), weakest post-WWII through Cold War (~0.17), partial recovery post-1990 (~0.35).
-9. **Chains (figure 26)**: drought → famine (+0.22 at +10y); war → famine (+0.43 at 0); war → refugees (+0.28 at +9y); economic crisis → coups (+0.20 at +1y).
+9. **Chains (figure 26)**: drought → famine (+0.22 at +10y); interstate war → famine (+0.31 at 0) and intrastate war → famine (+0.31 at 0); war → refugees (+0.28 at +9y); economic crisis → coups (+0.20 at +1y).
 
 The data tells a mixed story: some indicators rising, others flat or declining, no synchronized acceleration, and one real cross-category coupling (wars → famines, the historically attested one). Whether that pattern is consistent with "birth pains" is an interpretive question; the README sections below report the data honestly.
 
@@ -49,7 +49,7 @@ The data tells a mixed story: some indicators rising, others flat or declining, 
 
 **Across the ~200-test suite (45-cell cross-correlation matrix + windowed flare/quake tests + Israel-event windows + lag tests across 12 indicators), exactly ONE correlation survives FDR (Benjamini-Hochberg) correction:**
 
-> **War deaths × Famine deaths, regime-detrended r = +0.434, raw p < 0.001, BH p_adj < 0.001**
+> **War deaths × Famine deaths, regime-detrended r = +0.450, raw p = 1.5e-07, BH p_adj < 0.001** (n = 124, 1900–2023)
 
 This is the classic mechanism — wars cause famines (WWII-era Bengal, Greek, Vietnamese, and Dutch Hunger Winter; Russian Civil War; Lebanon; etc.). It's a real, expected, mechanistically grounded coupling, and the methodology correctly identifies it.
 
@@ -57,9 +57,13 @@ This is the classic mechanism — wars cause famines (WWII-era Bengal, Greek, Vi
 
 ![Cross-correlation matrix](figures/18_cross_correlation_matrix.png)
 
-**In plain English:** This is a heat map of how much pairs of phenomena rise and fall together. Each row and column is one category (earthquakes, war deaths, etc.). Each cell is a number between −1 and +1: +1 means they rise and fall in perfect lockstep, 0 means no relationship, −1 means when one goes up the other goes down. Red = positive, blue = negative, white-ish = near zero. The bright red square at "War deaths × Famine deaths" (+0.43) is the only one that stands out — meaning bloody war years also tend to be bad famine years, exactly as you'd expect from history. Every other cell is washed-out, meaning the categories run on independent clocks.
+**In plain English:** This is a heat map of how much pairs of phenomena rise and fall together. Each row and column is one category (earthquakes, war deaths, etc.). Each cell is a number between −1 and +1: +1 means they rise and fall in perfect lockstep, 0 means no relationship, −1 means when one goes up the other goes down. Red = positive, blue = negative, white-ish = near zero. The bright red square at "War deaths × Famine deaths" (+0.45) is the only one that stands out — meaning bloody war years also tend to be bad famine years, exactly as you'd expect from history. Every other cell is washed-out, meaning the categories run on independent clocks.
 
- All Pearson r values on regime-detrended yearly series fall in [-0.16, +0.32]. The strongest raw results (famines × X1+ flares r=+0.31 p=0.027 detrended; famines lag-1y vs quakes p=0.005) do not survive correction for the test grid size. Daily-window tests on Israel events × {global M≥7, Levant M≥4, X1+ flares} sit at 0.6×–1.4× of chance, none significant.
+ Across the 45-cell matrix, Pearson r values on regime-detrended yearly series fall in [−0.268, +0.450]. Exactly one pair clears correction for the test grid size: war deaths × famine deaths, r = +0.450, raw p = 1.5e-07 (n = 124, 1900–2023), which survives both Benjamini-Hochberg FDR at α = 0.05 and the stricter Bonferroni cutoff (raw p < 0.00111 for 45 tests). Nothing else is close: the next-smallest raw p in the whole matrix is 0.060 (X1+ flares × stock-crash intensity, r = −0.268), whose BH-adjusted p is 0.87. Two caveats on that one survivor. Its Spearman rho is only +0.265, notably weaker than the Pearson r, meaning the result leans on a few extreme years rather than a consistent year-by-year ordering; and the raw p assumes independent years, while the detrended residuals carry lag-1 autocorrelation of about 0.67 (wars) and 0.63 (famines), so the effective sample is nearer 51 than 124 and a correspondingly corrected p is about 8.9e-04. It still clears, but by roughly three orders of magnitude less than the headline figure suggests.
+
+ On the window: each series is now truncated to the coverage its source actually has, and years beyond that are NaN rather than zero. Previously the loaders reindexed onto a fixed 1900–2025 window with `fill_value=0`, so a catalog whose curation stopped early (famine deaths genuinely end in 2023) contributed fabricated observations reading "no famine anywhere on earth." Removing them raised this correlation from +0.434 to +0.450, which is the expected direction: the invented zeros were diluting it. The matrix is pairwise-complete, so each pair uses only the years both of its series actually cover.
+
+ Separately, on the event-onset series (not part of the 45-cell death-series matrix), the strongest raw results are famines × X1+ flares r = +0.31 p = 0.027 detrended and famines lag-1y vs quakes p = 0.005; neither survives correction for the test grid size. Daily-window tests on Israel events × {global M≥7, Levant M≥4, X1+ flares} sit at 0.6×–1.4× of chance, none significant.
 
 | Topic pair | Headline result | Raw p | Survives Bonferroni? |
 |---|---|---|---|
@@ -781,19 +785,19 @@ So one half of the doubled prediction matches the data, the other doesn't. If yo
 
 ## Does the wars × famines coupling hinge on a few tail events?
 
-The FDR-significant result was wars × famines, r = +0.43. To check whether this is a steady-state coupling or driven by a handful of devastating years, `sensitivity.py` jackknifes the result after dropping the top-N years from each series.
+The FDR-significant result was wars × famines, r = +0.450. To check whether this is a steady-state coupling or driven by a handful of devastating years, `sensitivity.py` jackknifes the result after dropping the top-N years from each series.
 
 ![Tail-event sensitivity](figures/24_tail_event_sensitivity.png)
 
 **Technical:** Left panel: detrended Pearson r between wars and famines as a function of how many top-N years are dropped from each series. Right panel: each indicator's per-decade trend slope before/after dropping top-1/3/5 years. The grey horizontal reference is the full-sample r = +0.434.
 
-**In plain English:** The chart asks: "if we throw out the most extreme war-and-famine years (WWI/WWII era, Russian Civil War, Soviet famines), does the +0.43 correlation survive?" The answer is: yes for the top-5, no for the top-10. Drop the top 5 most-extreme years on each side and the correlation drops from +0.43 to +0.25 (still real). Drop the top 10 and it falls to +0.15 (now consistent with chance). **The wars↔famines coupling is real but concentrated — it lives in the 1908–1945 cluster of war-driven famines** (Russian Civil War + Volga; WWI; WWII Bengal/Greek/Dutch/Vietnamese famines). It is not a smooth long-run pattern.
+**In plain English:** The chart asks: "if we throw out the most extreme war-and-famine years (WWI/WWII era, Russian Civil War, Soviet famines), does the +0.450 correlation survive?" The answer is: yes for the top-5, no for the top-10. Drop the top 5 most-extreme years on each side and the correlation drops from +0.43 to +0.25 (still real). Drop the top 10 and it falls to +0.15 (now consistent with chance). **The wars↔famines coupling is real but concentrated — it lives in the 1908–1945 cluster of war-driven famines** (Russian Civil War + Volga; WWI; WWII Bengal/Greek/Dutch/Vietnamese famines). It is not a smooth long-run pattern.
 
 **Above vs. below the trend lines (right panel):** Each indicator's slope before/after dropping top events. Indicators whose bars barely move when you drop top events have stable trends (M ≥ 8 quakes, famine deaths, war deaths). Indicators whose bars shift a lot are tail-driven — most notably **X1+ flares**, where the +1.4/decade slope drops to +0.4/decade just by removing the top-5 flare years (the May 2024 swarm dominates). That confirms the X1+ flares trend is mostly cyclic, not secular.
 
 ## When did wars × famines actually couple?
 
-Pearson r = +0.43 averaged over 1900–2025 hides whether the coupling was constant or concentrated. Wavelet coherence (`wavelet.py`) decomposes the relationship into a 2D map: time × frequency × coherence.
+Pearson r = +0.450 averaged over 1900–2023 hides whether the coupling was constant or concentrated. Wavelet coherence (`wavelet.py`) decomposes the relationship into a 2D map: time × frequency × coherence.
 
 ![Wavelet coherence wars vs famines](figures/25_wavelet_coherence_wars_famines.png)
 
@@ -813,7 +817,7 @@ Pearson r = +0.43 averaged over 1900–2025 hides whether the coupling was const
 | **Cold War late (1963–1989)** | **0.17** | Lowest — "long peace" + food aid decoupled the pair |
 | Post-Cold-War (1990–2025) | 0.35 | Partial recovery — Syria/Yemen/Sudan/Tigray war-caused famines return |
 
-So the full-span r = +0.43 was really "0.6 pre-WWII, 0.2 in the Cold War, 0.35 today." The mechanism is alive in eras where wars cause famines (early 20th C, again now); it goes quiet when famines are policy-driven (1958–62) or food aid breaks the chain.
+So the full-span r = +0.450 was really "0.6 pre-WWII, 0.2 in the Cold War, 0.35 today." The mechanism is alive in eras where wars cause famines (early 20th C, again now); it goes quiet when famines are policy-driven (1958–62) or food aid breaks the chain.
 
 ## Cross-category chain analyses
 
@@ -826,7 +830,7 @@ The wars × famines coupling is one of many possible cross-category chains. `cha
 **In plain English:** Each panel asks "if a disaster of type A happens this year, how much does type B happen N years later?" Looking at the peaks:
 
 - **Drought → famine** peaks at lag +10 years (r = +0.22, significant) — droughts have cumulative downstream effects that show up in famine deaths a decade later.
-- **War → famine** peaks at lag 0 (r = +0.43, significant) — same-year coupling, the FDR-significant result.
+- **War → famine** peaks at lag 0 (r = +0.450, significant) — same-year coupling, the FDR-significant result.
 - **War → refugees** peaks at lag +9 years (r = +0.28, significant) — displacement accumulates over the duration of conflict, peaking ~9 years after onset.
 - **War → flood-deaths** peaks at lag +2 years with r = **−0.29** (significant, *negative direction*) — flood reporting decreases in war years (war zones lose detection capacity, not floods becoming less deadly).
 - **Volcano → famine** peaks at +3 years (r = +0.09, NS) — the Tambora-1815 "year without summer → famine" mechanism does not show up in the post-1900 record (Pinatubo 1991, Hunga Tonga 2022 didn't cause global famines).
@@ -986,7 +990,7 @@ What this analysis does **not** test (or now does, with current limitations):
 - **Sub-yearly war/famine onsets**. We're testing year-level series, not week-level. Some hypotheses (e.g. solar flares triggering political instability within weeks) need event-day-resolution conflict data, which doesn't exist in well-curated form for the historical span.
 - **Specific sub-types** — *now addressed*. Wars are split into intrastate (*ethnos*, UCDP type 4) vs interstate (*basileia*, UCDP type 2) (figure 27); the split changes the headline result. Famines are not similarly subdivided.
 - **Regional disaggregation** — *now addressed for droughts (figure 29) and earthquakes (figure 33)*. South Asia carries the drought × 11y signal; the Pacific Ring of Fire's significantly declining M≥7 trend drives the NGDC global trend.
-- **Extreme tail events** — *now addressed*. `sensitivity.py` runs jackknife by dropping top-N years per indicator; figure 24. Wars × famines r = +0.43 holds through dropping top-5 events (drops to +0.25, still significant) but collapses by top-10. Real but concentrated.
+- **Extreme tail events** — *now addressed*. `sensitivity.py` runs jackknife by dropping top-N years per indicator; figure 24. Wars × famines r = +0.450 holds through dropping top-5 events (drops to +0.263, p = 0.004, still significant) but collapses at top-10 (+0.097, p = 0.32, not significant). Real but concentrated.
 - **Causal direction or mechanism** — *partially addressed*. Granger causality (figure 28, `granger.py`) confirms wars → famines significant at lags 1, 2, 5 (reverse never significant). For other pairs we only have correlation, not causation.
 
 The Matthew 24 passage describes wars, famines, pestilences, and earthquakes increasing as "the beginning of birth pains." The passage doesn't claim these will rise in synchronized lock-step, and it doesn't specify mechanism — natural causation isn't excluded. The repo's correlation analysis (do these events covary in time?) and the meta-trend analysis (is each category rising?) test different aspects of the framing and reach different conclusions. The correlation analysis says: only wars↔famines covary above noise. The trend analysis says: some categories (cyclone deaths, pandemic deaths, marginally M≥7 quakes) are rising; some (famines, floods) are flat-to-declining; wars and volcanic eruptions are flat. Readers can judge for themselves whether that pattern is consistent with their framing of "birth pains."

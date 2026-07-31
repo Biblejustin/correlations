@@ -16,6 +16,14 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+# Analysis window ends at the last COMPLETE calendar year. This was hardcoded to
+# 2025, which was correct when written but goes stale silently every January:
+# the series would keep ending in 2025 while the catalogs moved on. Deriving it
+# also stops a partial current year (which would read as a real annual total, and
+# a low one) from ever entering an annual correlation.
+import datetime as _dt
+END_YEAR = _dt.date.today().year - 1
+
 from correlate_events import (
     load_yearly_quakes_m7,
     load_yearly_flares_x1,
@@ -83,13 +91,13 @@ def run_bootstrap_section(args):
     # Flood ±0d test (tsunami-excluded)
     flood_dates = load_flood_event_dates(args.floods_csv, deaths_min=1000,
                                           exclude_tsunami=True)
-    flood_dates = [d for d in flood_dates if 1965 <= d.year <= 2025]
+    flood_dates = [d for d in flood_dates if 1965 <= d.year <= END_YEAR]
     con = sqlite3.connect(args.eq_db_modern)
     q = pd.read_sql("SELECT time_ms, mag FROM quakes WHERE mag>=7", con)
     q["date"] = pd.to_datetime(q["time_ms"], unit="ms", utc=True).dt.tz_localize(None).dt.normalize()
-    q = q[q["date"].dt.year.between(1965, 2025)]
+    q = q[q["date"].dt.year.between(1965, END_YEAR)]
     m7_dates = q["date"].tolist()
-    all_dates = set(pd.date_range("1965-01-01", "2025-12-31", freq="D"))
+    all_dates = set(pd.date_range("1965-01-01", f"{END_YEAR}-12-31", freq="D"))
 
     print(f"\nFlood (>=1000 deaths, tsunami-excluded) × M>=7 quakes, ±0 day window:")
     for w in (0, 1):
@@ -99,11 +107,11 @@ def run_bootstrap_section(args):
 
     # Flares ±0d test
     fl = pd.read_csv(args.flares_csv, parse_dates=["date"])
-    fl = fl[fl["date"].dt.year.between(1976, 2025)]
+    fl = fl[fl["date"].dt.year.between(1976, END_YEAR)]
     flare_dates = list(fl["date"].dt.normalize())
-    q2 = q[q["date"].dt.year.between(1976, 2025)]
+    q2 = q[q["date"].dt.year.between(1976, END_YEAR)]
     m7_dates_flare = q2["date"].tolist()
-    all_dates_flare = set(pd.date_range("1976-01-01", "2025-12-31", freq="D"))
+    all_dates_flare = set(pd.date_range("1976-01-01", f"{END_YEAR}-12-31", freq="D"))
 
     print(f"\nX1+ flares × M>=7 quakes, ±0 day window:")
     for w in (0, 1):
@@ -151,17 +159,17 @@ def run_leverage_section(args):
     print("2. DROP-1 LEVERAGE ANALYSIS (which years drive each result?)")
     print("=" * 80)
 
-    m7 = load_yearly_quakes_m7(args.eq_db_1900, 1900, 2025)
-    xf = load_yearly_flares_x1(args.flares_csv, 1976, 2025)
-    wars = load_yearly_wars(args.wars_csv, 1976, 2025)
-    wars_d = load_yearly_war_deaths_active(args.wars_csv, 1976, 2025, log10_transform=True)
+    m7 = load_yearly_quakes_m7(args.eq_db_1900, 1900, END_YEAR)
+    xf = load_yearly_flares_x1(args.flares_csv, 1976, END_YEAR)
+    wars = load_yearly_wars(args.wars_csv, 1976, END_YEAR)
+    wars_d = load_yearly_war_deaths_active(args.wars_csv, 1976, END_YEAR, log10_transform=True)
 
     drop1_leverage(wars, xf, "wars_global", "flares_x",
                     "Wars onset count × X1+ flares (the +0.27 result)")
     drop1_leverage(wars_d, xf, "wars_global", "flares_x",
                     "War deaths (log10) × X1+ flares (the +0.014 result)")
     drop1_leverage(m7, xf, "quakes_m7", "flares_x",
-                    "M>=7 quakes × X1+ flares (1976-2025)")
+                    f"M>=7 quakes × X1+ flares (1976-{END_YEAR})")
 
 
 # ============================================================
@@ -170,27 +178,27 @@ def run_leverage_section(args):
 
 def run_cross_corr_matrix(args, out):
     print("\n" + "=" * 80)
-    print("3. CROSS-CORRELATION MATRIX (regime-detrended, 1900-2025)")
+    print(f"3. CROSS-CORRELATION MATRIX (regime-detrended, 1900-{END_YEAR})")
     print("=" * 80)
 
     series_dict = {
-        "M>=7 quakes": (load_yearly_quakes_m7(args.eq_db_1900, 1900, 2025), "quakes_m7"),
-        "War deaths log10": (load_yearly_war_deaths_active(args.wars_csv, 1900, 2025, log10_transform=True), "wars_global"),
-        "Famine deaths log10 (WPF)": (load_yearly_famine_deaths_wpf(args.famines_wpf_csv, 1900, 2025, log10_transform=True), "famines"),
-        "Flood deaths log10": (load_yearly_flood_deaths(args.floods_csv, 1900, 2025, log10_transform=True), "floods"),
-        "Pandemic deaths log10": (load_yearly_pandemic_deaths(args.pandemics_csv, 1900, 2025, log10_transform=True), "pandemics"),
-        "Volcanoes VEI>=5": (load_yearly_volcanoes(args.volcanoes_csv, 1900, 2025, vei_min=5), "volcanoes"),
-        "Cyclone deaths log10": (load_yearly_cyclone_deaths(args.cyclones_csv, 1900, 2025, log10_transform=True), "cyclones"),
+        "M>=7 quakes": (load_yearly_quakes_m7(args.eq_db_1900, 1900, END_YEAR), "quakes_m7"),
+        "War deaths log10": (load_yearly_war_deaths_active(args.wars_csv, 1900, END_YEAR, log10_transform=True), "wars_global"),
+        "Famine deaths log10 (WPF)": (load_yearly_famine_deaths_wpf(args.famines_wpf_csv, 1900, END_YEAR, log10_transform=True), "famines"),
+        "Flood deaths log10": (load_yearly_flood_deaths(args.floods_csv, 1900, END_YEAR, log10_transform=True), "floods"),
+        "Pandemic deaths log10": (load_yearly_pandemic_deaths(args.pandemics_csv, 1900, END_YEAR, log10_transform=True), "pandemics"),
+        "Volcanoes VEI>=5": (load_yearly_volcanoes(args.volcanoes_csv, 1900, END_YEAR, vei_min=5), "volcanoes"),
+        "Cyclone deaths log10": (load_yearly_cyclone_deaths(args.cyclones_csv, 1900, END_YEAR, log10_transform=True), "cyclones"),
     }
     # Add flares only over its valid range
-    xf_only = load_yearly_flares_x1(args.flares_csv, 1976, 2025)
-    # Pad with NaN to 1900-2025 for matrix alignment
+    xf_only = load_yearly_flares_x1(args.flares_csv, 1976, END_YEAR)
+    # Pad with NaN to 1900-END_YEAR for matrix alignment
     xf_padded = pd.Series(np.nan, index=range(1900, 2026))
     xf_padded.loc[xf_only.index] = xf_only.values
     xf_padded.name = "xflare_count"
     series_dict["X1+ flares"] = (xf_padded, "flares_x")
 
-    # Terrorism: GTD via OWID, 1970-2021. Pad with NaN for 1900-2025 matrix alignment.
+    # Terrorism: GTD via OWID, 1970-2021. Pad with NaN for 1900-END_YEAR matrix alignment.
     terror_only = load_yearly_terrorism_deaths(args.terrorism_csv, 1970, 2021, log10_transform=True)
     terror_padded = pd.Series(np.nan, index=range(1900, 2026))
     terror_padded.loc[terror_only.index] = terror_only.values
@@ -198,8 +206,63 @@ def run_cross_corr_matrix(args, out):
     series_dict["Terrorism deaths log10"] = (terror_padded, "terrorism")
 
     # Stock crashes (S&P 500 / pre-1957 equivalents): peak-to-trough drawdown sum per year
-    crashes_d = load_yearly_stock_drawdown_intensity(args.crashes_csv, 1900, 2025, log10_transform=True)
+    crashes_d = load_yearly_stock_drawdown_intensity(args.crashes_csv, 1900, END_YEAR, log10_transform=True)
     series_dict["Stock crash intensity log10"] = (crashes_d, "stock_crashes")
+
+    # ---- Truncate each series to the coverage its source actually has. ----
+    # The loaders reindex onto the full 1900-END_YEAR window with fill_value=0, so a
+    # source whose curation stopped early reads as a run of real zeros: "no famine
+    # anywhere on earth in 2024." That is a fabricated observation, and it enters
+    # the correlation as data. X1+ flares and terrorism were already handled this
+    # way (padded with NaN outside their valid range); this extends the same
+    # treatment to the rest. The matrix below is pairwise-complete, so NaN years
+    # simply drop out of any pair that includes them.
+    #
+    # Coverage end is read from the source file, never hardcoded. For annual
+    # series it is the last year carrying data; for event lists it is the last
+    # ONSET recorded, because after that the series carries only the spread tails
+    # of already-known events and no new information.
+    def _coverage_end(kind, path):
+        try:
+            if kind == "annual_famine":
+                d = pd.read_csv(path)
+                return int(d[d["famine_deaths"] > 0]["year"].max())
+            if kind == "onset":
+                d = pd.read_csv(path)
+                return int(pd.to_numeric(d["start_year"], errors="coerce").max())
+            if kind == "year_col":
+                d = pd.read_csv(path, low_memory=False)
+                return int(pd.to_numeric(d["year"], errors="coerce").max())
+            if kind == "start_date":
+                d = pd.read_csv(path, low_memory=False)
+                return int(pd.to_datetime(d["start_date"], errors="coerce").dt.year.max())
+        except Exception as exc:
+            print(f"    ! coverage probe failed for {path}: {exc}")
+        return None
+
+    coverage_sources = {
+        "famines":       ("annual_famine", args.famines_wpf_csv),
+        "wars_global":   ("onset",         args.wars_csv),
+        "pandemics":     ("onset",         args.pandemics_csv),
+        "volcanoes":     ("year_col",      args.volcanoes_csv),
+        "cyclones":      ("year_col",      args.cyclones_csv),
+        "stock_crashes": ("year_col",      args.crashes_csv),
+        "floods":        ("start_date",    args.floods_csv),
+    }
+
+    print("\nSource coverage (years beyond these are NaN, not zero):")
+    for label in list(series_dict):
+        s, key = series_dict[label]
+        end = None
+        if key in coverage_sources:
+            end = _coverage_end(*coverage_sources[key])
+            if end is not None:
+                s = s.astype(float).copy()
+                s.loc[s.index > end] = np.nan
+                series_dict[label] = (s, key)
+        n_ok = int(s.notna().sum())
+        shown = end if end is not None else "n/a (already NaN-padded)"
+        print(f"    {label:32s} through {str(shown):>24s}   {n_ok:3d} usable years")
 
     names = list(series_dict.keys())
     n = len(names)
@@ -238,7 +301,7 @@ def run_cross_corr_matrix(args, out):
                 ax.text(j, i, f"{R[i, j]:+.2f}",
                         ha="center", va="center", color=color, fontsize=8)
     plt.colorbar(im, label="Pearson r (regime-detrended)")
-    plt.title("Cross-correlation matrix — all regime-detrended yearly series, 1900-2025\n"
+    plt.title(f"Cross-correlation matrix — all regime-detrended yearly series, 1900-{END_YEAR}\n"
               "Off-diagonal cells: pairwise correlation; all near 0")
     plt.tight_layout()
     plt.savefig(out / "18_cross_correlation_matrix.png", dpi=120)

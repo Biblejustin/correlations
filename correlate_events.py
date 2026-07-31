@@ -23,6 +23,31 @@ from scipy import stats
 from detection_regimes import REGIMES, piecewise_detrend
 
 
+
+
+def _nan_beyond_coverage(s: pd.Series, observed_years) -> pd.Series:
+    """Years past a source's last observation are UNKNOWN, not zero.
+
+    The loaders reindex onto a caller-supplied window with fill_value=0. When a
+    catalog's curation stops before the window ends (famine deaths genuinely end
+    in 2023), those trailing zeros are not measurements, they are fabrications,
+    and downstream correlations consume them as real observations reading "no
+    famine anywhere on earth." NaN is the honest value: every consumer here does
+    pairwise-complete masking, so unknown years simply drop out of any pair that
+    includes them. Interior zeros are untouched, because a zero inside the
+    covered span is a real zero.
+    """
+    try:
+        yrs = [int(y) for y in observed_years]
+    except Exception:
+        return s
+    if not yrs:
+        return s
+    last = max(yrs)
+    s = s.astype(float).copy()
+    s.loc[s.index > last] = np.nan
+    return s
+
 # ---------- Data loaders ----------
 
 def load_yearly_quakes_m7(eq_db_1900: str, year_lo=1900, year_hi=2025) -> pd.Series:
@@ -30,7 +55,8 @@ def load_yearly_quakes_m7(eq_db_1900: str, year_lo=1900, year_hi=2025) -> pd.Ser
     con = sqlite3.connect(eq_db_1900)
     q = pd.read_sql("SELECT time_ms, mag FROM quakes WHERE mag>=7", con)
     q["year"] = pd.to_datetime(q["time_ms"], unit="ms", utc=True).dt.year
-    s = q.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = q.groupby("year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = "m7_count"
     return s
 
@@ -39,7 +65,8 @@ def load_yearly_quakes_m8(eq_db_1900: str, year_lo=1900, year_hi=2025) -> pd.Ser
     con = sqlite3.connect(eq_db_1900)
     q = pd.read_sql("SELECT time_ms, mag FROM quakes WHERE mag>=8", con)
     q["year"] = pd.to_datetime(q["time_ms"], unit="ms", utc=True).dt.year
-    s = q.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = q.groupby("year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = "m8_count"
     return s
 
@@ -48,7 +75,8 @@ def load_yearly_flares_x1(flares_csv: str, year_lo=1976, year_hi=2025) -> pd.Ser
     """Yearly X1+ flare counts."""
     df = pd.read_csv(flares_csv, parse_dates=["date"])
     df["year"] = df["date"].dt.year
-    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = "xflare_count"
     return s
 
@@ -57,7 +85,8 @@ def load_yearly_wars(wars_csv: str, year_lo=1400, year_hi=2025,
                      include_ongoing: bool = True) -> pd.Series:
     """Yearly count of war ONSETS (groupby start_year)."""
     df = pd.read_csv(wars_csv)
-    s = df.groupby("start_year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("start_year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = "war_starts"
     return s
 
@@ -73,7 +102,8 @@ def load_yearly_wars_split(wars_csv: str, war_type: str,
     """
     df = pd.read_csv(wars_csv)
     df = df[df["war_type"] == war_type]
-    s = df.groupby("start_year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("start_year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = f"war_starts_{war_type}"
     return s
 
@@ -90,7 +120,8 @@ def load_yearly_noaa_quakes(noaa_csv: str, year_lo=-2150, year_hi=2025,
     df = pd.read_csv(noaa_csv)
     df = df[df["eqMagnitude"] >= mag_min]
     df = df[df["year"].between(year_lo, year_hi)]
-    s = df.groupby(df["year"].astype(int)).size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby(df["year"].astype(int)).size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = f"noaa_quakes_mag_ge_{mag_min}"
     return s
 
@@ -103,7 +134,8 @@ def load_yearly_noaa_volcanic_events(noaa_csv: str, year_lo=-4360, year_hi=2025,
     if deaths_min > 0:
         df = df[df["deathsTotal"] >= deaths_min]
     df = df[df["year"].between(year_lo, year_hi)]
-    s = df.groupby(df["year"].astype(int)).size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby(df["year"].astype(int)).size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = f"noaa_volcanoes_deaths_ge_{int(deaths_min)}"
     return s
 
@@ -119,7 +151,8 @@ def load_yearly_cow_wars(cow_csv: str, year_lo=1816, year_hi=2007,
     # Deduplicate by WarNum (one row per war, not one per state-side)
     df = df.drop_duplicates(subset=["WarNum"])
     df = df[df["StartYear1"].between(year_lo, year_hi)]
-    s = df.groupby("StartYear1").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("StartYear1").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = f"cow_{war_type}_wars"
     return s
 
@@ -144,7 +177,8 @@ def load_yearly_ucdp_conflicts(ucdp_csv: str, year_lo=1946, year_hi=2025,
     df = df[df["intensity_level"] >= intensity_min]
     if conflict_types:
         df = df[df["type_of_conflict"].isin(conflict_types)]
-    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = "ucdp_active_conflicts"
     return s
 
@@ -193,6 +227,7 @@ def load_yearly_war_deaths_active(wars_csv: str, year_lo=1400, year_hi=2025,
         per_year = float(row["deaths_estimate"]) / duration
         for y in range(s, e + 1):
             out.loc[y] += per_year
+    out = _nan_beyond_coverage(out, df["start_year"])
     if log10_transform:
         out = np.log10(out + 1.0)
         out.name = "log10_war_deaths"
@@ -201,7 +236,8 @@ def load_yearly_war_deaths_active(wars_csv: str, year_lo=1400, year_hi=2025,
 
 def load_yearly_famines(famines_csv: str, year_lo=1500, year_hi=2025) -> pd.Series:
     df = pd.read_csv(famines_csv)
-    s = df.groupby("start_year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("start_year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = "famine_starts"
     return s
 
@@ -221,6 +257,7 @@ def load_yearly_famine_deaths_active(famines_csv: str, year_lo=1500, year_hi=202
         per_year = float(row["deaths_estimate"]) / duration
         for y in range(s, e + 1):
             out.loc[y] += per_year
+    out = _nan_beyond_coverage(out, df["start_year"])
     if log10_transform:
         out = np.log10(out + 1.0)
         out.name = "log10_famine_deaths"
@@ -239,7 +276,8 @@ def load_yearly_famine_deaths_wpf(deaths_by_year_csv: str, year_lo=1870, year_hi
     df = pd.read_csv(deaths_by_year_csv)
     df = df[~df["entity"].str.startswith("World", na=False)]  # avoid double-counting
     yearly = df.groupby("year")["famine_deaths"].sum()
-    s = yearly.reindex(range(year_lo, year_hi + 1), fill_value=0).astype(float)
+    s = _nan_beyond_coverage(
+        yearly.reindex(range(year_lo, year_hi + 1), fill_value=0).astype(float), yearly.index)
     if log10_transform:
         s = np.log10(s + 1.0)
         s.name = "log10_wpf_famine_deaths"
@@ -274,7 +312,8 @@ def load_yearly_flood_events(floods_csv: str, year_lo=1900, year_hi=2025,
     if deaths_min > 0:
         df = df[df["deaths"] >= deaths_min]
 
-    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = f"flood_events_deaths_ge_{int(deaths_min)}"
     return s
 
@@ -342,7 +381,8 @@ def load_yearly_pandemic_deaths(pandemics_csv: str, year_lo=1500, year_hi=2025,
 def load_yearly_pandemic_starts(pandemics_csv: str, year_lo=1500, year_hi=2025) -> pd.Series:
     df = pd.read_csv(pandemics_csv)
     df = df[df["start_year"].between(year_lo, year_hi)]
-    s = df.groupby("start_year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("start_year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = "pandemic_starts"
     return s
 
@@ -351,7 +391,8 @@ def load_yearly_volcanoes(volcanoes_csv: str, year_lo=1500, year_hi=2025,
                            vei_min: int = 5) -> pd.Series:
     df = pd.read_csv(volcanoes_csv)
     df = df[df["vei"].astype(str).str.extract(r"(\d+)")[0].astype(float) >= vei_min]
-    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = f"volcanoes_vei_ge_{vei_min}"
     return s
 
@@ -372,7 +413,8 @@ def load_yearly_cyclones(cyclones_csv: str, year_lo=1700, year_hi=2025,
     df = pd.read_csv(cyclones_csv)
     if deaths_min > 0:
         df = df[df["deaths_estimate"] >= deaths_min]
-    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = f"cyclones_deaths_ge_{int(deaths_min)}"
     return s
 
@@ -419,7 +461,8 @@ def load_astronomical_signs(astro_csv: str, year_lo=1500, year_hi=2025,
 def load_yearly_astro_events(astro_csv: str, year_lo=1500, year_hi=2025,
                               types: list = None) -> pd.Series:
     df = load_astronomical_signs(astro_csv, year_lo, year_hi, types=types)
-    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = "astro_events"
     return s
 
@@ -483,7 +526,8 @@ def load_yearly_economic_crises(crises_csv: str, year_lo=1800, year_hi=2025,
         order = {"medium": 0, "severe": 1, "extreme": 2}
         min_rank = order[severity_min]
         df = df[df["severity"].map(order).fillna(-1) >= min_rank]
-    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = f"economic_crises_{severity_min or 'all'}"
     return s
 
@@ -494,7 +538,8 @@ def load_yearly_coups(coups_csv: str, year_lo=1950, year_hi=2025,
     df = pd.read_csv(coups_csv)
     if outcome:
         df = df[df["outcome"] == outcome]
-    s = df.groupby("year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = f"coups_{outcome or 'all'}"
     return s
 
@@ -531,7 +576,8 @@ def load_yearly_heat_wave_events(heat_csv: str, year_lo=1880, year_hi=2025,
     df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
     if deaths_min > 0:
         df = df[df["deaths_estimate"] >= deaths_min]
-    s = df.groupby("start_year").size().reindex(range(year_lo, year_hi + 1), fill_value=0)
+    _g = df.groupby("start_year").size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
     s.name = f"heat_wave_events_deaths_ge_{int(deaths_min)}"
     return s
 
@@ -545,8 +591,8 @@ def load_yearly_stock_crashes(crashes_csv: str, year_lo=1900, year_hi=2025,
     df["pct_drawdown"] = pd.to_numeric(df["pct_drawdown"], errors="coerce").fillna(0)
     if drawdown_min > 0:
         df = df[df["pct_drawdown"] >= drawdown_min]
-    s = df.groupby(df["year"].astype(int)).size().reindex(
-        range(year_lo, year_hi + 1), fill_value=0).astype(float)
+    _g = df.groupby(df["year"].astype(int)).size()
+    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index).astype(float)
     s.name = f"stock_crashes_dd_ge_{int(drawdown_min)}"
     return s
 
