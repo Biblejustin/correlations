@@ -183,6 +183,41 @@ def load_yearly_ucdp_conflicts(ucdp_csv: str, year_lo=1946, year_hi=2025,
     return s
 
 
+def load_yearly_war_deaths_ucdp(ucdp_csv: str, year_lo=1946, year_hi=2025,
+                                 log10_transform: bool = False,
+                                 minor_floor: float = 25.0,
+                                 war_floor: float = 1000.0) -> pd.Series:
+    """Yearly battle-deaths FLOOR from UCDP/PRIO conflict-years (canonical, 1946+).
+
+    The UCDP/PRIO Armed Conflict Dataset codes each conflict-year's intensity
+    band, not its death count: intensity_level 1 = minor (25-999 battle deaths
+    that year), 2 = war (>= 1000). Summing each band's LOWER BOUND across the
+    conflicts active in a year gives a conservative annual battle-deaths floor.
+    This is a proxy that moves with both the number of active conflicts and the
+    minor/war mix, not a measured toll; it undercounts catastrophic years
+    (Korea, Vietnam) far more than quiet ones, which compresses the top of the
+    series even before the log10.
+
+    Coverage discipline matches the other loaders, extended to the leading
+    edge: UCDP starts in 1946, so years before its first observation are NaN
+    (unknown), not zero, and years past its last observation are NaN via
+    _nan_beyond_coverage. This series is a canonical-source cross-check; the
+    hand-curated wars.csv remains the headline series.
+    """
+    df = pd.read_csv(ucdp_csv)
+    floor = np.where(df["intensity_level"] >= 2, war_floor, minor_floor)
+    yearly = pd.Series(floor, index=df["year"]).groupby(level=0).sum()
+    s = yearly.reindex(range(year_lo, year_hi + 1), fill_value=0).astype(float)
+    s.loc[s.index < int(yearly.index.min())] = np.nan
+    s = _nan_beyond_coverage(s, yearly.index)
+    if log10_transform:
+        s = np.log10(s + 1.0)
+        s.name = "log10_ucdp_war_deaths_floor"
+    else:
+        s.name = "ucdp_war_deaths_floor"
+    return s
+
+
 def load_yearly_war_deaths_split(wars_csv: str, war_type: str,
                                     year_lo=1400, year_hi=2025,
                                     log10_transform: bool = False) -> pd.Series:

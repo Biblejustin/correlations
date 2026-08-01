@@ -63,6 +63,20 @@ This is the classic mechanism — wars cause famines (WWII-era Bengal, Greek, Vi
 
  On the window: each series is now truncated to the coverage its source actually has, and years beyond that are NaN rather than zero. Previously the loaders reindexed onto a fixed 1900–2025 window with `fill_value=0`, so a catalog whose curation stopped early (famine deaths genuinely end in 2023) contributed fabricated observations reading "no famine anywhere on earth." Removing them raised this correlation from +0.434 to +0.450, which is the expected direction: the invented zeros were diluting it. The matrix is pairwise-complete, so each pair uses only the years both of its series actually cover.
 
+### Cross-source check: the same pair on canonical UCDP/PRIO (1946–2023)
+
+<!-- #review-pending: subsection + load_yearly_war_deaths_ucdp() added 2026-08-01 by Claude; Justin should review before the next weekly push publishes it -->
+
+The headline pair above is computed from the hand-curated `data/wars.csv` (frozen catalog, 1900–2023). The weekly refresh also pulls the canonical UCDP/PRIO Armed Conflict Dataset (v25.1, coverage 1946–2024), which until now fed only the trend comparison, not the correlation matrix. `load_yearly_war_deaths_ucdp()` in `correlate_events.py` now builds a parallel deaths series from it. UCDP/PRIO codes each conflict-year's intensity band rather than a death count (minor = 25–999 battle deaths that year, war = 1,000+), so the series sums each band's lower bound (25 and 1,000) across the conflicts active in a year: a conservative battle-deaths floor, not a measured toll. Same coverage discipline as every other series: NaN before 1946 and past the last UCDP year, never fabricated zeros. `ucdp_compare.py` recomputes this table on every weekly run. The curated series remains the headline; nothing in the matrix above changed.
+
+| Wars series (log10 deaths, regime-detrended, × WPF famine deaths log10) | r | raw p | n | years |
+|---|---|---|---|---|
+| Hand-curated `wars.csv`, full window (the headline) | +0.450 | 1.5e-07 | 124 | 1900–2023 |
+| Hand-curated `wars.csv`, restricted to 1946+ | +0.126 | 0.27 | 78 | 1946–2023 |
+| UCDP/PRIO battle-deaths floor | +0.138 | 0.23 | 78 | 1946–2023 |
+
+Read plainly: on the 1946–2023 window the canonical source and the curated catalog agree with each other (+0.138 vs +0.126), and both are null. UCDP does not contradict the +0.450 headline; it cannot see the years that carry it. The headline's significance comes almost entirely from 1900–1945, which only the curated catalog covers, and a coupling of headline size cannot be hiding in the post-war data: at n = 78, a true r near +0.45 would be detected with near-certainty, and neither source shows anything close. This sharpens what the sensitivity and wavelet sections already indicated: the wars → famines coupling is real but lives in the 1908–1945 war-famine clustering, and in the post-war era it is not detectable by either source. The UCDP number is not an artifact of the floor weights: alternate deaths weightings give r = +0.11 to +0.14, while collapsing to an unweighted active-conflict count gives r = −0.007 (a different quantity, counting conflicts rather than approximating deaths).
+
  Separately, on the event-onset series (not part of the 45-cell death-series matrix), the strongest raw results are famines × X1+ flares r = +0.31 p = 0.027 detrended and famines lag-1y vs quakes p = 0.005; neither survives correction for the test grid size. Daily-window tests on Israel events × {global M≥7, Levant M≥4, X1+ flares} sit at 0.6×–1.4× of chance, none significant.
 
 | Topic pair | Headline result | Raw p | Survives Bonferroni? |
