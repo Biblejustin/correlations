@@ -74,7 +74,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 87,350,TURKEY,41,30,,,,True,TURKEY,140,10,,,,,,,,,,,10,,,,,,,,,,,,,,,,,,,,,,,,,,
 88,355,"TURKEY:  IZMIT,NICOMEDIA",40.7,29.7,,3,,True,TURKEY,140,9,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 89,358,"TURKEY:  IZNIK, IZMIT [NICOMEDIA]",40.77,29.9,,3,,True,TURKEY,140,7,3,2314,3,,,,,,3,3,8,24,,,,,,,,,,,,,,,,,,,,,,,,,
-91,361,BALKANS NW:  MACEDONIA:  STOBI,41.6,21.5,,4,,True,MACEDONIA,130,12,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+91,361,BALKANS NW:  MACEDONIA:  STOBI,41.6,21.5,,4,,True,NORTH MACEDONIA,130,12,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 92,362,JORDAN:  AL-KARAK,31.3,35.6,6.4,3,,True,JORDAN,140,,,37,,,,,6.4,,3,,5,24,,,,,,,,,,,,,,,,,,,,,,,,,
 93,362,TURKEY,41,29.5,,3,,True,TURKEY,140,10,,,,,,,,,3,,12,2,,,,,,,,,,,,,,,,,,,,,,,,,
 95,365,GREECE:  CRETE:  KNOSSOS,35,23,8,4,,True,GREECE,130,11,3,38,4,,,3,8,5000,4,3,7,21,,,3,,,,,,,,,,,,,,,,,,,,,,
@@ -100,7 +100,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 123,502,NORTH KOREA:  PYONGYANG,39,125.3,6.7,2,6.7,True,NORTH KOREA,30,9,3,,3,,,2,,,2,2,11,,,,,,,,,,,,,,,,,,,,,,,,,,
 124,510,SOUTH KOREA:  KYONGJU,35.5,129.1,6.7,2,6.7,True,SOUTH KOREA,30,9,3,,3,,,2,,,2,2,6,,,,,,,,,,,,,,,,,,,,,,,,,,
 125,512,CHINA:  SHAANXI PROVINCE:  YINGXIAN,39.4,113.3,7.5,4,,True,CHINA,30,10,4,,4,,5130,,7.5,5130,4,,5,21,,,,2720,4,2720,4,,,,,,,,,,,,,,,,,,
-126,518,"BALKANS NW:  MACEDONIA:  SKOPJE, STAMER",42,21.4,,4,,True,MACEDONIA,130,12,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+126,518,"BALKANS NW:  MACEDONIA:  SKOPJE, STAMER",42,21.4,,4,,True,NORTH MACEDONIA,130,12,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 128,521,"GREECE:  DURRES,KORINTHOS",39.6,21.2,,3,,True,GREECE,130,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 129,522,SYRIA,36.2,36.1,,3,,True,SYRIA,140,10,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 130,522,ALBANIA:  DURRES,41.2,19.3,,,,True,ALBANIA,130,10,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -195,7 +195,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 268,893,ARMENIA:  DVIN; IRAN:  ARDABIL,40,44.6,,4,,True,ARMENIA,40,10,4,,4,10,150000,4,,150000,4,4,12,24,,,,,,,,,,,,,,,,,,,,,,,,,
 270,894,ITALY:  VERONA,45.3,11,5.3,2,5.3,True,ITALY,130,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 271,896,ITALY:  ROMA (ROME),41.9,12.6,,3,,True,ITALY,130,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-272,896,BALKANS NW:  MACEDONIA,41.7,22.9,,,,True,MACEDONIA,130,10,,,,,,,,,,,9,4,,,,,,,,,,,,,,,,,,,,,,,,,
+272,896,BALKANS NW:  MACEDONIA,41.7,22.9,,,,True,NORTH MACEDONIA,130,10,,,,,,,,,,,9,4,,,,,,,,,,,,,,,,,,,,,,,,,
 273,898,IRAN:  REY (RAY),35.3,51.2,,3,,True,IRAN,140,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 274,910,"IRAQ:  KUFAH,BAGHDAD",33.2,44.2,,2,,True,IRAQ,140,,,,,,,,,,,,9,9,,,,,,,,,,,,,,,,,,,,,,,,,
 275,912,IRAN:  DINAVAR,34.6,47.8,,3,,True,IRAN,140,,,,,,,,,,,,4,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -521,7 +521,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 715,1543,"VENEZUELA:  CUMANA, ISLA CUBAGUA",10.5,-64.2,,3,,True,VENEZUELA,160,,1,170,1,,,,,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 716,1543,CHILE,-19,-70.5,,,,True,CHILE,160,10,1,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 717,1545,CHINA:  SHAANXI PROVINCE:  HIAO YI,37.2,111.7,,,,True,CHINA,30,,3,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-718,1546,"ISRAEL:  NABULUS,SALT; JORDAN:  AL-KARAK",32,35.5,7,3,7,True,ISRAEL,140,11,3,173,4,,,3,,,3,3,1,14,,,,,,,,,,,,,,,,,,,,,,,,,
+718,1546,"ISRAEL:  NABULUS,SALT; JORDAN:  AL-KARAK",32,35.5,6.5,3,7,True,ISRAEL,140,11,3,173,4,,,3,6.5,,3,3,1,14,,7,,,,,,,,,,,,,,,,,,,,,,,
 720,1547,"AZORES:  SANTA BARBARA, FREGUES",38.7,-27.3,,,,True,AZORES (PORTUGAL),70,10,,,,,,,,,,,5,17,,,,,,,,13,,14,,,,,,,,,,,,,,,
 721,1549,"IRAN:  QAYEN (QAIN),KHORASAN",33.5,59.1,,3,,True,IRAN,140,,4,,,,3000,,,,,,1,30,,,,,,,,,,,,,,,,,,,,,,,,,
 722,1550,IRAN:  TABRIZ,38,46,,3,,True,IRAN,140,,3,,,,,,,,,,1,20,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -529,7 +529,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 724,1551,PORTUGAL:  LISBON,38.7,-9.1,,3,,True,PORTUGAL,130,9,4,,4,,2000,3,,2000,3,3,1,28,,,3,,,,,,,,,200,200,200,,,,,,,,,,,
 727,1552,PERU,-16.6,-71.3,7.6,,7.6,True,PERU,160,9,,,,30,,,,,,,7,2,,,,,,,,10,,30,,,,,,,,,,,,,,,
 728,1553,SOUTH KOREA:  KYONGSANG-DO,35.8,128.8,6.3,3,6.3,True,SOUTH KOREA,30,8,,,,,,,,,,,3,2,,,,,,,,,,,,,,,,,,,,,,,,,
-729,1555,BALKANS NW:  MACEDONIA:  RAZLOVCI,42.8,22.8,,4,,True,MACEDONIA,130,12,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+729,1555,BALKANS NW:  MACEDONIA:  RAZLOVCI,42.8,22.8,,4,,True,NORTH MACEDONIA,130,12,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 730,1555,PERU,-11.9,-77.6,8.4,,8.4,True,PERU,160,7,,,,30,,,,,,,11,15,,,,,,,,,,,,,,,,,,,,,,,,,
 732,1556,CHINA:  SHAANXI PROVINCE,34.5,109.7,8,4,,True,CHINA,30,11,4,,4,,830000,,8,830000,4,,1,23,,,,,,,,,,,,,,,,,,,,,,,,,
 733,1556,AUSTRIA:  PROBABLY KARNTEN,46.9,13.7,,3,,True,AUSTRIA,120,,,,,,,,,,,,1,24,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -610,7 +610,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 838,1608,"IRAN:  GILAN, W MAZANDARAN",36.4,50.5,7.6,3,,True,IRAN,140,,4,3563,4,,3000,3,7.6,3000,3,3,4,20,,,,,,,,,,,,,,,,,,,,,,,,,
 839,1608,BALKANS NW:  MONTENEGRO,42.4,18.7,,,,True,MONTENEGRO,130,10,,,,,,,,,,,5,14,,,,,,,,,,,,,,,,,,,,,,,,,
 840,1608,BALKANS NW:  MONTENEGRO,42.4,18.7,,3,,True,MONTENEGRO,130,10,,,,,,,,,,,7,25,,,,,,,,,,,,,,,,,,,,,,,,,
-842,1608,BALKANS NW:  MACEDONIA,42.4,18.5,,3,,True,MACEDONIA,130,11,,,,,,,,,,,9,15,,,,,,,,,,,,,,,,,,,,,,,,,
+842,1608,BALKANS NW:  MACEDONIA,42.4,18.5,,3,,True,NORTH MACEDONIA,130,11,,,,,,,,,,,9,15,,,,,,,,,,,,,,,,,,,,,,,,,
 843,1609,ITALY:  NICASTRO,38.6,16.3,,3,,True,ITALY,130,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 844,1609,CHINA:  GANSU:  JIUQUAN,39.2,99,7.3,3,,True,CHINA,30,10,3,,3,,840,3,7.3,840,3,3,7,12,,,,,,,,,,,,,,,,,,,,,,,,,
 846,1609,PERU,-11.9,-77.4,8.6,,8.6,True,PERU,160,8,,,,40,,,,,,,10,20,,,,,,,,1,,,,,,,,,,,,,,,,,
@@ -686,7 +686,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 948,1641,PHILIPPINES:  LUZON:  APARRI,18.2,121.7,,3,,True,PHILIPPINES,170,10,,,,,,,,,,,1,4,,,,,,,,,,,,,,,,,,,,,,,,,
 949,1641,ECUADOR,-1.5,-78.5,7.6,,7.6,True,ECUADOR,160,,,,,,,,,,,,1,10,,,,,,,,,,,,,,,,,,,,,,,,,
 950,1641,"IRAN:  TABRIZ, KURDISTAN",38,46.1,,3,,True,IRAN,140,9,4,,,,30000,,,,,,2,5,,,,,,,,,,,,,,,,,,,,,,,,,
-952,1641,"VENEZUELA:  CARACAS,LA GUAIRA,CUA",10.9,-66.7,,3,,True,VENEZUELA,160,9,,,,,,,,,,,6,11,,,,,,,,12,,45,,,,,,,,,,,,,,,
+952,1641,"VENEZUELA:  CARACAS,LA GUAIRA,CUA",10.9,-66.7,,3,,True,VENEZUELA,160,9,3,,3,,200,,,200,3,,6,11,,,,,,,,12,,45,,,,,,,,,,,,,,,
 954,1644,"COLOMBIA:  PAMPLOMA,HERRAN; VENEZUELA: MERIDA",7.38,-72.65,6.9,3,6.9,True,COLOMBIA,160,10,3,,3,,,4,,,3,4,1,16,,,4,,3,,3,10,4,0,,,,,,,,,,,,,,,
 956,1644,"FRANCE:  CORSICA,BELVEDERE,ROQUEBILLIERE",43,8,,2,,True,FRANCE,120,8,3,,,,150,,,,,,2,15,,,,,,,,,,,,,,,,,,,,,,,,,
 957,1644,VENEZUELA:  SAN CRISTOBAL; COLOMBIA:  PAMPLONA,7.6,-73,,3,,True,VENEZUELA,160,8,3,,3,,,,,,3,,3,16,,,,,,,,10,,,,,,,,,,,,,,,,,
@@ -1021,7 +1021,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 1420,1774,SWITZERLAND,46.9,8.7,,3,,True,SWITZERLAND,120,8,2,,,,,,,,,,9,10,,,,,,,,15,,25,,,,,,,,,,,,,,,
 1422,1775,CUBA:  SANTIAGO DE CUBA,19.9,-76,,,,True,CUBA,90,,,2768,,,,,,,3,,2,11,,,,,,,,,,,,,,,,,,,,,,,,,
 1423,1775,BALKANS NW:  CROATIA:  BEDEKOVCINA,46,15.9,,3,,True,CROATIA,130,10,,,,,,,,,,,10,13,,,,,,,,10,,,,,,,,,,,,,,,,,
-1424,1775,VENEZUELA:  TRUJILLO,9.2,-70.3,,2,,True,VENEZUELA,160,8,,,,,,,,,,,12,,,,,,,,,,,,,,,,,,,,,,,,,,
+1424,1775,VENEZUELA:  TRUJILLO,9.3,-70.4,,2,,True,VENEZUELA,160,8,,,,,,,,,2,,12,,,,,,,,,,,,,,,,,,,,,,,,,,
 1425,1776,DOMINICAN REPUBLIC:  PUERTO RICO: W,19,-70.4,,2,,True,DOMINICAN REPUBLIC,90,,,,,,,,,,2,,1,30,,,,,,,,,,,,,,,,,,,,,,,,,
 1426,1776,"MEXICO: GUERRERO, MORELOS, OAXACA, MEXICO CITY",16.7,-99.2,,3,,True,MEXICO,150,8,,,,,,,,,3,,4,21,,,,,,,,,,,,,,,,,,,,,,,,,
 1429,1776,"TAIWAN:  JIAYI, KAGI",23.5,120.6,5.5,2,,True,TAIWAN,30,7,3,,3,,,2,5.5,,2,2,12,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -1057,7 +1057,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 1479,1785,"GREECE:  PATRAI (PATRAS), ZAKYNTHOS (ZANTE)",38.2,21.7,,2,,True,GREECE,130,9,1,,1,,38,,,38,2,,1,30,,,,,,,,,,,,,,,,,,,,,,,,,
 1480,1785,CHINA:  GANSU PROVINCE:  HUIHUIPU,39.9,98,6,2,,True,CHINA,30,8,1,,1,,36,2,6,36,2,2,4,18,,,,,,,,,,,,,,,,,,,,,,,,,
 1481,1785,"COLOMBIA:  BOGOTA,ENGATIVA,CAXICA,SOACHA",4.6,-74,,2,,True,COLOMBIA,160,8,1,,1,,12,2,,12,2,2,7,12,,,,,,,,12,,45,,,,,,,,,,,,,,,
-1484,1786,VENEZUELA:  MERIDA,8.5,-71.2,,2,,True,VENEZUELA,160,8,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1484,1786,VENEZUELA:  MERIDA,8.5,-71.2,,2,,True,VENEZUELA,160,8,,,,,,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1485,1786,GREECE:  CORFU (KERKIRA),39.7,19.8,,3,,True,GREECE,130,,3,,3,,120,,,120,3,,2,5,,,,,,,,,,,,,,,,,,,,,,,,,
 1487,1786,"ITALY:  SICILY, MELAZZO",38.2,15.2,,,,True,ITALY,130,10,,,,,,,,,,,3,9,,,,,,,,,,,,,,,,,,,,,,,,,
 1488,1786,CHINA:  SICHUAN PROVINCE:  S OF KANGDING,29.8,102.1,7.5,3,,True,CHINA,30,9,3,,3,,435,3,7.5,435,3,3,6,1,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -1119,7 +1119,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 1566,1804,JAPAN:  KISAKATA,39.05,139.95,7.3,4,,True,JAPAN,30,,3,593,3,,450,4,7.3,450,4,4,7,10,,,,,,,,13,3,,,10810,,10810,300,,,,,,,,,,
 1569,1804,"SPAIN: ALMERIA, DALIAS, ROQUETAS",36.77,-2.83,6.4,3,,True,SPAIN,130,10,3,,3,,173,4,,173,3,4,8,25,,,4,200,3,200,3,8,4,25,6.4,2500,4000,2500,4000,,,,,,,,,,
 1570,1805,IRAN:  BABOL,36.3,52.4,,2,,True,IRAN,140,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-1571,1805,VENEZUELA:  CUMANA,10.5,-64.2,,2,,True,VENEZUELA,160,8,,,,,,,,,,,1,27,,,,,,,,13,,,,,,,,,,,,,,,,,
+1571,1805,VENEZUELA:  CUMANA,10.5,-64.2,,2,,True,VENEZUELA,160,8,,,,,,1,,,2,1,1,27,,,,,,,,13,,,,,,,,,,,,,,,,,
 1572,1805,"COLOMBIA:  HONDA,MARIQUITA",5.37,-74.87,6.1,3,,True,COLOMBIA,160,8,3,,3,15,200,3,,200,3,3,6,16,,,3,,3,,3,8,3,15,6.1,,,,,,0,,,,,,,,
 1575,1805,"ITALY:  MOLISE, ROSOLONE, NAPOLI (NAPLES), ISERNIA",41.2,14.7,,4,,True,ITALY,130,11,4,,,,5600,,,,,,7,26,,,,,,,,20,,57,,,,,,,,,,,,,,,
 1577,1806,"MEXICO:  JALISCO,OAXACA,MICHOACAN",18.9,-103.8,7.5,4,,True,MEXICO,150,8,4,,4,,2000,3,7.5,2000,4,3,3,25,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -1138,14 +1138,14 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 1591,1811,CHINA:  SICHUAN PROVINCE:  E. OF GANZE,31.7,100.3,6.5,2,,True,CHINA,30,8,3,,3,,480,3,6.5,480,2,3,9,27,,,,,,,,,,,,598,,598,,,,,,,,,,,
 1592,1811,PHILIPPINES:  CAMARINES,13.1,123.9,,2,,True,PHILIPPINES,170,9,,,,,,,,,,,10,5,,,,,,,,,,,,,,,,,0,,,,,,,,
 1594,1811,ARKANSAS: NORTHEAST (NEW MADRID EARTHQUAKES),35.6,-90.4,7.5,3,,True,USA,150,11,1,2442,1,,,,8.5,,3,,12,16,,,1,,,,,8,1,15,7.5,,,,,AR,,7.2,,,,,,,
-1597,1812,MISSOURI:  NEW MADRID,36.3,-89.6,7.3,3,,True,USA,150,10,,2444,,,,,8.4,,3,,1,23,,,,,,,,15,,,7.3,,,,,MO,0,7.1,,,,,,,
+1597,1812,MISSOURI:  NEW MADRID,36.3,-89.6,7.3,3,,True,USA,150,10,,2444,,,,,8.4,,3,,1,23,,,,,,,,15,,,7.3,,,,,MO,,7.1,,,,,,,
 1598,1812,MISSOURI:  NEW MADRID,36.5,-89.6,7.5,3,,True,USA,150,,,2445,,,,,8.8,,3,,2,7,,,3,,,1,1,9,3,45,7.5,,,,,MO,0,7.4,,,,,,,
 1599,1812,CHINA:  XINJIANG PROVINCE,43.7,83,8,,,True,CHINA,40,,4,,4,,,,8,,,,3,8,,,,,,,,,,,,,,,,,,,,,,,,,
 1601,1812,ITALY:  ROMA (ROME),41.9,12.45,,2,,True,ITALY,130,7,,,,,,,,,2,,3,22,,,,,,,,,,,,,,,,,,,,,,,,,
-1602,1812,"FRANCE:  BEAUMONT,PIERREVERT,SAINTE TULLE,MANOSQUE",43.7,5.7,,2,,True,FRANCE,120,9,,,,,,,,,,,3,23,,,,,,,,,,,,,,,,,0,,,,,,,,
+1602,1812,"FRANCE:  BEAUMONT,PIERREVERT,SAINTE TULLE,MANOSQUE",43.7,5.7,,2,,True,FRANCE,120,9,,,,,,,,,,,3,23,,,,,,,,,,,,,,,,,,,,,,,,,
 1605,1812,VENEZUELA:  LA GUAIRA,10.6,-66.9,7.7,3,7.7,True,VENEZUELA,160,10,4,607,4,33,26000,,,26000,3,,3,26,,,,,,,,20,,7,,,,,,,,,,,,,,,
 1607,1812,JAMAICA:  KINGSTON,18,-76.8,,2,,True,JAMAICA,90,,2,608,2,,,,,,2,,11,11,,,3,,,,,10,3,50,,,,,,,0,,,,,,,,
-1608,1812,JAPAN,35.4,139.6,6.6,,6.6,True,JAPAN,30,,3,,,,,,,,,,12,7,,,,,,,,,,,,,,,,,0,,,,,,,,
+1608,1812,JAPAN,35.4,139.6,6.6,,6.6,True,JAPAN,30,,3,,,,,,,,,,12,7,,,,,,,,,,,,,,,,,,,,,,,,,
 1609,1812,CALIFORNIA:   SAN JUAN CAPISTRANO,34.37,-117.65,6.9,2,,True,USA,150,8,1,,1,,40,,,40,2,,12,8,,6.9,1,,,,,15,1,,,,,,,CA,,,,,,,,,
 1610,1812,CALIFORNIA:   PURISIMA,34.2,-119.9,7.5,2,7.7,True,USA,150,8,1,609,1,,1,,7.5,1,2,1,12,21,,7.1,1,,1,,1,19,1,,,,100,,100,CA,,,,,,,,,
 1611,1813,IRAN:  SHIRAZ,29.6,52.6,,2,,True,IRAN,140,,,,,,,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -1162,7 +1162,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 1622,1816,GUATEMALA:  SOLOMA,15.5,-91.5,7.5,3,,True,GUATEMALA,100,9,1,,1,33,23,3,7.5,23,3,3,7,22,,,3,,,,,15,,30,,,,,,,,,,,,,,,
 1623,1817,FRANCE:  CHAMONIX VALLEY,45.9,6.8,8,3,8,True,FRANCE,120,,1,,,,4,,,,,,3,11,,,,,,,,20,,10,,,,,,,0,,,,,,,,
 1624,1817,CHINA:  SICHUAN PROVINCE:  CHANGLI,,,,3,,True,CHINA,30,,,,,,,4,,,3,4,4,,,,,,,,,,,,,11000,,11000,,,,,,,,,,,
-1625,1817,GREECE:  ACHAIA:  AEGHION,38.25,22.25,6.8,,,True,GREECE,130,10,,619,,,,,6.8,,,,8,23,,,,,,,,,,,,,,,,,,,,,,,,,
+1625,1817,GREECE:  ACHAIA:  AEGHION,38.25,22.25,6.6,3,6.5,True,GREECE,130,10,3,619,3,,110,4,6.8,128,3,4,8,23,,,,,,,,8,,,6.6,,,,,,,,,,,,,,
 1626,1818,"ITALY:  ACIREALE, CATANIA, CALABRIA",37.6,15,,3,,True,ITALY,130,10,2,,2,,72,3,,72,3,3,2,20,,,,,,,,18,,10,,,,,,,,,,,,,,,
 1627,1818,"ITALY:  LIGURIA; FRANCE:  VENCE, GRASSE, NICE",43.917,8.033,,3,,True,ITALY,130,10,,3224,,,,3,,,3,3,2,23,,,,,,,,18,,10,,,,,,,,,,,,,,,
 1629,1818,MEXICO,19.1,-103.6,7.5,,,True,MEXICO,150,,,,,,,,7.5,,,,3,31,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -1196,7 +1196,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 1674,1823,IRAN:  SHIRAZ,29.6,52.5,,2,,True,IRAN,140,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 1675,1823,"ITALY:  NASO, SICILY",38.1,14.7,,3,,True,ITALY,130,10,1,,,,22,,,,3,,3,5,,,,,,,,16,,37,,,,,,,,,,,,,,,
 1677,1823,GREECE:  THESPROTIKON,39.75,20.75,,3,,True,GREECE,130,9,,,,,,3,,,3,3,6,19,,,,,,,,,,,,,,,,,,,,,,,,,
-1678,1823,"VENEZUELA:  CARIACO, MARGARITA ISLAND",10.5,-63.8,,2,,True,VENEZUELA,160,8,,,,,,,,,,,8,,,,,,,,,,,,,,,,,,,,,,,,,,
+1678,1823,"VENEZUELA:  CARIACO, MARGARITA ISLAND",10.5,-63.8,,2,,True,VENEZUELA,160,8,,,,,,2,,,2,2,8,,,,,,,,,,,,,,,,,,,,,,,,,,
 1679,1823,IRAN:  MAZANDARAN,36.3,53.3,,3,,True,IRAN,140,,3,,,,,,,,,,9,7,,,,,,,,,,,,,,,,,,,,,,,,,
 1680,1823,BALKANS NW:  CROATIA:  DUBROVNIK,42.7,18.2,,2,,True,CROATIA,130,,3,,,,,,,,,,10,,,,,,,,,,,,,,,,,,,,,,,,,,
 1681,1824,JAMAICA:  KINGSTON,18,-76.5,,,,True,JAMAICA,90,,,,,,,,,,,,4,10,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -1277,7 +1277,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 1795,1837,ITALY,44.2,10.5,,2,,True,ITALY,130,9,1,,,,5,,,,,,4,11,,,,,,,,17,,,,,,,,,,,,,,,,,
 1796,1837,VIRGIN ISLANDS,18.2,-64.5,,,,True,USA TERRITORY,90,8,,704,,,,,,,,,8,2,,,,,,,,,,,,,,,,VI,,,,,,,,,
 1797,1837,CHINA:  GANSU PROVINCE,34.6,103.7,6,2,,True,CHINA,30,8,1,,1,,37,3,6,37,2,3,9,10,,,,,,,,,,,,941,,941,,,,,,,,,,,
-1798,1837,"VENEZUELA:  SANTA TERESA DEL TUY,SANTA LUCIA",10.3,-66.6,,2,,True,VENEZUELA,160,7,1,,1,,,,,,2,,9,10,,,,,2,,2,18,,,,,,,,,,,,,,,,,
+1798,1837,"VENEZUELA:  SANTA TERESA DEL TUY,SANTA LUCIA",10.3,-66.6,,2,,True,VENEZUELA,160,7,1,,1,,,1,,,2,1,9,10,,,,,2,,2,18,,,,,,,,,,,,,,,,,
 1800,1837,CHILE:  VALDIVIA,-42.5,-74,8.5,3,,True,CHILE,160,10,,708,1,,,3,8.5,16,3,3,11,7,,,,,,,,12,,51,,,,,,,,,,,,,,,
 1803,1837,MEXICO:  GUADALAJARA,20,-105,7.5,,,True,MEXICO,150,,,,,,,,7.5,,,,11,22,,,,,,,,,,,,,,,,,,,,,,,,,
 1804,1837,INDONESIA:  SUMBAWA ISLAND:  BIMA,-8.5,118.5,,2,,True,INDONESIA,60,9,,,,,,,,,1,2,11,28,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -1289,7 +1289,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 1812,1839,CHINA:  YUNNAN PROVINCE,26.1,99.9,6,2,,True,CHINA,30,8,2,,2,,100,3,6,100,2,3,2,7,,,,,,,,,,,,600,,600,,,,,,,,,,,
 1813,1839,CHINA:  YUNNAN PROVINCE,26.1,99.9,6,2,,True,CHINA,30,8,3,,3,,129,4,6,129,2,4,2,23,,,,18,1,18,1,,,,,1667,,1667,,,,,,,,,,,
 1814,1839,"MYANMAR (BURMA):  AVA, AMARAPURA",21.9,96,,3,,True,MYANMAR (BURMA),60,11,3,,3,,400,3,,400,3,3,3,23,,,,,,,,,,,,,,,,,,,,,,,,,
-1815,1839,VENEZUELA:  CUMANA,10.5,-64.2,,,,True,VENEZUELA,160,7,,,,,,,,,,,4,12,,,,,,,,,,,,,,,,,,,,,,,,,
+1815,1839,VENEZUELA:  CUMANA,10.5,-64.2,,1,,True,VENEZUELA,160,7,,,,,,,,,1,,4,12,,,,,,,,,,,,,,,,,,,,,,,,,
 1816,1839,TAIWAN: JIAYI,23.4,120.4,6.5,3,,True,TAIWAN,30,8,3,,3,,117,4,6.5,117,3,4,6,27,,,,534,3,534,3,,,,,6600,,6600,,,,,,,,,,,
 1817,1839,SWITZERLAND,45.9,6.1,,1,,True,SWITZERLAND,120,7,2,,,,,,,,,,8,16,,,,,,,,17,,30,,,,,,,0,,,,,,,,
 1819,1840,INDONESIA:  JAVA:  PURWOREJO,-8,110.5,7,3,,True,INDONESIA,60,9,,715,,150,,3,7,,3,3,1,4,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -1557,11 +1557,11 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 2209,1873,ITALY:  BELLUNESE,46.2,12.4,,2,,True,ITALY,130,10,2,,,,55,,,,,,6,29,,,,,,,,3,,58,,,,,,,,,,,,,,,
 2211,1873,"FRANCE:  CHATEAUNEUF-DU-RHONE,DONZERE,VIVIERS",44.5,4.7,,2,,True,FRANCE,120,8,,,,,,,,,,,7,19,,,,,,,,,,,,,,,,,,,,,,,,,
 2212,1873,"ITALY:  SORA, DONATO",41.7,13.7,,3,,True,ITALY,130,10,,,,,,3,,,3,3,7,12,,,,,,,,,,,,,,,,,,,,,,,,,
-2213,1874,VENEZUELA:  LA GUAIRA (LA GUAAYRA),10.4,-66.6,,2,,True,VENEZUELA,160,,,,,,,,,,,,2,6,,,,,,,,13,,35,,,,,,,0,,,,,,,,
+2213,1874,VENEZUELA:  NORTHERN VENEZUELA,10.64,-66.92,,,,True,VENEZUELA,160,6,,,,,,,,,,,2,6,,,,,,,,13,,35,,,,,,,0,,,,,,,,
 2214,1874,"MEXICO:  MORELOS,GUERRERO",17.7,-99.1,7.3,2,,True,MEXICO,150,6,,,,,,,7.3,,2,,3,16,,,,,,,,,,,,,,,,,,,,,,,,,
 2215,1874,"TURKEY:  KEBAN,MADEN",38.8,38.8,6.1,2,6.1,True,TURKEY,140,,,,,,,,,,,,5,4,,,,,,,,,,,,,,,,,,,,,,,,,
 2216,1874,PHILIPPINES:  LEPANTO-BONTOC,17,120.6,,2,,True,PHILIPPINES,170,,,,,,,,,,,,8,3,,,,,,,,,,,,,,,,,,,,,,,,,
-2217,1874,VENEZUELA:  PILAR,10.5,-63.1,5.9,2,5.9,True,VENEZUELA,160,,,,,16,,,,,,,8,18,,,,,,,,2,,30,,,,,,,0,,,,,,,,
+2217,1874,VENEZUELA:  PILAR,10.5,-63.1,5.9,2,5.9,True,VENEZUELA,160,8,,,,16,,,5.9,,2,,8,18,,,2,,,,,3,2,0,,,,,,,0,,,,,,,,
 2218,1874,"PHILIPPINES:  MINDANAO,ZAMBOANGA,ISABELA (BASILAN)",6.8,122,,2,,True,PHILIPPINES,170,8,,,,,,,,,,,8,24,,,,,,,,22,,30,,,,,,,0,,,,,,,,
 2219,1874,"GUATEMALA:  ANTIGUA,CHIMALTENANGO,AMATITLAN",14.5,-90.7,7.1,3,7.1,True,GUATEMALA,100,8,3,,3,,300,,,300,3,,9,3,,,,,,,,3,,2,,,,,,,0,,,,,,,,
 2220,1874,AFGHANISTAN,35,69,,3,,True,AFGHANISTAN,40,,3,,,,,,,,,,10,18,,,,,,,,,,,,,,,,,,,,,,,,,
@@ -1585,14 +1585,13 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 2255,1878,MEXICO:  JALISCO,20.3,-103.4,,3,,True,MEXICO,150,,,,,,,,,,3,,3,22,,,,,,,,,,,,,,,,,,,,,,,,,
 2256,1878,"VENEZUELA:  CUA, CHARALLAVE, SAN DIEGO",10.3,-66.8,5.9,3,,True,VENEZUELA,160,9,3,,3,13,400,,5.9,400,3,,4,12,,,,,,,,0,,41,,,,,,,0,,,,,,,,
 2258,1878,"TURKEY:  IZMIT, ESME, LABINIA",40.7,29.7,6.6,2,,True,TURKEY,140,9,1,2322,1,,40,3,6.7,40,2,3,4,19,,,,500,3,500,3,7,,,6.6,,,,,,,,,,,,,,
-2259,1878,VENEZUELA:  OCUMARE DEL TUY,10.7,-66.5,,2,,True,VENEZUELA,160,,,,,,,,,,,,4,29,,,,,,,,0,,30,,,,,,,0,,,,,,,,
 2260,1878,MEXICO:  BAJA CALIFORNIA,34.1,-117.3,,2,,True,MEXICO,150,,,,,,,,,,2,,5,22,,,,,,,,,,,,,,,,,,,,,,,,,
 2261,1878,CHINA:  YUNNAN PROVINCE,27.7,100.8,5.5,3,,True,CHINA,30,7,2,,2,,70,3,5.5,70,3,3,8,7,,,,,,,,,,,,,,,,,,,,,,,,,
 2262,1878,PHILIPPINES:  NEAR MOUNT APO,6.9,125.1,,2,,True,PHILIPPINES,170,7,,,,,,,,,,,9,16,,,,,,,,16,,50,,,,,,,0,,,,,,,,
 2263,1878,EL SALVADOR:  JUCUAPA,13.5,-88.4,,3,,True,EL SALVADOR,100,,3,,3,,,3,,,3,3,10,2,,,,,,,,,,,,,,,,,,,,,,,,,
 2264,1878,BALKANS NW:  CROATIA,46.2,16.8,,,,True,CROATIA,130,10,,,,,,,,,,,11,8,,,,,,,,20,,30,,,,,,,0,,,,,,,,
 2265,1879,COTE D'IVOIRE:  ABIDJAN,6.5,-3.3,5.7,2,5.7,True,COTE D'IVOIRE,10,8,,,,,,2,,,2,2,2,11,,,3,,,,,6,3,,,,,,,,,,,,,,,,
-2266,1879,"VENEZUELA:  CURIEPE,SAN JUAN DE LOS MORRO",9.5,-67.2,,2,,True,VENEZUELA,160,,,,,,,,,,,,3,7,,,,,,,,23,,15,,,,,,,0,,,,,,,,
+2266,1879,"VENEZUELA:  CURIEPE,SAN JUAN DE LOS MORRO",10.47,-66.18,,,,True,VENEZUELA,160,6,,,,,,,,,,,3,7,,,,,,,,23,,45,,,,,,,0,,,,,,,,
 2269,1879,"IRAN:  BOZQUSH, ARDABIL, GAMRUD, TARK, MANAN",37.8,47.9,6.7,3,,True,IRAN,140,9,4,,4,,2000,4,6.7,2000,3,4,3,22,,,,,,,,0,,,,,,,,,,,,,,,,,
 2270,1879,IRAN:  BOJNURD,37.5,57.4,6.7,3,6.7,True,IRAN,140,9,3,,,15,700,,,,,,4,2,,,,,,,,,,,,,,,,,,,,,,,,,
 2271,1879,PHILIPPINES:  NW MINDANAO:  SURIGAO,9.8,125.5,,4,,True,PHILIPPINES,170,10,,,,,,,,,,,6,30,,,,,,,,18,,38,,,,,,,0,,,,,,,,
@@ -1650,7 +1649,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 2355,1885,"NICARAGUA:  LEON,CHINANDEGA,MANAGUA",12.3,-86.8,,3,,True,NICARAGUA,100,9,,,,,,,,,,,10,12,,,,,,,,4,,30,,,,,,,0,,,,,,,,
 2357,1886,"GREECE:  TRIPHYLIE (PELEPONESE), PHILIATRA",37.1,21.7,6.8,3,,True,GREECE,130,10,3,1164,3,,326,4,7.5,326,3,4,8,27,,,,796,3,796,3,21,,32,6.8,6000,,6000,,,,,,,,,,,
 2362,1886,SOUTH CAROLINA:  CHARLESTON,32.9,-80,7.3,2,,True,USA,150,10,2,2360,2,,60,,,60,3,,9,1,,,,,,,,2,,51,7.3,,,,,SC,0,,5,,,,,6,
-2363,1886,VENEZUELA:  TRUJILLO,9.3,-70.4,,2,,True,VENEZUELA,160,,,,,,,,,,,,9,29,,,,,,,,6,,20,,,,,,,0,,,,,,,,
+2363,1886,VENEZUELA:  TRUJILLO,9.3,-70.4,5.6,2,,True,VENEZUELA,160,7,,,,14,,,5.6,,2,,9,29,,,2,,,,,6,2,50,,,,,,,0,,,,,,,,
 2364,1887,"PHILIPPINES:  PANAY, ILOILO",10.7,122.6,,2,,True,PHILIPPINES,170,9,,1166,,,,,,,2,,2,2,,,2,,,,,15,2,0,,,,,,,,,,,,,,,
 2366,1887,ITALY:  LIGURIAN COAST,43.9,8.1,6.5,3,6.5,True,ITALY,130,10,3,,3,,600,,,600,3,,2,23,,,,200,3,200,3,5,,21,,,,,,,,,,,,,,,
 2368,1887,"PHILIPPINES:  SE LUZON:  CAMARINES, NUEVA CACERES",13.7,123.3,,1,,True,PHILIPPINES,170,8,,,,,,,,,1,,3,24,,,1,,,,,13,1,14,,,,,,,,,,,,,,,
@@ -1672,7 +1671,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 2385,1888,GREECE:  AEGHION (ACHAIA),38.2,22.1,,,,True,GREECE,130,10,2,,,,,,,,,,9,9,,,,,,,,15,,15,,,,,,,0,,,,,,,,
 2386,1888,TURKEY,41.3,43.3,6.1,2,6.1,True,TURKEY,140,,3,,,,,,,,,,9,22,,,,,,,,10,,,,,,,,,0,,,,,,,,
 2387,1888,CHINA:  GANSU PROVINCE,37.1,104.2,,3,,True,CHINA,30,8,3,,3,,,3,,,3,3,11,2,,,,,,,,,,,,,,,,,,,,,,,,,
-2388,1888,VENEZUELA:  GUANARE,9.2,-69.8,,2,,True,VENEZUELA,160,,,,,,,,,,,,11,17,,,,,,,,17,,30,,,,,,,0,,,,,,,,
+2388,1888,VENEZUELA:  GUANARE,9.2,-69.8,6.4,2,6.4,True,VENEZUELA,160,7,,,,45,,,,,2,,11,17,,,3,,,,,17,3,30,,,,,,,0,,,,,,,,
 2389,1889,COTE D'IVOIRE:  BAIBU,6.8,-6.7,4.7,1,4.7,True,COTE D'IVOIRE,10,8,,,,,,2,,,1,2,,,,,,,,,,,,,,,,,,,,,,,,,,,
 2390,1889,"PHILIPPINES:  MINDANAO,MINDORO",13.5,121,6.8,2,,True,PHILIPPINES,170,8,,1178,,,,,6.8,,2,,5,25,,,3,,,,,18,3,23,,,,,,,,,,,,,,,
 2391,1889,"KAZAKHSTAN:  CILIK, ALMA-ATA",43.2,78.7,8.3,2,8.3,True,KAZAKHSTAN,40,10,,,,,,,,,,,7,11,,,,,,,,22,,14,,,,,,,0,,,,,,,,
@@ -1713,13 +1712,13 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 2443,1894,JAPAN:  OFF COAST OF HONSHU,42.5,146,7.9,1,,True,JAPAN,30,9,1,1208,1,40,1,1,7.9,1,2,,3,22,,,2,6,1,6,1,10,2,23,,14,87,,99,,,,,,,,,,
 2444,1894,"GREECE:  LOCRIDE, MALESINA-MARTINON (LOKRIS)",38.6,23.2,6.7,3,,True,GREECE,130,10,3,,3,,255,,6.7,255,3,,4,20,,,,,,,,16,,52,,,,,,,,,,,,,,,
 2447,1894,GREECE:  ST KONSTANTINOS-ARKITSA (LOKRIS),38.7,23.1,6.9,3,,True,GREECE,130,11,3,1212,3,,,,6.9,,3,,4,27,,,,,,,,19,,42,,,,,,,,,,,,,,,
-2448,1894,"VENEZUELA:  MERIDA,TOVAR; COLOMBIA: N SANTANDER",8.5,-71.7,7.1,2,8.2,True,VENEZUELA,160,9,3,,,20,400,,7.1,400,2,,4,29,,,,,,,,2,,45,,,,,,,0,,,,,,,,
+2448,1894,"VENEZUELA:  MERIDA,TOVAR; COLOMBIA: N SANTANDER",8.5,-71.7,7.1,2,8.2,True,VENEZUELA,160,9,3,,3,20,400,,7.1,400,2,,4,29,,,,,,,,2,,45,,,,,,,0,,,,,,,,
 2453,1894,JAPAN:  TOKYO,35.7,139.9,7.5,1,,True,JAPAN,30,,1,,1,,24,2,7.5,24,1,2,6,20,,,,157,3,157,3,,,,,90,,90,,,,,,,,,,,
 2454,1894,PHILIPPINES:  E MINDANAO:  AGUSAN RIVER VALLEY,8.2,126.1,,1,,True,PHILIPPINES,170,8,3,,,,,,,,,,6,28,,,,,,,,18,,57,,,,,,,0,,,,,,,,
 2455,1894,TURKEY,40.6,28.7,6.7,3,,True,TURKEY,140,10,4,1213,4,,1349,3,6.7,1349,3,3,7,10,,,2,,,,,12,2,33,,,,,,,0,,,,,,,,
 2456,1894,JAPAN:  SYONAI,38.9,139.8,7,3,,True,JAPAN,30,,3,1214,,,726,4,7,,3,4,10,22,,,,,,,,8,,35,,3858,,3858,,,,,,,,,,,
 2457,1894,"ARGENTINA:  LA RIOJA, SAN JUAN, MENDOZA",-32,-68.5,7.5,3,,True,ARGENTINA,160,9,,,,,,,7.5,,3,,10,27,,,,,2,,2,19,,30,,,,,,,,,,,,,,,
-2459,1894,VENEZUELA:  CARACHE,9.4,-70.1,,2,,True,VENEZUELA,160,,,,,,,,,,,,11,4,,,,,,,,16,,45,,,,,,,0,,,,,,,,
+2459,1894,VENEZUELA:  CARACHE,9.67,-70.25,,2,,True,VENEZUELA,160,7,,,,,,,,,2,,11,4,,,3,,,,,17,3,15,,,,,,,0,,,,,,,,
 2461,1894,"ITALY:  PALMI, SANTA CRISTINA",38.3,15.9,,2,,True,ITALY,130,10,3,3406,3,,101,,,101,2,,11,16,,,,,,,,18,,52,,,,,,,,,,,,,,,
 2462,1895,MYANMAR (BURMA):  RANGOON,16.8,96.2,,2,,True,MYANMAR (BURMA),60,,,,,,,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 2464,1895,IRAN:  QUCHAN,37.1,58.4,6.8,4,,True,IRAN,140,,4,,4,,1000,4,6.8,1000,4,4,1,17,,,,,,,,8,,30,,,,,,,,,,,,,,,
@@ -1779,7 +1778,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 2548,1899,MEXICO:  GUERRERO-OAXACA,17,-98,8.4,3,8.4,True,MEXICO,150,,,,,60,,,,,,,1,24,,,,,,,,23,,43,,,,,,,,,,,,,,,
 2550,1899,BOLIVIA: SOUTHERN;  ARGENTINA: SALTA,-21.97,-63.67,6.9,2,,True,BOLIVIA,160,10,,,,10,,,6.9,,2,,3,23,,,,,,,,18,,0,,,,,,,,,,,,,,,
 2551,1899,JAMAICA,18,-77,7.8,,,True,JAMAICA,90,5,,,,60,,,7.8,,,,6,14,,,,,,,,11,,9,,,,,,,,,,,,,,,
-2552,1899,VENEZUELA:  BARQUISIMETO,10.4,-69.2,,2,,True,VENEZUELA,160,,,,,,,,,,,,7,14,,,,,,,,6,,,,,,,,,,,,,,,,,
+2552,1899,VENEZUELA:  BARQUISIMETO,10.05,-69.3,,,,True,VENEZUELA,160,7,,,,,,,,,,,7,14,,,,,,,,8,,30,,,,,,,,,,,,,,,
 2553,1899,ALASKA:  CAPE YAKATAGA,60,-142,8.2,1,,True,USA,150,11,,1258,,25,,,8.2,,1,,9,4,,,,,,,,0,,22,,,,,,AK,,,,,,,,,
 2554,1899,ALASKA:  CAPE YAKATAGA,60,-140,7.8,,,True,USA,150,7,,,,25,,,7.8,,,,9,10,,,,,,,,17,,4,,,,,,AK,,,,,,,,,
 2557,1899,ALASKA:  SE ALASKA,60,-140,8.2,1,,True,USA,150,11,,1260,,60,,,8.6,,3,,9,10,,,,,,,,21,,41,8.2,,,,,AK,,,,,,,,,
@@ -1792,7 +1791,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 2567,1900,INDONESIA:  JAVA:  SUKABUMI,-6.84,106.96,,2,,True,INDONESIA,60,7,,,,,,,,,2,,1,14,,,3,,,,,,3,,,,,,,,,,,,,,,,
 2569,1900,MEXICO,20,-105,7.3,3,,True,MEXICO,150,8,2,5896,2,10,,3,7.4,,3,3,1,20,,,,,,,,6,,33,7.3,,,,,,30,,,,,,,,
 2571,1900,MEXICO:  NEAR COAST OF JALISCO,20,-105,6.9,1,7.8,True,MEXICO,150,,,5897,,60,,,6.9,,1,,5,16,,,,,,,,20,,12,,,,,,,0,,,,,,,,
-2572,1900,"VENEZUELA:  CASANAY (CASANAI),CARIACO",10.3,-63.3,,2,,True,VENEZUELA,160,,,,,,,,,,,,6,7,,,,,,,,22,,,,,,,,,,,,,,,,,
+2572,1900,"VENEZUELA:  CASANAY (CASANAI),CARIACO",10.5,-63.42,,2,,True,VENEZUELA,160,7,,,,,,1,,,2,1,6,7,,,,,,,,22,,30,,,,,,,,,,,,,,,
 2573,1900,COSTA RICA,10,-85.5,7.5,,,True,COSTA RICA,100,,,,,60,,,7.5,,,,6,21,,,,,,,,20,,52,,,,,,,,,,,,,,,
 2574,1900,"TURKEY:  KARS,KARAKURT,KAGIZMAN,DIGOR",40.3,43.1,5.9,3,,True,TURKEY,140,8,3,,3,,140,4,5.9,140,3,4,7,12,,,3,,,,,6,3,25,,1100,900,1100,900,,0,,,,,,,,
 2575,1900,SOLOMON ISLANDS:  SANTA CRUZ ISLANDS,-10,165,7.6,,,True,SOLOMON ISLANDS,170,,,,,33,,,7.6,,,,7,29,,,,,,,,6,,59,,,,,,,,,,,,,,,
@@ -2131,7 +2130,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 3163,1920,"ALBANIA:  TEPELENE, DRAGOTI, PESHTANI, MARICAJ",40.2,20,6.2,3,,True,ALBANIA,130,11,3,,3,25,200,3,,200,3,3,11,26,,,,,,,,8,,51,6.2,,,,,,7,,,,,,,,
 3165,1920,"CHINA:  GANSU PROVINCE, SHANXI PROVINCE",36.601,105.317,8.3,4,,True,CHINA,30,12,4,3541,4,25,235502,,8.6,235502,4,,12,16,,,,,,,,12,,5,8.3,,,,,,54.7,,25,,,,,25,
 3167,1920,ARGENTINA:  MENDOZA,-31.905,-68.412,6.7,3,,True,ARGENTINA,160,8,3,,3,15,400,3,6,400,3,3,12,17,,,,,3,,3,19,,0,6.7,,,,,,4.6,,,,,,,,
-3168,1920,"ALBANIA:  ELBASAN, PEQIN",41.197,20.704,6,3,,True,MACEDONIA,130,9,3,1488,3,15,,3,5.6,,3,3,12,18,,,,,,,,2,,1,6,,,,,,36.3,,,,,,,,
+3168,1920,"ALBANIA:  ELBASAN, PEQIN",41.197,20.704,6,3,,True,NORTH MACEDONIA,130,9,3,1488,3,15,,3,5.6,,3,3,12,18,,,,,,,,2,,1,6,,,,,,36.3,,,,,,,,
 3169,1921,ITALY:  N,44.3,11.9,,,,True,ITALY,130,12,,,,,,,,,,,1,13,,,,,,,,17,,42,,,,,,,0,,,,,,,,
 3170,1921,MEXICO-GUATEMALA,15.662,-90.791,7.1,1,,True,GUATEMALA,100,7,,,,15,,,7.5,,1,,2,4,,,,,,,,8,,22,7.1,,,,,,40.6,,,,,,,,
 3172,1921,MEXICO:  NEAR COAST OF JALISCO,19.7,-104.3,7.7,,7.7,True,MEXICO,150,,,,,,,,,,,,4,30,,,,,,,,11,,4,,,,,,,0,,,,,,,,
@@ -2825,7 +2824,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 4292,1963,INDONESIA:  BALI,-8.2,115.6,6,,,True,INDONESIA,60,,,,,65,,,6,,,,5,18,353,,,,,,,12,,20,,,,,,,34.4,,,,,,,,
 4293,1963,BALKANS NW:  SLOVENIA:  LJUBLJANA,46.1,14.8,4.9,2,4.9,True,SLOVENIA,130,7,,,,13,,,,,,,5,19,,,,,,,,10,,,,,,,,,,,,,,,,,
 4294,1963,IRAN:  W,33.2,49.2,,2,,True,IRAN,140,,,,,38,,,,,2,,6,30,,,,,,,,7,,41,,,,,,,0,,,,,,,,
-4297,1963,BALKANS NW:  MACEDONIA:  SKOPJE,42.1,21.3,6,4,,True,MACEDONIA,130,10,4,,4,5,1070,4,6,1070,4,4,7,26,,,,3300,4,3300,4,4,,17,,,,,,,12,,1000,,,,,1000,
+4297,1963,BALKANS NW:  MACEDONIA:  SKOPJE,42.1,21.3,6,4,,True,NORTH MACEDONIA,130,10,4,,4,5,1070,4,6,1070,4,4,7,26,,,,3300,4,3300,4,4,,17,,,,,,,12,,1000,,,,,1000,
 4299,1963,"IRAN:  GAHKOM,LAIGAZAN,PATKUIYEH,GOLRUIYEH,GANJ",27.8,55.6,5.2,2,5.2,True,IRAN,140,,1,,1,37,5,3,,5,2,3,7,29,,,,8,1,8,1,6,,10,,350,,350,,,0,,,,,,,,
 4300,1963,PERU:  S,-13.8,-69.3,7.7,1,7.7,True,PERU,160,,,,,543,,,,,,,8,15,,,,,,,,17,,25,,,,,,,0,,,,,,,,
 4302,1963,INDIA:  KASHMIR:  SW,33.9,74.8,5.3,2,5.3,True,INDIA,60,,2,,,25,80,,,,,,9,2,,,,,,,,1,,34,,,,,,,0,,,,,,,,
@@ -3181,7 +3180,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 4828,1979,MEXICO:  GUERRERO,17.813,-101.276,7.6,4,,True,MEXICO,150,,1,2112,1,49,5,3,7.6,5,4,3,3,14,,,,35,1,35,1,11,,7,,200,,200,,,16.3,,30,,,,,30,6.5
 4830,1979,BALKANS NW:  MONTENEGRO,42.096,19.209,6.9,4,,True,MONTENEGRO,130,9,3,2113,3,10,130,4,6.9,131,4,4,4,15,,6.9,,1001,4,1001,4,6,,19,,,,,,,44.1,,2700,,,,,2700,6.2
 4832,1979,INDONESIA:  BALI,-8.299,115.934,5.4,3,,True,INDONESIA,60,,,,,43,,,5.4,,,,5,21,,,,,,,,16,,31,,,,,,,5.2,,,,,,,,5.4
-4833,1979,BALKANS NW:  MACEDONIA:  DEBAR,42.255,18.752,6.2,2,,True,MACEDONIA,130,8,,,,8,,,6.2,,,,5,24,,,,65,2,65,2,17,,23,,,,,,,18.2,,,,,,,,5.8
+4833,1979,BALKANS NW:  MACEDONIA:  DEBAR,42.255,18.752,6.2,2,,True,NORTH MACEDONIA,130,8,,,,8,,,6.2,,,,5,24,,,,65,2,65,2,17,,23,,,,,,,18.2,,,,,,,,5.8
 4834,1979,INDONESIA:  SUMBAWA ISLAND,-8.207,115.949,5.8,2,,True,INDONESIA,60,,1,,1,25,22,,5.8,22,2,,5,30,,,,,,,,9,,38,,,,,,,52.9,,4.15,,,,,4.15,6.1
 4836,1979,AUSTRALIA:  WESTERN,-30.812,117.179,6.1,2,,True,AUSTRALIA,60,,,,,6,,,6.1,,2,,6,2,,6.2,,1,1,1,1,9,,47,,,,,,,58.1,,1.5,,,,,1.5,6
 4837,1979,"PAPUA NEW GUINEA:  E, MT HAGEN",-4.98,145.577,6.2,2,,True,PAPUA NEW GUINEA,170,,,,,189,,,,,,,6,25,,,,,,,,5,,29,,,,,,,5.6,,,,,,,,6.2
@@ -3273,14 +3272,14 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 4949,1982,INDONESIA:  FLORES ISLANDS:  RUTENG,-8.375,120.577,5.6,2,,True,INDONESIA,60,,,,,46,,,5.6,,2,,8,6,,,,,,,,20,,40,,,,,,,52.2,,,,,,,,5.9
 4950,1982,HONDURAS-GUATEMALA-EL SALVADOR,14.487,-89.121,5.1,2,,True,HONDURAS,100,4,1,,1,12,3,3,5.1,3,2,3,9,29,,,3,2,1,2,1,5,3,50,,,554,,554,,32.2,,,,,,,,5.1
 4952,1982,ITALY:  PERUGIA,43.164,12.586,4.4,4,,True,ITALY,130,7,,,,16,,,,,,,10,17,,,,,,,,10,,56,,,,,,,47.6,,35,,,,,,4.4
-4953,1982,"BALKANS NW:  ALBANIA:  BIER, BERAT, LUSHNJE",40.883,19.59,5.5,2,,True,MACEDONIA,130,8,1,,1,21,1,,5.5,1,2,,11,16,,,,12,1,12,1,23,,41,,,,,,,21,,5,,,,,5,5.6
+4953,1982,"BALKANS NW:  ALBANIA:  BIER, BERAT, LUSHNJE",40.883,19.59,5.5,2,,True,NORTH MACEDONIA,130,8,1,,1,21,1,,5.5,1,2,,11,16,,,,12,1,12,1,23,,41,,,,,,,21,,5,,,,,5,5.6
 4954,1982,YEMEN:  DHAMAR,14.701,44.379,6,4,,True,YEMEN,60,8,4,,4,5,2800,4,6,2800,4,4,12,13,,,,1500,4,1500,4,9,,12,,,,,,,48,,2000,,,,,2000,6
 4957,1982,AFGHANISTAN:  NORTHEASTERN,36.148,69.011,6.6,2,,True,AFGHANISTAN,40,,3,,3,36,500,,6.6,500,2,,12,16,,,,3000,4,3000,4,0,,40,,,,,,,48.7,,1,,,,,1,6.2
 4958,1982,TONGA TRENCH,-24.133,-175.864,7.7,,,True,TONGA,170,,,2137,,33,,,7.7,,,,12,19,,,,,,,,17,,43,,,,,,,54.8,,,,,,,,5.9
 4959,1982,INDONESIA:  FLORES ISLAND:  EASTERN,-8.405,123.08,5.9,2,,True,INDONESIA,60,,1,2689,1,33,13,4,5.9,13,2,4,12,25,,,,390,3,390,3,12,,28,,1875,,1875,,,2.8,,1.45,,,,,1.45,5.5
 4960,1983,MEXICO:  OAXACA:   SALINA CRUZ,16.147,-95.232,6.7,2,,True,MEXICO,150,7,,,,57,,,6.7,,2,,1,24,,,,,,,,8,,17,,,,,,,39.6,,,,,,,,6.3
 4962,1983,CHINA:  XINJIANG WEIWUER ZIZHIQU PROVINCE: WUQUA S,39.945,75.135,6.2,2,,True,CHINA,40,8,,,,16,,,6.2,,2,,2,13,,,,2,1,2,1,1,,40,,,,,,,10.9,,,,,,,,5.6
-4963,1983,BALKANS NW:  MACEDONIA:  SKOPJE,41.959,21.54,4.7,1,,True,MACEDONIA,130,7,1,,1,24,12,,,12,1,,2,25,,,,,,,,18,,22,,,,,,,12.9,,0.5,,,,,0.5,4.7
+4963,1983,BALKANS NW:  MACEDONIA:  SKOPJE,41.959,21.54,4.7,1,,True,NORTH MACEDONIA,130,7,1,,1,24,12,,,12,1,,2,25,,,,,,,,18,,22,,,,,,,12.9,,0.5,,,,,0.5,4.7
 4964,1983,"TAJIKISTAN:  GARM, KHAZORA",38.841,70.727,5.2,3,,True,TAJIKISTAN,40,7,,,,49,,,5.2,,3,,2,26,,,,,,,,20,,7,,,,,,,49.9,,,,,,,,5.3
 4965,1983,PAPUA NEW GUINEA:  NEW IRELAND,-4.883,153.581,7.6,2,,True,PAPUA NEW GUINEA,170,7,,2141,,89,,,7.6,,2,,3,18,,,,,,,,9,,5,,,,,,,50,,,,,,,,6.5
 4966,1983,GREECE: VONITSA,38.294,20.262,6.2,2,,True,GREECE,130,7,,,,19,,3,6.2,,2,3,3,23,,,,7,1,7,1,23,,51,,160,,160,,,6.5,,,,,,,,5.8
@@ -3358,7 +3357,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 5076,1985,MEXICO:  MICHOACAN:  MEXICO CITY,18.19,-102.533,8.1,4,,True,MEXICO,150,9,4,2162,4,28,9500,4,8.1,9500,4,4,9,19,,,,30000,4,30000,4,13,,17,,,,,,,47.3,,4000,,,,,4000,6.8
 5078,1985,MEXICO:  SW COAST:  MEXICO CITY,17.802,-101.647,7.6,2,,True,MEXICO,150,6,2,2163,2,31,,,7.6,,2,,9,21,,,,,,,,1,,37,,,,,,,13.4,,,,,,,,6.3
 5079,1985,"SOLOMON ISLANDS:  HONIARA, GUADACANAL",-9.829,159.854,6.9,1,,True,SOLOMON ISLANDS,170,7,,,,32,,3,6.9,,1,3,9,27,,,,,,,,3,,39,,,,,,,8.5,,,,,,,,6.2
-5080,1985,BALKANS NW:  MACEDONIA:  DEMIR KAPIJA-NEGOTINO,41.581,22.254,5,2,,True,MACEDONIA,130,7,,,,7,,3,,,2,3,9,28,,,,16,1,16,1,14,,50,,500,,500,,,15.2,,,,,,,,5
+5080,1985,BALKANS NW:  MACEDONIA:  DEMIR KAPIJA-NEGOTINO,41.581,22.254,5,2,,True,NORTH MACEDONIA,130,7,,,,7,,3,,,2,3,9,28,,,,16,1,16,1,14,,50,,500,,500,,,15.2,,,,,,,,5
 5081,1985,GUATEMALA:  SAN MIGUEL UPSANTAN,15.299,-90.863,4.5,2,,True,GUATEMALA,100,7,,,,5,,3,,,2,3,10,11,,,3,,3,,3,3,3,39,,500,500,500,,,10.9,,,,,,,,4.5
 5082,1985,"TAJIKISTAN:  KAPTOLYUK, KAYRAKKUM, GAFUROV",40.301,69.823,5.9,4,,True,TAJIKISTAN,40,9,1,,1,16,29,3,5.9,29,4,3,10,13,,,3,80,2,80,2,15,,59,,,,,,,51.2,,200,,,,,200,5.8
 5083,1985,ALGERIA:  ANNABA-SETIF-SOUK,36.46,6.761,5.9,1,,True,ALGERIA,15,,1,,1,10,6,,5.9,6,1,,10,27,,,,,,,,19,,34,,,,,,,57.1,,,,,,,,5.5
@@ -5337,7 +5336,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 8379,2009,SAUDI ARABIA: WESTERN,25.212,37.597,4.6,1,,True,SAUDI ARABIA,140,,,,,10,,2,,,1,2,5,17,,,,,,,,19,,50,,,,,,,6.2,,,,,,,,4.6
 8380,2009,SAUDI ARABIA: WESTERN,25.292,37.744,5.7,,,True,SAUDI ARABIA,140,,,,,2,,,5.3,,,,5,19,,,,7,1,7,1,17,,35,5.7,,,,,,0.6,,,,,,,,5.7
 8381,2009,INDIA:  KASHMIR,33.198,75.787,4.9,1,,True,INDIA,60,,,,,21,,,,,1,,5,19,,,,,,,,19,2,29,,,,,100,,48.9,,,,,,,,4.9
-8382,2009,BALKANS NW:  MACEDONIA,41.303,22.714,5.3,2,,True,MACEDONIA,130,,,,,0,,,,,2,,5,24,,5.5,,,,,,16,3,17,5.3,,,,,,50.8,,,,,,,,5.2
+8382,2009,BALKANS NW:  MACEDONIA,41.303,22.714,5.3,2,,True,NORTH MACEDONIA,130,,,,,0,,,,,2,,5,24,,5.5,,,,,,16,3,17,5.3,,,,,,50.8,,,,,,,,5.2
 8383,2009,KAZAKHSTAN:  TEKELI,44.724,78.864,5.4,1,,True,KAZAKHSTAN,40,,1,,1,15,1,,5.1,1,1,,6,13,,,2,,,,,17,2,17,5.4,,,,,,38.2,,,,,,,,5.8
 8384,2009,VANUATU ISLANDS:  TONGOA,-17.026,168.329,5.7,1,,True,VANUATU,170,,,,,13,,2,5.5,,1,2,5,29,,,2,10,1,10,1,6,,20,5.7,,,,,,14.6,,,,,,,,5.5
 8385,2009,VANUATU ISLANDS:  TONGOA,-17.757,167.949,6.3,1,,True,VANUATU,170,,,,,15,,,6.2,,1,,6,2,,,,4,1,4,1,2,2,17,6.3,,,,,,3.5,,,,,,,,5.7
@@ -5879,7 +5878,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 10195,2016,MYANMAR (BURMA): CHAUK,20.923,94.569,6.8,3,,True,MYANMAR (BURMA),60,5,1,,1,82,4,,,4,3,,8,24,,,3,20,1,20,1,10,2,34,6.8,,230,,230,,54.6,,10,,,,,10,
 10196,2016,NEW ZEALAND:  GISBORNE,-37.359,179.146,7,,,True,NEW ZEALAND,170,5,,5606,,19,,,,,,,9,1,,,,,,,,16,,37,7,,,,,,57.3,,,,,,,,
 10197,2016,TANZANIA:  LAKE VICTORIA;  UGANDA: RAKAI,-1.036,31.618,5.9,4,,True,TANZANIA,10,5,1,,1,40,23,4,,23,4,4,9,10,,,4,252,3,252,3,12,4,27,5.9,1172,6281,1172,6281,,33.4,,458,,,,,458,
-10198,2016,BALKANS NW:  MACEDONIA,42.008,21.488,5.1,3,,True,MACEDONIA,130,8,,,,13,,,,,3,,9,11,,,1,137,3,137,3,13,1,10,5.1,,,,,,8.1,,10,,,,,10,
+10198,2016,BALKANS NW:  MACEDONIA,42.008,21.488,5.1,3,,True,NORTH MACEDONIA,130,8,,,,13,,,,,3,,9,11,,,1,137,3,137,3,13,1,10,5.1,,,,,,8.1,,10,,,,,10,
 10199,2016,SOUTH KOREA:  GYEONGJU,35.781,129.216,5.4,3,,True,SOUTH KOREA,30,8,1,,1,13,1,,,1,3,,9,12,,,3,14,1,14,1,11,3,32,5.4,,106,,106,,55.8,,21,,,,,21,
 10200,2016,JAPAN:  KURAYOSHI,35.374,133.809,6.2,4,,True,JAPAN,30,7,,,,6,,1,,,4,1,10,21,,,3,7,1,7,1,5,3,7,6.2,2,160,2,160,,23,,100,,,,,100,
 10201,2016,"ITALY:  VISSO, USSITA",42.956,13.067,6.1,4,,True,ITALY,130,9,1,,1,10,1,,,1,4,,10,26,,,4,,1,,1,19,4,18,6.1,,1001,,1001,,8.4,,,,,,,,
@@ -6676,17 +6675,18 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 10997,2026,CHINA:  GUANGXI PROVINCE,24.457,109.218,5,2,,True,CHINA,30,,1,,1,10,2,,,2,2,,5,17,,,,,,,,16,,21,5,,,,,,6,,,1,1,1,1,,
 10998,320,EGYPT: ALEXANDRIA,,,,,,True,EGYPT,15,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 10999,1828,ITALY:  PAVIA,44.821,9.047,5.7,2,,True,ITALY,130,8,1,3290,1,,15,3,,15,2,3,10,9,,,3,,,,,2,3,20,5.7,184,,184,,,,,,,,,,,
-11000,2026,PHILIPPINES: MINDANAO: S;  INDONESIA,5.592,125.047,7.8,4,,True,PHILIPPINES,170,8,3,6173,3,55,107,4,,107,4,4,6,7,,,4,1320,4,1320,4,23,4,37,7.8,19195,102265,19195,102265,,41,,,7,1,7,1,,
+11000,2026,PHILIPPINES: MINDANAO: S;  INDONESIA,5.592,125.047,7.8,4,,True,PHILIPPINES,170,8,3,6173,3,55,107,4,,107,4,4,6,7,,,4,1320,4,1320,4,23,4,37,7.8,19195,102265,19195,102265,,41,,25.45,7,1,7,1,25.45,
 11001,1927,VANUATU:  PORT VILA,-18.284,167.756,7.1,,,True,VANUATU,170,,,6174,,30,,,,,,,1,24,,,,,,,,1,,5,7.1,,,,,,47,,,,,,,,
 11002,1985,"MICRONESIA, FED. STATES OF: KOSRAE IS, CAROLINE IS",5.145,162.85,,,,True,"MICRONESIA, FED. STATES OF",170,,,6176,,,,,,,,,1,10,,,,,,,,10,,13,,,,,,,1.4,,,,,,,,
 11003,2026,INDONESIA:  CENTRAL SULAWESI,-1.117,120.199,6.7,3,,True,INDONESIA,170,,1,,1,10,3,3,,3,3,3,6,16,,,4,95,2,95,2,3,4,27,6.7,214,4966,214,4966,,44,,,,,,,,
-11004,2026,VENEZUELA:  NORTHERN VENEZUELA,10.509,-68.504,7.5,4,,True,VENEZUELA,160,,4,6178,4,10,5398,,,5398,4,,6,24,,,,16740,4,16740,4,22,,5,7.5,,,,,,11,,19600,,,,,19600,
+11004,2026,VENEZUELA:  NORTHERN VENEZUELA,10.509,-68.504,7.5,4,,True,VENEZUELA,160,,4,6178,4,10,5546,,,5546,4,,6,24,,,,16740,4,16740,4,22,,5,7.5,,,,,,11,,19600,,,,,19600,
 11005,1772,"KOLA PENINSULA, NW RUSSIA",68.7,33.3,6,,6,True,RUSSIA,120,8,,,,,,,,,,,2,18,,,,,,,,,,,,,,,,,,,,,,,,,
 11006,1733,ITALY:  ANCONA,43.619,13.513,6,2,,True,ITALY,130,8,1,,1,,,3,,,2,3,10,20,,,,,,,,,,,6,,,,,,,,,,,,,,
 11007,1735,CYPRUS: NICOSIA,35.2,33.4,,,,True,CYPRUS,130,9,3,,3,,200,,,200,3,,4,10,,,,,,,,,,,,,,,,,,,,,,,,,
 11008,1749,ITALY:  MESSINA,38.185,15.555,5.8,3,,True,ITALY,130,9,3,,3,,,,,,3,,8,,,,3,,,,,,3,,5.8,,,,,,,,,,,,,,
 11009,2026,MEXICO: CHIAPAS;  GUATEMALA,14.604,-92.952,7.3,2,,True,MEXICO,150,,,6179,,18,,1,,,2,1,7,17,,,3,,1,,1,14,3,48,7.3,26,390,26,390,,39,,,,,,,,
-11010,2026,PERU:  JUNIN,-12.043,-75.301,5.5,3,5.1,True,PERU,160,5,1,,1,10,5,4,,5,3,4,7,19,,,4,151,3,151,3,2,4,24,5.5,2175,1759,2175,1759,,36,,,,,,,,
+11010,2026,PERU:  JUNIN,-12.043,-75.301,5.5,3,5.4,True,PERU,160,5,1,,1,10,5,4,,5,3,4,7,19,,,4,158,3,158,3,2,4,24,5.5,2235,2155,2235,2155,,36,,,,,,,,
 11011,1772,TURKEY; GREECE,,,,,,True,TURKEY,130,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 11012,1784,GREECE:  KEFALONIA,38.1,20.3,,2,,True,GREECE,130,8,1,,1,,,3,,,2,3,9,,,,,,,,,,,,,,,,,,,,,,,,,,
-11013,2026,JAPAN:  KUMAMOTO,32.682,130.722,6.8,3,,True,JAPAN,30,11,1,,1,10,35,3,,35,3,3,7,28,,,4,99,2,99,2,7,4,27,6.8,419,1029,419,1029,,15,,,,,,,,
+11013,2026,JAPAN:  KUMAMOTO,32.682,130.722,6.8,3,,True,JAPAN,30,11,1,,1,10,38,4,,38,3,4,7,28,,,4,159,3,159,3,7,4,27,6.8,1744,6863,1744,6863,,15,,,,,,,,
+11014,2026,PHILIPPINES: SARANGANI,5.181,125.276,6.3,,,True,PHILIPPINES,170,,,6183,,10,,,,,,,8,5,,,,,,,,4,,14,6.3,,,,,,6,,,,,,,,6.3
