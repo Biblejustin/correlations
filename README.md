@@ -15,6 +15,8 @@ This repo is the **central analysis hub** for a 10-repo project testing whether 
 | [`tropical-cyclones`](https://github.com/Biblejustin/tropical-cyclones) | public | Major cyclones ≥ 1000 deaths, 1737+ | Bay of Bengal dominates; deaths rising |
 | [`droughts-tracking`](https://github.com/Biblejustin/droughts-tracking) | public | Major droughts, 4.2-kyr event → 2024 | **11-year solar cycle peak above noise** |
 | [`astronomical-signs`](https://github.com/Biblejustin/astronomical-signs) | public | Eclipses, comets, supernovae | Selection-bias dominated; no terrestrial correlation |
+| [`israel-pressure-disasters`](https://github.com/Biblejustin/israel-pressure-disasters) | public | US pressure-on-Israel events × US disasters (Koenig claim test) | With full denominators, no window test survives FDR (min q = 0.17) |
+| [`israel-rain-agriculture`](https://github.com/Biblejustin/israel-rain-agriculture) | public | Israel rain years 1902+ (CRU TS) + FAOSTAT agriculture 1961+ | **Latter rain declining (-2.6%/dec); production 4.7× since 1961; rain-harvest link broken by irrigation post-1990** |
 | `correlations` (this repo) | public | Cross-topic analyses | **Wars × famines r = +0.450 (FDR-significant)** |
 
 ## Dashboard — one image, six headlines
