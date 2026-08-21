@@ -1,12 +1,12 @@
 {
-  "when": "2026-08-19T16:20:51.021265+00:00",
+  "when": "2026-08-21T17:06:37.329083+00:00",
   "counts": {
-    "usgs_m4_modern": 534671,
-    "usgs_m65_1900": 4719,
+    "usgs_m4_modern": 534814,
+    "usgs_m65_1900": 4720,
     "significant_quakes": 4091,
     "silso_days": 76183,
-    "gfz_days": 34564,
-    "ngdc_quakes": 6694,
+    "gfz_days": 34566,
+    "ngdc_quakes": 6695,
     "ngdc_volcanoes": 900,
     "ucdp_conflict_years": 2752,
     "terrorism_years": 51

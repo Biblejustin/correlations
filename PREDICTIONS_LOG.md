@@ -145,3 +145,16 @@ Appended by `predictions_scorecard.py` on each data refresh. PREDICTIONS.md itse
 | P12b crashes ≥20% in trailing 10y | 2 | ≤ 2 (historical rate) | on track |
 | P14 NGDC M≥7 trend 1900–2005 | -0.22/dec [-0.42, -0.04] | declining or flat (reversal ⇒ real intensification) | on track |
 
+## Scorecard 2026-08-21
+
+| Prediction | Current value | Threshold | Status |
+|---|---|---|---|
+| P8 wars×famines detrended r | +0.450 (p=1.5e-07) | ≥ +0.30 | on track |
+| P9b Granger wars→famines p@1/2/5 | 0.019/0.034/0.037 (reverse min 0.46) | all <0.05, reverse NS | on track |
+| P9c UCDP intrastate trend | +5.60/dec [+5.06, +6.17] | positive, CI excludes 0 | on track |
+| P9d UCDP interstate trend | -0.061/dec [-0.184, +0.044] | flat now; rising = strongest confirmation | flat (CI crosses 0) |
+| P10 drought 11y peak | 3.26× null at 10.4y | ≥ 1.0× | on track |
+| P12 terrorism deaths trend 1998–2021 | +92.4%/dec | positive at p<0.05 | on track |
+| P12b crashes ≥20% in trailing 10y | 2 | ≤ 2 (historical rate) | on track |
+| P14 NGDC M≥7 trend 1900–2005 | -0.22/dec [-0.42, -0.04] | declining or flat (reversal ⇒ real intensification) | on track |
+
