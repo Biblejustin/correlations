@@ -1658,7 +1658,7 @@ id,year,locationName,latitude,longitude,eqMagnitude,damageAmountOrder,eqMagUnk,p
 2371,1887,KAZAKHSTAN:  VERNENSK,43.1,76.8,7.3,2,7.3,True,KAZAKHSTAN,40,10,,,,20,,,,,,,6,8,,,,,,,,23,,35,,,,,,,,,,,,,,,
 2372,1887,MEXICO:  GUERRERO,17.7,-100,,3,,True,MEXICO,150,,,,,,,,,,,,8,29,,,,,,,,,,,,,,,,,,,,,,,,,
 2373,1887,HAITI:  MOLE SAINT NICOLAS,19.7,-74.4,,3,,True,HAITI,90,,,1170,,,,,,,,3,9,23,,,,,,,,12,,,,,,,,,,,,,,,,,
-2374,1887,GREECE:  XYLOKASTRON-SYKIA (CORINTHIA),38.3,22.8,,,,True,GREECE,130,8,2,1172,,,,,,,,,10,3,,,,,,,,22,,53,,,,,,,,,,,,,,,
+2374,1887,GREECE:  XYLOKASTRON-SYKIA (CORINTHIA),38.3,22.8,,2,,True,GREECE,130,8,2,1172,2,,,3,,,2,3,10,3,,,3,,,,,22,3,53,,700,,700,,,,,,,,,,,
 2375,1887,ITALY:  N,44.2,12,,,,True,ITALY,130,12,,,,,,,,,,,11,9,,,,,,,,2,,15,,,,,,,,,,,,,,,
 2376,1887,ALGERIA:  KALAA,35.58,0.33,,3,,True,ALGERIA,15,10,1,,1,,20,3,,20,3,3,11,29,,,,,,,,12,,30,,331,,331,,,,,,,,,,,
 2377,1887,ITALY:  BISIGNANO,39.6,16.3,,2,,True,ITALY,130,,,,,,,,,,,,12,3,,,,,,,,,,,,,,,,,,,,,,,,,
