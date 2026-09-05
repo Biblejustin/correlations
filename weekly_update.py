@@ -21,13 +21,14 @@ def git(repo,*args):
 def verify_publish_targets():
     account=json.loads(subprocess.check_output(['gh','api','user'],text=True))
     if account['login']!='Biblejustin':raise RuntimeError('GitHub active account must be Biblejustin')
+    account['verified_repositories']={}
     for repo in REPOS:
-        remote=git(repo,'remote','get-url','origin')
-        if remote.removesuffix('.git') not in {f'https://github.com/Biblejustin/{repo}',f'git@github.com:Biblejustin/{repo}'}:
-            raise RuntimeError(f'Unexpected remote for {repo}: {remote}')
-        verify_push_urls(repo)
+        verify_remote_targets(repo)
         if git(repo,'status','--porcelain'):
             raise RuntimeError(f'{repo} has existing changes; publication needs clean starting trees')
+        account['verified_repositories'][repo]={'head':git(repo,'rev-parse','HEAD'),
+                                              'branch':git(repo,'symbolic-ref','--short','HEAD')}
+        verify_remote_head(repo,account['verified_repositories'][repo])
     return account
 
 
@@ -38,26 +39,62 @@ def verify_push_urls(repo):
         raise RuntimeError(f'Every push target must be Biblejustin/{repo}')
 
 
+def verify_remote_targets(repo):
+    remote=git(repo,'remote','get-url','origin')
+    if remote.removesuffix('.git') not in {f'https://github.com/Biblejustin/{repo}',f'git@github.com:Biblejustin/{repo}'}:
+        raise RuntimeError(f'Unexpected remote for {repo}: {remote}')
+    verify_push_urls(repo)
+
+
+def verify_remote_head(repo,expected):
+    # Query the actual publication destination, never a possibly stale tracking ref.
+    reference=f'refs/heads/{expected["branch"]}'
+    row=git(repo,'-c','credential.helper=',
+            '-c','credential.helper=!gh auth git-credential','ls-remote','--exit-code',
+            f'https://github.com/Biblejustin/{repo}.git',reference).split()
+    if row != [expected['head'],reference]:
+        raise RuntimeError(f'{repo}: local and remote branch differ; publication stopped')
+
+
 def generated_path(path):
     p=Path(path)
     return (p.parts[0] in {'data','figures','plots','results'} or
             path in {'results.txt','PREDICTIONS_LOG.md'} or
-            (len(p.parts)==1 and path.endswith('.coverage.json')))
+            (len(p.parts)==1 and path.endswith('.coverage.json')) or
+            path=='quakes.sqlite.significant.status.json')
+
+
+def publication_paths(repo,account):
+    """Reject concurrent branch/commit or source edits before staging any output."""
+    expected=account.get('verified_repositories',{}).get(repo)
+    if expected is None:raise RuntimeError(f'{repo}: missing initial publication verification')
+    if git(repo,'rev-parse','HEAD')!=expected['head'] or git(repo,'symbolic-ref','--short','HEAD')!=expected['branch']:
+        raise RuntimeError(f'{repo}: branch or commit changed during refresh; publication stopped')
+    commands=[['ls-files','--modified','--others','--exclude-standard','-z'],
+              ['diff','--cached','--no-renames','--name-only','-z']]
+    changed=set()
+    for command in commands:
+        changed.update(p for p in subprocess.check_output(['git','-C',str(ROOT/repo),*command]).decode().split('\0') if p)
+    unexpected=sorted(p for p in changed if not generated_path(p))
+    if unexpected:raise RuntimeError(f'{repo}: unexpected source changes during refresh: {unexpected}')
+    return sorted(changed)
 
 
 def publish(account):
     current=json.loads(subprocess.check_output(['gh','api','user'],text=True))
     if current['login']!='Biblejustin' or current['id']!=account['id']:
         raise RuntimeError('GitHub active account changed; publication stopped')
+    # Inspect every repository before committing to any repository.
+    for repo in REPOS:
+        verify_remote_targets(repo)
+        publication_paths(repo,account)
+        verify_remote_head(repo,account['verified_repositories'][repo])
     for repo in REPOS:
         # Revalidate target immediately before any commit/push.
-        remote=git(repo,'remote','get-url','origin').removesuffix('.git')
-        if remote not in {f'https://github.com/Biblejustin/{repo}',f'git@github.com:Biblejustin/{repo}'}:
-            raise RuntimeError('Target owner must be Biblejustin')
-        verify_push_urls(repo)
+        verify_remote_targets(repo)
+        verify_remote_head(repo,account['verified_repositories'][repo])
         branch=git(repo,'symbolic-ref','--short','HEAD')
-        changed=subprocess.check_output(['git','-C',str(ROOT/repo),'ls-files','--modified','--others','--exclude-standard','-z']).decode().split('\0')
-        paths=sorted({p for p in changed if p and generated_path(p)})
+        paths=publication_paths(repo,account)
         if not paths:continue
         subprocess.run(['git','-C',str(ROOT/repo),'add','--',*paths],check=True)
         if subprocess.run(['git','-C',str(ROOT/repo),'diff','--cached','--quiet']).returncode==0:continue

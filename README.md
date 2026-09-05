@@ -10,7 +10,7 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 - [Monitoring definitions and sources](MONITORING.md): exact measures, geography, cadence, coverage and future validation rules.
 - [Methodology](METHODOLOGY.md): missingness, selected catalogs, allocation assumptions and statistical families.
 - [Remaining work](BACKLOG.md): observations still unavailable and deeper research extensions.
-- [Operations and verification](OPERATIONS.md): shared Make entrypoints, exact dependency checks, clean-install evidence and prepared CI.
+- [Operations and verification](OPERATIONS.md): shared Make entrypoints, exact dependency checks, clean-install evidence and CI.
 - [Frozen historical predictions](PREDICTIONS.md): original hypotheses retained. Current scorecards are diagnostics, not independent validation of a refitted model.
 
 ## What changed in the evidence

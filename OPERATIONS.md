@@ -41,6 +41,14 @@ unavailable input or a failed stage, inspect that stage's log before retrying;
 do not infer success from old figures already on disk. No Make recipe suppresses
 errors or substitutes its own source-fetch command.
 
+Publication records every initial branch and commit, then checks the whole
+repository set before staging any output. Concurrent branch/commit changes or
+unexpected staged/unstaged source edits stop publication. Each local head must
+match its freshly queried publication branch, both initially and before commit;
+unpublished local commits or concurrent upstream changes stop the run. The quake significant
+catalog status sidecar is an explicit generated artifact, so a successful refresh
+does not leave it dirty and block the next scheduled run.
+
 ## Dependency evidence
 
 The clean verification environment created on September 5, 2026 used CPython
@@ -91,7 +99,7 @@ make test
 
 ## Continuous integration
 
-The prepared `.github/workflows/tests.yml` installs the same pins on Python 3.13, verifies the
+`.github/workflows/tests.yml` installs the same pins on Python 3.13, verifies the
 environment, runs `make test` on Ubuntu and prints the installed package versions.
 It runs for pushes to `main`, pull requests and manual dispatches in repositories
 owned by `Biblejustin`. It does not run live data refreshes, read GitHub secrets,
@@ -99,12 +107,11 @@ persist checkout credentials, or publish artifacts. Fixture tests cover stale
 module metadata, missing dependencies and Make's failure propagation as well as
 the source and statistical integrity checks.
 
-Activation is pending: GitHub rejected the workflow push because the current
-Biblejustin OAuth token lacks `workflow` scope. The complete workflow is preserved
-on the local `complete-monitoring-operations` branch and as a separate pending
-artifact. Monitoring code and local checks are published independently. CI must
-not be described as active until the required GitHub permission is granted and
-the workflow is pushed successfully.
+The workflow was published using an existing SSH key whose public key is
+registered to Biblejustin; GitHub SSH authentication confirmed that account.
+The separate OAuth token does not need broader workflow permissions for
+ordinary generated-data publication. CI has read-only repository permissions
+and cannot publish artifacts or change source catalogs.
 
 ## Scheduled operation
 

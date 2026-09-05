@@ -10,7 +10,7 @@ September 2026 integrity work and first regional monitoring panel implemented. E
 | Stable domain weights, baseline and trailing windows | Implemented; global composite unavailable with present impact coverage |
 | Same-count revisions, flare ingestion, feeder synchronization, failure-aware refresh | Implemented with source and artifact manifests |
 | USGS withdrawals and corrections | Implemented with verified counts, complete half-open query scopes, atomic reconciliation and 30-day historical cache expiry |
-| Shared Make entrypoints, clean dependencies and CI | Entry points and dependency verification implemented; CI prepared, GitHub workflow permission pending |
+| Shared Make entrypoints, clean dependencies and CI | Implemented; exact dependency/import verification, fixture failure checks and read-only GitHub CI |
 | Wheat area/yield and irrigation covariates | Implemented; future holdout frozen; 17-year irrigation sample limited |
 | Regional UCDP, UNHCR, IPC, WFP affordability | Implemented for fixed eight-country pilot; stock changes are not new displacement flows |
 | IPC national assessment history and revisions | Full supplied history ingested; 384 pilot observations, six ambiguous/inconsistent periods quarantined with original rows, prior versions preserved; geographic gates unchanged |
