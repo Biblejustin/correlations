@@ -30,8 +30,8 @@
     "notes": "Fixed pilot geography, not a representative global sample. Observations remain separate by source, unit and survey scope. Existing historical data are exploratory; no prophetic fulfillment score."
   },
   "n_permutations": 1999,
-  "input_observation_rows": 106419,
-  "observation_table_fingerprint": "3185616bcbb8bafe49aa2461e94b9206a4a4f7805e4ac3ed9700c7c498645daa",
+  "input_observation_rows": 106755,
+  "observation_table_fingerprint": "7ba7feef9957127f36daa33ffedd93bd7a9752f0ab59907e5a2e72b4eaf11bd1",
   "annual_panel_rows": 2662,
   "registered_lag_tests": 72,
   "estimable_lag_tests": 18,

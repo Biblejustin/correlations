@@ -17,7 +17,7 @@
     "SOM",
     "YEM"
   ],
-  "fetched_at": "2026-09-05T23:40:39.258152+00:00",
+  "fetched_at": "2026-09-05T23:52:26.667686+00:00",
   "history": {
     "accepted_periods": 94,
     "geographic_comparability_verified": false,
@@ -111,13 +111,13 @@
     ],
     "requests": [
       {
-        "fetched_at": "2026-09-05T23:40:36.939120+00:00",
+        "fetched_at": "2026-09-05T23:52:23.693797+00:00",
         "published_at": null,
         "sha256": "4b30214ceaae0d4e02673da89253adc2189954f2d9e6d1cc188f6bd86cd65408",
         "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
       },
       {
-        "fetched_at": "2026-09-05T23:40:39.258152+00:00",
+        "fetched_at": "2026-09-05T23:52:26.667686+00:00",
         "published_at": "Mon, 24 Aug 2026 12:32:59 GMT",
         "sha256": "39d8b4a9269e29e26354f5fb251a80cff9c5f1894c93803ac93f21cf6da54ccd",
         "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
@@ -134,13 +134,13 @@
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-09-05T23:40:36.939120+00:00",
+      "fetched_at": "2026-09-05T23:52:23.693797+00:00",
       "published_at": null,
       "sha256": "4b30214ceaae0d4e02673da89253adc2189954f2d9e6d1cc188f6bd86cd65408",
       "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
     },
     {
-      "fetched_at": "2026-09-05T23:40:39.258152+00:00",
+      "fetched_at": "2026-09-05T23:52:26.667686+00:00",
       "published_at": "Mon, 24 Aug 2026 12:32:59 GMT",
       "sha256": "39d8b4a9269e29e26354f5fb251a80cff9c5f1894c93803ac93f21cf6da54ccd",
       "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
@@ -148,6 +148,6 @@
   ],
   "rows": 384,
   "schema_version": 1,
-  "sha256": "e6d71a9f07d8e76e5790b80334114d6f985b38eabbf593a4842378fb80866ac0",
+  "sha256": "b22b43fd2ea0a14f4c8f0ef2535bc3243e7d3180d85d8889c2728298057fc712",
   "source_id": "ipc"
 }

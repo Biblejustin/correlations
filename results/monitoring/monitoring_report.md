@@ -7,7 +7,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | Source | Rows | Latest observed/assessment reference end | Latest projected reference end |
 |---|---:|---|---|
 | idmc | 241 | 2025-12-31 | — |
-| ipc | 48 | 2026-06-30 | 2027-01-31 |
+| ipc | 384 | 2026-06-30 | 2027-01-31 |
 | ucdp | 728 | 2025-12-31 | — |
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
@@ -17,16 +17,16 @@ Observed dates, source coverage and projections remain separate. This is a resea
 
 ## Food security: latest current assessment
 
-| Country | Reference window | IPC 3+ share of analyzed population | Population analyzed | Coverage |
-|---|---|---:|---:|---|
-| ISR | unavailable | — | — | no fetched current assessment |
-| PSE | 2026-04-01–2026-06-30 | 59.0% | 2,118,215 | expired assessment; not present-day estimate; country-wide territorial match unverified |
-| LBN | unavailable | — | — | no fetched current assessment |
-| UKR | unavailable | — | — | no fetched current assessment |
-| SDN | 2026-02-01–2026-05-31 | 41.0% | 47,535,794 | expired assessment; not present-day estimate; country-wide territorial match unverified |
-| ETH | 2021-05-01–2021-06-30 | 30.0% | 56,346,877 | expired assessment; not present-day estimate; country-wide territorial match unverified |
-| SOM | 2026-04-01–2026-06-30 | 31.0% | 19,442,156 | expired assessment; not present-day estimate; country-wide territorial match unverified |
-| YEM | 2026-03-01–2026-05-31 | 47.0% | 10,479,422 | expired assessment; not present-day estimate; country-wide territorial match unverified |
+| Country | Reference window | IPC 3+ share of analyzed population | Population analyzed | Coverage | Source snapshot status |
+|---|---|---:|---:|---|---|
+| ISR | unavailable | — | — | no fetched current assessment | unavailable |
+| PSE | 2026-04-01–2026-06-30 | 59.0% | 2,118,215 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
+| LBN | 2025-11-01–2026-03-31 | 17.0% | 5,191,667 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
+| UKR | unavailable | — | — | no fetched current assessment | unavailable |
+| SDN | 2026-02-01–2026-05-31 | 41.0% | 47,535,794 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
+| ETH | 2021-05-01–2021-06-30 | 30.0% | 56,346,877 | expired assessment; not present-day estimate; country-wide territorial match unverified | retained prior snapshot; current history identity quarantined |
+| SOM | 2026-04-01–2026-06-30 | 31.0% | 19,442,156 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
+| YEM | 2026-03-01–2026-05-31 | 47.0% | 10,479,422 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
 
 Food affordability: 7,474 matched market/staple/month observations. Units: kg per daily non-qualified labor wage. No affordability estimate where matching wages are absent.
 
@@ -124,7 +124,7 @@ Nonrepresentative market examples. Selection is fixed: latest available matched 
 
 Signed-log annual residuals; separate linear time trends; 3-year block permutation with stable per-cell seeds; BH across the entire fixed family. Lag association does not identify causation. Net refugee-stock change is not new displacement.
 
-IPC public export contains latest assessments and a phase-all population analyzed. Percentages are not shares of total national population. Territorial scope is not certified; assessments remain in this source table and are excluded from cross-source country lag inference until comparable geography is verified. Earlier snapshots accumulate prospectively.
+IPC uses the full national assessment-history export. Each accepted period pairs phase counts with its own phase-all assessed-population denominator; contradictory or ambiguous periods are quarantined. Retained prior snapshots keep their original source and retrieval lineage and are not certified as current full-history observations. The table labels retained/quarantined and unavailable lineage explicitly; "current" describes the source assessment type, not snapshot verification or present-day conditions. Historical reference windows do not reconstruct release-time availability. Territorial scope is not certified; IPC assessments remain excluded from cross-source country lag inference until comparable geography is verified.
 
 ## Regional synchrony
 
