@@ -41,6 +41,14 @@ unavailable input or a failed stage, inspect that stage's log before retrying;
 do not infer success from old figures already on disk. No Make recipe suppresses
 errors or substitutes its own source-fetch command.
 
+Publication records every initial branch and commit, then checks the whole
+repository set before staging any output. Concurrent branch/commit changes or
+unexpected staged/unstaged source edits stop publication. Each local head must
+match its freshly queried publication branch, both initially and before commit;
+unpublished local commits or concurrent upstream changes stop the run. The quake significant
+catalog status sidecar is an explicit generated artifact, so a successful refresh
+does not leave it dirty and block the next scheduled run.
+
 ## Dependency evidence
 
 The clean verification environment created on September 5, 2026 used CPython
