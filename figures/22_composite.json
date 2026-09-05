@@ -1,0 +1,132 @@
+{
+  "version": "domain_composite_v2",
+  "baseline": [
+    1985,
+    2010
+  ],
+  "membership": {
+    "geophysical": [
+      "M>=7 quakes",
+      "VEI>=5 eruptions"
+    ],
+    "solar": [
+      "X1+ flares"
+    ],
+    "conflict_and_humanitarian_impacts": [
+      "Interstate (basileia) deaths log10",
+      "Intrastate (ethnos) deaths log10",
+      "Famine deaths log10",
+      "Refugees log10",
+      "Coups",
+      "Terrorism deaths log10"
+    ],
+    "health": [
+      "Pandemic deaths log10"
+    ],
+    "hydroclimate_impacts": [
+      "Flood deaths log10",
+      "Cyclone deaths log10",
+      "Drought affected-population allocation log10"
+    ],
+    "economy": [
+      "Economic crises",
+      "Stock crash intensity log10"
+    ]
+  },
+  "eligibility": "all fixed members in all domains",
+  "baseline_coverage": {
+    "M>=7 quakes": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 126
+    },
+    "VEI>=5 eruptions": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 123
+    },
+    "X1+ flares": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 50
+    },
+    "Interstate (basileia) deaths log10": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 126
+    },
+    "Intrastate (ethnos) deaths log10": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 126
+    },
+    "Famine deaths log10": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 124
+    },
+    "Pandemic deaths log10": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 126
+    },
+    "Flood deaths log10": {
+      "observed_years": 0,
+      "required_years": 20,
+      "status": "fewer than 20 observed baseline years",
+      "observed_panel_years": 0
+    },
+    "Cyclone deaths log10": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 75
+    },
+    "Drought affected-population allocation log10": {
+      "observed_years": 13,
+      "required_years": 20,
+      "status": "fewer than 20 observed baseline years",
+      "observed_panel_years": 0
+    },
+    "Refugees log10": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 79
+    },
+    "Economic crises": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 124
+    },
+    "Coups": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 74
+    },
+    "Terrorism deaths log10": {
+      "observed_years": 25,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 51
+    },
+    "Stock crash intensity log10": {
+      "observed_years": 26,
+      "required_years": 20,
+      "status": "eligible baseline",
+      "observed_panel_years": 120
+    }
+  },
+  "eligible_years": 0,
+  "unavailable_reason": "Flood deaths log10: fewer than 20 observed baseline years (0 years); Drought affected-population allocation log10: fewer than 20 observed baseline years (13 years)",
+  "interpretation": "Descriptive equal-domain mean; no calibrated significance or unit-normal scale"
+}

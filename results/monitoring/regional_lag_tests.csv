@@ -1,0 +1,73 @@
+country,predictor,response,lag_years,n,r,p_block,status,start_year,end_year,q_family
+ISR,conflict_total_deaths_per_100k,refugees_origin_stock_change,0,0,,,insufficient comparable years,,,1.0
+ISR,conflict_total_deaths_per_100k,refugees_origin_stock_change,1,0,,,insufficient comparable years,,,1.0
+ISR,conflict_total_deaths_per_100k,refugees_origin_stock_change,2,0,,,insufficient comparable years,,,1.0
+ISR,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+ISR,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+ISR,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+ISR,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+ISR,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+ISR,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+PSE,conflict_total_deaths_per_100k,refugees_origin_stock_change,0,0,,,insufficient comparable years,,,1.0
+PSE,conflict_total_deaths_per_100k,refugees_origin_stock_change,1,0,,,insufficient comparable years,,,1.0
+PSE,conflict_total_deaths_per_100k,refugees_origin_stock_change,2,0,,,insufficient comparable years,,,1.0
+PSE,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+PSE,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+PSE,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+PSE,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+PSE,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+PSE,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+LBN,conflict_total_deaths_per_100k,refugees_origin_stock_change,0,25,-0.0968481254110562,0.5855,exploratory,2001.0,2025.0,1.0
+LBN,conflict_total_deaths_per_100k,refugees_origin_stock_change,1,25,0.26624099144217483,0.2015,exploratory,2001.0,2025.0,1.0
+LBN,conflict_total_deaths_per_100k,refugees_origin_stock_change,2,24,0.10914361550208493,0.676,exploratory,2002.0,2025.0,1.0
+LBN,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+LBN,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+LBN,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+LBN,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+LBN,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+LBN,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+UKR,conflict_total_deaths_per_100k,refugees_origin_stock_change,0,25,0.592871805851068,0.005,exploratory,2001.0,2025.0,0.36
+UKR,conflict_total_deaths_per_100k,refugees_origin_stock_change,1,25,0.2616589403672892,0.2,exploratory,2001.0,2025.0,1.0
+UKR,conflict_total_deaths_per_100k,refugees_origin_stock_change,2,24,-0.16974842739864446,0.3235,exploratory,2002.0,2025.0,1.0
+UKR,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+UKR,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+UKR,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+UKR,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+UKR,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+UKR,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+SDN,conflict_total_deaths_per_100k,refugees_origin_stock_change,0,14,-0.006723534628614192,0.9895,exploratory,2012.0,2025.0,1.0
+SDN,conflict_total_deaths_per_100k,refugees_origin_stock_change,1,13,-0.008418271760253393,0.9955,exploratory,2013.0,2025.0,1.0
+SDN,conflict_total_deaths_per_100k,refugees_origin_stock_change,2,12,-0.05229320489692625,0.961,exploratory,2014.0,2025.0,1.0
+SDN,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+SDN,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+SDN,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+SDN,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+SDN,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+SDN,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+ETH,conflict_total_deaths_per_100k,refugees_origin_stock_change,0,25,-0.1470496658561119,0.5285,exploratory,2001.0,2025.0,1.0
+ETH,conflict_total_deaths_per_100k,refugees_origin_stock_change,1,25,-0.2028582320151068,0.289,exploratory,2001.0,2025.0,1.0
+ETH,conflict_total_deaths_per_100k,refugees_origin_stock_change,2,24,0.29440121288138266,0.106,exploratory,2002.0,2025.0,1.0
+ETH,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+ETH,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+ETH,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+ETH,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+ETH,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+ETH,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+SOM,conflict_total_deaths_per_100k,refugees_origin_stock_change,0,25,0.4150662917290913,0.0885,exploratory,2001.0,2025.0,1.0
+SOM,conflict_total_deaths_per_100k,refugees_origin_stock_change,1,25,0.3477503843491061,0.1335,exploratory,2001.0,2025.0,1.0
+SOM,conflict_total_deaths_per_100k,refugees_origin_stock_change,2,24,0.24954802993463962,0.287,exploratory,2002.0,2025.0,1.0
+SOM,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+SOM,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+SOM,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+SOM,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+SOM,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+SOM,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+YEM,conflict_total_deaths_per_100k,refugees_origin_stock_change,0,25,0.12745762391215504,0.5125,exploratory,2001.0,2025.0,1.0
+YEM,conflict_total_deaths_per_100k,refugees_origin_stock_change,1,25,0.017541662673557487,0.939,exploratory,2001.0,2025.0,1.0
+YEM,conflict_total_deaths_per_100k,refugees_origin_stock_change,2,24,-0.15752444270342336,0.585,exploratory,2002.0,2025.0,1.0
+YEM,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+YEM,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+YEM,conflict_total_deaths_per_100k,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0
+YEM,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,0,0,,,insufficient comparable years,,,1.0
+YEM,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,1,0,,,insufficient comparable years,,,1.0
+YEM,retail_staple_price_yoy_pct,ipc_current_3plus_fraction,2,0,,,insufficient comparable years,,,1.0

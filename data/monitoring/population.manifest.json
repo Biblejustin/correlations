@@ -1,0 +1,38 @@
+{
+  "configured_countries": [
+    "ISR",
+    "PSE",
+    "LBN",
+    "UKR",
+    "SDN",
+    "ETH",
+    "SOM",
+    "YEM"
+  ],
+  "countries": [
+    "ETH",
+    "ISR",
+    "LBN",
+    "PSE",
+    "SDN",
+    "SOM",
+    "UKR",
+    "YEM"
+  ],
+  "fetched_at": "2026-09-05T00:39:46.181620+00:00",
+  "observed_from": "2000-01-01",
+  "observed_through": "2025-12-31",
+  "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
+  "requests": [
+    {
+      "fetched_at": "2026-09-05T00:39:46.181620+00:00",
+      "published_at": "Sat, 05 Sep 2026 00:39:46 GMT",
+      "sha256": "2311076b32e690c4c0d672d5b42f59540342affef77968e019f79aaeae6e6555",
+      "url": "https://api.worldbank.org/v2/country/ISR;PSE;LBN;UKR;SDN;ETH;SOM;YEM/indicator/SP.POP.TOTL?format=json&date=2000%3A2025&per_page=1000&page=1"
+    }
+  ],
+  "rows": 208,
+  "schema_version": 1,
+  "sha256": "36849bc71473024cdbbc045d49dd4296562ddf40d7796983d415a16e15ca842f",
+  "source_id": "population"
+}

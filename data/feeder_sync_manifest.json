@@ -1,0 +1,240 @@
+{
+  "files": [
+    {
+      "repository": "astronomical-signs",
+      "repository_url": "https://github.com/Biblejustin/astronomical-signs",
+      "sha256": "5399538fc39cb62254c019bc46c1e473932bd131753586e2c47d17b246d365e1",
+      "size_bytes": 3776,
+      "source_path": "eclipses.csv",
+      "source_state": "local_working_copy",
+      "target": "data/astronomical_signs.csv"
+    },
+    {
+      "repository": "tropical-cyclones",
+      "repository_url": "https://github.com/Biblejustin/tropical-cyclones",
+      "sha256": "16658cd821bed3504464559718ae6278509a1af39d59cf3894306843f7fbe470",
+      "size_bytes": 2453,
+      "source_path": "cyclones.csv",
+      "source_state": "local_working_copy",
+      "target": "data/cyclones.csv"
+    },
+    {
+      "repository": "droughts-tracking",
+      "repository_url": "https://github.com/Biblejustin/droughts-tracking",
+      "sha256": "05b1643fc0896dfad57d087accf10352a311ab7b0efdd3321f736f0eab64a4ed",
+      "size_bytes": 6088,
+      "source_path": "droughts.csv",
+      "source_state": "local_working_copy",
+      "target": "data/droughts.csv"
+    },
+    {
+      "repository": "famines-tracking",
+      "repository_url": "https://github.com/Biblejustin/famines-tracking",
+      "sha256": "551c51a0ed308121dc7cb1a17765efca462983355f985c92e8b5e95febc13bc2",
+      "size_bytes": 24910,
+      "source_path": "deaths-by-region-year.csv",
+      "source_state": "local_working_copy",
+      "target": "data/famine_deaths_by_year.csv"
+    },
+    {
+      "repository": "famines-tracking",
+      "repository_url": "https://github.com/Biblejustin/famines-tracking",
+      "sha256": "0d2d1ca3b3a350498656175c778748dcfc65e5ad117b02110cbc13f49febf226",
+      "size_bytes": 7165,
+      "source_path": "historical_famines_pre1870.csv",
+      "source_state": "local_working_copy",
+      "target": "data/famines_pre1870.csv"
+    },
+    {
+      "repository": "famines-tracking",
+      "repository_url": "https://github.com/Biblejustin/famines-tracking",
+      "sha256": "fc4ce1ac354b27dde418b3317193ee190f75afa743e293795a12521d59955a21",
+      "size_bytes": 3152,
+      "source_path": "famines-and-deaths.csv",
+      "source_state": "local_working_copy",
+      "target": "data/famines_wpf.csv"
+    },
+    {
+      "repository": "famines-tracking",
+      "repository_url": "https://github.com/Biblejustin/famines-tracking",
+      "sha256": "a900dcf262cdaa3ba6640c0d6e8b8b4053df446c2ac4a2db326bc29810183f6d",
+      "size_bytes": 2539,
+      "source_path": "famines-and-deaths.metadata.json",
+      "source_state": "local_working_copy",
+      "target": "data/famines_wpf.metadata.json"
+    },
+    {
+      "repository": "israel-pressure-disasters",
+      "repository_url": "https://github.com/Biblejustin/israel-pressure-disasters",
+      "sha256": "b18eab924378bc7c7b35f8dce81c73e1e1abd6943bee89ee1dd4541de4efca3b",
+      "size_bytes": 1963,
+      "source_path": "data/analysis_manifest.json",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-pressure-disasters/data/analysis_manifest.json"
+    },
+    {
+      "repository": "israel-pressure-disasters",
+      "repository_url": "https://github.com/Biblejustin/israel-pressure-disasters",
+      "sha256": "8888d1b5c6b6f6ae2ec7d8ce7c0557d28eef8326a42c24c3e133549cb0ed68bc",
+      "size_bytes": 1212,
+      "source_path": "data/coverage.json",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-pressure-disasters/data/coverage.json"
+    },
+    {
+      "repository": "israel-pressure-disasters",
+      "repository_url": "https://github.com/Biblejustin/israel-pressure-disasters",
+      "sha256": "c972c7016db14e89eb3fde3867f57f5f426cea1a68eba11371c077b2af6fb9cb",
+      "size_bytes": 3361,
+      "source_path": "data/test_results.csv",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-pressure-disasters/data/test_results.csv"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "0f9f4ae83239dff5b8ce243be2bc402f70d4d04aac54b28025c5f717de1b3beb",
+      "size_bytes": 2106,
+      "source_path": "analysis_plan.json",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/analysis_plan.json"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "fd52100773940431abb841ae8e9cf8fc3ec8409925db076553d4c9adb2f3e432",
+      "size_bytes": 268099,
+      "source_path": "data/faostat_crop_measures.csv",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/data/faostat_crop_measures.csv"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "eea89e1b1cce201b38500df9398c88cdee4724619ae4a60aeadc3456057caeb5",
+      "size_bytes": 1294,
+      "source_path": "data/faostat_crop_metadata.json",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/data/faostat_crop_metadata.json"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "da03707274c8e6ebabba45e6c4b09f8dbaad1b57d1d279df6b7c78d750d04a5f",
+      "size_bytes": 2731727,
+      "source_path": "data/kinneret_levels.csv",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/data/kinneret_levels.csv"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "2eedc7d5d666b37f505cc1761a6593ee9e276066853b6d71a90b294b7c54bc0e",
+      "size_bytes": 38925,
+      "source_path": "data/water_covariates_reported.csv",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/data/water_covariates_reported.csv"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "bd7066d6e12cbcbbc4aa69bb776970f57075cfc8391b8f1aed160b57964f4994",
+      "size_bytes": 4687,
+      "source_path": "data/water_security_metadata.json",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/data/water_security_metadata.json"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "6a68cedfd719322aead2cf3985111861c527a676f787fb751c2f990dc5dc1902",
+      "size_bytes": 13642,
+      "source_path": "results/crop_rain_54.csv",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/results/crop_rain_54.csv"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "8b8eb6b2ec6f75e1fac68aacea44774c118d20ee277dd9725651770c410738b0",
+      "size_bytes": 1592,
+      "source_path": "results/crop_rain_manifest.json",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/results/crop_rain_manifest.json"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "87be770597356b91c8d5225533bed29b92350d17ee24a7a27afeaf313b26a8c5",
+      "size_bytes": 674,
+      "source_path": "results/era_interaction.csv",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/results/era_interaction.csv"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "195cefb8abd3c2b3c0aa17684ae3bbedc8ade29f146ef92363598d0ffe7d117e",
+      "size_bytes": 1706,
+      "source_path": "results/irrigation_sensitivity.csv",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/results/irrigation_sensitivity.csv"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "b2cff012fc20c7c5b2aaeb456fc254c66cfe24d43c170986534744950bd7beed",
+      "size_bytes": 608,
+      "source_path": "results/irrigation_sensitivity_plan.json",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/results/irrigation_sensitivity_plan.json"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "b8db5a225db2f8ec76bb5e83395445b9d4ac94f3b41daac512f24ef459348318",
+      "size_bytes": 799,
+      "source_path": "results/prospective_wheat_model.json",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/results/prospective_wheat_model.json"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "bd7672287281a80871a47be608a8251e7924da8f9ca08f2b8408e0cd17fabfeb",
+      "size_bytes": 6040,
+      "source_path": "results/wheat_decomposition.csv",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/results/wheat_decomposition.csv"
+    },
+    {
+      "repository": "israel-rain-agriculture",
+      "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
+      "sha256": "29e402c94e263867298bd9c5f24f0c2b439181db0ad95e206320a51e52a07cfa",
+      "size_bytes": 6114,
+      "source_path": "results/wheat_measure_identity.csv",
+      "source_state": "local_working_copy",
+      "target": "data/israel_monitoring/israel-rain-agriculture/results/wheat_measure_identity.csv"
+    },
+    {
+      "repository": "pandemics-tracking",
+      "repository_url": "https://github.com/Biblejustin/pandemics-tracking",
+      "sha256": "4dc08e0416e561f98bce81a242662297903de984e9c5f6929af4163e66367e23",
+      "size_bytes": 3172,
+      "source_path": "pandemics.csv",
+      "source_state": "local_working_copy",
+      "target": "data/pandemics.csv"
+    },
+    {
+      "repository": "volcanic-eruptions",
+      "repository_url": "https://github.com/Biblejustin/volcanic-eruptions",
+      "sha256": "0289c1a41701d854b240806110afda022df4ec9fd98c8782239e4e26d55a1b95",
+      "size_bytes": 2564,
+      "source_path": "volcanoes.csv",
+      "source_state": "local_working_copy",
+      "target": "data/volcanoes.csv"
+    }
+  ],
+  "policy": "Explicit feeder-owned files only; byte-preserving atomic copy; no inferred coverage",
+  "schema_version": 1
+}

@@ -15,6 +15,10 @@ from __future__ import annotations
 import sqlite3
 import json
 from pathlib import Path
+import warnings
+from contextlib import closing
+
+from catalog_coverage import apply_coverage
 
 import numpy as np
 import pandas as pd
@@ -25,722 +29,562 @@ from detection_regimes import REGIMES, piecewise_detrend
 
 
 
-def _nan_beyond_coverage(s: pd.Series, observed_years) -> pd.Series:
-    """Years past a source's last observation are UNKNOWN, not zero.
-
-    The loaders reindex onto a caller-supplied window with fill_value=0. When a
-    catalog's curation stops before the window ends (famine deaths genuinely end
-    in 2023), those trailing zeros are not measurements, they are fabrications,
-    and downstream correlations consume them as real observations reading "no
-    famine anywhere on earth." NaN is the honest value: every consumer here does
-    pairwise-complete masking, so unknown years simply drop out of any pair that
-    includes them. Interior zeros are untouched, because a zero inside the
-    covered span is a real zero.
-    """
-    try:
-        yrs = [int(y) for y in observed_years]
-    except Exception:
-        return s
-    if not yrs:
-        return s
-    last = max(yrs)
-    s = s.astype(float).copy()
-    s.loc[s.index > last] = np.nan
-    return s
-
 # ---------- Data loaders ----------
 
-def load_yearly_quakes_m7(eq_db_1900: str, year_lo=1900, year_hi=2025) -> pd.Series:
-    """Yearly M>=7 quake counts from extended USGS catalog."""
-    con = sqlite3.connect(eq_db_1900)
-    q = pd.read_sql("SELECT time_ms, mag FROM quakes WHERE mag>=7", con)
-    q["year"] = pd.to_datetime(q["time_ms"], unit="ms", utc=True).dt.year
-    _g = q.groupby("year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = "m7_count"
-    return s
+# Shared loaders deliberately distinguish selected catalogue totals, measured
+# observations, allocation assumptions, and exact versus imprecise dates.
+
+def _finish(series, source, key, *, include_incomplete=False, coverage=None,
+            log10_transform=False, name=None, **attrs):
+    out = apply_coverage(series, source, key, include_incomplete=include_incomplete,
+                         coverage=coverage)
+    if log10_transform:
+        out = np.log10(out + 1.0)
+    if name is not None:
+        log_name = {'war_deaths_active': 'war_deaths', 'famine_deaths_active': 'famine_deaths',
+                    'flood_deaths_active': 'flood_deaths'}.get(name, name)
+        out.name = 'log10_' + log_name if log10_transform else name
+    out.attrs.update(attrs)
+    return out
 
 
-def load_yearly_quakes_m8(eq_db_1900: str, year_lo=1900, year_hi=2025) -> pd.Series:
-    con = sqlite3.connect(eq_db_1900)
-    q = pd.read_sql("SELECT time_ms, mag FROM quakes WHERE mag>=8", con)
-    q["year"] = pd.to_datetime(q["time_ms"], unit="ms", utc=True).dt.year
-    _g = q.groupby("year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = "m8_count"
-    return s
+def _count(df, column, lo, hi):
+    years = pd.to_numeric(df[column], errors='coerce').dropna().astype(int)
+    return years.value_counts().reindex(range(lo, hi + 1), fill_value=0).astype(float)
 
 
-def load_yearly_flares_x1(flares_csv: str, year_lo=1976, year_hi=2025) -> pd.Series:
-    """Yearly X1+ flare counts."""
-    df = pd.read_csv(flares_csv, parse_dates=["date"])
-    df["year"] = df["date"].dt.year
-    _g = df.groupby("year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = "xflare_count"
-    return s
+def _sum(df, year, value, lo, hi):
+    """Unknown event magnitudes make the year's total unknown, not zero."""
+    values = pd.to_numeric(df[value], errors='coerce')
+    years = pd.to_numeric(df[year], errors='coerce')
+    grouped = values.groupby(years)
+    total = grouped.sum(min_count=1)
+    total.loc[grouped.count() < grouped.size()] = np.nan
+    return total.reindex(range(lo, hi + 1), fill_value=0).astype(float)
+
+
+def _allocate(df, value, lo, hi):
+    """Allocate across ORIGINAL inclusive lifetime, then slice requested window.
+
+    This is equal annual allocation of event-level totals, not observed annual
+    deaths or newly displaced people. Missing totals mark all active years NaN.
+    """
+    out = pd.Series(0.0, index=range(lo, hi + 1))
+    unknown = set()
+    for _, row in df.iterrows():
+        start = pd.to_numeric(row['start_year'], errors='coerce')
+        end = pd.to_numeric(row.get('end_year', start), errors='coerce')
+        if pd.isna(start):
+            continue
+        start = int(start)
+        end = start if pd.isna(end) else int(end)
+        if end < start:
+            raise ValueError(f'Event end {end} precedes start {start}')
+        years = range(max(lo, start), min(hi, end) + 1)
+        amount = pd.to_numeric(row[value], errors='coerce')
+        if pd.isna(amount):
+            unknown.update(years)
+        elif years:
+            out.loc[list(years)] += float(amount) / (end - start + 1)
+    if unknown:
+        out.loc[sorted(unknown)] = np.nan
+    return out
+
+
+def _allocated_loader(path, key, value, lo, hi, name, log10_transform,
+                      include_incomplete, coverage, **attrs):
+    out = _allocate(pd.read_csv(path), value, lo, hi)
+    return _finish(out, path, key, include_incomplete=include_incomplete,
+                   coverage=coverage, log10_transform=log10_transform, name=name,
+                   allocation_method='equal_original_active_years', **attrs)
+
+
+def _load_quakes(path, mag_min, lo, hi, include_incomplete, coverage):
+    with closing(sqlite3.connect(Path(path).resolve().as_uri() + '?mode=ro', uri=True)) as con:
+        df = pd.read_sql('SELECT time_ms FROM quakes WHERE mag >= ?', con,
+                         params=(mag_min,))
+    df['year'] = pd.to_datetime(df['time_ms'], unit='ms', utc=True).dt.year
+    return _finish(_count(df, 'year', lo, hi), path, 'usgs_quakes',
+                   include_incomplete=include_incomplete, coverage=coverage,
+                   name=f'm{mag_min}_count', unit='events')
+
+
+def load_yearly_quakes_m7(eq_db_1900: str, year_lo=1900, year_hi=2025, *,
+                          include_incomplete=False, coverage=None) -> pd.Series:
+    return _load_quakes(eq_db_1900, 7, year_lo, year_hi, include_incomplete, coverage)
+
+
+def load_yearly_quakes_m8(eq_db_1900: str, year_lo=1900, year_hi=2025, *,
+                          include_incomplete=False, coverage=None) -> pd.Series:
+    return _load_quakes(eq_db_1900, 8, year_lo, year_hi, include_incomplete, coverage)
+
+
+def load_yearly_flares_x1(flares_csv: str, year_lo=1976, year_hi=2025, *,
+                          include_incomplete=False, coverage=None) -> pd.Series:
+    df = pd.read_csv(flares_csv)
+    df['year'] = pd.to_datetime(df['date'], errors='coerce', format='mixed').dt.year
+    # Legacy input is X-class-only; enforce the advertised threshold if classes
+    # are present so a broader refresh cannot silently count M-class flares.
+    if 'class' in df:
+        strength = pd.to_numeric(df['class'].astype(str).str.extract(r'^X([\d.]+)')[0], errors='coerce')
+        df = df[strength >= 1]
+    return _finish(_count(df, 'year', year_lo, year_hi), flares_csv, 'flares_xclass.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name='xflare_count')
 
 
 def load_yearly_wars(wars_csv: str, year_lo=1400, year_hi=2025,
-                     include_ongoing: bool = True) -> pd.Series:
-    """Yearly count of war ONSETS (groupby start_year)."""
+                     include_ongoing: bool = True, *, include_incomplete=False,
+                     coverage=None) -> pd.Series:
     df = pd.read_csv(wars_csv)
-    _g = df.groupby("start_year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = "war_starts"
-    return s
+    if not include_ongoing:
+        df = df[pd.to_numeric(df['end_year'], errors='coerce') < year_hi]
+    return _finish(_count(df, 'start_year', year_lo, year_hi), wars_csv, 'wars.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name='war_starts')
 
 
-def load_yearly_wars_split(wars_csv: str, war_type: str,
-                              year_lo=1400, year_hi=2025) -> pd.Series:
-    """Yearly count of war ONSETS filtered to war_type ∈ {'interstate','intrastate'}.
-
-    The Greek of Mt 24:7 / Mk 13:8 / Lk 21:10 distinguishes:
-      - ethnos vs ethnos  (intrastate / ethnic / sectarian conflict)
-      - basileia vs basileia  (interstate / state-vs-state war)
-    The COW/UCDP war_type column maps directly onto this distinction.
-    """
+def load_yearly_wars_split(wars_csv: str, war_type: str, year_lo=1400, year_hi=2025,
+                          *, include_incomplete=False, coverage=None) -> pd.Series:
+    """War-type analytical categories; no direct equivalence to biblical Greek."""
     df = pd.read_csv(wars_csv)
-    df = df[df["war_type"] == war_type]
-    _g = df.groupby("start_year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = f"war_starts_{war_type}"
-    return s
+    df = df[df['war_type'] == war_type]
+    return _finish(_count(df, 'start_year', year_lo, year_hi), wars_csv, 'wars.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name=f'war_starts_{war_type}')
 
 
 def load_yearly_noaa_quakes(noaa_csv: str, year_lo=-2150, year_hi=2025,
-                              mag_min: float = 7.0) -> pd.Series:
-    """Yearly count of NOAA NGDC significant earthquakes ≥ mag_min.
-
-    The NGDC catalog stretches back to 2150 BCE — radically longer span than
-    USGS catalog (1900+). Earlier entries are sparser and biased toward
-    populated/destructive events, but the M ≥ 7 band is the cleanest available
-    for pre-1900 historical comparison.
-    """
+                           mag_min: float = 7.0, *, include_incomplete=False,
+                           coverage=None) -> pd.Series:
+    """Recorded significant quakes; sparse historical coverage is selection-biased."""
     df = pd.read_csv(noaa_csv)
-    df = df[df["eqMagnitude"] >= mag_min]
-    df = df[df["year"].between(year_lo, year_hi)]
-    _g = df.groupby(df["year"].astype(int)).size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = f"noaa_quakes_mag_ge_{mag_min}"
-    return s
+    df = df[pd.to_numeric(df['eqMagnitude'], errors='coerce') >= mag_min]
+    return _finish(_count(df, 'year', year_lo, year_hi), noaa_csv, 'noaa_significant_earthquakes.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name=f'noaa_quakes_mag_ge_{mag_min}')
 
 
 def load_yearly_noaa_volcanic_events(noaa_csv: str, year_lo=-4360, year_hi=2025,
-                                       deaths_min: float = 0) -> pd.Series:
-    """Yearly count of NOAA NGDC significant volcanic events."""
+                                    deaths_min: float = 0, *, include_incomplete=False,
+                                    coverage=None) -> pd.Series:
     df = pd.read_csv(noaa_csv)
-    df["deathsTotal"] = pd.to_numeric(df["deathsTotal"], errors="coerce").fillna(0)
     if deaths_min > 0:
-        df = df[df["deathsTotal"] >= deaths_min]
-    df = df[df["year"].between(year_lo, year_hi)]
-    _g = df.groupby(df["year"].astype(int)).size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = f"noaa_volcanoes_deaths_ge_{int(deaths_min)}"
-    return s
+        df = df[pd.to_numeric(df['deathsTotal'], errors='coerce') >= deaths_min]
+    return _finish(_count(df, 'year', year_lo, year_hi), noaa_csv, 'noaa_volcanic_events.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name=f'noaa_volcanoes_deaths_ge_{int(deaths_min)}')
 
 
 def load_yearly_cow_wars(cow_csv: str, year_lo=1816, year_hi=2007,
-                          war_type: str = "interstate") -> pd.Series:
-    """Yearly count of COW war ONSETS (one per unique WarNum, year = StartYear1).
-
-    war_type ∈ {'interstate', 'intrastate', 'extrastate'} selects which COW
-    catalog file you're loading (the path passed in should match).
-    """
-    df = pd.read_csv(cow_csv, encoding='latin-1')
-    # Deduplicate by WarNum (one row per war, not one per state-side)
-    df = df.drop_duplicates(subset=["WarNum"])
-    df = df[df["StartYear1"].between(year_lo, year_hi)]
-    _g = df.groupby("StartYear1").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = f"cow_{war_type}_wars"
-    return s
+                        war_type: str = 'interstate', *, include_incomplete=False,
+                        coverage=None) -> pd.Series:
+    df = pd.read_csv(cow_csv, encoding='latin-1').drop_duplicates('WarNum')
+    return _finish(_count(df, 'StartYear1', year_lo, year_hi), cow_csv, f'cow_{war_type}_wars_v4.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name=f'cow_{war_type}_wars')
 
 
 def load_yearly_ucdp_conflicts(ucdp_csv: str, year_lo=1946, year_hi=2025,
-                                  conflict_types: list = None,
-                                  intensity_min: int = 1) -> pd.Series:
-    """Yearly count of UCDP/PRIO active conflict-years.
-
-    UCDP type_of_conflict codes:
-      1 = extrasystemic (colonial era)
-      2 = interstate (state vs state)         [basileia analog]
-      3 = intrastate (within a state)         [ethnos analog]
-      4 = internationalized intrastate        [ethnos analog with external intervention]
-
-    intensity_level: 1 = minor armed conflict (25-999 battle deaths)
-                     2 = war (>=1000 battle deaths)
-
-    Each row is one conflict-year, so the count is "active conflicts in year Y."
-    """
-    df = pd.read_csv(ucdp_csv)
-    df = df[df["intensity_level"] >= intensity_min]
+                              conflict_types: list = None, intensity_min: int = 1,
+                              *, include_incomplete=False, coverage=None) -> pd.Series:
+    """Active conflict-years (not onsets), unique by conflict_id and year."""
+    df = pd.read_csv(ucdp_csv).drop_duplicates(['conflict_id', 'year'])
+    df = df[df['intensity_level'] >= intensity_min]
     if conflict_types:
-        df = df[df["type_of_conflict"].isin(conflict_types)]
-    _g = df.groupby("year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = "ucdp_active_conflicts"
-    return s
+        df = df[df['type_of_conflict'].isin(conflict_types)]
+    return _finish(_count(df, 'year', year_lo, year_hi), ucdp_csv, 'ucdp_prio_conflicts.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name='ucdp_active_conflicts')
 
 
 def load_yearly_war_deaths_ucdp(ucdp_csv: str, year_lo=1946, year_hi=2025,
-                                 log10_transform: bool = False,
-                                 minor_floor: float = 25.0,
-                                 war_floor: float = 1000.0) -> pd.Series:
-    """Yearly battle-deaths FLOOR from UCDP/PRIO conflict-years (canonical, 1946+).
-
-    The UCDP/PRIO Armed Conflict Dataset codes each conflict-year's intensity
-    band, not its death count: intensity_level 1 = minor (25-999 battle deaths
-    that year), 2 = war (>= 1000). Summing each band's LOWER BOUND across the
-    conflicts active in a year gives a conservative annual battle-deaths floor.
-    This is a proxy that moves with both the number of active conflicts and the
-    minor/war mix, not a measured toll; it undercounts catastrophic years
-    (Korea, Vietnam) far more than quiet ones, which compresses the top of the
-    series even before the log10.
-
-    Coverage discipline matches the other loaders, extended to the leading
-    edge: UCDP starts in 1946, so years before its first observation are NaN
-    (unknown), not zero, and years past its last observation are NaN via
-    _nan_beyond_coverage. This series is a canonical-source cross-check; the
-    hand-curated wars.csv remains the headline series.
-    """
-    df = pd.read_csv(ucdp_csv)
-    floor = np.where(df["intensity_level"] >= 2, war_floor, minor_floor)
-    yearly = pd.Series(floor, index=df["year"]).groupby(level=0).sum()
-    s = yearly.reindex(range(year_lo, year_hi + 1), fill_value=0).astype(float)
-    s.loc[s.index < int(yearly.index.min())] = np.nan
-    s = _nan_beyond_coverage(s, yearly.index)
-    if log10_transform:
-        s = np.log10(s + 1.0)
-        s.name = "log10_ucdp_war_deaths_floor"
-    else:
-        s.name = "ucdp_war_deaths_floor"
-    return s
+                               log10_transform: bool = False, minor_floor: float = 25.0,
+                               war_floor: float = 1000.0, *, include_incomplete=False,
+                               coverage=None) -> pd.Series:
+    """Intensity-band lower-bound proxy, NOT measured battle deaths."""
+    df = pd.read_csv(ucdp_csv).drop_duplicates(['conflict_id', 'year'])
+    df['floor'] = df['intensity_level'].map({1: minor_floor, 2: war_floor})
+    return _finish(_sum(df, 'year', 'floor', year_lo, year_hi), ucdp_csv, 'ucdp_prio_conflicts.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, log10_transform=log10_transform,
+                   name='ucdp_war_deaths_floor', metric_kind='intensity_band_lower_bound_proxy')
 
 
-def load_yearly_war_deaths_split(wars_csv: str, war_type: str,
-                                    year_lo=1400, year_hi=2025,
-                                    log10_transform: bool = False) -> pd.Series:
-    """Active-deaths series filtered to war_type."""
+def load_yearly_war_deaths_split(wars_csv: str, war_type: str, year_lo=1400, year_hi=2025,
+                                log10_transform: bool = False, *, include_incomplete=False,
+                                coverage=None) -> pd.Series:
     df = pd.read_csv(wars_csv)
-    df = df[df["war_type"] == war_type]
-    years = range(year_lo, year_hi + 1)
-    out = pd.Series(0.0, index=years, name=f"war_deaths_{war_type}")
-    for _, row in df.iterrows():
-        s = int(row["start_year"]); e = int(row["end_year"])
-        if e < year_lo or s > year_hi:
-            continue
-        s = max(s, year_lo); e = min(e, year_hi)
-        duration = e - s + 1
-        per_year = float(row["deaths_estimate"]) / duration
-        for y in range(s, e + 1):
-            out.loc[y] += per_year
-    if log10_transform:
-        out = np.log10(out + 1.0)
-        out.name = f"log10_war_deaths_{war_type}"
-    return out
+    return _finish(_allocate(df[df['war_type'] == war_type], 'deaths_estimate', year_lo, year_hi),
+                   wars_csv, 'wars.csv', include_incomplete=include_incomplete, coverage=coverage,
+                   log10_transform=log10_transform, name=f'war_deaths_{war_type}',
+                   allocation_method='equal_original_active_years')
 
 
 def load_yearly_war_deaths_active(wars_csv: str, year_lo=1400, year_hi=2025,
-                                   log10_transform: bool = False) -> pd.Series:
-    """
-    Yearly war deaths attributed to ACTIVE years: each war contributes
-    deaths_estimate / duration_years to every year it was active
-    [start_year, end_year] inclusive.
-
-    If log10_transform=True, returns log10(deaths + 1) per year.
-    """
-    df = pd.read_csv(wars_csv)
-    years = range(year_lo, year_hi + 1)
-    out = pd.Series(0.0, index=years, name="war_deaths_active")
-    for _, row in df.iterrows():
-        s = int(row["start_year"]); e = int(row["end_year"])
-        if e < year_lo or s > year_hi:
-            continue
-        s = max(s, year_lo); e = min(e, year_hi)
-        duration = e - s + 1
-        per_year = float(row["deaths_estimate"]) / duration
-        for y in range(s, e + 1):
-            out.loc[y] += per_year
-    out = _nan_beyond_coverage(out, df["start_year"])
-    if log10_transform:
-        out = np.log10(out + 1.0)
-        out.name = "log10_war_deaths"
-    return out
+                                 log10_transform: bool = False, *, include_incomplete=False,
+                                 coverage=None) -> pd.Series:
+    return _allocated_loader(wars_csv, 'wars.csv', 'deaths_estimate', year_lo, year_hi,
+                             'war_deaths_active', log10_transform, include_incomplete, coverage)
 
 
-def load_yearly_famines(famines_csv: str, year_lo=1500, year_hi=2025) -> pd.Series:
-    df = pd.read_csv(famines_csv)
-    _g = df.groupby("start_year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = "famine_starts"
-    return s
+def load_yearly_famines(famines_csv: str, year_lo=1500, year_hi=2025, *,
+                        include_incomplete=False, coverage=None) -> pd.Series:
+    return _finish(_count(pd.read_csv(famines_csv), 'start_year', year_lo, year_hi),
+                   famines_csv, 'famines.csv', include_incomplete=include_incomplete,
+                   coverage=coverage, name='famine_starts')
 
 
 def load_yearly_famine_deaths_active(famines_csv: str, year_lo=1500, year_hi=2025,
-                                      log10_transform: bool = False) -> pd.Series:
-    """Same spreading logic as wars."""
-    df = pd.read_csv(famines_csv)
-    years = range(year_lo, year_hi + 1)
-    out = pd.Series(0.0, index=years, name="famine_deaths_active")
-    for _, row in df.iterrows():
-        s = int(row["start_year"]); e = int(row["end_year"])
-        if e < year_lo or s > year_hi:
-            continue
-        s = max(s, year_lo); e = min(e, year_hi)
-        duration = e - s + 1
-        per_year = float(row["deaths_estimate"]) / duration
-        for y in range(s, e + 1):
-            out.loc[y] += per_year
-    out = _nan_beyond_coverage(out, df["start_year"])
-    if log10_transform:
-        out = np.log10(out + 1.0)
-        out.name = "log10_famine_deaths"
-    return out
+                                    log10_transform: bool = False, *, include_incomplete=False,
+                                    coverage=None) -> pd.Series:
+    return _allocated_loader(famines_csv, 'famines.csv', 'deaths_estimate', year_lo, year_hi,
+                             'famine_deaths_active', log10_transform, include_incomplete, coverage)
 
 
 def load_yearly_famine_deaths_wpf(deaths_by_year_csv: str, year_lo=1870, year_hi=2025,
-                                    log10_transform: bool = False) -> pd.Series:
-    """
-    Authoritative WPF/OWID yearly famine deaths.
-
-    The deaths-by-region-year.csv (from Biblejustin/famines-tracking) has
-    annual famine deaths already attributed to specific years by region.
-    Sum across regions to get global yearly famine deaths.
-    """
+                                 log10_transform: bool = False, *, include_incomplete=False,
+                                 coverage=None) -> pd.Series:
     df = pd.read_csv(deaths_by_year_csv)
-    df = df[~df["entity"].str.startswith("World", na=False)]  # avoid double-counting
-    yearly = df.groupby("year")["famine_deaths"].sum()
-    s = _nan_beyond_coverage(
-        yearly.reindex(range(year_lo, year_hi + 1), fill_value=0).astype(float), yearly.index)
-    if log10_transform:
-        s = np.log10(s + 1.0)
-        s.name = "log10_wpf_famine_deaths"
-    else:
-        s.name = "wpf_famine_deaths"
-    return s
+    df = df[~df['entity'].str.startswith('World', na=False)]
+    return _finish(_sum(df, 'year', 'famine_deaths', year_lo, year_hi), deaths_by_year_csv,
+                   'famine_deaths_by_year.csv', include_incomplete=include_incomplete,
+                   coverage=coverage, log10_transform=log10_transform, name='wpf_famine_deaths')
 
 
-# ---------- Flood data loaders ----------
+# ---------- Canonical flood events ----------
 
-def load_yearly_flood_events(floods_csv: str, year_lo=1900, year_hi=2025,
-                              deaths_min: float = 0,
-                              dedupe_match_groups: bool = True) -> pd.Series:
-    """
-    Yearly flood event counts. By default, deaths_min=0 returns all events
-    (very detection-bias-sensitive). Use deaths_min=1000 for the detection-
-    clean band.
+def load_canonical_flood_events(floods_csv: str, dedupe_match_groups: bool = True) -> pd.DataFrame:
+    """One source-priority reconciliation BEFORE any threshold or date filter.
 
-    dedupe_match_groups: if True, when EM-DAT and Dartmouth record the same
-    event (match_group_id matches), count once.
+    EM-DAT is preferred to DFO, matching the feeder's priority. Ties are stable
+    by source ID/date, never mortality. Preserve match-group row counts and toll
+    disagreement for audit. Existing match groups are provisional links, not a
+    claim that multinational/group collisions have been manually adjudicated.
     """
     df = pd.read_csv(floods_csv, low_memory=False)
-    df["year"] = pd.to_datetime(df["start_date"], errors="coerce").dt.year
-    df["deaths"] = pd.to_numeric(df["deaths"], errors="coerce").fillna(0)
+    df['deaths'] = pd.to_numeric(df['deaths'], errors='coerce')
+    df['start'] = pd.to_datetime(df['start_date'], errors='coerce', format='mixed')
+    df['end'] = pd.to_datetime(df['end_date'], errors='coerce', format='mixed').fillna(df['start'])
+    df['year'] = df['start'].dt.year
+    df['invalid_interval'] = df['end'] < df['start']
+    df['date_precision'] = df.get('date_precision', pd.Series('day', index=df.index))
+    exact = df['start_date'].astype(str).str.match(r'^\d{4}-\d{2}-\d{2}(?:$|[T ])')
+    df.loc[~exact, 'date_precision'] = 'imprecise'
+    df['_row'] = np.arange(len(df))
+    df['_priority'] = df.get('source', pd.Series('', index=df.index)).map({'EM-DAT': 0, 'DFO': 1}).fillna(2)
+    df['_source_id'] = df.get('source_id', pd.Series('', index=df.index)).fillna('').astype(str)
+    df['canonical_event_id'] = 'row:' + df['_row'].astype(str)
+    if dedupe_match_groups and 'match_group_id' in df:
+        grouped = df['match_group_id'].notna()
+        df.loc[grouped, 'canonical_event_id'] = 'match:' + df.loc[grouped, 'match_group_id'].astype(str)
+        # Unmatched records with a stable source ID can still be exact duplicates.
+        identified = ~grouped & df['_source_id'].ne('')
+        source = df.get('source', pd.Series('', index=df.index)).fillna('').astype(str)
+        df.loc[identified, 'canonical_event_id'] = source[identified] + ':' + df.loc[identified, '_source_id']
+        groups = df.groupby('canonical_event_id', sort=False)
+        df['source_row_count'] = groups['deaths'].transform('size')
+        df['deaths_min_reported'] = groups['deaths'].transform('min')
+        df['deaths_max_reported'] = groups['deaths'].transform('max')
+        df['distinct_source_ids'] = groups['_source_id'].transform('nunique')
+        if 'cause' in df:
+            df['linked_causes'] = groups['cause'].transform(lambda x: '; '.join(sorted(set(x.dropna().astype(str)))))
+        df = df.sort_values(['_priority', '_source_id', 'start', '_row'], kind='stable').drop_duplicates('canonical_event_id')
+    else:
+        df['source_row_count'] = 1
+        df['deaths_min_reported'] = df['deaths']
+        df['deaths_max_reported'] = df['deaths']
+        df['distinct_source_ids'] = 1
+    df = df.sort_values(['start', '_source_id', '_row'], kind='stable').drop(columns=['_priority', '_source_id', '_row']).reset_index(drop=True)
+    df.attrs['deduplication'] = 'EM-DAT before DFO; stable source ID tie; before filters'
+    df.attrs['linkage_status'] = 'existing match groups; ambiguities require source adjudication'
+    return df
 
-    if dedupe_match_groups and "match_group_id" in df.columns:
-        # Keep one row per match_group_id; for unmatched (NaN), keep all
-        with_group = df[df["match_group_id"].notna()].drop_duplicates(subset=["match_group_id"])
-        without_group = df[df["match_group_id"].isna()]
-        df = pd.concat([with_group, without_group], ignore_index=True)
 
+def load_yearly_flood_events(floods_csv: str, year_lo=1900, year_hi=2025,
+                             deaths_min: float = 0, dedupe_match_groups: bool = True,
+                             *, include_incomplete=False, coverage=None) -> pd.Series:
+    df = load_canonical_flood_events(floods_csv, dedupe_match_groups)
     if deaths_min > 0:
-        df = df[df["deaths"] >= deaths_min]
-
-    _g = df.groupby("year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = f"flood_events_deaths_ge_{int(deaths_min)}"
-    return s
+        df = df[df['deaths'] >= deaths_min]
+    return _finish(_count(df, 'year', year_lo, year_hi), floods_csv, 'floods.csv',
+                   include_incomplete=include_incomplete, coverage=coverage,
+                   name=f'flood_events_deaths_ge_{int(deaths_min)}')
 
 
 def load_yearly_flood_deaths(floods_csv: str, year_lo=1900, year_hi=2025,
-                              log10_transform: bool = False,
-                              dedupe_match_groups: bool = True) -> pd.Series:
-    """Yearly total flood deaths, spread across active days (start_date..end_date)."""
-    df = pd.read_csv(floods_csv, low_memory=False)
-    df["start"] = pd.to_datetime(df["start_date"], errors="coerce")
-    df["end"] = pd.to_datetime(df["end_date"], errors="coerce")
-    df["end"] = df["end"].fillna(df["start"])
-    df["deaths"] = pd.to_numeric(df["deaths"], errors="coerce").fillna(0)
-    df = df.dropna(subset=["start"])
-
-    if dedupe_match_groups and "match_group_id" in df.columns:
-        with_group = df[df["match_group_id"].notna()].drop_duplicates(subset=["match_group_id"])
-        without_group = df[df["match_group_id"].isna()]
-        df = pd.concat([with_group, without_group], ignore_index=True)
-
-    years = range(year_lo, year_hi + 1)
-    out = pd.Series(0.0, index=years, name="flood_deaths_active")
-    for _, row in df.iterrows():
-        s = row["start"].year; e = row["end"].year
-        if e < year_lo or s > year_hi or row["deaths"] == 0:
+                             log10_transform: bool = False, dedupe_match_groups: bool = True,
+                             *, include_incomplete=False, coverage=None) -> pd.Series:
+    """Event totals allocated by actual calendar days in ORIGINAL full interval."""
+    df = load_canonical_flood_events(floods_csv, dedupe_match_groups)
+    out = pd.Series(0.0, index=range(year_lo, year_hi + 1))
+    unknown = set()
+    for _, row in df.dropna(subset=['start']).iterrows():
+        start, end = row['start'].normalize(), row['end'].normalize()
+        if end < start:
+            # Invalid source interval: do not silently swap dates or invent a day.
+            unknown.update(range(max(year_lo, end.year), min(year_hi, start.year) + 1))
             continue
-        s = max(s, year_lo); e = min(e, year_hi)
-        duration = e - s + 1
-        per_year = float(row["deaths"]) / duration
-        for y in range(s, e + 1):
-            out.loc[y] += per_year
-    if log10_transform:
-        out = np.log10(out + 1.0)
-        out.name = "log10_flood_deaths"
-    return out
+        for year in range(max(year_lo, start.year), min(year_hi, end.year) + 1):
+            if pd.isna(row['deaths']):
+                unknown.add(year)
+            else:
+                days = (min(end, pd.Timestamp(year, 12, 31)) - max(start, pd.Timestamp(year, 1, 1))).days + 1
+                out.loc[year] += float(row['deaths']) * days / ((end - start).days + 1)
+    if unknown:
+        out.loc[sorted(unknown)] = np.nan
+    return _finish(out, floods_csv, 'floods.csv', include_incomplete=include_incomplete,
+                   coverage=coverage, log10_transform=log10_transform, name='flood_deaths_active',
+                   allocation_method='equal_original_active_days')
 
 
-# ---------- Pandemics, volcanoes, cyclones, astronomical signs ----------
+def load_flood_event_dates(floods_csv: str, deaths_min: float = 1000,
+                           exclude_tsunami: bool = True):
+    df = load_canonical_flood_events(floods_csv)
+    if deaths_min > 0:
+        df = df[df['deaths'] >= deaths_min]
+    if exclude_tsunami and 'cause' in df:
+        df = df[~df.get('linked_causes', df['cause']).astype(str).str.contains('tsunami|tidal', case=False, na=False)]
+    exact = df['date_precision'].astype(str).str.lower().isin(['day', 'exact', 'daily'])
+    return df.loc[exact, 'start'].dropna().dt.normalize().tolist()
+
+
+# ---------- Pandemic, volcano, cyclone, astronomical catalogues ----------
 
 def load_yearly_pandemic_deaths(pandemics_csv: str, year_lo=1500, year_hi=2025,
-                                 log10_transform: bool = False) -> pd.Series:
-    """Yearly pandemic deaths spread across [start_year, end_year]."""
-    df = pd.read_csv(pandemics_csv)
-    years = range(year_lo, year_hi + 1)
-    out = pd.Series(0.0, index=years, name="pandemic_deaths")
-    for _, row in df.iterrows():
-        try:
-            s = int(row["start_year"])
-            e = int(row["end_year"]) if pd.notna(row["end_year"]) else s
-        except (ValueError, TypeError):
-            continue
-        if e < year_lo or s > year_hi:
-            continue
-        s = max(s, year_lo); e = min(e, year_hi)
-        duration = e - s + 1
-        per_year = float(row["deaths_estimate"]) / duration
-        for y in range(s, e + 1):
-            out.loc[y] += per_year
-    if log10_transform:
-        out = np.log10(out + 1.0)
-        out.name = "log10_pandemic_deaths"
-    return out
+                                log10_transform: bool = False, *, include_incomplete=False,
+                                coverage=None) -> pd.Series:
+    return _allocated_loader(pandemics_csv, 'pandemics.csv', 'deaths_estimate', year_lo, year_hi,
+                             'pandemic_deaths', log10_transform, include_incomplete, coverage)
 
 
-def load_yearly_pandemic_starts(pandemics_csv: str, year_lo=1500, year_hi=2025) -> pd.Series:
-    df = pd.read_csv(pandemics_csv)
-    df = df[df["start_year"].between(year_lo, year_hi)]
-    _g = df.groupby("start_year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = "pandemic_starts"
-    return s
+def load_yearly_pandemic_starts(pandemics_csv: str, year_lo=1500, year_hi=2025,
+                                *, include_incomplete=False, coverage=None) -> pd.Series:
+    return _finish(_count(pd.read_csv(pandemics_csv), 'start_year', year_lo, year_hi),
+                   pandemics_csv, 'pandemics.csv', include_incomplete=include_incomplete,
+                   coverage=coverage, name='pandemic_starts')
+
+
+def _volcanoes(path, vei_min):
+    df = pd.read_csv(path)
+    vei = pd.to_numeric(df['vei'].astype(str).str.extract(r'(\d+)')[0], errors='coerce')
+    return df[vei >= vei_min].copy()
 
 
 def load_yearly_volcanoes(volcanoes_csv: str, year_lo=1500, year_hi=2025,
-                           vei_min: int = 5) -> pd.Series:
-    df = pd.read_csv(volcanoes_csv)
-    df = df[df["vei"].astype(str).str.extract(r"(\d+)")[0].astype(float) >= vei_min]
-    _g = df.groupby("year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = f"volcanoes_vei_ge_{vei_min}"
-    return s
+                          vei_min: int = 5, *, include_incomplete=False, coverage=None) -> pd.Series:
+    return _finish(_count(_volcanoes(volcanoes_csv, vei_min), 'year', year_lo, year_hi),
+                   volcanoes_csv, 'volcanoes.csv', include_incomplete=include_incomplete,
+                   coverage=coverage, name=f'volcanoes_vei_ge_{vei_min}')
+
+
+def _exact_dates(df):
+    """Month/year-only records do not have a defensible daily event window."""
+    if 'date' in df:
+        raw = df['date'].astype(str)
+        exact = raw.str.match(r'^\d{4}-\d{2}-\d{2}(?:$|[T ])')
+        dates = pd.to_datetime(raw.where(exact), errors='coerce', format='mixed')
+    elif all(k in df for k in ('year', 'month', 'day')):
+        dates = pd.to_datetime(df[['year', 'month', 'day']].apply(pd.to_numeric, errors='coerce'), errors='coerce')
+    else:
+        return []
+    if 'date_precision' in df:
+        dates = dates.where(df['date_precision'].astype(str).str.lower().isin(['day', 'exact', 'daily']))
+    return dates.dropna().dt.normalize().tolist()
 
 
 def load_volcano_dates(volcanoes_csv: str, vei_min: int = 5):
-    df = pd.read_csv(volcanoes_csv)
-    df = df[df["vei"].astype(str).str.extract(r"(\d+)")[0].astype(float) >= vei_min]
-    df = df[df["month"].notna()]
-    df["date"] = pd.to_datetime(
-        df["year"].astype(str) + "-" + df["month"].astype(int).astype(str) + "-15",
-        errors="coerce",
-    )
-    return df.dropna(subset=["date"])["date"].tolist()
+    return _exact_dates(_volcanoes(volcanoes_csv, vei_min))
 
 
 def load_yearly_cyclones(cyclones_csv: str, year_lo=1700, year_hi=2025,
-                          deaths_min: float = 1000) -> pd.Series:
+                         deaths_min: float = 1000, *, include_incomplete=False,
+                         coverage=None) -> pd.Series:
     df = pd.read_csv(cyclones_csv)
     if deaths_min > 0:
-        df = df[df["deaths_estimate"] >= deaths_min]
-    _g = df.groupby("year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = f"cyclones_deaths_ge_{int(deaths_min)}"
-    return s
+        df = df[pd.to_numeric(df['deaths_estimate'], errors='coerce') >= deaths_min]
+    return _finish(_count(df, 'year', year_lo, year_hi), cyclones_csv, 'cyclones.csv',
+                   include_incomplete=include_incomplete, coverage=coverage,
+                   name=f'cyclones_deaths_ge_{int(deaths_min)}')
 
 
 def load_yearly_cyclone_deaths(cyclones_csv: str, year_lo=1700, year_hi=2025,
-                                log10_transform: bool = False) -> pd.Series:
-    df = pd.read_csv(cyclones_csv)
-    yearly = df.groupby("year")["deaths_estimate"].sum().reindex(
-        range(year_lo, year_hi + 1), fill_value=0
-    )
-    if log10_transform:
-        yearly = np.log10(yearly + 1.0)
-        yearly.name = "log10_cyclone_deaths"
-    else:
-        yearly.name = "cyclone_deaths"
-    return yearly
+                               log10_transform: bool = False, *, include_incomplete=False,
+                               coverage=None) -> pd.Series:
+    return _finish(_sum(pd.read_csv(cyclones_csv), 'year', 'deaths_estimate', year_lo, year_hi),
+                   cyclones_csv, 'cyclones.csv', include_incomplete=include_incomplete,
+                   coverage=coverage, log10_transform=log10_transform, name='cyclone_deaths')
 
 
 def load_cyclone_dates(cyclones_csv: str, deaths_min: float = 1000):
     df = pd.read_csv(cyclones_csv)
-    df = df[df["deaths_estimate"] >= deaths_min]
-    df = df[df["month"].notna()]
-    df["date"] = pd.to_datetime(
-        df["year"].astype(str) + "-" + df["month"].astype(int).astype(str) + "-15",
-        errors="coerce",
-    )
-    return df.dropna(subset=["date"])["date"].tolist()
+    if deaths_min > 0:
+        df = df[pd.to_numeric(df['deaths_estimate'], errors='coerce') >= deaths_min]
+    return _exact_dates(df)
 
 
-def load_astronomical_signs(astro_csv: str, year_lo=1500, year_hi=2025,
-                              types: list = None):
-    """Load astronomical events. Returns dataframe with date column.
-    types: filter to specific kinds (e.g. ['total_solar', 'comet']).
-    """
+def load_astronomical_signs(astro_csv: str, year_lo=1500, year_hi=2025, types: list = None):
+    """Selected examples; this is NOT a complete eclipse denominator."""
     df = pd.read_csv(astro_csv)
-    df["date"] = pd.to_datetime(df["date"], errors="coerce")
-    df["year"] = df["date"].dt.year
-    df = df[df["year"].between(year_lo, year_hi)]
+    df['year'] = pd.to_numeric(df['date'].astype(str).str.extract(r'^(-?\d{1,4})-')[0], errors='coerce')
+    df['date'] = pd.to_datetime(df['date'], errors='coerce', format='mixed')
+    df = df[df['year'].between(year_lo, year_hi)]
     if types:
-        df = df[df["type"].isin(types)]
+        df = df[df['type'].isin(types)]
     return df
 
 
 def load_yearly_astro_events(astro_csv: str, year_lo=1500, year_hi=2025,
-                              types: list = None) -> pd.Series:
-    df = load_astronomical_signs(astro_csv, year_lo, year_hi, types=types)
-    _g = df.groupby("year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = "astro_events"
-    return s
+                             types: list = None, *, include_incomplete=False, coverage=None) -> pd.Series:
+    df = load_astronomical_signs(astro_csv, year_lo, year_hi, types)
+    return _finish(_count(df, 'year', year_lo, year_hi), astro_csv, 'astronomical_signs.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name='astro_events')
 
+
+# ---------- Human outcomes remain distinct from physical hazard intensity ----------
 
 def load_yearly_droughts(droughts_csv: str, year_lo=1850, year_hi=2025,
-                          intensity_min: float = 0) -> pd.Series:
-    """Yearly count of ACTIVE drought-years (a 5-year drought contributes
-    to 5 years' count). intensity_min filters on max(deaths, people_affected).
+                         intensity_min: float = 0, *, intensity_metric='people_affected',
+                         include_incomplete=False, coverage=None) -> pd.Series:
+    """Listed active drought-years. Optional threshold uses ONE named metric.
+
+    Legacy intensity_min now thresholds people_affected only, never max(deaths,
+    affected). Without a threshold, retain events lacking human-impact estimates.
+    This selected catalogue does not contain measured physical drought severity.
     """
+    if intensity_metric not in ('people_affected', 'deaths_estimate'):
+        raise ValueError('Use people_affected or deaths_estimate; physical drought severity is unavailable')
     df = pd.read_csv(droughts_csv)
-    df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
-    df["end_year"] = pd.to_numeric(df["end_year"], errors="coerce").fillna(df["start_year"])
-    df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
-    df["people_affected"] = pd.to_numeric(df["people_affected"], errors="coerce").fillna(0)
-    df["intensity"] = df[["deaths_estimate", "people_affected"]].max(axis=1)
     if intensity_min > 0:
-        df = df[df["intensity"] >= intensity_min]
-    years = range(year_lo, year_hi + 1)
-    counts = pd.Series(0, index=years, name=f"drought_active_intensity_ge_{int(intensity_min)}")
-    for _, row in df.iterrows():
-        s = int(max(row["start_year"], year_lo))
-        e = int(min(row["end_year"], year_hi))
-        if e < year_lo or s > year_hi:
-            continue
-        for y in range(s, e + 1):
-            counts.loc[y] += 1
-    return counts
+        df = df[pd.to_numeric(df[intensity_metric], errors='coerce') >= intensity_min]
+    df['count'] = pd.to_numeric(df['end_year'], errors='coerce').fillna(df['start_year']) - df['start_year'] + 1
+    return _finish(_allocate(df, 'count', year_lo, year_hi), droughts_csv, 'droughts.csv',
+                   include_incomplete=include_incomplete, coverage=coverage,
+                   name=f'drought_active_{intensity_metric}_ge_{int(intensity_min)}',
+                   metric_kind='listed_active_events', threshold_metric=intensity_metric)
 
 
-def load_yearly_refugee_displaced(refugees_csv: str, year_lo=1947, year_hi=2025,
-                                    log10_transform: bool = False) -> pd.Series:
-    """Yearly displaced totals from refugee/displacement crisis events, spread
-    across each crisis's active years."""
-    df = pd.read_csv(refugees_csv)
-    df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
-    df["end_year"] = pd.to_numeric(df["end_year"], errors="coerce").fillna(df["start_year"])
-    df["displaced_estimate"] = pd.to_numeric(df["displaced_estimate"], errors="coerce").fillna(0)
-    years = range(year_lo, year_hi + 1)
-    out = pd.Series(0.0, index=years, name="refugee_displaced")
-    for _, row in df.iterrows():
-        s = int(max(row["start_year"], year_lo))
-        e = int(min(row["end_year"], year_hi))
-        if e < year_lo or s > year_hi or row["displaced_estimate"] == 0:
-            continue
-        duration = e - s + 1
-        per_year = float(row["displaced_estimate"]) / duration
-        for y in range(s, e + 1):
-            out.loc[y] += per_year
-    if log10_transform:
-        out = np.log10(out + 1.0)
-        out.name = "log10_refugee_displaced"
-    return out
+def load_yearly_drought_affected(droughts_csv: str, year_lo=1850, year_hi=2025,
+                                log10_transform: bool = False, *, include_incomplete=False,
+                                coverage=None) -> pd.Series:
+    """Affected-population allocation proxy, not measured annual flow or severity."""
+    return _allocated_loader(droughts_csv, 'droughts.csv', 'people_affected', year_lo, year_hi,
+                             'drought_affected_allocation_proxy', log10_transform,
+                             include_incomplete, coverage, metric_kind='human_impact_allocation_proxy',
+                             unit='allocated_event_total_people_per_year')
 
 
-def load_yearly_economic_crises(crises_csv: str, year_lo=1800, year_hi=2025,
-                                  severity_min: str = None) -> pd.Series:
-    """Yearly count of financial crisis events. severity_min ∈ {None, 'medium', 'severe', 'extreme'}.
-    If filter is set, only crises at or above the severity are counted."""
-    df = pd.read_csv(crises_csv)
-    if severity_min:
-        order = {"medium": 0, "severe": 1, "extreme": 2}
-        min_rank = order[severity_min]
-        df = df[df["severity"].map(order).fillna(-1) >= min_rank]
-    _g = df.groupby("year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = f"economic_crises_{severity_min or 'all'}"
-    return s
-
-
-def load_yearly_coups(coups_csv: str, year_lo=1950, year_hi=2025,
-                       outcome: str = None) -> pd.Series:
-    """Yearly count of coups. outcome ∈ {None, 'successful', 'failed'}."""
-    df = pd.read_csv(coups_csv)
-    if outcome:
-        df = df[df["outcome"] == outcome]
-    _g = df.groupby("year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = f"coups_{outcome or 'all'}"
-    return s
-
-
-def load_yearly_heat_wave_deaths(heat_csv: str, year_lo=1880, year_hi=2025,
-                                   log10_transform: bool = False) -> pd.Series:
-    """Yearly heat-wave deaths from event catalog, spread across [start, end]."""
-    df = pd.read_csv(heat_csv)
-    df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
-    df["end_year"] = pd.to_numeric(df["end_year"], errors="coerce").fillna(df["start_year"])
-    df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
-    years = range(year_lo, year_hi + 1)
-    out = pd.Series(0.0, index=years, name="heat_wave_deaths")
-    for _, row in df.iterrows():
-        s = int(max(row["start_year"], year_lo))
-        e = int(min(row["end_year"], year_hi))
-        if e < year_lo or s > year_hi or row["deaths_estimate"] == 0:
-            continue
-        duration = e - s + 1
-        per_year = float(row["deaths_estimate"]) / duration
-        for y in range(s, e + 1):
-            out.loc[y] += per_year
-    if log10_transform:
-        out = np.log10(out + 1.0)
-        out.name = "log10_heat_wave_deaths"
-    return out
-
-
-def load_yearly_heat_wave_events(heat_csv: str, year_lo=1880, year_hi=2025,
-                                   deaths_min: float = 0) -> pd.Series:
-    """Yearly count of heat-wave events (filter optionally by deaths)."""
-    df = pd.read_csv(heat_csv)
-    df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
-    df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
-    if deaths_min > 0:
-        df = df[df["deaths_estimate"] >= deaths_min]
-    _g = df.groupby("start_year").size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index)
-    s.name = f"heat_wave_events_deaths_ge_{int(deaths_min)}"
-    return s
-
-
-def load_yearly_stock_crashes(crashes_csv: str, year_lo=1900, year_hi=2025,
-                                drawdown_min: float = 0.0) -> pd.Series:
-    """Yearly count of stock-market crashes (S&P 500 / DJIA / pre-1957 equivalent
-    peak-to-trough drawdowns >= drawdown_min %). Year = crash start year."""
-    df = pd.read_csv(crashes_csv)
-    df["year"] = pd.to_numeric(df["year"], errors="coerce")
-    df["pct_drawdown"] = pd.to_numeric(df["pct_drawdown"], errors="coerce").fillna(0)
-    if drawdown_min > 0:
-        df = df[df["pct_drawdown"] >= drawdown_min]
-    _g = df.groupby(df["year"].astype(int)).size()
-    s = _nan_beyond_coverage(_g.reindex(range(year_lo, year_hi + 1), fill_value=0), _g.index).astype(float)
-    s.name = f"stock_crashes_dd_ge_{int(drawdown_min)}"
-    return s
-
-
-def load_yearly_stock_drawdown_intensity(crashes_csv: str, year_lo=1900, year_hi=2025,
-                                            log10_transform: bool = False) -> pd.Series:
-    """Yearly summed % drawdown for crashes starting in that year (multiple crashes
-    in one year sum)."""
-    df = pd.read_csv(crashes_csv)
-    df["year"] = pd.to_numeric(df["year"], errors="coerce")
-    df["pct_drawdown"] = pd.to_numeric(df["pct_drawdown"], errors="coerce").fillna(0)
-    s = df.groupby(df["year"].astype(int))["pct_drawdown"].sum().reindex(
-        range(year_lo, year_hi + 1), fill_value=0).astype(float)
-    s.name = "stock_drawdown_pct"
-    if log10_transform:
-        s = np.log10(s + 1.0)
-        s.name = "log10_stock_drawdown_pct"
-    return s
-
-
-def load_yearly_terrorism_events(terror_csv: str, year_lo=1970, year_hi=2025) -> pd.Series:
-    """Yearly terrorist attack counts (OWID/GTD)."""
-    df = pd.read_csv(terror_csv)
-    df["year"] = pd.to_numeric(df["year"], errors="coerce")
-    df["events"] = pd.to_numeric(df["events"], errors="coerce").fillna(0)
-    s = df.set_index("year")["events"].reindex(range(year_lo, year_hi + 1), fill_value=0).astype(float)
-    s.name = "terrorism_events"
-    return s
-
-
-def load_yearly_terrorism_deaths(terror_csv: str, year_lo=1970, year_hi=2025,
-                                   log10_transform: bool = False) -> pd.Series:
-    """Yearly terrorism deaths (OWID/GTD)."""
-    df = pd.read_csv(terror_csv)
-    df["year"] = pd.to_numeric(df["year"], errors="coerce")
-    df["deaths"] = pd.to_numeric(df["deaths"], errors="coerce").fillna(0)
-    s = df.set_index("year")["deaths"].reindex(range(year_lo, year_hi + 1), fill_value=0).astype(float)
-    s.name = "terrorism_deaths"
-    if log10_transform:
-        s = np.log10(s + 1.0)
-        s.name = "log10_terrorism_deaths"
-    return s
-
-
-def load_yearly_coup_deaths(coups_csv: str, year_lo=1950, year_hi=2025,
-                              log10_transform: bool = False) -> pd.Series:
-    """Yearly summed coup-attributed deaths."""
-    df = pd.read_csv(coups_csv)
-    df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
-    yearly = df.groupby("year")["deaths_estimate"].sum().reindex(
-        range(year_lo, year_hi + 1), fill_value=0)
-    if log10_transform:
-        yearly = np.log10(yearly + 1.0)
-        yearly.name = "log10_coup_deaths"
-    else:
-        yearly.name = "coup_deaths"
-    return yearly
+def load_yearly_drought_deaths(droughts_csv: str, year_lo=1850, year_hi=2025,
+                              log10_transform: bool = False, *, include_incomplete=False,
+                              coverage=None) -> pd.Series:
+    """Deaths from listed drought events; may overlap famine events."""
+    return _allocated_loader(droughts_csv, 'droughts.csv', 'deaths_estimate', year_lo, year_hi,
+                             'drought_deaths_allocation_proxy', log10_transform,
+                             include_incomplete, coverage, metric_kind='mortality_allocation_proxy',
+                             unit='allocated_deaths_per_year', overlap_warning='May duplicate famine outcomes')
 
 
 def load_yearly_drought_intensity(droughts_csv: str, year_lo=1850, year_hi=2025,
-                                    log10_transform: bool = False) -> pd.Series:
-    """Yearly intensity (max deaths or affected), spread across active years."""
-    df = pd.read_csv(droughts_csv)
-    df["start_year"] = pd.to_numeric(df["start_year"], errors="coerce")
-    df["end_year"] = pd.to_numeric(df["end_year"], errors="coerce").fillna(df["start_year"])
-    df["deaths_estimate"] = pd.to_numeric(df["deaths_estimate"], errors="coerce").fillna(0)
-    df["people_affected"] = pd.to_numeric(df["people_affected"], errors="coerce").fillna(0)
-    df["intensity"] = df[["deaths_estimate", "people_affected"]].max(axis=1)
-    years = range(year_lo, year_hi + 1)
-    out = pd.Series(0.0, index=years, name="drought_intensity_active")
-    for _, row in df.iterrows():
-        s = int(max(row["start_year"], year_lo))
-        e = int(min(row["end_year"], year_hi))
-        if e < year_lo or s > year_hi or row["intensity"] == 0:
-            continue
-        duration = e - s + 1
-        per_year = float(row["intensity"]) / duration
-        for y in range(s, e + 1):
-            out.loc[y] += per_year
-    if log10_transform:
-        out = np.log10(out + 1.0)
-        out.name = "log10_drought_intensity"
-    return out
+                                 log10_transform: bool = False, *, include_incomplete=False,
+                                 coverage=None) -> pd.Series:
+    """Compatibility alias for affected population ONLY; no physical severity data."""
+    warnings.warn('load_yearly_drought_intensity now returns affected-population allocation proxy; '
+                  'use load_yearly_drought_affected or load_yearly_drought_deaths explicitly',
+                  FutureWarning, stacklevel=2)
+    return load_yearly_drought_affected(droughts_csv, year_lo, year_hi, log10_transform,
+                                       include_incomplete=include_incomplete, coverage=coverage)
 
 
-def load_flood_event_dates(floods_csv: str, deaths_min: float = 1000,
-                            exclude_tsunami: bool = True):
-    """Date-precise flood event starts (for daily-window tests).
+def load_yearly_refugee_displaced(refugees_csv: str, year_lo=1947, year_hi=2025,
+                                 log10_transform: bool = False, *, include_incomplete=False,
+                                 coverage=None) -> pd.Series:
+    """Allocated crisis-total proxy; not annual new displacement or population stock."""
+    return _allocated_loader(refugees_csv, 'refugees.csv', 'displaced_estimate', year_lo, year_hi,
+                             'refugee_displaced', log10_transform, include_incomplete, coverage,
+                             metric_kind='crisis_total_allocation_proxy')
 
-    exclude_tsunami=True (default) drops events where `cause` matches tsunami
-    or tidal surge — these are quake-caused and would contaminate any
-    earthquake-flood window test (reverse causation).
-    """
-    df = pd.read_csv(floods_csv, low_memory=False)
-    df["start"] = pd.to_datetime(df["start_date"], errors="coerce")
-    df["deaths"] = pd.to_numeric(df["deaths"], errors="coerce").fillna(0)
-    df = df.dropna(subset=["start"])
-    df = df[df["deaths"] >= deaths_min]
-    if exclude_tsunami and "cause" in df.columns:
-        mask = df["cause"].astype(str).str.contains("tsunami|tidal", case=False, na=False)
-        df = df[~mask]
-    if "match_group_id" in df.columns:
-        with_group = df[df["match_group_id"].notna()].drop_duplicates(subset=["match_group_id"])
-        without_group = df[df["match_group_id"].isna()]
-        df = pd.concat([with_group, without_group], ignore_index=True)
-    return df["start"].dt.normalize().tolist()
+
+def load_yearly_economic_crises(crises_csv: str, year_lo=1800, year_hi=2025,
+                               severity_min: str = None, *, include_incomplete=False,
+                               coverage=None) -> pd.Series:
+    df = pd.read_csv(crises_csv)
+    if severity_min:
+        order = {'medium': 0, 'severe': 1, 'extreme': 2}
+        df = df[df['severity'].map(order) >= order[severity_min]]
+    return _finish(_count(df, 'year', year_lo, year_hi), crises_csv, 'economic_crises.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name=f'economic_crises_{severity_min or "all"}')
+
+
+def load_yearly_coups(coups_csv: str, year_lo=1950, year_hi=2025, outcome: str = None,
+                     *, include_incomplete=False, coverage=None) -> pd.Series:
+    df = pd.read_csv(coups_csv)
+    if outcome:
+        df = df[df['outcome'] == outcome]
+    return _finish(_count(df, 'year', year_lo, year_hi), coups_csv, 'coups.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name=f'coups_{outcome or "all"}')
+
+
+def load_yearly_heat_wave_deaths(heat_csv: str, year_lo=1880, year_hi=2025,
+                               log10_transform: bool = False, *, include_incomplete=False,
+                               coverage=None) -> pd.Series:
+    return _allocated_loader(heat_csv, 'heat_waves.csv', 'deaths_estimate', year_lo, year_hi,
+                             'heat_wave_deaths', log10_transform, include_incomplete, coverage)
+
+
+def load_yearly_heat_wave_events(heat_csv: str, year_lo=1880, year_hi=2025,
+                               deaths_min: float = 0, *, include_incomplete=False,
+                               coverage=None) -> pd.Series:
+    df = pd.read_csv(heat_csv)
+    if deaths_min > 0:
+        df = df[pd.to_numeric(df['deaths_estimate'], errors='coerce') >= deaths_min]
+    return _finish(_count(df, 'start_year', year_lo, year_hi), heat_csv, 'heat_waves.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name=f'heat_wave_events_deaths_ge_{int(deaths_min)}')
+
+
+def load_yearly_stock_crashes(crashes_csv: str, year_lo=1900, year_hi=2025,
+                             drawdown_min: float = 0.0, *, include_incomplete=False,
+                             coverage=None) -> pd.Series:
+    df = pd.read_csv(crashes_csv)
+    if drawdown_min > 0:
+        df = df[pd.to_numeric(df['pct_drawdown'], errors='coerce') >= drawdown_min]
+    return _finish(_count(df, 'year', year_lo, year_hi), crashes_csv, 'stock_crashes.csv',
+                   include_incomplete=include_incomplete, coverage=coverage, name=f'stock_crashes_dd_ge_{int(drawdown_min)}')
+
+
+def load_yearly_stock_drawdown_intensity(crashes_csv: str, year_lo=1900, year_hi=2025,
+                                       log10_transform: bool = False, *, include_incomplete=False,
+                                       coverage=None) -> pd.Series:
+    return _finish(_sum(pd.read_csv(crashes_csv), 'year', 'pct_drawdown', year_lo, year_hi),
+                   crashes_csv, 'stock_crashes.csv', include_incomplete=include_incomplete,
+                   coverage=coverage, log10_transform=log10_transform, name='stock_drawdown_pct',
+                   metric_kind='sum_of_event_drawdowns_not_market_return')
+
+
+def _terror(path, value, lo, hi, log10_transform, include_incomplete, coverage):
+    df = pd.read_csv(path)
+    values = pd.to_numeric(df[value], errors='coerce')
+    # Annual observations: absent rows are missing, even within coverage.
+    out = pd.Series(values.to_numpy(), index=pd.to_numeric(df['year'])).reindex(range(lo, hi + 1))
+    return _finish(out, path, 'terrorism.csv', include_incomplete=include_incomplete,
+                   coverage=coverage, log10_transform=log10_transform, name=f'terrorism_{value}')
+
+
+def load_yearly_terrorism_events(terror_csv: str, year_lo=1970, year_hi=2025, *,
+                                include_incomplete=False, coverage=None) -> pd.Series:
+    return _terror(terror_csv, 'events', year_lo, year_hi, False, include_incomplete, coverage)
+
+
+def load_yearly_terrorism_deaths(terror_csv: str, year_lo=1970, year_hi=2025,
+                               log10_transform: bool = False, *, include_incomplete=False,
+                               coverage=None) -> pd.Series:
+    return _terror(terror_csv, 'deaths', year_lo, year_hi, log10_transform, include_incomplete, coverage)
+
+
+def load_yearly_coup_deaths(coups_csv: str, year_lo=1950, year_hi=2025,
+                           log10_transform: bool = False, *, include_incomplete=False,
+                           coverage=None) -> pd.Series:
+    return _finish(_sum(pd.read_csv(coups_csv), 'year', 'deaths_estimate', year_lo, year_hi),
+                   coups_csv, 'coups.csv', include_incomplete=include_incomplete,
+                   coverage=coverage, log10_transform=log10_transform, name='coup_deaths')
 
 
 def load_levant_quakes(eq_db_modern: str, lat=31.78, lon=35.21, radius_km=500,
                         mag_min=4.0):
     """Load modern Levant quakes from USGS M>=4 1965+ catalog (spatial filter)."""
-    con = sqlite3.connect(eq_db_modern)
-    q = pd.read_sql(f"SELECT time_ms, mag, lat, lon FROM quakes WHERE mag>={mag_min}", con)
+    with closing(sqlite3.connect(Path(eq_db_modern).resolve().as_uri() + '?mode=ro', uri=True)) as con:
+        q = pd.read_sql('SELECT time_ms, mag, lat, lon FROM quakes WHERE mag>=?', con, params=(mag_min,))
     # Approximate flat-earth distance — fine at this scale
     dlat = q["lat"] - lat
     dlon = (q["lon"] - lon) * np.cos(np.deg2rad(lat))
@@ -751,8 +595,8 @@ def load_levant_quakes(eq_db_modern: str, lat=31.78, lon=35.21, radius_km=500,
 
 
 def load_modern_quakes_dates(eq_db_modern: str, mag_min=7.0):
-    con = sqlite3.connect(eq_db_modern)
-    q = pd.read_sql(f"SELECT time_ms, mag FROM quakes WHERE mag>={mag_min}", con)
+    with closing(sqlite3.connect(Path(eq_db_modern).resolve().as_uri() + '?mode=ro', uri=True)) as con:
+        q = pd.read_sql('SELECT time_ms, mag FROM quakes WHERE mag>=?', con, params=(mag_min,))
     q["date"] = pd.to_datetime(q["time_ms"], unit="ms", utc=True).dt.tz_localize(None)
     return q
 
@@ -777,13 +621,13 @@ def yearly_corr(a: pd.Series, b: pd.Series, regime_key_a: str = None,
     overlap = a.index.intersection(b.index)
     a2 = a.loc[overlap].astype(float)
     b2 = b.loc[overlap].astype(float)
-    mask = ~(a2.isna() | b2.isna())
+    mask = np.isfinite(a2) & np.isfinite(b2)
     a2 = a2[mask]; b2 = b2[mask]
 
-    out = {"n": int(mask.sum())}
-    if len(a2) < 3:
-        return out | {"raw_r": float("nan"), "raw_p": float("nan"),
-                      "det_r": float("nan"), "det_p": float("nan")}
+    out = {"n": int(mask.sum()), **{key: float("nan") for key in
+           ("raw_r", "raw_p", "raw_rho", "raw_p_spear", "det_r", "det_p")}}
+    if len(a2) < 3 or a2.std() == 0 or b2.std() == 0:
+        return out
     r, p = stats.pearsonr(a2, b2)
     rs, ps = stats.spearmanr(a2, b2)
     out |= {"raw_r": r, "raw_p": p, "raw_rho": rs, "raw_p_spear": ps}
@@ -792,7 +636,7 @@ def yearly_corr(a: pd.Series, b: pd.Series, regime_key_a: str = None,
         ad = piecewise_detrend(a2, REGIMES.get(regime_key_a, []))
         bd = piecewise_detrend(b2, REGIMES.get(regime_key_b, []))
         m2 = ~(ad.isna() | bd.isna())
-        if m2.sum() >= 3:
+        if m2.sum() >= 3 and ad[m2].std() > 1e-12 and bd[m2].std() > 1e-12:
             r2, p2 = stats.pearsonr(ad[m2], bd[m2])
             out |= {"det_r": r2, "det_p": p2}
         else:

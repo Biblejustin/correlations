@@ -23,6 +23,7 @@ import sqlite3
 from pathlib import Path
 
 import pandas as pd
+from source_tracking import collect_fingerprints, changed_groups
 
 SNAPSHOT = Path("data/catalog_counts.json")
 
@@ -113,6 +114,9 @@ def main():
     prev_when = prev.get("when")
 
     now_counts = collect_counts()
+    fingerprints = collect_fingerprints()
+    content_changed, eq_content_changed, sw_content_changed = changed_groups(
+        prev.get("fingerprints", {}), fingerprints)
     today = datetime.date.today().isoformat()
 
     print(f"Data refresh {today}" + (f" (previous: {prev_when[:10]})" if prev_when else ""))
@@ -137,6 +141,9 @@ def main():
         print(f"| {label} | {old:,} | {row_cur} | {delta} |"
               if isinstance(old, int) else
               f"| {label} | — | {row_cur} | {delta} |")
+    any_change = any_change or content_changed
+    if content_changed:
+        print("\nSource content changed (including same-row-count revisions).")
     if not any_change and prev_counts:
         print()
         print("No catalog changed since the previous run.")
@@ -154,9 +161,9 @@ def main():
         return (cur is not None and old is not None and cur != old) or \
                (cur is not None and old is None)
 
-    eq_changed = any(_delta(k) for k in
+    eq_changed = eq_content_changed or any(_delta(k) for k in
                       ("usgs_m4_modern", "usgs_m65_1900", "significant_quakes"))
-    sw_changed = any(_delta(k) for k in ("silso_days", "gfz_days"))
+    sw_changed = sw_content_changed or any(_delta(k) for k in ("silso_days", "gfz_days"))
 
     if args.flags_file:
         Path(args.flags_file).write_text(
@@ -171,6 +178,7 @@ def main():
         SNAPSHOT.write_text(json.dumps({
             "when": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "counts": now_counts,
+            "fingerprints": fingerprints,
         }, indent=2) + "\n")
 
 

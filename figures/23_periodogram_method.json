@@ -1,0 +1,20 @@
+{
+  "version": "ar1_maximum_v2",
+  "n_surrogates": 10000,
+  "seed": 42,
+  "band_years": [
+    9,
+    13
+  ],
+  "families": {
+    "band_maxima": 24,
+    "all_frequency_maxima": 24
+  },
+  "limitations": [
+    "conditional fitted Gaussian AR1 null",
+    "parameter-estimation uncertainty not integrated",
+    "selected-event catalogs and historical detection changes",
+    "no solar-cause attribution",
+    "annual data contain no within-year seasonal cycle"
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "catalogs": {
+    "wars.csv": {
+      "start_year": 1400,
+      "end_year": 2025,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "famines.csv": {
+      "start_year": 1500,
+      "end_year": 2025,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "volcanoes.csv": {
+      "start_year": 1500,
+      "end_year": 2022,
+      "complete_through_year": 2022,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "cyclones.csv": {
+      "start_year": 1737,
+      "end_year": 2024,
+      "complete_through_year": 2024,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "pandemics.csv": {
+      "start_year": -430,
+      "end_year": 2025,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "droughts.csv": {
+      "start_year": -2200,
+      "end_year": 2024,
+      "complete_through_year": 2024,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "refugees.csv": {
+      "start_year": 1915,
+      "end_year": 2025,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "economic_crises.csv": {
+      "start_year": 1797,
+      "end_year": 2023,
+      "complete_through_year": 2023,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "coups.csv": {
+      "start_year": 1950,
+      "end_year": 2023,
+      "complete_through_year": 2023,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "heat_waves.csv": {
+      "start_year": 1896,
+      "end_year": 2024,
+      "complete_through_year": 2024,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "stock_crashes.csv": {
+      "start_year": 1906,
+      "end_year": 2025,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "astronomical_signs.csv": {
+      "start_year": 185,
+      "end_year": 2024,
+      "complete_through_year": 2024,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "flares_xclass.csv": {
+      "start_year": 1976,
+      "end_year": 2026,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "selected_events",
+      "as_of": "2026-09-04",
+      "coverage_basis": "Frozen analytical scope of reviewed snapshot; not a surveillance-completeness claim.",
+      "notes": "Zeros mean no listed events within this selected catalogue scope. Selection and underreporting preclude global event-rate claims. Bounds require explicit review or sidecar refresh; never derived from thresholded events."
+    },
+    "usgs_quakes": {
+      "start_year": 1900,
+      "end_year": 2026,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://earthquake.usgs.gov/fdsnws/event/1/",
+      "as_of": "2026-09-04",
+      "notes": "Coverage of source inclusion criteria, not all hazards. Historical reporting and revisions remain limitations. Refresh from released source coverage, not last qualifying event."
+    },
+    "noaa_significant_earthquakes.csv": {
+      "start_year": -2150,
+      "end_year": 2026,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://www.ngdc.noaa.gov/hazel/view/hazards/earthquake/search",
+      "as_of": "2026-09-04",
+      "notes": "Coverage of source inclusion criteria, not all hazards. Historical reporting and revisions remain limitations. Refresh from released source coverage, not last qualifying event."
+    },
+    "noaa_volcanic_events.csv": {
+      "start_year": -4360,
+      "end_year": 2026,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://www.ngdc.noaa.gov/hazel/view/hazards/volcano/event-search",
+      "as_of": "2026-09-04",
+      "notes": "Coverage of source inclusion criteria, not all hazards. Historical reporting and revisions remain limitations. Refresh from released source coverage, not last qualifying event."
+    },
+    "ucdp_prio_conflicts.csv": {
+      "start_year": 1946,
+      "end_year": 2025,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://ucdp.uu.se/downloads/",
+      "as_of": "2026-09-04",
+      "notes": "Coverage of source inclusion criteria, not all hazards. Historical reporting and revisions remain limitations. Refresh from released source coverage, not last qualifying event.",
+      "source_version": "26.1"
+    },
+    "cow_interstate_wars_v4.csv": {
+      "start_year": 1816,
+      "end_year": 2007,
+      "complete_through_year": 2007,
+      "gap_years": [],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://correlatesofwar.org/data-sets/COW-war/",
+      "as_of": "2026-09-04",
+      "notes": "Coverage of source inclusion criteria, not all hazards. Historical reporting and revisions remain limitations. Refresh from released source coverage, not last qualifying event."
+    },
+    "cow_intrastate_wars_v4.csv": {
+      "start_year": 1816,
+      "end_year": 2007,
+      "complete_through_year": 2007,
+      "gap_years": [],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://correlatesofwar.org/data-sets/COW-war/",
+      "as_of": "2026-09-04",
+      "notes": "COW v4 input scope held at documented 1816-2007. File contains later rows; verify actual source release before extending analytical coverage."
+    },
+    "cow_extrastate_wars_v4.csv": {
+      "start_year": 1816,
+      "end_year": 2007,
+      "complete_through_year": 2007,
+      "gap_years": [],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://correlatesofwar.org/data-sets/COW-war/",
+      "as_of": "2026-09-04",
+      "notes": "Coverage of source inclusion criteria, not all hazards. Historical reporting and revisions remain limitations. Refresh from released source coverage, not last qualifying event."
+    },
+    "famine_deaths_by_year.csv": {
+      "start_year": 1870,
+      "end_year": 2023,
+      "complete_through_year": 2023,
+      "gap_years": [],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://ourworldindata.org/famines",
+      "as_of": "2026-09-04",
+      "notes": "Coverage of source inclusion criteria, not all hazards. Historical reporting and revisions remain limitations. Refresh from released source coverage, not last qualifying event."
+    },
+    "terrorism.csv": {
+      "start_year": 1970,
+      "end_year": 2021,
+      "complete_through_year": 2021,
+      "gap_years": [
+        1993
+      ],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://www.start.umd.edu/gtd/",
+      "as_of": "2026-09-04",
+      "notes": "GTD 1993 records lost; this year is unknown, not zero. Annual table lacks that year."
+    },
+    "floods.csv": {
+      "start_year": 1900,
+      "end_year": 2026,
+      "complete_through_year": 2025,
+      "gap_years": [],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://github.com/Biblejustin/flood-data",
+      "as_of": "2026-09-04",
+      "notes": "Merged DFO/EM-DAT snapshot. Match-group linkage not independently validated; country-event and multinational ambiguities retained in canonical diagnostics."
+    },
+    "famines_wpf.csv": {
+      "start_year": 1870,
+      "end_year": 2023,
+      "complete_through_year": 2023,
+      "gap_years": [],
+      "completeness": "source_defined_catalog",
+      "source_url": "https://ourworldindata.org/famines",
+      "as_of": "2026-09-04",
+      "notes": "Event list from WPF/OWID release documented by famines-tracking as 1870-2023 and >=100000 mortality inclusion threshold. End of released catalogue scope is 2023, independent of last onset row (2021). Event years are onsets, not annually measured deaths.",
+      "source_version": "World Peace Foundation 2025 via OWID"
+    }
+  }
+}

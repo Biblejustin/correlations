@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "countries": ["ISR", "PSE", "LBN", "UKR", "SDN", "ETH", "SOM", "YEM"],
+  "start_year": 2000,
+  "baseline_years": [2000, 2019],
+  "minimum_baseline_years": 10,
+  "minimum_test_years": 12,
+  "annual_lags": [0, 1, 2],
+  "extreme_z": 1.5,
+  "seed": 20260904,
+  "notes": "Fixed pilot geography, not a representative global sample. Observations remain separate by source, unit and survey scope. Existing historical data are exploratory; no prophetic fulfillment score."
+}
