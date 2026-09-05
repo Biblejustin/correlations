@@ -21,6 +21,8 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 
 **New displacement flows are monitored directly.** IDMC annual exports provide displacement movements and year-end stocks through 2025. Repeated movements by one person are possible; the figures are not inferred from refugee-stock changes. The existing regional lag-test family remains unchanged until cause and territorial comparability are verified.
 
+**IPC history now preserves 384 observations.** Full supplied national history replaces the latest-only adapter. Six ambiguous or internally inconsistent periods are quarantined with original rows; prior snapshots remain archived. Reports identify retained old assessments. Geographic comparability remains unverified, so this expansion does not unlock additional country lag tests. See [history and revision rules](MONITORING.md).
+
 **War–famine association remains era-dependent.** The full-span matrix gives r ≈ +0.452 (1900–2023), surviving its 45-pair block-null sensitivity family. This does not establish the same relationship in every era or establish causation. See exported windows, sample sizes and q-values.
 
 **Broad significance claims shrink after repair.** The 30-test Granger family and searched chain family have no corrected survivors in this snapshot. Wavelet calculations now use 6,200 finite cells on observed overlap; coherence is descriptive and edge-masked. In the 24-indicator 9–13-year spectral family, only sunspots survive the fitted AR(1) sensitivity null. A missing or nonsignificant result does not prove independence.
@@ -29,7 +31,7 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 
 **Catalog definitions matter.** Flood counts and dates now use one canonical event resolver; unknown mortality remains unknown. Duration totals are allocated over original event lifetimes before slicing a window. Cyclone Sidr's false 2003 duplicate is removed. Selected eclipse/flare/disaster lists remain incomplete research catalogs.
 
-The [flood linkage audit](data/diagnostics/flood_linkage/manifest.json) flags 792 of 7,434 canonical groups for source review, preserving 3,414 member records as evidence. Multiple source identities and incompatible dates are review signals, not proof of false matches. The default catalog is preserved; an unflagged sensitivity subset remains explicitly incomplete.
+The [flood linkage audit](data/diagnostics/flood_linkage/manifest.json) applies 11 reviewed block splits using source hashes, stable record identities and retained publisher evidence. Canonical catalog units increase from 7,434 to 7,445; counts at ≥100 reported deaths are unchanged. It still flags 781 groups for review, preserving 3,379 member records as evidence. All 11,712 raw records remain unchanged. [Before/after sensitivity](data/diagnostics/flood_linkage/correction_sensitivity.csv) preserves the legacy comparison. These catalog identities do not establish physically independent disasters; the unflagged subset remains incomplete.
 
 ![Current analysis dashboard](figures/32_dashboard.png)
 

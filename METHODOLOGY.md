@@ -12,6 +12,8 @@ Lifetime deaths, displaced people and affected populations are equally allocated
 
 Flood resolution selects canonical linked events with explicit source priority before either daily or annual filtering. Tsunami cause annotations are retained from linked source rows. Ambiguous multinational matches remain a limitation. Daily tests require exact dates; a month/year does not imply the fifteenth day.
 
+Eleven reviewed flood-block splits require `data/floods.csv.linkage.json`: raw-source and publisher-evidence hashes, stable source-record hashes and accepted publisher links are validated before application. Stale or invalid evidence fails visibly. Raw records and remaining uncertain groups are preserved; the legacy/corrected sensitivity records catalog identity changes, not physical-disaster independence or improved coverage. Missing deaths remain unknown.
+
 Regional observations retain source/version/URL, fetch and publication dates where available, location, unit, observation interval, numerator/denominator, dimensions and provisional status. Source boundaries differ: country names and codes alone cannot establish comparable geography. UCDP Israel includes its Palestinian conflict unit, so Israel-only per-capita rates/lags are withheld; Sudan before 2012 is likewise excluded from mismatched rates. IPC projections remain distinct from current assessments. Surveillance positivity is not population prevalence. Refugee stocks, stock changes and returns remain distinct.
 
 ## Statistical families

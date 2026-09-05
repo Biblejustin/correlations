@@ -1,0 +1,684 @@
+{
+  "catalog_sha256": "27ce3522601d593ac6d85e746288195b8f277e2da3b348e39763b56cd24e21fd",
+  "corrections": [
+    {
+      "legacy_match_group_id": "3.0",
+      "method": "reviewed_date_geography_split",
+      "publisher_evidence": [
+        {
+          "Country": "Brazil",
+          "DisNo.": "2024-0108-BRA",
+          "End Day": "16",
+          "End Month": "2",
+          "End Year": "2024",
+          "External IDs": "",
+          "ISO": "BRA",
+          "Location": "Macapá Municipality (Amapá State)",
+          "Start Day": "13",
+          "Start Month": "2",
+          "Start Year": "2024",
+          "workbook_row": "15655",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Brazil",
+          "DisNo.": "2024-0098-BRA",
+          "End Day": "23",
+          "End Month": "2",
+          "End Year": "2024",
+          "External IDs": "",
+          "ISO": "BRA",
+          "Location": "Barra do Piraí, Japeri, Nova Iguaçu Municipalities (Rio de Janeiro State);",
+          "Start Day": "21",
+          "Start Month": "2",
+          "Start Year": "2024",
+          "workbook_row": "7559",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Separate original Macapa Feb13-16 event from Rio de Janeiro Feb21-23 event; retain existing DFO5516/Rio pair without upgrading its unconfirmed linkage status.",
+      "records": [
+        {
+          "canonical_event_id": "split:3.0:emdat:2024-0098",
+          "row_sha256": "bf0ab45b05ebc8607a1f3b18005c8adec8dff430594db0e51ca99796fb96cb30",
+          "source": "DFO",
+          "source_id": "DFO-5516"
+        },
+        {
+          "canonical_event_id": "split:3.0:emdat:2024-0098",
+          "row_sha256": "9c8702b975dcde21596dae392234e3c8dd0ac3c12990efec4fc143897eda74d1",
+          "source": "EM-DAT",
+          "source_id": "2024-0098-BRA"
+        },
+        {
+          "canonical_event_id": "split:3.0:emdat:2024-0108",
+          "row_sha256": "d88fd9a0cc9a1743c8ded8f7bcbfadf8e7f01474e51a994434c161bd0a1aca79",
+          "source": "EM-DAT",
+          "source_id": "2024-0108-BRA"
+        }
+      ]
+    },
+    {
+      "legacy_match_group_id": "299.0",
+      "method": "publisher_id_and_temporal_separation",
+      "publisher_evidence": [
+        {
+          "Country": "Mongolia",
+          "DisNo.": "2020-0284-MNG",
+          "End Day": "25",
+          "End Month": "6",
+          "End Year": "2020",
+          "External IDs": "DFO:4934",
+          "ISO": "MNG",
+          "Location": "Sergelen District (Töv province) and Govisümber Provinces",
+          "Start Day": "21",
+          "Start Month": "6",
+          "Start Year": "2020",
+          "workbook_row": "23235",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Mongolia",
+          "DisNo.": "2020-0324-MNG",
+          "End Day": "4",
+          "End Month": "7",
+          "End Year": "2020",
+          "External IDs": "",
+          "ISO": "MNG",
+          "Location": "Ulaanbaatar, Ömnögovi ,Töv, Khövsgöl, Khentii Provinces",
+          "Start Day": "2",
+          "Start Month": "7",
+          "Start Year": "2020",
+          "workbook_row": "23246",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Publisher DFO references assign every DFO member; distinct complete-date EM-DAT event intervals are separate.",
+      "records": [
+        {
+          "canonical_event_id": "split:299.0:emdat:2020-0284",
+          "row_sha256": "f4e93568e46a75e37180d14866f3f6ca6814b842e76d4c714a8a960d7ce71d64",
+          "source": "DFO",
+          "source_id": "DFO-4934"
+        },
+        {
+          "canonical_event_id": "split:299.0:emdat:2020-0284",
+          "row_sha256": "8984348443ab00e0858478d10fc8a14b2503fa673f9edcbb81781451bf21a700",
+          "source": "EM-DAT",
+          "source_id": "2020-0284-MNG"
+        },
+        {
+          "canonical_event_id": "split:299.0:emdat:2020-0324",
+          "row_sha256": "d28612003c8881856a368da3dc77da5ccbb78a1832724fb444bb442368e7d69e",
+          "source": "EM-DAT",
+          "source_id": "2020-0324-MNG"
+        }
+      ]
+    },
+    {
+      "legacy_match_group_id": "300.0",
+      "method": "publisher_id_and_temporal_separation",
+      "publisher_evidence": [
+        {
+          "Country": "Malaysia",
+          "DisNo.": "2020-0289-MYS",
+          "End Day": "25",
+          "End Month": "6",
+          "End Year": "2020",
+          "External IDs": "DFO:4935",
+          "ISO": "MYS",
+          "Location": "Pontian, Batu Pahat, Muar, Kluang,Tangkak Districts (Johor State)",
+          "Start Day": "20",
+          "Start Month": "6",
+          "Start Year": "2020",
+          "workbook_row": "23216",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Malaysia",
+          "DisNo.": "2020-0272-MYS",
+          "End Day": "1",
+          "End Month": "7",
+          "End Year": "2020",
+          "External IDs": "GLIDE:FL-2020-000157",
+          "ISO": "MYS",
+          "Location": "Tenom, Kota Belud, Papar, Beaufort, Penampang Districts (Sabah State); Baram, Marudi, Long Lama, Lawas, Limbang districts (Sarawak State)",
+          "Start Day": "27",
+          "Start Month": "6",
+          "Start Year": "2020",
+          "workbook_row": "23233",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Publisher DFO references assign every DFO member; distinct complete-date EM-DAT event intervals are separate.",
+      "records": [
+        {
+          "canonical_event_id": "split:300.0:emdat:2020-0289",
+          "row_sha256": "8c46e66fde1615526aec5b6a74b4e526a511f1237a846cd2a515f2edf0fda72b",
+          "source": "DFO",
+          "source_id": "DFO-4935"
+        },
+        {
+          "canonical_event_id": "split:300.0:emdat:2020-0272",
+          "row_sha256": "5f432646d35a5e8ca031597a7e671a332ebe9f8df400fa4eae518b117fea4a67",
+          "source": "EM-DAT",
+          "source_id": "2020-0272-MYS"
+        },
+        {
+          "canonical_event_id": "split:300.0:emdat:2020-0289",
+          "row_sha256": "59b74944dc50b6ffe0b448b959dc0c3d64c42eacbd007e7a42d75b50f9fd9089",
+          "source": "EM-DAT",
+          "source_id": "2020-0289-MYS"
+        }
+      ]
+    },
+    {
+      "legacy_match_group_id": "437.0",
+      "method": "publisher_id_and_temporal_separation",
+      "publisher_evidence": [
+        {
+          "Country": "Sudan",
+          "DisNo.": "2018-0292-SDN",
+          "End Day": "30",
+          "End Month": "7",
+          "End Year": "2018",
+          "External IDs": "GLIDE:FL-2018-000128",
+          "ISO": "SDN",
+          "Location": "West Kordofan, Kassala, Elgizira, Sennar, Northern states",
+          "Start Day": "23",
+          "Start Month": "7",
+          "Start Year": "2018",
+          "workbook_row": "2206",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Sudan",
+          "DisNo.": "2018-0387-SDN",
+          "End Day": "4",
+          "End Month": "9",
+          "End Year": "2018",
+          "External IDs": "DFO:4668",
+          "ISO": "SDN",
+          "Location": "Kassala, West Kordofan, Khartoum",
+          "Start Day": "1",
+          "Start Month": "8",
+          "Start Year": "2018",
+          "workbook_row": "27492",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Publisher DFO references assign every DFO member; distinct complete-date EM-DAT event intervals are separate.",
+      "records": [
+        {
+          "canonical_event_id": "split:437.0:emdat:2018-0387",
+          "row_sha256": "64f1a1b20c68395d6348f385ce7804e0cda5a994050ef1c2c55c0681852deea7",
+          "source": "DFO",
+          "source_id": "DFO-4668"
+        },
+        {
+          "canonical_event_id": "split:437.0:emdat:2018-0292",
+          "row_sha256": "1d7231a49726eb72daa20a2300ca0fa03416a5ba5407e2b3c20d8398dd39d4a7",
+          "source": "EM-DAT",
+          "source_id": "2018-0292-SDN"
+        },
+        {
+          "canonical_event_id": "split:437.0:emdat:2018-0387",
+          "row_sha256": "40d086def82a06cb2eb1fe7e636759133fc3621ede314d429a8a5ff266083ba8",
+          "source": "EM-DAT",
+          "source_id": "2018-0387-SDN"
+        }
+      ]
+    },
+    {
+      "legacy_match_group_id": "459.0",
+      "method": "publisher_id_and_temporal_separation",
+      "publisher_evidence": [
+        {
+          "Country": "Burundi",
+          "DisNo.": "2018-0163-BDI",
+          "End Day": "1",
+          "End Month": "5",
+          "End Year": "2018",
+          "External IDs": "DFO:4602",
+          "ISO": "BDI",
+          "Location": "Bujumbura Mairie, Bujumbura Rural, Makamba provinces.",
+          "Start Day": "28",
+          "Start Month": "4",
+          "Start Year": "2018",
+          "workbook_row": "27435",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Burundi",
+          "DisNo.": "2018-0479-BDI",
+          "End Day": "9",
+          "End Month": "5",
+          "End Year": "2018",
+          "External IDs": "GLIDE:FL-2018-000054",
+          "ISO": "BDI",
+          "Location": "Gaharawe, Mushasha I, Mushasha II, Muyange I, Muyange II, Kinyinya I, Kinyinya II, Warubondo, Vugizo (Gatumba)",
+          "Start Day": "4",
+          "Start Month": "5",
+          "Start Year": "2018",
+          "workbook_row": "14959",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Publisher DFO references assign every DFO member; distinct complete-date EM-DAT event intervals are separate.",
+      "records": [
+        {
+          "canonical_event_id": "split:459.0:emdat:2018-0163",
+          "row_sha256": "34e02591c1d1d3d01e6660bb859cf4fb64dfa41238f272d2f78d13f84766ddae",
+          "source": "DFO",
+          "source_id": "DFO-4602"
+        },
+        {
+          "canonical_event_id": "split:459.0:emdat:2018-0163",
+          "row_sha256": "a5a59cc255d82b333427839810c2602d4c4d4880f14c098e65915d93b71944af",
+          "source": "EM-DAT",
+          "source_id": "2018-0163-BDI"
+        },
+        {
+          "canonical_event_id": "split:459.0:emdat:2018-0479",
+          "row_sha256": "3102b17d8d85d7ad1196ee790e279472673d7c3908d1fc72b64ae5ed2997dabc",
+          "source": "EM-DAT",
+          "source_id": "2018-0479-BDI"
+        }
+      ]
+    },
+    {
+      "legacy_match_group_id": "462.0",
+      "method": "publisher_id_and_temporal_separation",
+      "publisher_evidence": [
+        {
+          "Country": "Rwanda",
+          "DisNo.": "2018-0477-RWA",
+          "End Day": "16",
+          "End Month": "4",
+          "End Year": "2018",
+          "External IDs": "",
+          "ISO": "RWA",
+          "Location": "",
+          "Start Day": "1",
+          "Start Month": "4",
+          "Start Year": "2018",
+          "workbook_row": "14958",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Rwanda",
+          "DisNo.": "2018-0135-RWA",
+          "End Day": "24",
+          "End Month": "4",
+          "End Year": "2018",
+          "External IDs": "DFO:4603",
+          "ISO": "RWA",
+          "Location": "Gasabo district (Kigali); Rulindo district (Northern province), Gatsibo (Eastern province);",
+          "Start Day": "23",
+          "Start Month": "4",
+          "Start Year": "2018",
+          "workbook_row": "27427",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Publisher DFO references assign every DFO member; distinct complete-date EM-DAT event intervals are separate.",
+      "records": [
+        {
+          "canonical_event_id": "split:462.0:emdat:2018-0135",
+          "row_sha256": "94fe2ae94cf3afec23a36f479cdb4ed3d47671b43e46db3bc5d9844406160916",
+          "source": "DFO",
+          "source_id": "DFO-4603"
+        },
+        {
+          "canonical_event_id": "split:462.0:emdat:2018-0135",
+          "row_sha256": "32833e1c89de41fe5ac85e2ffa5f57372bb3d4cb17472aa4a82dfce7235eb075",
+          "source": "EM-DAT",
+          "source_id": "2018-0135-RWA"
+        },
+        {
+          "canonical_event_id": "split:462.0:emdat:2018-0477",
+          "row_sha256": "4d7063f194e93d0b622924750d3545d5f581682d84e6bed194b4a079f987a503",
+          "source": "EM-DAT",
+          "source_id": "2018-0477-RWA"
+        }
+      ]
+    },
+    {
+      "legacy_match_group_id": "567.0",
+      "method": "publisher_id_and_temporal_separation",
+      "publisher_evidence": [
+        {
+          "Country": "Indonesia",
+          "DisNo.": "2016-0425-IDN",
+          "End Day": "10",
+          "End Month": "11",
+          "End Year": "2016",
+          "External IDs": "DFO:4413",
+          "ISO": "IDN",
+          "Location": "Gorontalo province (North Sulawesi region)",
+          "Start Day": "23",
+          "Start Month": "10",
+          "Start Year": "2016",
+          "workbook_row": "27193",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Indonesia",
+          "DisNo.": "2016-0479-IDN",
+          "End Day": "15",
+          "End Month": "11",
+          "End Year": "2016",
+          "External IDs": "",
+          "ISO": "IDN",
+          "Location": "Karawang, Bandung districts (Jawa Barat province)",
+          "Start Day": "13",
+          "Start Month": "11",
+          "Start Year": "2016",
+          "workbook_row": "27228",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Publisher DFO references assign every DFO member; distinct complete-date EM-DAT event intervals are separate.",
+      "records": [
+        {
+          "canonical_event_id": "split:567.0:emdat:2016-0425",
+          "row_sha256": "7f6a59d6344cd1dae059b0a3aeb199c13a097ceeb212ed001162c913dc1e2bb9",
+          "source": "DFO",
+          "source_id": "DFO-4413"
+        },
+        {
+          "canonical_event_id": "split:567.0:emdat:2016-0425",
+          "row_sha256": "446753d06786afcfc90997cc4fb60c4e3e58b9d931248dc86df62deb096020de",
+          "source": "EM-DAT",
+          "source_id": "2016-0425-IDN"
+        },
+        {
+          "canonical_event_id": "split:567.0:emdat:2016-0479",
+          "row_sha256": "dc7852b758762369b25d8833145de89545e9bbb537eaf1c50161a0351cee3fdf",
+          "source": "EM-DAT",
+          "source_id": "2016-0479-IDN"
+        }
+      ]
+    },
+    {
+      "legacy_match_group_id": "572.0",
+      "method": "publisher_id_and_temporal_separation",
+      "publisher_evidence": [
+        {
+          "Country": "Mexico",
+          "DisNo.": "2016-0332-MEX",
+          "End Day": "22",
+          "End Month": "9",
+          "End Year": "2016",
+          "External IDs": "DFO:4392",
+          "ISO": "MEX",
+          "Location": "Guerrero, Chiapas states",
+          "Start Day": "14",
+          "Start Month": "9",
+          "Start Year": "2016",
+          "workbook_row": "2755",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Mexico",
+          "DisNo.": "2016-0333-MEX",
+          "End Day": "5",
+          "End Month": "10",
+          "End Year": "2016",
+          "External IDs": "DFO:4401",
+          "ISO": "MEX",
+          "Location": "Durango city",
+          "Start Day": "29",
+          "Start Month": "9",
+          "Start Year": "2016",
+          "workbook_row": "2754",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Publisher DFO references assign every DFO member; distinct complete-date EM-DAT event intervals are separate.",
+      "records": [
+        {
+          "canonical_event_id": "split:572.0:emdat:2016-0332",
+          "row_sha256": "36ecd4ee4bdb24578054729b24101b7e6ff7f15094bf8552b4dd5c4b4b621806",
+          "source": "DFO",
+          "source_id": "DFO-4392"
+        },
+        {
+          "canonical_event_id": "split:572.0:emdat:2016-0333",
+          "row_sha256": "23e9a6816014ed726a97511f1c57f0a8e65d8518a0fbb359ad54fa0985b696f3",
+          "source": "DFO",
+          "source_id": "DFO-4401"
+        },
+        {
+          "canonical_event_id": "split:572.0:emdat:2016-0332",
+          "row_sha256": "c6f3aaaed81908d8678913e52b8e4a273fb605922e7399097f18f82e2b5d42c8",
+          "source": "EM-DAT",
+          "source_id": "2016-0332-MEX"
+        },
+        {
+          "canonical_event_id": "split:572.0:emdat:2016-0333",
+          "row_sha256": "e0c74dd28ad819838ed32590849ac5257b0a7bef63e7ef8624ce772c87198da0",
+          "source": "EM-DAT",
+          "source_id": "2016-0333-MEX"
+        }
+      ]
+    },
+    {
+      "legacy_match_group_id": "598.0",
+      "method": "publisher_id_and_temporal_separation",
+      "publisher_evidence": [
+        {
+          "Country": "Haiti",
+          "DisNo.": "2016-0165-HTI",
+          "End Day": "2",
+          "End Month": "5",
+          "End Year": "2016",
+          "External IDs": "",
+          "ISO": "HTI",
+          "Location": "Bombardopolis city (Mole Saint Nicolas district, Nord Ouest province), Gonaives district (Artibonite province)",
+          "Start Day": "2",
+          "Start Month": "5",
+          "Start Year": "2016",
+          "workbook_row": "2827",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Dominican Republic",
+          "DisNo.": "2016-0184-DOM",
+          "End Day": "8",
+          "End Month": "5",
+          "End Year": "2016",
+          "External IDs": "DFO:4354",
+          "ISO": "DOM",
+          "Location": "Santo Domingo, La Romana cities",
+          "Start Day": "7",
+          "Start Month": "5",
+          "Start Year": "2016",
+          "workbook_row": "14622",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Haiti",
+          "DisNo.": "2016-0184-HTI",
+          "End Day": "8",
+          "End Month": "5",
+          "End Year": "2016",
+          "External IDs": "DFO:4354",
+          "ISO": "HTI",
+          "Location": "Baradère (Nippes), Savanette, Petit-Fond (Lascahobas)",
+          "Start Day": "7",
+          "Start Month": "5",
+          "Start Year": "2016",
+          "workbook_row": "27147",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Publisher DFO references assign every DFO member; distinct complete-date EM-DAT event intervals are separate.",
+      "records": [
+        {
+          "canonical_event_id": "split:598.0:emdat:2016-0184",
+          "row_sha256": "8fe47722e3b6288bee22b1afd825221e03fed4fe42cc9daf46938f2d7f968c1a",
+          "source": "DFO",
+          "source_id": "DFO-4354"
+        },
+        {
+          "canonical_event_id": "split:598.0:emdat:2016-0165",
+          "row_sha256": "342d6d89e13d669bcb95c80ae4e079cebb5e38994251c9d9f27645fbe40f5b6c",
+          "source": "EM-DAT",
+          "source_id": "2016-0165-HTI"
+        },
+        {
+          "canonical_event_id": "split:598.0:emdat:2016-0184",
+          "row_sha256": "9b148c7ba1a0c6fd0c2f8b90ba8d8b5eb7a8603f36521c0f58d51b592152538b",
+          "source": "EM-DAT",
+          "source_id": "2016-0184-DOM"
+        },
+        {
+          "canonical_event_id": "split:598.0:emdat:2016-0184",
+          "row_sha256": "98a0d684a20c9b8c36639ea0b35db1aa90bae70b0095173c858a85f63dd5f4c0",
+          "source": "EM-DAT",
+          "source_id": "2016-0184-HTI"
+        }
+      ]
+    },
+    {
+      "legacy_match_group_id": "648.0",
+      "method": "publisher_id_and_temporal_separation",
+      "publisher_evidence": [
+        {
+          "Country": "Pakistan",
+          "DisNo.": "2015-0333-PAK",
+          "End Day": "13",
+          "End Month": "7",
+          "End Year": "2015",
+          "External IDs": "",
+          "ISO": "PAK",
+          "Location": "Rawalpindi District (Punjab province), Islamabad District (Islamabad province), Jammu and Kashmir provinces",
+          "Start Day": "7",
+          "Start Month": "7",
+          "Start Year": "2015",
+          "workbook_row": "3060",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Pakistan",
+          "DisNo.": "2015-0291-PAK",
+          "End Day": "19",
+          "End Month": "8",
+          "End Year": "2015",
+          "External IDs": "DFO:4272|GLIDE:FL-2015-000090",
+          "ISO": "PAK",
+          "Location": "Punjab, Jammu and Kashmir, North-West Frontier, Balochistan, Sindh provinces",
+          "Start Day": "15",
+          "Start Month": "7",
+          "Start Year": "2015",
+          "workbook_row": "22072",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Publisher DFO references assign every DFO member; distinct complete-date EM-DAT event intervals are separate.",
+      "records": [
+        {
+          "canonical_event_id": "split:648.0:emdat:2015-0291",
+          "row_sha256": "b4b8643664ea94fe901d7338cf0980e2ff5d9a309a1d2e62c9342b13c15d543d",
+          "source": "DFO",
+          "source_id": "DFO-4272"
+        },
+        {
+          "canonical_event_id": "split:648.0:emdat:2015-0291",
+          "row_sha256": "ecf2584efc40ba02f016ae7df36e3bd17978cab1c6d0901687cdba0a5b2d7e60",
+          "source": "EM-DAT",
+          "source_id": "2015-0291-PAK"
+        },
+        {
+          "canonical_event_id": "split:648.0:emdat:2015-0333",
+          "row_sha256": "f4eb3c9d6e679226f6553133c443647232e17977454eafef987f2cac8e4ad6e8",
+          "source": "EM-DAT",
+          "source_id": "2015-0333-PAK"
+        }
+      ]
+    },
+    {
+      "legacy_match_group_id": "652.0",
+      "method": "publisher_id_and_temporal_separation",
+      "publisher_evidence": [
+        {
+          "Country": "Philippines",
+          "DisNo.": "2015-0283-PHL",
+          "End Day": "10",
+          "End Month": "7",
+          "End Year": "2015",
+          "External IDs": "",
+          "ISO": "PHL",
+          "Location": "Caloocan, Malabon, Quezon City, Valenzuela City areas (Metropolitan Manila district, NCR province),Dinalpupihan, Mariveles areas (Bataan district, Region III province),Marilao, Meycauayan, San Jose Del Monte, Santa Maria areas (Bulacan district, Region III province), San Fernando area (Pampanga district, Region III province), Botolan, Candelaria, Masinloc areas (Zambales district, Region III province), San Jose area (Batangas district, Region IV-A province), San Pedro area (Laguna district, Region IV-A province), Conner, Kabugao areas (Apayao district, CAR province), Atok, Baguio City, Bangar, Itogon, Kapangan, Kibunga, La Trinidad, Sablan, Tuba areas (Benguet district, CAR province), Liwan, Tabuk areas (Kalinga district, CAR province)",
+          "Start Day": "7",
+          "Start Month": "7",
+          "Start Year": "2015",
+          "workbook_row": "14497",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        },
+        {
+          "Country": "Philippines",
+          "DisNo.": "2015-0284-PHL",
+          "End Day": "21",
+          "End Month": "7",
+          "End Year": "2015",
+          "External IDs": "DFO:4278",
+          "ISO": "PHL",
+          "Location": "Pangasinan province",
+          "Start Day": "12",
+          "Start Month": "7",
+          "Start Year": "2015",
+          "workbook_row": "27036",
+          "worksheet_part": "xl/worksheets/sheet1.xml"
+        }
+      ],
+      "reason": "Publisher DFO references assign every DFO member; distinct complete-date EM-DAT event intervals are separate.",
+      "records": [
+        {
+          "canonical_event_id": "split:652.0:emdat:2015-0284",
+          "row_sha256": "bbb5224d41b8c165ec8018bf12987f968e6c999b63dab052ddb380b7c7d18698",
+          "source": "DFO",
+          "source_id": "DFO-4278"
+        },
+        {
+          "canonical_event_id": "split:652.0:emdat:2015-0283",
+          "row_sha256": "2205e43c9bb41a9a87798ca7c7c677a7cc8112880a86ab9ea147fe91e45db968",
+          "source": "EM-DAT",
+          "source_id": "2015-0283-PHL"
+        },
+        {
+          "canonical_event_id": "split:652.0:emdat:2015-0284",
+          "row_sha256": "d3df0406dd88171880e3b0631a2f826b1e135cb02150e7b0ec816b3410ff807c",
+          "source": "EM-DAT",
+          "source_id": "2015-0284-PHL"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "accepted_publisher_links": 231,
+    "catalog_emdat_rows": 6199,
+    "corrected_legacy_groups": 11,
+    "corrected_source_rows": 35,
+    "publisher_flood_rows": 6191,
+    "rejected_publisher_links": 40
+  },
+  "evidence_sha256": {
+    "flood_linkage_evidence/emdat_publisher_metadata.csv": "626ca2ba2c968eb9e8c5844e95455bc16d2ce8c9ec952de2c3cc71bdee26944c",
+    "flood_linkage_evidence/publisher_dfo_links.csv": "4d955ac701bde1b9c51a1461bb00a8aab6c9922107b45457f3aad23db64e027a"
+  },
+  "limitations": [
+    "Correction units follow reviewed catalog identities; they do not establish physically independent disasters.",
+    "Only eleven reviewed blocks are split. Every other legacy grouping and uncertain residual is preserved.",
+    "Publisher references that fail date, country, precision or identity checks remain in the rejected ledger.",
+    "The workbook has fewer flood rows than the later catalog; absent publisher metadata is unknown.",
+    "No death totals are added, missing deaths remain unknown, and catalog coverage is not extended."
+  ],
+  "publisher_documentation": "https://doc.emdat.be/docs/data-structure-and-content/emdat-public-table/",
+  "publisher_link_ledger": "flood_linkage_evidence/publisher_dfo_links.csv",
+  "publisher_workbook": "emdat_all_disasters_2026-05-18.xlsx",
+  "publisher_workbook_sha256": "fbf43fe73135aa57423a6b8614ba05ae27f67e812266a465b8bef4a209989742",
+  "raw_rows": 11712,
+  "schema_version": 1
+}
