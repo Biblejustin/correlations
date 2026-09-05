@@ -91,7 +91,7 @@ make test
 
 ## Continuous integration
 
-The prepared `.github/workflows/tests.yml` installs the same pins on Python 3.13, verifies the
+`.github/workflows/tests.yml` installs the same pins on Python 3.13, verifies the
 environment, runs `make test` on Ubuntu and prints the installed package versions.
 It runs for pushes to `main`, pull requests and manual dispatches in repositories
 owned by `Biblejustin`. It does not run live data refreshes, read GitHub secrets,
@@ -99,12 +99,11 @@ persist checkout credentials, or publish artifacts. Fixture tests cover stale
 module metadata, missing dependencies and Make's failure propagation as well as
 the source and statistical integrity checks.
 
-Activation is pending: GitHub rejected the workflow push because the current
-Biblejustin OAuth token lacks `workflow` scope. The complete workflow is preserved
-on the local `complete-monitoring-operations` branch and as a separate pending
-artifact. Monitoring code and local checks are published independently. CI must
-not be described as active until the required GitHub permission is granted and
-the workflow is pushed successfully.
+The workflow was published using an existing SSH key whose public key is
+registered to Biblejustin; GitHub SSH authentication confirmed that account.
+The separate OAuth token does not need broader workflow permissions for
+ordinary generated-data publication. CI has read-only repository permissions
+and cannot publish artifacts or change source catalogs.
 
 ## Scheduled operation
 
