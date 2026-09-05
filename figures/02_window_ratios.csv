@@ -1,0 +1,13 @@
+window_days,mode,ratio,observed,expected_uniform,n_exposure_days,n_event_days,n_targets,status
+0,centered,0.9135265898560826,14,15.325224416517056,22280,406,841,descriptive; no significance test
+0,after,0.9135265898560826,14,15.325224416517056,22280,406,841,descriptive; no significance test
+1,centered,0.8385288579490056,32,38.1620736086176,22280,406,841,descriptive; no significance test
+1,after,0.8533924866022509,23,26.951256732495512,22280,406,841,descriptive; no significance test
+3,centered,0.9835006660527656,79,80.32531418312388,22280,406,841,descriptive; no significance test
+3,after,0.8552462616792534,42,49.10866247755835,22280,406,841,descriptive; no significance test
+7,centered,1.0329257248225594,159,153.93168761220826,22280,406,841,descriptive; no significance test
+7,after,1.0210678432073852,92,90.10175044883303,22280,406,841,descriptive; no significance test
+14,centered,1.0394429590821617,269,258.7924596050269,22280,406,841,descriptive; no significance test
+14,after,1.0134365602032658,156,153.93168761220826,22280,406,841,descriptive; no significance test
+30,centered,0.9948916652674358,417,419.1411131059246,22280,406,841,descriptive; no significance test
+30,after,0.9982488139153161,271,271.4754039497307,22280,406,841,descriptive; no significance test

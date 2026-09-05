@@ -1,0 +1,19 @@
+target,window_days,mode,ratio,observed,expected_uniform,n_exposure_days,n_event_days,n_targets,status
+Recorded global M≥7 quakes,7,centered,0.8670197816452275,9,10.380385996409336,22280,19,841,descriptive; no significance test
+Recorded global M≥7 quakes,14,centered,0.7173922543163822,14,19.51512567324955,22280,19,841,descriptive; no significance test
+Recorded global M≥7 quakes,30,centered,0.7180867289091376,28,38.99250448833034,22280,19,841,descriptive; no significance test
+Recorded global M≥7 quakes,60,centered,0.8640228910580612,65,75.22948833034111,22280,19,841,descriptive; no significance test
+Recorded global M≥7 quakes,90,centered,0.8702168294159026,97,111.46647217235189,22280,19,841,descriptive; no significance test
+Recorded global M≥7 quakes,180,centered,0.8993585055743236,197,219.04501795332138,22280,19,841,descriptive; no significance test
+"Recorded Levant M≥4 quakes, radius≈500km",7,centered,0.5144011544011544,4,7.776032315978456,22280,19,630,descriptive; no significance test
+"Recorded Levant M≥4 quakes, radius≈500km",14,centered,0.4788308618095852,7,14.618940754039498,22280,19,630,descriptive; no significance test
+"Recorded Levant M≥4 quakes, radius≈500km",30,centered,1.6090597581401067,47,29.20960502692998,22280,19,630,descriptive; no significance test
+"Recorded Levant M≥4 quakes, radius≈500km",60,centered,1.8454431781075034,104,56.355026929982046,22280,19,630,descriptive; no significance test
+"Recorded Levant M≥4 quakes, radius≈500km",90,centered,1.628733760125565,136,83.50044883303411,22280,19,630,descriptive; no significance test
+"Recorded Levant M≥4 quakes, radius≈500km",180,centered,1.2676092552018796,208,164.08842010771994,22280,19,630,descriptive; no significance test
+Listed X1+ flares,7,centered,0.4949322493224932,1,2.020478563215244,18263,15,164,descriptive; no significance test
+Listed X1+ flares,14,centered,0.7679983179142137,3,3.9062585555494715,18263,15,164,descriptive; no significance test
+Listed X1+ flares,30,centered,1.506558143371738,12,7.965175491430761,18263,15,164,descriptive; no significance test
+Listed X1+ flares,60,centered,1.0961875238323895,17,15.508295460767672,18263,15,164,descriptive; no significance test
+Listed X1+ flares,90,centered,0.9977695326232576,23,23.051415430104583,18263,15,164,descriptive; no significance test
+Listed X1+ flares,180,centered,0.9468992509778766,43,45.41137819635328,18263,15,164,descriptive; no significance test

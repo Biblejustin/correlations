@@ -1,0 +1,667 @@
+[
+  {
+    "name": "M>=7 quakes",
+    "span": "1900\u20132025",
+    "accel": {
+      "c": 0.01640058115729448,
+      "ci_lo": 0.0057133491137596314,
+      "ci_hi": 0.02701815031766278,
+      "n": 1607,
+      "center": 1965.1666242475983
+    },
+    "gaps": {
+      "slope": -1.020529798266683e-05,
+      "ci_lo": -1.981966358458289e-05,
+      "ci_hi": -9.385795510566194e-07,
+      "n": 1607,
+      "n_gaps": 1606,
+      "mean_gap": 0.07840768726499997,
+      "resolution": "timestamp",
+      "interpretation": "inter-event waiting times",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 1.3499520945071664,
+      "ci_lo": 1.0305372979478544,
+      "ci_hi": 1.675815980090483,
+      "n": 126
+    },
+    "n": 1607,
+    "count_trend": {
+      "slope_per_year": 0.02085039370078742,
+      "ci_lo": -0.004680747204237233,
+      "ci_hi": 0.047094135239394326,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "M>=8 quakes",
+    "span": "1900\u20132025",
+    "accel": {
+      "c": 0.00018912325640836364,
+      "ci_lo": -0.0025623915930506054,
+      "ci_hi": 0.003049330721733941,
+      "n": 100,
+      "center": 1965.2089368518518
+    },
+    "gaps": {
+      "slope": -0.0011340722290816845,
+      "ci_lo": -0.011263526877339211,
+      "ci_hi": 0.007909760463419175,
+      "n": 100,
+      "n_gaps": 99,
+      "mean_gap": 1.2380451753977495,
+      "resolution": "timestamp",
+      "interpretation": "inter-event waiting times",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 0.9663492063492067,
+      "ci_lo": 0.7350109027667425,
+      "ci_hi": 1.1925949705724979,
+      "n": 126
+    },
+    "n": 100,
+    "count_trend": {
+      "slope_per_year": 0.0013258342707161523,
+      "ci_lo": -0.0031882951850366425,
+      "ci_hi": 0.005789679303810279,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "VEI>=6 eruptions",
+    "span": "1500\u20132022",
+    "accel": {
+      "c": 2.0017171355725377e-05,
+      "ci_lo": -0.00010723559853962091,
+      "ci_hi": 0.00016088042276350697,
+      "n": 8,
+      "center": 1792.875
+    },
+    "gaps": {
+      "slope": -2.1071428571428537,
+      "ci_lo": -19.408035714285706,
+      "ci_hi": 14.963488520408164,
+      "n": 8,
+      "n_gaps": 7,
+      "mean_gap": 58.714285714285715,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 0.9847036328871891,
+      "ci_lo": 0.9732313575525814,
+      "ci_hi": 0.9942638623326956,
+      "n": 523
+    },
+    "n": 8,
+    "count_trend": {
+      "slope_per_year": 2.1390352799896532e-05,
+      "ci_lo": -4.729329372082957e-05,
+      "ci_hi": 8.367537377219489e-05,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "X1+ flares",
+    "span": "1976\u20132025",
+    "accel": {
+      "c": 0.06384162186414624,
+      "ci_lo": 0.0463203615966611,
+      "ci_hi": 0.08157029580819158,
+      "n": 164,
+      "center": 2010.0068477175337
+    },
+    "gaps": {
+      "slope": -0.004119441535798057,
+      "ci_lo": -0.006590315079698381,
+      "ci_hi": -0.001486138957553575,
+      "n": 164,
+      "n_gaps": 163,
+      "mean_gap": 0.30201408301290017,
+      "resolution": "timestamp",
+      "interpretation": "inter-event waiting times",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 7.183414634146342,
+      "ci_lo": 3.7991259198129423,
+      "ci_hi": 10.197107310215557,
+      "n": 50
+    },
+    "n": 164,
+    "count_trend": {
+      "slope_per_year": 0.1413685474189674,
+      "ci_lo": 0.04028442935397471,
+      "ci_hi": 0.24199731928305346,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Big wars (>=1M deaths)",
+    "span": "1500\u20132025",
+    "accel": {
+      "c": 0.0001970076158304717,
+      "ci_lo": 5.342787775846416e-05,
+      "ci_hi": 0.00043139031090845645,
+      "n": 29,
+      "center": 1854.9310344827586
+    },
+    "gaps": {
+      "slope": -1.189381499726327,
+      "ci_lo": -2.186874844402022,
+      "ci_hi": -0.13743307601809351,
+      "n": 29,
+      "n_gaps": 28,
+      "mean_gap": 15.571428571428571,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 0.9448669201520916,
+      "ci_lo": 0.9182509505703421,
+      "ci_hi": 0.9695817490494294,
+      "n": 526
+    },
+    "n": 29,
+    "count_trend": {
+      "slope_per_year": 0.0002210249977582105,
+      "ci_lo": 7.607118032423379e-05,
+      "ci_hi": 0.00038065512968834945,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Big interstate wars (basileia, >=100k deaths)",
+    "span": "1500\u20132025",
+    "accel": {
+      "c": 0.00016178432647286764,
+      "ci_lo": 3.1177240060542804e-05,
+      "ci_hi": 0.00030206563238371724,
+      "n": 57,
+      "center": 1816.6491228070176
+    },
+    "gaps": {
+      "slope": -0.21981900452488692,
+      "ci_lo": -0.35358788845437245,
+      "ci_hi": -0.09963998812473136,
+      "n": 52,
+      "n_gaps": 51,
+      "mean_gap": 10.098039215686274,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 1.0670735774798212,
+      "ci_lo": 0.9531995793220611,
+      "ci_hi": 1.1749450029034263,
+      "n": 526
+    },
+    "n": 57,
+    "count_trend": {
+      "slope_per_year": 0.000254502389696219,
+      "ci_lo": 8.378193257836412e-05,
+      "ci_hi": 0.0004379548622605646,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Big intrastate wars (ethnos, >=100k deaths)",
+    "span": "1500\u20132025",
+    "accel": {
+      "c": 0.0003959414500583243,
+      "ci_lo": 0.0002670534305991987,
+      "ci_hi": 0.0007378828109123439,
+      "n": 45,
+      "center": 1916.6222222222223
+    },
+    "gaps": {
+      "slope": -0.9338056680161942,
+      "ci_lo": -1.508684698159288,
+      "ci_hi": -0.3463203830582374,
+      "n": 40,
+      "n_gaps": 39,
+      "mean_gap": 11.820512820512821,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 1.1811153358681878,
+      "ci_lo": 0.9647625784773189,
+      "ci_hi": 1.4477466956364295,
+      "n": 526
+    },
+    "n": 45,
+    "count_trend": {
+      "slope_per_year": 0.0005718779600641928,
+      "ci_lo": 0.00038601367497088517,
+      "ci_hi": 0.0007637515539399078,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Great famines (>=1M deaths)",
+    "span": "1870\u20132023",
+    "accel": {
+      "c": 0.000650776401797743,
+      "ci_lo": -0.0011817916579525412,
+      "ci_hi": 0.004014443241875655,
+      "n": 32,
+      "center": 1926.5625
+    },
+    "gaps": {
+      "slope": -0.08413325804630148,
+      "ci_lo": -0.36521818041531756,
+      "ci_hi": 0.19909571071159912,
+      "n": 23,
+      "n_gaps": 22,
+      "mean_gap": 4.5,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 1.792207792207792,
+      "ci_lo": 1.0541125541125544,
+      "ci_hi": 2.3943432764226196,
+      "n": 154
+    },
+    "n": 32,
+    "count_trend": {
+      "slope_per_year": -0.0020963223999277037,
+      "ci_lo": -0.004847805482434901,
+      "ci_hi": 0.0005670580392135733,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Great pandemics (>=1M deaths)",
+    "span": "1500\u20132025",
+    "accel": {
+      "c": 7.114684217446623e-05,
+      "ci_lo": -7.425807799419165e-06,
+      "ci_hi": 0.0001624581176354333,
+      "n": 14,
+      "center": 1842.0
+    },
+    "gaps": {
+      "slope": -4.615384615384614,
+      "ci_lo": -9.40786136939983,
+      "ci_hi": 1.1990912933220617,
+      "n": 14,
+      "n_gaps": 13,
+      "mean_gap": 36.46153846153846,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 0.9733840304182507,
+      "ci_lo": 0.9600760456273764,
+      "ci_hi": 0.9866920152091253,
+      "n": 526
+    },
+    "n": 14,
+    "count_trend": {
+      "slope_per_year": 9.177422962316294e-05,
+      "ci_lo": 9.73136846172158e-06,
+      "ci_hi": 0.0001773298236953925,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Great cyclones (>=10k deaths)",
+    "span": "1737\u20132024",
+    "accel": {
+      "c": 0.00021317083482709533,
+      "ci_lo": 2.4805109301306373e-06,
+      "ci_hi": 0.0006674056678507323,
+      "n": 18,
+      "center": 1923.7222222222222
+    },
+    "gaps": {
+      "slope": -2.0647058823529396,
+      "ci_lo": -3.682789359861589,
+      "ci_hi": -0.5048220155709335,
+      "n": 17,
+      "n_gaps": 16,
+      "mean_gap": 17.875,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 1.0486111111111112,
+      "ci_lo": 0.9269965277777779,
+      "ci_hi": 1.287357954545454,
+      "n": 288
+    },
+    "n": 18,
+    "count_trend": {
+      "slope_per_year": 0.0003908306507681962,
+      "ci_lo": 7.480929077465837e-05,
+      "ci_hi": 0.000739784032580819,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Major floods (>=1000 deaths)",
+    "span": "1900\u20132025",
+    "accel": {
+      "c": 0.004893704126746165,
+      "ci_lo": 0.001611588642817411,
+      "ci_hi": 0.007916708421922236,
+      "n": 82,
+      "center": 1981.1463414634147
+    },
+    "gaps": {
+      "slope": -0.048061224489795835,
+      "ci_lo": -0.08457787276134936,
+      "ci_hi": -0.00970853550603909,
+      "n": 50,
+      "n_gaps": 49,
+      "mean_gap": 2.3469387755102042,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 1.3492063492063495,
+      "ci_lo": 1.0565542625107756,
+      "ci_hi": 1.6900892857142853,
+      "n": 126
+    },
+    "n": 82,
+    "count_trend": {
+      "slope_per_year": 0.009172853393325834,
+      "ci_lo": 0.004117277740057495,
+      "ci_hi": 0.014211707062151534,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Major droughts (>=1M affected)",
+    "span": "1850\u20132024",
+    "accel": {
+      "c": 0.0004407041595192696,
+      "ci_lo": -0.003511408520057149,
+      "ci_hi": 0.0017759178070205764,
+      "n": 12,
+      "center": 1981.3333333333333
+    },
+    "gaps": {
+      "slope": -0.9636363636363636,
+      "ci_lo": -2.315185950413223,
+      "ci_hi": 0.6134090909090902,
+      "n": 12,
+      "n_gaps": 11,
+      "mean_gap": 9.363636363636363,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 0.9314285714285713,
+      "ci_lo": 0.8857142857142858,
+      "ci_hi": 0.9657142857142857,
+      "n": 175
+    },
+    "n": 12,
+    "count_trend": {
+      "slope_per_year": 0.0011912225705329128,
+      "ci_lo": 0.0004573609135972661,
+      "ci_hi": 0.001886091791410404,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Major refugee crises (>=1M)",
+    "span": "1947\u20132025",
+    "accel": {
+      "c": 0.004064704393312809,
+      "ci_lo": 0.0009242036831437225,
+      "ci_hi": 0.008808333621431165,
+      "n": 27,
+      "center": 1997.7777777777778
+    },
+    "gaps": {
+      "slope": -0.2610389610389611,
+      "ci_lo": -0.429772769438354,
+      "ci_hi": -0.09409639062236472,
+      "n": 22,
+      "n_gaps": 21,
+      "mean_gap": 3.619047619047619,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 1.1026722925457102,
+      "ci_lo": 0.7708424268878219,
+      "ci_hi": 1.4315047294477654,
+      "n": 79
+    },
+    "n": 27,
+    "count_trend": {
+      "slope_per_year": 0.00774099318403125,
+      "ci_lo": 0.0024121218282138405,
+      "ci_hi": 0.012921524747115217,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Severe economic crises",
+    "span": "1800\u20132023",
+    "accel": {
+      "c": 0.0008346515826656562,
+      "ci_lo": 0.00020586488049826365,
+      "ci_hi": 0.0020615283551241844,
+      "n": 25,
+      "center": 1962.04
+    },
+    "gaps": {
+      "slope": -0.7291304347826092,
+      "ci_lo": -1.1216257325141785,
+      "ci_hi": -0.36049599716446246,
+      "n": 25,
+      "n_gaps": 24,
+      "mean_gap": 7.625,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 0.8883928571428572,
+      "ci_lo": 0.8347098214285713,
+      "ci_hi": 0.9375,
+      "n": 224
+    },
+    "n": 25,
+    "count_trend": {
+      "slope_per_year": 0.001349028400597911,
+      "ci_lo": 0.0007121875376544886,
+      "ci_hi": 0.0020020066299522026,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Successful coups",
+    "span": "1950\u20132023",
+    "accel": {
+      "c": -0.000984622771828774,
+      "ci_lo": -0.00748454557844423,
+      "ci_hi": 0.00500891241167817,
+      "n": 66,
+      "center": 1987.5151515151515
+    },
+    "gaps": {
+      "slope": 0.0019909502262443228,
+      "ci_lo": -0.014999402551135353,
+      "ci_hi": 0.018755458323949113,
+      "n": 52,
+      "n_gaps": 51,
+      "mean_gap": 1.4313725490196079,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 0.6232596232596231,
+      "ci_lo": 0.4269289392577065,
+      "ci_hi": 0.8330107428511679,
+      "n": 74
+    },
+    "n": 66,
+    "count_trend": {
+      "slope_per_year": 0.0019844502036282336,
+      "ci_lo": -0.005913782532310433,
+      "ci_hi": 0.009907724167595323,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "NGDC M>=7 (1500+, canonical long-span)",
+    "span": "1500\u20132005",
+    "accel": {
+      "c": 0.01482209265757495,
+      "ci_lo": 0.013826026958549184,
+      "ci_hi": 0.01606971727187435,
+      "n": 1388,
+      "center": 1901.8393371757925
+    },
+    "gaps": {
+      "slope": -0.007823248323335646,
+      "ci_lo": -0.009691963164866233,
+      "ci_hi": -0.0058356317683308095,
+      "n": 313,
+      "n_gaps": 312,
+      "mean_gap": 1.6153846153846154,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 5.592651866364434,
+      "ci_lo": 4.76757751206626,
+      "ci_hi": 6.217810294619104,
+      "n": 506
+    },
+    "n": 1388,
+    "count_trend": {
+      "slope_per_year": 0.01919972805101451,
+      "ci_lo": 0.015520573396092446,
+      "ci_hi": 0.022982660874514015,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "NGDC \u2265100-death volcanoes (1500+)",
+    "span": "1500\u20132025",
+    "accel": {
+      "c": 0.0005413003066171375,
+      "ci_lo": 0.0003583298332256895,
+      "ci_hi": 0.0007435858480850708,
+      "n": 98,
+      "center": 1853.2142857142858
+    },
+    "gaps": {
+      "slope": -0.12249322493224933,
+      "ci_lo": -0.19656276209781068,
+      "ci_hi": -0.04792150927945597,
+      "n": 82,
+      "n_gaps": 81,
+      "mean_gap": 5.888888888888889,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 1.2626678047644915,
+      "ci_lo": 0.9914791012645988,
+      "ci_hi": 1.662204892978891,
+      "n": 526
+    },
+    "n": 98,
+    "count_trend": {
+      "slope_per_year": 0.0007330394441598545,
+      "ci_lo": 0.0004946199113024235,
+      "ci_hi": 0.0009696876187587568,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Mass-casualty terrorism (>=100 deaths/year)",
+    "span": "1994\u20132021",
+    "accel": {
+      "c": -4.6055951503877144e-17,
+      "ci_lo": -0.030026411914262377,
+      "ci_hi": 0.029719987276416594,
+      "n": 28,
+      "center": 2007.5
+    },
+    "gaps": {
+      "slope": -1.1278967652583137e-17,
+      "ci_lo": -3.383690295774941e-17,
+      "ci_hi": -1.1278967652583137e-17,
+      "n": 28,
+      "n_gaps": 27,
+      "mean_gap": 1.0,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 0.0,
+      "ci_lo": 0.0,
+      "ci_hi": 0.0,
+      "n": 28
+    },
+    "n": 28,
+    "count_trend": {
+      "slope_per_year": -1.0033290283677214e-18,
+      "ci_lo": 3.0517924612851527e-18,
+      "ci_hi": 3.0517924612851527e-18,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  },
+  {
+    "name": "Major stock crashes (>=20% drawdown)",
+    "span": "1906\u20132025",
+    "accel": {
+      "c": -0.00030257554926659854,
+      "ci_lo": -0.001453448419688787,
+      "ci_hi": 0.0008400312966183024,
+      "n": 19,
+      "center": 1960.0526315789473
+    },
+    "gaps": {
+      "slope": 0.15479876160990694,
+      "ci_lo": -0.10559559981724506,
+      "ci_hi": 0.41703345506362843,
+      "n": 19,
+      "n_gaps": 18,
+      "mean_gap": 6.444444444444445,
+      "resolution": "year",
+      "interpretation": "inter-onset-year gaps; within-year timing unavailable",
+      "ci_method": "fitted residual circular block bootstrap"
+    },
+    "disp": {
+      "d": 0.8416666666666668,
+      "ci_lo": 0.7916666666666663,
+      "ci_hi": 0.8916666666666664,
+      "n": 120
+    },
+    "n": 19,
+    "count_trend": {
+      "slope_per_year": -0.0007187999166608422,
+      "ci_lo": -0.0021434287117378715,
+      "ci_hi": 0.0007688228522465241,
+      "interpretation": "listed events per observed calendar year; block residual CI"
+    }
+  }
+]

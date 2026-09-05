@@ -1,0 +1,13 @@
+window_days,mode,ratio,observed,expected_uniform,n_exposure_days,n_event_days,n_targets,status
+0,centered,1.5138428381962865,9,5.945134972348464,18263,156,696,descriptive; no significance test
+0,after,1.5138428381962865,9,5.945134972348464,18263,156,696,descriptive; no significance test
+1,centered,0.9576621360852421,15,15.663144061764223,18263,156,696,descriptive; no significance test
+1,after,1.1762732857709077,13,11.051853474237529,18263,156,696,descriptive; no significance test
+3,centered,0.9944232498665093,31,31.1738487652631,18263,156,696,descriptive; no significance test
+3,after,1.1122904347440923,22,19.779006734928544,18263,156,696,descriptive; no significance test
+7,centered,1.0570996990133914,62,58.65104309259158,18263,156,696,descriptive; no significance test
+7,after,1.0945310824280505,38,34.718063844932374,18263,156,696,descriptive; no significance test
+14,centered,1.1255477026499805,115,102.17247987734764,18263,156,696,descriptive; no significance test
+14,after,1.2446496456125413,73,58.65104309259158,18263,156,696,descriptive; no significance test
+30,centered,1.1012588492613724,191,173.43787986639654,18263,156,696,descriptive; no significance test
+30,after,1.1315917244629718,122,107.81273613316542,18263,156,696,descriptive; no significance test

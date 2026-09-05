@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-09-05T00:43:20.335855+00:00",
+  "design": {
+    "schema_version": 1,
+    "study_start": "1991-01-01",
+    "study_end": "2024-12-31",
+    "study_basis": "Frozen historical 1991-2024 scope stated by existing curated-list README; latest event date is not a completeness endpoint.",
+    "noaa": {
+      "start": "1980-01-01",
+      "end": "2024-12-31",
+      "basis": "Source CSV header: Weather and Climate Billion-Dollar Disasters to affect the U.S. from 1980-2024",
+      "source_url": "https://www.ncei.noaa.gov/access/billions/events-US-1980-2025.csv"
+    },
+    "fema": {
+      "start": "1991-01-01",
+      "end": "2024-12-31",
+      "basis": "Historical analysis cap within downloaded catalog; declarations can be revised retrospectively. Not inferred from latest onset.",
+      "source_url": "https://www.fema.gov/openfema-data-page/disaster-declarations-summaries-v2"
+    },
+    "curation_status": "Historical selection retained unchanged. Original CSVs lack per-event source URL and decision timestamp; completeness and original outcome-blind curation have not been independently established. No prospective event-monitor claim.",
+    "tails": {
+      "PRESSURE": "upper",
+      "PRO-ISRAEL": "lower"
+    },
+    "multiplicity": "20 tests per null (2 lists x 2 datasets x 5 windows); BH reported separately for circular-shift and year-shuffle p values"
+  },
+  "tests": 20,
+  "permutations": 20000,
+  "seed": 20260719,
+  "input_sha256": {
+    "coverage.json": "8888d1b5c6b6f6ae2ec7d8ce7c0557d28eef8326a42c24c3e133549cb0ed68bc",
+    "noaa_billion_dollar_events.csv": "fbe9bbcba93bd90e8e49aed9ca6f93869c5d136b1903ea00c50f8bc9ef36b976",
+    "fema_declarations.csv": "645d3f8da9f2a258ba03e2455a26d038f2cc9f0d0bc018459af401d640f255f3",
+    "us_pressure_events.csv": "732e5b192b227ebffc3085af3bdfc338b0f28a57e484a3364f94598d447c93c9",
+    "us_proisrael_events.csv": "55d308c38bb7029cc961942ae56b3f362d4405eb5a3f3a0b195913fbbcb403d7"
+  }
+}

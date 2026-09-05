@@ -1,0 +1,70 @@
+{
+  "method": "independent circular moving-block null",
+  "block_lengths": [
+    3,
+    5,
+    10
+  ],
+  "selected_p": "maximum across prespecified block lengths",
+  "n_boot": 20000,
+  "planned_family_size": 45,
+  "coverage": {
+    "M>=7 quakes": {
+      "observed_years": 126,
+      "first": 1900,
+      "last": 2025
+    },
+    "War deaths log10": {
+      "observed_years": 126,
+      "first": 1900,
+      "last": 2025
+    },
+    "Famine deaths log10 (WPF)": {
+      "observed_years": 124,
+      "first": 1900,
+      "last": 2023
+    },
+    "Flood deaths log10": {
+      "observed_years": 50,
+      "first": 1900,
+      "last": 1962
+    },
+    "Pandemic deaths log10": {
+      "observed_years": 126,
+      "first": 1900,
+      "last": 2025
+    },
+    "Volcanoes VEI>=5": {
+      "observed_years": 123,
+      "first": 1900,
+      "last": 2022
+    },
+    "Cyclone deaths log10": {
+      "observed_years": 125,
+      "first": 1900,
+      "last": 2024
+    },
+    "X1+ flares": {
+      "observed_years": 50,
+      "first": 1976,
+      "last": 2025
+    },
+    "Terrorism deaths log10": {
+      "observed_years": 51,
+      "first": 1970,
+      "last": 2021
+    },
+    "Stock crash intensity log10": {
+      "observed_years": 120,
+      "first": 1906,
+      "last": 2025
+    }
+  },
+  "overlap": "longest contiguous finite observed annual overlap, minimum20 years; refit regime trends on overlap",
+  "limitations": [
+    "approximate stationary residual-block null",
+    "iid p is diagnostic only",
+    "selected-event allocation proxies and historical reporting changes",
+    "no causality or independence conclusion from nonsignificance"
+  ]
+}

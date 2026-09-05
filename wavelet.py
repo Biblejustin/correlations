@@ -1,28 +1,20 @@
 """
-Wavelet coherence on the wars↔famines pair (the FDR-significant result).
+Descriptive war/famine Morlet wavelet coherence on one observed annual grid.
 
-Full-span Pearson r = +0.43 is a single number that averages over the entire
-1900-2025 span. Wavelet coherence is time-resolved: it computes coherence
-between two series at each (time, frequency) point, revealing whether the
-coupling is constant over time or concentrated in specific eras.
-
-Hypothesis: the wars↔famines coupling is likely strongest during the
-WWI-WWII era (1914-1945) when major wars caused major famines (Russian
-Civil War + Volga famine; Bengal famine 1942; Greek famine 1941; Dutch
-Hunger Winter; Vietnamese famine). It probably weakens after 1945.
-
-Implementation uses Morlet wavelets via scipy. Phase difference at the
-coherence peak indicates lead/lag.
-
-Writes figures/25_wavelet_coherence_wars_famines.png.
+Every war variant and famine shares the longest finite contiguous overlap.
+Missing years are not imputed or compressed. Era summaries exclude the edge
+region. Coherence is descriptive: no surrogate significance test or causal
+attribution is provided. NPZ stores all cells, phase, periods, and edge mask.
 """
 import argparse
+import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy import signal
+from statistical_helpers import contiguous_overlap, last_complete_year
 
 from correlate_events import (
     load_yearly_war_deaths_active,
@@ -37,6 +29,13 @@ def cwt_coherence(x, y, scales, dt=1.0):
     Returns (coherence_matrix, phase_matrix) of shape (n_scales, n_times).
     Smoothing across time and scale follows Torrence & Webster 1999.
     """
+    x, y, scales = np.asarray(x, float), np.asarray(y, float), np.asarray(scales, float)
+    if x.ndim != 1 or y.shape != x.shape or len(x) < 8:
+        raise ValueError("Need equal one-dimensional series with at least eight observations")
+    if not np.isfinite(x).all() or not np.isfinite(y).all():
+        raise ValueError("Wavelet input contains missing or nonfinite observations")
+    if np.std(x) == 0 or np.std(y) == 0 or len(scales) < 3 or np.any(scales <= 0):
+        raise ValueError("Wavelet needs variable series and at least three positive scales")
     n = len(x)
     w0 = 6.0  # Morlet base frequency
     Wx = np.zeros((len(scales), n), dtype=complex)
@@ -54,9 +53,9 @@ def cwt_coherence(x, y, scales, dt=1.0):
         Wy[i] = np.fft.ifft(Yf * psi_hat)
 
     # Cross-spectrum
-    Wxy = Wx * np.conj(Wy)
-    Sxx = np.abs(Wx) ** 2
-    Syy = np.abs(Wy) ** 2
+    Wxy = Wx * np.conj(Wy) / scales[:, None]
+    Sxx = np.abs(Wx) ** 2 / scales[:, None]
+    Syy = np.abs(Wy) ** 2 / scales[:, None]
 
     # Smoothing: Gaussian along time with width 2*scale, plus 1.2-wide along scale.
     # This is the Torrence-Compo standard for wavelet coherence.
@@ -100,28 +99,41 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--wars-csv", default="data/wars.csv")
     ap.add_argument("--famines-wpf-csv", default="data/famine_deaths_by_year.csv")
+    ap.add_argument("--year-hi", type=int, default=last_complete_year())
     ap.add_argument("--out", default="figures")
     args = ap.parse_args()
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
 
-    # Load both series 1900-2025; also split by war type for follow-up panels
-    wars = load_yearly_war_deaths_active(args.wars_csv, 1900, 2025)
-    famines = load_yearly_famine_deaths_wpf(args.famines_wpf_csv, 1900, 2025)
-    wars_intra = load_yearly_war_deaths_split(args.wars_csv, "intrastate", 1900, 2025)
-    wars_inter = load_yearly_war_deaths_split(args.wars_csv, "interstate", 1900, 2025)
-    wars_log = np.log10(wars + 1).values
-    famines_log = np.log10(famines + 1).values
-    years = wars.index.values
-
-    # Normalize (zero mean, unit variance)
-    x = (wars_log - wars_log.mean()) / wars_log.std()
-    y = (famines_log - famines_log.mean()) / famines_log.std()
+    # Load both series 1900 through requested complete-year cutoff; also split by war type for follow-up panels
+    wars = load_yearly_war_deaths_active(args.wars_csv, 1900, args.year_hi)
+    famines = load_yearly_famine_deaths_wpf(args.famines_wpf_csv, 1900, args.year_hi)
+    wars_intra = load_yearly_war_deaths_split(args.wars_csv, "intrastate", 1900, args.year_hi)
+    wars_inter = load_yearly_war_deaths_split(args.wars_csv, "interstate", 1900, args.year_hi)
+    aligned = contiguous_overlap({"wars": wars, "famines": famines,
+                                  "interstate": wars_inter, "intrastate": wars_intra}, min_years=30)
+    wars, famines = aligned["wars"], aligned["famines"]
+    wars_inter, wars_intra = aligned["interstate"], aligned["intrastate"]
+    logged = np.log10(aligned + 1)
+    normalized = (logged - logged.mean()) / logged.std(ddof=0)
+    years = aligned.index.to_numpy()
+    x, y = normalized["wars"].to_numpy(), normalized["famines"].to_numpy()
+    print(f"Observed contiguous overlap: {years[0]}–{years[-1]} ({len(years)} years)")
 
     # Scales corresponding to periods of 2 to 60 years
     periods = np.logspace(np.log10(2), np.log10(60), 50)
-    scales = periods / (2 * np.pi / 6.0)  # Morlet w0=6 conversion
+    fourier_factor = 4 * np.pi / (6 + np.sqrt(38))
+    scales = periods / fourier_factor
 
     coh, phase = cwt_coherence(x, y, scales)
+    coi_period = np.minimum(years - years[0], years[-1] - years) * fourier_factor / np.sqrt(2)
+    reliable = periods[:, None] <= coi_period[None, :]
+    np.savez_compressed(out / "25_wavelet_coherence.npz", years=years, periods=periods,
+                        coherence=coh, phase=phase, outside_edge_region=reliable)
+    metadata = {"start_year": int(years[0]), "end_year": int(years[-1]),
+                "n_years": len(years), "finite_cells": int(np.isfinite(coh).sum()),
+                "total_cells": int(coh.size), "interpretation": "descriptive; no significance calibration",
+                "era_summaries": []}
+
 
     # ---- Figure ----
     fig, axes = plt.subplots(2, 1, figsize=(14, 9), sharex=True)
@@ -138,7 +150,7 @@ def main():
     ax.axvspan(1958, 1962, color="lightblue", alpha=0.35,
                   label="Great Chinese Famine (no war)")
     ax.set_ylabel("z-score")
-    ax.set_title("Wars and famines, log10 deaths, 1900-2025 — eras shaded")
+    ax.set_title(f"Wars and famines, log10 deaths, {years[0]}–{years[-1]} — eras shaded")
     ax.legend(loc="upper right", fontsize=8.5, ncol=2)
     ax.grid(axis="y", alpha=0.3)
 
@@ -150,13 +162,11 @@ def main():
     ax.set_xlabel("Year")
     ax.invert_yaxis()
     ax.set_title("Wavelet coherence between war deaths and famine deaths\n"
-                  "Red = coupled at that (year, period); blue = uncoupled. "
-                  "Look for hot zones in WWI / WWII / Great Chinese Famine.",
+                  "High coherence describes shared variation; no calibrated significance test.",
                   fontsize=11)
     plt.colorbar(pcm, ax=ax, label="coherence", shrink=0.85)
     # Cone of influence: edge effects beyond +/- 1 scale from edge
-    coi = np.minimum(years - years[0], years[-1] - years) * np.sqrt(2)
-    coi_period_eq = coi
+    coi_period_eq = coi_period
     ax.fill_between(years, coi_period_eq, periods.max(),
                        color="white", alpha=0.6, label="cone of influence")
     ax.set_ylim(periods.max(), periods.min())
@@ -175,11 +185,13 @@ def main():
              (1939, 1945, "WWII era"),
              (1946, 1962, "Post-WWII / GCF"),
              (1963, 1989, "Cold War late"),
-             (1990, 2025, "Post-Cold-War")]
+             (1990, args.year_hi, "Post-Cold-War")]
     for s, e, name in eras:
         y_mask = (years >= s) & (years <= e)
-        sub = coh[band_mask][:, y_mask]
+        sub = np.where(reliable, coh, np.nan)[band_mask][:, y_mask]
+        sub = sub[np.isfinite(sub)]
         if sub.size > 0:
+            metadata["era_summaries"].append({"era": name, "mean": float(sub.mean()), "peak": float(sub.max()), "n_cells": int(sub.size)})
             print(f"  {name:<20} ({s}-{e}): mean coh = {sub.mean():.3f}, "
                     f"peak = {sub.max():.3f}")
 
@@ -192,9 +204,12 @@ def main():
         coh_split, _ = cwt_coherence(x_l, y, scales)
         for s, e, era_name in eras:
             y_mask = (years >= s) & (years <= e)
-            sub = coh_split[band_mask][:, y_mask]
+            sub = np.where(reliable, coh_split, np.nan)[band_mask][:, y_mask]
+            sub = sub[np.isfinite(sub)]
             if sub.size > 0:
                 print(f"  {label:<28} {era_name:<18}: mean coh = {sub.mean():.3f}")
+
+    (out / "25_wavelet_results.json").write_text(json.dumps(metadata, indent=2))
 
 
 if __name__ == "__main__":

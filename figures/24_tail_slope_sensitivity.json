@@ -1,0 +1,434 @@
+[
+  {
+    "indicator":"M>=7 quakes (1900+)",
+    "drop_top_n":0,
+    "slope":0.208503937,
+    "standardized_slope":0.0502495776,
+    "n":126,
+    "dropped":[
+
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"M>=7 quakes (1900+)",
+    "drop_top_n":1,
+    "slope":0.178637725,
+    "standardized_slope":0.0430518021,
+    "n":125,
+    "dropped":[
+      2010
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"M>=7 quakes (1900+)",
+    "drop_top_n":3,
+    "slope":0.2317825119,
+    "standardized_slope":0.0558597285,
+    "n":123,
+    "dropped":[
+      2010,
+      1938,
+      1906
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"M>=7 quakes (1900+)",
+    "drop_top_n":5,
+    "slope":0.2659408348,
+    "standardized_slope":0.0640919055,
+    "n":121,
+    "dropped":[
+      2010,
+      1938,
+      1906,
+      1905,
+      1968
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"M>=8 quakes (1900+)",
+    "drop_top_n":0,
+    "slope":0.0132583427,
+    "standardized_slope":0.0151393583,
+    "n":126,
+    "dropped":[
+
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"M>=8 quakes (1900+)",
+    "drop_top_n":1,
+    "slope":0.0246900784,
+    "standardized_slope":0.0281929612,
+    "n":125,
+    "dropped":[
+      1906
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"M>=8 quakes (1900+)",
+    "drop_top_n":3,
+    "slope":0.0226707174,
+    "standardized_slope":0.0258871053,
+    "n":123,
+    "dropped":[
+      1906,
+      2007,
+      1918
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"M>=8 quakes (1900+)",
+    "drop_top_n":5,
+    "slope":0.0186851902,
+    "standardized_slope":0.0213361349,
+    "n":121,
+    "dropped":[
+      1906,
+      2007,
+      1918,
+      2021,
+      1917
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"VEI>=5 (1900+)",
+    "drop_top_n":0,
+    "slope":-0.000967355,
+    "standardized_slope":-0.0029952804,
+    "n":123,
+    "dropped":[
+
+    ],
+    "start_year":1900,
+    "end_year":2022
+  },
+  {
+    "indicator":"VEI>=5 (1900+)",
+    "drop_top_n":1,
+    "slope":-0.0047057287,
+    "standardized_slope":-0.0145706357,
+    "n":122,
+    "dropped":[
+      1991
+    ],
+    "start_year":1900,
+    "end_year":2022
+  },
+  {
+    "indicator":"VEI>=5 (1900+)",
+    "drop_top_n":3,
+    "slope":0.0021980364,
+    "standardized_slope":0.0068059146,
+    "n":120,
+    "dropped":[
+      1991,
+      1902,
+      1907
+    ],
+    "start_year":1900,
+    "end_year":2022
+  },
+  {
+    "indicator":"VEI>=5 (1900+)",
+    "drop_top_n":5,
+    "slope":0.0075403155,
+    "standardized_slope":0.02334754,
+    "n":118,
+    "dropped":[
+      1991,
+      1902,
+      1907,
+      1912,
+      1931
+    ],
+    "start_year":1900,
+    "end_year":2022
+  },
+  {
+    "indicator":"X1+ flares (1976+)",
+    "drop_top_n":0,
+    "slope":1.4136854742,
+    "standardized_slope":0.2912395868,
+    "n":50,
+    "dropped":[
+
+    ],
+    "start_year":1976,
+    "end_year":2025
+  },
+  {
+    "indicator":"X1+ flares (1976+)",
+    "drop_top_n":1,
+    "slope":0.9657480315,
+    "standardized_slope":0.1989580163,
+    "n":49,
+    "dropped":[
+      2024
+    ],
+    "start_year":1976,
+    "end_year":2025
+  },
+  {
+    "indicator":"X1+ flares (1976+)",
+    "drop_top_n":3,
+    "slope":0.7017291584,
+    "standardized_slope":0.1445663225,
+    "n":47,
+    "dropped":[
+      2024,
+      2014,
+      2013
+    ],
+    "start_year":1976,
+    "end_year":2025
+  },
+  {
+    "indicator":"X1+ flares (1976+)",
+    "drop_top_n":5,
+    "slope":0.4275143257,
+    "standardized_slope":0.088074114,
+    "n":45,
+    "dropped":[
+      2024,
+      2014,
+      2013,
+      2023,
+      2005
+    ],
+    "start_year":1976,
+    "end_year":2025
+  },
+  {
+    "indicator":"War deaths log10 (1900+)",
+    "drop_top_n":0,
+    "slope":0.0407838027,
+    "standardized_slope":0.0371852414,
+    "n":126,
+    "dropped":[
+
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"War deaths log10 (1900+)",
+    "drop_top_n":1,
+    "slope":0.0432763464,
+    "standardized_slope":0.0394578553,
+    "n":125,
+    "dropped":[
+      1939
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"War deaths log10 (1900+)",
+    "drop_top_n":3,
+    "slope":0.0480728665,
+    "standardized_slope":0.0438311542,
+    "n":123,
+    "dropped":[
+      1939,
+      1940,
+      1941
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"War deaths log10 (1900+)",
+    "drop_top_n":5,
+    "slope":0.0526119596,
+    "standardized_slope":0.0479697401,
+    "n":121,
+    "dropped":[
+      1939,
+      1940,
+      1941,
+      1942,
+      1943
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"Famine deaths log10 (1900+)",
+    "drop_top_n":0,
+    "slope":-0.0332971962,
+    "standardized_slope":-0.0140891012,
+    "n":124,
+    "dropped":[
+
+    ],
+    "start_year":1900,
+    "end_year":2023
+  },
+  {
+    "indicator":"Famine deaths log10 (1900+)",
+    "drop_top_n":1,
+    "slope":-0.0330186347,
+    "standardized_slope":-0.013971233,
+    "n":123,
+    "dropped":[
+      1960
+    ],
+    "start_year":1900,
+    "end_year":2023
+  },
+  {
+    "indicator":"Famine deaths log10 (1900+)",
+    "drop_top_n":3,
+    "slope":-0.0299384539,
+    "standardized_slope":-0.0126679107,
+    "n":121,
+    "dropped":[
+      1960,
+      1961,
+      1943
+    ],
+    "start_year":1900,
+    "end_year":2023
+  },
+  {
+    "indicator":"Famine deaths log10 (1900+)",
+    "drop_top_n":5,
+    "slope":-0.0268089004,
+    "standardized_slope":-0.0113436972,
+    "n":119,
+    "dropped":[
+      1960,
+      1961,
+      1943,
+      1959,
+      1944
+    ],
+    "start_year":1900,
+    "end_year":2023
+  },
+  {
+    "indicator":"Pandemic deaths log10 (1900+)",
+    "drop_top_n":0,
+    "slope":0.0702875292,
+    "standardized_slope":0.0640031439,
+    "n":126,
+    "dropped":[
+
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"Pandemic deaths log10 (1900+)",
+    "drop_top_n":1,
+    "slope":0.0762223631,
+    "standardized_slope":0.0694073461,
+    "n":125,
+    "dropped":[
+      1918
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"Pandemic deaths log10 (1900+)",
+    "drop_top_n":3,
+    "slope":0.0883375177,
+    "standardized_slope":0.0804392887,
+    "n":123,
+    "dropped":[
+      1918,
+      1919,
+      1920
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"Pandemic deaths log10 (1900+)",
+    "drop_top_n":5,
+    "slope":0.0842152468,
+    "standardized_slope":0.0766855887,
+    "n":121,
+    "dropped":[
+      1918,
+      1919,
+      1920,
+      2019,
+      2020
+    ],
+    "start_year":1900,
+    "end_year":2025
+  },
+  {
+    "indicator":"Cyclone deaths log10 (1950+)",
+    "drop_top_n":0,
+    "slope":0.2143974924,
+    "standardized_slope":0.1283331792,
+    "n":75,
+    "dropped":[
+
+    ],
+    "start_year":1950,
+    "end_year":2024
+  },
+  {
+    "indicator":"Cyclone deaths log10 (1950+)",
+    "drop_top_n":1,
+    "slope":0.2399083507,
+    "standardized_slope":0.143603365,
+    "n":74,
+    "dropped":[
+      1970
+    ],
+    "start_year":1950,
+    "end_year":2024
+  },
+  {
+    "indicator":"Cyclone deaths log10 (1950+)",
+    "drop_top_n":3,
+    "slope":0.2115323863,
+    "standardized_slope":0.1266181956,
+    "n":72,
+    "dropped":[
+      1970,
+      1991,
+      2008
+    ],
+    "start_year":1950,
+    "end_year":2024
+  },
+  {
+    "indicator":"Cyclone deaths log10 (1950+)",
+    "drop_top_n":5,
+    "slope":0.2100814673,
+    "standardized_slope":0.1257497105,
+    "n":70,
+    "dropped":[
+      1970,
+      1991,
+      2008,
+      1965,
+      2023
+    ],
+    "start_year":1950,
+    "end_year":2024
+  }
+]

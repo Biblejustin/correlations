@@ -1,0 +1,10 @@
+{
+  "complete_through_year": 2025,
+  "completeness": "systematic_catalog",
+  "end_year": 2025,
+  "gap_years": [],
+  "schema_version": 1,
+  "source_url": "https://ucdp.uu.se/downloads/",
+  "source_version": "v26_1",
+  "start_year": 1946
+}

@@ -1,0 +1,12 @@
+{
+  "complete_through_year": 2021,
+  "completeness": "systematic_catalog",
+  "end_year": 2021,
+  "gap_years": [
+    1993
+  ],
+  "schema_version": 1,
+  "source_url": "https://ourworldindata.org/grapher/terrorism-deaths.csv",
+  "source_version": "OWID/GTD live export",
+  "start_year": 1970
+}

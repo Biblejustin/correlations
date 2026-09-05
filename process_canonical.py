@@ -6,7 +6,7 @@ turns them into the catalogs the analyses read:
 
   data/_owid_terrorist_attacks.csv + data/_owid_terrorism_deaths.csv
       -> data/terrorism.csv          (year, events, deaths; World aggregate)
-  data/_ucdp_prio_v25_1.zip
+  data/_ucdp_prio_v26_1.zip
       -> data/ucdp_prio_conflicts.csv
 
 Every replacement goes through fetch_guard.safe_replace, so a bad upstream
@@ -20,6 +20,8 @@ from pathlib import Path
 import pandas as pd
 
 from fetch_guard import guard_or_exit
+from flare_ingest import ingest_recent_flares
+from source_tracking import write_json_if_changed
 
 
 def process_owid_terrorism(data: Path) -> None:
@@ -35,18 +37,27 @@ def process_owid_terrorism(data: Path) -> None:
     dth_w = dth[dth["Code"] == "OWID_WRL"][["Year", "Fatalities"]].rename(
         columns={"Year": "year", "Fatalities": "deaths"})
     m = att_w.merge(dth_w, on="year", how="outer").sort_values("year")
-    m["events"] = m["events"].fillna(0).astype(int)
-    m["deaths"] = m["deaths"].fillna(0).astype(int)
+    # Missing annual observations are unknown, including GTD's lost 1993 records.
+    m.loc[m['year'] == 1993, ['events', 'deaths']] = float('nan')
+    m["events"] = m["events"].astype('Int64')
+    m["deaths"] = m["deaths"].astype('Int64')
     tmp = data / "_terrorism.tmp.csv"
     m.to_csv(tmp, index=False)
     guard_or_exit(tmp, data / "terrorism.csv",
                     required_cols=["year", "events", "deaths"])
+    write_json_if_changed(data / 'terrorism.csv.coverage.json', {
+        'schema_version': 1, 'start_year': int(m.year.min()), 'end_year': int(m.year.max()),
+        'complete_through_year': int(m.year.max()), 'gap_years': [1993],
+        'completeness': 'systematic_catalog', 'source_version': 'OWID/GTD live export',
+        'source_url': 'https://ourworldindata.org/grapher/terrorism-deaths.csv'})
     att_p.unlink()
     dth_p.unlink()
 
 
 def process_ucdp(data: Path) -> None:
-    zips = sorted(data.glob("_ucdp_prio_*.zip"))
+    import re
+    zips = sorted(data.glob("_ucdp_prio_*.zip"),
+                  key=lambda p: tuple(int(n) for n in re.findall(r'\d+', p.stem)))
     if not zips:
         print("  ucdp: raw zip not present, skipping")
         return
@@ -61,6 +72,12 @@ def process_ucdp(data: Path) -> None:
     guard_or_exit(tmp, data / "ucdp_prio_conflicts.csv",
                     required_cols=["conflict_id", "year", "type_of_conflict",
                                      "intensity_level"])
+    frame = pd.read_csv(data / 'ucdp_prio_conflicts.csv')
+    write_json_if_changed(data / 'ucdp_prio_conflicts.csv.coverage.json', {
+        'schema_version': 1, 'start_year': int(frame.year.min()), 'end_year': int(frame.year.max()),
+        'complete_through_year': int(frame.year.max()), 'gap_years': [],
+        'completeness': 'systematic_catalog', 'source_version': zp.stem.removeprefix('_ucdp_prio_'),
+        'source_url': 'https://ucdp.uu.se/downloads/'})
     zp.unlink()
 
 
@@ -71,9 +88,8 @@ def main():
     data = Path(args.data_dir)
     process_owid_terrorism(data)
     process_ucdp(data)
-    # Tidy remaining scratch files from the download step
     for p in data.glob("_swpc_*.json"):
-        p.unlink()
+        print('  SWPC:', ingest_recent_flares(p, data))
 
 
 if __name__ == "__main__":

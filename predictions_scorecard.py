@@ -24,38 +24,30 @@ from scipy import stats
 
 from correlate_events import (
     load_yearly_war_deaths_active,
+    load_yearly_war_deaths_split,
     load_yearly_famine_deaths_wpf,
     load_yearly_ucdp_conflicts,
-    load_yearly_drought_intensity,
+    load_yearly_drought_affected,
     load_yearly_terrorism_deaths,
     load_yearly_stock_crashes,
     load_yearly_noaa_quakes,
 )
 from detection_regimes import REGIMES, piecewise_detrend
-from periodogram_extended import raw_periodogram, bootstrap_null
+from periodogram_extended import spectral_inference
+from statistical_helpers import contiguous_overlap, residual_slope_ci, last_complete_year
+from granger import granger_family
 
-warnings.filterwarnings("ignore")
 
 LOG = Path("PREDICTIONS_LOG.md")
 RNG = np.random.default_rng(42)
 
 
 def slope_per_decade(series: pd.Series, n_boot=2000):
-    y = series.dropna().astype(float)
-    x = y.index.values.astype(float)
-    v = y.values
-    a, _ = np.polyfit(x, v, 1)
-    slopes = []
-    n = len(x)
-    for _ in range(n_boot):
-        idx = RNG.integers(0, n, size=n)
-        try:
-            ai, _ = np.polyfit(x[idx], v[idx], 1)
-            slopes.append(ai)
-        except Exception:
-            continue
-    lo, hi = np.percentile(slopes, [2.5, 97.5])
-    return a * 10, lo * 10, hi * 10
+    try:
+        y = contiguous_overlap({"value": series}).value
+    except ValueError:
+        return np.nan, np.nan, np.nan
+    return tuple(v * 10 for v in residual_slope_ci(y.index.to_numpy(), y.to_numpy(), n_boot))
 
 
 def verdict(ok: bool | None) -> str:
@@ -74,55 +66,51 @@ def main():
     ap.add_argument("--crashes-csv", default="data/stock_crashes.csv")
     ap.add_argument("--noaa-quakes-csv", default="data/noaa_significant_earthquakes.csv")
     ap.add_argument("--n-boot", type=int, default=1000)
+    ap.add_argument("--year-hi", type=int, default=last_complete_year())
     ap.add_argument("--dry-run", action="store_true", help="print only, no log append")
     args = ap.parse_args()
 
     lines: list[str] = []
     today = datetime.date.today().isoformat()
     lines.append(f"## Scorecard {today}")
+    lines.append("Method audit v2: complete observed years; corrected temporal intervals, full Granger family, AR(1) band-search null. PREDICTIONS.md remains frozen. Corrected diagnostics are not the original preregistered tests.")
     lines.append("")
     lines.append("| Prediction | Current value | Threshold | Status |")
     lines.append("|---|---|---|---|")
 
     # ---- P8: wars×famines regime-detrended r stays >= +0.30 ----
-    wars = np.log10(load_yearly_war_deaths_active(args.wars_csv, 1900, 2025) + 1)
-    fam = np.log10(load_yearly_famine_deaths_wpf(args.famines_wpf_csv, 1900, 2025) + 1)
+    wars = np.log10(load_yearly_war_deaths_active(args.wars_csv, 1900, args.year_hi) + 1)
+    fam = np.log10(load_yearly_famine_deaths_wpf(args.famines_wpf_csv, 1900, args.year_hi) + 1)
     wars_d = piecewise_detrend(wars.astype(float), REGIMES["wars_global"])
     fam_d = piecewise_detrend(fam.astype(float), REGIMES["famines"])
     mask = ~(wars_d.isna() | fam_d.isna())
     r, p = stats.pearsonr(wars_d[mask], fam_d[mask])
-    lines.append(f"| P8 wars×famines detrended r | {r:+.3f} (p={p:.2g}) "
+    lines.append(f"| P8 wars×famines detrended r | {r:+.3f} (descriptive Pearson r) "
                   f"| ≥ +0.30 | {verdict(r >= 0.30)} |")
 
-    # ---- P9b: Granger wars→famines significant at lags 1,2,5; reverse NS ----
+    # P9b: retain raw values, report corrected full six-direction family.
     try:
-        import contextlib
-        import io
-        from statsmodels.tsa.stattools import grangercausalitytests
-        aligned = pd.DataFrame({"fam": fam_d[mask], "wars": wars_d[mask]}).dropna()
-        with contextlib.redirect_stdout(io.StringIO()):
-            fwd = grangercausalitytests(aligned[["fam", "wars"]], maxlag=5)
-            rev = grangercausalitytests(aligned[["wars", "fam"]], maxlag=5)
-        fwd_p = {lag: res[0]["ssr_ftest"][1] for lag, res in fwd.items()}
-        rev_p = {lag: res[0]["ssr_ftest"][1] for lag, res in rev.items()}
-        fwd_ok = all(fwd_p[lag] < 0.05 for lag in (1, 2, 5))
-        rev_ok = all(pv > 0.05 for pv in rev_p.values())
-        lines.append(f"| P9b Granger wars→famines p@1/2/5 "
-                      f"| {fwd_p[1]:.3f}/{fwd_p[2]:.3f}/{fwd_p[5]:.3f} "
-                      f"(reverse min {min(rev_p.values()):.2f}) "
-                      f"| all <0.05, reverse NS | {verdict(fwd_ok and rev_ok)} |")
-    except Exception as e:
-        lines.append(f"| P9b Granger | error: {e} | | — |")
+        wi = np.log10(load_yearly_war_deaths_split(args.wars_csv, "interstate", 1900, args.year_hi) + 1)
+        wn = np.log10(load_yearly_war_deaths_split(args.wars_csv, "intrastate", 1900, args.year_hi) + 1)
+        family = granger_family(wars_d, piecewise_detrend(wi, REGIMES["wars_global"]),
+                                piecewise_detrend(wn, REGIMES["wars_global"]), fam_d)
+        forward = family[family.direction == "Wars (combined) → Famines"].set_index("lag_order")
+        p_text = "/".join(f"{forward.loc[k, 'p']:.3f}" for k in (1, 2, 5))
+        q_text = "/".join(f"{forward.loc[k, 'q']:.3f}" for k in (1, 2, 5))
+        lines.append(f"| P9b Granger audit, model orders 1/2/5 | raw p {p_text}; full-family q {q_text} "
+                     f"| 30-test family, q<0.05 | {int(family.fdr_significant.sum())} corrected survivors; exploratory |")
+    except (ValueError, np.linalg.LinAlgError) as exc:
+        lines.append(f"| P9b Granger | unavailable: {exc} | | — |")
 
     # ---- P9c: intrastate (ethnos) conflict-years rising, CI excludes 0 ----
-    intra = load_yearly_ucdp_conflicts(args.ucdp_csv, 1946, 2025,
+    intra = load_yearly_ucdp_conflicts(args.ucdp_csv, 1946, args.year_hi,
                                          conflict_types=[3, 4])
     s, lo, hi = slope_per_decade(intra, args.n_boot)
     lines.append(f"| P9c UCDP intrastate trend | {s:+.2f}/dec [{lo:+.2f}, {hi:+.2f}] "
                   f"| positive, CI excludes 0 | {verdict(lo > 0)} |")
 
     # ---- P9d: interstate (basileia) flat or turning positive ----
-    inter = load_yearly_ucdp_conflicts(args.ucdp_csv, 1946, 2025,
+    inter = load_yearly_ucdp_conflicts(args.ucdp_csv, 1946, args.year_hi,
                                          conflict_types=[2])
     s2, lo2, hi2 = slope_per_decade(inter, args.n_boot)
     basileia_state = ("rising (CI excludes 0)" if lo2 > 0
@@ -131,21 +119,19 @@ def main():
     lines.append(f"| P9d UCDP interstate trend | {s2:+.3f}/dec [{lo2:+.3f}, {hi2:+.3f}] "
                   f"| flat now; rising = strongest confirmation | {basileia_state} |")
 
-    # ---- P10: drought 11y periodogram peak stays significant ----
-    dr = np.log10(load_yearly_drought_intensity(args.droughts_csv, 1850, 2025) + 1)
-    v = dr.dropna().values
-    freqs, power = raw_periodogram(v)
-    null = bootstrap_null(v, n_boot=args.n_boot)
-    f, pw, nl = freqs[1:], power[1:], null[1:]
-    per = 1.0 / f
-    band = (per >= 9) & (per <= 13)
-    ratio = float(np.max((pw / np.maximum(nl, 1e-10))[band]))
-    peak_per = float(per[band][np.argmax((pw / np.maximum(nl, 1e-10))[band])])
-    lines.append(f"| P10 drought 11y peak | {ratio:.2f}× null at {peak_per:.1f}y "
-                  f"| ≥ 1.0× | {verdict(ratio >= 1.0)} |")
+    # P10 corrected diagnostic; frozen original white-noise ratio not reused.
+    dr = np.log10(load_yearly_drought_affected(args.droughts_csv, 1850, args.year_hi) + 1)
+    try:
+        observed = contiguous_overlap({"value": dr}, min_years=20).value
+        spectral = spectral_inference(observed.to_numpy(), n_boot=args.n_boot)
+        lines.append(f"| P10 drought affected-allocation proxy, method v2 | AR(1) band-search p={spectral['band_p']:.3f}, "
+                     f"peak {spectral['peak_period']:.1f}y | single prespecified 9–13y band | "
+                     "corrected diagnostic; no physical drought or solar attribution |")
+    except ValueError as exc:
+        lines.append(f"| P10 drought allocation proxy | unavailable: {exc} | | — |")
 
     # ---- P12: terrorism deaths trend (1998+) stays positive ----
-    terr = load_yearly_terrorism_deaths(args.terrorism_csv, 1998, 2025,
+    terr = load_yearly_terrorism_deaths(args.terrorism_csv, 1998, args.year_hi,
                                           log10_transform=True)
     terr = terr[terr.index <= 2021]  # GTD frozen at 2021
     s3, lo3, hi3 = slope_per_decade(terr, args.n_boot)
@@ -154,11 +140,15 @@ def main():
                   f"| positive at p<0.05 | {verdict(lo3 > 0)} |")
 
     # ---- P12b: stock crashes stay at ~2/decade, not 3+ ----
-    crashes = load_yearly_stock_crashes(args.crashes_csv, 1900, 2025,
+    crashes = load_yearly_stock_crashes(args.crashes_csv, 1900, args.year_hi,
                                           drawdown_min=20.0)
-    last10 = int(crashes[crashes.index > crashes.index.max() - 10].sum())
-    lines.append(f"| P12b crashes ≥20% in trailing 10y | {last10} "
-                  f"| ≤ 2 (historical rate) | {verdict(last10 <= 2)} |")
+    trailing = crashes.reindex(range(args.year_hi - 9, args.year_hi + 1))
+    if trailing.notna().all():
+        last10 = int(trailing.sum())
+        lines.append(f"| P12b crashes ≥20% in trailing 10y | {last10} "
+                     f"| ≤ 2 (historical rate) | {verdict(last10 <= 2)} |")
+    else:
+        lines.append(f"| P12b crashes ≥20% in trailing 10y | incomplete coverage ({int(trailing.notna().sum())}/10 years) | ≤ 2 | — |")
 
     # ---- P14: NGDC M≥7 trend still declining/flat (1900-2005 window) ----
     ngdc = load_yearly_noaa_quakes(args.noaa_quakes_csv, 1900, 2005, mag_min=7.0)

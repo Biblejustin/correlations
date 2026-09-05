@@ -6,3 +6,8 @@ venv/
 *.sqlite-journal
 .DS_Store
 .ipynb_checkpoints/
+
+.cache/
+.pytest_cache/
+logs/
+data/_*

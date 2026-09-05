@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "study_start": "1991-01-01",
+  "study_end": "2024-12-31",
+  "study_basis": "Frozen historical 1991-2024 scope stated by existing curated-list README; latest event date is not a completeness endpoint.",
+  "noaa": {"start":"1980-01-01", "end":"2024-12-31", "basis":"Source CSV header: Weather and Climate Billion-Dollar Disasters to affect the U.S. from 1980-2024", "source_url":"https://www.ncei.noaa.gov/access/billions/events-US-1980-2025.csv"},
+  "fema": {"start":"1991-01-01", "end":"2024-12-31", "basis":"Historical analysis cap within downloaded catalog; declarations can be revised retrospectively. Not inferred from latest onset.", "source_url":"https://www.fema.gov/openfema-data-page/disaster-declarations-summaries-v2"},
+  "curation_status": "Historical selection retained unchanged. Original CSVs lack per-event source URL and decision timestamp; completeness and original outcome-blind curation have not been independently established. No prospective event-monitor claim.",
+  "tails": {"PRESSURE":"upper", "PRO-ISRAEL":"lower"},
+  "multiplicity": "20 tests per null (2 lists x 2 datasets x 5 windows); BH reported separately for circular-shift and year-shuffle p values"
+}

@@ -1,0 +1,38 @@
+{
+  "configured_countries": [
+    "ISR",
+    "PSE",
+    "LBN",
+    "UKR",
+    "SDN",
+    "ETH",
+    "SOM",
+    "YEM"
+  ],
+  "countries": [
+    "ETH",
+    "ISR",
+    "LBN",
+    "PSE",
+    "SDN",
+    "SOM",
+    "UKR",
+    "YEM"
+  ],
+  "fetched_at": "2026-09-05T00:42:19.394113+00:00",
+  "observed_from": "2000-01-01",
+  "observed_through": "2025-12-31",
+  "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
+  "requests": [
+    {
+      "fetched_at": "2026-09-05T00:42:19.394113+00:00",
+      "published_at": "Mon, 16 Mar 2026 14:06:39 GMT",
+      "sha256": "9055455c4adacd1ad9e78f1a7f3ac0768bdf26992e7651c0602a43ca7bdd4506",
+      "url": "https://www.v-dem.net/media/datasets/V-Dem-CY-Core-v16_csv.zip"
+    }
+  ],
+  "rows": 208,
+  "schema_version": 1,
+  "sha256": "ea0ecb470201bfe541499693b0040183a78a1b58bb213168478557bafe5363d8",
+  "source_id": "religion"
+}

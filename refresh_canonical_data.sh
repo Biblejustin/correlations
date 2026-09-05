@@ -9,7 +9,9 @@
 #
 # Sources that update: OWID (annual), UCDP/PRIO (annual), NGDC (irregular),
 # NOAA SWPC (continuous). Skipped: COW v4 (frozen at 2003), hand-curated CSVs.
-set -e
+set -eo pipefail
+cd "$(dirname "$0")"
+PY="${PYTHON:-python3}"
 
 mkdir -p data
 UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
@@ -17,7 +19,7 @@ UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
 # Optional proxy support. Off by default; turn on with USE_PROXY=1.
 PROXY_ARGS=()
 if [[ "${USE_PROXY:-0}" == "1" ]]; then
-  if [[ -z "$WEBSHARE_PROXY_USERNAME" || -z "$WEBSHARE_PROXY_PASSWORD" ]]; then
+  if [[ -z "${WEBSHARE_PROXY_USERNAME:-}" || -z "${WEBSHARE_PROXY_PASSWORD:-}" ]]; then
     echo "USE_PROXY=1 but creds missing. Set WEBSHARE_PROXY_USERNAME / WEBSHARE_PROXY_PASSWORD (source ~/.zshrc)." >&2
     exit 1
   fi
@@ -31,18 +33,23 @@ fi
 fetch() {
   local url="$1" out="$2" label="$3"
   echo "Fetching $label..."
-  if curl -sS "${PROXY_ARGS[@]}" -A "$UA" --max-time 60 -o "$out.tmp" "$url"; then
+  if curl --fail --location -sS "${PROXY_ARGS[@]}" -A "$UA" --max-time 60 -o "$out.tmp" "$url"; then
     local sz=$(wc -c < "$out.tmp")
-    if [[ $sz -gt 100 ]]; then
+    if [[ "$out" == *swpc*.json ]] && "$PY" -c 'import json,sys; assert isinstance(json.load(open(sys.argv[1])), list)' "$out.tmp"; then
+      mv "$out.tmp" "$out"
+      echo "  OK $out ($sz bytes; valid event array)"
+    elif [[ "$out" != *swpc*.json && $sz -gt 100 ]]; then
       mv "$out.tmp" "$out"
       echo "  OK $out ($sz bytes)"
     else
-      echo "  WARN $out empty/tiny ($sz bytes) — keeping previous"
+      echo "  FAIL $out empty/tiny ($sz bytes) — keeping previous" >&2
       rm -f "$out.tmp"
+      return 1
     fi
   else
     echo "  FAIL $url"
     rm -f "$out.tmp"
+    return 1
   fi
 }
 
@@ -51,9 +58,9 @@ fetch() {
 fetch "https://ourworldindata.org/grapher/terrorist-attacks.csv" "data/_owid_terrorist_attacks.csv" "OWID terrorist attacks"
 fetch "https://ourworldindata.org/grapher/terrorism-deaths.csv" "data/_owid_terrorism_deaths.csv" "OWID terrorism deaths"
 
-# UCDP/PRIO — Armed Conflict Dataset. Bumped to v25.1 (2024 data) 2026-05-20.
-fetch "https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-251-csv.zip" \
-      "data/_ucdp_prio_v25_1.zip" "UCDP/PRIO v25.1 (zip)"
+# Explicit version: review release schema/coverage before changing this default.
+fetch "https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-261-csv.zip" \
+      "data/_ucdp_prio_v26_1.zip" "UCDP/PRIO v26.1 (zip)"
 
 # NGDC significant earthquakes + volcanoes — these require pagination (200 items/page max).
 # Use fetch_ngdc.py instead of curl here.

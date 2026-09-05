@@ -1,0 +1,86 @@
+[
+  {
+    "drop_top_n_each":0,
+    "r":0.4517944667,
+    "p":null,
+    "n":124,
+    "dropped":[
+
+    ],
+    "start_year":1900,
+    "end_year":2023,
+    "status":"descriptive after selected-year removal; p not estimated"
+  },
+  {
+    "drop_top_n_each":1,
+    "r":0.4090156923,
+    "p":null,
+    "n":122,
+    "dropped":[
+      1926,
+      1927
+    ],
+    "start_year":1900,
+    "end_year":2023,
+    "status":"descriptive after selected-year removal; p not estimated"
+  },
+  {
+    "drop_top_n_each":3,
+    "r":0.2221225067,
+    "p":null,
+    "n":120,
+    "dropped":[
+      1924,
+      1925,
+      1926,
+      1927
+    ],
+    "start_year":1900,
+    "end_year":2023,
+    "status":"descriptive after selected-year removal; p not estimated"
+  },
+  {
+    "drop_top_n_each":5,
+    "r":0.2282555433,
+    "p":null,
+    "n":117,
+    "dropped":[
+      1914,
+      1917,
+      1924,
+      1925,
+      1926,
+      1927,
+      1980
+    ],
+    "start_year":1900,
+    "end_year":2023,
+    "status":"descriptive after selected-year removal; p not estimated"
+  },
+  {
+    "drop_top_n_each":10,
+    "r":0.055380834,
+    "p":null,
+    "n":109,
+    "dropped":[
+      1908,
+      1909,
+      1914,
+      1915,
+      1916,
+      1917,
+      1918,
+      1924,
+      1925,
+      1926,
+      1927,
+      1945,
+      1980,
+      2009,
+      2010
+    ],
+    "start_year":1900,
+    "end_year":2023,
+    "status":"descriptive after selected-year removal; p not estimated"
+  }
+]

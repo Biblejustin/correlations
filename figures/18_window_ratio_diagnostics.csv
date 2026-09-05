@@ -1,0 +1,5 @@
+source,window_days,point_estimate,ci_2_5,ci_97_5,median,n_boot,finite_resamples,n_years,start_year,end_year,n_targets,status
+"Flood >=1000 deaths, tsunami excluded",0,0.9811952261417184,0.0,2.44460079956581,0.9355502362029491,20000,20000,61,1965,2025,841,descriptive shared-year-block interval; not a chance test
+"Flood >=1000 deaths, tsunami excluded",1,1.1590368608799049,0.3449931237293166,2.2258333480833614,1.1433959820479171,20000,20000,61,1965,2025,841,descriptive shared-year-block interval; not a chance test
+X1+ flares,0,1.5138428381962865,0.8703622902185104,1.998468024106288,1.5116990260098082,20000,20000,50,1976,2025,696,descriptive shared-year-block interval; not a chance test
+X1+ flares,1,0.9576621360852421,0.6127206925606169,1.2970033767272617,0.9466322986341069,20000,20000,50,1976,2025,696,descriptive shared-year-block interval; not a chance test

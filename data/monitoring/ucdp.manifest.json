@@ -1,0 +1,38 @@
+{
+  "configured_countries": [
+    "ISR",
+    "PSE",
+    "LBN",
+    "UKR",
+    "SDN",
+    "ETH",
+    "SOM",
+    "YEM"
+  ],
+  "countries": [
+    "ETH",
+    "ISR",
+    "LBN",
+    "SDN",
+    "SOM",
+    "UKR",
+    "YEM"
+  ],
+  "fetched_at": "2026-09-05T00:42:04.360638+00:00",
+  "observed_from": "2000-01-01",
+  "observed_through": "2025-12-31",
+  "projected_through": null,
+  "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
+  "requests": [
+    {
+      "fetched_at": "2026-09-05T00:42:04.360638+00:00",
+      "published_at": "Mon, 08 Jun 2026 20:31:08 GMT",
+      "sha256": "66910888f5653af42776d2debc1d72fe527559e7f7fc82e69b7c8771467f2d34",
+      "url": "https://ucdp.uu.se/downloads/organizedviolencecy/organizedviolencecy-261-csv.zip"
+    }
+  ],
+  "rows": 728,
+  "schema_version": 1,
+  "sha256": "4913b39212f796f19077374f43b7f84f7eb9b84a538e66a3887268ab41360e54",
+  "source_id": "ucdp"
+}

@@ -23,29 +23,23 @@ def main():
     figs_dir = Path(args.figures_dir)
 
     panels = [
-        ("18_cross_correlation_matrix.png",
-         "Cross-correlation matrix",
-         "Only wars × famines (+0.43) survives FDR. Everything else is noise."),
-        ("19_trends_meta_comparison.png",
-         "Trends per indicator",
-         "Cyclones/pandemics/quakes rising; wars/volcanoes flat; floods/famines lean down."),
-        ("22_contractions.png",
-         "Contractions in time",
-         "Six multi-year clusters. 2019–25 is the longest (7yr) and most intense."),
-        ("23_periodogram_extended.png",
-         "Periodogram (11-yr solar cycle hunt)",
-         "Only solar indicators + droughts carry an 11y peak. Everything else is flat."),
-        ("25_wavelet_coherence_wars_famines.png",
-         "Wars × famines coupling over time",
-         "Strongest pre-WWII (0.6), weakest in Cold War (0.17), recovering post-1990."),
-        ("27_wars_split_ethnos_basileia.png",
-         "Wars split: ethnos vs basileia",
-         "Intrastate (ethnos) rising; interstate (basileia) flat. Matches Mt 24:7 doubling."),
+        ("18_cross_correlation_matrix.png", "Annual cross-correlation family",
+         "Effect sizes with serial-dependence sensitivity and correction across 45 pairs."),
+        ("19_trends_meta_comparison.png", "Trends per indicator",
+         "Coverage and units differ; selected-event catalogs cannot establish complete hazard rates."),
+        ("22_contractions.png", "Fixed-domain composite eligibility",
+         "Missing flood/drought baseline observations make current composite unavailable."),
+        ("23_periodogram_extended.png", "Annual spectral sensitivity",
+         "AR(1) surrogates repeat the frequency search; peaks alone do not identify solar influence."),
+        ("25_wavelet_coherence_wars_famines.png", "Wars and famines through time",
+         "Finite contiguous overlap; edge regions excluded. Coherence is descriptive."),
+        ("20_pattern_birthpains.png", "Event frequency, waiting times and clustering",
+         "Exact event times retained where available; annual catalogs use annual-rate diagnostics."),
     ]
 
     fig = plt.figure(figsize=(20, 26))
     fig.suptitle("Correlations project — headline dashboard\n"
-                  "Disasters, wars, famines, pestilences, signs — pattern analysis across 10 catalogs",
+                  "Measured patterns, explicit coverage, corrected exploratory tests",
                   fontsize=18, y=0.995, weight="bold")
 
     for i, (filename, title, caption) in enumerate(panels):
@@ -64,14 +58,11 @@ def main():
                   transform=ax.transAxes, fontsize=10, style="italic", color="#444444",
                   wrap=True)
 
-    # Master footer text
     fig.text(0.5, 0.015,
-              "Headline finding: across ~200 statistical tests, only wars↔famines covary above noise (FDR-significant, r = +0.43). "
-              "Wars precede famines (Granger). The Greek doubling holds half-and-half: intrastate (ethnos) is rising; interstate (basileia) is flat. "
-              "Birth-pains pattern (acceleration + shrinking gaps + clustering) is detected for some indicators but never all three together. "
-              "Reproducible scripts + 10 source repos + PREDICTIONS.md for 2030/2035/2040 revisit at github.com/Biblejustin/correlations.",
-              ha="center", va="bottom", fontsize=10, color="#222222",
-              wrap=True, style="italic")
+              "Historical associations are exploratory. Unavailable data do not mean zero events.\n"
+              "Biblical themes guide monitoring questions; these statistics do not establish prophetic fulfillment.\n"
+              "Regional food, displacement, disease, religion and Israel water outputs: results/monitoring/monitoring_report.md",
+              ha="center", va="bottom", fontsize=10, color="#222222")
 
     plt.tight_layout(rect=(0.02, 0.04, 0.98, 0.97))
     plt.savefig(args.out, dpi=110, bbox_inches="tight")
