@@ -9,14 +9,18 @@ September 2026 integrity work and first regional monitoring panel implemented. E
 | Granger/lag-search correction; red-noise spectral sensitivity | Implemented; historical exploratory results |
 | Stable domain weights, baseline and trailing windows | Implemented; global composite unavailable with present impact coverage |
 | Same-count revisions, flare ingestion, feeder synchronization, failure-aware refresh | Implemented with source and artifact manifests |
+| USGS withdrawals and corrections | Implemented with verified counts, complete half-open query scopes, atomic reconciliation and 30-day historical cache expiry |
+| Shared Make entrypoints, clean dependencies and CI | Entry points and dependency verification implemented; CI prepared, GitHub workflow permission pending |
 | Wheat area/yield and irrigation covariates | Implemented; future holdout frozen; 17-year irrigation sample limited |
 | Regional UCDP, UNHCR, IPC, WFP affordability | Implemented for fixed eight-country pilot; stock changes are not new displacement flows |
+| IDMC annual displacement flows and stocks | Implemented through 2025, separate movements/people units; no added cross-source lag claims |
+| Current Israel national rain, heat, PET and wet days | Separate CRU-CY4.10 monitor through 2025; full overlap diagnostics and five-coefficient heat/irrigation sensitivity; original model frozen |
 | WHO respiratory positivity, religious freedom, Kinneret | Implemented with scope and coverage labels |
 
 ## Observations to improve next
 
-1. **Longer comparable IPC history and displacement flows.** Public IPC export is latest-assessment oriented. Accumulate versioned snapshots and preserve assessed territory/population. Add separately documented new-displacement flows; do not substitute stock differences.
-2. **Current Israel rain and water balance.** Historical CRU TS4.08 stops in 2023. Add verified IMS stations or fixed-area CHIRPS v3 with validation across overlap; do not silently splice products. Aquifer storage, desalination and reclaimed-water observations remain separate missing inputs. Crop-specific irrigation and soil/temperature controls would improve attribution.
+1. **Longer comparable IPC history and displacement geography.** Public IPC export is latest-assessment oriented. Continue accumulating versioned snapshots and preserve assessed territory/population. IDMC movements are now available; verify cause definitions and matched geography before extending lag tests. Annual and separate disaster-event exports must not be added without compatible definitions.
+2. **Israel water attribution and future validation.** CRU-CY4.10 now supplies current national rain/heat/PET through 2025. Its aggregation is not interchangeable with frozen CCKP4.08 input. Verify crop-relevant geography and product continuity; add measured soil moisture, aquifer storage, desalination, reclaimed water and wheat-specific irrigation where supported. At least ten compatible future crop/rain pairs are still required; no prospective success has been scored.
 3. **Hazard and vulnerability.** Replace sparse impact proxies with measured drought/rain/heat, flood exposure, cyclone wind/rain and earthquake shaking. Add population exposed, warning capacity and building vulnerability before interpreting death trends as hazard trends.
 4. **Seasonal disease burden.** Extend beyond influenza positivity where tested denominators, severe admissions or excess-mortality series are comparable. Reporting-site changes and disease seasonality require explicit baselines; annual averages are provisional diagnostics.
 5. **Restrictions and contemporary incidents.** V-Dem religious freedom is a broad annual index. Add documented arrests, worship restrictions and religion-related violence with reproducible inclusion rules, evidence links and denominators. No automatic political-event selection.
@@ -26,4 +30,4 @@ September 2026 integrity work and first regional monitoring panel implemented. E
 
 ## Source integrity limits
 
-USGS query-cache migration intentionally refetches histories without verifiable query metadata. Withdrawal reconciliation is still open. Failed NOAA refreshes retain old snapshots and return a degraded/error status. Old curated catalogs do not become complete through the current year merely because a fetch job ran. No complete modern flood-mortality estimate is available under the current strict unknown-total rule.
+USGS query-cache migration intentionally refetches histories without verifiable query metadata. Complete, independently counted query windows now reconcile withdrawn, revised and reclassified events inside that exact scope; incomplete queries cannot remove records. Failed NOAA refreshes retain old snapshots and return a degraded/error status. Old curated catalogs do not become complete through the current year merely because a fetch job ran. Flood linkage diagnostics identify review candidates; structural conflicts need source-by-source adjudication. No complete modern flood-mortality estimate is available under the current strict unknown-total rule.

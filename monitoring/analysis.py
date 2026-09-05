@@ -14,6 +14,7 @@ from monitoring.feeds import BASE,CONFIG,is_food_commodity
 
 PANEL_COLUMNS=['country','year','metric','value','unit','n_observations','geographic_scope','population_denominator_compatible','quality_note']
 ANNUAL_UNITS={'population':'people','religious_freedom':'V-Dem latent interval score',
+              'internal_displacements_flow':'displacement movements','internally_displaced_year_end_stock':'people',
               'refugees_origin_stock':'people','asylum_seekers_origin_stock':'people','returned_refugees_flow':'people',
               'conflict_total_deaths':'deaths','conflict_battle_deaths':'deaths','conflict_nonstate_deaths':'deaths','conflict_civilian_targeting_deaths':'deaths'}
 
@@ -303,6 +304,11 @@ def israel_summary(root=BASE/'data/israel_monitoring'):
     if pressure.exists():
         d=pd.read_csv(pressure)
         lines.append(f"Historical US diplomacy/disaster tests, frozen 1991–2024: minimum circular-shift BH q={d.q.min():.3f}. Pressure uses upper tail; control deficit uses lower tail. Curated lists are not a current diplomacy feed.")
+    climate=root/'israel-rain-agriculture/results/climate_monitor.json'
+    if climate.exists():
+        d=json.loads(climate.read_text());r=d['latest_complete_rain_year']
+        lines+=['',f"Separate {d['product']} national climate monitor through {d['latest_month']}: rain year {int(r['year'])} received {r['rain_mm']:.1f} mm ({r['rain_percent_baseline']:.1f}% of the fixed 1991–2020 baseline). Spring mean daily maximum temperature was {r['spring_tmx_c_anomaly']:+.2f} °C relative to baseline. Rain-minus-PET departure was {r['balance_mm_z']:+.2f} baseline standard deviations.",
+            'Rain year is October–September; spring temperature covers March–May. National CRU country aggregation differs from the historical CCKP series. Rain minus PET is a climate diagnostic, not soil moisture or crop water use. The original wheat model and holdout remain frozen; no prospective score is eligible. Full overlap comparisons and the separate five-coefficient heat/irrigation sensitivity are retained in the feeder snapshots.']
     return lines
 
 
@@ -327,6 +333,17 @@ def latest_monitor_tables(observations,panel,today,config=CONFIG):
         label='ISR (UCDP Israel/Palestine unit)' if country=='ISR' and len(deaths) else country
         lines.append(f'| {label} | {cy} | {death} | {rate} | {ry} | {stock} |')
     lines+=['','UCDP total organized-violence deaths combine state-based, non-state and one-sided violence. Rates use same-country, same-year WDI population only where territory is comparable. The UCDP Israel source unit includes Palestinian territories, so its total is not Israeli deaths and no ISR-only population rate/lag is computed; pre-2012 Sudan also lacks a matched post-partition denominator. UNHCR origin-country stocks span worldwide destinations; these are not new-displacement flows. Latest annual year is shown explicitly.',
+            '', '## Latest annual internal displacement observations','',
+            '| Country | Flow year | New displacement movements | Stock year | People displaced at year end |',
+            '|---|---:|---:|---:|---:|']
+    for country in config['countries']:
+        sub=panel[panel.country.eq(country)]
+        fields=[]
+        for metric in ['internal_displacements_flow','internally_displaced_year_end_stock']:
+            series=sub[sub.metric.eq(metric)].sort_values('year')
+            fields.extend([str(int(series.iloc[-1].year)),f'{series.iloc[-1].value:,.0f}'] if len(series) else ['—','unavailable'])
+        lines.append('| '+country+' | '+' | '.join(fields)+' |')
+    lines+=['','IDMC annual GIDD export via HDX. Flows count displacement movements; one person may move repeatedly. Stocks count people at year end. Separate disaster-event exports are not added to this annual series. Missing counts remain unavailable. These observations do not extend the existing lag-test family; territory and cause comparability require separate verification.',
             '', '## Latest sentinel respiratory observations','',
             '| Country | Observed week | Influenza-positive specimens | Specimens tested | Positivity |',
             '|---|---|---:|---:|---:|']

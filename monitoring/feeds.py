@@ -182,6 +182,44 @@ def ipc(client,countries,start_year):
     return frame(rows)
 
 
+def normalize_idmc(d,country,url,published=None):
+    """Keep the publisher's annual flow distinct from stocks and disaster event rows."""
+    required={'iso3','country_name','year','new_displacement','total_displacement'}
+    if not required<=set(d):raise ValueError('IDMC annual CSV schema changed')
+    if 'event_name' in d:raise ValueError('IDMC event export cannot substitute for annual series')
+    years=pd.to_numeric(d.year,errors='coerce')
+    if years.isna().any() or (years%1!=0).any():raise ValueError('Invalid IDMC year')
+    if not d.iso3.eq(country).all():raise ValueError('IDMC country mismatch')
+    if d.duplicated(['iso3','year']).any():raise ValueError('Duplicate IDMC country/year')
+    for field in ['new_displacement','total_displacement']:
+        parsed=pd.to_numeric(d[field],errors='coerce')
+        if (d[field].notna() & ~np.isfinite(parsed)).any():raise ValueError('Invalid IDMC displacement count')
+    rows=[]
+    for _,r in d.iterrows():
+        year=int(r.year)
+        for field,metric,unit in [('new_displacement','internal_displacements_flow','displacement movements'),
+                                  ('total_displacement','internally_displaced_year_end_stock','people')]:
+            value=number(r[field])
+            if value is not None and value<0:raise ValueError('Negative IDMC displacement count')
+            rows.append(obs(country,f'{year}-01-01',f'{year}-12-31',metric,value,unit,'idmc',url,
+                'GIDD annual HDX export',published_at=published,
+                dimensions={'source_country_name':r.country_name,'geographic_scope':'IDMC source-country territory',
+                    'population_denominator_compatible':False,
+                    'cause_scope':'Annual IDPs export; separate disaster-event export not aggregated or added'},
+                quality_note='New displacements count movements, including repeated movements by one person. Year-end stock counts people. Annual export and separate disaster-event export are not interchangeable. Geography/cause comparability not certified for cross-source inference. Missing years/counts remain missing.'))
+    return frame(rows)
+
+
+def idmc(client,countries,start_year):
+    parts=[]
+    for country in countries:
+        package=f'idmc-idp-data-{country.lower()}'
+        d,url,published=hdx_resource(client,package,f'internal-displacements-new-displacements-idps_{country.lower()}.csv')
+        normalized=normalize_idmc(d,country,url,published)
+        parts.append(normalized[normalized.period_start.str[:4].astype(int)>=start_year])
+    return pd.concat(parts,ignore_index=True)
+
+
 def is_food_commodity(name):
     label=str(name).lower()
     return any(word in label for word in ['wheat','barley','maize','rice','sorghum','oil']) and not any(word in label for word in ['wage','milling cost','processing cost','transport cost'])
@@ -309,7 +347,7 @@ def population(client,countries,start_year):
     return frame(rows)
 
 
-ADAPTERS={'ucdp':ucdp,'unhcr':unhcr,'ipc':ipc,'wfp':wfp,'who':who,'religion':religion,'population':population}
+ADAPTERS={'ucdp':ucdp,'unhcr':unhcr,'ipc':ipc,'wfp':wfp,'who':who,'religion':religion,'population':population,'idmc':idmc}
 
 
 def validate_observations(d):

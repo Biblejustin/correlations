@@ -1,9 +1,9 @@
-# Pinned 2026-07-02 so figure bytes are comparable across machines and runs.
-# Bump deliberately (all at once, regenerate all figures in the same commit).
+# Runtime pins; Python 3.13. Verify with verify_environment.py.
+# Figures also depend on input snapshots, OS, fonts and transitive dependencies.
+# PyWavelets was unused and removed; wavelet.py implements its transform directly.
 pandas==3.0.3
 numpy==2.5.0
 scipy==1.18.0
 matplotlib==3.11.0
 requests==2.34.2
 statsmodels==0.14.6
-PyWavelets==1.8.0

@@ -69,14 +69,34 @@ def publish(account):
                         f'https://github.com/Biblejustin/{repo}.git',f'HEAD:refs/heads/{branch}'],check=True)
 
 
-def main():
+def fetch_steps(py=None):
+    py = py or sys.executable
+    return [
+        ('fetch_spaceweather','spaceweather',[py,'fetch_spaceweather.py']),
+        ('fetch_quakes','earthquakes',[py,'fetch_quakes.py','--sleep','.3']),
+        ('fetch_historical_quakes','earthquakes',[py,'fetch_quakes.py','--start-year','1900','--min-mag','6.5','--db','quakes_1900.sqlite','--sleep','.5']),
+        ('fetch_significant','earthquakes',[py,'fetch_significant.py']),
+        ('fetch_ngdc','correlations',[py,'fetch_ngdc.py']),
+        ('fetch_canonical','correlations',['env',f'PYTHON={py}','bash','refresh_canonical_data.sh']),
+        ('fetch_monitoring','correlations',[py,'refresh_monitoring.py']),
+        ('fetch_israel_pressure','israel-pressure-disasters',['env',f'PYTHON={py}','bash','update.sh']),
+        ('fetch_israel_rain','israel-rain-agriculture',['env',f'PYTHON={py}','bash','update.sh']),
+    ]
+
+
+def main(argv=None):
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--skip-fetch',action='store_true')
     ap.add_argument('--dry-run',action='store_true',help='Update local data/figures; no commits or pushes')
     ap.add_argument('--publish',action='store_true',help='Commit/push generated artifacts after every stage passes')
     ap.add_argument('--workers',type=int,default=2)
-    args=ap.parse_args()
+    ap.add_argument('--fetch-only',action='store_true',help='Fetch sources only; no analysis or publication')
+    ap.add_argument('--sources',nargs='+',choices=[x[0].removeprefix('fetch_') for x in fetch_steps()],help='Select fetch stages for diagnostics; requires --fetch-only')
+    args=ap.parse_args(argv)
     if args.dry_run and args.publish:ap.error('--dry-run and --publish are mutually exclusive')
+    if args.workers<1:ap.error('--workers must be positive')
+    if args.fetch_only and (args.skip_fetch or args.publish):ap.error('--fetch-only cannot skip fetches or publish')
+    if args.sources and not args.fetch_only:ap.error('--sources requires --fetch-only')
     missing=[r for r in REPOS if not (ROOT/r).is_dir()]
     if missing:ap.error('Missing sibling repos: '+', '.join(missing))
     account=verify_publish_targets() if args.publish else None
@@ -87,24 +107,22 @@ def main():
             finish(False)
             raise SystemExit(f'{name} failed; local evidence retained; publication stopped. See {result["log"]}')
     def finish(success):
-        out=BASE/'results/refresh_run.json';out.parent.mkdir(exist_ok=True)
+        out=BASE/'results'/('fetch_run.json' if args.fetch_only else 'refresh_run.json');out.parent.mkdir(exist_ok=True)
         out.write_text(json.dumps({'generated_at':dt.datetime.now(dt.timezone.utc).isoformat(),
-                                  'success':success,'fetch_skipped':args.skip_fetch,'stages':results},indent=2)+'\n')
+                                  'success':success,'fetch_skipped':args.skip_fetch,'fetch_only':args.fetch_only,
+                                  'selected_sources':args.sources,'stages':results},indent=2)+'\n')
     py=sys.executable
-    if not args.skip_fetch:
-        for name,repo,command in [
-            ('fetch_spaceweather','spaceweather',[py,'fetch_spaceweather.py']),
-            ('fetch_quakes','earthquakes',[py,'fetch_quakes.py','--sleep','.3']),
-            ('fetch_historical_quakes','earthquakes',[py,'fetch_quakes.py','--start-year','1900','--min-mag','6.5','--db','quakes_1900.sqlite','--sleep','.5']),
-            ('fetch_significant','earthquakes',[py,'fetch_significant.py']),
-            ('fetch_ngdc','correlations',[py,'fetch_ngdc.py']),
-            ('fetch_canonical','correlations',['env',f'PYTHON={py}','bash','refresh_canonical_data.sh']),
-            ('fetch_monitoring','correlations',[py,'refresh_monitoring.py']),
-            ('fetch_israel_pressure','israel-pressure-disasters',['bash','update.sh']),
-            ('fetch_israel_rain','israel-rain-agriculture',['bash','update.sh']),
-        ]:step(name,command,repo)
-    step('sync_feeders',[py,'sync_feeders.py'])
+    # Fail fast on code/test defects before spending network requests or mutating source snapshots.
     step('regression_tests',[py,'-m','pytest','-q','tests'])
+    if not args.skip_fetch:
+        for name,repo,command in fetch_steps(py):
+            if args.sources and name.removeprefix('fetch_') not in args.sources:continue
+            step(name,command,repo)
+    if args.fetch_only:
+        finish(True)
+        print('Selected fetch stages passed; analytical validation/publication not attempted.')
+        return
+    step('sync_feeders',[py,'sync_feeders.py'])
     for repo in REPOS:
         if repo=='correlations':continue
         script='build_plots.py' if repo=='flood-data' else 'make_plots.py'
