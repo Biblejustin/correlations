@@ -65,6 +65,13 @@ periods, catalog audit counts and readable artifact hashes. The earlier
 `results/validation_summary.json` remains the evidence from the first, limited
 run; its limitations do not describe the later full live run.
 
+The completed publication run is recorded in
+[`results/publication_validation_summary.json`](results/publication_validation_summary.json):
+155 central tests, five publisher-fixture tests, all 55 live stages, 84 readable
+artifacts, and all twelve local `main` heads verified clean and equal to their
+published branches. Frozen wheat inputs remain byte-identical. Earlier validation
+summaries retain their original dates and describe earlier runs.
+
 | Direct dependency | Verified distribution and imported version |
 |---|---|
 | pandas | 3.0.3 |
