@@ -155,31 +155,132 @@ def hdx_resource(client,package,filename_part):
     return d,resource['url'],resource.get('last_modified') or meta['result'].get('metadata_modified')
 
 
-def ipc(client,countries,start_year):
-    d,url,published=hdx_resource(client,'global-acute-food-insecurity-country-data','ipc_global_national_long_latest.csv')
-    required={'Country','From','To','Phase','Percentage','Number','Validity period','Date of analysis'}
+IPC_PERIOD_COLUMNS = ['Country','Date of analysis','Validity period','From','To']
+IPC_HISTORY_RESOURCE = 'ipc_global_national_long.csv'
+# Conservative consistency screen, not a claim that source counts are this precise.
+# Match the existing 1.5 percentage-point population-ratio tolerance; allow five
+# people for independently rounded small integer partitions.
+IPC_COUNT_ROUNDING_FRACTION = .015
+IPC_COUNT_ROUNDING_PEOPLE = 5
+
+
+def ipc_period_key(country,assessment,validity,start,end):
+    """Local composite identity, not a publisher analysis ID (absent from HDX CSV)."""
+    fields=[str(x) for x in [country,assessment,validity,start,end]]
+    return 'ipc-hdx-period-v1:'+hashlib.sha256(json.dumps(fields).encode()).hexdigest()
+
+
+def normalize_ipc(d,countries,start_year,url,published=None):
+    required=set(IPC_PERIOD_COLUMNS)|{'Phase','Percentage','Number'}
     if not required<=set(d):raise ValueError('IPC CSV schema changed')
-    assessment_keys=['Country','Date of analysis','Validity period','From','To']
-    totals=d[d.Phase.astype(str).str.lower().eq('all')].copy()
-    if totals.duplicated(assessment_keys).any():raise ValueError('Duplicate IPC assessment population totals')
-    denominators=totals.set_index(assessment_keys)['Number']
-    rows=[]
-    for _,r in d.iterrows():
-        if r['Country'] not in countries or str(r['From'])[:4]<str(start_year):continue
-        phase=str(r['Phase'])
-        if phase not in {'3+','3','4','5'}:continue
-        value=number(r['Percentage'])
-        if value is not None and not 0<=value<=1:raise ValueError('IPC fraction out of range')
-        rows.append(obs(r['Country'],r['From'],r['To'],'ipc_phase_'+phase.replace('+','plus')+'_fraction',
-                        value,'fraction_of_population_analyzed','ipc',url,'latest assessment',frequency='assessment',
-                        numerator=r['Number'],denominator=denominators.get(tuple(r[k] for k in assessment_keys)),
-                        dimensions={'assessment':r['Date of analysis'],'type':r['Validity period'],
-                                    'source_total_country_population':number(r.get('Total country population')),
-                                    'geographic_scope':'IPC population analyzed; territorial coverage not specified in national export',
-                                    'geography_comparable_to_country':False},
-                        published_at=published,provisional=str(r['Validity period']).lower()!='current',
-                        quality_note='Fraction uses phase-all analyzed population, not total country population. Source percentages rounded. Territorial scope not certified; excluded from cross-source country lag tests. Assessment windows and projections kept separate.'))
-    return frame(rows)
+    d=d[d.Country.isin(countries)].copy()
+    if d[IPC_PERIOD_COLUMNS].isna().any().any():raise ValueError('Missing IPC assessment identity')
+    starts,ends=pd.to_datetime(d.From,errors='coerce'),pd.to_datetime(d.To,errors='coerce')
+    if starts.isna().any() or ends.isna().any() or (ends<starts).any():raise ValueError('Invalid IPC assessment dates')
+    d=d[starts.dt.year.ge(start_year)].copy()
+    if not d['Validity period'].isin(['current','first projection','second projection']).all():
+        raise ValueError('Unknown IPC validity type')
+    if not d.Phase.astype(str).isin(['all','1','2','3','4','5','3+']).all():raise ValueError('Unknown IPC phase')
+    for field in ['Number','Percentage']:
+        parsed=pd.to_numeric(d[field],errors='coerce')
+        if (d[field].notna() & ~np.isfinite(parsed)).any() or parsed.lt(0).any():
+            raise ValueError(f'Invalid IPC {field}')
+        if field=='Percentage' and parsed.gt(1).any():raise ValueError('IPC fraction out of range')
+    rows=[];quarantine=[];accepted=[];issues=[]
+    for identity, original in d.groupby(IPC_PERIOD_COLUMNS,sort=False,dropna=False):
+        country,assessment,validity,start,end=identity
+        key=ipc_period_key(*identity)
+        group=original.drop_duplicates()
+        totals=group[group.Phase.eq('all')]
+        reason=None;failure_kind='unresolved_denominator';partition_evidence={}
+        if group.Phase.duplicated().any():reason='Conflicting rows share a derived period identity; publisher analysis ID/scope missing'
+        elif len(totals)!=1:reason='Missing or nonunique phase-all assessed-population denominator'
+        elif number(totals.iloc[0].Number) is None or float(totals.iloc[0].Number)<=0:
+            reason='Missing or nonpositive assessed-population denominator'
+        if reason is None:
+            denominator=float(totals.iloc[0].Number)
+            tolerance=max(IPC_COUNT_ROUNDING_PEOPLE,IPC_COUNT_ROUNDING_FRACTION*denominator)
+            counts={str(r.Phase):number(r.Number) for _,r in group.iterrows()}
+            for labels,total_label in [(['1','2','3','4','5'],'all'),(['3','4','5'],'3+')]:
+                total=counts.get(total_label)
+                if total is None:continue
+                supplied=[counts[p] for p in labels if counts.get(p) is not None]
+                summed=sum(supplied)
+                complete=len(supplied)==len(labels)
+                if summed>total+tolerance or (complete and abs(summed-total)>tolerance):
+                    reason=f'Inconsistent phase-count partition: {"+".join(labels)} versus phase {total_label}'
+                    failure_kind='invalid_partition'
+                    partition_evidence={'partition_phases':labels,'reported_total_phase':total_label,
+                        'reported_total':total,'supplied_phase_sum':summed,'complete_partition':complete,
+                        'allowed_count_difference':tolerance}
+                    break
+        if reason:
+            if group.Phase.duplicated().any():failure_kind='ambiguous_identity'
+            issues.append({'period_key':key,**dict(zip(IPC_PERIOD_COLUMNS,identity)),
+                'reason':reason,'failure_kind':failure_kind,'source_rows':len(original),**partition_evidence})
+            quarantine.append(original.assign(quarantine_reason=reason,derived_period_key=key))
+            continue
+        denominator=float(totals.iloc[0].Number)
+        accepted.append(key)
+        for _,r in group.iterrows():
+            phase=str(r.Phase)
+            if phase not in {'3+','3','4','5'}:continue
+            value,numerator=number(r.Percentage),number(r.Number)
+            if value is None:continue
+            if numerator is None or numerator>denominator or not np.isclose(value,numerator/denominator,atol=.015,rtol=0):
+                raise ValueError('IPC numerator/percentage incompatible with exact-period assessed population')
+            rows.append(obs(country,start,end,'ipc_phase_'+phase.replace('+','plus')+'_fraction',
+                value,'fraction_of_population_analyzed','ipc',url,'HDX national assessment history v1',frequency='assessment',
+                numerator=numerator,denominator=denominator,published_at=published,provisional=validity!='current',
+                dimensions={'assessment':assessment,'type':validity,'source_analysis_id':None,
+                    'derived_period_key':key,'identity_basis':'country, analysis month label, validity type and dates; no publisher analysis ID in CSV',
+                    'source_snapshot_status':'present in full-history export',
+                    'source_publication_kind':'export last-modified, not assessment publication date',
+                    'source_total_country_population':number(r.get('Total country population')),
+                    'geographic_scope':'IPC population analyzed; territorial coverage not specified in national export',
+                    'geography_comparable_to_country':False},
+                quality_note='Historical assessment. Fraction uses its exact-period phase-all analyzed population, not country population. Source percentages rounded. Export lacks publisher assessment IDs and boundary geometry; ambiguous identities quarantined. Territorial scope not certified; excluded from cross-source country lag tests. Current and projections remain separate.'))
+    out=frame(rows)
+    out.attrs['ipc_history']={'resource':IPC_HISTORY_RESOURCE,'source_rows':len(d),
+        'accepted_period_keys':accepted,'quarantined_periods':issues,
+        'partition_tolerance':{'relative_to_assessed_population':IPC_COUNT_ROUNDING_FRACTION,
+            'minimum_people':IPC_COUNT_ROUNDING_PEOPLE,
+            'interpretation':'Conservative consistency screen allowing source rounding/process differences; not a precision guarantee. Never replace reported denominator with phase sum.'},
+        'publisher_analysis_ids_available':False,'geographic_comparability_verified':False}
+    out.attrs['ipc_quarantine_csv']=(pd.concat(quarantine,ignore_index=True) if quarantine else
+        pd.DataFrame(columns=list(d.columns)+['quarantine_reason','derived_period_key'])).to_csv(index=False)
+    return out
+
+
+def ipc(client,countries,start_year):
+    d,url,published=hdx_resource(client,'global-acute-food-insecurity-country-data',IPC_HISTORY_RESOURCE)
+    return normalize_ipc(d,countries,start_year,url,published)
+
+
+def merge_ipc_history(old,new,history):
+    """Replace entire matching periods; keep unmatched prior snapshots with explicit lineage."""
+    accepted=set(history['accepted_period_keys'])
+    quarantined={p['period_key'] for p in history['quarantined_periods']}
+    invalid={p['period_key'] for p in history['quarantined_periods'] if p.get('failure_kind')=='invalid_partition'}
+    retained=[]
+    for row in old.to_dict('records'):
+        desc=json.loads(row['dimensions'])
+        if not desc.get('assessment') or not desc.get('type'):raise ValueError('Prior IPC record lacks assessment identity')
+        key=ipc_period_key(row['country'],desc['assessment'],desc['type'],row['period_start'],row['period_end'])
+        # A known count contradiction cannot be resurrected from a prior snapshot.
+        # Raw source evidence and archived observations retain the exclusion lineage.
+        if key in accepted or key in invalid:continue
+        status=('retained prior snapshot; current history identity quarantined' if key in quarantined else
+                'retained prior snapshot; period absent from current history export')
+        desc.update(derived_period_key=key,source_analysis_id=None,source_snapshot_status=status,
+                    geography_comparable_to_country=False)
+        row['dimensions']=json.dumps(desc,sort_keys=True)
+        note=' Prior validated snapshot retained with its original source URL/version and retrieval time; not certified as current full-history data.'
+        if note.strip() not in row['quality_note']:row['quality_note']+=note
+        retained.append(row)
+    clean_new=new.copy();clean_new.attrs={}
+    parts=[part for part in [frame(retained),clean_new] if not part.empty]
+    return validate_observations(pd.concat(parts,ignore_index=True) if parts else frame([]))
 
 
 def normalize_idmc(d,country,url,published=None):
@@ -380,6 +481,8 @@ def refresh(name,output=BASE/'data/monitoring',offline=False,config=CONFIG):
     output=Path(output);output.mkdir(parents=True,exist_ok=True)
     client=Client(offline=offline)
     d=ADAPTERS[name](client,config['countries'],config['start_year'])
+    ipc_history=d.attrs.get('ipc_history') if name=='ipc' else None
+    ipc_quarantine=d.attrs.get('ipc_quarantine_csv') if name=='ipc' else None
     d=validate_observations(d)
     stamp=max(m['fetched_at'] for m in client.requests)
     d['fetched_at']=stamp
@@ -389,12 +492,38 @@ def refresh(name,output=BASE/'data/monitoring',offline=False,config=CONFIG):
         old=pd.read_csv(target)
         if name!='ipc' and len(d)<0.9*len(old):raise ValueError(f'{name}: suspicious shrink {len(old)} -> {len(d)}')
         if name=='ipc':
-            # Public endpoint exposes latest assessments; preserve older fetched snapshots.
-            d=pd.concat([old,d],ignore_index=True)
-            d['_assessment']=d.dimensions.map(lambda x:json.loads(x).get('assessment'))
-            d['_type']=d.dimensions.map(lambda x:json.loads(x).get('type'))
-            d=d.drop_duplicates(['country','period_start','period_end','metric','_assessment','_type'],keep='last').drop(columns=['_assessment','_type'])
-            d=validate_observations(d)
+            previous_manifest=output/'ipc.manifest.json'
+            previous_rows=(json.loads(previous_manifest.read_text()).get('history',{}).get('source_rows')
+                           if previous_manifest.exists() else None)
+            if previous_rows and ipc_history['source_rows']<.9*previous_rows:
+                raise ValueError(f'ipc: suspicious full-history source shrink {previous_rows} -> {ipc_history["source_rows"]}')
+            d=merge_ipc_history(old,d,ipc_history)
+    if name=='ipc':
+        # Diagnostics are outside the observation CSV glob. Prior values remain auditable.
+        diagnostics=output.parent/'diagnostics/ipc_history'
+        diagnostics.mkdir(parents=True,exist_ok=True)
+        if target.exists() and old.drop(columns='fetched_at').to_csv(index=False)!=d.drop(columns='fetched_at').to_csv(index=False):
+            previous=target.read_bytes();previous_hash=hashlib.sha256(previous).hexdigest()
+            archive=diagnostics/'prior_snapshots'/f'{previous_hash}.csv'
+            archive.parent.mkdir(parents=True,exist_ok=True)
+            if not archive.exists():archive.write_bytes(previous)
+            previous_manifest=output/'ipc.manifest.json'
+            if previous_manifest.exists():
+                archived_manifest=archive.with_suffix('.manifest.json')
+                if not archived_manifest.exists():archived_manifest.write_bytes(previous_manifest.read_bytes())
+        evidence=ipc_quarantine.encode()
+        evidence_hash=hashlib.sha256(evidence).hexdigest()
+        quarantine_path=diagnostics/f'quarantine_{evidence_hash}.csv'
+        if not quarantine_path.exists():quarantine_path.write_bytes(evidence)
+        snapshot_status=d.dimensions.map(lambda x:json.loads(x).get('source_snapshot_status',''))
+        ipc_status={k:v for k,v in ipc_history.items() if k!='accepted_period_keys'}
+        ipc_status.update(accepted_periods=len(ipc_history['accepted_period_keys']),
+            retained_prior_rows=int(snapshot_status.str.startswith('retained prior snapshot').sum()),
+            quarantine_evidence=str(quarantine_path.relative_to(output.parent)),
+            quarantine_sha256=evidence_hash,
+            revision_policy='Only an unambiguous matching country/analysis-month/type/start/end period replaces prior rows, including withdrawn phase fields. Absent or ambiguous periods retain prior observations with original lineage; confirmed count-partition conflicts exclude matching prior observations from active data while preserving archives. No selection among ambiguous source rows.',
+            requests=client.requests)
+        write_json_if_changed(diagnostics/'history_status.json',ipc_status)
     text=d.to_csv(index=False).encode()
     payload=gzip.compress(text,mtime=0) if target.suffix=='.gz' else text
     if not target.exists() or target.read_bytes()!=payload:
@@ -407,5 +536,6 @@ def refresh(name,output=BASE/'data/monitoring',offline=False,config=CONFIG):
               'rows':len(d),'countries':sorted(d.country.unique()),'configured_countries':config['countries'],
               'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'requests':client.requests,
               'provenance_note':'Publication time may be unavailable; ingestion time is not publication time.'}
+    if name=='ipc':manifest['history']=ipc_status
     write_json_if_changed(output/f'{name}.manifest.json',manifest)
     return manifest

@@ -246,13 +246,15 @@ def load_yearly_famine_deaths_wpf(deaths_by_year_csv: str, year_lo=1870, year_hi
 
 # ---------- Canonical flood events ----------
 
-def load_canonical_flood_events(floods_csv: str, dedupe_match_groups: bool = True) -> pd.DataFrame:
+def load_canonical_flood_events(floods_csv: str, dedupe_match_groups: bool = True, *,
+                                apply_linkage_corrections: bool = True) -> pd.DataFrame:
     """One source-priority reconciliation BEFORE any threshold or date filter.
 
     EM-DAT is preferred to DFO, matching the feeder's priority. Ties are stable
     by source ID/date, never mortality. Preserve match-group row counts and toll
-    disagreement for audit. Existing match groups are provisional links, not a
-    claim that multinational/group collisions have been manually adjudicated.
+    disagreement for audit. Eleven reviewed group splits require a valid,
+    source-hash-bound sidecar. Other match groups remain provisional links.
+    Explicitly disabling corrections exposes the legacy sensitivity baseline.
     """
     df = pd.read_csv(floods_csv, low_memory=False)
     df['deaths'] = pd.to_numeric(df['deaths'], errors='coerce')
@@ -267,13 +269,11 @@ def load_canonical_flood_events(floods_csv: str, dedupe_match_groups: bool = Tru
     df['_priority'] = df.get('source', pd.Series('', index=df.index)).map({'EM-DAT': 0, 'DFO': 1}).fillna(2)
     df['_source_id'] = df.get('source_id', pd.Series('', index=df.index)).fillna('').astype(str)
     df['canonical_event_id'] = 'row:' + df['_row'].astype(str)
+    linkage_metadata = dict(status='raw_rows_not_deduplicated', corrected_groups=0, corrected_source_rows=0)
     if dedupe_match_groups and 'match_group_id' in df:
-        grouped = df['match_group_id'].notna()
-        df.loc[grouped, 'canonical_event_id'] = 'match:' + df.loc[grouped, 'match_group_id'].astype(str)
-        # Unmatched records with a stable source ID can still be exact duplicates.
-        identified = ~grouped & df['_source_id'].ne('')
-        source = df.get('source', pd.Series('', index=df.index)).fillna('').astype(str)
-        df.loc[identified, 'canonical_event_id'] = source[identified] + ':' + df.loc[identified, '_source_id']
+        from flood_linkage_contract import canonical_identities
+        df['canonical_event_id'], linkage_metadata = canonical_identities(
+            df, floods_csv, apply_corrections=apply_linkage_corrections)
         groups = df.groupby('canonical_event_id', sort=False)
         df['source_row_count'] = groups['deaths'].transform('size')
         df['deaths_min_reported'] = groups['deaths'].transform('min')
@@ -290,6 +290,7 @@ def load_canonical_flood_events(floods_csv: str, dedupe_match_groups: bool = Tru
     df = df.sort_values(['start', '_source_id', '_row'], kind='stable').drop(columns=['_priority', '_source_id', '_row']).reset_index(drop=True)
     df.attrs['deduplication'] = 'EM-DAT before DFO; stable source ID tie; before filters'
     df.attrs['linkage_status'] = 'existing match groups; ambiguities require source adjudication'
+    df.attrs['linkage_corrections'] = linkage_metadata
     return df
 
 

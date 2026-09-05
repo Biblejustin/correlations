@@ -1,0 +1,10 @@
+year,deaths_min,legacy_count,corrected_count,difference
+all_catalog_rows,0,7434,7445,11
+2015,0,160,162,2
+2016,0,157,160,3
+2018,0,174,177,3
+2020,0,225,227,2
+2024,0,146,147,1
+all_catalog_rows,100,610,610,0
+all_catalog_rows,1000,82,82,0
+all_catalog_rows,10000,18,18,0

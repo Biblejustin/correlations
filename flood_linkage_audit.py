@@ -1,7 +1,8 @@
 """Reproduce flood linkage ambiguities without inventing or replacing source links.
 
-Outputs preserve the existing canonical selection and expose every member of a
-flagged group. Quarantine means needs source adjudication, not proven mismatch.
+Outputs apply eleven source-verified group splits, retain the legacy baseline,
+and expose every member of a flagged group. Quarantine means needs source
+adjudication, not proven mismatch.
 The unflagged subset is only a sensitivity input; omitted events are unknown,
 and must never be converted to zero or claimed as a complete catalog.
 """
@@ -16,6 +17,7 @@ import re
 import pandas as pd
 
 from correlate_events import load_canonical_flood_events
+from flood_linkage_contract import canonical_identities, legacy_identities
 from source_tracking import file_digest, write_json_if_changed
 
 BASE = Path(__file__).resolve().parent
@@ -37,14 +39,8 @@ def _joined(values):
 
 
 def _group_ids(raw):
-    """Reproduce the loader's identity convention; selection stays in the loader."""
-    grouped = raw['match_group_id'].notna()
-    identities = pd.Series(['row:' + str(i) for i in range(len(raw))], index=raw.index)
-    identities.loc[grouped] = 'match:' + raw.loc[grouped, 'match_group_id'].astype(str)
-    source_ids = raw['source_id'].fillna('').astype(str)
-    identified = ~grouped & source_ids.ne('')
-    identities.loc[identified] = raw.loc[identified, 'source'].fillna('').astype(str) + ':' + source_ids.loc[identified]
-    return identities
+    """Legacy grouping retained only for before/after evidence."""
+    return legacy_identities(raw)
 
 
 def audit_catalog(path):
@@ -57,8 +53,10 @@ def audit_catalog(path):
     if raw.empty:
         raise ValueError('Flood catalog is empty')
     canonical = load_canonical_flood_events(str(path))
+    legacy_canonical = load_canonical_flood_events(str(path), apply_linkage_corrections=False)
     raw['source_record_number'] = range(1, len(raw) + 1)
-    raw['canonical_event_id'] = _group_ids(raw)
+    raw['legacy_canonical_event_id'] = _group_ids(raw)
+    raw['canonical_event_id'], linkage_metadata = canonical_identities(raw, path)
     if set(raw['canonical_event_id']) != set(canonical['canonical_event_id']):
         raise ValueError('Audit identity rules diverged from the canonical loader')
     raw['_start'] = pd.to_datetime(raw['start_date'], errors='coerce', format='mixed')
@@ -105,6 +103,7 @@ def audit_catalog(path):
         low, high = (float(deaths.min()), float(deaths.max())) if len(deaths) else (None, None)
         groups.append(dict(
             canonical_event_id=identity, review_required=bool(flags), review_flags=';'.join(sorted(set(flags))),
+            legacy_canonical_event_ids=_joined(rows['legacy_canonical_event_id']),
             source_rows=len(rows), source_record_numbers=json.dumps(sorted(rows['source_record_number'].astype(int).tolist()), separators=(',', ':')),
             sources=_joined(rows['source']), source_event_ids=json.dumps(event_ids, sort_keys=True, separators=(',', ':')),
             countries=_joined(rows.get('country', [])), iso_codes=_joined(rows.get('iso', [])),
@@ -125,7 +124,7 @@ def audit_catalog(path):
     unflagged = canonical[~canonical['review_required']].copy()
     rule_counts = {rule: int(groups['review_flags'].str.split(';').map(lambda flags: rule in flags).sum()) for rule in RULES}
     manifest = dict(
-        schema_version=1, source_filename=path.name, source_sha256=file_digest(path),
+        schema_version=2, source_filename=path.name, source_sha256=file_digest(path),
         source_repository='https://github.com/Biblejustin/flood-data',
         canonical_policy=canonical.attrs.get('deduplication', 'EM-DAT before DFO; stable source ID/date/row tie; before filters'),
         rules=RULES, counts=dict(raw_rows=len(raw), canonical_events=len(canonical),
@@ -133,17 +132,37 @@ def audit_catalog(path):
                                 unflagged_sensitivity_events=len(unflagged), mortality_disagreement_groups=int(groups['mortality_disagreement'].sum()),
                                 reported_tolls_straddle_1000_groups=int(groups['reported_tolls_straddle_1000'].sum())),
         rule_counts=rule_counts,
+        linkage_corrections=linkage_metadata,
+        legacy_baseline_counts=dict(canonical_events=len(legacy_canonical),
+                                    unknown_selected_deaths=int(legacy_canonical['deaths'].isna().sum())),
         limitations=[
             'Flags are reproducible evidence for source adjudication, not proof that linked records describe different disasters.',
             'Country rows sharing an EM-DAT year-number are not flagged as different EM-DAT event identities merely because country suffixes differ.',
-            'Neither the raw input nor the analysis loader is modified; canonical selection remains provisional.',
+            'Raw input remains unchanged. Eleven reviewed block splits are applied only with a valid source/evidence contract; other links remain provisional.',
+            'Corrected units are reviewed catalog identities, not proof of physically independent disasters.',
             'Unflagged sensitivity events are an incomplete diagnostic subset. Excluded or unknown records must not be treated as zero.',
             'Source record numbers are one-based CSV data-record positions, excluding the header; quoted multiline fields can span physical lines.',
             'Mortality reports can refer to different geographic scopes; no totals are added or invented during linkage review.',
         ],
     )
+    # Diagnostic row counts, not completeness claims or mortality estimates.
+    sensitivity = []
+    for threshold in (0, 100, 1000, 10000):
+        before = legacy_canonical if threshold == 0 else legacy_canonical[legacy_canonical['deaths'].ge(threshold)]
+        after = canonical if threshold == 0 else canonical[canonical['deaths'].ge(threshold)]
+        years = sorted(set(before['year'].dropna().astype(int)) | set(after['year'].dropna().astype(int)))
+        sensitivity.append(dict(year='all_catalog_rows', deaths_min=threshold, legacy_count=len(before),
+                                corrected_count=len(after), difference=len(after)-len(before)))
+        for year in years:
+            old_count, new_count = int(before['year'].eq(year).sum()), int(after['year'].eq(year).sum())
+            if old_count != new_count:
+                sensitivity.append(dict(year=year, deaths_min=threshold, legacy_count=old_count,
+                                        corrected_count=new_count, difference=new_count-old_count))
+    manifest['sensitivity_scope'] = 'All dated catalog records, including any provisional year; yearly rows list changed years only. This is a count-definition diagnostic, not a covered annual time series.'
     return dict(groups=groups, quarantine_rows=quarantine, canonical_events=canonical,
-                canonical_unflagged_sensitivity=unflagged), manifest
+                canonical_unflagged_sensitivity=unflagged,
+                canonical_events_legacy=legacy_canonical.sort_values('canonical_event_id', kind='stable'),
+                correction_sensitivity=pd.DataFrame(sensitivity)), manifest
 
 
 def write_audit(source, output):
@@ -171,7 +190,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     result = write_audit(args.input, args.output)
     print(json.dumps(result['counts'], indent=2))
-    print('Audit complete. Flagged groups require source adjudication; analysis loader remains unchanged.')
+    print('Audit complete. Reviewed splits are contract-validated; flagged residual groups still require source adjudication.')
 
 
 if __name__ == '__main__':

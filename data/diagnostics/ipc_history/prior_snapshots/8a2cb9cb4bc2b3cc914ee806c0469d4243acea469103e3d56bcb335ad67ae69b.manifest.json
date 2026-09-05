@@ -1,0 +1,43 @@
+{
+  "configured_countries": [
+    "ISR",
+    "PSE",
+    "LBN",
+    "UKR",
+    "SDN",
+    "ETH",
+    "SOM",
+    "YEM"
+  ],
+  "countries": [
+    "ETH",
+    "LBN",
+    "PSE",
+    "SDN",
+    "SOM",
+    "YEM"
+  ],
+  "fetched_at": "2026-09-05T21:33:54.708996+00:00",
+  "observed_from": "2021-05-01",
+  "observed_through": "2026-06-30",
+  "projected_through": "2027-01-31",
+  "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
+  "requests": [
+    {
+      "fetched_at": "2026-09-05T21:33:53.141315+00:00",
+      "published_at": null,
+      "sha256": "4b30214ceaae0d4e02673da89253adc2189954f2d9e6d1cc188f6bd86cd65408",
+      "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
+    },
+    {
+      "fetched_at": "2026-09-05T21:33:54.708996+00:00",
+      "published_at": "Mon, 24 Aug 2026 12:32:58 GMT",
+      "sha256": "9695d1b8ef3fe6a7bfca978297390e85f016499714bd96510db298c034ed5419",
+      "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/6926dff7-658a-49e1-8d61-0ed8a983fbe1/download/ipc_global_national_long_latest.csv"
+    }
+  ],
+  "rows": 48,
+  "schema_version": 1,
+  "sha256": "8a2cb9cb4bc2b3cc914ee806c0469d4243acea469103e3d56bcb335ad67ae69b",
+  "source_id": "ipc"
+}

@@ -404,13 +404,15 @@ def write_report(observations,panel,tests,sync,output,as_of=None,n_permutations=
         projected=g[g.projected]
         lines.append(f'| {source} | {len(g):,} | {observed.period_end.max() if len(observed) else "unavailable"} | {projected.period_end.max() if len(projected) else "—"} |')
     lines += ['', '## Food security: latest current assessment', '',
-              '| Country | Reference window | IPC 3+ share of analyzed population | Population analyzed | Coverage |','|---|---|---:|---:|---|']
+              '| Country | Reference window | IPC 3+ share of analyzed population | Population analyzed | Coverage | Source snapshot status |','|---|---|---:|---:|---|---|']
     ipc=d[d.metric.eq('ipc_phase_3plus_fraction') & ~d.projected & (pd.to_datetime(d.period_start)<=today)]
     for country in CONFIG['countries']:
         g=ipc[ipc.country.eq(country)].sort_values(['period_end','published_at'],na_position='first')
-        if g.empty:lines.append(f'| {country} | unavailable | — | — | no fetched current assessment |');continue
+        if g.empty:lines.append(f'| {country} | unavailable | — | — | no fetched current assessment | unavailable |');continue
         row=g.iloc[-1];expired=pd.Timestamp(row.period_end)<today
-        lines.append(f'| {country} | {row.period_start}–{row.period_end} | {row.value:.1%} | {row.denominator:,.0f} | {"expired assessment; not present-day estimate" if expired else "current assessment window"}; country-wide territorial match unverified |')
+        snapshot=dimensions(row.dimensions).get('source_snapshot_status')
+        lineage=str(snapshot or 'legacy snapshot; full-history lineage unverified').replace('|',' / ').replace('\n',' ')
+        lines.append(f'| {country} | {row.period_start}–{row.period_end} | {row.value:.1%} | {row.denominator:,.0f} | {"expired assessment; not present-day estimate" if expired else "current assessment window"}; country-wide territorial match unverified | {lineage} |')
     affordable=d[d.metric.eq('staple_kg_per_daily_wage') & d.dimensions.map(lambda x:is_food_commodity(dimensions(x).get('commodity','')))]
     lines += ['',f'Food affordability: {len(affordable):,} matched market/staple/month observations. Units: kg per daily non-qualified labor wage. No affordability estimate where matching wages are absent.']
     lines+=latest_monitor_tables(d,panel,today)
@@ -420,7 +422,7 @@ def write_report(observations,panel,tests,sync,output,as_of=None,n_permutations=
     for _,r in tests[tests.status.eq('exploratory')].sort_values('q_family').head(10).iterrows():
         lines.append(f'| {r.country} | {r.predictor} → {r.response} | {r.lag_years} | {r.n} | {r.r:+.3f} | {r.q_family:.3f} |')
     lines += ['', 'Signed-log annual residuals; separate linear time trends; 3-year block permutation with stable per-cell seeds; BH across the entire fixed family. Lag association does not identify causation. Net refugee-stock change is not new displacement.',
-              '', 'IPC public export contains latest assessments and a phase-all population analyzed. Percentages are not shares of total national population. Territorial scope is not certified; assessments remain in this source table and are excluded from cross-source country lag inference until comparable geography is verified. Earlier snapshots accumulate prospectively.',
+              '', 'IPC uses the full national assessment-history export. Each accepted period pairs phase counts with its own phase-all assessed-population denominator; contradictory or ambiguous periods are quarantined. Retained prior snapshots keep their original source and retrieval lineage and are not certified as current full-history observations. The table labels retained/quarantined and unavailable lineage explicitly; "current" describes the source assessment type, not snapshot verification or present-day conditions. Historical reference windows do not reconstruct release-time availability. Territorial scope is not certified; IPC assessments remain excluded from cross-source country lag inference until comparable geography is verified.',
               '', '## Regional synchrony','',f'{int(sync.eligible.sum())} country-years meet all four fixed domains and baseline requirements. Ineligible years remain unavailable. Country-level calibration requires at least {CONFIG["minimum_test_years"]} contiguous complete years; independent circular shifts retain each domain time ordering while breaking cross-domain alignment. BH includes all fixed pilot countries. This is historical sensitivity, not a prospective rarity score.',
               '', 'Religious freedom source PSE refers to West Bank; excluded from the combined-territory annual panel. WHO sentinel series need 26 weeks/year. Country coverage varies across source definitions.',
               '', '| Country | Calibration years | Country-level joint p | Status |','|---|---:|---:|---|']

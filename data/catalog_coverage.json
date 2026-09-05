@@ -232,7 +232,10 @@
       "completeness": "source_defined_catalog",
       "source_url": "https://github.com/Biblejustin/flood-data",
       "as_of": "2026-09-04",
-      "notes": "Merged DFO/EM-DAT snapshot. Match-group linkage not independently validated; country-event and multinational ambiguities retained in canonical diagnostics."
+      "notes": "Merged DFO/EM-DAT snapshot. Eleven reviewed block splits require source/evidence hashes and stable record identities; remaining ambiguities stay in canonical diagnostics. Corrections do not extend coverage or convert unknown deaths to zero.",
+      "linkage_contract": "floods.csv.linkage.json",
+      "linkage_contract_required": true,
+      "linkage_unit": "Reviewed catalog event identities; physical-disaster independence not established"
     },
     "famines_wpf.csv": {
       "start_year": 1870,

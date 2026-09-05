@@ -17,18 +17,13 @@
     "SOM",
     "YEM"
   ],
-  "fetched_at": "2026-09-05T23:40:39.258152+00:00",
+  "fetched_at": "2026-09-05T23:31:10.566593+00:00",
   "history": {
-    "accepted_periods": 94,
+    "accepted_periods": 95,
     "geographic_comparability_verified": false,
-    "partition_tolerance": {
-      "interpretation": "Conservative consistency screen allowing source rounding/process differences; not a precision guarantee. Never replace reported denominator with phase sum.",
-      "minimum_people": 5,
-      "relative_to_assessed_population": 0.015
-    },
     "publisher_analysis_ids_available": false,
-    "quarantine_evidence": "diagnostics/ipc_history/quarantine_9bb5371d7a02d594f8945c1df32b04f265a938d39bad23f6af39823226baf8e9.csv",
-    "quarantine_sha256": "9bb5371d7a02d594f8945c1df32b04f265a938d39bad23f6af39823226baf8e9",
+    "quarantine_evidence": "diagnostics/ipc_history/quarantine_e4a65e07d2ebd263e2de1e0a92bb369fa99afedea1ba5abe9be11c0810edd23f.csv",
+    "quarantine_sha256": "e4a65e07d2ebd263e2de1e0a92bb369fa99afedea1ba5abe9be11c0810edd23f",
     "quarantined_periods": [
       {
         "Country": "ETH",
@@ -36,7 +31,6 @@
         "From": "2021-05-01",
         "To": "2021-06-30",
         "Validity period": "current",
-        "failure_kind": "ambiguous_identity",
         "period_key": "ipc-hdx-period-v1:feac852348a55cdbbb4ae829c5e2a3d1d7978d3471962af2e8d20333cb1fcee0",
         "reason": "Conflicting rows share a derived period identity; publisher analysis ID/scope missing",
         "source_rows": 14
@@ -47,33 +41,9 @@
         "From": "2021-07-01",
         "To": "2021-09-30",
         "Validity period": "first projection",
-        "failure_kind": "ambiguous_identity",
         "period_key": "ipc-hdx-period-v1:e4c9a9a0919efba15c8ffd19ee1afdc8d8e519b16d69e1e9ef8b0629a6950d5d",
         "reason": "Conflicting rows share a derived period identity; publisher analysis ID/scope missing",
         "source_rows": 14
-      },
-      {
-        "Country": "SDN",
-        "Date of analysis": "Jan 2026",
-        "From": "2026-06-01",
-        "To": "2026-09-30",
-        "Validity period": "first projection",
-        "allowed_count_difference": 713036.9099999999,
-        "complete_partition": true,
-        "failure_kind": "invalid_partition",
-        "partition_phases": [
-          "1",
-          "2",
-          "3",
-          "4",
-          "5"
-        ],
-        "period_key": "ipc-hdx-period-v1:038076dfb4ef282e73405149c33f750371e061b9c02e656525d4a5d12624ecf9",
-        "reason": "Inconsistent phase-count partition: 1+2+3+4+5 versus phase all",
-        "reported_total": 47535794.0,
-        "reported_total_phase": "all",
-        "source_rows": 7,
-        "supplied_phase_sum": 8289610.0
       },
       {
         "Country": "SOM",
@@ -81,7 +51,6 @@
         "From": "2026-01-01",
         "To": "2026-01-31",
         "Validity period": "current",
-        "failure_kind": "ambiguous_identity",
         "period_key": "ipc-hdx-period-v1:2b6d5128788af294e48aa8d4a9b440a056d8584e6f6b6a0f15c2d8a5853d2d4d",
         "reason": "Conflicting rows share a derived period identity; publisher analysis ID/scope missing",
         "source_rows": 14
@@ -92,7 +61,6 @@
         "From": "2026-02-01",
         "To": "2026-03-31",
         "Validity period": "first projection",
-        "failure_kind": "ambiguous_identity",
         "period_key": "ipc-hdx-period-v1:93c068836043afb612d4934c304bdfcb75cf93fff964e9a6f52fd96bd8827595",
         "reason": "Conflicting rows share a derived period identity; publisher analysis ID/scope missing",
         "source_rows": 14
@@ -103,7 +71,6 @@
         "From": "2026-04-01",
         "To": "2026-06-30",
         "Validity period": "second projection",
-        "failure_kind": "ambiguous_identity",
         "period_key": "ipc-hdx-period-v1:0a49e658951b875be812abdafe1acd466327c7ea3a48a2197d4177110e356cbb",
         "reason": "Conflicting rows share a derived period identity; publisher analysis ID/scope missing",
         "source_rows": 14
@@ -111,13 +78,13 @@
     ],
     "requests": [
       {
-        "fetched_at": "2026-09-05T23:40:36.939120+00:00",
+        "fetched_at": "2026-09-05T23:31:09.008915+00:00",
         "published_at": null,
         "sha256": "4b30214ceaae0d4e02673da89253adc2189954f2d9e6d1cc188f6bd86cd65408",
         "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
       },
       {
-        "fetched_at": "2026-09-05T23:40:39.258152+00:00",
+        "fetched_at": "2026-09-05T23:31:10.566593+00:00",
         "published_at": "Mon, 24 Aug 2026 12:32:59 GMT",
         "sha256": "39d8b4a9269e29e26354f5fb251a80cff9c5f1894c93803ac93f21cf6da54ccd",
         "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
@@ -125,7 +92,7 @@
     ],
     "resource": "ipc_global_national_long.csv",
     "retained_prior_rows": 8,
-    "revision_policy": "Only an unambiguous matching country/analysis-month/type/start/end period replaces prior rows, including withdrawn phase fields. Absent or ambiguous periods retain prior observations with original lineage; confirmed count-partition conflicts exclude matching prior observations from active data while preserving archives. No selection among ambiguous source rows.",
+    "revision_policy": "Only an unambiguous matching country/analysis-month/type/start/end period replaces prior rows, including withdrawn phase fields. Absent or quarantined periods retain prior validated observations with original lineage. No selection among ambiguous source rows.",
     "source_rows": 735
   },
   "observed_from": "2021-01-01",
@@ -134,20 +101,20 @@
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-09-05T23:40:36.939120+00:00",
+      "fetched_at": "2026-09-05T23:31:09.008915+00:00",
       "published_at": null,
       "sha256": "4b30214ceaae0d4e02673da89253adc2189954f2d9e6d1cc188f6bd86cd65408",
       "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
     },
     {
-      "fetched_at": "2026-09-05T23:40:39.258152+00:00",
+      "fetched_at": "2026-09-05T23:31:10.566593+00:00",
       "published_at": "Mon, 24 Aug 2026 12:32:59 GMT",
       "sha256": "39d8b4a9269e29e26354f5fb251a80cff9c5f1894c93803ac93f21cf6da54ccd",
       "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
     }
   ],
-  "rows": 384,
+  "rows": 388,
   "schema_version": 1,
-  "sha256": "e6d71a9f07d8e76e5790b80334114d6f985b38eabbf593a4842378fb80866ac0",
+  "sha256": "60e1f60f8b0ef7c209bced79af8aaa2f1dbbe8f4bd3deb14998a3a8ae7b7deea",
   "source_id": "ipc"
 }
