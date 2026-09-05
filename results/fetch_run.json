@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-09-05T21:22:20.595733+00:00",
+  "success": false,
+  "fetch_skipped": false,
+  "fetch_only": true,
+  "selected_sources": [
+    "quakes",
+    "historical_quakes",
+    "significant"
+  ],
+  "stages": [
+    {
+      "stage": "regression_tests",
+      "status": "passed",
+      "returncode": 0,
+      "seconds": 2.78,
+      "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/regression_tests.log"
+    },
+    {
+      "stage": "fetch_quakes",
+      "status": "failed",
+      "returncode": 1,
+      "seconds": 104.33,
+      "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/fetch_quakes.log"
+    }
+  ]
+}

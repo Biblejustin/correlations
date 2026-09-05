@@ -10,11 +10,16 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 - [Monitoring definitions and sources](MONITORING.md): exact measures, geography, cadence, coverage and future validation rules.
 - [Methodology](METHODOLOGY.md): missingness, selected catalogs, allocation assumptions and statistical families.
 - [Remaining work](BACKLOG.md): observations still unavailable and deeper research extensions.
+- [Operations and verification](OPERATIONS.md): shared Make entrypoints, exact dependency checks, clean-install evidence and prepared CI.
 - [Frozen historical predictions](PREDICTIONS.md): original hypotheses retained. Current scorecards are diagnostics, not independent validation of a refitted model.
 
 ## What changed in the evidence
 
 **Israeli wheat deserves follow-up.** Wheat yield per hectare and total rainfall remain associated over 1991–2023 after linear time adjustment: r ≈ +0.558, HAC-adjusted q ≈ 0.000014 across the 30-test decomposition family. Harvested area has little association. Rain × era interaction does not establish a changed yield response. Irrigated-land adjustment uses only 17 reported years and gives weaker evidence; the source covariate covers all crops. These are historical exploratory results. See [crop/rain feeder](https://github.com/Biblejustin/israel-rain-agriculture) and copied [analysis results](data/israel_monitoring/israel-rain-agriculture/results).
+
+**Current water and heat monitoring now extends through 2025.** Separate CRU-CY4.10 national data track rainfall, seasonal temperature, potential evapotranspiration and wet days. Rain year 2025 received 218.8 mm, 53.6% of its fixed 1991–2020 baseline. The original CCKP rain aggregation differs materially, so the current monitor cannot silently extend the frozen wheat model. [Climate results and overlap checks](data/israel_monitoring/israel-rain-agriculture/results/climate_monitor.md) retain the product distinction and future-validation requirements.
+
+**New displacement flows are monitored directly.** IDMC annual exports provide displacement movements and year-end stocks through 2025. Repeated movements by one person are possible; the figures are not inferred from refugee-stock changes. The existing regional lag-test family remains unchanged until cause and territorial comparability are verified.
 
 **War–famine association remains era-dependent.** The full-span matrix gives r ≈ +0.452 (1900–2023), surviving its 45-pair block-null sensitivity family. This does not establish the same relationship in every era or establish causation. See exported windows, sample sizes and q-values.
 
@@ -23,6 +28,8 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 **Composite currently unavailable.** Fixed baseline/domain weights expose insufficient flood-mortality and drought-affected baseline observations. The analysis emits explicit missing scores and reasons. It cannot presently support escalating-contraction headlines.
 
 **Catalog definitions matter.** Flood counts and dates now use one canonical event resolver; unknown mortality remains unknown. Duration totals are allocated over original event lifetimes before slicing a window. Cyclone Sidr's false 2003 duplicate is removed. Selected eclipse/flare/disaster lists remain incomplete research catalogs.
+
+The [flood linkage audit](data/diagnostics/flood_linkage/manifest.json) flags 792 of 7,434 canonical groups for source review, preserving 3,414 member records as evidence. Multiple source identities and incompatible dates are review signals, not proof of false matches. The default catalog is preserved; an unflagged sensitivity subset remains explicitly incomplete.
 
 ![Current analysis dashboard](figures/32_dashboard.png)
 
@@ -51,22 +58,22 @@ New authoritative regional feeds live under `data/monitoring`; adapters and defi
 ## Run
 
 ```bash
-python3 -m venv ../venv
-../venv/bin/python -m pip install -r requirements.txt pytest
-../venv/bin/python refresh_monitoring.py
-../venv/bin/python sync_feeders.py
-../venv/bin/python monitor_regional.py
-../venv/bin/python -m pytest -q tests
+make bootstrap                 # Python 3.13; pinned runtime and test dependencies
+make test                      # isolated fixture tests
+make refresh                   # full fetch, synchronization and analysis; local outputs
+make local                     # same analyses using existing local source data
+make publish                   # full refresh followed by guarded publication
 ```
 
 The full legacy suite also needs local earthquake/space-weather SQLite databases. Fetch them using their feeder instructions. Missing databases fail clearly and cannot be silently replaced with empty databases.
 
 ```bash
-bash weekly_update.sh --skip-fetch --dry-run   # existing data → tests + figures + reports
-bash weekly_update.sh                        # fetch + synchronize + tests + analyses; local outputs
-bash weekly_update.sh --publish              # same, then commit/push generated artifacts
+make catalogs SOURCES="quakes ngdc"     # selected fetch diagnostics; no analysis or publication
+make PY=/absolute/path/to/venv/bin/python local
 ```
 
 Publication requires clean starting trees, active Biblejustin authentication, verified Biblejustin remotes, and every stage passing. Default runs leave local changes for review. No implicit pulls or destructive artifact reverts. Logs remain in `logs/`; stage status is written to `results/analysis_run.json` and `results/refresh_run.json`. Failed refreshes preserve previous good source snapshots and stop publication; sources may have different latest observation dates.
+
+Make targets share `weekly_update.py` and `run_suite.py`; every operational Make target verifies the runtime first, and full/fetch-only refreshes run regression tests before downloads. Fetch-only evidence is stored separately in `results/fetch_run.json`. The legacy shell wrapper remains available for callers supplying the shared runtime.
 
 `--dry-run` still updates local generated files; it suppresses commits, pushes and advancement of the successful-source snapshot. Targeted analyses: `python run_suite.py --scripts wavelet granger`.

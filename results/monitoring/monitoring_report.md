@@ -6,6 +6,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 
 | Source | Rows | Latest observed/assessment reference end | Latest projected reference end |
 |---|---:|---|---|
+| idmc | 241 | 2025-12-31 | — |
 | ipc | 48 | 2026-06-30 | 2027-01-31 |
 | ucdp | 728 | 2025-12-31 | — |
 | unhcr | 624 | 2025-12-31 | — |
@@ -43,6 +44,21 @@ Food affordability: 7,474 matched market/staple/month observations. Units: kg pe
 | YEM | 2025 | 1,718 | 4.11 / 41,773,878 people | 2025 | 57,327 |
 
 UCDP total organized-violence deaths combine state-based, non-state and one-sided violence. Rates use same-country, same-year WDI population only where territory is comparable. The UCDP Israel source unit includes Palestinian territories, so its total is not Israeli deaths and no ISR-only population rate/lag is computed; pre-2012 Sudan also lacks a matched post-partition denominator. UNHCR origin-country stocks span worldwide destinations; these are not new-displacement flows. Latest annual year is shown explicitly.
+
+## Latest annual internal displacement observations
+
+| Country | Flow year | New displacement movements | Stock year | People displaced at year end |
+|---|---:|---:|---:|---:|
+| ISR | 2025 | 9,304 | 2025 | 31,382 |
+| PSE | 2025 | 2,755,779 | 2025 | 2,035,131 |
+| LBN | 2025 | 41,242 | 2025 | 64,417 |
+| UKR | 2025 | 167,869 | 2025 | 3,712,000 |
+| SDN | 2025 | 1,732,551 | 2025 | 9,116,896 |
+| ETH | 2025 | 352,933 | 2025 | 2,378,032 |
+| SOM | 2025 | 213,669 | 2025 | 3,347,408 |
+| YEM | 2025 | 56,798 | 2025 | 4,795,983 |
+
+IDMC annual GIDD export via HDX. Flows count displacement movements; one person may move repeatedly. Stocks count people at year end. Separate disaster-event exports are not added to this annual series. Missing counts remain unavailable. These observations do not extend the existing lag-test family; territory and cause comparability require separate verification.
 
 ## Latest sentinel respiratory observations
 
@@ -140,5 +156,8 @@ Historical rainfall remains CRU TS4.08 through complete rain year 2023; current 
 Historical exploratory associations after linear detrending. Production, area and yield are dependent measures; source yield identity checked. Future holdout starts 2025; no held-out success claimed.
 Reported irrigation-share sensitivity: 17 observed years, gaps retained; adjusted rain coefficient +6.23 kg/ha/mm, calendar-HAC q=0.100 across six supplementary tests. National irrigation share is not wheat-specific; no causal attribution.
 Historical US diplomacy/disaster tests, frozen 1991–2024: minimum circular-shift BH q=0.169. Pressure uses upper tail; control deficit uses lower tail. Curated lists are not a current diplomacy feed.
+
+Separate CRU-CY4.10 national climate monitor through 2025-12: rain year 2025 received 218.8 mm (53.6% of the fixed 1991–2020 baseline). Spring mean daily maximum temperature was +1.29 °C relative to baseline. Rain-minus-PET departure was -2.04 baseline standard deviations.
+Rain year is October–September; spring temperature covers March–May. National CRU country aggregation differs from the historical CCKP series. Rain minus PET is a climate diagnostic, not soil moisture or crop water use. The original wheat model and holdout remain frozen; no prospective score is eligible. Full overlap comparisons and the separate five-coefficient heat/irrigation sensitivity are retained in the feeder snapshots.
 
 See MONITORING.md for source commands, scope and interpretation.

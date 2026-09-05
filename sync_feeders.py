@@ -60,6 +60,13 @@ ISRAEL_FILES = {
         'results/wheat_measure_identity.csv', 'results/prospective_wheat_model.json',
         'results/prospective_wheat_training.csv',
         'results/irrigation_sensitivity.csv', 'results/irrigation_sensitivity_plan.json',
+        'climate_extension_plan.json', 'data/climate/source_manifest.json', 'data/climate/source_availability.json',
+        'data/climate/cru_cy_4.08/monthly.csv', 'data/climate/cru_cy_4.08/annual_diagnostics.csv',
+        'data/climate/cru_cy_4.10/monthly.csv', 'data/climate/cru_cy_4.10/annual_diagnostics.csv',
+        'results/climate_monitor.json', 'results/climate_monitor.md',
+        'results/climate_overlap_summary.json', 'results/climate_heat_irrigation_sensitivity.csv',
+        'results/climate_aggregation_overlap_monthly.csv',
+        'results/climate_version_overlap_monthly.csv', 'results/climate_version_overlap_annual.csv',
     ),
     'israel-pressure-disasters': (
         'data/test_results.csv', 'data/coverage.json', 'data/analysis_manifest.json',

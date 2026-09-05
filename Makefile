@@ -1,67 +1,38 @@
-# Reproducibility Makefile for the correlations project.
-#
-# Usage:
-#   make           — full rebuild (catalogs + all plots)
-#   make plots     — regenerate plots only (don't refetch catalogs)
-#   make catalogs  — rebuild SQLite catalogs only
-#   make correlations — run only this repo's analyses
-#   make clean     — delete generated figures
+# Operational entrypoints. Source queries and stage order live in weekly_update.py.
+# Run `make bootstrap` once, then `make test` or `make local`.
+.DEFAULT_GOAL := all
+PYTHON ?= python3.13
+VENV ?= .venv
+PY ?= $(abspath $(VENV)/bin/python)
+WORKERS ?= 2
+SOURCES ?=
 
-VENV    := .venv
-PY      := $(abspath $(VENV)/bin/python)
-PIP     := $(abspath $(VENV)/bin/pip)
+.PHONY: all bootstrap venv verify-env test refresh local plots catalogs correlations publish
 
-SOURCE_REPOS := famines-tracking pandemics-tracking volcanic-eruptions \
-                tropical-cyclones droughts-tracking astronomical-signs
+bootstrap venv:
+	"$(PYTHON)" -m venv "$(VENV)"
+	"$(PY)" -m pip install -r requirements-dev.txt
+	"$(PY)" verify_environment.py --requirements requirements-dev.txt
 
-CORR_SCRIPTS := analyze lag_test cycle_fold spectral wars famines israel \
-                flares_quakes floods pandemics volcanoes cyclones astronomy \
-                meta_analysis trends_meta pattern_analysis signs_overlay \
-                contractions_analysis periodogram_extended sensitivity \
-                wavelet chains make_figures make_more_figures
+verify-env:
+	"$(PY)" verify_environment.py --requirements requirements-dev.txt
 
-.PHONY: all venv catalogs plots correlations clean
+test: verify-env
+	MPLBACKEND=Agg "$(PY)" -m pytest -q tests
 
-all: venv catalogs plots correlations
-	@echo "==> Full rebuild done."
+all: refresh
 
-$(VENV):
-	python3 -m venv $(VENV)
-	$(PIP) install -q -r requirements.txt
+refresh: verify-env
+	"$(PY)" weekly_update.py --dry-run --workers "$(WORKERS)"
 
-venv: $(VENV)
+local plots: verify-env
+	"$(PY)" weekly_update.py --skip-fetch --dry-run --workers "$(WORKERS)"
 
-catalogs: venv
-	@echo "==> Building source catalogs (SQLite DBs)"
-	cd ../spaceweather && $(PY) fetch_spaceweather.py
-	cd ../earthquakes && $(PY) fetch_quakes.py
-	cd ../earthquakes && $(PY) fetch_quakes.py --start-year 1900 --min-mag 6.0 --db quakes_1900.sqlite
+catalogs: verify-env
+	"$(PY)" weekly_update.py --fetch-only --dry-run $(if $(strip $(SOURCES)),--sources $(SOURCES),)
 
-plots: venv
-	@echo "==> Regenerating per-repo plots"
-	@for repo in $(SOURCE_REPOS); do \
-	    if [ -d ../$$repo ]; then \
-	        echo "    $$repo"; \
-	        (cd ../$$repo && $(PY) make_plots.py > /dev/null 2>&1) || echo "      (skipped)"; \
-	    fi; \
-	done
-	@if [ -d ../flood-data ]; then \
-	    echo "    flood-data"; \
-	    (cd ../flood-data && $(PY) build_plots.py > /dev/null 2>&1) || true; \
-	fi
+correlations: verify-env
+	"$(PY)" run_suite.py --workers "$(WORKERS)"
 
-correlations: venv
-	@echo "==> Running correlations analyses"
-	@for script in $(CORR_SCRIPTS); do \
-	    if [ -f $$script.py ]; then \
-	        echo "    $$script.py"; \
-	        $(PY) $$script.py > /dev/null 2>&1 || echo "      (failed — check $$script.py)"; \
-	    fi; \
-	done
-
-clean:
-	rm -rf figures/*.png
-
-# Convenience: just rerun if a script changed
-%.py.run: %.py
-	$(PY) $<
+publish: verify-env
+	"$(PY)" weekly_update.py --publish --workers "$(WORKERS)"

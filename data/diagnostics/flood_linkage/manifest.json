@@ -1,0 +1,52 @@
+{
+  "canonical_policy": "EM-DAT before DFO; stable source ID/date/row tie; before filters",
+  "counts": {
+    "canonical_events": 7434,
+    "mortality_disagreement_groups": 1457,
+    "quarantined_source_rows": 3414,
+    "raw_rows": 11712,
+    "reported_tolls_straddle_1000_groups": 43,
+    "review_required_groups": 792,
+    "unflagged_sensitivity_events": 6642
+  },
+  "limitations": [
+    "Flags are reproducible evidence for source adjudication, not proof that linked records describe different disasters.",
+    "Country rows sharing an EM-DAT year-number are not flagged as different EM-DAT event identities merely because country suffixes differ.",
+    "Neither the raw input nor the analysis loader is modified; canonical selection remains provisional.",
+    "Unflagged sensitivity events are an incomplete diagnostic subset. Excluded or unknown records must not be treated as zero.",
+    "Source record numbers are one-based CSV data-record positions, excluding the header; quoted multiline fields can span physical lines.",
+    "Mortality reports can refer to different geographic scopes; no totals are added or invented during linkage review."
+  ],
+  "output_sha256": {
+    "canonical_events.csv": "fc32319d87ee66d2cff55ca498df48f0af3d10ea3f4454299906091d40d302db",
+    "canonical_unflagged_sensitivity.csv": "e9c123ceaeb8d4d7710aac5971bc97b7293f572af82ac4b0ee5071cc82333f79",
+    "groups.csv": "584539896ed058ccc13be76aca4b8688b51310c402b70f902c448eece25d56fc",
+    "quarantine_rows.csv": "45797d32d693bef02d6c2c8dc19f851c87562c5c5fa79d57b21fab2112c003ce"
+  },
+  "rule_counts": {
+    "imprecise_start_date": 0,
+    "incompatible_date_intervals": 600,
+    "invalid_date_interval": 7,
+    "missing_source_identity": 0,
+    "missing_start_date": 0,
+    "multiple_dfo_event_ids": 458,
+    "multiple_emdat_event_ids": 428,
+    "multiple_other_source_ids": 0,
+    "source_identity_in_multiple_groups": 0
+  },
+  "rules": {
+    "imprecise_start_date": "At least one source row lacks an explicit day or declares coarser date precision.",
+    "incompatible_date_intervals": "Valid supplied intervals have no common date; geographic phases can differ, so manual source review is required.",
+    "invalid_date_interval": "At least one supplied end date precedes its start date.",
+    "missing_source_identity": "At least one source row lacks a source name or stable source ID.",
+    "missing_start_date": "At least one source row has no parseable start date.",
+    "multiple_dfo_event_ids": "Group contains different DFO source event IDs.",
+    "multiple_emdat_event_ids": "Group contains different EM-DAT year-number event identities; country suffixes alone do not trigger this rule.",
+    "multiple_other_source_ids": "A different source supplies multiple distinct event IDs in one group.",
+    "source_identity_in_multiple_groups": "Same source and source ID appear in more than one canonical group."
+  },
+  "schema_version": 1,
+  "source_filename": "floods.csv",
+  "source_repository": "https://github.com/Biblejustin/flood-data",
+  "source_sha256": "27ce3522601d593ac6d85e746288195b8f277e2da3b348e39763b56cd24e21fd"
+}
