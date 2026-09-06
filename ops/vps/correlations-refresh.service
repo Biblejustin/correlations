@@ -1,0 +1,33 @@
+[Unit]
+Description=Guarded correlations refresh and publication
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/correlations-service
+Environment=GH_CONFIG_DIR=/home/ubuntu/correlations-service/github
+Environment=TZ=America/Chicago
+Environment=MPLBACKEND=Agg
+Environment=MPLCONFIGDIR=/home/ubuntu/correlations-service/matplotlib
+Environment=PYTHONUNBUFFERED=1
+Environment=PATH=/home/ubuntu/correlations-runtime/node-v26.8.1-linux-x64/bin:/home/ubuntu/correlations-workspace/verification-venv/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/home/ubuntu/correlations-workspace/verification-venv/bin/python /home/ubuntu/correlations-service/bin/scheduled_refresh.py --config /home/ubuntu/correlations-service/config.json
+ExecStopPost=/home/ubuntu/correlations-workspace/verification-venv/bin/python /home/ubuntu/correlations-service/bin/scheduled_refresh.py --config /home/ubuntu/correlations-service/config.json --mark-interrupted
+TimeoutStartSec=3h
+TimeoutStopSec=30s
+KillMode=control-group
+SuccessExitStatus=75
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/ubuntu/correlations-workspace /home/ubuntu/correlations-service
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
