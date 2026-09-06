@@ -228,3 +228,13 @@ def test_receipt_age_and_latest_week_label_are_not_measurement_changes(tmp_path)
 
 def test_failure_fingerprint_ignores_receipt_dates_and_elapsed_seconds():
     assert runner.normalize_error('failed 2026-09-06T11:42:36.668757+00:00 (3.2s)') == runner.normalize_error('failed 2026-09-07T11:42:36.122+00:00 (9.5s)')
+
+
+def test_only_portwatch_edit_marker_is_receipt_metadata(tmp_path):
+    path=tmp_path/'daily.csv';shipping='correlations/data/trade_shipping/active/daily.csv'
+    path.write_text('date,capacity,source_version\n2026-08-01,12,item; source edit 100\n')
+    before_shipping=csv_summary(path,shipping)
+    before_other=csv_summary(path,'correlations/data/other_product.csv')
+    path.write_text('date,capacity,source_version\n2026-08-01,12,item; source edit 200\n')
+    assert csv_summary(path,shipping)==before_shipping
+    assert csv_summary(path,'correlations/data/other_product.csv')!=before_other

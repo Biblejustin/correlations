@@ -60,6 +60,7 @@ def csv_summary(path, logical_name):
         ignored.add('age_months')
     if '/trade_shipping/active/' in logical_name:
         ignored.add('ObjectId')  # PortWatch's storage ID is not route/date identity.
+        ignored.add('source_version')  # Fixed item ID plus publisher edit timestamp; raw contract separately verified.
     if logical_name.endswith('seasonal_flu_row_quality.csv'):
         ignored.add('source_row')
     if '/eclipses/' in logical_name:
