@@ -14,7 +14,7 @@ BASE=Path(__file__).resolve().parent
 SCRIPTS=('analyze lag_test cycle_fold spectral wars famines israel flares_quakes floods '
          'pandemics volcanoes cyclones astronomy meta_analysis trends_meta pattern_analysis '
          'signs_overlay contractions_analysis periodogram_extended sensitivity wavelet chains '
-         'wars_split granger regional regional_quakes ucdp_compare canonical_compare monitor_regional flood_linkage_audit make_figures make_more_figures').split()
+         'wars_split granger regional regional_quakes ucdp_compare canonical_compare monitor_regional monitor_trade flood_linkage_audit make_figures make_more_figures').split()
 
 
 def run_step(name,command,cwd=BASE,log_dir=None,timeout=1800):

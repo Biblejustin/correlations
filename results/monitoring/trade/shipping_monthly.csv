@@ -1,0 +1,277 @@
+name,predictor,month,observed_days,expected_days,reporting_lag_complete,daily_mean_tons,status,transit_decline_yoy
+Suez Canal,suez_transit_decline_yoy,2019-01,31,31,True,2264211.3870967743,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-02,28,28,True,2424419.0,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-03,31,31,True,2361366.9032258065,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-04,30,30,True,2526578.7,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-05,31,31,True,2449713.064516129,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-06,30,30,True,2422853.2666666666,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-07,31,31,True,2441479.6129032257,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-08,31,31,True,2550195.580645161,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-09,30,30,True,2452944.433333333,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-10,31,31,True,2569133.6129032257,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-11,30,30,True,2448615.9,eligible,
+Suez Canal,suez_transit_decline_yoy,2019-12,31,31,True,2426972.0322580645,eligible,
+Suez Canal,suez_transit_decline_yoy,2020-01,31,31,True,2498431.129032258,eligible,-0.10344429114271247
+Suez Canal,suez_transit_decline_yoy,2020-02,29,29,True,2544808.3103448274,eligible,-0.049656973627424605
+Suez Canal,suez_transit_decline_yoy,2020-03,31,31,True,2481735.0322580645,eligible,-0.05097392059989736
+Suez Canal,suez_transit_decline_yoy,2020-04,30,30,True,2676787.7666666666,eligible,-0.059451568505135555
+Suez Canal,suez_transit_decline_yoy,2020-05,31,31,True,2502767.0967741935,eligible,-0.02165724346518272
+Suez Canal,suez_transit_decline_yoy,2020-06,30,30,True,2113771.3,eligible,0.12756941203125283
+Suez Canal,suez_transit_decline_yoy,2020-07,31,31,True,2174601.4838709678,eligible,0.10930999694685406
+Suez Canal,suez_transit_decline_yoy,2020-08,31,31,True,2300731.580645161,eligible,0.0978215168645572
+Suez Canal,suez_transit_decline_yoy,2020-09,30,30,True,2368174.6333333333,eligible,0.03455838577020076
+Suez Canal,suez_transit_decline_yoy,2020-10,31,31,True,2354952.7419354836,eligible,0.0833669646031796
+Suez Canal,suez_transit_decline_yoy,2020-11,30,30,True,2479080.7666666666,eligible,-0.012441668236601311
+Suez Canal,suez_transit_decline_yoy,2020-12,31,31,True,2428052.6774193547,eligible,-0.0004452647772312801
+Suez Canal,suez_transit_decline_yoy,2021-01,31,31,True,2324464.806451613,eligible,0.06963022536788077
+Suez Canal,suez_transit_decline_yoy,2021-02,28,28,True,2570426.035714286,eligible,-0.01006666209997853
+Suez Canal,suez_transit_decline_yoy,2021-03,31,31,True,2180118.806451613,eligible,0.12153441922122477
+Suez Canal,suez_transit_decline_yoy,2021-04,30,30,True,2941607.1,eligible,-0.09893176314949548
+Suez Canal,suez_transit_decline_yoy,2021-05,31,31,True,2657783.1612903224,eligible,-0.0619378705737057
+Suez Canal,suez_transit_decline_yoy,2021-06,30,30,True,2634722.7333333334,eligible,-0.24645591192071414
+Suez Canal,suez_transit_decline_yoy,2021-07,31,31,True,2564353.5483870967,eligible,-0.17922919091471345
+Suez Canal,suez_transit_decline_yoy,2021-08,31,31,True,2724135.0,eligible,-0.18402990723329404
+Suez Canal,suez_transit_decline_yoy,2021-09,30,30,True,2885271.3333333335,eligible,-0.21835243597392928
+Suez Canal,suez_transit_decline_yoy,2021-10,31,31,True,2781609.7741935486,eligible,-0.18117434998181947
+Suez Canal,suez_transit_decline_yoy,2021-11,30,30,True,2797921.466666667,eligible,-0.12861246970533702
+Suez Canal,suez_transit_decline_yoy,2021-12,31,31,True,2762415.935483871,eligible,-0.13770840360016123
+Suez Canal,suez_transit_decline_yoy,2022-01,31,31,True,2558814.419354839,eligible,-0.10081873997523316
+Suez Canal,suez_transit_decline_yoy,2022-02,28,28,True,2774370.0714285714,eligible,-0.07934250310284163
+Suez Canal,suez_transit_decline_yoy,2022-03,31,31,True,2549636.290322581,eligible,-0.16949419581054803
+Suez Canal,suez_transit_decline_yoy,2022-04,30,30,True,2820173.2666666666,eligible,0.041281459149773436
+Suez Canal,suez_transit_decline_yoy,2022-05,31,31,True,2843718.5161290322,eligible,-0.06995881287337236
+Suez Canal,suez_transit_decline_yoy,2022-06,30,30,True,3041544.2,eligible,-0.15440769592934522
+Suez Canal,suez_transit_decline_yoy,2022-07,31,31,True,3070258.870967742,eligible,-0.19728376490786337
+Suez Canal,suez_transit_decline_yoy,2022-08,31,31,True,3212372.3225806453,eligible,-0.1792265517607039
+Suez Canal,suez_transit_decline_yoy,2022-09,30,30,True,3038136.6333333333,eligible,-0.05298125629779005
+Suez Canal,suez_transit_decline_yoy,2022-10,31,31,True,3101971.290322581,eligible,-0.11517126489171625
+Suez Canal,suez_transit_decline_yoy,2022-11,30,30,True,3139367.033333333,eligible,-0.12203543621024182
+Suez Canal,suez_transit_decline_yoy,2022-12,31,31,True,3250501.290322581,eligible,-0.17668785810606602
+Suez Canal,suez_transit_decline_yoy,2023-01,31,31,True,3162976.580645161,eligible,-0.23611019100113229
+Suez Canal,suez_transit_decline_yoy,2023-02,28,28,True,3140839.25,eligible,-0.13209095006663163
+Suez Canal,suez_transit_decline_yoy,2023-03,31,31,True,3398677.5483870967,eligible,-0.3330048530008549
+Suez Canal,suez_transit_decline_yoy,2023-04,30,30,True,3564832.8333333335,eligible,-0.26404745249813155
+Suez Canal,suez_transit_decline_yoy,2023-05,31,31,True,3538944.9677419355,eligible,-0.24447794240875487
+Suez Canal,suez_transit_decline_yoy,2023-06,30,30,True,3473745.1,eligible,-0.1420991679160868
+Suez Canal,suez_transit_decline_yoy,2023-07,31,31,True,3205599.5161290322,eligible,-0.044081183655575895
+Suez Canal,suez_transit_decline_yoy,2023-08,31,31,True,3247588.419354839,eligible,-0.010962644811328248
+Suez Canal,suez_transit_decline_yoy,2023-09,30,30,True,3448617.8666666667,eligible,-0.135109536822565
+Suez Canal,suez_transit_decline_yoy,2023-10,31,31,True,3451214.6129032257,eligible,-0.1125875418867357
+Suez Canal,suez_transit_decline_yoy,2023-11,30,30,True,3517853.466666667,eligible,-0.12056138365301683
+Suez Canal,suez_transit_decline_yoy,2023-12,31,31,True,3066660.064516129,eligible,0.056557807361524715
+Suez Canal,suez_transit_decline_yoy,2024-01,31,31,True,1852114.7741935484,eligible,0.41443930204005264
+Suez Canal,suez_transit_decline_yoy,2024-02,29,29,True,1592005.7586206896,eligible,0.49312727207522966
+Suez Canal,suez_transit_decline_yoy,2024-03,31,31,True,1357345.6129032257,eligible,0.6006253627834219
+Suez Canal,suez_transit_decline_yoy,2024-04,30,30,True,1387667.7666666666,eligible,0.6107341265230903
+Suez Canal,suez_transit_decline_yoy,2024-05,31,31,True,1349520.677419355,eligible,0.6186658199772934
+Suez Canal,suez_transit_decline_yoy,2024-06,30,30,True,1334872.5,eligible,0.615725258597702
+Suez Canal,suez_transit_decline_yoy,2024-07,31,31,True,1215554.2903225806,eligible,0.6208028219974151
+Suez Canal,suez_transit_decline_yoy,2024-08,31,31,True,1253227.9677419355,eligible,0.6141050509131634
+Suez Canal,suez_transit_decline_yoy,2024-09,30,30,True,1222278.9,eligible,0.6455742714163286
+Suez Canal,suez_transit_decline_yoy,2024-10,31,31,True,1177375.0,eligible,0.6588519892103811
+Suez Canal,suez_transit_decline_yoy,2024-11,30,30,True,1131967.2333333334,eligible,0.6782221760913976
+Suez Canal,suez_transit_decline_yoy,2024-12,31,31,True,1191345.2580645161,eligible,0.61151701427576
+Suez Canal,suez_transit_decline_yoy,2025-01,31,31,True,1243456.7096774194,eligible,0.3286286967723975
+Suez Canal,suez_transit_decline_yoy,2025-02,28,28,True,1178443.2857142857,eligible,0.25977448301739414
+Suez Canal,suez_transit_decline_yoy,2025-03,31,31,True,1391630.2903225806,eligible,-0.025258620275806942
+Suez Canal,suez_transit_decline_yoy,2025-04,30,30,True,1309007.6666666667,eligible,0.05668511000219467
+Suez Canal,suez_transit_decline_yoy,2025-05,31,31,True,1338086.8709677418,eligible,0.008472494451494894
+Suez Canal,suez_transit_decline_yoy,2025-06,30,30,True,1229214.7666666666,eligible,0.07915192899196999
+Suez Canal,suez_transit_decline_yoy,2025-07,31,31,True,1385953.3870967743,eligible,-0.14018221821172094
+Suez Canal,suez_transit_decline_yoy,2025-08,31,31,True,1364988.0322580645,eligible,-0.08917776126357779
+Suez Canal,suez_transit_decline_yoy,2025-09,30,30,True,1510959.0333333334,eligible,-0.23618188396554474
+Suez Canal,suez_transit_decline_yoy,2025-10,31,31,True,1514234.2580645161,eligible,-0.2861104219679509
+Suez Canal,suez_transit_decline_yoy,2025-11,30,30,True,1579842.5666666667,eligible,-0.3956610404830032
+Suez Canal,suez_transit_decline_yoy,2025-12,31,31,True,1566167.2580645161,eligible,-0.3146208015373675
+Suez Canal,suez_transit_decline_yoy,2026-01,31,31,True,1350364.064516129,eligible,-0.08597593628043865
+Suez Canal,suez_transit_decline_yoy,2026-02,28,28,True,1465041.142857143,eligible,-0.2432003819081907
+Suez Canal,suez_transit_decline_yoy,2026-03,31,31,True,1432675.0,eligible,-0.029493975492517643
+Suez Canal,suez_transit_decline_yoy,2026-04,30,30,True,1420024.8666666667,eligible,-0.08481019846331428
+Suez Canal,suez_transit_decline_yoy,2026-05,31,31,True,1499580.4838709678,eligible,-0.12068993157852992
+Suez Canal,suez_transit_decline_yoy,2026-06,30,30,True,1586798.9666666666,eligible,-0.29090457558501503
+Suez Canal,suez_transit_decline_yoy,2026-07,31,31,True,1599606.2903225806,eligible,-0.15415590828300196
+Suez Canal,suez_transit_decline_yoy,2026-08,30,31,False,,reporting lag,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-01,31,31,True,2335755.5161290322,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-02,28,28,True,2473411.1428571427,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-03,31,31,True,2349222.6774193547,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-04,30,30,True,2609197.533333333,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-05,31,31,True,2481149.5483870967,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-06,30,30,True,2457535.9,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-07,31,31,True,2451261.7741935486,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-08,31,31,True,2546770.5483870967,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-09,30,30,True,2473889.6666666665,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-10,31,31,True,2569176.419354839,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-11,30,30,True,2553734.0,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-12,31,31,True,2481676.064516129,eligible,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-01,31,31,True,2510185.9677419355,eligible,-0.07467838581924058
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-02,29,29,True,2466919.620689655,eligible,0.0026245220841000227
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-03,31,31,True,2567810.419354839,eligible,-0.09304683801861002
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-04,30,30,True,2674409.7333333334,eligible,-0.024993201613482174
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-05,31,31,True,2580778.6129032257,eligible,-0.04015439721515146
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-06,30,30,True,2213407.6,eligible,0.09933865055643742
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-07,31,31,True,2338577.0322580645,eligible,0.04597009716457423
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-08,31,31,True,2393250.935483871,eligible,0.06028011161054603
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-09,30,30,True,2444307.3666666667,eligible,0.011957808951059357
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-10,31,31,True,2390717.7419354836,eligible,0.06946143366214175
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-11,30,30,True,2461049.6666666665,eligible,0.0362936520927134
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2020-12,31,31,True,2495567.7419354836,eligible,-0.005597699723176142
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-01,31,31,True,2475274.709677419,eligible,0.013907837312914784
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-02,28,28,True,2560940.6071428573,eligible,-0.038112707712348426
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-03,31,31,True,2425896.7741935486,eligible,0.055266402882244714
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-04,30,30,True,2865094.3666666667,eligible,-0.07129970810256792
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-05,31,31,True,2662267.419354839,eligible,-0.031575279663350386
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-06,30,30,True,2770226.8,eligible,-0.25156649864218394
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-07,31,31,True,2678333.9677419355,eligible,-0.14528361939645462
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-08,31,31,True,2663940.709677419,eligible,-0.11310547096425538
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-09,30,30,True,2858839.2333333334,eligible,-0.1695907283673448
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-10,31,31,True,2698387.6129032257,eligible,-0.12869351557940822
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-11,30,30,True,2702250.1333333333,eligible,-0.09800715114919134
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2021-12,31,31,True,2826880.3225806453,eligible,-0.13276040360587693
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-01,31,31,True,2652372.7419354836,eligible,-0.07154681925431383
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-02,28,28,True,2869235.5,eligible,-0.12038346066959171
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-03,31,31,True,2735777.129032258,eligible,-0.12773847516315873
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-04,30,30,True,2854323.1,eligible,0.0037594805923262253
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-05,31,31,True,2945670.129032258,eligible,-0.10645163127380264
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-06,30,30,True,3064927.3333333335,eligible,-0.10638137402083236
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-07,31,31,True,3158098.935483871,eligible,-0.17912813469875766
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-08,31,31,True,3208153.580645161,eligible,-0.2042886573979501
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-09,30,30,True,3163787.2,eligible,-0.10666845589323515
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-10,31,31,True,3147218.806451613,eligible,-0.16633310626025466
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-11,30,30,True,3291681.2,eligible,-0.2181260200141355
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2022-12,31,31,True,3245907.5161290322,eligible,-0.148229548382812
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-01,31,31,True,3216158.129032258,eligible,-0.212558882913783
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-02,28,28,True,3187029.785714286,eligible,-0.11075921990867799
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-03,31,31,True,3424849.5483870967,eligible,-0.2518744718063304
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-04,30,30,True,3560435.566666667,eligible,-0.2473835098299373
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-05,31,31,True,3626998.0,eligible,-0.23129808876175106
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-06,30,30,True,3608040.2666666666,eligible,-0.1772025481408912
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-07,31,31,True,3317175.709677419,eligible,-0.050371054689322126
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-08,31,31,True,3283000.7741935486,eligible,-0.02333030251417556
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-09,30,30,True,3399086.2,eligible,-0.07437257474206871
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-10,31,31,True,3540616.129032258,eligible,-0.12499840232722415
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-11,30,30,True,3476779.6666666665,eligible,-0.05623219729379203
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2023-12,31,31,True,2786425.2580645164,eligible,0.14155740907013892
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-01,31,31,True,1618374.4193548388,eligible,0.49679886547064533
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-02,29,29,True,1386680.2068965517,eligible,0.5648988870100048
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-03,31,31,True,1265883.3870967743,eligible,0.6303827747140218
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-04,30,30,True,1169193.9,eligible,0.6716149251664125
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-05,31,31,True,1164473.064516129,eligible,0.6789430089247006
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-06,30,30,True,1151026.6,eligible,0.6809828840786774
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-07,31,31,True,1026695.1612903225,eligible,0.690491173471735
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-08,31,31,True,1036448.4838709678,eligible,0.6842984345242606
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-09,30,30,True,1042149.0333333333,eligible,0.6934031760261528
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-10,31,31,True,1017107.0322580645,eligible,0.7127316277192506
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-11,30,30,True,1027122.5666666667,eligible,0.7045764571985628
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2024-12,31,31,True,1051870.8064516129,eligible,0.6225016969655757
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-01,31,31,True,1068126.9032258065,eligible,0.340000131952399
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-02,28,28,True,1069279.0,eligible,0.22889286608259074
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-03,31,31,True,1236705.3870967743,eligible,0.023049516485809884
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-04,30,30,True,1223149.1,eligible,-0.04614734989636893
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-05,31,31,True,1160095.5483870967,eligible,0.003759224891003554
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-06,30,30,True,1116341.8,eligible,0.030133795344086778
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-07,31,31,True,1127988.4838709678,eligible,-0.09865958894102755
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-08,31,31,True,1191308.7096774194,eligible,-0.14941430106402742
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-09,30,30,True,1244417.9666666666,eligible,-0.1940882991431392
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-10,31,31,True,1360733.064516129,eligible,-0.3378464815990756
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-11,30,30,True,1407410.6,eligible,-0.3702460112111905
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2025-12,31,31,True,1236684.1935483871,eligible,-0.17569970186759432
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-01,31,31,True,1168829.935483871,eligible,-0.09428002604740637
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-02,28,28,True,1332146.4285714286,eligible,-0.24583614619891403
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-03,31,31,True,1315464.8064516129,eligible,-0.06368486801834838
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-04,30,30,True,1399616.5,eligible,-0.1442730080903465
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-05,31,31,True,1353753.1935483871,eligible,-0.1669324957160092
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-06,30,30,True,1414715.3,eligible,-0.2672779071786078
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-07,31,31,True,1297705.935483871,eligible,-0.15046026979856775
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-08,30,31,False,,reporting lag,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-01,31,31,True,2199497.6129032257,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-02,28,28,True,1956705.142857143,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-03,31,31,True,2247114.4516129033,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-04,30,30,True,2649401.2,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-05,31,31,True,3114935.935483871,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-06,30,30,True,3395010.6333333333,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-07,31,31,True,3297832.0,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-08,31,31,True,3293435.0967741935,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-09,30,30,True,3173307.9,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-10,31,31,True,3062631.129032258,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-11,30,30,True,1950673.3666666667,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2019-12,31,31,True,1866661.0322580645,eligible,
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-01,31,31,True,1850352.2580645161,eligible,0.15873868322951046
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-02,29,29,True,2244695.9310344825,eligible,-0.14718149498846866
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-03,31,31,True,2288890.935483871,eligible,-0.018591168705706984
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-04,30,30,True,3092449.066666667,eligible,-0.16722566090279822
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-05,31,31,True,3498778.4516129033,eligible,-0.12322645604247606
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-06,30,30,True,3319907.966666667,eligible,0.022121482015191263
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-07,31,31,True,3339615.4838709678,eligible,-0.012669985575665343
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-08,31,31,True,3357569.290322581,eligible,-0.019473343686415623
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-09,30,30,True,3405155.8666666667,eligible,-0.07306191960341035
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-10,31,31,True,3282320.0967741935,eligible,-0.07173210174068645
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-11,30,30,True,2219863.433333333,eligible,-0.1379985348990853
+Strait of Hormuz,hormuz_transit_decline_yoy,2020-12,31,31,True,1990433.4516129033,eligible,-0.06630685336861264
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-01,31,31,True,2324942.5483870967,eligible,-0.25648645454082675
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-02,28,28,True,2681538.464285714,eligible,-0.19461100597705894
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-03,31,31,True,2825997.35483871,eligible,-0.23465793456047512
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-04,30,30,True,3497452.3,eligible,-0.13096520738169626
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-05,31,31,True,3484975.4838709678,eligible,0.0039450819572678375
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-06,30,30,True,3794320.433333333,eligible,-0.1428992825795099
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-07,31,31,True,3500820.0,eligible,-0.04827038229628133
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-08,31,31,True,3476111.2258064514,eligible,-0.03530587911485261
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-09,30,30,True,3623752.1,eligible,-0.06419566148885836
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-10,31,31,True,3380219.4516129033,eligible,-0.029826266772373433
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-11,30,30,True,3464110.8666666667,eligible,-0.560506297211707
+Strait of Hormuz,hormuz_transit_decline_yoy,2021-12,31,31,True,3482366.419354839,eligible,-0.7495517956317408
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-01,31,31,True,3613192.1612903224,eligible,-0.554099547017596
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-02,28,28,True,3928988.6428571427,eligible,-0.46519943502049066
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-03,31,31,True,3986945.9677419355,eligible,-0.41081022631370634
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-04,30,30,True,4211449.266666667,eligible,-0.20414773538631725
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-05,31,31,True,3836484.1612903224,eligible,-0.10086403162552915
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-06,30,30,True,4067186.2,eligible,-0.07191426540297563
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-07,31,31,True,3994720.0967741935,eligible,-0.14108126004027444
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-08,31,31,True,4241686.806451613,eligible,-0.2202390921675843
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-09,30,30,True,4049523.2,eligible,-0.11749454384586633
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-10,31,31,True,4068890.7419354836,eligible,-0.20373567461543796
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-11,30,30,True,3604616.5,eligible,-0.04056037428979131
+Strait of Hormuz,hormuz_transit_decline_yoy,2022-12,31,31,True,3295190.9677419355,eligible,0.0537494993555504
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-01,31,31,True,3263106.0322580645,eligible,0.09689109059376377
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-02,28,28,True,3594461.3214285714,eligible,0.08514336686534796
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-03,31,31,True,3537675.3870967743,eligible,0.11268539485615658
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-04,30,30,True,3880908.933333333,eligible,0.07848612494267415
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-05,31,31,True,4113917.4838709678,eligible,-0.07231447098880661
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-06,30,30,True,4237990.666666667,eligible,-0.0419957332336216
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-07,31,31,True,4069404.2580645164,eligible,-0.018695718218313173
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-08,31,31,True,3982577.64516129,eligible,0.06108634916095579
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-09,30,30,True,3930349.1333333333,eligible,0.029429160121040132
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-10,31,31,True,3717637.064516129,eligible,0.08632664273808222
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-11,30,30,True,3028652.566666667,eligible,0.15978507930963892
+Strait of Hormuz,hormuz_transit_decline_yoy,2023-12,31,31,True,2964827.064516129,eligible,0.10025637556666156
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-01,31,31,True,2980321.5161290322,eligible,0.08666114840692007
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-02,29,29,True,2870784.9310344825,eligible,0.20133097164792224
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-03,31,31,True,3810244.870967742,eligible,-0.07704762422949574
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-04,30,30,True,3873586.8,eligible,0.0018867057844215163
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-05,31,31,True,4052838.0,eligible,0.014847036701741367
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-06,30,30,True,3954267.3,eligible,0.06694761479732703
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-07,31,31,True,3908847.7741935486,eligible,0.03945454265272019
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-08,31,31,True,3561107.290322581,eligible,0.1058285342787435
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-09,30,30,True,3872408.566666667,eligible,0.0147418370992215
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-10,31,31,True,3287058.6129032257,eligible,0.11582046448876404
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-11,30,30,True,3269179.3666666667,eligible,-0.07941709876109138
+Strait of Hormuz,hormuz_transit_decline_yoy,2024-12,31,31,True,2557780.709677419,eligible,0.1372917698001186
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-01,31,31,True,2615994.9032258065,eligible,0.12224406357889483
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-02,28,28,True,2653593.1428571427,eligible,0.07565588972876314
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-03,31,31,True,3218932.5483870967,eligible,0.15519011050606346
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-04,30,30,True,3831665.033333333,eligible,0.010822467349038467
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-05,31,31,True,3762261.7419354836,eligible,0.07169698321633289
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-06,30,30,True,3833280.433333333,eligible,0.030596532173398305
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-07,31,31,True,3619320.870967742,eligible,0.07406962868630518
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-08,31,31,True,3615497.8387096776,eligible,-0.01527349331341532
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-09,30,30,True,3163027.2,eligible,0.18318866784175503
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-10,31,31,True,3458149.193548387,eligible,-0.05204975048925253
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-11,30,30,True,2565088.433333333,eligible,0.21537237770200457
+Strait of Hormuz,hormuz_transit_decline_yoy,2025-12,31,31,True,2244235.129032258,eligible,0.12258501264743094
+Strait of Hormuz,hormuz_transit_decline_yoy,2026-01,31,31,True,2226130.129032258,eligible,0.1490311673439435
+Strait of Hormuz,hormuz_transit_decline_yoy,2026-02,28,28,True,2913184.464285714,eligible,-0.09782634618548469
+Strait of Hormuz,hormuz_transit_decline_yoy,2026-03,31,31,True,75905.29032258065,eligible,0.9764191112483502
+Strait of Hormuz,hormuz_transit_decline_yoy,2026-04,30,30,True,175518.03333333333,eligible,0.9541927512435391
+Strait of Hormuz,hormuz_transit_decline_yoy,2026-05,31,31,True,112035.70967741935,eligible,0.9702211814694788
+Strait of Hormuz,hormuz_transit_decline_yoy,2026-06,30,30,True,441498.8,eligible,0.884824810582386
+Strait of Hormuz,hormuz_transit_decline_yoy,2026-07,31,31,True,373462.70967741933,eligible,0.8968141474625426
+Strait of Hormuz,hormuz_transit_decline_yoy,2026-08,30,31,False,,reporting lag,

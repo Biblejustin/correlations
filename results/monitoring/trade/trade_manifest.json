@@ -1,0 +1,56 @@
+{
+  "as_of": "2026-09-06T00:26:20.198155-05:00",
+  "eligible_fits": 6,
+  "interpretation": "Historical exploratory associations; repeated shipping exposures and common crisis shocks limit causal interpretation. Official FX may differ from market rates. Pointwise slope intervals are not simultaneous.",
+  "observation_fingerprint": "595d79735e23c3fb0f19d5a8069aa116f7e3f9ebb4ed519909c32927262939ff",
+  "outputs": {
+    "cereal_dependence.csv": {
+      "rows": 110,
+      "sha256": "a192f454511edb5cc4731992a25e106124fa981e060cfe7b73acb98be1ba835e"
+    },
+    "food_diagnostics.csv": {
+      "rows": 0,
+      "sha256": "30919d16ba937de2f508c51dd81cf4d41e2d1258ca577f4e1cde4d48c6674551"
+    },
+    "food_members.csv": {
+      "rows": 1431,
+      "sha256": "a2226b5ecc3db104b02ea4240b2c669f14ec9d72683764d7cd3c10bb91a76acf"
+    },
+    "food_monthly.csv": {
+      "rows": 1120,
+      "sha256": "f1b71d058fb9d4416cf4433770caa9d8c759bad840129f528079f52e1e49e343"
+    },
+    "official_fx_monthly.csv": {
+      "rows": 1120,
+      "sha256": "14d96e08eb26b1492559ccc7fd86f59b8672574eb35097fa6aaf4c4a319baa3b"
+    },
+    "shipping_monthly.csv": {
+      "rows": 276,
+      "sha256": "af638d9d3f33bc44de5d25a0fea57d2e3a4f56337106d93fe99109a580d1b20d"
+    },
+    "trade_food_tests.csv": {
+      "rows": 192,
+      "sha256": "77433b2b963eb99ab40b8c04704f33592fa71235912907b7f01f5765865bb974"
+    }
+  },
+  "passing_cells": 0,
+  "passing_fits": 0,
+  "plan_sha256": "869b45de8bca7f9925bfd950d1b5585f135a231e4e3f931ff6623c6d9bab645c",
+  "planned_fits": 192,
+  "report_sha256": "c9d3be3f76e46bd36fc5a77dbc321f5bb433697c98b6d8a1bcaa37d760226a2a",
+  "schema_version": 1,
+  "source_manifests": {
+    "climate": {
+      "sha256": "a3bd22f9f1d764d6531413196dc94f6db8c4adffa6318784b8e256e311aba701",
+      "snapshot_id": "4a03e4ff6e8e63b2909c5843c4ef4a565a3ebe873d08a8fb8bfca3a0b52b8811"
+    },
+    "economic": {
+      "sha256": "41351ff7dc828da8c2cb5d09030f58c02fe058e0984ef22432d1389d7f0953c2",
+      "snapshot_id": "6625ff128975d0509a8e553db045343b34a8862f501c9d8b3995cd358f74c992"
+    },
+    "shipping": {
+      "sha256": "b1ff41dd92b9bb42e0faac73b0acdd092f9605b69c6d577f3e705ea3b0fcfa82",
+      "snapshot_id": "d03e51f591a10707b4788078c6ae7871949276ccf6255515222bd896ce5362ea"
+    }
+  }
+}

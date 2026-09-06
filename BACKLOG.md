@@ -20,6 +20,8 @@ September 2026 integrity work and first regional monitoring panel implemented. E
 | NOAA ENSO/IOD controls | Versioned RNI/RONI/DMI ingested; separate 90/144-test sensitivities, paired samples and HAC correction |
 | Seasonal influenza differences | Prior-season windows, specimen thresholds, expected missing weeks and revision/coverage diagnostics |
 | Food purchasing-power trends | Exact food/wage identities and calendar changes; fixed aggregate baskets unavailable under frozen baseline requirements |
+| Trade and currency pathways | Versioned three-route IMF PortWatch, monthly official GEM FX and three-year FAOSTAT cereal dependence; separate frozen 192-fit family, six estimable and no corrected survivor in initial snapshot |
+| WFP and IPC archive recovery | Current global/country histories audited; missing baseline wages and geography gates remain; publisher archive and keyed assessment-export requirements documented |
 
 ## Observations to improve next
 
@@ -28,7 +30,7 @@ September 2026 integrity work and first regional monitoring panel implemented. E
 3. **Hazard and vulnerability.** Replace sparse impact proxies with measured drought/rain/heat, flood exposure, cyclone wind/rain and earthquake shaking. Add population exposed, warning capacity and building vulnerability before interpreting death trends as hazard trends.
 4. **Seasonal disease burden.** Extend beyond influenza positivity where tested denominators, severe admissions or excess-mortality series are comparable. The separate influenza seasonal monitor is implemented. Verify reporting-site continuity and expand comparable severe-outcome denominators; annual averages remain provisional diagnostics.
 5. **Restrictions and contemporary incidents.** V-Dem religious freedom is a broad annual index. Add documented arrests, worship restrictions and religion-related violence with reproducible inclusion rules, evidence links and denominators. No automatic political-event selection.
-6. **Trade and climate pathways.** ENSO/RONI and IOD monitoring and paired-sample sensitivities are implemented. PortWatch maritime disruption, staple import dependence and exchange rates could test additional regional mechanisms. Predeclare geography/lags and compare predictive performance beyond existing variables.
+6. **Trade and climate pathways.** ENSO/RONI, IOD, PortWatch, official exchange rates and cereal-import dependence are implemented. The separate frozen 192-fit trade family preserves missing or incompatible cells. Longer compatible food-price histories and currency definitions are needed before shipping comparisons meet the 60-month minimum. Verify actual commodity/country exposure before interpreting chokepoint estimates as a national trade pathway. Future predictive evaluation remains separate from these historical sensitivities.
 7. **Complete celestial denominator.** Extend `tetrad-check` with predefined locations/calendar rules, visibility, altitude and totality duration. Famous selected events cannot establish rarity.
 8. **Prospective validation and calibrated synchrony.** Gather sufficient complete domain overlap. Freeze future hypotheses before data releases; report prediction error and failures. More categories or shorter eligibility requirements are not substitutes for missing coverage.
 

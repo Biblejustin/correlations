@@ -11,3 +11,5 @@ venv/
 .pytest_cache/
 logs/
 data/_*
+data/**/.refresh.lock
+data/**/.activation.lock

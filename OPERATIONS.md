@@ -153,3 +153,9 @@ from statistical evidence and never score an ineligible prospective model.
 Local scheduled tasks require the computer awake and Codex running; see the
 [official automation documentation](https://developers.openai.com/codex/app/automations).
 The scheduler is configured through Codex, not installed by these Make targets.
+
+## Trade and economic source monitoring
+
+The runner now fetches `trade_shipping` and `economic_sources` before analysis. Retry with `make catalogs SOURCES="trade_shipping economic_sources"`. `monitor_trade.py` is a separate analysis and writes `results/monitoring/trade/`; any failed source or analysis prevents publication. Shipping archives retain paginated raw responses, count/edit-marker checks and immutable snapshots. Economic archives retain raw World Bank metadata/data and FAOSTAT ZIP/catalog responses, hashes and immutable normalized snapshots. Missing observations do not become zeros.
+
+`python refresh_trade_sources.py --offline` verifies and replays the active shipping archive without advancing its cutoff. `python refresh_economic_sources.py --offline` uses cached source responses and retains their retrieval evidence. Neither mode reconstructs information available before the source was released. `python -m monitoring.recovery_audit --offline` reproduces the separate dated WFP/IPC investigation; large historical archive discovery is not part of daily refresh.

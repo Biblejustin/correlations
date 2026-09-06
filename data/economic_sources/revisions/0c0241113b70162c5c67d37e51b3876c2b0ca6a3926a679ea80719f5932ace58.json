@@ -1,0 +1,140 @@
+{
+  "as_of_utc": "2026-09-06T05:16:20.849923",
+  "cereal_definition": {
+    "formula": "100*(imports-exports)/(production+imports-exports), three-year average",
+    "item": "Cereal import dependency ratio (percent) (3-year average)",
+    "item_code": "21035",
+    "method_source": "https://openknowledge.fao.org/3/cc2211en/cc2211en.pdf"
+  },
+  "fao_catalog_entry": {
+    "CompressionFormat": "zip",
+    "Contact": "Food and Agriculture Organization of the United Nations (FAO): Statistics Division (ESS), Food Security and Nutrition Statistics Team",
+    "DatasetCode": "FS",
+    "DatasetDescription": "The Suite of Food Security Indicators presents the core set of food security indicators. Following the recommendation of experts gathered in the Committee on World Food Security (CFS) Round Table on hunger measurement, hosted at FAO headquarters in September 2011, an initial set of indicators aiming to capture various aspects of food insecurity is presented here. The choice of the indicators has been informed by expert judgement and the availability of data with sufficient coverage to enable comparisons across regions and over time. Many of these indicators are produced and published elsewhere by FAO and other international organizations. They are reported here in a single database with the aim of building a wide food security information system. More indicators will be added to this set as more data will become available. Indicators are classified along the four dimensions of food security -- availability, access, utilization and stability.",
+    "DatasetName": "Food Security and Nutrition: Suite of Food Security Indicators",
+    "DateUpdate": "2026-07-21T00:00:00",
+    "Email": "Food-Security-Statistics@fao.org",
+    "FileLocation": "https://bulks-faostat.fao.org/production/Food_Security_Data_E_All_Data_(Normalized).zip",
+    "FileRows": 287735,
+    "FileSize": "2163KB",
+    "FileType": "csv",
+    "Topic": "Varies depending on indicator. In many cases, the target is the total population of countries, sub-regions, regions and the World."
+  },
+  "fx_definition": {
+    "id": "DPANUSLCU",
+    "name": "Official exchange rate, LCU per USD, period average",
+    "source": {
+      "id": "15",
+      "value": "Global Economic Monitor"
+    },
+    "sourceNote": "Official exchange rate refers to the exchange rate determined by national authorities or to the rate determined in the legally sanctioned exchange market. It is calculated as an annual average based on monthly averages (local currency units relative to the U.S. dollar).",
+    "sourceOrganization": "World Bank staff calculations based on Datastream and IMF International Finance Statistics data.",
+    "topics": [
+      {}
+    ],
+    "unit": ""
+  },
+  "fx_response_metadata": {
+    "lastupdated": "2026-03-31",
+    "page": 1,
+    "pages": 1,
+    "per_page": 20000,
+    "sourceid": "15",
+    "total": 945
+  },
+  "inputs": {
+    "countries": {
+      "path": "raw/countries/eb5f5434221e4535ce11474bc35cd0d581127824ae951d06858fb700542b37e5.gz",
+      "sha256": "eb5f5434221e4535ce11474bc35cd0d581127824ae951d06858fb700542b37e5",
+      "source_url": "https://api.worldbank.org/v2/country/ISR;PSE;LBN;UKR;SDN;ETH;SOM;YEM?format=json&per_page=100"
+    },
+    "fao_catalog": {
+      "path": "raw/fao_catalog/6e93009013c96f725f86a994d4f9b6181d6fe57d402aa79f2f81fc560da3604f.gz",
+      "sha256": "6e93009013c96f725f86a994d4f9b6181d6fe57d402aa79f2f81fc560da3604f",
+      "source_url": "https://bulks-faostat.fao.org/production/datasets_E.json"
+    },
+    "food_security": {
+      "path": "raw/food_security/1ccced40d8e228693c6fcc5d172de9bcaa3a1c6a1581ebde345d71c1dfa9b692.gz",
+      "sha256": "1ccced40d8e228693c6fcc5d172de9bcaa3a1c6a1581ebde345d71c1dfa9b692",
+      "source_url": "https://bulks-faostat.fao.org/production/Food_Security_Data_E_All_Data_(Normalized).zip"
+    },
+    "fx": {
+      "path": "raw/fx/949146dc5e5262e58d24525ee32aae677f58bbaa541845fe1df133adf0bc65d7.gz",
+      "sha256": "949146dc5e5262e58d24525ee32aae677f58bbaa541845fe1df133adf0bc65d7",
+      "source_url": "https://api.worldbank.org/v2/country/ISR;PSE;LBN;UKR;SDN;ETH;SOM;YEM/indicator/DPANUSLCU?source=15&date=2015M01:2026M12&format=json&per_page=20000&gapfill=N"
+    },
+    "fx_definition": {
+      "path": "raw/fx_definition/6ae8f1f9d3dbf039b3b86dd84bb26b0a0fefcd2342e8e7dad289e97daa3f1d82.gz",
+      "sha256": "6ae8f1f9d3dbf039b3b86dd84bb26b0a0fefcd2342e8e7dad289e97daa3f1d82",
+      "source_url": "https://api.worldbank.org/v2/indicator/DPANUSLCU?format=json"
+    }
+  },
+  "limitations": [
+    "Official FX does not necessarily represent retail or parallel-market exchange rates. Country/food currency compatibility is separately gated.",
+    "Published monthly FX only; unavailable months never inherit annual or neighboring values.",
+    "Cereal dependence retains three-year windows, negative values and source flags; it is not monthly grain traffic.",
+    "Source snapshots may revise historical estimates. These cutoffs do not reconstruct release-time information."
+  ],
+  "method_version": "official_fx_fao_cereal_v1",
+  "outputs": {
+    "cereal_dependence.csv": {
+      "path": "snapshots/6625ff128975d0509a8e553db045343b34a8862f501c9d8b3995cd358f74c992/cereal_dependence.csv",
+      "rows": 110,
+      "sha256": "a192f454511edb5cc4731992a25e106124fa981e060cfe7b73acb98be1ba835e"
+    },
+    "coverage.csv": {
+      "path": "snapshots/6625ff128975d0509a8e553db045343b34a8862f501c9d8b3995cd358f74c992/coverage.csv",
+      "rows": 16,
+      "sha256": "01498e4f329874ea611763f4b6adbf287c7cf79610e53af234bc926020b5f221"
+    },
+    "official_fx_monthly.csv": {
+      "path": "snapshots/6625ff128975d0509a8e553db045343b34a8862f501c9d8b3995cd358f74c992/official_fx_monthly.csv",
+      "rows": 945,
+      "sha256": "da93ee7951b283fb951520ba5bfd360e55e5c8026572f0914044a95500c116cf"
+    }
+  },
+  "requests": [
+    {
+      "fetched_at": "2026-09-06T05:00:52.940551+00:00",
+      "published_at": "Sun, 06 Sep 2026 04:56:01 GMT",
+      "sha256": "6ae8f1f9d3dbf039b3b86dd84bb26b0a0fefcd2342e8e7dad289e97daa3f1d82",
+      "url": "https://api.worldbank.org/v2/indicator/DPANUSLCU?format=json"
+    },
+    {
+      "fetched_at": "2026-09-06T05:00:55.218098+00:00",
+      "published_at": "Sun, 06 Sep 2026 05:00:55 GMT",
+      "sha256": "eb5f5434221e4535ce11474bc35cd0d581127824ae951d06858fb700542b37e5",
+      "url": "https://api.worldbank.org/v2/country/ISR;PSE;LBN;UKR;SDN;ETH;SOM;YEM?format=json&per_page=100"
+    },
+    {
+      "fetched_at": "2026-09-06T05:06:15.630598+00:00",
+      "published_at": "Tue, 21 Jul 2026 09:40:50 GMT",
+      "sha256": "1ccced40d8e228693c6fcc5d172de9bcaa3a1c6a1581ebde345d71c1dfa9b692",
+      "url": "https://bulks-faostat.fao.org/production/Food_Security_Data_E_All_Data_(Normalized).zip"
+    },
+    {
+      "fetched_at": "2026-09-06T05:06:17.894459+00:00",
+      "published_at": "Thu, 03 Sep 2026 11:05:10 GMT",
+      "sha256": "6e93009013c96f725f86a994d4f9b6181d6fe57d402aa79f2f81fc560da3604f",
+      "url": "https://bulks-faostat.fao.org/production/datasets_E.json"
+    },
+    {
+      "fetched_at": "2026-09-06T05:00:57.523859+00:00",
+      "published_at": "Sun, 06 Sep 2026 04:56:01 GMT",
+      "sha256": "949146dc5e5262e58d24525ee32aae677f58bbaa541845fe1df133adf0bc65d7",
+      "url": "https://api.worldbank.org/v2/country/ISR;PSE;LBN;UKR;SDN;ETH;SOM;YEM/indicator/DPANUSLCU?source=15&date=2015M01:2026M12&format=json&per_page=20000&gapfill=N"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_id": "6625ff128975d0509a8e553db045343b34a8862f501c9d8b3995cd358f74c992",
+  "territory_codes": {
+    "ETH": "231",
+    "ISR": "376",
+    "LBN": "422",
+    "PSE": "275",
+    "SDN": "729",
+    "SOM": "706",
+    "UKR": "804",
+    "YEM": "887"
+  }
+}

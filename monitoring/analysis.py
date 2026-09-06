@@ -469,6 +469,8 @@ def main():
                      '[Separate extension report](extensions/extensions_report.md) includes NOAA RNI/RONI and DMI, '
                      'fixed-family climate-control sensitivities, prior-season sentinel flu differences and exact food/wage changes. '
                      'Incomplete periods and inadequate coverage remain unavailable.\n')
+        stream.write('\n[Trade and food-price report](trade/trade_report.md) tracks complete-month chokepoint transit, '
+                     'official currency changes and three-year cereal-import dependence, with a separate fixed comparison family.\n')
     print(f'{len(panel)} annual observations; {len(tests)} registered lag tests; report {args.out/"monitoring_report.md"}')
 
 
