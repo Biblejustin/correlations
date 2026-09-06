@@ -21,6 +21,7 @@ September 2026 integrity work and first regional monitoring panel implemented. E
 | Seasonal influenza differences | Prior-season windows, specimen thresholds, expected missing weeks and revision/coverage diagnostics |
 | Food purchasing-power trends | Exact food/wage identities and calendar changes; fixed aggregate baskets unavailable under frozen baseline requirements |
 | Trade and currency pathways | Versioned three-route IMF PortWatch, monthly official GEM FX and three-year FAOSTAT cereal dependence; separate frozen 192-fit family, six estimable and no corrected survivor in initial snapshot |
+| Complete eclipse denominator and Jerusalem visibility | All solar/lunar events 1900–2100, pinned NASA models, fixed-point altitude/contact/duration reporting and reference validation; selected historical input preserved |
 | WFP and IPC archive recovery | Current global/country histories audited; missing baseline wages and geography gates remain; publisher archive and keyed assessment-export requirements documented |
 
 ## Observations to improve next
@@ -31,7 +32,7 @@ September 2026 integrity work and first regional monitoring panel implemented. E
 4. **Seasonal disease burden.** Extend beyond influenza positivity where tested denominators, severe admissions or excess-mortality series are comparable. The separate influenza seasonal monitor is implemented. Verify reporting-site continuity and expand comparable severe-outcome denominators; annual averages remain provisional diagnostics.
 5. **Restrictions and contemporary incidents.** V-Dem religious freedom is a broad annual index. Add documented arrests, worship restrictions and religion-related violence with reproducible inclusion rules, evidence links and denominators. No automatic political-event selection.
 6. **Trade and climate pathways.** ENSO/RONI, IOD, PortWatch, official exchange rates and cereal-import dependence are implemented. The separate frozen 192-fit trade family preserves missing or incompatible cells. Longer compatible food-price histories and currency definitions are needed before shipping comparisons meet the 60-month minimum. Verify actual commodity/country exposure before interpreting chokepoint estimates as a national trade pathway. Future predictive evaluation remains separate from these historical sensitivities.
-7. **Complete celestial denominator.** Extend `tetrad-check` with predefined locations/calendar rules, visibility, altitude and totality duration. Famous selected events cannot establish rarity.
+7. **Celestial interpretation and wider geography.** Complete 1900–2100 solar/lunar catalog and fixed Jerusalem visibility, altitude and duration are implemented. Broader Israel footprints, different calendar conventions or new event/terrestrial tests require separate declared locations, inclusion rules and comparison families. Famous selected events and one visible location cannot establish unusual national exposure or prophetic fulfillment.
 8. **Prospective validation and calibrated synchrony.** Gather sufficient complete domain overlap. Freeze future hypotheses before data releases; report prediction error and failures. More categories or shorter eligibility requirements are not substitutes for missing coverage.
 
 ## Source integrity limits

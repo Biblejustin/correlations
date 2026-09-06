@@ -7,6 +7,7 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 ## Start here
 
 - [Climate, seasonal flu and purchasing-power report](results/monitoring/extensions/extensions_report.md): NOAA ocean indices, separate adjustment tests, prior-season positivity and exact food/wage trends.
+- [Complete eclipse and Jerusalem-visibility monitor](data/celestial_monitoring/data/eclipses/report.md): global solar/lunar catalog, local circumstances, altitude and duration.
 - [Trade and food-price report](results/monitoring/trade/trade_report.md): Suez, Bab el-Mandeb and Hormuz transit, official exchange rates, cereal-import dependence and all 192 planned comparisons.
 - [WFP and IPC source recovery](SOURCE_RECOVERY.md): audited archives, missing baseline observations and required geographic evidence.
 - [Regional monitoring report](results/monitoring/monitoring_report.md): conflict, food stress, affordability, displacement, respiratory surveillance, religious freedom and Israel water.
@@ -36,6 +37,8 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 
 **Composite currently unavailable.** Fixed baseline/domain weights expose insufficient flood-mortality and drought-affected baseline observations. The analysis emits explicit missing scores and reasons. It cannot presently support escalating-contraction headlines.
 
+**Complete eclipses now have a separate denominator.** The NASA extension retains 913 solar/lunar events for 1900–2100, including future predictions, with fixed Jerusalem visibility, altitude and above-horizon phase durations. It preserves contact dates across midnight and labels modeled UT1 explicitly. The selected historical CSV remains separate. [Coverage, upcoming events and validation](data/celestial_monitoring/data/eclipses/report.md).
+
 **Catalog definitions matter.** Flood counts and dates now use one canonical event resolver; unknown mortality remains unknown. Duration totals are allocated over original event lifetimes before slicing a window. Cyclone Sidr's false 2003 duplicate is removed. Selected eclipse/flare/disaster lists remain incomplete research catalogs.
 
 The [flood linkage audit](data/diagnostics/flood_linkage/manifest.json) applies 11 reviewed block splits using source hashes, stable record identities and retained publisher evidence. Canonical catalog units increase from 7,434 to 7,445; counts at ≥100 reported deaths are unchanged. It still flags 781 groups for review, preserving 3,379 member records as evidence. All 11,712 raw records remain unchanged. [Before/after sensitivity](data/diagnostics/flood_linkage/correction_sensitivity.csv) preserves the legacy comparison. These catalog identities do not establish physically independent disasters; the unflagged subset remains incomplete.
@@ -58,7 +61,7 @@ Clone all repositories as siblings beneath one directory. Use only the Biblejust
 | [volcanic-eruptions](https://github.com/Biblejustin/volcanic-eruptions) | Selected eruption catalog |
 | [tropical-cyclones](https://github.com/Biblejustin/tropical-cyclones) | Selected high-mortality cyclones |
 | [droughts-tracking](https://github.com/Biblejustin/droughts-tracking) | Drought events and human impacts |
-| [astronomical-signs](https://github.com/Biblejustin/astronomical-signs) | Historical selected celestial events |
+| [astronomical-signs](https://github.com/Biblejustin/astronomical-signs) | Complete solar/lunar eclipse monitor and fixed Jerusalem visibility; separate selected historical events |
 | [israel-pressure-disasters](https://github.com/Biblejustin/israel-pressure-disasters) | Coded diplomatic events, NOAA/FEMA controls |
 | [israel-rain-agriculture](https://github.com/Biblejustin/israel-rain-agriculture) | Historical rainfall, crop area/yield, irrigation and Kinneret |
 

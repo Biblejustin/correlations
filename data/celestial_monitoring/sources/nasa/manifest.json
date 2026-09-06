@@ -1,0 +1,159 @@
+{
+  "entries": {
+    "JLEX/LE1801.js": {
+      "bytes": 61420,
+      "fetched_at": "2026-09-06T05:14:48.631504+00:00",
+      "object": "objects/4093406bb82116aee6619b25b74b46fd27e56d00b8a8aca593f810f3db2fa038",
+      "published_at": null,
+      "sha256": "4093406bb82116aee6619b25b74b46fd27e56d00b8a8aca593f810f3db2fa038",
+      "url": "https://eclipse.gsfc.nasa.gov/JLEX/LE1801.js"
+    },
+    "JLEX/LE1901.js": {
+      "bytes": 56500,
+      "fetched_at": "2026-09-06T05:15:01.057310+00:00",
+      "object": "objects/0eff1d93df3b8339e50461b34019ae0dc6522565a43a0893fc60a995e63f5aba",
+      "published_at": null,
+      "sha256": "0eff1d93df3b8339e50461b34019ae0dc6522565a43a0893fc60a995e63f5aba",
+      "url": "https://eclipse.gsfc.nasa.gov/JLEX/LE1901.js"
+    },
+    "JLEX/LE2001.js": {
+      "bytes": 56254,
+      "fetched_at": "2026-09-06T05:15:03.477830+00:00",
+      "object": "objects/bf167ab3ac1cdb69c9c5e9a60e7a59c8419a10d8b665bc91a1eca08e2bab3690",
+      "published_at": null,
+      "sha256": "bf167ab3ac1cdb69c9c5e9a60e7a59c8419a10d8b665bc91a1eca08e2bab3690",
+      "url": "https://eclipse.gsfc.nasa.gov/JLEX/LE2001.js"
+    },
+    "JLEX/program.js": {
+      "bytes": 23009,
+      "fetched_at": "2026-09-06T04:54:22.950651+00:00",
+      "object": "objects/cc14fce340f33c83f7939b443f4928c0b3eaab52a59fc8e5237b7c6e6f8d2c1f",
+      "published_at": null,
+      "sha256": "cc14fce340f33c83f7939b443f4928c0b3eaab52a59fc8e5237b7c6e6f8d2c1f",
+      "url": "https://eclipse.gsfc.nasa.gov/JLEX/program.js"
+    },
+    "JSEX/SE1801.js": {
+      "bytes": 85926,
+      "fetched_at": "2026-09-06T05:14:39.220967+00:00",
+      "object": "objects/d02aeebe7ad0a870d1874eee6176f9617fb1833b4b2e8ff62cd4ce972f17496e",
+      "published_at": null,
+      "sha256": "d02aeebe7ad0a870d1874eee6176f9617fb1833b4b2e8ff62cd4ce972f17496e",
+      "url": "https://eclipse.gsfc.nasa.gov/JSEX/SE1801.js"
+    },
+    "JSEX/SE1901.js": {
+      "bytes": 80970,
+      "fetched_at": "2026-09-06T05:14:40.571094+00:00",
+      "object": "objects/6ee182460a6cdfbef4b9faf89c88ebd5767c40d4646d9ee02d8de38b8de05188",
+      "published_at": null,
+      "sha256": "6ee182460a6cdfbef4b9faf89c88ebd5767c40d4646d9ee02d8de38b8de05188",
+      "url": "https://eclipse.gsfc.nasa.gov/JSEX/SE1901.js"
+    },
+    "JSEX/SE2001.js": {
+      "bytes": 79554,
+      "fetched_at": "2026-09-06T05:15:01.057466+00:00",
+      "object": "objects/a51d44b5e4c1e2b1465ba86580e90f12fc60857c6c6465cab6e792fbcb9f23dd",
+      "published_at": null,
+      "sha256": "a51d44b5e4c1e2b1465ba86580e90f12fc60857c6c6465cab6e792fbcb9f23dd",
+      "url": "https://eclipse.gsfc.nasa.gov/JSEX/SE2001.js"
+    },
+    "JSEX/city-as.js": {
+      "bytes": 8187,
+      "fetched_at": "2026-09-06T04:54:30.476662+00:00",
+      "object": "objects/97409769d8d0ebff59eab891766ff46e094de2e09757a85688549c9b19ae2401",
+      "published_at": null,
+      "sha256": "97409769d8d0ebff59eab891766ff46e094de2e09757a85688549c9b19ae2401",
+      "url": "https://eclipse.gsfc.nasa.gov/JSEX/city-as.js"
+    },
+    "JSEX/program.js": {
+      "bytes": 36759,
+      "fetched_at": "2026-09-06T04:54:30.476809+00:00",
+      "object": "objects/9676f7922ced83c47fc088af5b8f53f7f51cc13563e527ee53910c54ed61c881",
+      "published_at": null,
+      "sha256": "9676f7922ced83c47fc088af5b8f53f7f51cc13563e527ee53910c54ed61c881",
+      "url": "https://eclipse.gsfc.nasa.gov/JSEX/program.js"
+    },
+    "LEcat5/LE1801-1900.html": {
+      "bytes": 82260,
+      "fetched_at": "2026-09-06T05:14:13.707129+00:00",
+      "object": "objects/56be857a3c5c7088d2cc8f6370684ebabc61bb97b3209ee13602c9f1173cce34",
+      "published_at": null,
+      "sha256": "56be857a3c5c7088d2cc8f6370684ebabc61bb97b3209ee13602c9f1173cce34",
+      "url": "https://eclipse.gsfc.nasa.gov/LEcat5/LE1801-1900.html"
+    },
+    "LEcat5/LE1901-2000.html": {
+      "bytes": 78539,
+      "fetched_at": "2026-09-06T05:14:18.732421+00:00",
+      "object": "objects/972e37819ec3f8e8b3f48fd38a06984636f6733812a1fa2557e25600d2204532",
+      "published_at": null,
+      "sha256": "972e37819ec3f8e8b3f48fd38a06984636f6733812a1fa2557e25600d2204532",
+      "url": "https://eclipse.gsfc.nasa.gov/LEcat5/LE1901-2000.html"
+    },
+    "LEcat5/LE2001-2100.html": {
+      "bytes": 78017,
+      "fetched_at": "2026-09-06T05:14:18.728111+00:00",
+      "object": "objects/0f640913669a640418f05c173cea0bdeca194fcac6b5b196b6b9ab1b08122792",
+      "published_at": null,
+      "sha256": "0f640913669a640418f05c173cea0bdeca194fcac6b5b196b6b9ab1b08122792",
+      "url": "https://eclipse.gsfc.nasa.gov/LEcat5/LE2001-2100.html"
+    },
+    "SEcat5/SE1801-1900.html": {
+      "bytes": 109015,
+      "fetched_at": "2026-09-06T05:14:09.935776+00:00",
+      "object": "objects/fad2174dd56b9c663db73975a83bedc1136a4bb3a79248f6ff0fcab9f51a848f",
+      "published_at": null,
+      "sha256": "fad2174dd56b9c663db73975a83bedc1136a4bb3a79248f6ff0fcab9f51a848f",
+      "url": "https://eclipse.gsfc.nasa.gov/SEcat5/SE1801-1900.html"
+    },
+    "SEcat5/SE1901-2000.html": {
+      "bytes": 129405,
+      "fetched_at": "2026-09-06T05:14:09.950963+00:00",
+      "object": "objects/1daf90d8b3f1763a09b45cc0d838150fc09edbef711fe1be80f2e0c0d8f6d5ff",
+      "published_at": null,
+      "sha256": "1daf90d8b3f1763a09b45cc0d838150fc09edbef711fe1be80f2e0c0d8f6d5ff",
+      "url": "https://eclipse.gsfc.nasa.gov/SEcat5/SE1901-2000.html"
+    },
+    "SEcat5/SE2001-2100.html": {
+      "bytes": 127736,
+      "fetched_at": "2026-09-06T05:14:13.552096+00:00",
+      "object": "objects/a9c08f5b4b51d5c85ccfa18d8bfccd98ec8a7d93f06e2d40691943b4105acf9e",
+      "published_at": null,
+      "sha256": "a9c08f5b4b51d5c85ccfa18d8bfccd98ec8a7d93f06e2d40691943b4105acf9e",
+      "url": "https://eclipse.gsfc.nasa.gov/SEcat5/SE2001-2100.html"
+    },
+    "validation/lunar2006.pdf": {
+      "bytes": 48048,
+      "fetched_at": "2026-09-06T05:18:56.544703+00:00",
+      "object": "objects/d95ec94f579ed4f718eaa3a8d0618b3827266a97883918d45c0947359ead7f56",
+      "published_at": "Tue, 25 Jun 2013 19:19:28 GMT",
+      "sha256": "d95ec94f579ed4f718eaa3a8d0618b3827266a97883918d45c0947359ead7f56",
+      "url": "https://eclipse.gsfc.nasa.gov/LEplot/LEplot2001/LE2006Sep07P.pdf"
+    },
+    "validation/lunar2015.pdf": {
+      "bytes": 51580,
+      "fetched_at": "2026-09-06T05:18:55.117896+00:00",
+      "object": "objects/8fbb05c8af89eed3e99cdc750339892804b05dbf50acb75493c8710ba6f953d3",
+      "published_at": "Tue, 25 Jun 2013 19:19:28 GMT",
+      "sha256": "8fbb05c8af89eed3e99cdc750339892804b05dbf50acb75493c8710ba6f953d3",
+      "url": "https://eclipse.gsfc.nasa.gov/LEplot/LEplot2001/LE2015Sep28T.pdf"
+    },
+    "validation/lunar2020.pdf": {
+      "bytes": 42766,
+      "fetched_at": "2026-09-06T05:18:57.440737+00:00",
+      "object": "objects/fc496df523d9e2c52197023d63a00298db9f597db040e06889bf39a7d53821cf",
+      "published_at": "Tue, 25 Jun 2013 19:19:28 GMT",
+      "sha256": "fc496df523d9e2c52197023d63a00298db9f597db040e06889bf39a7d53821cf",
+      "url": "https://eclipse.gsfc.nasa.gov/LEplot/LEplot2001/LE2020Jan10N.pdf"
+    },
+    "validation/solar2006.html": {
+      "bytes": 11819,
+      "fetched_at": "2026-09-06T05:18:51.444245+00:00",
+      "object": "objects/02a014001c5b86693cb790926d20b6c2a670090b61e06a58985d2da7665eea25",
+      "published_at": "Tue, 25 Jun 2013 19:20:18 GMT",
+      "sha256": "02a014001c5b86693cb790926d20b6c2a670090b61e06a58985d2da7665eea25",
+      "url": "https://eclipse.gsfc.nasa.gov/SEmono/TSE2006/TSE2006tab/TSE2006-tab16.html"
+    }
+  },
+  "provenance_note": "Initial catalog/code bytes fetched during method research; first-fetch timestamps retained from successful download file times. Publication time unavailable unless source supplies it.",
+  "schema_version": 1,
+  "source": "NASA GSFC Eclipse catalogs and Eclipse Explorer"
+}

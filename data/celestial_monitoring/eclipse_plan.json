@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "status": "frozen before computed local outcomes",
+  "scope": {
+    "catalog_greatest_td_start": "1900-01-01",
+    "catalog_greatest_td_end": "2100-12-31",
+    "solar_types": [
+      "P",
+      "A",
+      "T",
+      "H"
+    ],
+    "lunar_types": [
+      "N",
+      "P",
+      "T"
+    ],
+    "catalog_source": "NASA Five Millennium Catalogs; complete century pages1801-1900,1901-2000,2001-2100 filtered to fixed scope",
+    "preserved_input": "eclipses.csv remains selected historical context, byte-for-byte unchanged",
+    "interpretation": "Astronomical predictions, including past modeled events; not a human sighting census or an outcome-driven event selection. No causal or prophetic-fulfillment inference."
+  },
+  "location": {
+    "id": "jerusalem_nasa_city_point",
+    "label": "Jerusalem representative point; not an all-Israel visibility footprint",
+    "latitude_deg_north": 31.766666666666666,
+    "longitude_deg_east": 35.233333333333334,
+    "elevation_m": 808.9,
+    "source": "https://eclipse.gsfc.nasa.gov/JSEX/city-as.js",
+    "coordinate_definition": "NASA city entry31deg46min00secN35deg14min00secE808.9m; longitude passed west-negative to NASA code"
+  },
+  "calculation": {
+    "algorithm": "Unmodified NASA JSEX and JLEX program.js plus official century element arrays, separately versioned and hash-pinned",
+    "node_version": "26.8.1",
+    "solar_visibility": "NASA JSEX getall local event type>0 after horizon clipping. Source Sun altitude threshold -0.00524radians; source sunrise/sunset clipping retained, described by NASA as lower-limb horizon contact. Separate global type, local type, maximum altitude/magnitude/obscuration, full contact interval and horizon-visible interval.",
+    "lunar_visibility": "At least one positive-duration part of a phase satisfies NASA JLEX visibility flag0, with source parallax and threshold Moon semidiameter minus0.5667degrees. Retain penumbral/umbral/total durations separately, plus above-horizon duration for each phase. Penumbral geometry does not promise naked-eye detectability.",
+    "lunar_duration_solver": "Evaluate unmodified populatecircumstances on60second brackets; bisect visibility transitions to0.1second. Retain all contacts, including below-horizon ones; never turn absent umbral/total phases into measured zeros.",
+    "reported_altitude": "Degrees from NASA source algorithms. JLEX clamps small negative visible altitudes to0; record that convention rather than claiming unmodified geometric altitude.",
+    "environment": "Source idealized horizon/refraction conventions only. No terrain, buildings, clouds, atmospheric extinction, twilight contrast or all-Israel spatial footprint. Lunar source altitude input does not enter its simplified altitude calculation; no elevation precision claim.",
+    "future_uncertainty": "Use original source ephemeris and delta-T model; do not silently replace with modern estimates. Future rotation uncertainty can shift circumstances. Node/source revision is recorded."
+  },
+  "time": {
+    "calendar": "Gregorian throughout1900-2100",
+    "catalog_time_scale": "TD/TT as published",
+    "contact_time_scale": "Modeled Universal Time (UT1): source TD minus source delta-T. Explicit UT1 fields without a false exact-UTC label; not leap-second-aware UTC.",
+    "timezone_hours": 0,
+    "daylight_saving": false,
+    "midnight": "Each contact gets its own full Gregorian date. Source lunar display date is P1; catalog identity date is greatest TD. Keep both without merging dates.",
+    "rounding": "Use underlying contact offsets without NASA display rounding (+0.5second solar/+30seconds lunar). Serialize modeled contact seconds; report source precision and validation limits."
+  },
+  "validation": {
+    "selection": "Fixed technical cases before computed local outcomes. One published2006Jerusalem solar table was inspected during source discovery; no computed Jerusalem time series examined before freeze.",
+    "solar_reference": "https://eclipse.gsfc.nasa.gov/SEmono/TSE2006/TSE2006tab/TSE2006-tab16.html",
+    "solar_date": "2006-03-29",
+    "solar_contact_tolerance_seconds": 30,
+    "solar_altitude_tolerance_deg": 1,
+    "solar_magnitude_obscuration_tolerance": 0.005,
+    "lunar_dates": [
+      "2015-09-28",
+      "2006-09-07",
+      "2020-01-10"
+    ],
+    "lunar_contact_duration_tolerance_seconds": 120,
+    "catalog_checks": "Strict global identity/type/count coverage, including1900and2100boundaries; unique joins; source catalog vs element identity cross-check. All global events retained even if locally invisible.",
+    "local_validation_limit": "Published NASA solar local table is an independent published implementation cross-check, not independent physics. Lunar published contact tables/maps check phase times and geographic visibility; source display replay only checks wrapper fidelity. State separate coverage/limitations.",
+    "failure": "A discrepancy blocks trusted status and snapshot promotion pending explicit source/version explanation. Do not widen frozen tolerance in response to results."
+  },
+  "provenance": {
+    "raw": "Versioned original bytes, source URLs, fetch timestamps, SHA256 hashes and source headers/attribution; immutable prior revisions retained",
+    "offline": "Complete offline replay from pinned raw inputs; live fetch staged and fully validated before promotion",
+    "code": "Preserve NASA GPLv2-or-later notices and license in vendor subtree; retain catalog attribution. No code/source update silently becomes trusted.",
+    "artifacts": "Separate global catalog, local event/contact tables, annual model counts, validation report and monitor metadata; original curated CSV never substituted"
+  }
+}
