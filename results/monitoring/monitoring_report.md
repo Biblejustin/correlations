@@ -161,3 +161,7 @@ Separate CRU-CY4.10 national climate monitor through 2025-12: rain year 2025 rec
 Rain year is October–September; spring temperature covers March–May. National CRU country aggregation differs from the historical CCKP series. Rain minus PET is a climate diagnostic, not soil moisture or crop water use. The original wheat model and holdout remain frozen; no prospective score is eligible. Full overlap comparisons and the separate five-coefficient heat/irrigation sensitivity are retained in the feeder snapshots.
 
 See MONITORING.md for source commands, scope and interpretation.
+
+## Climate, seasonal influenza and purchasing-power trends
+
+[Separate extension report](extensions/extensions_report.md) includes NOAA RNI/RONI and DMI, fixed-family climate-control sensitivities, prior-season sentinel flu differences and exact food/wage changes. Incomplete periods and inadequate coverage remain unavailable.

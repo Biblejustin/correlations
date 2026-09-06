@@ -38,8 +38,13 @@ def food_price_changes(d):
     if prices.empty:return pd.DataFrame(columns=['country','year','metric','value','n_observations','quality_note'])
     prices=prices[prices.value.gt(0)&np.isfinite(prices.value)].copy()
     prices['month']=pd.to_datetime(prices.period_start).dt.to_period('M')
+    # Quote lineage identifies repeated observations, not distinct price series.
+    # Preserve every semantic dimension; median same-series quotes within month.
+    prices['series_dimensions']=prices.dimensions.map(lambda value:json.dumps(
+        {key:item for key,item in json.loads(value).items()
+         if key not in {'source_quote_ordinal','source_quote_date'}},sort_keys=True))
     changes=[];basket_sizes={}
-    for (country,dimensions),g in prices.groupby(['country','dimensions']):
+    for (country,dimensions),g in prices.groupby(['country','series_dimensions']):
         desc=json.loads(dimensions)
         commodity=str(desc.get('commodity','')).lower()
         if str(desc.get('pricetype','')).lower()!='retail' or 'wage' in commodity:continue
@@ -444,15 +449,26 @@ def write_report(observations,panel,tests,sync,output,as_of=None,n_permutations=
 
 def main():
     import argparse
+    from zoneinfo import ZoneInfo
+    from monitoring.extensions import run as run_extensions
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--data-dir',type=Path,default=BASE/'data/monitoring')
     ap.add_argument('--out',type=Path,default=BASE/'results/monitoring')
     ap.add_argument('--permutations',type=int,default=1999)
     args=ap.parse_args()
+    as_of=dt.datetime.now(ZoneInfo('America/Chicago'))
+    today=as_of.date()
     d=load_observations(args.data_dir)
-    panel=build_annual_panel(d);tests=lag_tests(panel,n_permutations=args.permutations)
+    panel=build_annual_panel(d,as_of=today);tests=lag_tests(panel,n_permutations=args.permutations)
     sync=synchrony(panel,n_permutations=args.permutations)
-    write_report(d,panel,tests,sync,args.out,n_permutations=args.permutations)
+    write_report(d,panel,tests,sync,args.out,as_of=today,n_permutations=args.permutations)
+    run_extensions(d,panel,args.out/'extensions',as_of=as_of)
+    report=args.out/'monitoring_report.md'
+    with report.open('a') as stream:
+        stream.write('\n## Climate, seasonal influenza and purchasing-power trends\n\n'
+                     '[Separate extension report](extensions/extensions_report.md) includes NOAA RNI/RONI and DMI, '
+                     'fixed-family climate-control sensitivities, prior-season sentinel flu differences and exact food/wage changes. '
+                     'Incomplete periods and inadequate coverage remain unavailable.\n')
     print(f'{len(panel)} annual observations; {len(tests)} registered lag tests; report {args.out/"monitoring_report.md"}')
 
 

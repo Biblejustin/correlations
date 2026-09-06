@@ -332,37 +332,69 @@ def kg_unit(unit):
 
 
 def normalize_wfp(d,country,url,published=None):
+    """Keep source quotes; pair only one exact daily-wage series per market/month.
+
+    Multiple quotes *within* an exact food or wage series use their median for the
+    derived ratio. Distinct wage names, IDs or price types never share a median.
+    DAY/1 DAY labels represent the same daily unit; original labels remain lineage.
+    """
     required={'date','market_id','commodity','commodity_id','unit','priceflag','pricetype','currency','price'}
     if not required<=set(d):raise ValueError('WFP CSV schema changed')
     d=d[d.priceflag.str.lower().eq('actual')].copy()
     d['price']=pd.to_numeric(d.price,errors='coerce')
-    d=d[d.price>0]
-    rows=[]
-    for _,r in d.iterrows():
-        # Preserve distinct markets, commodities, units and retail/wholesale series.
-        dims={k:str(r[k]) for k in ['market_id','commodity','commodity_id','unit','pricetype','currency']}
-        day=pd.Timestamp(r['date']);end=(day+pd.offsets.MonthEnd(0)).date().isoformat()
-        rows.append(obs(country,day.replace(day=1).date().isoformat(),end,('labor_wage' if 'wage' in str(r.commodity).lower() else 'food_price' if is_food_commodity(r.commodity) else 'food_processing_cost'),r.price,
-                        f'{r.currency}/{r.unit}','wfp',url,'HDX current export',frequency='monthly',
-                        dimensions=dims,published_at=published,
-                        quality_note='Actual market quotes only; distinct baskets/markets/currencies are not interchangeable.'))
-    # Food quantity per day's non-qualified labor wage, exact country/market/month/currency match.
+    d=d[d.price.gt(0)&np.isfinite(d.price)].copy()
     d['month']=pd.to_datetime(d.date).dt.to_period('M').astype(str)
-    wages=d[d.commodity.str.contains(r'Wage.*non-qualified',case=False,regex=True,na=False)
-            & d.unit.str.upper().str.strip().isin(['DAY','1 DAY'])]
+    identity=['market_id','commodity','commodity_id','unit','pricetype','currency']
+    for col in identity:d[col]=d[col].astype(str)
     wage_keys=['market_id','month','currency']
-    wage=wages.groupby(wage_keys).price.median()
-    staples=d[d.pricetype.str.lower().eq('retail') & d.commodity.map(is_food_commodity) & d.commodity.str.contains(r'wheat|barley|maize|rice|sorghum',case=False,na=False)]
-    for _,r in staples.iterrows():
-        unitkg=kg_unit(r.unit);key=(r.market_id,r.month,r.currency)
-        if not unitkg or key not in wage.index:continue
-        day=pd.Timestamp(r.date);pricekg=r.price/unitkg
+    wages=d[d.commodity.str.contains(r'Wage.*non-qualified',case=False,regex=True,na=False)
+            & d.unit.str.upper().str.strip().str.replace(' ','',regex=False).isin(['DAY','1DAY'])].copy()
+    wages['signature']=wages.apply(lambda r:json.dumps({
+        'commodity_id':r.commodity_id,'commodity':r.commodity,'unit':'DAY',
+        'pricetype':r.pricetype,'currency':r.currency},sort_keys=True),axis=1) if len(wages) else pd.Series(dtype=str)
+    wage={};signature_counts={}
+    for key,g in wages.groupby(wage_keys,sort=True):
+        signatures=g.signature.unique();signature_counts[key]=len(signatures)
+        if len(signatures)==1:
+            wage[key]={'value':float(g.price.median()),'signature':json.loads(signatures[0]),
+                       'original_units':sorted(g.unit.unique()),'quote_count':len(g)}
+    rows=[]
+    # Duplicate raw quotes retain distinct lineage instead of failing validation or
+    # overwriting each other. Ordinary source-series dimensions remain unchanged.
+    d['quote_count']=d.groupby(identity+['month'],dropna=False).price.transform('size')
+    d['quote_ordinal']=d.groupby(identity+['month'],dropna=False).cumcount()+1
+    for _,r in d.iterrows():
+        dims={k:r[k] for k in identity}
+        if r.quote_count>1:
+            dims.update(source_quote_ordinal=int(r.quote_ordinal),source_quote_date=str(r.date))
+        key=(r.market_id,r.month,r.currency)
+        if 'wage' in r.commodity.lower() and key in signature_counts:
+            dims.update(affordability_wage_signature_count=signature_counts[key],
+                        affordability_pairing_status=('unique daily wage series' if signature_counts[key]==1
+                                                      else 'ambiguous daily wage series; ratios withheld'))
+        day=pd.Timestamp(r['date']);end=(day+pd.offsets.MonthEnd(0)).date().isoformat()
+        rows.append(obs(country,day.replace(day=1).date().isoformat(),end,
+                        ('labor_wage' if 'wage' in r.commodity.lower() else 'food_price' if is_food_commodity(r.commodity) else 'food_processing_cost'),
+                        r.price,f'{r.currency}/{r.unit}','wfp',url,'HDX current export',frequency='monthly',
+                        dimensions=dims,published_at=published,
+                        quality_note='Actual source market quotes retained; distinct baskets/markets/currencies are not interchangeable.'))
+    staples=d[d.pricetype.str.lower().eq('retail') & d.commodity.map(is_food_commodity)
+              & d.commodity.str.contains(r'wheat|barley|maize|rice|sorghum',case=False,na=False)]
+    for _,g in staples.groupby(identity+['month'],sort=True,dropna=False):
+        r=g.iloc[0];unitkg=kg_unit(r.unit);key=(r.market_id,r.month,r.currency)
+        if not unitkg or key not in wage:continue
+        w=wage[key];day=pd.Timestamp(r.date);pricekg=float(g.price.median()/unitkg)
+        dims={'market_id':r.market_id,'commodity':r.commodity,'commodity_id':r.commodity_id,
+              'currency':r.currency,'food_unit_original':r.unit,'food_unit_kg':unitkg,
+              'food_normalized_unit':'KG','food_price_type':r.pricetype,
+              'wage_series_signature':w['signature'],'wage_original_units':w['original_units'],
+              'wage_quote_count':w['quote_count'],'food_quote_count':len(g),
+              'pairing_rule':'unique_daily_wage_series_v1; within-series median quotes'}
         rows.append(obs(country,day.replace(day=1).date().isoformat(),(day+pd.offsets.MonthEnd(0)).date().isoformat(),
-                        'staple_kg_per_daily_wage',wage.loc[key]/pricekg,'kg/day_wage','wfp',url,
-                        'matched actual market-month',frequency='monthly',numerator=wage.loc[key],denominator=pricekg,
-                        dimensions={'market_id':str(r.market_id),'commodity':r.commodity,
-                                    'commodity_id':str(r.commodity_id),'currency':r.currency},published_at=published,
-                        quality_note='Local non-qualified labor wage divided by retail staple price/kg; unavailable without matched wages.'))
+                        'staple_kg_per_daily_wage',w['value']/pricekg,'kg/day_wage','wfp',url,
+                        'matched actual market-month; exact wage signature v1',frequency='monthly',
+                        numerator=w['value'],denominator=pricekg,dimensions=dims,published_at=published,
+                        quality_note='Local non-qualified daily wage / retail staple price per kg. Median quotes only within each exact series; ambiguous wage signatures withheld. No national wage or CPI interpretation.'))
     return frame(rows)
 
 

@@ -1,0 +1,52 @@
+{
+  "as_of_utc": "2026-09-06T02:51:34.548205+00:00",
+  "design_fixed_at_utc": "2026-09-06T02:29:50Z",
+  "input_rows": 106755,
+  "latest_expected_week_end": "2026-08-23",
+  "latest_expected_week_start": "2026-08-17",
+  "limitations": [
+    "Descriptive positivity differences, not outbreak diagnoses, calibrated p-values or population infection prevalence.",
+    "Calendar-complete, sufficiently tested observations do not establish reporting-site coverage; site coverage remains unverified.",
+    "Universal source provisional flags indicate revisable surveillance observations, not proof that the observation week is partial.",
+    "Historical references use this revised snapshot. They do not reconstruct information available when each historical week was first reported.",
+    "Missing, invalid, partial, projected and low-testing weeks are unavailable; absent weeks are never filled with zero."
+  ],
+  "output_sha256": {
+    "seasonal_flu.md": "395e4553b15b7efdd50a499fc20ec7234bc5abda2e7254fcbaf1f6f3de968012",
+    "seasonal_flu_baseline_windows.csv": "6b9408df64e61cb969c3533938235216ace706b68f35f9b86f86d01ad2efdaf6",
+    "seasonal_flu_row_quality.csv": "b80b3d5403080285d9feb61c3a929679ed517f3f967aeb13bf121db0d81b72ab",
+    "seasonal_flu_weekly.csv": "25dcbfd40bc843df081154c1d824237f7e0445f94f80a86372d692474ce97f38"
+  },
+  "plan": {
+    "baseline": "Specimen-weighted positivity within each qualifying historical five-week seasonal window; median across qualifying windows. All baseline weeks end before the target starts and belong to earlier ISO years. ISO week53 maps to week52 only if the historical year lacks53.",
+    "baseline_prior_iso_years": 5,
+    "expected_countries": [
+      "ISR",
+      "PSE",
+      "LBN",
+      "UKR",
+      "SDN",
+      "ETH",
+      "SOM",
+      "YEM"
+    ],
+    "minimum_baseline_windows": 3,
+    "minimum_tested_specimens": 100,
+    "minimum_weeks_per_baseline_window": 4,
+    "missingness": "Missing, invalid, partial, projected or low-testing weeks remain unavailable. Expected target weeks/countries are retained even without observations. Universal source provisional flags describe revisions, not proof of a partial week. Reporting-site coverage is unverified.",
+    "outputs": "Observed and baseline positivity, percentage-point difference, ratio when baseline is nonzero, specimen counts, coverage and row-quality diagnostics. Descriptive only; no p-values or diagnosis alerts.",
+    "reporting_lag_days": 7,
+    "seasonal_half_window_weeks": 2,
+    "source_scope": "WHO influenza_positivity, SENTINEL only, separate complete source/dimension streams",
+    "target_weeks": 52
+  },
+  "plan_sha256": "0ceb0605193ddb33d8400d3ffa7658d9d6fc429cf432ba2f4138740c70c52150",
+  "schema_version": 1,
+  "status_counts": {
+    "available": 26,
+    "insufficient_baseline": 26,
+    "low_testing": 120,
+    "unobserved_week": 244
+  },
+  "surveillance_streams": 8
+}

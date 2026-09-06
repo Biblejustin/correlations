@@ -1,0 +1,9 @@
+country,valid_series,valid_monthly_observations,eligible_fixed_members,eligible_fixed_markets,first_observed_month,latest_observed_month,maximum_series_baseline_months,baseline_years_without_any_pairs,status
+ETH,2,2,0,0,2015-08,2015-08,1,"[2016,2017,2018,2019]",no eligible fixed basket
+ISR,0,0,0,0,,,0,"[2015,2016,2017,2018,2019]",no eligible fixed basket
+LBN,0,0,0,0,,,0,"[2015,2016,2017,2018,2019]",no eligible fixed basket
+PSE,0,0,0,0,,,0,"[2015,2016,2017,2018,2019]",no eligible fixed basket
+SDN,0,0,0,0,,,0,"[2015,2016,2017,2018,2019]",no eligible fixed basket
+SOM,0,0,0,0,,,0,"[2015,2016,2017,2018,2019]",no eligible fixed basket
+UKR,0,0,0,0,,,0,"[2015,2016,2017,2018,2019]",no eligible fixed basket
+YEM,77,7472,0,0,2016-06,2026-07,43,[2015],no eligible fixed basket

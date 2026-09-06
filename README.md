@@ -6,6 +6,7 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 
 ## Start here
 
+- [Climate, seasonal flu and purchasing-power report](results/monitoring/extensions/extensions_report.md): NOAA ocean indices, separate adjustment tests, prior-season positivity and exact food/wage trends.
 - [Regional monitoring report](results/monitoring/monitoring_report.md): conflict, food stress, affordability, displacement, respiratory surveillance, religious freedom and Israel water.
 - [Monitoring definitions and sources](MONITORING.md): exact measures, geography, cadence, coverage and future validation rules.
 - [Methodology](METHODOLOGY.md): missingness, selected catalogs, allocation assumptions and statistical families.
@@ -20,6 +21,8 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 **Current water and heat monitoring now extends through 2025.** Separate CRU-CY4.10 national data track rainfall, seasonal temperature, potential evapotranspiration and wet days. Rain year 2025 received 218.8 mm, 53.6% of its fixed 1991–2020 baseline. The original CCKP rain aggregation differs materially, so the current monitor cannot silently extend the frozen wheat model. [Climate results and overlap checks](data/israel_monitoring/israel-rain-agriculture/results/climate_monitor.md) retain the product distinction and future-validation requirements.
 
 **New displacement flows are monitored directly.** IDMC annual exports provide displacement movements and year-end stocks through 2025. Repeated movements by one person are possible; the figures are not inferred from refugee-stock changes. The existing regional lag-test family remains unchanged until cause and territorial comparability are verified.
+
+**Climate controls and seasonal/affordability trends are now monitored.** The new sensitivity has no global BH discoveries; Ukraine conflict/refugee-stock change passes HAC correction but fails the original block-permutation correction. This is method-dependent exploratory evidence. Seasonal flu retains missing weeks and minimum tested counts. Exact food/wage trends work; no aggregate basket has the required 2015–2019 coverage. [Definitions and complete outputs](results/monitoring/extensions/extensions_report.md).
 
 **IPC history now preserves 384 observations.** Full supplied national history replaces the latest-only adapter. Six ambiguous or internally inconsistent periods are quarantined with original rows; prior snapshots remain archived. Reports identify retained old assessments. Geographic comparability remains unverified, so this expansion does not unlock additional country lag tests. See [history and revision rules](MONITORING.md).
 

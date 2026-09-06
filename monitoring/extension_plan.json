@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "design_fixed_at_utc": "2026-09-06T02:29:50Z",
+  "interpretation": "Historical exploratory extension. Rules fixed before inspecting extension results, not before these historical data existed. Current revised snapshots do not reconstruct release-time information. No causal, outbreak, prophetic-fulfillment or prospective-validation claim.",
+  "report_timezone": "America/Chicago",
+  "climate": {
+    "monthly_rni_source": "NOAA CPC Relative ERSSTv6 Nino3.4, 1991-2020 baseline",
+    "seasonal_roni_source": "NOAA CPC Relative ERSSTv6 RONI, three-month running mean",
+    "dmi_source": "NOAA PSL HadISST1.1 Dipole Mode Index",
+    "annual_controls": [
+      "rni",
+      "dmi"
+    ],
+    "annual_aggregation": "Unweighted Jan-Dec means, requiring all 12 observed months per index in a completed calendar year. Use monthly RNI, not overlapping seasonal RONI; no following-January value enters the annual control.",
+    "global_family": "All 45 existing global matrix pairs, each baseline_time_regime and climate_adjusted; BH over all 90 planned fits, including unavailable fits as p=1.",
+    "regional_family": "All 72 existing fixed-country/pair/lag cells, each baseline_time_regime and climate_adjusted; BH over all 144 planned fits, including unavailable fits as p=1.",
+    "fits": [
+      "baseline_time_regime",
+      "climate_adjusted"
+    ],
+    "global_minimum_years": 20,
+    "regional_minimum_years": 12,
+    "minimum_residual_degrees_of_freedom": 8,
+    "hac_maxlags": 3,
+    "fdr_alpha": 0.05,
+    "comparison": "Both fits use the identical longest contiguous finite overlap including all required climate years. Baseline uses fixed time/regime terms; adjusted fit adds RNI and DMI. Lagged regional fits include climate at both predictor and response years. Preserve original transformations and geographic gates. This is a separate sensitivity, not a reproduction or replacement of original p-values."
+  },
+  "seasonal_flu": {
+    "source_scope": "WHO influenza_positivity, SENTINEL only, separate complete source/dimension streams",
+    "expected_countries": [
+      "ISR",
+      "PSE",
+      "LBN",
+      "UKR",
+      "SDN",
+      "ETH",
+      "SOM",
+      "YEM"
+    ],
+    "target_weeks": 52,
+    "reporting_lag_days": 7,
+    "minimum_tested_specimens": 100,
+    "baseline_prior_iso_years": 5,
+    "seasonal_half_window_weeks": 2,
+    "minimum_weeks_per_baseline_window": 4,
+    "minimum_baseline_windows": 3,
+    "baseline": "Specimen-weighted positivity within each qualifying historical five-week seasonal window; median across qualifying windows. All baseline weeks end before the target starts and belong to earlier ISO years. ISO week53 maps to week52 only if the historical year lacks53.",
+    "missingness": "Missing, invalid, partial, projected or low-testing weeks remain unavailable. Expected target weeks/countries are retained even without observations. Universal source provisional flags describe revisions, not proof of a partial week. Reporting-site coverage is unverified.",
+    "outputs": "Observed and baseline positivity, percentage-point difference, ratio when baseline is nonzero, specimen counts, coverage and row-quality diagnostics. Descriptive only; no p-values or diagnosis alerts."
+  },
+  "affordability": {
+    "source_scope": "Exact matched actual WFP retail staple/non-qualified daily-wage series; original food unit and canonical wage signature retained",
+    "baseline_years": [
+      2015,
+      2019
+    ],
+    "minimum_baseline_months": 36,
+    "minimum_months_each_baseline_year": 6,
+    "minimum_markets": 1,
+    "minimum_staples_per_market": 1,
+    "required_fixed_basket_coverage": 1.0,
+    "series_index": "100 times current kg per daily wage divided by its geometric mean over observed baseline months. Eligibility and membership fixed by baseline data only.",
+    "aggregation": "Weighted geometric mean of fixed series indices; equal market weights and equal fixed-staple weights within each market. Label as fixed monitored-market purchasing-power index, not representative national prices or wages.",
+    "comparisons": "MoM and YoY require exact prior calendar month and same calendar month last year respectively. Annual levels and changes require all12 complete months. No seasonal adjustment, changing basket, currency splice or filled gaps.",
+    "pairing": "Unique wage series signature per country/market/month/currency. Never pool distinct wage IDs/names/price types. DAY and1DAY are equivalent units with original labels preserved. Within one exact quote series, use median duplicates and retain quote counts.",
+    "ambiguous_baseline_identity": "If one market/commodity has multiple baseline-eligible currency, original food-unit or wage identities, exclude that commodity from the aggregate basket. Retain individual series; never splice or double-count competing identities."
+  },
+  "preserved": [
+    "Original global/regional result families and coverage gates",
+    "Frozen Israel wheat plan/model and incompatible rainfall-product distinction",
+    "Future validation minimum observations",
+    "Unavailable global composite remains unavailable"
+  ]
+}
