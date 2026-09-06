@@ -75,6 +75,14 @@ artifacts, and all twelve local `main` heads verified clean and equal to their
 published branches. Frozen wheat inputs remain byte-identical. Earlier validation
 summaries retain their original dates and describe earlier runs.
 
+The subsequent climate/seasonal/affordability publication is recorded in
+[`results/extensions_validation_summary.json`](results/extensions_validation_summary.json):
+230 central tests plus five feeder tests, all 56 live stages and 112 readable
+artifacts passed. All twelve repositories were clean and matched their published
+main branches. Five original statistical result tables and four frozen wheat
+files stayed byte-identical. The new source and generated-publication commits
+both passed GitHub CI.
+
 | Direct dependency | Verified distribution and imported version |
 |---|---|
 | pandas | 3.0.3 |
