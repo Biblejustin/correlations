@@ -1,0 +1,39 @@
+{
+  "aggregate_label": "fixed monitored-market purchasing-power index",
+  "ambiguity_rule": "Exclude market/commodity with multiple baseline-eligible exact identities from basket; keep individual-series results.",
+  "annual_method": "geometric mean of all 12 monthly values; exact previous complete year only",
+  "as_of": "2026-09-05",
+  "baseline_years": [
+    2015,
+    2019
+  ],
+  "fixed_member_ids": [],
+  "interpretation": "Descriptive local purchasing power. No national representativeness, CPI, seasonal adjustment or imputed missing observations.",
+  "last_complete_month": "2026-08",
+  "membership_scope": "Fixed across this snapshot by 2015\u201319 coverage only; historical source revisions can change eligibility, tracked by membership hash.",
+  "membership_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "plan": {
+    "aggregation": "Weighted geometric mean of fixed series indices; equal market weights and equal fixed-staple weights within each market. Label as fixed monitored-market purchasing-power index, not representative national prices or wages.",
+    "ambiguous_baseline_identity": "If one market/commodity has multiple baseline-eligible currency, original food-unit or wage identities, exclude that commodity from the aggregate basket. Retain individual series; never splice or double-count competing identities.",
+    "baseline_years": [
+      2015,
+      2019
+    ],
+    "comparisons": "MoM and YoY require exact prior calendar month and same calendar month last year respectively. Annual levels and changes require all12 complete months. No seasonal adjustment, changing basket, currency splice or filled gaps.",
+    "minimum_baseline_months": 36,
+    "minimum_markets": 1,
+    "minimum_months_each_baseline_year": 6,
+    "minimum_staples_per_market": 1,
+    "pairing": "Unique wage series signature per country/market/month/currency. Never pool distinct wage IDs/names/price types. DAY and1DAY are equivalent units with original labels preserved. Within one exact quote series, use median duplicates and retain quote counts.",
+    "required_fixed_basket_coverage": 1.0,
+    "series_index": "100 times current kg per daily wage divided by its geometric mean over observed baseline months. Eligibility and membership fixed by baseline data only.",
+    "source_scope": "Exact matched actual WFP retail staple/non-qualified daily-wage series; original food unit and canonical wage signature retained"
+  },
+  "plan_sha256": "939fed8ef1baea6f368281dcc2ed5cfca4cb5c92785febf89eaddaf769a480b9",
+  "publication_scope": "Reference-period cutoff only. Revised snapshots retain source timestamps; not a release-time or prospective backtest.",
+  "quarantine_reasons": {},
+  "quarantine_scope": "Derived ratio observations only; raw quotes without a valid matching daily wage are not candidate ratios.",
+  "quarantined_rows": 0,
+  "schema_version": 1,
+  "valid_monthly_observations": 7474
+}

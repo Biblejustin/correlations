@@ -1,0 +1,54 @@
+{
+  "global": {
+    "method_version": "historical_climate_controls_v1",
+    "family": "global",
+    "extension_plan_sha256": "b743fe4ebe5a43ecf5cc9348bb8e0fd90a758152bfc00bfa9756218791afa274",
+    "family_size": 90,
+    "fits": [
+      "baseline_time_regime",
+      "climate_adjusted"
+    ],
+    "minimum_years": 20,
+    "minimum_residual_df": 8,
+    "hac_maxlags": 3,
+    "hac_kernel": "Bartlett",
+    "hac_finite_sample_correction": true,
+    "inference": "OLS slope; HAC covariance; Student t with n minus full design rank df",
+    "fdr": "BH across all pairs/lags and both fits; unavailable tests occupy p=1 slots",
+    "fdr_alpha": 0.05,
+    "end_year": 2025,
+    "sample": "Identical longest contiguous finite overlap for both fits; ties choose earliest",
+    "climate": "rni: mean of 12 closed Jan-Dec monthly Relative Nino3.4 values; dmi: 12-month Jan-Dec mean",
+    "lag_controls": "Response-year climate plus predictor-year climate for positive lags",
+    "baseline": "Shared fixed time/regime nuisance basis; not replication of separately detrended original results",
+    "interpretation": "Historical association sensitivity; no causal, prospective, or prophetic attribution",
+    "family_separation": "Global and regional panels have distinct pre-existing hypotheses and observation units; no pooled significance claim",
+    "confidence_intervals": "95% pointwise HAC slope intervals; not simultaneous or selection-adjusted"
+  },
+  "regional": {
+    "method_version": "historical_climate_controls_v1",
+    "family": "regional",
+    "extension_plan_sha256": "b743fe4ebe5a43ecf5cc9348bb8e0fd90a758152bfc00bfa9756218791afa274",
+    "family_size": 144,
+    "fits": [
+      "baseline_time_regime",
+      "climate_adjusted"
+    ],
+    "minimum_years": 12,
+    "minimum_residual_df": 8,
+    "hac_maxlags": 3,
+    "hac_kernel": "Bartlett",
+    "hac_finite_sample_correction": true,
+    "inference": "OLS slope; HAC covariance; Student t with n minus full design rank df",
+    "fdr": "BH across all pairs/lags and both fits; unavailable tests occupy p=1 slots",
+    "fdr_alpha": 0.05,
+    "end_year": 2025,
+    "sample": "Identical longest contiguous finite overlap for both fits; ties choose earliest",
+    "climate": "rni: mean of 12 closed Jan-Dec monthly Relative Nino3.4 values; dmi: 12-month Jan-Dec mean",
+    "lag_controls": "Response-year climate plus predictor-year climate for positive lags",
+    "baseline": "Shared fixed time/regime nuisance basis; not replication of separately detrended original results",
+    "interpretation": "Historical association sensitivity; no causal, prospective, or prophetic attribution",
+    "family_separation": "Global and regional panels have distinct pre-existing hypotheses and observation units; no pooled significance claim",
+    "confidence_intervals": "95% pointwise HAC slope intervals; not simultaneous or selection-adjusted"
+  }
+}

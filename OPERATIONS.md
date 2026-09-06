@@ -29,7 +29,10 @@ existing environment; a new venv gives the stronger check against stale packages
 
 Set `WORKERS=1` to serialize analysis jobs or use another positive worker count.
 The pipeline requires its configured sibling repositories for operational runs;
-the fixture test target does not. Source names and historical earthquake query
+the fixture test target does not. NOAA climate indices run as their own fetch stage before analysis. The regional
+analysis also produces the climate-control, seasonal influenza and purchasing-power
+extension report; a failed extension stops publication. `make catalogs
+SOURCES="climate_indices"` retries only that source. Source names and historical earthquake query
 thresholds have one definition in `weekly_update.py`; Make does not duplicate
 them. Ordinary refresh targets use `--dry-run` so publication remains explicit.
 

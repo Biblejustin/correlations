@@ -1,0 +1,112 @@
+{
+  "as_of_utc": "2026-09-06T02:50:52.304337",
+  "definitions": {
+    "dmi": "Monthly Indian Ocean west-minus-east SST anomaly gradient.",
+    "rni": "Monthly relative Nino3.4 anomaly; annual means require12 Jan-Dec months.",
+    "roni": "Three-month running mean displayed by full observation window; not used as a calendar-year control."
+  },
+  "fetched_at": "2026-09-06T02:39:57.827933+00:00",
+  "inputs": {
+    "cpc_definition": {
+      "path": "raw/cpc_definition/65a2d533a4d615ea05447184118c1c91856a95d1797e3d64ef227a211a4e7045.gz",
+      "sha256": "65a2d533a4d615ea05447184118c1c91856a95d1797e3d64ef227a211a4e7045",
+      "source_url": "https://www.cpc.ncep.noaa.gov/data/indices/"
+    },
+    "dmi": {
+      "path": "raw/dmi/e9f408cce79cddb9f2226860e7e9049e2936e3707e79371efe49fc77f4f69eff.gz",
+      "sha256": "e9f408cce79cddb9f2226860e7e9049e2936e3707e79371efe49fc77f4f69eff",
+      "source_url": "https://psl.noaa.gov/data/timeseries/month/data/dmi.had.long.data"
+    },
+    "dmi_definition": {
+      "path": "raw/dmi_definition/81261bb5617f30e9086509d420ac49a0c5d2d4ace6c90355dbd339ee12006a20.gz",
+      "sha256": "81261bb5617f30e9086509d420ac49a0c5d2d4ace6c90355dbd339ee12006a20",
+      "source_url": "https://psl.noaa.gov/data/timeseries/month/DMI/"
+    },
+    "rni": {
+      "path": "raw/rni/823637ec4ad8271803edb25f24a39c12f3401b9ccc91c5ab7884f26bf546c2ba.gz",
+      "sha256": "823637ec4ad8271803edb25f24a39c12f3401b9ccc91c5ab7884f26bf546c2ba",
+      "source_url": "https://www.cpc.ncep.noaa.gov/data/indices/Rnino34.ascii.txt"
+    },
+    "roni": {
+      "path": "raw/roni/2f1c446b0c293358af6452808799b0dca75f89b0a1d6f86eb1887dc3de9b5eae.gz",
+      "sha256": "2f1c446b0c293358af6452808799b0dca75f89b0a1d6f86eb1887dc3de9b5eae",
+      "source_url": "https://www.cpc.ncep.noaa.gov/data/indices/RONI.ascii.txt"
+    }
+  },
+  "limitations": [
+    "Current revised source vintages, not real-time historical predictors.",
+    "Recent CPC estimates may change; NOAA PSL describes DMI as preliminary.",
+    "Global ocean indices do not measure local rainfall or prove a causal climate pathway.",
+    "Missing months and incomplete years are never filled. Product changes require review."
+  ],
+  "observed_through": {
+    "dmi": "2026-05-31",
+    "rni": "2026-08-31",
+    "roni": "2026-08-31"
+  },
+  "outputs": {
+    "annual.csv": {
+      "path": "snapshots/4a03e4ff6e8e63b2909c5843c4ef4a565a3ebe873d08a8fb8bfca3a0b52b8811/annual.csv",
+      "rows": 76,
+      "sha256": "c1bd974a0dd9fb8dddbca37171ad5d4db4681280eaf79ebc71cfb2174ce8957b"
+    },
+    "annual_coverage.csv": {
+      "path": "snapshots/4a03e4ff6e8e63b2909c5843c4ef4a565a3ebe873d08a8fb8bfca3a0b52b8811/annual_coverage.csv",
+      "rows": 154,
+      "sha256": "3cead7a323ca1ec63ad7e1686edafe09b4e8078186aeb1fb124cb17b61ace502"
+    },
+    "monthly.csv": {
+      "path": "snapshots/4a03e4ff6e8e63b2909c5843c4ef4a565a3ebe873d08a8fb8bfca3a0b52b8811/monthly.csv",
+      "rows": 2805,
+      "sha256": "c657e9d4829a8ec07b011ec77e8d64aeeffa0558437720809d4f8940c688d94a"
+    },
+    "roni_seasonal.csv": {
+      "path": "snapshots/4a03e4ff6e8e63b2909c5843c4ef4a565a3ebe873d08a8fb8bfca3a0b52b8811/roni_seasonal.csv",
+      "rows": 919,
+      "sha256": "2f485ac882baf1923e70e106598db004972fa1024c4cd41bb79de9f0cd32c6a8"
+    }
+  },
+  "paired_annual_years": [
+    1950,
+    2025
+  ],
+  "requests": [
+    {
+      "fetched_at": "2026-09-06T02:39:57.355688+00:00",
+      "published_at": null,
+      "sha256": "65a2d533a4d615ea05447184118c1c91856a95d1797e3d64ef227a211a4e7045",
+      "url": "https://www.cpc.ncep.noaa.gov/data/indices/"
+    },
+    {
+      "fetched_at": "2026-09-06T02:39:57.600248+00:00",
+      "published_at": null,
+      "sha256": "81261bb5617f30e9086509d420ac49a0c5d2d4ace6c90355dbd339ee12006a20",
+      "url": "https://psl.noaa.gov/data/timeseries/month/DMI/"
+    },
+    {
+      "fetched_at": "2026-09-06T02:39:57.668978+00:00",
+      "published_at": "Thu, 03 Sep 2026 18:32:06 GMT",
+      "sha256": "823637ec4ad8271803edb25f24a39c12f3401b9ccc91c5ab7884f26bf546c2ba",
+      "url": "https://www.cpc.ncep.noaa.gov/data/indices/Rnino34.ascii.txt"
+    },
+    {
+      "fetched_at": "2026-09-06T02:39:57.733258+00:00",
+      "published_at": "Thu, 03 Sep 2026 18:32:06 GMT",
+      "sha256": "2f1c446b0c293358af6452808799b0dca75f89b0a1d6f86eb1887dc3de9b5eae",
+      "url": "https://www.cpc.ncep.noaa.gov/data/indices/RONI.ascii.txt"
+    },
+    {
+      "fetched_at": "2026-09-06T02:39:57.827933+00:00",
+      "published_at": "Sat, 25 Jul 2026 19:57:34 GMT",
+      "sha256": "e9f408cce79cddb9f2226860e7e9049e2936e3707e79371efe49fc77f4f69eff",
+      "url": "https://psl.noaa.gov/data/timeseries/month/data/dmi.had.long.data"
+    }
+  ],
+  "schema_version": 1,
+  "snapshot_id": "4a03e4ff6e8e63b2909c5843c4ef4a565a3ebe873d08a8fb8bfca3a0b52b8811",
+  "versions": {
+    "dmi": "HadISST1.1; NOAA PSL Dipole Mode Index",
+    "rni": "Relative ERSSTv6; 1991-2020 baseline",
+    "roni": "Relative ERSSTv6; 1991-2020 baseline; three-month running mean"
+  }
+}

@@ -17,6 +17,7 @@ Configuration is versioned in `monitoring/config.json`. Normalized observations 
 | [V-Dem v16](https://www.v-dem.net/data/the-v-dem-dataset/) | Religious freedom `v2clrelig`, with uncertainty columns | Annual expert-coded index. PSE source refers to West Bank; excluded from combined-territory annual panel. Higher freedom is not an incident count or persecution rate. |
 | [World Bank population](https://data.worldbank.org/indicator/SP.POP.TOTL) | Same-year population denominator | Annual observed releases; geographic comparability still needs checking. |
 | [Israel crop/water feeder](https://github.com/Biblejustin/israel-rain-agriculture) | FAOSTAT crop production/area/yield; WDI irrigation/freshwater; Kinneret; national rain, temperature, PET and wet days | Original CCKP CRU TS4.08 rain ends in 2023; separate CRU-CY4.10 climate monitor reaches December 2025. Full overlap diagnostics expose aggregation differences; no silent splice. Irrigation remains irregular and covers all crops. |
+| [NOAA CPC relative ENSO](https://www.cpc.ncep.noaa.gov/data/indices/) / [NOAA PSL DMI](https://psl.noaa.gov/data/timeseries/month/DMI/) | Monthly RNI, seasonal RONI and Indian Ocean SST gradient | Separate ERSSTv6 and HadISST1.1 products. Complete paired annual controls 1950–2025; monthly periods and source vintages retained. |
 | [NOAA SWPC](https://services.swpc.noaa.gov/json/goes/primary/xray-flares-7-day.json) | Recent flare event ID, peak timestamp/class, satellite | Rolling seven-day observations. Durable deduplication and revisions; missed polling intervals remain gaps. Historical curated X-flare list remains selected. |
 
 `data/monitoring/*.manifest.json` gives the fetched source URLs and versioned request evidence. Compressed CSVs use deterministic gzip headers. Cache responses support offline replay; cached responses retain their original retrieval dates. A failed or suspiciously shrunken refresh retains the previous good snapshot and returns failure.
@@ -29,7 +30,7 @@ Configuration is versioned in `monitoring/config.json`. Normalized observations 
 
 **Regional lag family.** Conflict deaths per 100,000 → net refugee-stock change; conflict → IPC 3+; retail staple price change → IPC 3+. Eight countries × three pairs × lags 0/1/2 years = 72 fixed tests. Positive lag means predictor earlier than response. Longest contiguous finite overlap must have at least twelve years. Signed-log measures are separately detrended; three-year block permutations provide exploratory p-values; BH keeps all 72 cells in the family. Missing IPC history or uncertain geography leaves those tests unavailable.
 
-**Regional synchrony.** Four fixed domains: conflict, food prices, influenza sentinel positivity, religious restrictions. Baseline 2000–2019, at least ten observed baseline years; extreme threshold z > 1.5, compound screen at least two domains. Every fixed domain must be eligible. Dependence-aware calibration requires sufficient joint observations; coverage failure remains unavailable. The annual panel does not yet model disease seasonality or household exposure to several hazards.
+**Regional synchrony.** Four fixed domains: conflict, food prices, influenza sentinel positivity, religious restrictions. Baseline 2000–2019, at least ten observed baseline years; extreme threshold z > 1.5, compound screen at least two domains. Every fixed domain must be eligible. Dependence-aware calibration requires sufficient joint observations; coverage failure remains unavailable. The annual panel remains unchanged. A separate weekly seasonal influenza monitor is described below; household exposure to several hazards remains unmeasured.
 
 **Israel follow-up.** Area and yield separate agricultural expansion from per-hectare response. The 54 historical crop/rain tests and 30 follow-up decomposition tests remain separate declared families. Irrigation sensitivity uses actual irregular source observations and calendar-distance HAC. Rain × era tests interaction directly. The future holdout remains frozen; no later year can validate until corresponding rain and crop observations both exist.
 
@@ -49,6 +50,24 @@ When all phase counts exist, phases 1–5 must agree with phase-all, and phases 
 
 HDX also supplies full level-1 and area histories. Those tables contain names but no stable geographic identifiers or geometry; overlapping population groups and changing assessed coverage prevent an automatic boundary match. They are not aggregated into national totals here. Every IPC observation keeps `geography_comparable_to_country=false`; the expanded history improves descriptive assessment records, without unlocking the existing regional lag tests.
 
+## Climate, seasonal influenza and purchasing-power extensions
+
+The [comparison plan](monitoring/extension_plan.json) was committed before inspecting these extension results. Historical data already existed, so this is an exploratory design freeze, not preregistration before observation. Existing global/regional families, coverage gates and the frozen Israel wheat model remain separate.
+
+**Climate sources.** NOAA CPC [monthly relative Niño3.4](https://www.cpc.ncep.noaa.gov/data/indices/Rnino34.ascii.txt) and [seasonal RONI](https://www.cpc.ncep.noaa.gov/data/indices/RONI.ascii.txt) use Relative ERSSTv6 and the 1991–2020 base period. NOAA PSL [DMI](https://psl.noaa.gov/data/timeseries/month/data/dmi.had.long.data) uses HadISST1.1. Monthly RNI supplies the ENSO control; RONI is displayed over its full three-month observation window. Annual RNI/DMI means require all twelve January–December months in a completed year. Raw inputs and definitions are archived by hash; four validated tables activate together. Changed product/baseline, inconsistent RNI/RONI windows, lost observations or damaged archives fail before replacing the active snapshot. Historical exports need a separate output root if they would reduce active coverage. Current revised vintages do not reconstruct historical release-time predictors.
+
+**Climate sensitivity.** Reuse all 45 global pairs with both a shared time/regime baseline and a climate-adjusted fit: 90 planned tests. Separately, reuse all 72 regional country/pair/lag cells with both fits: 144 tests. Each pair of fits uses identical longest contiguous finite samples, including climate coverage. Minimum sample sizes remain 20 global and 12 regional years, with at least eight residual degrees of freedom. Lagged regional fits include climate in both predictor and response years. HAC3 slope tests use finite-sample correction; BH includes unavailable cells as p=1. Partial correlations, pointwise intervals, exact years and reasons for ineligibility are retained. Shared nuisance terms differ from the original matrix's separately detrended block-null procedure, so this is a sensitivity, not replacement inference.
+
+The first run has 72 eligible global fits and 34 eligible regional fits. No global fit passes BH. Ukraine's same-year conflict-death rate / refugee-stock-change relationship passes both HAC fits (2001–2025; baseline r=0.593, climate-adjusted r=0.590; q=0.0048). The original block-permutation family gives q=0.36 for that cell. Evidence therefore depends on inference method. War/famine is already weak in the new 1950–2023 baseline (r=0.053; adjusted r=0.057; both q=1), before climate terms are added. Its difference from the original 1900–2023 finding cannot be attributed to ENSO/IOD adjustment.
+
+**Seasonal influenza.** Keep WHO SENTINEL observations separate by complete country/source/version/dimension identity. Require integer positive/tested counts, a full Monday–Sunday week, a seven-day reporting lag and at least 100 specimens. For each of the latest 52 expected weeks, compare with the corresponding seasonal window (±2 weeks) in the prior five ISO years. Each reference window needs four eligible weeks; at least three windows must qualify. Pool specimens within each window and take the median positivity across qualified windows. Every reference week precedes the target and belongs to an earlier ISO year; week 53 maps to week 52 only when that historical year lacks week 53. Report positivity, percentage-point difference and ratio only when defined. Missing countries/weeks, partial reports and low-testing weeks remain explicit. WHO's universal provisional flag indicates revision risk; reporting-site coverage is still unverified. No diagnostic or calibrated outbreak alert is inferred.
+
+**Food purchasing power.** Matched actual WFP retail staple and non-qualified daily wage quotes retain original food units and a canonical wage identity. Distinct wage IDs/names/price types cannot be pooled; only duplicates within the exact quote series use a median. DAY and 1 DAY labels are equivalent, with original labels preserved. Exact series yield kg per daily wage and MoM/YoY changes using exact calendar comparators. The 2015–2019 baseline requires at least 36 months and six months in every year. Fixed monitored-market indices give equal weight to markets and fixed staples within each market, and require 100% member coverage; annual results need all twelve months. Competing baseline identities for the same market/staple prevent aggregate membership. No changing basket, currency splice or filled gaps.
+
+The initial snapshot provides 7,474 matched observations across 79 exact series, with 7,160 MoM and 6,357 YoY comparisons. No country has an eligible aggregate basket: Yemen has no 2015 pairs, and Ethiopia only has August 2015 pairs. Those baseline rules remain intact. Individual market trends are descriptive and nonrepresentative; they are not national purchasing power or a fulfillment threshold.
+
+[Extension report](results/monitoring/extensions/extensions_report.md) links all numerical results, baseline windows, exclusions, source snapshots and manifests. Routine refreshes use an exact timestamp with an America/Chicago report date; explicit historical date exports include the entire Chicago date and still disclose revised-source limitations.
+
 ## Commands and cadence
 
 ```bash
@@ -57,12 +76,15 @@ python refresh_monitoring.py --sources ipc who  # selected sources
 python refresh_monitoring.py --offline          # replay saved source responses
 python sync_feeders.py                          # verified sibling snapshots, including Israel
 python sync_feeders.py --check                  # detect drift; no writes
-python monitor_regional.py                      # panel, lag family, synchrony and report
+python refresh_climate_indices.py               # versioned NOAA climate snapshot
+python refresh_climate_indices.py --offline     # replay cached climate responses
+python monitor_extensions.py                    # separate extension report
+python monitor_regional.py                      # panel, lag family, synchrony and all reports
 ```
 
 Daily polling protects the short SWPC observation window; annual feeds will often be unchanged. SWPC's seven-day retention requires successful polls no more than seven days apart to avoid gaps. Annual inferential analyses still exclude partial years. Scheduling is separate from Make and the runner: use `make publish` for an authorized scheduled publication, with a clean checkout and explicit runtime. Notify on failed stages, meaningful revisions, new usable observation periods or changed analytical eligibility; retrieval timestamps and unchanged figure renders do not warrant alerts. See [operations](OPERATIONS.md).
 
-Outputs: `results/monitoring/monitoring_report.md`, `regional_annual_panel.csv`, `regional_lag_tests.csv` and `regional_synchrony.csv`; source observations remain available for narrower review.
+Outputs: `results/monitoring/monitoring_report.md`, `regional_annual_panel.csv`, `regional_lag_tests.csv` and `regional_synchrony.csv`, plus `results/monitoring/extensions/`; source observations remain available for narrower review.
 
 ## Biblical theme metadata
 
