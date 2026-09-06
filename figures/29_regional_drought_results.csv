@@ -1,6 +1,6 @@
 region,n_events,n_years,band_p,peak_period,peak_ratio,status,start_year,end_year,q_band_family
 Africa (Sahel + East),12,115,0.5971402859714029,10.454545454545455,1.5756511209818265,exploratory,1900.0,2014.0,1.0
-North America (incl Mexico),9,88,0.9686031396860314,12.571428571428571,0.3886921617384468,exploratory,1900.0,1987.0,1.0
+North America (incl Mexico),9,88,0.9686031396860314,12.571428571428571,0.3886921617384463,exploratory,1900.0,1987.0,1.0
 South Asia,8,0,,,,Fewer than five nonzero annual allocations,,,
 East Asia,5,0,,,,Fewer than five nonzero annual allocations,,,
 Europe,12,0,,,,Fewer than five nonzero annual allocations,,,

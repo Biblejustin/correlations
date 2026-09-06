@@ -9,12 +9,12 @@
       "sha256": "e9f76a40d1b3173439c26dd5ab180daf84f9c64cec8de8f8b4ca2819aad0eb60"
     },
     "jerusalem_contacts.csv": {
-      "bytes": 410111,
-      "sha256": "7227870d5eaa06a83028d6805115e2313928adeb1ef643c483d233d0e283e159"
+      "bytes": 410117,
+      "sha256": "35d087c1c4e1bfabebb432d2322ec5382b3f577f59a7bd7d881e98d5d1111d12"
     },
     "jerusalem_events.csv": {
       "bytes": 287030,
-      "sha256": "f780d00d2d22855e3a1d0a2e5ca6a70e3a458560338c0be2e9c08f7392134c3e"
+      "sha256": "4b3239eb3b4b457114bfb49c53083f4e5ebf6d2fcd7de3f483667152ff253235"
     },
     "report.md": {
       "bytes": 4752,

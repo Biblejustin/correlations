@@ -1,7 +1,7 @@
 [
   {
     "title": "War mortality allocation vs flare counts",
-    "r": 0.01371024086694625,
+    "r": 0.013710240866944208,
     "n": 50,
     "start_year": 1976,
     "end_year": 2025,
@@ -9,7 +9,7 @@
   },
   {
     "title": "Famine mortality allocation vs flare counts",
-    "r": 0.019504959167313613,
+    "r": 0.019504959167322793,
     "n": 50,
     "start_year": 1976,
     "end_year": 2025,

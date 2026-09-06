@@ -1,6 +1,6 @@
 # Trade, currencies and food-price monitoring
 
-Reference cutoff: 2026-09-06T06:43:47.584352-05:00 (America/Chicago).
+Reference cutoff: 2026-09-06T08:19:17.460529-05:00 (America/Chicago).
 
 192 frozen comparisons; 6 estimable fits; 0 pass BH q < 0.05, covering 0 distinct country/predictor/lag cells. Two fits of one cell are related sensitivities.
 

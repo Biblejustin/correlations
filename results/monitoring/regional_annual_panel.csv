@@ -2127,7 +2127,7 @@ UKR,2015,population,45784896.0,people,1,source country definition,True,
 UKR,2015,refugees_origin_stock,321399.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2015,refugees_origin_stock_change,83782.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 UKR,2015,religious_freedom,0.875,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-UKR,2015,retail_staple_price_yoy_pct,88.8791483140308,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+UKR,2015,retail_staple_price_yoy_pct,88.87914831403081,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 UKR,2015,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2016,asylum_seekers_origin_stock,34638.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2016,conflict_battle_deaths,699.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.

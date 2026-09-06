@@ -11,7 +11,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | ucdp | 728 | 2025-12-31 | — |
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
-| wfp | 101,740 | 2026-07-31 | — |
+| wfp | 101,755 | 2026-07-31 | — |
 | who | 2,622 | 2026-08-23 | — |
 | worldbank | 208 | 2025-12-31 | — |
 
@@ -113,14 +113,14 @@ Nonrepresentative market examples. Selection is fixed: latest available matched 
 |---|---|---:|---:|---:|---:|
 | UKR | conflict_total_deaths_per_100k → refugees_origin_stock_change | 0 | 25 | +0.593 | 0.360 |
 | LBN | conflict_total_deaths_per_100k → refugees_origin_stock_change | 0 | 25 | -0.097 | 1.000 |
-| YEM | conflict_total_deaths_per_100k → refugees_origin_stock_change | 0 | 25 | +0.127 | 1.000 |
-| SOM | conflict_total_deaths_per_100k → refugees_origin_stock_change | 2 | 24 | +0.250 | 1.000 |
-| SOM | conflict_total_deaths_per_100k → refugees_origin_stock_change | 1 | 25 | +0.348 | 1.000 |
-| SOM | conflict_total_deaths_per_100k → refugees_origin_stock_change | 0 | 25 | +0.415 | 1.000 |
-| ETH | conflict_total_deaths_per_100k → refugees_origin_stock_change | 2 | 24 | +0.294 | 1.000 |
-| ETH | conflict_total_deaths_per_100k → refugees_origin_stock_change | 1 | 25 | -0.203 | 1.000 |
-| ETH | conflict_total_deaths_per_100k → refugees_origin_stock_change | 0 | 25 | -0.147 | 1.000 |
+| LBN | conflict_total_deaths_per_100k → refugees_origin_stock_change | 1 | 25 | +0.266 | 1.000 |
+| LBN | conflict_total_deaths_per_100k → refugees_origin_stock_change | 2 | 24 | +0.109 | 1.000 |
+| UKR | conflict_total_deaths_per_100k → refugees_origin_stock_change | 1 | 25 | +0.262 | 1.000 |
+| UKR | conflict_total_deaths_per_100k → refugees_origin_stock_change | 2 | 24 | -0.170 | 1.000 |
+| SDN | conflict_total_deaths_per_100k → refugees_origin_stock_change | 0 | 14 | -0.007 | 1.000 |
+| SDN | conflict_total_deaths_per_100k → refugees_origin_stock_change | 1 | 13 | -0.008 | 1.000 |
 | SDN | conflict_total_deaths_per_100k → refugees_origin_stock_change | 2 | 12 | -0.052 | 1.000 |
+| ETH | conflict_total_deaths_per_100k → refugees_origin_stock_change | 0 | 25 | -0.147 | 1.000 |
 
 Signed-log annual residuals; separate linear time trends; 3-year block permutation with stable per-cell seeds; BH across the entire fixed family. Lag association does not identify causation. Net refugee-stock change is not new displacement.
 

@@ -1,7 +1,7 @@
 [
   {
     "title": "Listed war onsets/year vs flare counts",
-    "r": 0.2469787086901331,
+    "r": 0.24697870869013247,
     "n": 50,
     "start_year": 1976,
     "end_year": 2025,
@@ -9,7 +9,7 @@
   },
   {
     "title": "Listed famine onsets/year vs flare counts",
-    "r": 0.3130632246404023,
+    "r": 0.31306322464041364,
     "n": 50,
     "start_year": 1976,
     "end_year": 2025,

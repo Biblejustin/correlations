@@ -1,13 +1,13 @@
 {
-  "fetched_at": "2026-09-06T11:41:40.261677+00:00",
+  "fetched_at": "2026-09-06T13:14:25.288508+00:00",
   "intervals": [
     {
-      "end": "2026-09-06T11:41:40.261677+00:00",
+      "end": "2026-09-06T13:14:25.288508+00:00",
       "start": "2026-08-29T04:46:32.481840+00:00"
     }
   ],
   "notes": "No coverage claimed between intervals; historical curated list is incomplete.",
-  "payload_sha256": "818b20b661437ffeb2a55803dd2f93899ab267fa5b90e9276ab252071280ba3b",
+  "payload_sha256": "27705a6a6bfa5f4936931cfa858135f1e0d69845df926c493ccbd29710ca03a3",
   "schema_version": 1,
   "source_url": "https://services.swpc.noaa.gov/json/goes/primary/xray-flares-7-day.json"
 }
