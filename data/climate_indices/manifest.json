@@ -1,11 +1,11 @@
 {
-  "as_of_utc": "2026-09-06T02:50:52.304337",
+  "as_of_utc": "2026-09-06T03:00:47.163024",
   "definitions": {
     "dmi": "Monthly Indian Ocean west-minus-east SST anomaly gradient.",
     "rni": "Monthly relative Nino3.4 anomaly; annual means require12 Jan-Dec months.",
     "roni": "Three-month running mean displayed by full observation window; not used as a calendar-year control."
   },
-  "fetched_at": "2026-09-06T02:39:57.827933+00:00",
+  "fetched_at": "2026-09-06T03:00:49.288215+00:00",
   "inputs": {
     "cpc_definition": {
       "path": "raw/cpc_definition/65a2d533a4d615ea05447184118c1c91856a95d1797e3d64ef227a211a4e7045.gz",
@@ -72,31 +72,31 @@
   ],
   "requests": [
     {
-      "fetched_at": "2026-09-06T02:39:57.355688+00:00",
+      "fetched_at": "2026-09-06T03:00:47.928528+00:00",
       "published_at": null,
       "sha256": "65a2d533a4d615ea05447184118c1c91856a95d1797e3d64ef227a211a4e7045",
       "url": "https://www.cpc.ncep.noaa.gov/data/indices/"
     },
     {
-      "fetched_at": "2026-09-06T02:39:57.600248+00:00",
+      "fetched_at": "2026-09-06T03:00:48.831818+00:00",
       "published_at": null,
       "sha256": "81261bb5617f30e9086509d420ac49a0c5d2d4ace6c90355dbd339ee12006a20",
       "url": "https://psl.noaa.gov/data/timeseries/month/DMI/"
     },
     {
-      "fetched_at": "2026-09-06T02:39:57.668978+00:00",
+      "fetched_at": "2026-09-06T03:00:48.961414+00:00",
       "published_at": "Thu, 03 Sep 2026 18:32:06 GMT",
       "sha256": "823637ec4ad8271803edb25f24a39c12f3401b9ccc91c5ab7884f26bf546c2ba",
       "url": "https://www.cpc.ncep.noaa.gov/data/indices/Rnino34.ascii.txt"
     },
     {
-      "fetched_at": "2026-09-06T02:39:57.733258+00:00",
+      "fetched_at": "2026-09-06T03:00:49.185213+00:00",
       "published_at": "Thu, 03 Sep 2026 18:32:06 GMT",
       "sha256": "2f1c446b0c293358af6452808799b0dca75f89b0a1d6f86eb1887dc3de9b5eae",
       "url": "https://www.cpc.ncep.noaa.gov/data/indices/RONI.ascii.txt"
     },
     {
-      "fetched_at": "2026-09-06T02:39:57.827933+00:00",
+      "fetched_at": "2026-09-06T03:00:49.288215+00:00",
       "published_at": "Sat, 25 Jul 2026 19:57:34 GMT",
       "sha256": "e9f408cce79cddb9f2226860e7e9049e2936e3707e79371efe49fc77f4f69eff",
       "url": "https://psl.noaa.gov/data/timeseries/month/data/dmi.had.long.data"

@@ -212,3 +212,17 @@ Method audit v2: complete observed years; corrected temporal intervals, full Gra
 | P12b crashes ≥20% in trailing 10y | 2 | ≤ 2 (historical rate) | on track |
 | P14 NGDC M≥7 trend 1900–2005 | -0.22/dec [-0.43, -0.01] | declining or flat (reversal ⇒ real intensification) | on track |
 
+## Scorecard 2026-09-05
+Method audit v2: complete observed years; corrected temporal intervals, full Granger family, AR(1) band-search null. PREDICTIONS.md remains frozen. Corrected diagnostics are not the original preregistered tests.
+
+| Prediction | Current value | Threshold | Status |
+|---|---|---|---|
+| P8 wars×famines detrended r | +0.452 (descriptive Pearson r) | ≥ +0.30 | on track |
+| P9b Granger audit, model orders 1/2/5 | raw p 0.018/0.036/0.026; full-family q 0.261/0.269/0.261 | 30-test family, q<0.05 | 0 corrected survivors; exploratory |
+| P9c UCDP intrastate trend | +5.62/dec [+4.41, +6.85] | positive, CI excludes 0 | on track |
+| P9d UCDP interstate trend | -0.002/dec [-0.214, +0.208] | flat now; rising = strongest confirmation | flat (CI crosses 0) |
+| P10 drought allocation proxy | unavailable: Need 20 contiguous observed annual values; longest run=18 | | — |
+| P12 terrorism deaths trend 1998–2021 | +92.4%/dec | positive at p<0.05 | on track |
+| P12b crashes ≥20% in trailing 10y | 2 | ≤ 2 (historical rate) | on track |
+| P14 NGDC M≥7 trend 1900–2005 | -0.22/dec [-0.43, -0.01] | declining or flat (reversal ⇒ real intensification) | on track |
+

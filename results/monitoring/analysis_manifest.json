@@ -31,7 +31,7 @@
   },
   "n_permutations": 1999,
   "input_observation_rows": 106755,
-  "observation_table_fingerprint": "704c4c48ae13dbea30e2305b2d35b0795e17cd0d7431ae360fa20e3e1326f645",
+  "observation_table_fingerprint": "6b8900621654898d1eaee8ef7af36598a5c7316bc87025e639eb575dcb33f1fa",
   "annual_panel_rows": 2662,
   "registered_lag_tests": 72,
   "estimable_lag_tests": 18,
