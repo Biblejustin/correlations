@@ -12,6 +12,24 @@ from monitoring.feeds import BASE
 from source_tracking import file_digest, write_json_if_changed
 
 
+def plot_shipping(frame, target):
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    fig,axes=plt.subplots(3,1,figsize=(11,8),sharex=True,sharey=True)
+    for ax,(name,color) in zip(axes,zip(trade_analysis.SHIPPING_NAMES.values(),['#24577a','#ae6639','#625186'])):
+        group=frame[frame.name.eq(name)].sort_values('month')
+        ax.plot(pd.to_datetime(group.month),group.daily_mean_tons/1e6,color=color,lw=1.8)
+        ax.set_title(name,loc='left',fontsize=11);ax.grid(alpha=.2)
+        ax.set_ylabel('Million tons/day')
+    peak=frame.daily_mean_tons.max()/1e6
+    axes[0].set_ylim(0,peak*1.05 if pd.notna(peak) and peak>0 else 1)
+    fig.suptitle('Estimated vessel transit through three chokepoints',fontsize=15)
+    fig.text(.08,.018,'IMF PortWatch · Complete-month daily means only · Missing months remain gaps\n'
+             'AIS payload estimates; not grain cargo or national imports. Preliminary values can revise.',fontsize=9,color='#444444')
+    fig.tight_layout(rect=(0,.065,1,.96));fig.savefig(target,dpi=160);plt.close(fig)
+
+
 def run(observations, output, *, as_of=None, shipping_root=trade_sources.ROOT,
         economic_root=economic_sources.ROOT, climate_root=climate_indices.ROOT):
     stamp=pd.Timestamp(as_of if as_of is not None else dt.datetime.now(ZoneInfo('America/Chicago')))
@@ -31,13 +49,14 @@ def run(observations, output, *, as_of=None, shipping_root=trade_sources.ROOT,
             'shipping_monthly.csv':transport,'official_fx_monthly.csv':rates,'trade_food_tests.csv':fits,
             'cereal_dependence.csv':cereal}
     for name,frame in tables.items():frame.to_csv(output/name,index=False)
+    plot_shipping(transport,output/'shipping_transit.png')
     passing=fits[fits.reject_fdr];eligible=fits[fits.status.eq('eligible')]
     lines=['# Trade, currencies and food-price monitoring','',f'Reference cutoff: {stamp.isoformat()} (America/Chicago).','',
         f'{len(fits)} frozen comparisons; {len(eligible)} estimable fits; {len(passing)} pass BH q < 0.05, '
         f'covering {passing.pair_id.nunique()} distinct country/predictor/lag cells. Two fits of one cell are related sensitivities.', '',
         'Historical exploratory associations support observation, not causal or prophetic-fulfillment claims. '
         'Sources can revise; these snapshots do not reconstruct what was known in each historical month.', '',
-        '## Shipping observations','',
+        '## Shipping observations','','![Complete-month estimated transit](shipping_transit.png)','',
         '| Chokepoint | Latest eligible month | Mean estimated transit, metric tons/day | YoY decline |',
         '|---|---|---:|---:|']
     for name in trade_analysis.SHIPPING_NAMES.values():
@@ -99,6 +118,7 @@ def run(observations, output, *, as_of=None, shipping_root=trade_sources.ROOT,
         'interpretation':fits.attrs['interpretation'],
         'outputs':{name:{'sha256':file_digest(output/name),'rows':len(frame)} for name,frame in tables.items()},
         'report_sha256':file_digest(output/'trade_report.md')}
+    manifest['plot_sha256']=file_digest(output/'shipping_transit.png')
     write_json_if_changed(output/'trade_manifest.json',manifest)
     return manifest
 

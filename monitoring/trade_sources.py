@@ -309,10 +309,13 @@ def load_snapshot(root=ROOT, *, manifest_path=None, replay=False):
     actual_id = digest(b''.join(name.encode()+contents[name] for name in sorted(contents)))
     if manifest['snapshot_id'] != actual_id:
         raise ValueError('PortWatch snapshot identity mismatch')
+    rows, source = _replay(archive, cutoff(manifest['as_of_utc']))
+    if source != manifest['source']:
+        raise ValueError('PortWatch archived source metadata mismatch')
+    version = f'{ITEM_ID}; source edit {source["editing_info"]["lastEditDate"]}'
+    if manifest['source_version'] != version or manifest['fetched_at'] != max(record['fetched_at'] for record in archive):
+        raise ValueError('PortWatch source version/receipt differs from archived transcript')
     if replay:
-        rows, source = _replay(archive, cutoff(manifest['as_of_utc']))
-        if source != manifest['source']:
-            raise ValueError('PortWatch archived source metadata mismatch')
         rebuilt = build_tables(rows, as_of=manifest['as_of_utc'], fetched_at=manifest['fetched_at'], source_version=manifest['source_version'])
         for name, table in rebuilt.items():
             if table.to_csv(index=False, lineterminator='\n').encode() != contents[name]:

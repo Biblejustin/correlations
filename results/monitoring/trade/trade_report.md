@@ -1,12 +1,14 @@
 # Trade, currencies and food-price monitoring
 
-Reference cutoff: 2026-09-06T00:26:20.198155-05:00 (America/Chicago).
+Reference cutoff: 2026-09-06T00:33:27.937781-05:00 (America/Chicago).
 
 192 frozen comparisons; 6 estimable fits; 0 pass BH q < 0.05, covering 0 distinct country/predictor/lag cells. Two fits of one cell are related sensitivities.
 
 Historical exploratory associations support observation, not causal or prophetic-fulfillment claims. Sources can revise; these snapshots do not reconstruct what was known in each historical month.
 
 ## Shipping observations
+
+![Complete-month estimated transit](shipping_transit.png)
 
 | Chokepoint | Latest eligible month | Mean estimated transit, metric tons/day | YoY decline |
 |---|---|---:|---:|

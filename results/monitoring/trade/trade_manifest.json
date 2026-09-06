@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-06T00:26:20.198155-05:00",
+  "as_of": "2026-09-06T00:33:27.937781-05:00",
   "eligible_fits": 6,
   "interpretation": "Historical exploratory associations; repeated shipping exposures and common crisis shocks limit causal interpretation. Official FX may differ from market rates. Pointwise slope intervals are not simultaneous.",
   "observation_fingerprint": "595d79735e23c3fb0f19d5a8069aa116f7e3f9ebb4ed519909c32927262939ff",
@@ -37,7 +37,8 @@
   "passing_fits": 0,
   "plan_sha256": "869b45de8bca7f9925bfd950d1b5585f135a231e4e3f931ff6623c6d9bab645c",
   "planned_fits": 192,
-  "report_sha256": "c9d3be3f76e46bd36fc5a77dbc321f5bb433697c98b6d8a1bcaa37d760226a2a",
+  "plot_sha256": "7031ca3eaf22280c69ea0b45b54c352d30f7ca263b1ddb557e808d7956c316b3",
+  "report_sha256": "8cafecf061c81aea4e5d1172a7f6b12c2c0750c6fdc13f7799147b5e75d5c196",
   "schema_version": 1,
   "source_manifests": {
     "climate": {

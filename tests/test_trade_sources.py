@@ -251,6 +251,21 @@ class PortWatchActivation(unittest.TestCase):
                 path.write_bytes(content)
             self.assert_preserved()
 
+    def test_default_loader_binds_source_metadata_version_and_receipt_to_raw_transcript(self):
+        for field in ['snapshot_id', 'source', 'source_version', 'fetched_at']:
+            changed = deepcopy(self.manifest)
+            if field == 'source':
+                changed[field]['owner'] = 'unverified-publisher'
+            else:
+                changed[field] = 'incorrect'
+            (self.root/'manifest.json').write_text(json.dumps(changed))
+            try:
+                with self.subTest(field=field), self.assertRaises(ValueError):
+                    T.load_snapshot(self.root)
+            finally:
+                (self.root/'manifest.json').write_bytes(self.pointer)
+            self.assert_preserved()
+
 
 if __name__ == '__main__':
     unittest.main()
