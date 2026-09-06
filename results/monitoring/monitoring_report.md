@@ -1,6 +1,6 @@
 # Regional monitoring
 
-Generated 2026-09-05. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-09-06. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
@@ -165,3 +165,7 @@ See MONITORING.md for source commands, scope and interpretation.
 ## Climate, seasonal influenza and purchasing-power trends
 
 [Separate extension report](extensions/extensions_report.md) includes NOAA RNI/RONI and DMI, fixed-family climate-control sensitivities, prior-season sentinel flu differences and exact food/wage changes. Incomplete periods and inadequate coverage remain unavailable.
+
+[Trade and food-price report](trade/trade_report.md) tracks complete-month chokepoint transit, official currency changes and three-year cereal-import dependence, with a separate fixed comparison family.
+
+[Complete eclipse and Jerusalem-visibility monitor](../../data/celestial_monitoring/data/eclipses/report.md) retains global solar/lunar counts and modeled local visibility, altitude and duration.

@@ -18,14 +18,14 @@
     "UKR",
     "YEM"
   ],
-  "fetched_at": "2026-09-06T02:58:44.363494+00:00",
+  "fetched_at": "2026-09-06T05:50:44.798056+00:00",
   "observed_from": "2000-01-01",
   "observed_through": "2025-12-31",
   "projected_through": null,
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-09-06T02:58:44.363494+00:00",
+      "fetched_at": "2026-09-06T05:50:44.798056+00:00",
       "published_at": "Mon, 08 Jun 2026 20:31:08 GMT",
       "sha256": "66910888f5653af42776d2debc1d72fe527559e7f7fc82e69b7c8771467f2d34",
       "url": "https://ucdp.uu.se/downloads/organizedviolencecy/organizedviolencecy-261-csv.zip"
@@ -33,6 +33,6 @@
   ],
   "rows": 728,
   "schema_version": 1,
-  "sha256": "8f2bea2b535b5a653ee09e5aa8be987cbd3361abe50b46b9893c138d453c2162",
+  "sha256": "e15cf841e0d820c1a43a708a462e0e86390eeb31c0fe7e46782d14bc3bf0c60e",
   "source_id": "ucdp"
 }

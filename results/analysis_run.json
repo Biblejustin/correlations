@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T03:02:29.292758+00:00",
+  "generated_at": "2026-09-06T05:53:34.309717+00:00",
   "python": "3.13.15 (main, Aug  5 2026, 12:25:43) [Clang 21.0.0 (clang-2100.1.1.101)]",
   "stages": [
     {
@@ -20,98 +20,98 @@
       "stage": "cycle_fold",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.16,
+      "seconds": 1.18,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/cycle_fold.log"
     },
     {
       "stage": "spectral",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.41,
+      "seconds": 1.39,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/spectral.log"
     },
     {
       "stage": "wars",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.12,
+      "seconds": 1.13,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/wars.log"
     },
     {
       "stage": "famines",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.03,
+      "seconds": 1.02,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/famines.log"
     },
     {
       "stage": "israel",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.4,
+      "seconds": 3.42,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/israel.log"
     },
     {
       "stage": "flares_quakes",
       "status": "passed",
       "returncode": 0,
-      "seconds": 0.71,
+      "seconds": 0.65,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/flares_quakes.log"
     },
     {
       "stage": "floods",
       "status": "passed",
       "returncode": 0,
-      "seconds": 4.87,
+      "seconds": 4.75,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/floods.log"
     },
     {
       "stage": "pandemics",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.69,
+      "seconds": 1.67,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/pandemics.log"
     },
     {
       "stage": "volcanoes",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.02,
+      "seconds": 0.97,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/volcanoes.log"
     },
     {
       "stage": "cyclones",
       "status": "passed",
       "returncode": 0,
-      "seconds": 0.89,
+      "seconds": 0.9,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/cyclones.log"
     },
     {
       "stage": "astronomy",
       "status": "passed",
       "returncode": 0,
-      "seconds": 0.96,
+      "seconds": 0.91,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/astronomy.log"
     },
     {
       "stage": "meta_analysis",
       "status": "passed",
       "returncode": 0,
-      "seconds": 6.39,
+      "seconds": 6.32,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/meta_analysis.log"
     },
     {
       "stage": "trends_meta",
       "status": "passed",
       "returncode": 0,
-      "seconds": 5.01,
+      "seconds": 4.96,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/trends_meta.log"
     },
     {
       "stage": "pattern_analysis",
       "status": "passed",
       "returncode": 0,
-      "seconds": 4.34,
+      "seconds": 4.37,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/pattern_analysis.log"
     },
     {
@@ -125,56 +125,56 @@
       "stage": "contractions_analysis",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.69,
+      "seconds": 1.68,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/contractions_analysis.log"
     },
     {
       "stage": "periodogram_extended",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.69,
+      "seconds": 3.66,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/periodogram_extended.log"
     },
     {
       "stage": "sensitivity",
       "status": "passed",
       "returncode": 0,
-      "seconds": 0.95,
+      "seconds": 0.96,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/sensitivity.log"
     },
     {
       "stage": "wavelet",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.11,
+      "seconds": 1.07,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/wavelet.log"
     },
     {
       "stage": "chains",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.38,
+      "seconds": 3.34,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/chains.log"
     },
     {
       "stage": "wars_split",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.38,
+      "seconds": 1.32,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/wars_split.log"
     },
     {
       "stage": "granger",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.06,
+      "seconds": 1.02,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/granger.log"
     },
     {
       "stage": "regional",
       "status": "passed",
       "returncode": 0,
-      "seconds": 0.96,
+      "seconds": 0.95,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/regional.log"
     },
     {
@@ -188,14 +188,14 @@
       "stage": "ucdp_compare",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.13,
+      "seconds": 1.14,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/ucdp_compare.log"
     },
     {
       "stage": "canonical_compare",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.38,
+      "seconds": 1.37,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/canonical_compare.log"
     },
     {
@@ -206,31 +206,38 @@
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/monitor_regional.log"
     },
     {
+      "stage": "monitor_trade",
+      "status": "passed",
+      "returncode": 0,
+      "seconds": 7.08,
+      "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/monitor_trade.log"
+    },
+    {
       "stage": "flood_linkage_audit",
       "status": "passed",
       "returncode": 0,
-      "seconds": 10.45,
+      "seconds": 10.21,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/flood_linkage_audit.log"
     },
     {
       "stage": "make_figures",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.14,
+      "seconds": 1.12,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/make_figures.log"
     },
     {
       "stage": "make_more_figures",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.89,
+      "seconds": 1.97,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/make_more_figures.log"
     },
     {
       "stage": "dashboard",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.2,
+      "seconds": 1.21,
       "log": "/Users/justinscaggs/correlations-workspace/correlations/logs/dashboard.log"
     }
   ]
