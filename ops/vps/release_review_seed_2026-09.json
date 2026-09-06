@@ -1,0 +1,151 @@
+{
+  "as_of": "2026-09-06",
+  "attention_required": false,
+  "checked_at": "2026-09-06T11:35:33.812821+00:00",
+  "checks": [
+    {
+      "adopted_coverage_end": "2025-12",
+      "adopted_evidence": [
+        {
+          "path": "israel-rain-agriculture/monitor_climate.py",
+          "sha256": "dd34cf7945fb8771d5559969f833bc9ad41b4b1c16009d8d8b4c6d331f1ef5f2"
+        },
+        {
+          "path": "israel-rain-agriculture/data/climate/source_manifest.json",
+          "sha256": "4f69a64148352611f15e5d4afd845a5de44f590da3ef63119d10d33631bc69db"
+        },
+        {
+          "path": "israel-rain-agriculture/results/climate_monitor.json",
+          "sha256": "e7f1124d29f344a47c05986e2f2c67aef590b905248dde52f52f9a880d94cac8"
+        }
+      ],
+      "adopted_version": "4.10",
+      "http_head": {
+        "content_length": 1147,
+        "last_modified": "2026-06-18T07:40:10Z",
+        "status": 200,
+        "url": "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/Release_Notes_CRU_CY_4.10.txt"
+      },
+      "latest_coverage_end": "2025-12",
+      "latest_version": "4.10",
+      "note": "CCKP CRU TS 4.08 remains intentional frozen historical model input through 2023; separate CRU-CY 4.10 monitor already adopted. No silent product substitution or holdout refit.",
+      "observed_release_evidence": "Official current release page and newest dated announcement identify CRU-TS 4.10 and CRU-CY 4.10, released 25 June 2026. No later version or point release listed.",
+      "official_urls": [
+        "https://crudata.uea.ac.uk/cru/data/hrg/",
+        "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/",
+        "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/",
+        "https://crudata.uea.ac.uk/cru/data/hrg/cru_ts_4.10/crucy.2606161920.v4.10/Release_Notes_CRU_CY_4.10.txt"
+      ],
+      "product": "CRU-CY country averages",
+      "publication_date": "2026-06-25",
+      "publication_date_kind": "official CRU-TS/CRU-CY release announcement",
+      "publication_date_precision": "day",
+      "review_needed": false,
+      "source": "CRU",
+      "source_id": "cru_cy",
+      "status": "current",
+      "url": "https://crudata.uea.ac.uk/cru/data/hrg/"
+    },
+    {
+      "adopted_coverage_end": "2025-12-31",
+      "adopted_evidence": [
+        {
+          "path": "correlations/monitoring/feeds.py",
+          "sha256": "92a62798dea42bc6527eabcb74065ee89afc0b0c642302a6537ada76be319aa1"
+        },
+        {
+          "path": "correlations/data/monitoring/ucdp.manifest.json",
+          "sha256": "59987fe702e48623bf72418559e4cdc7622494a90c7a090a3f6530d7b7d91d58"
+        }
+      ],
+      "adopted_version": "26.1",
+      "announcement_kind": "Official Uppsala University annual 2025 findings press release; not assumed exact archive publication date.",
+      "announcement_publication_date": "2026-06-09",
+      "http_head": {
+        "content_length": 167144,
+        "last_modified": "2026-06-08T20:31:08Z",
+        "matches_adopted_manifest_header": true,
+        "status": 200,
+        "url": "https://ucdp.uu.se/downloads/organizedviolencecy/organizedviolencecy-261-csv.zip"
+      },
+      "latest_coverage_end": "2025-12-31",
+      "latest_version": "26.1",
+      "note": "Candidate 26.0.7 covers July 2026 and is a separate preliminary monthly GED product; it is not a newer annual country-year release and is not automatically substituted.",
+      "observed_release_evidence": "Official download center labels adopted country-year dataset 26.1; official API documentation explicitly identifies 26.1 as latest yearly dataset version and only listed organizedviolencecy version.",
+      "official_urls": [
+        "https://ucdp.uu.se/downloads/",
+        "https://ucdp.uu.se/apidocs/",
+        "https://ucdp.uu.se/downloads/organizedviolencecy/organizedviolencecy-261-csv.zip",
+        "https://www.uu.se/en/press/press-releases/2026/2026-06-09-ucdp-record-number-of-conflicts-between-states"
+      ],
+      "product": "Country-Year Organized Violence within Country Borders",
+      "publication_date": null,
+      "publication_date_precision": "exact dataset publication day not stated on official download/API pages",
+      "review_needed": false,
+      "source": "UCDP",
+      "source_id": "ucdp_annual",
+      "status": "current",
+      "url": "https://ucdp.uu.se/downloads/"
+    },
+    {
+      "adopted_coverage_end": "2025-12-31",
+      "adopted_evidence": [
+        {
+          "path": "correlations/monitoring/feeds.py",
+          "sha256": "92a62798dea42bc6527eabcb74065ee89afc0b0c642302a6537ada76be319aa1"
+        },
+        {
+          "path": "correlations/data/monitoring/religion.manifest.json",
+          "sha256": "1c85fe1a75f5f12d31d0465298bf884b3f13263707d3c3495886d68247161032"
+        }
+      ],
+      "adopted_version": "16",
+      "announcement_kind": "official Democracy Report press release; exact dataset day not inferred from related report announcement",
+      "announcement_publication_date": "2026-03-17",
+      "http_head": {
+        "content_length": 16365124,
+        "last_modified": "2026-03-16T14:06:39Z",
+        "matches_adopted_manifest_header": true,
+        "status": 200,
+        "url": "https://www.v-dem.net/media/datasets/V-Dem-CY-Core-v16_csv.zip"
+      },
+      "latest_coverage_end": "2025-12-31",
+      "latest_version": "16",
+      "note": "Religious freedom remains v2clrelig with uncertainty fields from same version; no mixing absolute scores across annual releases.",
+      "observed_release_evidence": "Official current dataset page lists Country-Year Core version 16 published March 2026; archive lists 16 as newest release; release statement confirms latest scores cover 2025.",
+      "official_urls": [
+        "https://www.v-dem.net/data/the-v-dem-dataset/",
+        "https://v-dem.net/data/dataset-archive/",
+        "https://www.v-dem.net/release-statement-for-v16-of-the-v-dem-dataset/",
+        "https://www.v-dem.net/media/datasets/V-Dem-CY-Core-v16_csv.zip",
+        "https://www.v-dem.net/news/press-release-democratic-backsliding-reaches-western-democracies-with-us-decline-unprecedented/"
+      ],
+      "product": "Country-Year Core",
+      "publication_date": "2026-03",
+      "publication_date_kind": "official dataset page Published field",
+      "publication_date_precision": "month",
+      "review_needed": false,
+      "source": "V-Dem",
+      "source_id": "vdem_core",
+      "status": "current",
+      "url": "https://www.v-dem.net/data/the-v-dem-dataset/"
+    }
+  ],
+  "limitations": [
+    "Release labels and documentation were checked live; a HEAD Last-Modified header is server metadata, not proof of original publication date or byte-for-byte identity. Daily refresh performs source-data comparisons separately.",
+    "No new product, source vintage, workflow or frozen analysis plan was adopted."
+  ],
+  "month": "2026-09",
+  "review_needed": false,
+  "schema_version": 1,
+  "scope": "Read-only official release-version audit for currently adopted CRU country climate, UCDP annual country-year organized violence and V-Dem country-year core products.",
+  "seed_evidence": {
+    "note": "Existing official-source audit copied for migration; original audit accompanies seed on VPS. No repeat September network check.",
+    "original_relative_path": "correlations/logs/automation_release_check_2026-09.json",
+    "original_sha256": "09c019191552c2304ea3203055f740046c2bf2af3de6a0d7a3cfbf976c52f8b5",
+    "path_convention": "Adopted evidence paths in this seed are workspace-relative; original audit retained unchanged by SHA256."
+  },
+  "source_or_code_changes_made": false,
+  "status": "current",
+  "tracked_repository_head": "76cfb54d43e1f1f7c3ae21a72068d2dd5b4de534"
+}

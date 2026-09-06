@@ -133,26 +133,43 @@ and cannot publish artifacts or change source catalogs.
 
 ## Scheduled operation
 
-Use a separate local Codex scheduled task for a daily 06:30 America/Chicago
-refresh. Its command is `make PY=/absolute/path/to/verified/python publish` from
-the correlations repository. The workspace must contain all twelve sibling
-repositories on clean `main` checkouts, with Biblejustin authentication and
-remotes. Stop on changed ownership, local edits, divergence, missing dependencies
-or failed stages; retain evidence instead of resetting files or publishing
-partial results. Repositories can be fast-forwarded explicitly by the scheduled
-caller after checking their state; the runner itself does not pull.
+The daily refresh runs on the VPS through `correlations-refresh.timer` at 06:30
+America/Chicago. The systemd calendar follows daylight saving time and catches
+up after downtime. The legacy `signs-update.timer` and local Codex refresh are
+disabled after migration verification; the unrelated podcast `daily-refresh.timer`
+retains its own schedule.
 
-Alerts should cover failures, meaningful source revisions, newly usable
-observation periods, material diagnostic changes and changed coverage or
-validation eligibility. Routine ingestion timestamps, ordinary low-magnitude
-quake additions and unchanged chart rendering should remain quiet. Compare
-measurement dates as well as retrieval dates; a successful download does not
-make an expired IPC assessment current. Keep biblical interpretation separate
-from statistical evidence and never score an ineligible prospective model.
+The deployment keeps twelve clean `main` checkouts in a dedicated workspace,
+an isolated Python 3.13 environment, the exact Node version pinned by the
+astronomy feeder, and GitHub credentials belonging only to Biblejustin. The
+scheduled wrapper checks every fetch/push destination, permits only explicit
+fast-forward updates, and stops on local edits, divergence, changed approved
+runtime/frozen inputs, or concurrent execution. It invokes the existing
+`make PY=/absolute/path/to/verified/python publish` entry point. Source and
+analytical failures retain diagnostic files; publication still uses the runner's
+existing validation gates. No scheduled job resets, stashes, force-pushes, or
+silently upgrades dependencies.
 
-Local scheduled tasks require the computer awake and Codex running; see the
-[official automation documentation](https://developers.openai.com/codex/app/automations).
-The scheduler is configured through Codex, not installed by these Make targets.
+Deployment code and systemd templates live in [`ops/vps/`](ops/vps/). Runtime
+configuration, credentials, logs, and comparison state stay outside Git. A
+reviewed deployed copy of the wrapper runs independently of the checkout it
+updates. Changes to approved deployment or runtime files require explicit review
+and redeployment. Unit status and the persisted JSON status distinguish completed
+publication from a later verification or monthly-source-review problem.
+
+Only substantive observation changes, newly usable periods, revised findings,
+changed eligibility, or failures require review. Receipt timestamps, cache or
+plot changes, ordinary small earthquakes/flares, and normal new daily Kinneret
+observations remain quiet. The comparison is a descriptive review queue, not a
+new anomaly detector. Monthly official CRU-CY, UCDP annual country-year and V-Dem
+Core release checks can flag new versions; they never adopt or splice products.
+Frozen wheat inputs and the minimum ten compatible future annual pairs remain
+protected. Missing observations are never replaced with zeros or reclassified
+as complete.
+
+The service writes alerts to VPS logs and structured status. An outbound alert
+channel must be configured separately with an authorized destination; no local
+Codex process or model API is required for scheduled refreshes.
 
 ## Trade and economic source monitoring
 
