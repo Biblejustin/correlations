@@ -145,7 +145,7 @@ Religious freedom source PSE refers to West Bank; excluded from the combined-ter
 
 ## Israel crop and water observations
 
-Kinneret latest observation: **-213.325 m**, 2026-09-03; 11,326 measurements. Source dates/gaps retained; 10,592 unobserved dates inside catalog span. [Official measurements](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8).
+Kinneret latest observation: **-213.365 m**, 2026-09-06; 11,327 measurements. Source dates/gaps retained; 10,594 unobserved dates inside catalog span. [Official measurements](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8).
 Historical rainfall remains CRU TS4.08 through complete rain year 2023; current rainfall not integrated. Lake level also responds to pumping/transfers/evaporation.
 
 | Wheat outcome × total rain, 1991–2023 | n | r | HAC q, full 30-test follow-up |
