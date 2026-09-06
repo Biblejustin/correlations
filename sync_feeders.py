@@ -76,6 +76,16 @@ ISRAEL_FEEDS = tuple(
     Feed(repository, source, f'data/israel_monitoring/{repository}/{source}', required=False)
     for repository, files in ISRAEL_FILES.items() for source in files
 )
+CELESTIAL_FILES = (
+    'eclipse_plan.json', 'sources/nasa/manifest.json',
+    'data/eclipses/global_catalog.csv', 'data/eclipses/jerusalem_events.csv',
+    'data/eclipses/jerusalem_contacts.csv', 'data/eclipses/annual_counts.csv',
+    'data/eclipses/validation.json', 'data/eclipses/monitor.json', 'data/eclipses/report.md',
+)
+CELESTIAL_FEEDS = tuple(
+    Feed('astronomical-signs', source, f'data/celestial_monitoring/{source}')
+    for source in CELESTIAL_FILES
+)
 MANIFEST = 'data/feeder_sync_manifest.json'
 PROTECTED_TARGETS = frozenset({
     'data/floods.csv','data/wars.csv','data/famines.csv','data/ucdp_prio_conflicts.csv',
@@ -148,8 +158,31 @@ def _atomic_write_if_changed(path: Path, content: bytes) -> bool:
     return True
 
 
+def _validate_celestial_bundle(planned, siblings_root):
+    """A partial feeder promotion must never copy a mixed eclipse snapshot."""
+    contents={feed.source:content for feed,_,content in planned
+              if feed.repository=='astronomical-signs' and feed.source in CELESTIAL_FILES}
+    if not contents:return
+    if set(contents)!=set(CELESTIAL_FILES):raise ValueError('Incomplete celestial export bundle')
+    manifest=json.loads(contents['data/eclipses/monitor.json'])
+    validation=json.loads(contents['data/eclipses/validation.json'])
+    expected={Path(name).name for name in CELESTIAL_FILES if name.startswith('data/eclipses/') and not name.endswith('monitor.json')}
+    if (manifest.get('validation_status')!='passed' or validation.get('status')!='passed'
+            or set(manifest.get('artifacts',{}))!=expected):raise ValueError('Celestial validation or artifact contract failed')
+    for name,record in manifest['artifacts'].items():
+        content=contents['data/eclipses/'+name]
+        if _sha(content)!=record['sha256'] or len(content)!=record['bytes']:
+            raise ValueError('Celestial artifact hash mismatch; incomplete feeder promotion')
+    bindings={'plan_sha256':'eclipse_plan.json','source_manifest_sha256':'sources/nasa/manifest.json',
+              'source_pins_sha256':'source_pins.json','harness_sha256':'eclipse_harness.cjs',
+              'driver_sha256':'monitor_eclipses.py','curated_eclipses_sha256':'eclipses.csv'}
+    for key,name in bindings.items():
+        content=contents[name] if name in contents else _within(Path(siblings_root),'astronomical-signs/'+name).read_bytes()
+        if _sha(content)!=manifest.get(key):raise ValueError(f'Celestial source/code binding changed: {name}')
+
+
 def sync(repo_root: Path, siblings_root: Path, *, check=False,
-         feeds: tuple[Feed,...] = FEEDS + ISRAEL_FEEDS) -> dict:
+         feeds: tuple[Feed,...] = FEEDS + ISRAEL_FEEDS + CELESTIAL_FEEDS) -> dict:
     """Preflight a fixed allowlist, then atomically publish changed snapshots.
 
     No source or destination is removed. Missing formerly-present sidecars or
@@ -190,6 +223,9 @@ def sync(repo_root: Path, siblings_root: Path, *, check=False,
             planned.append((feed,destination,content))
         except (ValueError,OSError,UnicodeError) as exc:
             errors.append(f'{feed.repository}/{feed.source}: {exc}')
+    if not errors:
+        try:_validate_celestial_bundle(planned,siblings_root)
+        except (ValueError,OSError,KeyError,TypeError) as exc:errors.append(str(exc))
     # Source hashes are provenance; no timestamp means no false content change
     # when a weekly run sees identical bytes. Individual copy status is reported
     # to stdout only, not persisted into this stable manifest.

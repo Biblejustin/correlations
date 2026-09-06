@@ -1,0 +1,13 @@
+{
+  "wfp_global_2015": {
+    "bytes": 17879649,
+    "fetched_at": "2026-09-06T05:15:03.004018+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/fab7c2eb-e376-49bd-94c4-5fe51fc90f84/wfp_food_prices_global_2015.csv",
+    "http_status": 200,
+    "last_modified": "Mon, 31 Aug 2026 07:39:25 GMT",
+    "path": "raw/0b99c811b9cf6df2692b702cc8b2879a2495ee24d3d67011be971a607bd004a2.gz",
+    "sha256": "0b99c811b9cf6df2692b702cc8b2879a2495ee24d3d67011be971a607bd004a2",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/31579af5-3895-4002-9ee3-c50857480785/resource/fab7c2eb-e376-49bd-94c4-5fe51fc90f84/download/wfp_food_prices_global_2015.csv"
+  }
+}

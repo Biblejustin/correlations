@@ -1,0 +1,1121 @@
+country,month,food_log_yoy,food_yoy_pct,observed_members,expected_members,member_coverage,currencies,official_currency,fx_currency_compatible,status
+ISR,2015-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2015-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2016-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2017-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2018-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2019-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2020-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2021-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2022-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2023-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2024-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-10,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-11,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2025-12,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2026-01,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2026-02,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2026-03,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2026-04,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2026-05,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2026-06,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2026-07,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2026-08,,,0,0,,,ILS,False,no eligible fixed price basket
+PSE,2015-01,,,4,47,0.0851063829787234,ILS,,False,incomplete fixed price basket
+PSE,2015-02,,,4,47,0.0851063829787234,ILS,,False,incomplete fixed price basket
+PSE,2015-03,,,4,47,0.0851063829787234,ILS,,False,incomplete fixed price basket
+PSE,2015-04,,,4,47,0.0851063829787234,ILS,,False,incomplete fixed price basket
+PSE,2015-05,,,20,47,0.425531914893617,ILS,,False,incomplete fixed price basket
+PSE,2015-06,,,22,47,0.46808510638297873,ILS,,False,incomplete fixed price basket
+PSE,2015-07,,,22,47,0.46808510638297873,ILS,,False,incomplete fixed price basket
+PSE,2015-08,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2015-09,,,22,47,0.46808510638297873,ILS,,False,incomplete fixed price basket
+PSE,2015-10,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2015-11,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2015-12,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2016-01,,,20,47,0.425531914893617,ILS,,False,incomplete fixed price basket
+PSE,2016-02,,,21,47,0.44680851063829785,ILS,,False,incomplete fixed price basket
+PSE,2016-03,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2016-04,,,22,47,0.46808510638297873,ILS,,False,incomplete fixed price basket
+PSE,2016-05,,,20,47,0.425531914893617,ILS,,False,incomplete fixed price basket
+PSE,2016-06,,,22,47,0.46808510638297873,ILS,,False,incomplete fixed price basket
+PSE,2016-07,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2016-08,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2016-09,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2016-10,,,22,47,0.46808510638297873,ILS,,False,incomplete fixed price basket
+PSE,2016-11,,,21,47,0.44680851063829785,ILS,,False,incomplete fixed price basket
+PSE,2016-12,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2017-01,,,22,47,0.46808510638297873,ILS,,False,incomplete fixed price basket
+PSE,2017-02,,,21,47,0.44680851063829785,ILS,,False,incomplete fixed price basket
+PSE,2017-03,,,22,47,0.46808510638297873,ILS,,False,incomplete fixed price basket
+PSE,2017-04,,,21,47,0.44680851063829785,ILS,,False,incomplete fixed price basket
+PSE,2017-05,,,22,47,0.46808510638297873,ILS,,False,incomplete fixed price basket
+PSE,2017-06,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2017-07,,,24,47,0.5106382978723404,ILS,,False,incomplete fixed price basket
+PSE,2017-08,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2017-09,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2017-10,,,22,47,0.46808510638297873,ILS,,False,incomplete fixed price basket
+PSE,2017-11,,,21,47,0.44680851063829785,ILS,,False,incomplete fixed price basket
+PSE,2017-12,,,23,47,0.48936170212765956,ILS,,False,incomplete fixed price basket
+PSE,2018-01,0.0,0.0,43,47,0.9148936170212766,ILS,,False,eligible
+PSE,2018-02,-0.01921835342053637,-1.903485823836086,46,47,0.9787234042553191,ILS,,False,eligible
+PSE,2018-03,-0.0075282664207915245,-0.7499999999999951,43,47,0.9148936170212766,ILS,,False,eligible
+PSE,2018-04,-0.01902403381876499,-1.8844218960787764,44,47,0.9361702127659575,ILS,,False,eligible
+PSE,2018-05,-0.03218037958019496,-3.1668100976392157,44,47,0.9361702127659575,ILS,,False,eligible
+PSE,2018-06,0.0,0.0,44,47,0.9361702127659575,ILS,,False,eligible
+PSE,2018-07,0.0,0.0,45,47,0.9574468085106383,ILS,,False,eligible
+PSE,2018-08,0.0,0.0,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2018-09,0.040210537776639,4.102992724787762,46,47,0.9787234042553191,ILS,,False,eligible
+PSE,2018-10,0.04400147435596232,4.498389556554498,44,47,0.9361702127659575,ILS,,False,eligible
+PSE,2018-11,0.07987437167448568,8.315098468271342,40,47,0.851063829787234,ILS,,False,eligible
+PSE,2018-12,0.06191628177883797,6.3873275421563624,46,47,0.9787234042553191,ILS,,False,eligible
+PSE,2019-01,0.05543403683768733,5.699929175695047,44,47,0.9361702127659575,ILS,,False,eligible
+PSE,2019-02,0.07061946780361145,7.31727713664494,45,47,0.9574468085106383,ILS,,False,eligible
+PSE,2019-03,0.07495928536800196,7.784026612147381,44,47,0.9361702127659575,ILS,,False,eligible
+PSE,2019-04,0.058103670811161495,5.982486291840572,43,47,0.9148936170212766,ILS,,False,eligible
+PSE,2019-05,0.0637096384395666,6.57828914457228,45,47,0.9574468085106383,ILS,,False,eligible
+PSE,2019-06,0.030771658666753687,3.125,41,47,0.8723404255319149,ILS,,False,eligible
+PSE,2019-07,0.04639612292582024,4.748926329699366,46,47,0.9787234042553191,ILS,,False,eligible
+PSE,2019-08,0.03784324666314615,3.8568421052631585,45,47,0.9574468085106383,ILS,,False,eligible
+PSE,2019-09,0.041957373649661615,4.285002491280521,46,47,0.9787234042553191,ILS,,False,eligible
+PSE,2019-10,0.008780061354995691,0.8818719150136265,44,47,0.9361702127659575,ILS,,False,eligible
+PSE,2019-11,0.021978906718775167,2.2222222222222143,41,47,0.8723404255319149,ILS,,False,eligible
+PSE,2019-12,0.00495090047450777,0.49631764329169936,46,47,0.9787234042553191,ILS,,False,eligible
+PSE,2020-01,0.0,0.0,45,47,0.9574468085106383,ILS,,False,eligible
+PSE,2020-02,-0.006475247850096654,-0.6454328609513005,45,47,0.9574468085106383,ILS,,False,eligible
+PSE,2020-03,0.011584078485449997,1.1651433754273244,41,47,0.8723404255319149,ILS,,False,eligible
+PSE,2020-04,-0.013918812631421864,-1.382239382239392,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2020-05,-0.007771144724886746,-0.7741027445461013,43,47,0.9148936170212766,ILS,,False,eligible
+PSE,2020-06,-0.019693682966300995,-1.9501029152423786,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2020-07,-0.028213712187874558,-2.7819422239769827,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2020-08,-0.025317807984289897,-2.500000000000002,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2020-09,-0.035186061578816104,-3.457422909762832,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2020-10,0.0,0.0,40,47,0.851063829787234,ILS,,False,eligible
+PSE,2020-11,-0.014199372770040068,-1.4099037138927017,41,47,0.8723404255319149,ILS,,False,eligible
+PSE,2020-12,0.016746579254464815,1.688758925817181,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2021-01,0.0,0.0,41,47,0.8723404255319149,ILS,,False,eligible
+PSE,2021-02,0.02951881590897742,2.995881490088203,40,47,0.851063829787234,ILS,,False,eligible
+PSE,2021-03,0.024027258687747112,2.431823908110508,40,47,0.851063829787234,ILS,,False,eligible
+PSE,2021-04,0.03303985407820031,3.3591731266150004,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2021-05,0.016449106879821835,1.6585138279885885,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2021-06,0.0016528940672498158,0.16542608495936625,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2021-07,-0.018040732911296854,-1.7878973105134532,43,47,0.9148936170212766,ILS,,False,eligible
+PSE,2021-08,-0.001433707642571448,-0.14326803747618164,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2021-09,0.023010679334811424,2.3277467411545683,41,47,0.8723404255319149,ILS,,False,eligible
+PSE,2021-10,0.02586710764105677,2.6204564666103103,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2021-11,0.05714979251855882,5.8814400993172145,41,47,0.8723404255319149,ILS,,False,eligible
+PSE,2021-12,0.01496103019710457,1.507350663046278,42,47,0.8936170212765957,ILS,,False,eligible
+PSE,2022-01,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-02,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-03,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-04,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-05,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-06,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-07,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-08,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-09,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-10,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-11,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2022-12,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-01,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-02,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-03,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-04,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-05,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-06,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-07,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-08,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-09,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-10,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-11,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2023-12,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-01,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-02,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-03,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-04,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-05,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-06,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-07,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-08,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-09,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-10,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-11,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2024-12,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-01,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-02,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-03,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-04,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-05,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-06,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-07,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-08,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-09,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-10,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-11,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2025-12,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2026-01,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2026-02,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2026-03,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2026-04,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2026-05,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2026-06,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2026-07,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2026-08,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+LBN,2015-01,,,8,15,0.5333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2015-02,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2015-03,,,7,15,0.4666666666666667,LBP,LBP,True,incomplete fixed price basket
+LBN,2015-04,,,9,15,0.6,LBP,LBP,True,incomplete fixed price basket
+LBN,2015-05,-0.17144615294366514,-15.755436998399318,11,15,0.7333333333333333,LBP,LBP,True,eligible
+LBN,2015-06,-0.14267924031602017,-13.29678667497507,11,15,0.7333333333333333,LBP,LBP,True,eligible
+LBN,2015-07,-0.14127406589601124,-13.174867898966358,12,15,0.8,LBP,LBP,True,eligible
+LBN,2015-08,-0.1291582889745399,-12.116515533112937,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2015-09,,,9,15,0.6,LBP,LBP,True,incomplete fixed price basket
+LBN,2015-10,,,10,15,0.6666666666666666,LBP,LBP,True,incomplete fixed price basket
+LBN,2015-11,,,9,15,0.6,LBP,LBP,True,incomplete fixed price basket
+LBN,2015-12,-0.14699241663072088,-13.66994758818304,11,15,0.7333333333333333,LBP,LBP,True,eligible
+LBN,2016-01,-0.07061756721395342,-6.818181818181824,11,15,0.7333333333333333,LBP,LBP,True,eligible
+LBN,2016-02,,,9,15,0.6,LBP,LBP,True,incomplete fixed price basket
+LBN,2016-03,-0.0784336759523862,-7.543662131637347,12,15,0.8,LBP,LBP,True,eligible
+LBN,2016-04,-0.07355864975406567,-7.091834621693782,11,15,0.7333333333333333,LBP,LBP,True,eligible
+LBN,2016-05,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2016-06,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2016-07,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2016-08,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2016-09,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2016-10,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2016-11,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2016-12,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2017-01,,,9,15,0.6,LBP,LBP,True,incomplete fixed price basket
+LBN,2017-02,,,9,15,0.6,LBP,LBP,True,incomplete fixed price basket
+LBN,2017-03,0.07410797215372183,7.692307692307687,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2017-04,0.10157979281792023,10.691823899371066,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2017-05,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2017-06,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2017-07,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2017-08,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2017-09,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2017-10,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2017-11,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2017-12,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2018-01,,,9,15,0.6,LBP,LBP,True,incomplete fixed price basket
+LBN,2018-02,,,10,15,0.6666666666666666,LBP,LBP,True,incomplete fixed price basket
+LBN,2018-03,-0.004926148221505797,-0.4914034652597171,12,15,0.8,LBP,LBP,True,eligible
+LBN,2018-04,-0.00770659205186418,-0.7676972409012324,12,15,0.8,LBP,LBP,True,eligible
+LBN,2018-05,0.006401485052040889,0.6422018348623881,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2018-06,0.0,0.0,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2018-07,-0.0002583810222742709,-0.025834764477270136,12,15,0.8,LBP,LBP,True,eligible
+LBN,2018-08,0.0,0.0,12,15,0.8,LBP,LBP,True,eligible
+LBN,2018-09,-0.002050583872107339,-0.20484828613440312,12,15,0.8,LBP,LBP,True,eligible
+LBN,2018-10,0.0,0.0,12,15,0.8,LBP,LBP,True,eligible
+LBN,2018-11,-0.00477327875265766,-0.4761904761904745,11,15,0.7333333333333333,LBP,LBP,True,eligible
+LBN,2018-12,,,10,15,0.6666666666666666,LBP,LBP,True,incomplete fixed price basket
+LBN,2019-01,-0.0028795709833091083,-0.28754289954550094,11,15,0.7333333333333333,LBP,LBP,True,eligible
+LBN,2019-02,-0.028137141637140883,-2.77449789874741,12,15,0.8,LBP,LBP,True,eligible
+LBN,2019-03,,,10,15,0.6666666666666666,LBP,LBP,True,incomplete fixed price basket
+LBN,2019-04,,,9,15,0.6,LBP,LBP,True,incomplete fixed price basket
+LBN,2019-05,-0.023816388678163235,-2.3535016674607,11,15,0.7333333333333333,LBP,LBP,True,eligible
+LBN,2019-06,-0.05918887139033065,-5.747126436781613,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2019-07,-0.04652001563489282,-4.545454545454541,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2019-08,-0.04196419909903219,-4.109589041095896,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2019-09,-0.0009315326401965328,-0.09310988983586711,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2019-10,-0.10082302205233823,-9.590697674418603,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2019-11,0.013217682874544185,1.3305422590570637,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2019-12,,,10,15,0.6666666666666666,LBP,LBP,True,incomplete fixed price basket
+LBN,2020-01,0.2883804776277088,33.4264865490146,12,15,0.8,LBP,LBP,True,eligible
+LBN,2020-02,0.343055783048622,40.924737184854415,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2020-03,0.4082579524526533,50.41951219512195,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2020-04,0.5693382692409938,76.70973218013873,12,15,0.8,LBP,LBP,True,eligible
+LBN,2020-05,0.9279890294808122,152.9417475728155,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2020-06,0.9941400670728371,170.23994595239415,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2020-07,1.1882121917079946,228.1209786395509,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2020-08,1.2776968657447267,258.8365713151568,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2020-09,1.310143265519723,270.6704717149703,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2020-10,1.525128943691749,359.5736122284795,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2020-11,1.4497200228929557,326.19211077710327,12,15,0.8,LBP,LBP,True,eligible
+LBN,2020-12,,,10,15,0.6666666666666666,LBP,LBP,True,incomplete fixed price basket
+LBN,2021-01,1.5248112594297414,359.4276361130254,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2021-02,1.5401546768726058,366.5311831026116,15,15,1.0,LBP,LBP,True,eligible
+LBN,2021-03,1.6508178378973586,421.12400344553225,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2021-04,1.7641971399154348,483.6884274997802,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2021-05,1.4969796754629219,346.8173336097864,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2021-06,1.5687677063066614,380.0728639583634,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2021-07,1.542393698947777,367.57692700529697,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2021-08,1.5297832510193772,361.7175945654626,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2021-09,1.428344826223602,317.17884394271977,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2021-10,1.3374041074893204,280.9142535419599,12,15,0.8,LBP,LBP,True,eligible
+LBN,2021-11,1.4524308597997628,327.3490154618739,11,15,0.7333333333333333,LBP,LBP,True,eligible
+LBN,2021-12,,,10,15,0.6666666666666666,LBP,LBP,True,incomplete fixed price basket
+LBN,2022-01,1.387736583632288,300.57730520617486,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2022-02,1.1373744099275325,211.85695213191948,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2022-03,1.4587739043615162,330.06832454227447,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2022-04,1.3352949760658457,280.11170196105246,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2022-05,1.2831676858998229,260.8050814345426,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2022-06,1.1524841633699134,216.60481296163505,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2022-07,0.91533853350477,149.7620637069066,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2022-08,0.8618662630841261,136.75750912026032,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2022-09,0.9402422590679872,156.06016721697657,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2022-10,0.9216888711107477,151.35318386062494,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2022-11,0.7481209830481382,111.3025872605641,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2022-12,0.6229801051774727,86.44761057293074,12,15,0.8,LBP,LBP,True,eligible
+LBN,2023-01,0.6015657436675397,82.49740060405011,13,15,0.8666666666666667,LBP,LBP,True,eligible
+LBN,2023-02,1.1793620303684946,225.22986731115523,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2023-03,0.9782986523138685,165.99269295275388,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2023-04,0.8366627279002482,130.86495146948386,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2023-05,0.6299841724134878,87.75808614556449,14,15,0.9333333333333333,LBP,LBP,True,eligible
+LBN,2023-06,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2023-07,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2023-08,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2023-09,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2023-10,,,5,15,0.3333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2023-11,,,5,15,0.3333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2023-12,,,5,15,0.3333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-01,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-02,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-03,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-04,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-05,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-06,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-07,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-08,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-09,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-10,,,5,15,0.3333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-11,,,5,15,0.3333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2024-12,,,5,15,0.3333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-01,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-02,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-03,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-04,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-05,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-06,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-07,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-08,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-09,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-10,,,5,15,0.3333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-11,,,5,15,0.3333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2025-12,,,5,15,0.3333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2026-01,,,5,15,0.3333333333333333,LBP,LBP,True,incomplete fixed price basket
+LBN,2026-02,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2026-03,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2026-04,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2026-05,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2026-06,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2026-07,,,6,15,0.4,LBP,LBP,True,incomplete fixed price basket
+LBN,2026-08,,,0,15,0.0,LBP,LBP,True,incomplete fixed price basket
+UKR,2015-01,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2015-02,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2015-03,0.9349072201670086,154.69771386627968,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2015-04,0.844714213274774,132.7312604472845,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2015-05,0.768514400479626,115.65600882028666,101,103,0.9805825242718447,UAH,UAH,True,eligible
+UKR,2015-06,0.683410005282087,98.06201550387595,97,103,0.941747572815534,UAH,UAH,True,eligible
+UKR,2015-07,0.6210452154056316,86.08720378439423,98,103,0.9514563106796117,UAH,UAH,True,eligible
+UKR,2015-08,0.5884118602960373,80.11257035647277,91,103,0.883495145631068,UAH,UAH,True,eligible
+UKR,2015-09,0.5509739738078674,73.4941983279726,92,103,0.8932038834951457,UAH,UAH,True,eligible
+UKR,2015-10,0.5100032069893297,66.5296535525543,97,103,0.941747572815534,UAH,UAH,True,eligible
+UKR,2015-11,0.4808054298798118,61.73765611328833,96,103,0.9320388349514563,UAH,UAH,True,eligible
+UKR,2015-12,0.3765864508286854,45.730151890256984,92,103,0.8932038834951457,UAH,UAH,True,eligible
+UKR,2016-01,0.32371445808947175,38.22525597269623,99,103,0.9611650485436893,UAH,UAH,True,eligible
+UKR,2016-02,0.27287610001774965,31.373746269228658,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2016-03,-0.0031180975719225807,-0.3113241354386516,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2016-04,-0.08503077766013087,-8.151598482242546,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2016-05,-0.015727305450416673,-1.5604277194119427,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2016-06,0.005039272567239696,0.5051991056246158,98,103,0.9514563106796117,UAH,UAH,True,eligible
+UKR,2016-07,0.030841643022707345,3.1322173892569443,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2016-08,0.04084867862053555,4.169446297531687,99,103,0.9611650485436893,UAH,UAH,True,eligible
+UKR,2016-09,0.06976824502019774,7.225965094251322,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2016-10,0.08584180289501779,8.963393773520355,101,103,0.9805825242718447,UAH,UAH,True,eligible
+UKR,2016-11,0.06745398502420691,6.978103251700409,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2016-12,0.04595977993768545,4.703229840577092,102,103,0.9902912621359223,UAH,UAH,True,eligible
+UKR,2017-01,0.05673791819032427,5.83783923195915,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2017-02,0.06347606372564484,6.553398058252413,99,103,0.9611650485436893,UAH,UAH,True,eligible
+UKR,2017-03,0.05931304196982354,6.110735989196493,101,103,0.9805825242718447,UAH,UAH,True,eligible
+UKR,2017-04,0.07182926386010119,7.447187722130247,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2017-05,0.07723134793599017,8.029197080291972,101,103,0.9805825242718447,UAH,UAH,True,eligible
+UKR,2017-06,0.08343557443814897,8.701518147311049,98,103,0.9514563106796117,UAH,UAH,True,eligible
+UKR,2017-07,0.07429886694449629,7.7128675551755554,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2017-08,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2017-09,0.06391855831548207,6.600557793616348,99,103,0.9611650485436893,UAH,UAH,True,eligible
+UKR,2017-10,0.07176992134462258,7.4408117249154415,99,103,0.9611650485436893,UAH,UAH,True,eligible
+UKR,2017-11,0.06942573479039822,7.18924539310203,100,103,0.970873786407767,UAH,UAH,True,eligible
+UKR,2017-12,0.07189453251484967,7.454200884396722,101,103,0.9805825242718447,UAH,UAH,True,eligible
+UKR,2018-01,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-02,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-03,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-04,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-05,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-06,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-07,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-08,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-09,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-10,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-11,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2018-12,,,48,103,0.46601941747572817,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-01,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-02,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-03,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-04,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-05,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-06,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-07,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-08,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-09,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-10,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-11,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2019-12,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-01,,,48,103,0.46601941747572817,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-02,,,49,103,0.47572815533980584,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-03,,,49,103,0.47572815533980584,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-04,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-05,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-06,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-07,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-08,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-09,,,48,103,0.46601941747572817,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-10,,,48,103,0.46601941747572817,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-11,,,48,103,0.46601941747572817,UAH,UAH,True,incomplete fixed price basket
+UKR,2020-12,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-01,,,48,103,0.46601941747572817,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-02,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-03,,,48,103,0.46601941747572817,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-04,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-05,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-06,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-07,,,46,103,0.44660194174757284,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-08,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-09,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-10,,,48,103,0.46601941747572817,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-11,,,49,103,0.47572815533980584,UAH,UAH,True,incomplete fixed price basket
+UKR,2021-12,,,48,103,0.46601941747572817,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-01,,,47,103,0.4563106796116505,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-02,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-03,,,42,103,0.4077669902912621,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-04,,,40,103,0.3883495145631068,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-05,,,40,103,0.3883495145631068,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-06,,,42,103,0.4077669902912621,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-07,,,43,103,0.4174757281553398,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-08,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-09,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-10,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-11,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2022-12,,,18,103,0.17475728155339806,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-01,,,18,103,0.17475728155339806,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-02,,,42,103,0.4077669902912621,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-03,,,40,103,0.3883495145631068,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-04,,,41,103,0.39805825242718446,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-05,,,41,103,0.39805825242718446,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-06,,,42,103,0.4077669902912621,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-07,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-08,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-09,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-10,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-11,,,41,103,0.39805825242718446,UAH,UAH,True,incomplete fixed price basket
+UKR,2023-12,,,18,103,0.17475728155339806,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-01,,,18,103,0.17475728155339806,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-02,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-03,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-04,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-05,,,42,103,0.4077669902912621,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-06,,,42,103,0.4077669902912621,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-07,,,43,103,0.4174757281553398,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-08,,,43,103,0.4174757281553398,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-09,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-10,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-11,,,42,103,0.4077669902912621,UAH,UAH,True,incomplete fixed price basket
+UKR,2024-12,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-01,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-02,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-03,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-04,,,46,103,0.44660194174757284,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-05,,,43,103,0.4174757281553398,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-06,,,42,103,0.4077669902912621,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-07,,,43,103,0.4174757281553398,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-08,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-09,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-10,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-11,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2025-12,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2026-01,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2026-02,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2026-03,,,44,103,0.42718446601941745,UAH,UAH,True,incomplete fixed price basket
+UKR,2026-04,,,45,103,0.4368932038834951,UAH,UAH,True,incomplete fixed price basket
+UKR,2026-05,,,42,103,0.4077669902912621,UAH,UAH,True,incomplete fixed price basket
+UKR,2026-06,,,43,103,0.4174757281553398,UAH,UAH,True,incomplete fixed price basket
+UKR,2026-07,,,43,103,0.4174757281553398,UAH,UAH,True,incomplete fixed price basket
+UKR,2026-08,,,0,103,0.0,UAH,UAH,True,incomplete fixed price basket
+SDN,2015-01,0.02564664719377524,2.5978352085154066,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2015-02,0.0,0.0,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2015-03,-0.12874651566442377,-12.080320008145339,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2015-04,-0.2032698996189649,-18.394204203217228,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2015-05,-0.1823215567939546,-16.666666666666664,13,17,0.7647058823529411,SDG,SDG,True,eligible
+SDN,2015-06,-0.342490308946776,-29.000000000000004,13,17,0.7647058823529411,SDG,SDG,True,eligible
+SDN,2015-07,-0.40546510810816444,-33.333333333333336,13,17,0.7647058823529411,SDG,SDG,True,eligible
+SDN,2015-08,,,11,17,0.6470588235294118,SDG,SDG,True,incomplete fixed price basket
+SDN,2015-09,-0.2525064219401141,-22.31487760687435,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2015-10,,,11,17,0.6470588235294118,SDG,SDG,True,incomplete fixed price basket
+SDN,2015-11,0.005387536583979295,0.5402075457044933,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2015-12,0.07707533991362918,8.01234497346434,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2016-01,0.18618257984090975,20.46421836784873,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2016-02,0.2429461786103894,27.499999999999993,13,17,0.7647058823529411,SDG,SDG,True,eligible
+SDN,2016-03,0.28768207245178085,33.33333333333332,13,17,0.7647058823529411,SDG,SDG,True,eligible
+SDN,2016-04,0.28876691420878264,33.47805738808889,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2016-05,0.355504668790542,42.690058479532155,17,17,1.0,SDG,SDG,True,eligible
+SDN,2016-06,0.3763812135551304,45.70024570024569,17,17,1.0,SDG,SDG,True,eligible
+SDN,2016-07,0.4054651081081644,50.0,17,17,1.0,SDG,SDG,True,eligible
+SDN,2016-08,0.3746934494414107,45.45454545454545,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2016-09,0.2887671442188839,33.478088089393914,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2016-10,0.24324779224561213,27.538461538461533,17,17,1.0,SDG,SDG,True,eligible
+SDN,2016-11,0.14961178199982375,16.13832853025936,17,17,1.0,SDG,SDG,True,eligible
+SDN,2016-12,0.17754827804129705,19.42857142857144,17,17,1.0,SDG,SDG,True,eligible
+SDN,2017-01,0.13639262490555476,14.613180515759305,17,17,1.0,SDG,SDG,True,eligible
+SDN,2017-02,0.09531017980432493,10.000000000000009,17,17,1.0,SDG,SDG,True,eligible
+SDN,2017-03,0.08408311721054144,8.771929824561408,17,17,1.0,SDG,SDG,True,eligible
+SDN,2017-04,0.1280315118221794,13.658881811748035,17,17,1.0,SDG,SDG,True,eligible
+SDN,2017-05,0.0,0.0,17,17,1.0,SDG,SDG,True,eligible
+SDN,2017-06,0.027128667388252696,2.750000000000008,17,17,1.0,SDG,SDG,True,eligible
+SDN,2017-07,0.0,0.0,17,17,1.0,SDG,SDG,True,eligible
+SDN,2017-08,0.08585494809968011,8.964826129046493,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2017-09,0.0762588994890708,7.9241953180442355,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2017-10,0.10949386772242023,11.571322905094968,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2017-11,0.39256170327225653,48.07692307692308,17,17,1.0,SDG,SDG,True,eligible
+SDN,2017-12,0.45305038686976784,57.31034482758619,17,17,1.0,SDG,SDG,True,eligible
+SDN,2018-01,0.8082165103447326,124.39024390243904,17,17,1.0,SDG,SDG,True,eligible
+SDN,2018-02,0.8284393754158426,128.9742521951764,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2018-03,0.8626997049987103,136.9549150036955,17,17,1.0,SDG,SDG,True,eligible
+SDN,2018-04,,,0,17,0.0,SDG,SDG,True,incomplete fixed price basket
+SDN,2018-05,0.9456748114874267,157.45501285347046,17,17,1.0,SDG,SDG,True,eligible
+SDN,2018-06,0.8891620644859023,143.30900243309,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2018-07,1.0410754805159466,183.22614189313387,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2018-08,0.881199412062885,141.37931034482762,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2018-09,0.9127699426918985,149.12135038211235,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2018-10,0.9034643918051471,146.8138917170123,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2018-11,0.8639807073091038,137.25864929790583,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2018-12,0.8525834018506232,134.56989140213327,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2019-01,0.5352723074431394,70.79132564298898,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2019-02,0.47000362924573563,60.00000000000001,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2019-03,0.4696498145061758,59.943399655279016,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2019-04,,,0,17,0.0,SDG,SDG,True,incomplete fixed price basket
+SDN,2019-05,0.41846258357517446,51.96234646953024,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2019-06,0.3679068134394241,44.47074053868095,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2019-07,0.4560229696317306,57.7786585527077,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2019-08,0.5640956586211586,75.78573605386758,14,17,0.8235294117647058,SDG,SDG,True,eligible
+SDN,2019-09,0.570765262269217,76.96207573940806,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2019-10,0.5913644862500029,80.64516129032258,17,17,1.0,SDG,SDG,True,eligible
+SDN,2019-11,0.5348959250663089,70.72705489384884,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2019-12,,,11,17,0.6470588235294118,SDG,SDG,True,incomplete fixed price basket
+SDN,2020-01,0.6360436206608853,88.89925047301878,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2020-02,0.7827843198896416,118.75546458325613,14,17,0.8235294117647058,SDG,SDG,True,eligible
+SDN,2020-03,0.8318388406855484,129.75396676858838,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2020-04,1.03063668473474,180.28497984080005,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2020-05,1.0399529066298672,182.90837801247653,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2020-06,1.1890080276490202,228.38221304343273,14,17,0.8235294117647058,SDG,SDG,True,eligible
+SDN,2020-07,1.1467485505327606,214.79408810446265,17,17,1.0,SDG,SDG,True,eligible
+SDN,2020-08,1.186787979571835,227.653997378768,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2020-09,1.214380960389449,236.82083644286172,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2020-10,1.2114356294342739,235.83024712973378,14,17,0.8235294117647058,SDG,SDG,True,eligible
+SDN,2020-11,1.252762968495368,250.0,17,17,1.0,SDG,SDG,True,eligible
+SDN,2020-12,1.3174639681366238,273.3939969028385,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2021-01,1.1592369104845446,218.75,17,17,1.0,SDG,SDG,True,eligible
+SDN,2021-02,1.0498221244986776,185.7142857142857,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2021-03,1.0033021088637848,172.72727272727272,17,17,1.0,SDG,SDG,True,eligible
+SDN,2021-04,0.6931471805599453,100.0,17,17,1.0,SDG,SDG,True,eligible
+SDN,2021-05,0.7422673991913592,110.06932287654925,17,17,1.0,SDG,SDG,True,eligible
+SDN,2021-06,0.6061358035703155,83.33333333333333,17,17,1.0,SDG,SDG,True,eligible
+SDN,2021-07,0.6007717037216309,82.35254789497542,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2021-08,0.4989911661189878,64.70588235294117,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2021-09,0.531879032963823,70.2127659574468,17,17,1.0,SDG,SDG,True,eligible
+SDN,2021-10,0.5533819772390145,73.9124763581817,13,17,0.7647058823529411,SDG,SDG,True,eligible
+SDN,2021-11,0.5643143087169769,75.82417582417582,17,17,1.0,SDG,SDG,True,eligible
+SDN,2021-12,0.5030735304980081,65.3796461189446,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2022-01,0.5403750636321132,71.66505946640952,17,17,1.0,SDG,SDG,True,eligible
+SDN,2022-02,0.5928118328288697,80.90680674665818,16,17,0.9411764705882353,SDG,SDG,True,eligible
+SDN,2022-03,0.9162907318741551,150.0,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2022-04,1.0963332709146383,199.3170731707317,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2022-05,1.0498221244986776,185.7142857142857,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2022-06,1.1093075777848576,203.22580645161287,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2022-07,1.1751699976547496,223.86934673366832,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2022-08,1.4285972955580226,317.2841821045526,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2022-09,1.308332819650179,270.00000000000006,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2022-10,1.1417326973362005,213.21908047701194,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2022-11,0.9262410627273231,152.5,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2022-12,1.0245043165143877,178.57142857142853,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2023-01,0.7898508307933815,120.30677718723322,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2023-02,0.7525930581869457,112.2496644295302,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2023-03,0.34831296875833495,41.66755555555554,15,17,0.8823529411764706,SDG,SDG,True,eligible
+SDN,2023-04,0.22853438918168956,25.67567432247584,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2023-05,,,8,17,0.47058823529411764,SDG,SDG,True,incomplete fixed price basket
+SDN,2023-06,,,9,17,0.5294117647058824,SDG,SDG,True,incomplete fixed price basket
+SDN,2023-07,,,8,17,0.47058823529411764,SDG,SDG,True,incomplete fixed price basket
+SDN,2023-08,,,8,17,0.47058823529411764,SDG,SDG,True,incomplete fixed price basket
+SDN,2023-09,,,9,17,0.5294117647058824,SDG,SDG,True,incomplete fixed price basket
+SDN,2023-10,,,11,17,0.6470588235294118,SDG,SDG,True,incomplete fixed price basket
+SDN,2023-11,,,7,17,0.4117647058823529,SDG,SDG,True,incomplete fixed price basket
+SDN,2023-12,,,5,17,0.29411764705882354,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-01,,,7,17,0.4117647058823529,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-02,,,4,17,0.23529411764705882,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-03,,,8,17,0.47058823529411764,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-04,,,6,17,0.35294117647058826,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-05,,,6,17,0.35294117647058826,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-06,,,6,17,0.35294117647058826,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-07,,,5,17,0.29411764705882354,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-08,,,6,17,0.35294117647058826,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-09,,,9,17,0.5294117647058824,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-10,,,9,17,0.5294117647058824,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-11,,,6,17,0.35294117647058826,SDG,SDG,True,incomplete fixed price basket
+SDN,2024-12,,,5,17,0.29411764705882354,SDG,SDG,True,incomplete fixed price basket
+SDN,2025-01,,,7,17,0.4117647058823529,SDG,SDG,True,incomplete fixed price basket
+SDN,2025-02,,,4,17,0.23529411764705882,SDG,SDG,True,incomplete fixed price basket
+SDN,2025-03,,,8,17,0.47058823529411764,SDG,SDG,True,incomplete fixed price basket
+SDN,2025-04,,,8,17,0.47058823529411764,SDG,SDG,True,incomplete fixed price basket
+SDN,2025-05,,,7,17,0.4117647058823529,SDG,SDG,True,incomplete fixed price basket
+SDN,2025-06,,,6,17,0.35294117647058826,SDG,SDG,True,incomplete fixed price basket
+SDN,2025-07,,,9,17,0.5294117647058824,SDG,SDG,True,incomplete fixed price basket
+SDN,2025-08,,,10,17,0.5882352941176471,SDG,SDG,True,incomplete fixed price basket
+SDN,2025-09,,,11,17,0.6470588235294118,SDG,SDG,True,incomplete fixed price basket
+SDN,2025-10,-0.4624279922453063,-37.02472470392687,13,17,0.7647058823529411,SDG,SDG,True,eligible
+SDN,2025-11,-0.26288489334282733,-23.1169610285877,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2025-12,,,11,17,0.6470588235294118,SDG,SDG,True,incomplete fixed price basket
+SDN,2026-01,,,10,17,0.5882352941176471,SDG,SDG,True,incomplete fixed price basket
+SDN,2026-02,-0.056867700802896166,-5.528095332949422,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2026-03,,,11,17,0.6470588235294118,SDG,SDG,True,incomplete fixed price basket
+SDN,2026-04,0.1374141105551913,14.730316050864184,12,17,0.7058823529411765,SDG,SDG,True,eligible
+SDN,2026-05,,,10,17,0.5882352941176471,SDG,SDG,True,incomplete fixed price basket
+SDN,2026-06,,,10,17,0.5882352941176471,SDG,SDG,True,incomplete fixed price basket
+SDN,2026-07,,,10,17,0.5882352941176471,SDG,SDG,True,incomplete fixed price basket
+SDN,2026-08,,,0,17,0.0,SDG,SDG,True,incomplete fixed price basket
+ETH,2015-01,,,8,12,0.6666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2015-02,,,8,12,0.6666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2015-03,,,8,12,0.6666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2015-04,,,4,12,0.3333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2015-05,0.0,0.0,11,12,0.9166666666666666,ETB,ETB,True,eligible
+ETH,2015-06,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2015-07,,,6,12,0.5,ETB,ETB,True,incomplete fixed price basket
+ETH,2015-08,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2015-09,0.06453852113757116,6.666666666666667,9,12,0.75,ETB,ETB,True,eligible
+ETH,2015-10,-0.05129329438755058,-5.000000000000004,9,12,0.75,ETB,ETB,True,eligible
+ETH,2015-11,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2015-12,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-01,,,8,12,0.6666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-02,,,5,12,0.4166666666666667,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-03,,,4,12,0.3333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-04,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-05,0.06899287148695142,7.14285714285714,9,12,0.75,ETB,ETB,True,eligible
+ETH,2016-06,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-07,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-08,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-09,,,5,12,0.4166666666666667,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-10,,,6,12,0.5,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-11,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2016-12,,,5,12,0.4166666666666667,ETB,ETB,True,incomplete fixed price basket
+ETH,2017-01,0.13353139262452257,14.28571428571428,9,12,0.75,ETB,ETB,True,eligible
+ETH,2017-02,,,6,12,0.5,ETB,ETB,True,incomplete fixed price basket
+ETH,2017-03,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2017-04,0.1823215567939546,19.999999999999996,9,12,0.75,ETB,ETB,True,eligible
+ETH,2017-05,0.10536051565782635,11.111111111111116,9,12,0.75,ETB,ETB,True,eligible
+ETH,2017-06,0.06168951058025228,6.363204695662082,10,12,0.8333333333333334,ETB,ETB,True,eligible
+ETH,2017-07,,,8,12,0.6666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2017-08,,,8,12,0.6666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2017-09,,,8,12,0.6666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2017-10,,,8,12,0.6666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2017-11,0.1814527468446842,19.895788082817987,10,12,0.8333333333333334,ETB,ETB,True,eligible
+ETH,2017-12,0.32108081291353885,37.861698644751854,10,12,0.8333333333333334,ETB,ETB,True,eligible
+ETH,2018-01,0.2904089977930128,33.69741957120937,10,12,0.8333333333333334,ETB,ETB,True,eligible
+ETH,2018-02,0.28768207245178085,33.33333333333332,11,12,0.9166666666666666,ETB,ETB,True,eligible
+ETH,2018-03,0.2404863303081548,27.186754767292083,10,12,0.8333333333333334,ETB,ETB,True,eligible
+ETH,2018-04,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2018-05,0.18275268419877863,20.051746442432087,11,12,0.9166666666666666,ETB,ETB,True,eligible
+ETH,2018-06,0.16823611831060648,18.321595661992323,12,12,1.0,ETB,ETB,True,eligible
+ETH,2018-07,0.13721842285088012,14.707866935280881,12,12,1.0,ETB,ETB,True,eligible
+ETH,2018-08,0.06442199150790417,6.654237563695635,12,12,1.0,ETB,ETB,True,eligible
+ETH,2018-09,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2018-10,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2018-11,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2018-12,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2019-01,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2019-02,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2019-03,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2019-04,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2019-05,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2019-06,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2019-07,0.12280820358313423,13.066754216661364,12,12,1.0,ETB,ETB,True,eligible
+ETH,2019-08,0.18399100742671196,20.200501392952006,12,12,1.0,ETB,ETB,True,eligible
+ETH,2019-09,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2019-10,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2019-11,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2019-12,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-01,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-02,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-03,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-04,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-05,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-06,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-07,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-08,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-09,,,4,12,0.3333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-10,,,5,12,0.4166666666666667,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-11,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2020-12,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-01,,,5,12,0.4166666666666667,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-02,,,5,12,0.4166666666666667,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-03,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-04,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-05,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-06,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-07,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-08,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-09,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-10,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-11,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2021-12,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-01,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-02,,,4,12,0.3333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-03,,,4,12,0.3333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-04,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-05,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-06,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-07,,,5,12,0.4166666666666667,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-08,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-09,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-10,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-11,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2022-12,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-01,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-02,,,4,12,0.3333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-03,,,4,12,0.3333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-04,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-05,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-06,,,4,12,0.3333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-07,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-08,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-09,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-10,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-11,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2023-12,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-01,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-02,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-03,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-04,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-05,,,4,12,0.3333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-06,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-07,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-08,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-09,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-10,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-11,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2024-12,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-01,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-02,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-03,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-04,,,1,12,0.08333333333333333,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-05,,,5,12,0.4166666666666667,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-06,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-07,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-08,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-09,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-10,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-11,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2025-12,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2026-01,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2026-02,,,2,12,0.16666666666666666,ETB,ETB,True,incomplete fixed price basket
+ETH,2026-03,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2026-04,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2026-05,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2026-06,,,5,12,0.4166666666666667,ETB,ETB,True,incomplete fixed price basket
+ETH,2026-07,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
+ETH,2026-08,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+SOM,2015-01,,,29,83,0.3493975903614458,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-02,,,42,83,0.5060240963855421,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-03,,,30,83,0.3614457831325301,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-04,,,29,83,0.3493975903614458,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-05,,,29,83,0.3493975903614458,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-06,,,30,83,0.3614457831325301,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-07,,,44,83,0.5301204819277109,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-08,,,44,83,0.5301204819277109,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-09,,,39,83,0.46987951807228917,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-10,,,36,83,0.43373493975903615,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-11,,,36,83,0.43373493975903615,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2015-12,,,33,83,0.39759036144578314,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-01,,,34,83,0.40963855421686746,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-02,,,34,83,0.40963855421686746,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-03,,,30,83,0.3614457831325301,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-04,,,30,83,0.3614457831325301,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-05,,,28,83,0.3373493975903614,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-06,,,36,83,0.43373493975903615,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-07,,,37,83,0.4457831325301205,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-08,,,37,83,0.4457831325301205,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-09,,,34,83,0.40963855421686746,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-10,,,31,83,0.37349397590361444,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-11,,,37,83,0.4457831325301205,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2016-12,,,38,83,0.4578313253012048,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-01,,,37,83,0.4457831325301205,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-02,,,29,83,0.3493975903614458,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-03,,,38,83,0.4578313253012048,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-04,,,33,83,0.39759036144578314,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-05,,,37,83,0.4457831325301205,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-06,,,38,83,0.4578313253012048,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-07,,,37,83,0.4457831325301205,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-08,,,39,83,0.46987951807228917,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-09,,,38,83,0.4578313253012048,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-10,,,34,83,0.40963855421686746,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-11,,,35,83,0.42168674698795183,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2017-12,,,35,83,0.42168674698795183,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2018-01,,,35,83,0.42168674698795183,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2018-02,,,32,83,0.3855421686746988,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2018-03,,,33,83,0.39759036144578314,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2018-04,,,20,83,0.24096385542168675,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2018-05,-0.008733378238257861,-0.8695353067114626,66,83,0.7951807228915663,SLS;SOS,SOS,False,eligible
+SOM,2018-06,-0.0049387634026154216,-0.4926587763089626,66,83,0.7951807228915663,SLS;SOS,SOS,False,eligible
+SOM,2018-07,-0.07956707010039336,-7.648392242464952,65,83,0.7831325301204819,SLS;SOS,SOS,False,eligible
+SOM,2018-08,-0.09932640469635783,-9.455288240636563,66,83,0.7951807228915663,SLS;SOS,SOS,False,eligible
+SOM,2018-09,-0.029504257282848733,-2.9073255877379633,63,83,0.7590361445783133,SLS;SOS,SOS,False,eligible
+SOM,2018-10,-0.061164823082989636,-5.933181683211332,62,83,0.7469879518072289,SLS;SOS,SOS,False,eligible
+SOM,2018-11,-0.0662493855412006,-6.41025641025641,63,83,0.7590361445783133,SLS;SOS,SOS,False,eligible
+SOM,2018-12,,,58,83,0.6987951807228916,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2019-01,-0.03278982282299084,-3.2258064516129004,69,83,0.8313253012048193,SLS;SOS,SOS,False,eligible
+SOM,2019-02,-0.043647754130093655,-4.270890007271035,74,83,0.891566265060241,SLS;SOS,SOS,False,eligible
+SOM,2019-03,0.0,0.0,71,83,0.8554216867469879,SLS;SOS,SOS,False,eligible
+SOM,2019-04,,,20,83,0.24096385542168675,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2019-05,-0.038711140972549664,-3.7971440351258616,76,83,0.9156626506024096,SLS;SOS,SOS,False,eligible
+SOM,2019-06,-0.024456360349392275,-2.4159726682207046,76,83,0.9156626506024096,SLS;SOS,SOS,False,eligible
+SOM,2019-07,0.0,0.0,68,83,0.8192771084337349,SLS;SOS,SOS,False,eligible
+SOM,2019-08,0.03905606994264941,3.9828785156010413,70,83,0.8433734939759037,SLS;SOS,SOS,False,eligible
+SOM,2019-09,,,17,83,0.20481927710843373,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2019-10,0.047299850100363125,4.843633569234906,72,83,0.8674698795180723,SLS;SOS,SOS,False,eligible
+SOM,2019-11,0.03922071315328133,4.0000000000000036,77,83,0.927710843373494,SLS;SOS,SOS,False,eligible
+SOM,2019-12,0.05129329438755048,5.263157894736836,76,83,0.9156626506024096,SLS;SOS,SOS,False,eligible
+SOM,2020-01,0.04171845356729226,4.260089686098656,73,83,0.8795180722891566,SLS;SOS,SOS,False,eligible
+SOM,2020-02,0.03846628082779614,3.9215686274509887,73,83,0.8795180722891566,SLS;SOS,SOS,False,eligible
+SOM,2020-03,0.04196419909903221,4.285714285714293,73,83,0.8795180722891566,SLS;SOS,SOS,False,eligible
+SOM,2020-04,,,27,83,0.3253012048192771,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2020-05,,,20,83,0.24096385542168675,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2020-06,,,19,83,0.2289156626506024,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2020-07,,,20,83,0.24096385542168675,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2020-08,,,20,83,0.24096385542168675,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2020-09,,,17,83,0.20481927710843373,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2020-10,,,16,83,0.1927710843373494,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2020-11,,,3,83,0.03614457831325301,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2020-12,,,2,83,0.024096385542168676,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-01,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-02,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-03,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-04,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-05,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-06,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-07,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-08,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-09,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-10,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-11,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2021-12,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-01,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-02,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-03,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-04,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-05,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-06,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-07,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-08,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-09,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-10,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-11,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2022-12,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-01,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-02,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-03,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-04,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-05,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-06,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-07,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-08,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-09,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-10,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-11,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2023-12,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-01,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-02,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-03,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-04,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-05,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-06,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-07,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-08,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-09,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-10,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-11,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2024-12,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-01,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-02,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-03,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-04,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-05,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-06,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-07,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-08,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-09,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-10,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-11,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2025-12,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2026-01,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2026-02,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2026-03,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2026-04,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2026-05,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2026-06,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2026-07,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2026-08,,,0,83,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+YEM,2015-01,,,23,100,0.23,YER,YER,True,incomplete fixed price basket
+YEM,2015-02,,,23,100,0.23,YER,YER,True,incomplete fixed price basket
+YEM,2015-03,,,23,100,0.23,YER,YER,True,incomplete fixed price basket
+YEM,2015-04,,,0,100,0.0,YER,YER,True,incomplete fixed price basket
+YEM,2015-05,,,14,100,0.14,YER,YER,True,incomplete fixed price basket
+YEM,2015-06,,,14,100,0.14,YER,YER,True,incomplete fixed price basket
+YEM,2015-07,,,14,100,0.14,YER,YER,True,incomplete fixed price basket
+YEM,2015-08,,,14,100,0.14,YER,YER,True,incomplete fixed price basket
+YEM,2015-09,,,14,100,0.14,YER,YER,True,incomplete fixed price basket
+YEM,2015-10,,,13,100,0.13,YER,YER,True,incomplete fixed price basket
+YEM,2015-11,,,15,100,0.15,YER,YER,True,incomplete fixed price basket
+YEM,2015-12,,,16,100,0.16,YER,YER,True,incomplete fixed price basket
+YEM,2016-01,,,16,100,0.16,YER,YER,True,incomplete fixed price basket
+YEM,2016-02,,,27,100,0.27,YER,YER,True,incomplete fixed price basket
+YEM,2016-03,,,27,100,0.27,YER,YER,True,incomplete fixed price basket
+YEM,2016-04,,,27,100,0.27,YER,YER,True,incomplete fixed price basket
+YEM,2016-05,,,25,100,0.25,YER,YER,True,incomplete fixed price basket
+YEM,2016-06,,,25,100,0.25,YER,YER,True,incomplete fixed price basket
+YEM,2016-07,,,25,100,0.25,YER,YER,True,incomplete fixed price basket
+YEM,2016-08,,,24,100,0.24,YER,YER,True,incomplete fixed price basket
+YEM,2016-09,,,25,100,0.25,YER,YER,True,incomplete fixed price basket
+YEM,2016-10,,,23,100,0.23,YER,YER,True,incomplete fixed price basket
+YEM,2016-11,,,39,100,0.39,YER,YER,True,incomplete fixed price basket
+YEM,2016-12,,,41,100,0.41,YER,YER,True,incomplete fixed price basket
+YEM,2017-01,,,38,100,0.38,YER,YER,True,incomplete fixed price basket
+YEM,2017-02,,,40,100,0.4,YER,YER,True,incomplete fixed price basket
+YEM,2017-03,,,40,100,0.4,YER,YER,True,incomplete fixed price basket
+YEM,2017-04,,,40,100,0.4,YER,YER,True,incomplete fixed price basket
+YEM,2017-05,,,30,100,0.3,YER,YER,True,incomplete fixed price basket
+YEM,2017-06,0.0,0.0,93,100,0.93,YER,YER,True,eligible
+YEM,2017-07,0.08066790306745471,8.401084010840098,97,100,0.97,YER,YER,True,eligible
+YEM,2017-08,0.09893994785490365,10.40000000000001,95,100,0.95,YER,YER,True,eligible
+YEM,2017-09,0.125163142954006,13.33333333333333,94,100,0.94,YER,YER,True,eligible
+YEM,2017-10,0.12660649405453503,13.497031233079692,96,100,0.96,YER,YER,True,eligible
+YEM,2017-11,0.17535288747786126,19.166666666666664,95,100,0.95,YER,YER,True,eligible
+YEM,2017-12,0.22314355131420976,25.0,93,100,0.93,YER,YER,True,eligible
+YEM,2018-01,0.23264838758278505,26.19376883496491,96,100,0.96,YER,YER,True,eligible
+YEM,2018-02,0.1529252139829282,16.523783218768845,98,100,0.98,YER,YER,True,eligible
+YEM,2018-03,0.17824823140631876,19.512195121951216,97,100,0.97,YER,YER,True,eligible
+YEM,2018-04,0.22871295735129887,25.69811800140771,96,100,0.96,YER,YER,True,eligible
+YEM,2018-05,0.23638877806423034,26.66666666666666,98,100,0.98,YER,YER,True,eligible
+YEM,2018-06,0.24093596592449845,27.243955320902014,98,100,0.98,YER,YER,True,eligible
+YEM,2018-07,0.2657464645117621,30.44043039776027,96,100,0.96,YER,YER,True,eligible
+YEM,2018-08,0.32558435686870135,38.483965014577265,95,100,0.95,YER,YER,True,eligible
+YEM,2018-09,0.48294518768465294,62.08410605258735,96,100,0.96,YER,YER,True,eligible
+YEM,2018-10,0.6286086594223741,87.49999999999999,94,100,0.94,YER,YER,True,eligible
+YEM,2018-11,0.5330732437092662,70.41615729345226,94,100,0.94,YER,YER,True,eligible
+YEM,2018-12,0.3070049300006108,35.93476696403029,90,100,0.9,YER,YER,True,eligible
+YEM,2019-01,0.2600966868847955,29.7055488857925,94,100,0.94,YER,YER,True,eligible
+YEM,2019-02,0.30010459245033816,35.00000000000001,95,100,0.95,YER,YER,True,eligible
+YEM,2019-03,0.2983378061596826,34.76169443025822,96,100,0.96,YER,YER,True,eligible
+YEM,2019-04,0.22314355131420976,25.0,94,100,0.94,YER,YER,True,eligible
+YEM,2019-05,0.22314355131420976,25.0,95,100,0.95,YER,YER,True,eligible
+YEM,2019-06,0.1823215567939546,19.999999999999996,89,100,0.89,YER,YER,True,eligible
+YEM,2019-07,0.20763936477824455,23.07692307692308,97,100,0.97,YER,YER,True,eligible
+YEM,2019-08,0.12062798778861472,12.82051282051282,93,100,0.93,YER,YER,True,eligible
+YEM,2019-09,-0.009950330853168092,-0.990099009900991,95,100,0.95,YER,YER,True,eligible
+YEM,2019-10,-0.14551048685864776,-13.541917671047084,94,100,0.94,YER,YER,True,eligible
+YEM,2019-11,-0.10536051565782628,-9.999999999999998,92,100,0.92,YER,YER,True,eligible
+YEM,2019-12,0.042334363826560736,4.324324324324325,83,100,0.83,YER,YER,True,eligible
+YEM,2020-01,0.05220564934524707,5.359239082113956,94,100,0.94,YER,YER,True,eligible
+YEM,2020-02,0.01680711831638119,1.6949152542372836,95,100,0.95,YER,YER,True,eligible
+YEM,2020-03,0.0425596144187959,4.347826086956519,95,100,0.95,YER,YER,True,eligible
+YEM,2020-04,0.08831176783965841,9.232862188162867,92,100,0.92,YER,YER,True,eligible
+YEM,2020-05,0.11299831014830812,11.963004093826841,92,100,0.92,YER,YER,True,eligible
+YEM,2020-06,0.12280820358313423,13.066754216661364,86,100,0.86,YER,YER,True,eligible
+YEM,2020-07,0.14994014729091487,16.176470588235304,93,100,0.93,YER,YER,True,eligible
+YEM,2020-08,0.16251892949777494,17.647058823529417,89,100,0.89,YER,YER,True,eligible
+YEM,2020-09,0.17081773231247002,18.627450980392158,89,100,0.89,YER,YER,True,eligible
+YEM,2020-10,0.15889005180453025,17.22090573247053,88,100,0.88,YER,YER,True,eligible
+YEM,2020-11,0.16833531481921474,18.333333333333336,85,100,0.85,YER,YER,True,eligible
+YEM,2020-12,0.21671948007528524,24.199564874010797,80,100,0.8,YER,YER,True,eligible
+YEM,2021-01,0.1823215567939546,19.999999999999996,91,100,0.91,YER,YER,True,eligible
+YEM,2021-02,0.21392689620928568,23.853211009174302,91,100,0.91,YER,YER,True,eligible
+YEM,2021-03,0.23878420100475412,26.97045060604772,92,100,0.92,YER,YER,True,eligible
+YEM,2021-04,0.22779474764536653,25.582753741838204,92,100,0.92,YER,YER,True,eligible
+YEM,2021-05,0.2707786607971804,31.098486592382862,94,100,0.94,YER,YER,True,eligible
+YEM,2021-06,0.28768207245178085,33.33333333333332,96,100,0.96,YER,YER,True,eligible
+YEM,2021-07,0.2186892009648295,24.444444444444446,90,100,0.9,YER,YER,True,eligible
+YEM,2021-08,0.28454726594498314,32.91601358251256,90,100,0.9,YER,YER,True,eligible
+YEM,2021-09,0.29266961396282004,34.00000000000001,89,100,0.89,YER,YER,True,eligible
+YEM,2021-10,0.37106368139083196,44.927536231884055,89,100,0.89,YER,YER,True,eligible
+YEM,2021-11,0.4847489845408133,62.37673669729309,86,100,0.86,YER,YER,True,eligible
+YEM,2021-12,0.5037619341363855,65.49353326471163,84,100,0.84,YER,YER,True,eligible
+YEM,2022-01,0.43266261755440716,54.135610647412946,90,100,0.9,YER,YER,True,eligible
+YEM,2022-02,0.43078291609245434,53.846153846153854,91,100,0.91,YER,YER,True,eligible
+YEM,2022-03,0.4553620792527875,57.674418604651166,93,100,0.93,YER,YER,True,eligible
+YEM,2022-04,0.4216039375678392,52.44046456927123,88,100,0.88,YER,YER,True,eligible
+YEM,2022-05,0.3987592606729894,48.99748798780305,90,100,0.9,YER,YER,True,eligible
+YEM,2022-06,0.4278589400425753,53.39696840071486,90,100,0.9,YER,YER,True,eligible
+YEM,2022-07,0.4054651081081644,50.0,85,100,0.85,YER,YER,True,eligible
+YEM,2022-08,0.34282860327850173,40.892725571789626,84,100,0.84,YER,YER,True,eligible
+YEM,2022-09,0.2519359324007046,28.65136108059303,86,100,0.86,YER,YER,True,eligible
+YEM,2022-10,0.1541578226588912,16.66750000000001,85,100,0.85,YER,YER,True,eligible
+YEM,2022-11,0.03045920748470844,3.092783505154628,86,100,0.86,YER,YER,True,eligible
+YEM,2022-12,0.0,0.0,84,100,0.84,YER,YER,True,eligible
+YEM,2023-01,0.08482743318161175,8.852920646776091,88,100,0.88,YER,YER,True,eligible
+YEM,2023-02,0.029591384756738327,3.0033560537390134,84,100,0.84,YER,YER,True,eligible
+YEM,2023-03,-0.060624621816434854,-5.882352941176472,85,100,0.85,YER,YER,True,eligible
+YEM,2023-04,-0.08701137698962981,-8.333333333333337,83,100,0.83,YER,YER,True,eligible
+YEM,2023-05,-0.050688226027125444,-4.942501112134946,86,100,0.86,YER,YER,True,eligible
+YEM,2023-06,-0.07966728743740228,-7.657647010911034,86,100,0.86,YER,YER,True,eligible
+YEM,2023-07,-0.11778303565638351,-11.111111111111116,84,100,0.84,YER,YER,True,eligible
+YEM,2023-08,-0.13353139262452263,-12.5,81,100,0.81,YER,YER,True,eligible
+YEM,2023-09,-0.10741200123216622,-10.184444444444441,83,100,0.83,YER,YER,True,eligible
+YEM,2023-10,-0.10536051565782628,-9.999999999999998,83,100,0.83,YER,YER,True,eligible
+YEM,2023-11,-0.0487281660913525,-4.755999999999993,83,100,0.83,YER,YER,True,eligible
+YEM,2023-12,0.0,0.0,80,100,0.8,YER,YER,True,eligible
+YEM,2024-01,0.0,0.0,86,100,0.86,YER,YER,True,eligible
+YEM,2024-02,0.0,0.0,83,100,0.83,YER,YER,True,eligible
+YEM,2024-03,0.03090218627819045,3.1384615384615344,85,100,0.85,YER,YER,True,eligible
+YEM,2024-04,0.05406722127027579,5.555555555555558,81,100,0.81,YER,YER,True,eligible
+YEM,2024-05,0.08658274430157054,9.044159181288107,84,100,0.84,YER,YER,True,eligible
+YEM,2024-06,,,43,100,0.43,YER,YER,True,incomplete fixed price basket
+YEM,2024-07,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2024-08,,,43,100,0.43,YER,YER,True,incomplete fixed price basket
+YEM,2024-09,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2024-10,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2024-11,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2024-12,,,43,100,0.43,YER,YER,True,incomplete fixed price basket
+YEM,2025-01,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2025-02,,,41,100,0.41,YER,YER,True,incomplete fixed price basket
+YEM,2025-03,,,41,100,0.41,YER,YER,True,incomplete fixed price basket
+YEM,2025-04,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2025-05,,,44,100,0.44,YER,YER,True,incomplete fixed price basket
+YEM,2025-06,,,43,100,0.43,YER,YER,True,incomplete fixed price basket
+YEM,2025-07,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2025-08,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2025-09,,,43,100,0.43,YER,YER,True,incomplete fixed price basket
+YEM,2025-10,,,43,100,0.43,YER,YER,True,incomplete fixed price basket
+YEM,2025-11,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2025-12,,,40,100,0.4,YER,YER,True,incomplete fixed price basket
+YEM,2026-01,,,0,100,0.0,YER,YER,True,incomplete fixed price basket
+YEM,2026-02,,,41,100,0.41,YER,YER,True,incomplete fixed price basket
+YEM,2026-03,,,40,100,0.4,YER,YER,True,incomplete fixed price basket
+YEM,2026-04,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2026-05,,,44,100,0.44,YER,YER,True,incomplete fixed price basket
+YEM,2026-06,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2026-07,,,42,100,0.42,YER,YER,True,incomplete fixed price basket
+YEM,2026-08,,,0,100,0.0,YER,YER,True,incomplete fixed price basket

@@ -1,0 +1,35 @@
+{
+  "audit_date": "2026-09-06",
+  "method": "Bounded web discovery of primary WFP, HDX, IPC, World Bank and FEWS NET publications; followed by direct reproducible HTTP probes in requests.json.",
+  "queries": [
+    "site:data.humdata.org Ethiopia food prices historical wage 2015",
+    "site:ipcinfo.org API shapefile assessment ID geospatial data download",
+    "site:ipcinfo.org API key",
+    "site:wfp.org Yemen Market Watch 2015 wage",
+    "site:fews.net Ethiopia 2015 wage sorghum",
+    "site:reliefweb.int/report/yemen monthly market watch 2015 wage (no results returned)"
+  ],
+  "primary_findings": [
+    {
+      "url": "https://centre.humdata.org/getting-up-to-speed-wfp-food-data-on-hdx/",
+      "finding": "HDX describes the 2018 transition from a manually uploaded global file to automatically updated country exports. This motivates checking both the legacy and current global resource inventories."
+    },
+    {
+      "url": "https://fews.net/sites/default/files/documents/reports/Yemen_2015_03_PB.pdf",
+      "finding": "The publisher's March 2015 bulletin includes wage/wheat-flour terms-of-trade charts for named Yemen markets and credits WFP VAM. It confirms that earlier descriptive observations existed; the chart does not supply an exact-ID monthly raw quote archive suitable for automatic splicing."
+    },
+    {
+      "url": "https://fews.net/sites/default/files/documents/reports/Ethiopia_OL_01_2015_0.pdf",
+      "finding": "The January-June 2015 outlook describes regional agricultural wages and grain prices. Narrative ranges are not exact-market, exact-series monthly observations."
+    },
+    {
+      "url": "https://microdata.worldbank.org/index.php/catalog/4508/study-description",
+      "finding": "World Bank Real Time Prices combines direct measurements with machine-learning estimation of missing prices and adjusts outliers. It cannot be imported as observed WFP wage/food baseline data."
+    },
+    {
+      "url": "https://www.ipcinfo.org/ipc-country-analysis/api/",
+      "finding": "Official IPC API provides detailed population tables and GeoJSON/vector maps for analysis units. Approved requests receive API keys; the public documentation links the technical schema. No access request or authenticated API call made."
+    }
+  ],
+  "interpretation": "No claim that all archives have been exhaustively searched. A failed HTTP request or missing identity crosswalk remains an unresolved dependency, not evidence that data never existed."
+}

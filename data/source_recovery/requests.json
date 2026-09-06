@@ -1,0 +1,325 @@
+{
+  "fews_yemen_2015_terms_of_trade": {
+    "bytes": 426878,
+    "fetched_at": "2026-09-06T05:05:01.939790+00:00",
+    "final_url": "https://fews.net/sites/default/files/documents/reports/Yemen_2015_03_PB.pdf",
+    "http_status": 200,
+    "last_modified": "Mon, 28 Nov 2022 19:28:42 GMT",
+    "path": "raw/b7b7de261d18f85206af666a4fa10ce5d293c821c23d14665ba566107810d8b0.gz",
+    "sha256": "b7b7de261d18f85206af666a4fa10ce5d293c821c23d14665ba566107810d8b0",
+    "status": "available",
+    "url": "https://fews.net/sites/default/files/documents/reports/Yemen_2015_03_PB.pdf"
+  },
+  "hdx_wfp_migration": {
+    "bytes": 85690,
+    "fetched_at": "2026-09-06T05:04:28.897195+00:00",
+    "final_url": "https://centre.humdata.org/getting-up-to-speed-wfp-food-data-on-hdx/",
+    "http_status": 200,
+    "last_modified": "Tue, 14 Jul 2026 10:49:55 GMT",
+    "path": "raw/90bff71f177f6cab481ddab3ccbc420fc25b2694950bab52c79b00712b340396.gz",
+    "sha256": "90bff71f177f6cab481ddab3ccbc420fc25b2694950bab52c79b00712b340396",
+    "status": "available",
+    "url": "https://centre.humdata.org/getting-up-to-speed-wfp-food-data-on-hdx/"
+  },
+  "ipc_api": {
+    "error": "ConnectionError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))",
+    "fetched_at": "2026-09-06T05:04:40.219204+00:00",
+    "status": "request_failed",
+    "url": "https://www.ipcinfo.org/ipc-country-analysis/api/"
+  },
+  "ipc_api_schema": {
+    "bytes": 13361,
+    "fetched_at": "2026-09-06T05:04:56.649614+00:00",
+    "final_url": "https://docs.api.ipcinfo.org/api/public/openapi.json",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/7bbf28b2dfee5ca63862407a766a6413ac5a5d2cd8193ae4c96c9d37decb2e67.gz",
+    "sha256": "7bbf28b2dfee5ca63862407a766a6413ac5a5d2cd8193ae4c96c9d37decb2e67",
+    "status": "available",
+    "url": "https://docs.api.ipcinfo.org/api/public/openapi.json"
+  },
+  "ipc_docs": {
+    "bytes": 23799,
+    "fetched_at": "2026-09-06T05:04:46.872626+00:00",
+    "final_url": "https://docs.api.ipcinfo.org/",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/a2ec03d9dc395e49ebe79a77dbfb24b4942154bc787d545cb74f971e7bae0f30.gz",
+    "sha256": "a2ec03d9dc395e49ebe79a77dbfb24b4942154bc787d545cb74f971e7bae0f30",
+    "status": "available",
+    "url": "https://docs.api.ipcinfo.org/"
+  },
+  "ipc_global_area_long": {
+    "bytes": 33280969,
+    "fetched_at": "2026-09-06T05:15:04.601706+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/2c471c60-b94b-4f9d-b4a1-9a4373e213d1/ipc_global_area_long.csv",
+    "http_status": 200,
+    "last_modified": "Mon, 24 Aug 2026 12:33:01 GMT",
+    "path": "raw/83e64794b67d8a8fce6cb79c341ef7c7a29e662c4b0aec94c60900dca8305fe4.gz",
+    "sha256": "83e64794b67d8a8fce6cb79c341ef7c7a29e662c4b0aec94c60900dca8305fe4",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/2c471c60-b94b-4f9d-b4a1-9a4373e213d1/download/ipc_global_area_long.csv"
+  },
+  "ipc_global_level1_long": {
+    "bytes": 3415713,
+    "fetched_at": "2026-09-06T05:14:46.991119+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/f6e7954c-3717-487a-b0d9-787881831634/ipc_global_level1_long.csv",
+    "http_status": 200,
+    "last_modified": "Mon, 24 Aug 2026 12:33:00 GMT",
+    "path": "raw/8c6f2d0767b02c647265f4ddd7ec470495c2c3bbe4bf497fe560fbe36137e5f2.gz",
+    "sha256": "8c6f2d0767b02c647265f4ddd7ec470495c2c3bbe4bf497fe560fbe36137e5f2",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/f6e7954c-3717-487a-b0d9-787881831634/download/ipc_global_level1_long.csv"
+  },
+  "ipc_global_national_long": {
+    "bytes": 399131,
+    "fetched_at": "2026-09-06T05:14:35.242086+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/23d51849-5926-422c-a58a-f9bd68088f20/ipc_global_national_long.csv",
+    "http_status": 200,
+    "last_modified": "Mon, 24 Aug 2026 12:32:59 GMT",
+    "path": "raw/39d8b4a9269e29e26354f5fb251a80cff9c5f1894c93803ac93f21cf6da54ccd.gz",
+    "sha256": "39d8b4a9269e29e26354f5fb251a80cff9c5f1894c93803ac93f21cf6da54ccd",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
+  },
+  "ipc_metadata": {
+    "bytes": 403689,
+    "fetched_at": "2026-09-06T05:04:17.767809+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/8d716c7c21ba581f64de08ef6114039c0fa0aaf2e0284458e46c9a0693ec6314.gz",
+    "sha256": "8d716c7c21ba581f64de08ef6114039c0fa0aaf2e0284458e46c9a0693ec6314",
+    "status": "available",
+    "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
+  },
+  "search_ipc_geography": {
+    "bytes": 1391112,
+    "fetched_at": "2026-09-06T05:04:26.857674+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/package_search?q=IPC+shapefile&rows=100",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/8c01497011162ccbd95fed1893b785107c0dfe1a3239670f7a7800b7529ff675.gz",
+    "sha256": "8c01497011162ccbd95fed1893b785107c0dfe1a3239670f7a7800b7529ff675",
+    "status": "available",
+    "url": "https://data.humdata.org/api/3/action/package_search?q=IPC+shapefile&rows=100"
+  },
+  "search_wfp_ethiopia": {
+    "bytes": 2394611,
+    "fetched_at": "2026-09-06T05:04:25.282877+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/package_search?q=Ethiopia+food+prices+wages&rows=100",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/6020d0a034ba1a46c29d12c24da2b1a466a0b4e00fb274f0e253e8cc6674affc.gz",
+    "sha256": "6020d0a034ba1a46c29d12c24da2b1a466a0b4e00fb274f0e253e8cc6674affc",
+    "status": "available",
+    "url": "https://data.humdata.org/api/3/action/package_search?q=Ethiopia+food+prices+wages&rows=100"
+  },
+  "search_wfp_yemen": {
+    "bytes": 2270341,
+    "fetched_at": "2026-09-06T05:04:18.429524+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/package_search?q=Yemen+food+prices+wages&rows=100",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/084b8e4a64ffd03f73e07730ac070f8fb28475516eb118a9c312f73c5c0a5f75.gz",
+    "sha256": "084b8e4a64ffd03f73e07730ac070f8fb28475516eb118a9c312f73c5c0a5f75",
+    "status": "available",
+    "url": "https://data.humdata.org/api/3/action/package_search?q=Yemen+food+prices+wages&rows=100"
+  },
+  "wfp_eth_activity": {
+    "bytes": 2468690,
+    "fetched_at": "2026-09-06T05:05:31.713087+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/package_activity_list?id=2e4f1922-e446-4b57-a98a-d0e2d5e34afa&limit=100",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/285aec3c51e8cb6b8ca9f7bafae5f45e32d348f712befa35504232151aa2a28b.gz",
+    "sha256": "285aec3c51e8cb6b8ca9f7bafae5f45e32d348f712befa35504232151aa2a28b",
+    "status": "available",
+    "url": "https://data.humdata.org/api/3/action/package_activity_list?id=2e4f1922-e446-4b57-a98a-d0e2d5e34afa&limit=100"
+  },
+  "wfp_eth_metadata": {
+    "bytes": 33411,
+    "fetched_at": "2026-09-06T05:04:11.768227+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-ethiopia",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/e05298dd6b80c3af4fb948f2211b3fc1e1e3ad43b22ef1822dfba942cac366d5.gz",
+    "sha256": "e05298dd6b80c3af4fb948f2211b3fc1e1e3ad43b22ef1822dfba942cac366d5",
+    "status": "available",
+    "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-ethiopia"
+  },
+  "wfp_eth_prices": {
+    "bytes": 7590625,
+    "fetched_at": "2026-09-06T05:06:19.761737+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/87bac18e-f3aa-4b29-8cf8-76763e823dc5/wfp_food_prices_eth.csv",
+    "http_status": 200,
+    "last_modified": "Sun, 30 Aug 2026 10:59:35 GMT",
+    "path": "raw/abb5f023958ee7bb8f264e44c654313b618d41719cafbfb0257197895320337e.gz",
+    "sha256": "abb5f023958ee7bb8f264e44c654313b618d41719cafbfb0257197895320337e",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/2e4f1922-e446-4b57-a98a-d0e2d5e34afa/resource/87bac18e-f3aa-4b29-8cf8-76763e823dc5/download/wfp_food_prices_eth.csv"
+  },
+  "wfp_global_2015": {
+    "bytes": 17879649,
+    "fetched_at": "2026-09-06T05:15:03.004018+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/fab7c2eb-e376-49bd-94c4-5fe51fc90f84/wfp_food_prices_global_2015.csv",
+    "http_status": 200,
+    "last_modified": "Mon, 31 Aug 2026 07:39:25 GMT",
+    "path": "retry_2015/raw/0b99c811b9cf6df2692b702cc8b2879a2495ee24d3d67011be971a607bd004a2.gz",
+    "prior_attempts": [
+      {
+        "error": "ReadTimeout: HTTPSConnectionPool(host='s3.us-east-1.amazonaws.com', port=443): Read timed out. (read timeout=15)",
+        "fetched_at": "2026-09-06T05:14:15.056696+00:00",
+        "status": "request_failed",
+        "url": "https://data.humdata.org/dataset/31579af5-3895-4002-9ee3-c50857480785/resource/fab7c2eb-e376-49bd-94c4-5fe51fc90f84/download/wfp_food_prices_global_2015.csv"
+      }
+    ],
+    "sha256": "0b99c811b9cf6df2692b702cc8b2879a2495ee24d3d67011be971a607bd004a2",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/31579af5-3895-4002-9ee3-c50857480785/resource/fab7c2eb-e376-49bd-94c4-5fe51fc90f84/download/wfp_food_prices_global_2015.csv"
+  },
+  "wfp_global_2016": {
+    "bytes": 20798160,
+    "fetched_at": "2026-09-06T05:13:09.144760+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/693d015e-4710-439a-9d87-5bdee04fe424/wfp_food_prices_global_2016.csv",
+    "http_status": 200,
+    "last_modified": "Mon, 31 Aug 2026 07:39:25 GMT",
+    "path": "raw/072d5ee126d4d183dd60d884ad6b63d756a1eb017e6b7937e40648309356351a.gz",
+    "sha256": "072d5ee126d4d183dd60d884ad6b63d756a1eb017e6b7937e40648309356351a",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/31579af5-3895-4002-9ee3-c50857480785/resource/693d015e-4710-439a-9d87-5bdee04fe424/download/wfp_food_prices_global_2016.csv"
+  },
+  "wfp_global_2017": {
+    "bytes": 22236745,
+    "fetched_at": "2026-09-06T05:11:49.337384+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/67cde873-1e30-4f24-a4f2-77e753e99f29/wfp_food_prices_global_2017.csv",
+    "http_status": 200,
+    "last_modified": "Mon, 31 Aug 2026 07:39:24 GMT",
+    "path": "raw/68bc0c9af15d9cf008fc708eaaccb55c9f052d177cc8a74db935d8d0fb789038.gz",
+    "sha256": "68bc0c9af15d9cf008fc708eaaccb55c9f052d177cc8a74db935d8d0fb789038",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/31579af5-3895-4002-9ee3-c50857480785/resource/67cde873-1e30-4f24-a4f2-77e753e99f29/download/wfp_food_prices_global_2017.csv"
+  },
+  "wfp_global_2018": {
+    "bytes": 23685450,
+    "fetched_at": "2026-09-06T05:09:55.312394+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/2b843bf7-d457-442a-a476-f041108a06de/wfp_food_prices_global_2018.csv",
+    "http_status": 200,
+    "last_modified": "Mon, 31 Aug 2026 07:39:23 GMT",
+    "path": "raw/e3f25983de21fb64f8420f3d304553c48fa5a1fc9b590d17d737dc15454ecdfc.gz",
+    "sha256": "e3f25983de21fb64f8420f3d304553c48fa5a1fc9b590d17d737dc15454ecdfc",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/31579af5-3895-4002-9ee3-c50857480785/resource/2b843bf7-d457-442a-a476-f041108a06de/download/wfp_food_prices_global_2018.csv"
+  },
+  "wfp_global_2019": {
+    "bytes": 27805890,
+    "fetched_at": "2026-09-06T05:07:58.881979+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/b8399f61-e9d9-4c6a-93a4-303afb2197b3/wfp_food_prices_global_2019.csv",
+    "http_status": 200,
+    "last_modified": "Mon, 31 Aug 2026 07:39:23 GMT",
+    "path": "raw/f2bd82fc148a613481f8f32235a8e9f7f41bdf8da5c522dbd5b1c520320387b0.gz",
+    "sha256": "f2bd82fc148a613481f8f32235a8e9f7f41bdf8da5c522dbd5b1c520320387b0",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/31579af5-3895-4002-9ee3-c50857480785/resource/b8399f61-e9d9-4c6a-93a4-303afb2197b3/download/wfp_food_prices_global_2019.csv"
+  },
+  "wfp_global_current_metadata": {
+    "bytes": 789816,
+    "fetched_at": "2026-09-06T05:04:15.860422+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/package_show?id=global-wfp-food-prices",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/49f9b25edcec95b3d66530efbccd557d025d6e45e0248d224cdae9f6333f3c8a.gz",
+    "sha256": "49f9b25edcec95b3d66530efbccd557d025d6e45e0248d224cdae9f6333f3c8a",
+    "status": "available",
+    "url": "https://data.humdata.org/api/3/action/package_show?id=global-wfp-food-prices"
+  },
+  "wfp_legacy_datastore": {
+    "bytes": 229,
+    "fetched_at": "2026-09-06T05:05:25.034141+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/datastore_search?resource_id=12d7c8e3-eff9-4db0-93b7-726825c4fe9a&filters=%7B%22adm0_name%22%3A+%5B%22Yemen%22%2C+%22Ethiopia%22%5D%7D&limit=1",
+    "http_status": 404,
+    "last_modified": null,
+    "path": "raw/cdf7b4ed67b920dfc8de56d0f309daec5feb3f474a105a274740fb31390ee9df.gz",
+    "sha256": "cdf7b4ed67b920dfc8de56d0f309daec5feb3f474a105a274740fb31390ee9df",
+    "status": "http_error",
+    "url": "https://data.humdata.org/api/3/action/datastore_search?resource_id=12d7c8e3-eff9-4db0-93b7-726825c4fe9a&filters=%7B%22adm0_name%22%3A+%5B%22Yemen%22%2C+%22Ethiopia%22%5D%7D&limit=1"
+  },
+  "wfp_legacy_metadata": {
+    "bytes": 18531,
+    "fetched_at": "2026-09-06T05:04:12.817985+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/1e4d8691e16315bbdac3cf632650880f2dba6b024bbf04aae1d45e74db4acb1e.gz",
+    "sha256": "1e4d8691e16315bbdac3cf632650880f2dba6b024bbf04aae1d45e74db4acb1e",
+    "status": "available",
+    "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices"
+  },
+  "wfp_legacy_prices": {
+    "bytes": 225787557,
+    "etag": "\"fdb868ff70ca3598ddde0130eb0cbdd7\"",
+    "fetched_at": "2026-09-06T05:29:12.965378+00:00",
+    "last_modified": "Sun, 22 Aug 2021 08:27:35 GMT",
+    "path": "raw/3d34c02b4c36b589a8a8ad4043abef837701c975b723616ec9ea97c2a56bbae1.gz",
+    "prior_attempts": [
+      {
+        "error": "ValueError: Request exceeds declared 180-second audit duration",
+        "fetched_at": "2026-09-06T05:16:29.462637+00:00",
+        "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/wfpvam_foodprices.csv",
+        "http_status": 200,
+        "last_modified": "Sun, 22 Aug 2021 08:27:35 GMT",
+        "status": "request_failed",
+        "url": "https://data.humdata.org/dataset/4fdcd4dc-5c2f-43af-a1e4-93c9b6539a27/resource/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/download/wfpvam_foodprices.csv"
+      }
+    ],
+    "range_receipts": "legacy_range_receipts.json",
+    "retrieval_method": "complete non-overlapping HTTP ranges; common strong ETag",
+    "sha256": "3d34c02b4c36b589a8a8ad4043abef837701c975b723616ec9ea97c2a56bbae1",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/4fdcd4dc-5c2f-43af-a1e4-93c9b6539a27/resource/12d7c8e3-eff9-4db0-93b7-726825c4fe9a/download/wfpvam_foodprices.csv"
+  },
+  "wfp_yem_activity": {
+    "bytes": 2349957,
+    "fetched_at": "2026-09-06T05:05:26.246622+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/package_activity_list?id=98574e10-6866-4f13-a2b1-3c8312801af5&limit=100",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/759bd1bb169be4ace9b77eb98b6891fe8f61fd774f0ba837392e111e75b81cb1.gz",
+    "sha256": "759bd1bb169be4ace9b77eb98b6891fe8f61fd774f0ba837392e111e75b81cb1",
+    "status": "available",
+    "url": "https://data.humdata.org/api/3/action/package_activity_list?id=98574e10-6866-4f13-a2b1-3c8312801af5&limit=100"
+  },
+  "wfp_yem_metadata": {
+    "bytes": 31691,
+    "fetched_at": "2026-09-06T05:04:09.199857+00:00",
+    "final_url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-yemen",
+    "http_status": 200,
+    "last_modified": null,
+    "path": "raw/bc5ea7ea42a422719b66f9b24f0fd85b44b217441be9873ecfb7aafaa4c9519c.gz",
+    "sha256": "bc5ea7ea42a422719b66f9b24f0fd85b44b217441be9873ecfb7aafaa4c9519c",
+    "status": "available",
+    "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-yemen"
+  },
+  "wfp_yem_prices": {
+    "bytes": 7621585,
+    "fetched_at": "2026-09-06T05:05:32.843609+00:00",
+    "final_url": "https://s3.us-east-1.amazonaws.com/hdx-production-filestore/resources/2f0c1d18-d42d-4e43-b928-1bd1fc7f6c90/wfp_food_prices_yem.csv",
+    "http_status": 200,
+    "last_modified": "Mon, 31 Aug 2026 02:48:28 GMT",
+    "path": "raw/d345b9c457882cd2ea1a4e7ff3c2065807ef0ef93bfefcab90a15b0ee90eda73.gz",
+    "sha256": "d345b9c457882cd2ea1a4e7ff3c2065807ef0ef93bfefcab90a15b0ee90eda73",
+    "status": "available",
+    "url": "https://data.humdata.org/dataset/98574e10-6866-4f13-a2b1-3c8312801af5/resource/2f0c1d18-d42d-4e43-b928-1bd1fc7f6c90/download/wfp_food_prices_yem.csv"
+  },
+  "worldbank_yemen_estimates": {
+    "bytes": 103223,
+    "fetched_at": "2026-09-06T05:04:57.146502+00:00",
+    "final_url": "https://microdata.worldbank.org/index.php/catalog/4508/study-description",
+    "http_status": 200,
+    "last_modified": "Sun, 06 Sep 2026 05:05:01 GMT",
+    "path": "raw/dfbde4ff39ebda29e57064fa4d49dca1b7ef261a835b1a50580e22d97a21781b.gz",
+    "sha256": "dfbde4ff39ebda29e57064fa4d49dca1b7ef261a835b1a50580e22d97a21781b",
+    "status": "available",
+    "url": "https://microdata.worldbank.org/index.php/catalog/4508/study-description"
+  }
+}

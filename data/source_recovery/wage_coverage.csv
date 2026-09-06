@@ -1,0 +1,11 @@
+commodity_id,commodity,unit,priceflag,source,country,observations,markets,first,last,months_2015,months_2016,months_2017,months_2018,months_2019
+274,Wage (qualified labour),Day,actual,wfp_yem,YEM,2377,24,2016-06-15,2026-07-15,0,7,12,12,12
+277,Wage (non-qualified labour),Day,actual,wfp_yem,YEM,2476,24,2016-06-15,2026-07-15,0,7,12,12,12
+274,Wage (qualified labour),Day,actual,wfp_eth,ETH,112,9,2020-01-15,2025-01-15,0,0,0,0,0
+276,Wage (casual labour),Day,actual,wfp_eth,ETH,1853,63,2020-01-15,2026-07-15,0,0,0,0,0
+276,Wage (casual labour),Day,"actual,aggregate",wfp_eth,ETH,50,9,2020-03-15,2023-07-15,0,0,0,0,0
+276,Wage (casual labour),Day,aggregate,wfp_eth,ETH,107,19,2020-03-15,2023-07-15,0,0,0,0,0
+277,Wage (non-qualified labour),Day,actual,wfp_eth,ETH,1,1,2015-08-15,2015-08-15,1,0,0,0,0
+274,Wage (qualified labour),Day,actual,wfp_global_baseline,YEM,964,24,2016-06-15,2019-12-15,0,7,12,12,12
+277,Wage (non-qualified labour),Day,actual,wfp_global_baseline,YEM,1007,24,2016-06-15,2019-12-15,0,7,12,12,12
+277,Wage (non-qualified labour),Day,actual,wfp_global_baseline,ETH,1,1,2015-08-15,2015-08-15,1,0,0,0,0

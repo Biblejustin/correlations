@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "design_fixed_at_utc": "2026-09-06T04:59:20.905019+00:00",
+  "design": "Historical exploratory monitor; fixed before inspecting new association results, not before historical observations existed. No causal, prospective or prophetic-fulfillment claim.",
+  "countries": [
+    "ISR",
+    "PSE",
+    "LBN",
+    "UKR",
+    "SDN",
+    "ETH",
+    "SOM",
+    "YEM"
+  ],
+  "chokepoints": [
+    "Suez Canal",
+    "Bab el-Mandeb",
+    "Strait of Hormuz"
+  ],
+  "shipping_measure": "IMF PortWatch total estimated transit volume in metric tons per day, all vessel classes. These are AIS-derived cargo-capacity/transit estimates, not measured grain cargoes, national imports or unique independent shocks.",
+  "shipping_month": "Calendar monthly mean of daily estimated total transit volume, requiring every calendar day and excluding the last seven elapsed days. Never infer zero from missing days. No partial-month extrapolation.",
+  "shipping_predictor": "Fractional year-on-year transit decline: 1 minus monthly mean divided by the exact same month one year earlier. Prior volume must be positive; observed current zero is valid. Positive means less estimated transit.",
+  "exchange_rate": {
+    "source": "World Bank Global Economic Monitor",
+    "source_id": "15",
+    "indicator": "DPANUSLCU",
+    "definition": "Official local-currency units per US dollar, period average; accept explicit monthly records only. No gapfill, annual-to-monthly interpolation, unofficial-rate substitution or cross-currency splice.",
+    "predictor": "Natural log change relative to exact same calendar month one year earlier; positive indicates depreciation in the published official series.",
+    "food_currency_match": {
+      "ISR": "ILS",
+      "PSE": null,
+      "LBN": "LBP",
+      "UKR": "UAH",
+      "SDN": "SDG",
+      "ETH": "ETB",
+      "SOM": "SOS",
+      "YEM": "YER"
+    }
+  },
+  "cereal_dependence": {
+    "source": "FAOSTAT Suite of Food Security Indicators",
+    "item_code": "21035",
+    "item": "Cereal import dependency ratio (percent) (3-year average)",
+    "element_code": "6121",
+    "unit": "%",
+    "scope": "Descriptive structural context only. Preserve full three-year windows, negative net-exporter values, flags and source territory. Do not convert to monthly observations or add a predictor selected from outcomes."
+  },
+  "food_response": "Natural log year-on-year retail staple price changes, exact market/commodity/unit/currency series; within-series monthly median quote, then country median. Preserve existing 2015-2019 baseline membership (at least 24 baseline months), at least three series and 70 percent fixed-member coverage. Keep all eight countries and missing months explicit. This is a monitored-market diagnostic, not CPI.",
+  "food_baseline_years": [
+    2015,
+    2019
+  ],
+  "food_minimum_baseline_months": 24,
+  "food_minimum_series": 3,
+  "food_required_coverage": 0.7,
+  "monthly_lags": [
+    0,
+    1,
+    3
+  ],
+  "predictors": [
+    "suez_transit_decline_yoy",
+    "bab_el_mandeb_transit_decline_yoy",
+    "hormuz_transit_decline_yoy",
+    "official_fx_log_yoy"
+  ],
+  "fits": [
+    "time_season_baseline",
+    "fx_climate_adjusted"
+  ],
+  "family": "Eight fixed countries times four predictors times three monthly lags times two fits = 192 planned tests. BH includes unavailable fits as p=1. Two fits for one cell are related sensitivities, not independent discoveries.",
+  "family_size": 192,
+  "minimum_contiguous_months": 60,
+  "minimum_residual_degrees_of_freedom": 8,
+  "hac_maxlags": 12,
+  "fdr_alpha": 0.05,
+  "baseline_controls": "Intercept, centered linear calendar-month trend and eleven calendar-month seasonal indicators, omitting absent categories; no searched breakpoints.",
+  "adjusted_controls": "Monthly RNI and DMI in both predictor and response months when lagged (one copy at lag0). Shipping fits additionally control official FX log-YoY in predictor and response months. FX fits do not control their own tested predictor; for positive lags add response-month FX. Every fit involving FX requires all fixed food-basket currencies to match the declared official currency; otherwise unavailable. Official FX can differ materially from actual market rates.",
+  "sample": "Both fits for each cell use identical longest contiguous finite overlap including every adjusted control. Ties choose earliest span. Restrict to completed reference months, with source reporting lags retained. No automatic shortening of eligibility.",
+  "inference": "OLS slope with Bartlett HAC12 finite-sample correction and Student-t inference using n minus full design rank. Report partial correlation, native-unit beta, pointwise 95 percent CI, p and family q, exact sample months, coverage and exclusion reasons. Rank, constant/near-constant and conditioning guards. Monthly YoY overlap and crisis-era common shocks limit interpretation.",
+  "preserved": [
+    "Original global/regional statistical families",
+    "Original climate extension plan and results",
+    "Frozen wheat model and compatible future-pair requirements",
+    "Frozen affordability baseline requirements",
+    "IPC geography gate"
+  ]
+}

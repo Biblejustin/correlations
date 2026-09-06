@@ -7,6 +7,9 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 ## Start here
 
 - [Climate, seasonal flu and purchasing-power report](results/monitoring/extensions/extensions_report.md): NOAA ocean indices, separate adjustment tests, prior-season positivity and exact food/wage trends.
+- [Complete eclipse and Jerusalem-visibility monitor](data/celestial_monitoring/data/eclipses/report.md): global solar/lunar catalog, local circumstances, altitude and duration.
+- [Trade and food-price report](results/monitoring/trade/trade_report.md): Suez, Bab el-Mandeb and Hormuz transit, official exchange rates, cereal-import dependence and all 192 planned comparisons.
+- [WFP and IPC source recovery](SOURCE_RECOVERY.md): audited archives, missing baseline observations and required geographic evidence.
 - [Regional monitoring report](results/monitoring/monitoring_report.md): conflict, food stress, affordability, displacement, respiratory surveillance, religious freedom and Israel water.
 - [Monitoring definitions and sources](MONITORING.md): exact measures, geography, cadence, coverage and future validation rules.
 - [Methodology](METHODOLOGY.md): missingness, selected catalogs, allocation assumptions and statistical families.
@@ -24,6 +27,8 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 
 **Climate controls and seasonal/affordability trends are now monitored.** The new sensitivity has no global BH discoveries; Ukraine conflict/refugee-stock change passes HAC correction but fails the original block-permutation correction. This is method-dependent exploratory evidence. Seasonal flu retains missing weeks and minimum tested counts. Exact food/wage trends work; no aggregate basket has the required 2015–2019 coverage. [Definitions and complete outputs](results/monitoring/extensions/extensions_report.md).
 
+**Shipping and currency pathways now have explicit tests.** The separate 192-fit family has six estimable Yemen exchange-rate fits and no BH-corrected survivor in the initial September 6 snapshot. Shipping comparisons lack 60 contiguous compatible months; that is insufficient evidence, not evidence of no relationship. Official FX can differ from market rates, and chokepoint transit does not measure grain shipments. Cereal dependence retains its full three-year windows. [Coverage and all results](results/monitoring/trade/trade_report.md).
+
 **IPC history now preserves 384 observations.** Full supplied national history replaces the latest-only adapter. Six ambiguous or internally inconsistent periods are quarantined with original rows; prior snapshots remain archived. Reports identify retained old assessments. Geographic comparability remains unverified, so this expansion does not unlock additional country lag tests. See [history and revision rules](MONITORING.md).
 
 **War–famine association remains era-dependent.** The full-span matrix gives r ≈ +0.452 (1900–2023), surviving its 45-pair block-null sensitivity family. This does not establish the same relationship in every era or establish causation. See exported windows, sample sizes and q-values.
@@ -31,6 +36,8 @@ September 2026 integrity update: explicit source coverage, corrected allocation 
 **Broad significance claims shrink after repair.** The 30-test Granger family and searched chain family have no corrected survivors in this snapshot. Wavelet calculations now use 6,200 finite cells on observed overlap; coherence is descriptive and edge-masked. In the 24-indicator 9–13-year spectral family, only sunspots survive the fitted AR(1) sensitivity null. A missing or nonsignificant result does not prove independence.
 
 **Composite currently unavailable.** Fixed baseline/domain weights expose insufficient flood-mortality and drought-affected baseline observations. The analysis emits explicit missing scores and reasons. It cannot presently support escalating-contraction headlines.
+
+**Complete eclipses now have a separate denominator.** The NASA extension retains 913 solar/lunar events for 1900–2100, including future predictions, with fixed Jerusalem visibility, altitude and above-horizon phase durations. It preserves contact dates across midnight and labels modeled UT1 explicitly. The selected historical CSV remains separate. [Coverage, upcoming events and validation](data/celestial_monitoring/data/eclipses/report.md).
 
 **Catalog definitions matter.** Flood counts and dates now use one canonical event resolver; unknown mortality remains unknown. Duration totals are allocated over original event lifetimes before slicing a window. Cyclone Sidr's false 2003 duplicate is removed. Selected eclipse/flare/disaster lists remain incomplete research catalogs.
 
@@ -54,7 +61,7 @@ Clone all repositories as siblings beneath one directory. Use only the Biblejust
 | [volcanic-eruptions](https://github.com/Biblejustin/volcanic-eruptions) | Selected eruption catalog |
 | [tropical-cyclones](https://github.com/Biblejustin/tropical-cyclones) | Selected high-mortality cyclones |
 | [droughts-tracking](https://github.com/Biblejustin/droughts-tracking) | Drought events and human impacts |
-| [astronomical-signs](https://github.com/Biblejustin/astronomical-signs) | Historical selected celestial events |
+| [astronomical-signs](https://github.com/Biblejustin/astronomical-signs) | Complete solar/lunar eclipse monitor and fixed Jerusalem visibility; separate selected historical events |
 | [israel-pressure-disasters](https://github.com/Biblejustin/israel-pressure-disasters) | Coded diplomatic events, NOAA/FEMA controls |
 | [israel-rain-agriculture](https://github.com/Biblejustin/israel-rain-agriculture) | Historical rainfall, crop area/yield, irrigation and Kinneret |
 

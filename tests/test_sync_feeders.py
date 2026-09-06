@@ -108,6 +108,28 @@ class FeederSyncTests(unittest.TestCase):
         self.assertEqual(self.target.read_bytes(),before)
         self.assertEqual(list(self.target.parent.glob('.volcanoes.csv.*')),[])
 
+    def test_celestial_bundle_hashes_stop_mixed_or_stale_source_promotion(self):
+        import json
+        root=self.root/'astronomical-signs';root.mkdir()
+        contents={name:b'fixture\n' for name in sf.CELESTIAL_FILES}
+        contents['data/eclipses/validation.json']=b'{"status":"passed"}'
+        manifest={'validation_status':'passed','artifacts':{}}
+        for name in sf.CELESTIAL_FILES:
+            if name.startswith('data/eclipses/') and not name.endswith('monitor.json'):
+                data=contents[name];manifest['artifacts'][Path(name).name]={'sha256':sf._sha(data),'bytes':len(data)}
+        for key,name in {'plan_sha256':'eclipse_plan.json','source_manifest_sha256':'sources/nasa/manifest.json',
+                         'source_pins_sha256':'source_pins.json','harness_sha256':'eclipse_harness.cjs',
+                         'driver_sha256':'monitor_eclipses.py','curated_eclipses_sha256':'eclipses.csv'}.items():
+            data=contents.get(name,b'bound-source');manifest[key]=sf._sha(data)
+            path=root/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
+        contents['data/eclipses/monitor.json']=json.dumps(manifest).encode()
+        planned=[(feed,self.repo/feed.target,contents[feed.source]) for feed in sf.CELESTIAL_FEEDS]
+        sf._validate_celestial_bundle(planned,self.root)
+        changed=[(feed,path,data+b'revised') if feed.source.endswith('jerusalem_events.csv') else (feed,path,data) for feed,path,data in planned]
+        with self.assertRaisesRegex(ValueError,'artifact hash'):sf._validate_celestial_bundle(changed,self.root)
+        (root/'eclipse_harness.cjs').write_text('changed code')
+        with self.assertRaisesRegex(ValueError,'binding changed'):sf._validate_celestial_bundle(planned,self.root)
+
 
 if __name__ == '__main__':
     unittest.main()

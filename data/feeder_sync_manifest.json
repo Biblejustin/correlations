@@ -10,6 +10,87 @@
       "target": "data/astronomical_signs.csv"
     },
     {
+      "repository": "astronomical-signs",
+      "repository_url": "https://github.com/Biblejustin/astronomical-signs",
+      "sha256": "bc8c0bc17c99b3eb3aabb3b4483666da13376540ff0ab3fd8509a46aaee32917",
+      "size_bytes": 142436,
+      "source_path": "data/eclipses/annual_counts.csv",
+      "source_state": "local_working_copy",
+      "target": "data/celestial_monitoring/data/eclipses/annual_counts.csv"
+    },
+    {
+      "repository": "astronomical-signs",
+      "repository_url": "https://github.com/Biblejustin/astronomical-signs",
+      "sha256": "e9f76a40d1b3173439c26dd5ab180daf84f9c64cec8de8f8b4ca2819aad0eb60",
+      "size_bytes": 385370,
+      "source_path": "data/eclipses/global_catalog.csv",
+      "source_state": "local_working_copy",
+      "target": "data/celestial_monitoring/data/eclipses/global_catalog.csv"
+    },
+    {
+      "repository": "astronomical-signs",
+      "repository_url": "https://github.com/Biblejustin/astronomical-signs",
+      "sha256": "7227870d5eaa06a83028d6805115e2313928adeb1ef643c483d233d0e283e159",
+      "size_bytes": 410111,
+      "source_path": "data/eclipses/jerusalem_contacts.csv",
+      "source_state": "local_working_copy",
+      "target": "data/celestial_monitoring/data/eclipses/jerusalem_contacts.csv"
+    },
+    {
+      "repository": "astronomical-signs",
+      "repository_url": "https://github.com/Biblejustin/astronomical-signs",
+      "sha256": "f780d00d2d22855e3a1d0a2e5ca6a70e3a458560338c0be2e9c08f7392134c3e",
+      "size_bytes": 287030,
+      "source_path": "data/eclipses/jerusalem_events.csv",
+      "source_state": "local_working_copy",
+      "target": "data/celestial_monitoring/data/eclipses/jerusalem_events.csv"
+    },
+    {
+      "repository": "astronomical-signs",
+      "repository_url": "https://github.com/Biblejustin/astronomical-signs",
+      "sha256": "8cfdbe7df56e68ad67598e51132ae195253572c5320b01e9fb6259c28bcedb4e",
+      "size_bytes": 6710,
+      "source_path": "data/eclipses/monitor.json",
+      "source_state": "local_working_copy",
+      "target": "data/celestial_monitoring/data/eclipses/monitor.json"
+    },
+    {
+      "repository": "astronomical-signs",
+      "repository_url": "https://github.com/Biblejustin/astronomical-signs",
+      "sha256": "b4563ba7b0b502e1c254e2d278cf5777ff0319232192da75f767fa2f27354405",
+      "size_bytes": 4752,
+      "source_path": "data/eclipses/report.md",
+      "source_state": "local_working_copy",
+      "target": "data/celestial_monitoring/data/eclipses/report.md"
+    },
+    {
+      "repository": "astronomical-signs",
+      "repository_url": "https://github.com/Biblejustin/astronomical-signs",
+      "sha256": "fd811b014dff5d9d21216349c13de4023f4f149896edde2d127ae83443bf6e14",
+      "size_bytes": 918664,
+      "source_path": "data/eclipses/validation.json",
+      "source_state": "local_working_copy",
+      "target": "data/celestial_monitoring/data/eclipses/validation.json"
+    },
+    {
+      "repository": "astronomical-signs",
+      "repository_url": "https://github.com/Biblejustin/astronomical-signs",
+      "sha256": "06889237c38e2f6ca7820c8a1ff84553565f6fc8b6e20613ce50bd986cbeabc4",
+      "size_bytes": 5710,
+      "source_path": "eclipse_plan.json",
+      "source_state": "local_working_copy",
+      "target": "data/celestial_monitoring/eclipse_plan.json"
+    },
+    {
+      "repository": "astronomical-signs",
+      "repository_url": "https://github.com/Biblejustin/astronomical-signs",
+      "sha256": "6bcb818012b7c08f3a1449a36987c7a22777392ae4476b4077bf3c1d50078d63",
+      "size_bytes": 7758,
+      "source_path": "sources/nasa/manifest.json",
+      "source_state": "local_working_copy",
+      "target": "data/celestial_monitoring/sources/nasa/manifest.json"
+    },
+    {
       "repository": "tropical-cyclones",
       "repository_url": "https://github.com/Biblejustin/tropical-cyclones",
       "sha256": "16658cd821bed3504464559718ae6278509a1af39d59cf3894306843f7fbe470",

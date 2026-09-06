@@ -1,0 +1,1246 @@
+{
+  "global_difference_ETH": {
+    "candidate_quote_differences": 0,
+    "decision": "Different rows, if any, require source-version and identity review; not imported."
+  },
+  "global_difference_YEM": {
+    "candidate_quote_differences": 0,
+    "decision": "Different rows, if any, require source-version and identity review; not imported."
+  },
+  "legacy_export": {
+    "columns": [
+      "adm0_id",
+      "adm0_name",
+      "adm1_id",
+      "adm1_name",
+      "mkt_id",
+      "mkt_name",
+      "cm_id",
+      "cm_name",
+      "cur_id",
+      "cur_name",
+      "pt_id",
+      "pt_name",
+      "um_id",
+      "um_name",
+      "mp_month",
+      "mp_year",
+      "mp_price",
+      "mp_commoditysource"
+    ],
+    "integration_status": "not imported; source semantics require review",
+    "rows": 2050638,
+    "status": "downloaded",
+    "target_rows": 61433,
+    "wage_summary": [
+      {
+        "baseline_months_by_year": {
+          "2015": 0,
+          "2016": 0,
+          "2017": 0,
+          "2018": 0,
+          "2019": 0
+        },
+        "identity": [
+          "Ethiopia",
+          "274",
+          "Wage (qualified labour) - Retail",
+          "Day"
+        ],
+        "max_year": 2021,
+        "min_year": 2020,
+        "observations": 39
+      },
+      {
+        "baseline_months_by_year": {
+          "2015": 0,
+          "2016": 0,
+          "2017": 0,
+          "2018": 0,
+          "2019": 0
+        },
+        "identity": [
+          "Ethiopia",
+          "276",
+          "Wage (casual labour) - Retail",
+          "Day"
+        ],
+        "max_year": 2021,
+        "min_year": 2020,
+        "observations": 457
+      },
+      {
+        "baseline_months_by_year": {
+          "2015": 1,
+          "2016": 0,
+          "2017": 0,
+          "2018": 0,
+          "2019": 0
+        },
+        "identity": [
+          "Ethiopia",
+          "277",
+          "Wage (non-qualified labour) - Retail",
+          "Day"
+        ],
+        "max_year": 2015,
+        "min_year": 2015,
+        "observations": 1
+      },
+      {
+        "baseline_months_by_year": {
+          "2015": 0,
+          "2016": 7,
+          "2017": 12,
+          "2018": 12,
+          "2019": 12
+        },
+        "identity": [
+          "Yemen",
+          "274",
+          "Wage (qualified labour) - Retail",
+          "Day"
+        ],
+        "max_year": 2021,
+        "min_year": 2016,
+        "observations": 1405
+      },
+      {
+        "baseline_months_by_year": {
+          "2015": 0,
+          "2016": 7,
+          "2017": 12,
+          "2018": 12,
+          "2019": 12
+        },
+        "identity": [
+          "Yemen",
+          "277",
+          "Wage (non-qualified labour) - Retail",
+          "Day"
+        ],
+        "max_year": 2021,
+        "min_year": 2016,
+        "observations": 1405
+      }
+    ],
+    "wage_summary_scope": "Distinct quoted months across any market within each listed country/commodity/unit; not fixed-series eligibility. Legacy file lacks current-export priceflag."
+  },
+  "search_ipc_geography": {
+    "complete": false,
+    "count": 785,
+    "query": "IPC shapefile",
+    "returned": [
+      {
+        "name": "nigeria-fewsnet-ipc-acute-food-security-classifications-over-time-2009-2018",
+        "title": "Nigeria - FEWSNET IPC Acute Food Security Classifications over Time: A Public Health and Food Security Synthesis Report with Corresponding Data"
+      },
+      {
+        "name": "harmonized-food-insecurity-dataset-hfid",
+        "title": "Harmonized Food Insecurity Dataset (HFID)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-february-may-2016",
+        "title": "Food Insecurity Mapping - East Africa (February - May 2016)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-july-september-2013",
+        "title": "Food Insecurity Mapping - West Africa (July - September 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-january-march-2013",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (January  - March 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-july-september-2014",
+        "title": "Food Insecurity Mapping - Southern Africa (July - September 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-january-march-2014",
+        "title": "Food Insecurity Mapping - Southern Africa (January - March 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-october-december-2015",
+        "title": "Food Insecurity Mapping - Southern Africa (October - December 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-july-september-2015",
+        "title": "Food Insecurity Mapping - Southern Africa (July - September 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-april-june-2015",
+        "title": "Food Insecurity Mapping - Southern Africa (April - June 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-january-march-2015",
+        "title": "Food Insecurity Mapping - Southern Africa (January - March 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-october-december-2014",
+        "title": "Food Insecurity Mapping - Southern Africa (October - December 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-april-june-2014",
+        "title": "Food Insecurity Mapping - Southern Africa (April - June 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-africa-july-september-2013",
+        "title": "Food Insecurity Mapping - Southern Africa (July - September 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-africa-april-june-2013",
+        "title": "Food Insecurity Mapping - Southern Africa (April - June 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-southern-africa-january-march-2013",
+        "title": "Food Insecurity Mapping - Southern Africa (January - March 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-january-march-2014",
+        "title": "Food Insecurity Mapping - East Africa (January - March 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-july-september-2015",
+        "title": "Food Insecurity Mapping - Central Asia (July - September 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-april-june-2015",
+        "title": "Food Insecurity Mapping - Central Asia (April - June 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-october-december-2014",
+        "title": "Food Insecurity Mapping - Central Asia (October - December 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-july-september-2014",
+        "title": "Food Insecurity Mapping - Central Asia (July - September 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-april-june-2014",
+        "title": "Food Insecurity Mapping - Central Asia (April - June 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-january-march-2014",
+        "title": "Food Insecurity Mapping - Central Asia (January - March 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-july-september-2013",
+        "title": "Food Insecurity Mapping - Central Asia (July - September 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-january-march-2013",
+        "title": "Food Insecurity Mapping - Central Asia (January - March 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-july-september-2013",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (July - September 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-july-september-2015",
+        "title": "Food Insecurity Mapping - East Africa (July - September 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-april-june-2015",
+        "title": "Food Insecurity Mapping - East Africa (April - June 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-october-december-2014",
+        "title": "Food Insecurity Mapping - East Africa (October - December 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-july-september-2014",
+        "title": "Food Insecurity Mapping - East Africa (July - September 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-april-june-2014",
+        "title": "Food Insecurity Mapping - East Africa (April - June 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-july-september-2013",
+        "title": "Food Insecurity Mapping - East Africa (July - September 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-january-march-2013",
+        "title": "Food Insecurity Mapping - East Africa (January - March 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-july-september-2015",
+        "title": "Food Insecurity Mapping - West Africa (July - September 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-april-june-2015",
+        "title": "Food Insecurity Mapping - West Africa (April - June 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-january-march-2015",
+        "title": "Food Insecurity Mapping - West Africa (January - March 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-july-september-2014",
+        "title": "Food Insecurity Mapping - West Africa (July - September 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-april-june-2014",
+        "title": "Food Insecurity Mapping - West Africa (April - June 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-january-march-2014",
+        "title": "Food Insecurity Mapping - West Africa (January - March 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-october-december-2013",
+        "title": "Food Insecurity Mapping - West Africa (October - December 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-april-june-2013",
+        "title": "Food Insecurity Mapping - West Africa (April - June 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-january-march-2013",
+        "title": "Food Insecurity Mapping - West Africa (January - March 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-october-december-2013",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (October - December 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-january-march-2015",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (January - March 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-april-june-2013",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (April - June 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-january-march-2014",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (January - March 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-april-june-2014",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (April - June 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-october-december-2014",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (October - December 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-july-september-2015",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (July - September 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-april-june-2015",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (April - June 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-january-march-2015",
+        "title": "Food Insecurity Mapping - Central Asia (January - March 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-october-december-2013",
+        "title": "Food Insecurity Mapping - Central Asia (October - December 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-asia-april-june-2013",
+        "title": "Food Insecurity Mapping - Central Asia (April - June 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-january-march-2015",
+        "title": "Food Insecurity Mapping - East Africa (January - March 2015)"
+      },
+      {
+        "name": "food-insecurity-mapping-east-africa-october-september-2013",
+        "title": "Food Insecurity Mapping - East Africa (October - September 2013)"
+      },
+      {
+        "name": "food-insecurity-mapping-west-africa-october-december-2014",
+        "title": "Food Insecurity Mapping - West Africa (October - December 2014)"
+      },
+      {
+        "name": "food-insecurity-mapping-central-america-and-the-caribbean-july-september-2014",
+        "title": "Food Insecurity Mapping - Central America and The Caribbean (July - September 2014)"
+      },
+      {
+        "name": "mauritania_current_situation_fewsnet_ipc_shapefile_for_2015",
+        "title": "Mauritania Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2015"
+      },
+      {
+        "name": "niger_current_situation_fewsnet_ipc_shapefile_for_2014",
+        "title": "Niger Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2014"
+      },
+      {
+        "name": "niger_near_term_projection__fewsnet_ipc_shapefile_for_2017",
+        "title": "Niger Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2017"
+      },
+      {
+        "name": "niger_current_situation_fewsnet_ipc_shapefile_for_2022",
+        "title": "Niger Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2022"
+      },
+      {
+        "name": "mauritania_near_term_projection__fewsnet_ipc_shapefile_for_2017",
+        "title": "Mauritania Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2017"
+      },
+      {
+        "name": "mali_current_situation_fewsnet_ipc_shapefile_for_2019",
+        "title": "Mali Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2019"
+      },
+      {
+        "name": "afghanistan_medium_term_projection__fewsnet_ipc_shapefile_for_2017",
+        "title": "Afghanistan Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2017"
+      },
+      {
+        "name": "somalia_near_term_projection__fewsnet_ipc_shapefile_for_2017",
+        "title": "Somalia Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2017"
+      },
+      {
+        "name": "kenya_current_situation_fewsnet_ipc_shapefile_for_2019",
+        "title": "Kenya Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2019"
+      },
+      {
+        "name": "malawi_medium_term_projection__fewsnet_ipc_shapefile_for_2018",
+        "title": "Malawi Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2018"
+      },
+      {
+        "name": "somalia_medium_term_projection__fewsnet_ipc_shapefile_for_2015",
+        "title": "Somalia Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2015"
+      },
+      {
+        "name": "burundi_current_situation_fewsnet_ipc_shapefile_for_2020",
+        "title": "Burundi Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2020"
+      },
+      {
+        "name": "chad_near_term_projection__fewsnet_ipc_shapefile_for_2021",
+        "title": "Chad Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2021"
+      },
+      {
+        "name": "mozambique_current_situation_fewsnet_ipc_shapefile_for_2022",
+        "title": "Mozambique Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2022"
+      },
+      {
+        "name": "afghanistan_current_situation_fewsnet_ipc_shapefile_for_2021",
+        "title": "Afghanistan Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2021"
+      },
+      {
+        "name": "afghanistan_current_situation_fewsnet_ipc_shapefile_for_2012",
+        "title": "Afghanistan Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2012"
+      },
+      {
+        "name": "mozambique_current_situation_fewsnet_ipc_shapefile_for_2014",
+        "title": "Mozambique Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2014"
+      },
+      {
+        "name": "kenya_current_situation_fewsnet_ipc_shapefile_for_2013",
+        "title": "Kenya Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2013"
+      },
+      {
+        "name": "niger_current_situation_fewsnet_ipc_shapefile_for_2016",
+        "title": "Niger Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2016"
+      },
+      {
+        "name": "madagascar_near_term_projection__fewsnet_ipc_shapefile_for_2022",
+        "title": "Madagascar Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2022"
+      },
+      {
+        "name": "malawi_current_situation_fewsnet_ipc_shapefile_for_2012",
+        "title": "Malawi Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2012"
+      },
+      {
+        "name": "chad_medium_term_projection__fewsnet_ipc_shapefile_for_2018",
+        "title": "Chad Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2018"
+      },
+      {
+        "name": "somalia_medium_term_projection__fewsnet_ipc_shapefile_for_2018",
+        "title": "Somalia Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2018"
+      },
+      {
+        "name": "mozambique_current_situation_fewsnet_ipc_shapefile_for_2011",
+        "title": "Mozambique Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2011"
+      },
+      {
+        "name": "zimbabwe_current_situation_fewsnet_ipc_shapefile_for_2015",
+        "title": "Zimbabwe Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2015"
+      },
+      {
+        "name": "guatemala_current_situation_fewsnet_ipc_shapefile_for_2019",
+        "title": "Guatemala Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2019"
+      },
+      {
+        "name": "guatemala_near_term_projection__fewsnet_ipc_shapefile_for_2014",
+        "title": "Guatemala Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2014"
+      },
+      {
+        "name": "niger_near_term_projection__fewsnet_ipc_shapefile_for_2019",
+        "title": "Niger Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2019"
+      },
+      {
+        "name": "malawi_current_situation_fewsnet_ipc_shapefile_for_2017",
+        "title": "Malawi Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2017"
+      },
+      {
+        "name": "malawi_medium_term_projection__fewsnet_ipc_shapefile_for_2017",
+        "title": "Malawi Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2017"
+      },
+      {
+        "name": "mozambique_medium_term_projection__fewsnet_ipc_shapefile_for_2018",
+        "title": "Mozambique Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2018"
+      },
+      {
+        "name": "zambia_near_term_projection__fewsnet_ipc_shapefile_for_2012",
+        "title": "Zambia Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2012"
+      },
+      {
+        "name": "kenya_medium_term_projection__fewsnet_ipc_shapefile_for_2013",
+        "title": "Kenya Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2013"
+      },
+      {
+        "name": "mozambique_near_term_projection__fewsnet_ipc_shapefile_for_2018",
+        "title": "Mozambique Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2018"
+      },
+      {
+        "name": "malawi_near_term_projection__fewsnet_ipc_shapefile_for_2016",
+        "title": "Malawi Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2016"
+      },
+      {
+        "name": "niger_medium_term_projection__fewsnet_ipc_shapefile_for_2013",
+        "title": "Niger Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2013"
+      },
+      {
+        "name": "kenya_medium_term_projection__fewsnet_ipc_shapefile_for_2015",
+        "title": "Kenya Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2015"
+      },
+      {
+        "name": "niger_near_term_projection__fewsnet_ipc_shapefile_for_2014",
+        "title": "Niger Near Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2014"
+      },
+      {
+        "name": "djibouti_medium_term_projection__fewsnet_ipc_shapefile_for_2011",
+        "title": "Djibouti Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2011"
+      },
+      {
+        "name": "niger_medium_term_projection__fewsnet_ipc_shapefile_for_2012",
+        "title": "Niger Medium Term Projection  FEWS NET Acute Food Insecurity Classifications Geographic Data for 2012"
+      },
+      {
+        "name": "burkina_faso_current_situation_fewsnet_ipc_shapefile_for_2012",
+        "title": "Burkina Faso Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2012"
+      },
+      {
+        "name": "south_sudan_current_situation_fewsnet_ipc_shapefile_for_2017",
+        "title": "South Sudan Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2017"
+      },
+      {
+        "name": "somalia_current_situation_fewsnet_ipc_shapefile_for_2016",
+        "title": "Somalia Current Situation FEWS NET Acute Food Insecurity Classifications Geographic Data for 2016"
+      }
+    ],
+    "status": "available"
+  },
+  "search_wfp_ethiopia": {
+    "complete": true,
+    "count": 76,
+    "query": "Ethiopia food prices wages",
+    "returned": [
+      {
+        "name": "eth-faostat-food-prices",
+        "title": "Ethiopia - Food Prices"
+      },
+      {
+        "name": "wfp-food-prices-for-ethiopia",
+        "title": "Ethiopia - Food Prices"
+      },
+      {
+        "name": "ethiopia-real-time-prices",
+        "title": "Ethiopia - Real Time Prices"
+      },
+      {
+        "name": "fewsnet_staple_food_price_data_for_ethiopia_weekly_6041",
+        "title": "Ethiopia Weekly FEWS NET Staple Food Price Data"
+      },
+      {
+        "name": "wfp-food-prices-for-djibouti",
+        "title": "Djibouti - Food Prices"
+      },
+      {
+        "name": "egy-faostat-food-prices",
+        "title": "Egypt - Food Prices"
+      },
+      {
+        "name": "wfp-food-prices-for-senegal",
+        "title": "Senegal - Food Prices"
+      },
+      {
+        "name": "tcd-faostat-food-prices",
+        "title": "Chad - Food Prices"
+      },
+      {
+        "name": "nga-faostat-food-prices",
+        "title": "Nigeria - Food Prices"
+      },
+      {
+        "name": "moz-faostat-food-prices",
+        "title": "Mozambique - Food Prices"
+      },
+      {
+        "name": "dji-faostat-food-prices",
+        "title": "Djibouti - Food Prices"
+      },
+      {
+        "name": "mmr-faostat-food-prices",
+        "title": "Myanmar - Food Prices"
+      },
+      {
+        "name": "wfp-food-prices-for-benin",
+        "title": "Benin - Food Prices"
+      },
+      {
+        "name": "abw-faostat-food-prices",
+        "title": "Aruba - Food Prices"
+      },
+      {
+        "name": "wfp-food-prices-for-togo",
+        "title": "Togo - Food Prices"
+      },
+      {
+        "name": "ukr-faostat-food-prices",
+        "title": "Ukraine - Food Prices"
+      },
+      {
+        "name": "bra-faostat-food-prices",
+        "title": "Brazil - Food Prices"
+      },
+      {
+        "name": "vnm-faostat-food-prices",
+        "title": "Viet Nam - Food Prices"
+      },
+      {
+        "name": "uga-faostat-food-prices",
+        "title": "Uganda - Food Prices"
+      },
+      {
+        "name": "som-faostat-food-prices",
+        "title": "Somalia - Food Prices"
+      },
+      {
+        "name": "lby-faostat-food-prices",
+        "title": "Libya - Food Prices"
+      },
+      {
+        "name": "tur-faostat-food-prices",
+        "title": "T\u00fcrkiye - Food Prices"
+      },
+      {
+        "name": "pak-faostat-food-prices",
+        "title": "Pakistan - Food Prices"
+      },
+      {
+        "name": "bgd-faostat-food-prices",
+        "title": "Bangladesh - Food Prices"
+      },
+      {
+        "name": "per-faostat-food-prices",
+        "title": "Peru - Food Prices"
+      },
+      {
+        "name": "ner-faostat-food-prices",
+        "title": "Niger - Food Prices"
+      },
+      {
+        "name": "mex-faostat-food-prices",
+        "title": "Mexico - Food Prices"
+      },
+      {
+        "name": "mdg-faostat-food-prices",
+        "title": "Madagascar - Food Prices"
+      },
+      {
+        "name": "ken-faostat-food-prices",
+        "title": "Kenya - Food Prices"
+      },
+      {
+        "name": "arg-faostat-food-prices",
+        "title": "Argentina - Food Prices"
+      },
+      {
+        "name": "cri-faostat-food-prices",
+        "title": "Costa Rica - Food Prices"
+      },
+      {
+        "name": "wfp-food-prices-for-gabon",
+        "title": "Gabon - Food Prices"
+      },
+      {
+        "name": "lka-faostat-food-prices",
+        "title": "Sri Lanka - Food Prices"
+      },
+      {
+        "name": "wfp-food-prices",
+        "title": "Global Food Prices Database (WFP)"
+      },
+      {
+        "name": "cuw-faostat-food-prices",
+        "title": "Cura\u00e7ao - Food Prices"
+      },
+      {
+        "name": "yem-faostat-food-prices",
+        "title": "Yemen - Food Prices"
+      },
+      {
+        "name": "ury-faostat-food-prices",
+        "title": "Uruguay - Food Prices"
+      },
+      {
+        "name": "pry-faostat-food-prices",
+        "title": "Paraguay - Food Prices"
+      },
+      {
+        "name": "pan-faostat-food-prices",
+        "title": "Panama - Food Prices"
+      },
+      {
+        "name": "mli-faostat-food-prices",
+        "title": "Mali - Food Prices"
+      },
+      {
+        "name": "lbn-faostat-food-prices",
+        "title": "Lebanon - Food Prices"
+      },
+      {
+        "name": "jor-faostat-food-prices",
+        "title": "Jordan - Food Prices"
+      },
+      {
+        "name": "hti-faostat-food-prices",
+        "title": "Haiti - Food Prices"
+      },
+      {
+        "name": "ecu-faostat-food-prices",
+        "title": "Ecuador - Food Prices"
+      },
+      {
+        "name": "col-faostat-food-prices",
+        "title": "Colombia - Food Prices"
+      },
+      {
+        "name": "cmr-faostat-food-prices",
+        "title": "Cameroon - Food Prices"
+      },
+      {
+        "name": "chl-faostat-food-prices",
+        "title": "Chile - Food Prices"
+      },
+      {
+        "name": "afg-faostat-food-prices",
+        "title": "Afghanistan - Food Prices"
+      },
+      {
+        "name": "guy-faostat-food-prices",
+        "title": "Guyana - Food Prices"
+      },
+      {
+        "name": "faostat-food-prices-for-turkiye",
+        "title": "T\u00fcrkiye - Food Prices"
+      },
+      {
+        "name": "ssd-faostat-food-prices",
+        "title": "South Sudan - Food Prices"
+      },
+      {
+        "name": "dom-faostat-food-prices",
+        "title": "Dominican Republic - Food Prices"
+      },
+      {
+        "name": "bfa-faostat-food-prices",
+        "title": "Burkina Faso - Food Prices"
+      },
+      {
+        "name": "eastern-africa-food-prices-data",
+        "title": "Eastern Africa - Food Prices Data"
+      },
+      {
+        "name": "faostat-food-prices-for-netherlands-kingdom-of-the",
+        "title": "Netherlands (Kingdom of the) - Food Prices"
+      },
+      {
+        "name": "wfp-food-prices-for-central-african-republic",
+        "title": "Central African Republic - Food Prices"
+      },
+      {
+        "name": "syr-faostat-food-prices",
+        "title": "Syrian Arab Republic - Food Prices"
+      },
+      {
+        "name": "caf-faostat-food-prices",
+        "title": "Central African Republic - Food Prices"
+      },
+      {
+        "name": "tto-faostat-food-prices",
+        "title": "Trinidad and Tobago - Food Prices"
+      },
+      {
+        "name": "pse-faostat-food-prices",
+        "title": "State of Palestine - Food Prices"
+      },
+      {
+        "name": "tza-faostat-food-prices",
+        "title": "United Republic of Tanzania - Food Prices"
+      },
+      {
+        "name": "irn-faostat-food-prices",
+        "title": "Iran (Islamic Republic of) - Food Prices"
+      },
+      {
+        "name": "cod-faostat-food-prices",
+        "title": "Democratic Republic of the Congo - Food Prices"
+      },
+      {
+        "name": "ven-faostat-food-prices",
+        "title": "Venezuela (Bolivarian Republic of) - Food Prices"
+      },
+      {
+        "name": "bol-faostat-food-prices",
+        "title": "Bolivia (Plurinational State of) - Food Prices"
+      },
+      {
+        "name": "eth-faostat-food-security-indicators",
+        "title": "Ethiopia - Food Security and Nutrition Indicators"
+      },
+      {
+        "name": "world-bank-financial-sector-indicators-for-ethiopia",
+        "title": "Ethiopia - Financial Sector"
+      },
+      {
+        "name": "hdx-hapi-eth",
+        "title": "HDX HAPI Data for Ethiopia"
+      },
+      {
+        "name": "african-development-bank-food-security-prices-monthly-december-2011",
+        "title": "African Development Bank, Food Security, Prices, Monthly, December 2011"
+      },
+      {
+        "name": "world-bank-gender-indicators-for-ethiopia",
+        "title": "Ethiopia - Gender"
+      },
+      {
+        "name": "who-data-for-eth",
+        "title": "Ethiopia - Health Indicators"
+      },
+      {
+        "name": "world-bank-economy-and-growth-indicators-for-ethiopia",
+        "title": "Ethiopia - Economy and Growth"
+      },
+      {
+        "name": "global-market-monitor",
+        "title": "WFP Global Market Monitor"
+      },
+      {
+        "name": "wfp-and-fao-overview-of-countries-affected-by-the-2015-16-el-nino",
+        "title": "WFP and FAO Overview of Countries Affected by the El Ni\u00f1o"
+      },
+      {
+        "name": "unhcr-bgd-2020-jmsna-refugees-v2-1",
+        "title": "Bangladesh - Joint Multi Sector Needs Assessment: Cox\u2019s Bazar, Rohingya Refugee Response \u2013 August 2020, Refugees"
+      },
+      {
+        "name": "unhcr-bgd-2020-jmsna-hostcommunity-v2-1",
+        "title": "Bangladesh - Joint Multi Sector Needs Assessment: Cox\u2019s Bazar, Rohingya Refugee Response \u2013 August 2020, Host Community"
+      }
+    ],
+    "status": "available"
+  },
+  "search_wfp_yemen": {
+    "complete": true,
+    "count": 66,
+    "query": "Yemen food prices wages",
+    "returned": [
+      {
+        "name": "wfp-food-prices-for-yemen",
+        "title": "Yemen - Food Prices"
+      },
+      {
+        "name": "yem-faostat-food-prices",
+        "title": "Yemen - Food Prices"
+      },
+      {
+        "name": "yemen-real-time-prices",
+        "title": "Yemen - Real Time Prices"
+      },
+      {
+        "name": "egy-faostat-food-prices",
+        "title": "Egypt - Food Prices"
+      },
+      {
+        "name": "tcd-faostat-food-prices",
+        "title": "Chad - Food Prices"
+      },
+      {
+        "name": "nga-faostat-food-prices",
+        "title": "Nigeria - Food Prices"
+      },
+      {
+        "name": "moz-faostat-food-prices",
+        "title": "Mozambique - Food Prices"
+      },
+      {
+        "name": "dji-faostat-food-prices",
+        "title": "Djibouti - Food Prices"
+      },
+      {
+        "name": "mmr-faostat-food-prices",
+        "title": "Myanmar - Food Prices"
+      },
+      {
+        "name": "eth-faostat-food-prices",
+        "title": "Ethiopia - Food Prices"
+      },
+      {
+        "name": "abw-faostat-food-prices",
+        "title": "Aruba - Food Prices"
+      },
+      {
+        "name": "ukr-faostat-food-prices",
+        "title": "Ukraine - Food Prices"
+      },
+      {
+        "name": "bra-faostat-food-prices",
+        "title": "Brazil - Food Prices"
+      },
+      {
+        "name": "vnm-faostat-food-prices",
+        "title": "Viet Nam - Food Prices"
+      },
+      {
+        "name": "wfp-food-prices",
+        "title": "Global Food Prices Database (WFP)"
+      },
+      {
+        "name": "uga-faostat-food-prices",
+        "title": "Uganda - Food Prices"
+      },
+      {
+        "name": "som-faostat-food-prices",
+        "title": "Somalia - Food Prices"
+      },
+      {
+        "name": "lby-faostat-food-prices",
+        "title": "Libya - Food Prices"
+      },
+      {
+        "name": "tur-faostat-food-prices",
+        "title": "T\u00fcrkiye - Food Prices"
+      },
+      {
+        "name": "pak-faostat-food-prices",
+        "title": "Pakistan - Food Prices"
+      },
+      {
+        "name": "bgd-faostat-food-prices",
+        "title": "Bangladesh - Food Prices"
+      },
+      {
+        "name": "per-faostat-food-prices",
+        "title": "Peru - Food Prices"
+      },
+      {
+        "name": "ner-faostat-food-prices",
+        "title": "Niger - Food Prices"
+      },
+      {
+        "name": "mex-faostat-food-prices",
+        "title": "Mexico - Food Prices"
+      },
+      {
+        "name": "mdg-faostat-food-prices",
+        "title": "Madagascar - Food Prices"
+      },
+      {
+        "name": "ken-faostat-food-prices",
+        "title": "Kenya - Food Prices"
+      },
+      {
+        "name": "arg-faostat-food-prices",
+        "title": "Argentina - Food Prices"
+      },
+      {
+        "name": "cri-faostat-food-prices",
+        "title": "Costa Rica - Food Prices"
+      },
+      {
+        "name": "lka-faostat-food-prices",
+        "title": "Sri Lanka - Food Prices"
+      },
+      {
+        "name": "cuw-faostat-food-prices",
+        "title": "Cura\u00e7ao - Food Prices"
+      },
+      {
+        "name": "ury-faostat-food-prices",
+        "title": "Uruguay - Food Prices"
+      },
+      {
+        "name": "pry-faostat-food-prices",
+        "title": "Paraguay - Food Prices"
+      },
+      {
+        "name": "pan-faostat-food-prices",
+        "title": "Panama - Food Prices"
+      },
+      {
+        "name": "mli-faostat-food-prices",
+        "title": "Mali - Food Prices"
+      },
+      {
+        "name": "lbn-faostat-food-prices",
+        "title": "Lebanon - Food Prices"
+      },
+      {
+        "name": "jor-faostat-food-prices",
+        "title": "Jordan - Food Prices"
+      },
+      {
+        "name": "hti-faostat-food-prices",
+        "title": "Haiti - Food Prices"
+      },
+      {
+        "name": "ecu-faostat-food-prices",
+        "title": "Ecuador - Food Prices"
+      },
+      {
+        "name": "col-faostat-food-prices",
+        "title": "Colombia - Food Prices"
+      },
+      {
+        "name": "cmr-faostat-food-prices",
+        "title": "Cameroon - Food Prices"
+      },
+      {
+        "name": "chl-faostat-food-prices",
+        "title": "Chile - Food Prices"
+      },
+      {
+        "name": "afg-faostat-food-prices",
+        "title": "Afghanistan - Food Prices"
+      },
+      {
+        "name": "guy-faostat-food-prices",
+        "title": "Guyana - Food Prices"
+      },
+      {
+        "name": "faostat-food-prices-for-turkiye",
+        "title": "T\u00fcrkiye - Food Prices"
+      },
+      {
+        "name": "ssd-faostat-food-prices",
+        "title": "South Sudan - Food Prices"
+      },
+      {
+        "name": "dom-faostat-food-prices",
+        "title": "Dominican Republic - Food Prices"
+      },
+      {
+        "name": "bfa-faostat-food-prices",
+        "title": "Burkina Faso - Food Prices"
+      },
+      {
+        "name": "faostat-food-prices-for-netherlands-kingdom-of-the",
+        "title": "Netherlands (Kingdom of the) - Food Prices"
+      },
+      {
+        "name": "syr-faostat-food-prices",
+        "title": "Syrian Arab Republic - Food Prices"
+      },
+      {
+        "name": "caf-faostat-food-prices",
+        "title": "Central African Republic - Food Prices"
+      },
+      {
+        "name": "tto-faostat-food-prices",
+        "title": "Trinidad and Tobago - Food Prices"
+      },
+      {
+        "name": "pse-faostat-food-prices",
+        "title": "State of Palestine - Food Prices"
+      },
+      {
+        "name": "tza-faostat-food-prices",
+        "title": "United Republic of Tanzania - Food Prices"
+      },
+      {
+        "name": "irn-faostat-food-prices",
+        "title": "Iran (Islamic Republic of) - Food Prices"
+      },
+      {
+        "name": "cod-faostat-food-prices",
+        "title": "Democratic Republic of the Congo - Food Prices"
+      },
+      {
+        "name": "yemen-acute-malnutrition",
+        "title": "Yemen: Acute Malnutrition"
+      },
+      {
+        "name": "ven-faostat-food-prices",
+        "title": "Venezuela (Bolivarian Republic of) - Food Prices"
+      },
+      {
+        "name": "bol-faostat-food-prices",
+        "title": "Bolivia (Plurinational State of) - Food Prices"
+      },
+      {
+        "name": "yemen-crisisinsight-core-dataset-2021",
+        "title": "Yemen Core Dataset"
+      },
+      {
+        "name": "hdx-hapi-yem",
+        "title": "HDX HAPI Data for Yemen"
+      },
+      {
+        "name": "world-bank-gender-indicators-for-yemen-rep",
+        "title": "Yemen, Rep. - Gender"
+      },
+      {
+        "name": "who-data-for-yem",
+        "title": "Yemen - Health Indicators"
+      },
+      {
+        "name": "world-bank-economy-and-growth-indicators-for-yemen-rep",
+        "title": "Yemen, Rep. - Economy and Growth"
+      },
+      {
+        "name": "global-market-monitor",
+        "title": "WFP Global Market Monitor"
+      },
+      {
+        "name": "unhcr-bgd-2020-jmsna-refugees-v2-1",
+        "title": "Bangladesh - Joint Multi Sector Needs Assessment: Cox\u2019s Bazar, Rohingya Refugee Response \u2013 August 2020, Refugees"
+      },
+      {
+        "name": "unhcr-bgd-2020-jmsna-hostcommunity-v2-1",
+        "title": "Bangladesh - Joint Multi Sector Needs Assessment: Cox\u2019s Bazar, Rohingya Refugee Response \u2013 August 2020, Host Community"
+      }
+    ],
+    "status": "available"
+  },
+  "wfp_global_2015": {
+    "columns": [
+      "countryiso3",
+      "date",
+      "admin1",
+      "admin2",
+      "market",
+      "market_id",
+      "latitude",
+      "longitude",
+      "category",
+      "commodity",
+      "commodity_id",
+      "unit",
+      "priceflag",
+      "pricetype",
+      "currency",
+      "price",
+      "usdprice"
+    ],
+    "country_column": "countryiso3",
+    "rows": 138688,
+    "status": "available",
+    "target_rows": 2264
+  },
+  "wfp_global_2016": {
+    "columns": [
+      "countryiso3",
+      "date",
+      "admin1",
+      "admin2",
+      "market",
+      "market_id",
+      "latitude",
+      "longitude",
+      "category",
+      "commodity",
+      "commodity_id",
+      "unit",
+      "priceflag",
+      "pricetype",
+      "currency",
+      "price",
+      "usdprice"
+    ],
+    "country_column": "countryiso3",
+    "rows": 158013,
+    "status": "available",
+    "target_rows": 4919
+  },
+  "wfp_global_2017": {
+    "columns": [
+      "countryiso3",
+      "date",
+      "admin1",
+      "admin2",
+      "market",
+      "market_id",
+      "latitude",
+      "longitude",
+      "category",
+      "commodity",
+      "commodity_id",
+      "unit",
+      "priceflag",
+      "pricetype",
+      "currency",
+      "price",
+      "usdprice"
+    ],
+    "country_column": "countryiso3",
+    "rows": 173277,
+    "status": "available",
+    "target_rows": 6996
+  },
+  "wfp_global_2018": {
+    "columns": [
+      "countryiso3",
+      "date",
+      "admin1",
+      "admin2",
+      "market",
+      "market_id",
+      "latitude",
+      "longitude",
+      "category",
+      "commodity",
+      "commodity_id",
+      "unit",
+      "priceflag",
+      "pricetype",
+      "currency",
+      "price",
+      "usdprice"
+    ],
+    "country_column": "countryiso3",
+    "rows": 186247,
+    "status": "available",
+    "target_rows": 6735
+  },
+  "wfp_global_2019": {
+    "columns": [
+      "countryiso3",
+      "date",
+      "admin1",
+      "admin2",
+      "market",
+      "market_id",
+      "latitude",
+      "longitude",
+      "category",
+      "commodity",
+      "commodity_id",
+      "unit",
+      "priceflag",
+      "pricetype",
+      "currency",
+      "price",
+      "usdprice"
+    ],
+    "country_column": "countryiso3",
+    "rows": 218090,
+    "status": "available",
+    "target_rows": 6370
+  }
+}

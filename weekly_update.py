@@ -117,6 +117,9 @@ def fetch_steps(py=None):
         ('fetch_canonical','correlations',['env',f'PYTHON={py}','bash','refresh_canonical_data.sh']),
         ('fetch_monitoring','correlations',[py,'refresh_monitoring.py']),
         ('fetch_climate_indices','correlations',[py,'refresh_climate_indices.py']),
+        ('fetch_trade_shipping','correlations',[py,'refresh_trade_sources.py']),
+        ('fetch_economic_sources','correlations',[py,'refresh_economic_sources.py']),
+        ('fetch_astronomy','astronomical-signs',[py,'monitor_eclipses.py','--offline']),
         ('fetch_israel_pressure','israel-pressure-disasters',['env',f'PYTHON={py}','bash','update.sh']),
         ('fetch_israel_rain','israel-rain-agriculture',['env',f'PYTHON={py}','bash','update.sh']),
     ]

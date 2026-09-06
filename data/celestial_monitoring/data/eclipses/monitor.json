@@ -1,0 +1,99 @@
+{
+  "artifacts": {
+    "annual_counts.csv": {
+      "bytes": 142436,
+      "sha256": "bc8c0bc17c99b3eb3aabb3b4483666da13376540ff0ab3fd8509a46aaee32917"
+    },
+    "global_catalog.csv": {
+      "bytes": 385370,
+      "sha256": "e9f76a40d1b3173439c26dd5ab180daf84f9c64cec8de8f8b4ca2819aad0eb60"
+    },
+    "jerusalem_contacts.csv": {
+      "bytes": 410111,
+      "sha256": "7227870d5eaa06a83028d6805115e2313928adeb1ef643c483d233d0e283e159"
+    },
+    "jerusalem_events.csv": {
+      "bytes": 287030,
+      "sha256": "f780d00d2d22855e3a1d0a2e5ca6a70e3a458560338c0be2e9c08f7392134c3e"
+    },
+    "report.md": {
+      "bytes": 4752,
+      "sha256": "b4563ba7b0b502e1c254e2d278cf5777ff0319232192da75f767fa2f27354405"
+    },
+    "validation.json": {
+      "bytes": 918664,
+      "sha256": "fd811b014dff5d9d21216349c13de4023f4f149896edde2d127ae83443bf6e14"
+    }
+  },
+  "as_of": "2026-09-06",
+  "calculation": {
+    "algorithm": "Unmodified NASA JSEX and JLEX program.js plus official century element arrays, separately versioned and hash-pinned",
+    "environment": "Source idealized horizon/refraction conventions only. No terrain, buildings, clouds, atmospheric extinction, twilight contrast or all-Israel spatial footprint. Lunar source altitude input does not enter its simplified altitude calculation; no elevation precision claim.",
+    "future_uncertainty": "Use original source ephemeris and delta-T model; do not silently replace with modern estimates. Future rotation uncertainty can shift circumstances. Node/source revision is recorded.",
+    "lunar_duration_solver": "Evaluate unmodified populatecircumstances on60second brackets; bisect visibility transitions to0.1second. Retain all contacts, including below-horizon ones; never turn absent umbral/total phases into measured zeros.",
+    "lunar_visibility": "At least one positive-duration part of a phase satisfies NASA JLEX visibility flag0, with source parallax and threshold Moon semidiameter minus0.5667degrees. Retain penumbral/umbral/total durations separately, plus above-horizon duration for each phase. Penumbral geometry does not promise naked-eye detectability.",
+    "node_version": "26.8.1",
+    "reported_altitude": "Degrees from NASA source algorithms. JLEX clamps small negative visible altitudes to0; record that convention rather than claiming unmodified geometric altitude.",
+    "solar_visibility": "NASA JSEX getall local event type>0 after horizon clipping. Source Sun altitude threshold -0.00524radians; source sunrise/sunset clipping retained, described by NASA as lower-limb horizon contact. Separate global type, local type, maximum altitude/magnitude/obscuration, full contact interval and horizon-visible interval."
+  },
+  "catalog_end_td": "2100-12-31",
+  "catalog_start_td": "1900-01-01",
+  "contact_rows": 2808,
+  "curated_eclipses_sha256": "5399538fc39cb62254c019bc46c1e473932bd131753586e2c47d17b246d365e1",
+  "driver_sha256": "791444845bee0830d68de8912cdff47de554434be5dc06f921683ab9f96799cb",
+  "global_events": 913,
+  "harness_sha256": "ffa94c0a05f7e3bc73addf619ac9351b854acf65257e5b1a1becba785a2fba91",
+  "interpretation": "Astronomical predictions, including past modeled events; not a human sighting census or an outcome-driven event selection. No causal or prophetic-fulfillment inference.",
+  "jerusalem_visible_events": 384,
+  "location": {
+    "coordinate_definition": "NASA city entry31deg46min00secN35deg14min00secE808.9m; longitude passed west-negative to NASA code",
+    "elevation_m": 808.9,
+    "id": "jerusalem_nasa_city_point",
+    "label": "Jerusalem representative point; not an all-Israel visibility footprint",
+    "latitude_deg_north": 31.766666666666666,
+    "longitude_deg_east": 35.233333333333334,
+    "source": "https://eclipse.gsfc.nasa.gov/JSEX/city-as.js"
+  },
+  "plan_sha256": "06889237c38e2f6ca7820c8a1ff84553565f6fc8b6e20613ce50bd986cbeabc4",
+  "schema_version": 1,
+  "source_manifest_sha256": "6bcb818012b7c08f3a1449a36987c7a22777392ae4476b4077bf3c1d50078d63",
+  "source_model_versions": {
+    "lunar_elements": "Espenak and Meeus, April 2007",
+    "lunar_program": "JLEX Version 1, 23 May 2007",
+    "solar_elements": "NASA/TP-2006-214141, October 2006",
+    "solar_program": "JSEX Version 1, 2007"
+  },
+  "source_pins_sha256": "99eb73a0e83088d9c943f041501dbb16dce581bc8ef6d3c7288196818eb876b4",
+  "source_urls": {
+    "JLEX/LE1801.js": "https://eclipse.gsfc.nasa.gov/JLEX/LE1801.js",
+    "JLEX/LE1901.js": "https://eclipse.gsfc.nasa.gov/JLEX/LE1901.js",
+    "JLEX/LE2001.js": "https://eclipse.gsfc.nasa.gov/JLEX/LE2001.js",
+    "JLEX/program.js": "https://eclipse.gsfc.nasa.gov/JLEX/program.js",
+    "JSEX/SE1801.js": "https://eclipse.gsfc.nasa.gov/JSEX/SE1801.js",
+    "JSEX/SE1901.js": "https://eclipse.gsfc.nasa.gov/JSEX/SE1901.js",
+    "JSEX/SE2001.js": "https://eclipse.gsfc.nasa.gov/JSEX/SE2001.js",
+    "JSEX/city-as.js": "https://eclipse.gsfc.nasa.gov/JSEX/city-as.js",
+    "JSEX/program.js": "https://eclipse.gsfc.nasa.gov/JSEX/program.js",
+    "LEcat5/LE1801-1900.html": "https://eclipse.gsfc.nasa.gov/LEcat5/LE1801-1900.html",
+    "LEcat5/LE1901-2000.html": "https://eclipse.gsfc.nasa.gov/LEcat5/LE1901-2000.html",
+    "LEcat5/LE2001-2100.html": "https://eclipse.gsfc.nasa.gov/LEcat5/LE2001-2100.html",
+    "SEcat5/SE1801-1900.html": "https://eclipse.gsfc.nasa.gov/SEcat5/SE1801-1900.html",
+    "SEcat5/SE1901-2000.html": "https://eclipse.gsfc.nasa.gov/SEcat5/SE1901-2000.html",
+    "SEcat5/SE2001-2100.html": "https://eclipse.gsfc.nasa.gov/SEcat5/SE2001-2100.html",
+    "validation/lunar2006.pdf": "https://eclipse.gsfc.nasa.gov/LEplot/LEplot2001/LE2006Sep07P.pdf",
+    "validation/lunar2015.pdf": "https://eclipse.gsfc.nasa.gov/LEplot/LEplot2001/LE2015Sep28T.pdf",
+    "validation/lunar2020.pdf": "https://eclipse.gsfc.nasa.gov/LEplot/LEplot2001/LE2020Jan10N.pdf",
+    "validation/solar2006.html": "https://eclipse.gsfc.nasa.gov/SEmono/TSE2006/TSE2006tab/TSE2006-tab16.html"
+  },
+  "status": "validated pinned model snapshot",
+  "time": {
+    "calendar": "Gregorian throughout1900-2100",
+    "catalog_time_scale": "TD/TT as published",
+    "contact_time_scale": "Modeled Universal Time (UT1): source TD minus source delta-T. Explicit UT1 fields without a false exact-UTC label; not leap-second-aware UTC.",
+    "daylight_saving": false,
+    "midnight": "Each contact gets its own full Gregorian date. Source lunar display date is P1; catalog identity date is greatest TD. Keep both without merging dates.",
+    "rounding": "Use underlying contact offsets without NASA display rounding (+0.5second solar/+30seconds lunar). Serialize modeled contact seconds; report source precision and validation limits.",
+    "timezone_hours": 0
+  },
+  "validation_status": "passed"
+}

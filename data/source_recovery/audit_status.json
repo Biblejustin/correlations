@@ -1,0 +1,25 @@
+{
+  "active_observations_mutated": false,
+  "eligibility_rules_changed": false,
+  "failed_requests": [
+    "ipc_api",
+    "wfp_legacy_datastore"
+  ],
+  "ipc_geography_certified": false,
+  "ipc_resources_checked": 3,
+  "outputs": {
+    "discovery_results.json": "577eb15404d95b192f34728dc3165927d8fc43b1c3961bc772e4a99ce1baad7c",
+    "exact_pair_coverage.csv": "17bb0b82f15eba485d9e52aabd421e942bb616a38e28948f026e8fb4b3355231",
+    "global_baseline_target_rows.csv.gz": "fe85f6ddbafdf298fe690262328286d65f024e62af4f1d86ccff4a503a51a470",
+    "global_quote_differences_eth.csv": "0e833fd5a8a1bc148cd6b6904906eef690cb30de73d48639aeb8e8b42f7b0aeb",
+    "global_quote_differences_yem.csv": "0e833fd5a8a1bc148cd6b6904906eef690cb30de73d48639aeb8e8b42f7b0aeb",
+    "ipc_schema_audit.json": "cdb04c73a9bd51346f22a04cf0589067cc12173a54febfa257c6b2419ba2fb45",
+    "legacy_target_country_rows.csv.gz": "c4b97b0fadd330896ca36852833094cf6a60fc8140397692e0bb2fad15f0e0d7",
+    "resource_inventory.csv": "3cdecc28461838b487b32a2e8d1ae87eb4977145f85a974f147b842f3ec82dbc",
+    "wage_coverage.csv": "0621ca487aa8d4d412be7992d03cc0b4d890030fed5f05ebaef83f8294f83e56"
+  },
+  "schema_version": 1,
+  "scope": "Bounded public-source discovery; absence in searched sources is not universal absence.",
+  "wfp_current_baseline_eligible_series": 0,
+  "wfp_exact_series_checked": 158
+}
