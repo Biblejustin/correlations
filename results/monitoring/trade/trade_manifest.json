@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-09-06T08:19:17.460529-05:00",
+  "as_of": "2026-09-07T06:39:46.826032-05:00",
   "eligible_fits": 6,
   "interpretation": "Historical exploratory associations; repeated shipping exposures and common crisis shocks limit causal interpretation. Official FX may differ from market rates. Pointwise slope intervals are not simultaneous.",
-  "observation_fingerprint": "65f3af4d525584ba9842cb18670cb85b7985d92021cd1a63e1913beac20e3f3d",
+  "observation_fingerprint": "8c9bac5df0eaed6845966f9d57bd0271bba333eaa8de089009590da442a3ff9d",
   "outputs": {
     "cereal_dependence.csv": {
       "rows": 110,
@@ -13,12 +13,12 @@
       "sha256": "30919d16ba937de2f508c51dd81cf4d41e2d1258ca577f4e1cde4d48c6674551"
     },
     "food_members.csv": {
-      "rows": 1433,
-      "sha256": "04298d5a8b0d9398b60753d619eb1c68938700dcf7648b09fcf39a6dbdfa6a93"
+      "rows": 1434,
+      "sha256": "615434145d20b2aad0d8b2d60217f5359624d7d6be9e5f7cbccd42346bdb4b8c"
     },
     "food_monthly.csv": {
       "rows": 1120,
-      "sha256": "1e9fa1fc34fae77424d37a4777817ea27e6e53188f4377c3d096b7b9e14022b7"
+      "sha256": "59b14b19ef1a98f533feac1c22096f45f7f4e5c445cb560e89b0ba9dfc3f3ff7"
     },
     "official_fx_monthly.csv": {
       "rows": 1120,
@@ -30,7 +30,7 @@
     },
     "trade_food_tests.csv": {
       "rows": 192,
-      "sha256": "10b5ddba67a778cde33a5d807bf97503f02ed4715fdd5828636420d512d9e991"
+      "sha256": "3b9f9dbc6f4d3145ee7481825a301af2d4f7462154da1074f20d0625b786acb9"
     }
   },
   "passing_cells": 0,
@@ -38,20 +38,20 @@
   "plan_sha256": "869b45de8bca7f9925bfd950d1b5585f135a231e4e3f931ff6623c6d9bab645c",
   "planned_fits": 192,
   "plot_sha256": "f92b55e0af3e16eed13c6c13e9e0dcb1cfd19aa20d3ea557c6ba501cb9cf0479",
-  "report_sha256": "fbb89d621a06c66b61caf666804e6a2fdd8fa083f9ce2a0ff3416eaafad97a55",
+  "report_sha256": "75d7c83acc07dd11998bcca7ca24db9e4f3f6f271583abb3c99dc5e8f7045d02",
   "schema_version": 1,
   "source_manifests": {
     "climate": {
-      "sha256": "abe9fb3f25d7b1b7f0b2244ea70a14d54d656a23a842f527655f6954b645ac93",
+      "sha256": "43906594cc4deef137d1a1d20ac8a09c46bd6b4a59feb681fe01aff77d8c518e",
       "snapshot_id": "4a03e4ff6e8e63b2909c5843c4ef4a565a3ebe873d08a8fb8bfca3a0b52b8811"
     },
     "economic": {
-      "sha256": "0d0a04acf57145f68e942adb3306f192802559e463fce002a574bd0ce7517514",
-      "snapshot_id": "6625ff128975d0509a8e553db045343b34a8862f501c9d8b3995cd358f74c992"
+      "sha256": "addb2f0ffc9fa08f815c15ce3af5b7c47d9dff5efccefeedd2df49767ec328df",
+      "snapshot_id": "75c16c5167987188e3f593e573d7d012843f2bd5d6a4bb9986b0ebe0dc05ba18"
     },
     "shipping": {
-      "sha256": "fce628b49f70763ca6d239830337cac3b9d818c7f645cf65d94bef277ed6df66",
-      "snapshot_id": "da6736637ab866269c2a7fe8c184f141f54b00c1c2169e627f2f1f6cb91b3518"
+      "sha256": "e627489597d603e53a6d6e5f291ea36dd8086b3a149a0760e7c71c0e40caabeb",
+      "snapshot_id": "b0235be1013fc3bb010943795afe7e606c388207fc00286745c6a9e382cc079d"
     }
   }
 }

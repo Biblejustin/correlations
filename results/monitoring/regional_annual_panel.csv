@@ -916,7 +916,7 @@ LBN,2018,population,5984119.0,people,1,source country definition,True,
 LBN,2018,refugees_origin_stock,5620.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2018,refugees_origin_stock_change,319.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 LBN,2018,religious_freedom,1.116,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-LBN,2018,retail_staple_price_yoy_pct,-0.14781840601634902,percent year-on-year,9,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+LBN,2018,retail_staple_price_yoy_pct,-0.22156102664170196,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 LBN,2018,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2019,asylum_seekers_origin_stock,8032.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2019,conflict_battle_deaths,0.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -931,7 +931,7 @@ LBN,2019,population,5794594.0,people,1,source country definition,True,
 LBN,2019,refugees_origin_stock,5647.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2019,refugees_origin_stock_change,27.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 LBN,2019,religious_freedom,1.116,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-LBN,2019,retail_staple_price_yoy_pct,-3.182083177707747,percent year-on-year,9,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+LBN,2019,retail_staple_price_yoy_pct,-0.7347894955777334,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 LBN,2019,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2020,asylum_seekers_origin_stock,7964.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2020,conflict_battle_deaths,20.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -946,7 +946,7 @@ LBN,2020,population,5702398.0,people,1,source country definition,True,
 LBN,2020,refugees_origin_stock,5495.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2020,refugees_origin_stock_change,-152.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 LBN,2020,religious_freedom,1.282,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-LBN,2020,retail_staple_price_yoy_pct,154.65334120847615,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+LBN,2020,retail_staple_price_yoy_pct,167.22739016690525,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 LBN,2020,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2021,asylum_seekers_origin_stock,8873.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2021,conflict_battle_deaths,0.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -963,7 +963,7 @@ LBN,2021,population,5718122.0,people,1,source country definition,True,
 LBN,2021,refugees_origin_stock,6061.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2021,refugees_origin_stock_change,566.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 LBN,2021,religious_freedom,1.47,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-LBN,2021,retail_staple_price_yoy_pct,362.0732237021505,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+LBN,2021,retail_staple_price_yoy_pct,360.5091990518739,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 LBN,2021,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2022,asylum_seekers_origin_stock,10289.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2022,conflict_battle_deaths,0.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -977,7 +977,7 @@ LBN,2022,population,5744489.0,people,1,source country definition,True,
 LBN,2022,refugees_origin_stock,6794.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2022,refugees_origin_stock_change,733.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 LBN,2022,religious_freedom,1.316,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-LBN,2022,retail_staple_price_yoy_pct,189.72317965054953,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+LBN,2022,retail_staple_price_yoy_pct,188.57608248492275,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 LBN,2022,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2023,asylum_seekers_origin_stock,9793.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2023,conflict_battle_deaths,123.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1140,7 +1140,7 @@ PSE,2018,internally_displaced_year_end_stock,237556.0,people,1,IDMC source-count
 PSE,2018,population,4569087.0,people,1,source country definition,True,
 PSE,2018,refugees_origin_stock,100728.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2018,refugees_origin_stock_change,1098.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
-PSE,2018,retail_staple_price_yoy_pct,1.241405862819802,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+PSE,2018,retail_staple_price_yoy_pct,1.3376500896280235,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 PSE,2018,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2019,asylum_seekers_origin_stock,11537.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2019,internal_displacements_flow,1516.0,displacement movements,1,IDMC source-country territory,False,"New displacements count movements, including repeated movements by one person. Year-end stock counts people. Annual export and separate disaster-event export are not interchangeable. Geography/cause comparability not certified for cross-source inference. Missing years/counts remain missing."
@@ -1148,7 +1148,7 @@ PSE,2019,internally_displaced_year_end_stock,243355.0,people,1,IDMC source-count
 PSE,2019,population,4685306.0,people,1,source country definition,True,
 PSE,2019,refugees_origin_stock,96253.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2019,refugees_origin_stock_change,-4475.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
-PSE,2019,retail_staple_price_yoy_pct,4.389477847121673,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+PSE,2019,retail_staple_price_yoy_pct,4.314346766504534,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 PSE,2019,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2020,asylum_seekers_origin_stock,12456.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2020,internal_displacements_flow,1001.0,displacement movements,1,IDMC source-country territory,False,"New displacements count movements, including repeated movements by one person. Year-end stock counts people. Annual export and separate disaster-event export are not interchangeable. Geography/cause comparability not certified for cross-source inference. Missing years/counts remain missing."
@@ -1156,7 +1156,7 @@ PSE,2020,internally_displaced_year_end_stock,131082.0,people,1,IDMC source-count
 PSE,2020,population,4803269.0,people,1,source country definition,True,
 PSE,2020,refugees_origin_stock,100153.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2020,refugees_origin_stock_change,3900.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
-PSE,2020,retail_staple_price_yoy_pct,-1.015188361170731,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+PSE,2020,retail_staple_price_yoy_pct,-1.0317758108847355,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 PSE,2020,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2021,asylum_seekers_origin_stock,9645.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2021,internal_displacements_flow,118211.0,displacement movements,1,IDMC source-country territory,False,"New displacements count movements, including repeated movements by one person. Year-end stock counts people. Annual export and separate disaster-event export are not interchangeable. Geography/cause comparability not certified for cross-source inference. Missing years/counts remain missing."
@@ -1164,7 +1164,7 @@ PSE,2021,internally_displaced_year_end_stock,11711.0,people,1,IDMC source-countr
 PSE,2021,population,4922749.0,people,1,source country definition,True,
 PSE,2021,refugees_origin_stock,103581.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2021,refugees_origin_stock_change,3428.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
-PSE,2021,retail_staple_price_yoy_pct,1.7331993990334165,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+PSE,2021,retail_staple_price_yoy_pct,1.715771927483388,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 PSE,2021,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2022,asylum_seekers_origin_stock,11295.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 PSE,2022,internal_displacements_flow,1794.0,displacement movements,1,IDMC source-country territory,False,"New displacements count movements, including repeated movements by one person. Year-end stock counts people. Annual export and separate disaster-event export are not interchangeable. Geography/cause comparability not certified for cross-source inference. Missing years/counts remain missing."
@@ -1272,7 +1272,6 @@ SDN,2007,population,32764135.0,people,1,source country definition,True,
 SDN,2007,refugees_origin_stock,523029.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2007,refugees_origin_stock_change,-163267.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2007,religious_freedom,-1.229,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2007,retail_staple_price_yoy_pct,-30.859591352624754,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2007,returned_refugees_flow,130682.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2008,asylum_seekers_origin_stock,18073.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2008,conflict_battle_deaths,620.0,deaths,1,Sudan source borders before South Sudan independence,False,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1283,7 +1282,6 @@ SDN,2008,population,33623980.0,people,1,source country definition,True,
 SDN,2008,refugees_origin_stock,419249.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2008,refugees_origin_stock_change,-103780.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2008,religious_freedom,-1.229,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2008,retail_staple_price_yoy_pct,82.1624979278856,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2008,returned_refugees_flow,90084.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2009,asylum_seekers_origin_stock,16901.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2009,conflict_battle_deaths,373.0,deaths,1,Sudan source borders before South Sudan independence,False,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1296,7 +1294,7 @@ SDN,2009,population,34569113.0,people,1,source country definition,True,
 SDN,2009,refugees_origin_stock,368178.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2009,refugees_origin_stock_change,-51071.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2009,religious_freedom,-1.229,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2009,retail_staple_price_yoy_pct,47.45563820974492,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2009,retail_staple_price_yoy_pct,37.98279195788718,percent year-on-year,9,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2009,returned_refugees_flow,33135.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2010,asylum_seekers_origin_stock,23699.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2010,conflict_battle_deaths,1056.0,deaths,1,Sudan source borders before South Sudan independence,False,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1309,7 +1307,7 @@ SDN,2010,population,35414399.0,people,1,source country definition,True,
 SDN,2010,refugees_origin_stock,387265.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2010,refugees_origin_stock_change,19087.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2010,religious_freedom,-1.229,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2010,retail_staple_price_yoy_pct,23.745968536743995,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2010,retail_staple_price_yoy_pct,23.806206942677782,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2010,returned_refugees_flow,7064.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2011,asylum_seekers_origin_stock,31447.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2011,conflict_battle_deaths,1404.0,deaths,1,Sudan source borders before South Sudan independence,False,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1322,7 +1320,7 @@ SDN,2011,population,36140806.0,people,1,source country definition,True,
 SDN,2011,refugees_origin_stock,500004.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2011,refugees_origin_stock_change,112739.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2011,religious_freedom,-1.229,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2011,retail_staple_price_yoy_pct,-3.7362228937909143,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2011,retail_staple_price_yoy_pct,0.18568930752614218,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2011,returned_refugees_flow,50070.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2012,asylum_seekers_origin_stock,21521.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2012,conflict_battle_deaths,1411.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1353,7 +1351,7 @@ SDN,2013,population,37785849.0,people,1,source country definition,True,
 SDN,2013,refugees_origin_stock,648936.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2013,refugees_origin_stock_change,80002.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2013,religious_freedom,-0.883,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2013,retail_staple_price_yoy_pct,12.561788415846584,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2013,retail_staple_price_yoy_pct,12.885470092183269,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2013,returned_refugees_flow,16949.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2014,asylum_seekers_origin_stock,36027.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2014,conflict_battle_deaths,849.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1369,7 +1367,7 @@ SDN,2014,population,38823318.0,people,1,source country definition,True,
 SDN,2014,refugees_origin_stock,665956.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2014,refugees_origin_stock_change,17020.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2014,religious_freedom,-0.883,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2014,retail_staple_price_yoy_pct,45.63667979115769,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2014,retail_staple_price_yoy_pct,46.98910695864863,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2014,returned_refugees_flow,13140.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2015,asylum_seekers_origin_stock,42909.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2015,conflict_battle_deaths,1264.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1385,7 +1383,6 @@ SDN,2015,population,40024431.0,people,1,source country definition,True,
 SDN,2015,refugees_origin_stock,627080.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2015,refugees_origin_stock_change,-38876.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2015,religious_freedom,-0.883,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2015,retail_staple_price_yoy_pct,-13.122319572562802,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2015,returned_refugees_flow,39491.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2016,asylum_seekers_origin_stock,50469.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2016,conflict_battle_deaths,1316.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1401,7 +1398,7 @@ SDN,2016,population,41259892.0,people,1,source country definition,True,
 SDN,2016,refugees_origin_stock,650391.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2016,refugees_origin_stock_change,23311.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2016,religious_freedom,-1.028,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2016,retail_staple_price_yoy_pct,32.498318014319295,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2016,retail_staple_price_yoy_pct,33.37055823258451,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2016,returned_refugees_flow,37215.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2017,asylum_seekers_origin_stock,52191.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2017,conflict_battle_deaths,166.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1417,7 +1414,7 @@ SDN,2017,population,42714306.0,people,1,source country definition,True,
 SDN,2017,refugees_origin_stock,694556.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2017,refugees_origin_stock_change,44165.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2017,religious_freedom,-1.181,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2017,retail_staple_price_yoy_pct,14.150453392633718,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2017,retail_staple_price_yoy_pct,14.173813743738057,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2017,returned_refugees_flow,11675.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2018,asylum_seekers_origin_stock,67433.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2018,conflict_battle_deaths,254.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1433,7 +1430,7 @@ SDN,2018,population,44230596.0,people,1,source country definition,True,
 SDN,2018,refugees_origin_stock,724787.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2018,refugees_origin_stock_change,30231.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2018,religious_freedom,-1.223,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2018,retail_staple_price_yoy_pct,143.49671235355456,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2018,retail_staple_price_yoy_pct,143.80040973087097,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2018,returned_refugees_flow,1804.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2019,asylum_seekers_origin_stock,72017.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2019,conflict_battle_deaths,23.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1449,7 +1446,7 @@ SDN,2019,population,45548175.0,people,1,source country definition,True,
 SDN,2019,refugees_origin_stock,734780.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2019,refugees_origin_stock_change,9993.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2019,religious_freedom,-0.988,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2019,retail_staple_price_yoy_pct,64.51703663168733,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2019,retail_staple_price_yoy_pct,66.50090521715515,percent year-on-year,9,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2019,returned_refugees_flow,2191.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2020,asylum_seekers_origin_stock,70049.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2020,conflict_battle_deaths,48.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1465,7 +1462,7 @@ SDN,2020,population,46789231.0,people,1,source country definition,True,
 SDN,2020,refugees_origin_stock,787823.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2020,refugees_origin_stock_change,53043.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2020,religious_freedom,-0.988,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2020,retail_staple_price_yoy_pct,191.53417112696175,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2020,retail_staple_price_yoy_pct,193.52377326083322,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2020,returned_refugees_flow,30.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2021,asylum_seekers_origin_stock,75164.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2021,conflict_battle_deaths,31.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1481,7 +1478,7 @@ SDN,2021,population,48066924.0,people,1,source country definition,True,
 SDN,2021,refugees_origin_stock,825290.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2021,refugees_origin_stock_change,37467.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2021,religious_freedom,-1.07,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2021,retail_staple_price_yoy_pct,103.16743794374656,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2021,retail_staple_price_yoy_pct,101.72871599085205,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2021,returned_refugees_flow,33.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2022,asylum_seekers_origin_stock,86838.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2022,conflict_battle_deaths,54.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1497,7 +1494,7 @@ SDN,2022,population,49383346.0,people,1,source country definition,True,
 SDN,2022,refugees_origin_stock,837188.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2022,refugees_origin_stock_change,11898.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SDN,2022,religious_freedom,-0.971,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SDN,2022,retail_staple_price_yoy_pct,178.93071525691423,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SDN,2022,retail_staple_price_yoy_pct,181.74098988336553,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SDN,2022,returned_refugees_flow,12313.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2023,asylum_seekers_origin_stock,253902.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SDN,2023,conflict_battle_deaths,11760.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -1824,7 +1821,7 @@ SOM,2019,population,16030971.0,people,1,source country definition,True,
 SOM,2019,refugees_origin_stock,901596.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SOM,2019,refugees_origin_stock_change,-48041.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 SOM,2019,religious_freedom,-1.979,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-SOM,2019,retail_staple_price_yoy_pct,0.3733436908649635,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+SOM,2019,retail_staple_price_yoy_pct,0.36669639157644407,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 SOM,2019,returned_refugees_flow,6241.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SOM,2020,asylum_seekers_origin_stock,53824.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 SOM,2020,conflict_battle_deaths,1945.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -2127,7 +2124,7 @@ UKR,2015,population,45784896.0,people,1,source country definition,True,
 UKR,2015,refugees_origin_stock,321399.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2015,refugees_origin_stock_change,83782.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 UKR,2015,religious_freedom,0.875,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-UKR,2015,retail_staple_price_yoy_pct,88.87914831403081,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+UKR,2015,retail_staple_price_yoy_pct,89.1615903776708,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 UKR,2015,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2016,asylum_seekers_origin_stock,34638.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2016,conflict_battle_deaths,699.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -2143,7 +2140,7 @@ UKR,2016,population,45616832.0,people,1,source country definition,True,
 UKR,2016,refugees_origin_stock,239062.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2016,refugees_origin_stock_change,-82337.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 UKR,2016,religious_freedom,0.875,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-UKR,2016,retail_staple_price_yoy_pct,7.237124719275976,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+UKR,2016,retail_staple_price_yoy_pct,7.1102236084560015,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 UKR,2016,returned_refugees_flow,6.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2017,asylum_seekers_origin_stock,37670.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2017,conflict_battle_deaths,447.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -2159,7 +2156,7 @@ UKR,2017,population,45436041.0,people,1,source country definition,True,
 UKR,2017,refugees_origin_stock,139581.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2017,refugees_origin_stock_change,-99481.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 UKR,2017,religious_freedom,1.024,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-UKR,2017,retail_staple_price_yoy_pct,7.185812871660226,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+UKR,2017,retail_staple_price_yoy_pct,7.126482057735946,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 UKR,2017,returned_refugees_flow,5.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2018,asylum_seekers_origin_stock,31965.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 UKR,2018,conflict_battle_deaths,243.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -2549,7 +2546,7 @@ YEM,2018,population,34085182.0,people,1,source country definition,True,
 YEM,2018,refugees_origin_stock,31145.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2018,refugees_origin_stock_change,7590.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 YEM,2018,religious_freedom,-3.22,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-YEM,2018,retail_staple_price_yoy_pct,37.40123718846125,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+YEM,2018,retail_staple_price_yoy_pct,37.91547830890615,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 YEM,2018,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2019,asylum_seekers_origin_stock,34328.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2019,conflict_battle_deaths,2641.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -2565,7 +2562,7 @@ YEM,2019,population,35111408.0,people,1,source country definition,True,
 YEM,2019,refugees_origin_stock,36522.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2019,refugees_origin_stock_change,5377.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 YEM,2019,religious_freedom,-3.22,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-YEM,2019,retail_staple_price_yoy_pct,14.233834792575731,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+YEM,2019,retail_staple_price_yoy_pct,14.013239916995134,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 YEM,2019,returned_refugees_flow,5.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2020,asylum_seekers_origin_stock,34870.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2020,conflict_battle_deaths,6311.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -2581,7 +2578,7 @@ YEM,2020,population,36134863.0,people,1,source country definition,True,
 YEM,2020,refugees_origin_stock,32433.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2020,refugees_origin_stock_change,-4089.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 YEM,2020,religious_freedom,-3.22,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-YEM,2020,retail_staple_price_yoy_pct,12.965170545758816,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+YEM,2020,retail_staple_price_yoy_pct,12.887177084613702,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 YEM,2020,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2021,asylum_seekers_origin_stock,35462.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2021,conflict_battle_deaths,23369.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -2597,7 +2594,7 @@ YEM,2021,population,37140230.0,people,1,source country definition,True,
 YEM,2021,refugees_origin_stock,37615.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2021,refugees_origin_stock_change,5182.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 YEM,2021,religious_freedom,-2.91,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-YEM,2021,retail_staple_price_yoy_pct,34.724810058826414,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+YEM,2021,retail_staple_price_yoy_pct,34.38702529247005,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 YEM,2021,returned_refugees_flow,219.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2022,asylum_seekers_origin_stock,33524.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2022,conflict_battle_deaths,2940.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -2613,7 +2610,7 @@ YEM,2022,population,38222876.0,people,1,source country definition,True,
 YEM,2022,refugees_origin_stock,40147.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2022,refugees_origin_stock_change,2532.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 YEM,2022,religious_freedom,-2.693,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-YEM,2022,retail_staple_price_yoy_pct,36.70516886383753,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+YEM,2022,retail_staple_price_yoy_pct,36.805312280284355,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 YEM,2022,returned_refugees_flow,7.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2023,asylum_seekers_origin_stock,33521.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2023,conflict_battle_deaths,816.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -2629,7 +2626,7 @@ YEM,2023,population,39390799.0,people,1,source country definition,True,
 YEM,2023,refugees_origin_stock,48044.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2023,refugees_origin_stock_change,7897.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 YEM,2023,religious_freedom,-2.889,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-YEM,2023,retail_staple_price_yoy_pct,-5.480653773374747,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+YEM,2023,retail_staple_price_yoy_pct,-5.640355953736909,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 YEM,2023,returned_refugees_flow,11.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2024,asylum_seekers_origin_stock,32810.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 YEM,2024,conflict_battle_deaths,936.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.

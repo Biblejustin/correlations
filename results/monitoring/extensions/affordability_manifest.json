@@ -2,7 +2,7 @@
   "aggregate_label": "fixed monitored-market purchasing-power index",
   "ambiguity_rule": "Exclude market/commodity with multiple baseline-eligible exact identities from basket; keep individual-series results.",
   "annual_method": "geometric mean of all 12 monthly values; exact previous complete year only",
-  "as_of": "2026-09-06",
+  "as_of": "2026-09-07",
   "baseline_years": [
     2015,
     2019
@@ -35,5 +35,5 @@
   "quarantine_scope": "Derived ratio observations only; raw quotes without a valid matching daily wage are not candidate ratios.",
   "quarantined_rows": 0,
   "schema_version": 1,
-  "valid_monthly_observations": 7474
+  "valid_monthly_observations": 7783
 }

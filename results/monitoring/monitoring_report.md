@@ -1,6 +1,6 @@
 # Regional monitoring
 
-Generated 2026-09-06. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-09-07. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
@@ -11,7 +11,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | ucdp | 728 | 2025-12-31 | — |
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
-| wfp | 101,755 | 2026-07-31 | — |
+| wfp | 103,671 | 2026-08-31 | — |
 | who | 2,622 | 2026-08-23 | — |
 | worldbank | 208 | 2025-12-31 | — |
 
@@ -28,7 +28,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | SOM | 2026-04-01–2026-06-30 | 31.0% | 19,442,156 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
 | YEM | 2026-03-01–2026-05-31 | 47.0% | 10,479,422 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
 
-Food affordability: 7,474 matched market/staple/month observations. Units: kg per daily non-qualified labor wage. No affordability estimate where matching wages are absent.
+Food affordability: 7,783 matched market/staple/month observations. Units: kg per daily non-qualified labor wage. No affordability estimate where matching wages are absent.
 
 ## Latest annual conflict and displacement observations
 

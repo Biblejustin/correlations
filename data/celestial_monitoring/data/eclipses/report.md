@@ -1,6 +1,6 @@
 # NASA eclipse monitor
 
-As of 2026-09-06. Complete modeled catalog for 1900–2100; one fixed Jerusalem point at 31°46′N, 35°14′E, source elevation 808.9 m. This point does not describe all-Israel visibility. Original selected historical CSV remains separate.
+As of 2026-09-07. Complete modeled catalog for 1900–2100; one fixed Jerusalem point at 31°46′N, 35°14′E, source elevation 808.9 m. This point does not describe all-Israel visibility. Original selected historical CSV remains separate.
 
 | Model family | Global catalog events | Jerusalem-visible geometry |
 |---|---:|---:|
