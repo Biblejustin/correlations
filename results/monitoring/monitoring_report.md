@@ -1,6 +1,6 @@
 # Regional monitoring
 
-Generated 2026-09-07. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-09-08. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
@@ -12,7 +12,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
 | wfp | 103,671 | 2026-08-31 | — |
-| who | 2,622 | 2026-08-23 | — |
+| who | 2,623 | 2026-08-23 | — |
 | worldbank | 208 | 2025-12-31 | — |
 
 ## Food security: latest current assessment
@@ -70,7 +70,7 @@ IDMC annual GIDD export via HDX. Flows count displacement movements; one person 
 | UKR | 2026-08-17–2026-08-23 | 0 | 30 | 0.0% |
 | SDN | unavailable | — | — | — |
 | ETH | 2026-08-17–2026-08-23 | 3 | 104 | 2.9% |
-| SOM | 2026-07-13–2026-07-19 | 6 | 26 | 23.1% |
+| SOM | 2026-07-27–2026-08-02 | 1 | 44 | 2.3% |
 | YEM | 2026-06-15–2026-06-21 | 1 | 44 | 2.3% |
 
 WHO sentinel samples require at least 20 specimens. Provisional surveillance observations; positivity is not population prevalence. Missing/non-sentinel weeks are not substituted.

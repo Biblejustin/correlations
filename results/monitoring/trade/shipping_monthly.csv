@@ -90,7 +90,7 @@ Suez Canal,suez_transit_decline_yoy,2026-04,30,30,True,1420024.8666666667,eligib
 Suez Canal,suez_transit_decline_yoy,2026-05,31,31,True,1499580.4838709678,eligible,-0.12068993157852992
 Suez Canal,suez_transit_decline_yoy,2026-06,30,30,True,1586798.9666666666,eligible,-0.29090457558501503
 Suez Canal,suez_transit_decline_yoy,2026-07,31,31,True,1599606.2903225806,eligible,-0.15415590828300196
-Suez Canal,suez_transit_decline_yoy,2026-08,30,31,False,,reporting lag,
+Suez Canal,suez_transit_decline_yoy,2026-08,30,31,True,,incomplete or invalid daily coverage,
 Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-01,31,31,True,2335755.5161290322,eligible,
 Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-02,28,28,True,2473411.1428571427,eligible,
 Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2019-03,31,31,True,2349222.6774193547,eligible,
@@ -182,7 +182,7 @@ Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-04,30,30,True,1399616.5,eli
 Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-05,31,31,True,1353753.1935483871,eligible,-0.1669324957160092
 Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-06,30,30,True,1414715.3,eligible,-0.2672779071786078
 Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-07,31,31,True,1297705.935483871,eligible,-0.15046026979856775
-Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-08,30,31,False,,reporting lag,
+Bab el-Mandeb,bab_el_mandeb_transit_decline_yoy,2026-08,30,31,True,,incomplete or invalid daily coverage,
 Strait of Hormuz,hormuz_transit_decline_yoy,2019-01,31,31,True,2199497.6129032257,eligible,
 Strait of Hormuz,hormuz_transit_decline_yoy,2019-02,28,28,True,1956705.142857143,eligible,
 Strait of Hormuz,hormuz_transit_decline_yoy,2019-03,31,31,True,2247114.4516129033,eligible,
@@ -274,4 +274,4 @@ Strait of Hormuz,hormuz_transit_decline_yoy,2026-04,30,30,True,175518.0333333333
 Strait of Hormuz,hormuz_transit_decline_yoy,2026-05,31,31,True,112035.70967741935,eligible,0.9702211814694788
 Strait of Hormuz,hormuz_transit_decline_yoy,2026-06,30,30,True,441498.8,eligible,0.884824810582386
 Strait of Hormuz,hormuz_transit_decline_yoy,2026-07,31,31,True,373462.70967741933,eligible,0.8968141474625426
-Strait of Hormuz,hormuz_transit_decline_yoy,2026-08,30,31,False,,reporting lag,
+Strait of Hormuz,hormuz_transit_decline_yoy,2026-08,30,31,True,,incomplete or invalid daily coverage,

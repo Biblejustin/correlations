@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-09-07T06:39:46.826032-05:00",
+  "as_of": "2026-09-08T06:37:15.001262-05:00",
   "eligible_fits": 6,
   "interpretation": "Historical exploratory associations; repeated shipping exposures and common crisis shocks limit causal interpretation. Official FX may differ from market rates. Pointwise slope intervals are not simultaneous.",
-  "observation_fingerprint": "8c9bac5df0eaed6845966f9d57bd0271bba333eaa8de089009590da442a3ff9d",
+  "observation_fingerprint": "5fb86677ea521f89f4b05ebd2de1479f75b10e9a127af4d93a57af780d9bb170",
   "outputs": {
     "cereal_dependence.csv": {
       "rows": 110,
@@ -26,7 +26,7 @@
     },
     "shipping_monthly.csv": {
       "rows": 276,
-      "sha256": "af638d9d3f33bc44de5d25a0fea57d2e3a4f56337106d93fe99109a580d1b20d"
+      "sha256": "01ce28da614e9d281ddefc042da3d2231896272ff53dd1ae8cc82ac5ee2a9a9f"
     },
     "trade_food_tests.csv": {
       "rows": 192,
@@ -38,20 +38,20 @@
   "plan_sha256": "869b45de8bca7f9925bfd950d1b5585f135a231e4e3f931ff6623c6d9bab645c",
   "planned_fits": 192,
   "plot_sha256": "f92b55e0af3e16eed13c6c13e9e0dcb1cfd19aa20d3ea557c6ba501cb9cf0479",
-  "report_sha256": "75d7c83acc07dd11998bcca7ca24db9e4f3f6f271583abb3c99dc5e8f7045d02",
+  "report_sha256": "f2d2ceba95e12eb69f497ec51283954732802a5560510fa04221b78811cfce5e",
   "schema_version": 1,
   "source_manifests": {
     "climate": {
-      "sha256": "43906594cc4deef137d1a1d20ac8a09c46bd6b4a59feb681fe01aff77d8c518e",
+      "sha256": "a5ce5b7f23fb481343a1d057554b221403cc6442f3bdba182e8149ae0139c11c",
       "snapshot_id": "4a03e4ff6e8e63b2909c5843c4ef4a565a3ebe873d08a8fb8bfca3a0b52b8811"
     },
     "economic": {
-      "sha256": "addb2f0ffc9fa08f815c15ce3af5b7c47d9dff5efccefeedd2df49767ec328df",
+      "sha256": "9ae7d0fca60bb0aabc8b33b7658f741d1084dbb09eee33e73f45980dc04d6dc4",
       "snapshot_id": "75c16c5167987188e3f593e573d7d012843f2bd5d6a4bb9986b0ebe0dc05ba18"
     },
     "shipping": {
-      "sha256": "e627489597d603e53a6d6e5f291ea36dd8086b3a149a0760e7c71c0e40caabeb",
-      "snapshot_id": "b0235be1013fc3bb010943795afe7e606c388207fc00286745c6a9e382cc079d"
+      "sha256": "fb8ea5ab88f94b5beaa81ff9a1c3590cbd5313f0057c612e6e2e646dfbb68f53",
+      "snapshot_id": "23ca1cd3f09f0c5b5726dc3415ba0019c262c87f262a8070a34475a513943e9c"
     }
   }
 }

@@ -1,0 +1,4 @@
+portid,portname,chokepoint,expected_days,source_rows,first_source_date,last_source_date,missing_days,null_volume_days,usable_days,latest_expected_eligible_date,ais_reception_coverage,status
+chokepoint1,Suez Canal,Suez Canal,2808,2799,2019-01-01,2026-08-30,9,0,2799,2026-08-31,unverified,observed route; missing periods retained
+chokepoint4,Bab el-Mandeb Strait,Bab el-Mandeb,2808,2799,2019-01-01,2026-08-30,9,0,2799,2026-08-31,unverified,observed route; missing periods retained
+chokepoint6,Strait of Hormuz,Strait of Hormuz,2808,2799,2019-01-01,2026-08-30,9,0,2799,2026-08-31,unverified,observed route; missing periods retained
