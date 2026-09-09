@@ -17,7 +17,7 @@
     "SOM",
     "YEM"
   ],
-  "fetched_at": "2026-09-08T11:32:18.533222+00:00",
+  "fetched_at": "2026-09-09T11:32:18.719444+00:00",
   "history": {
     "accepted_periods": 94,
     "geographic_comparability_verified": false,
@@ -111,13 +111,13 @@
     ],
     "requests": [
       {
-        "fetched_at": "2026-09-08T11:32:17.433704+00:00",
+        "fetched_at": "2026-09-09T11:32:17.543719+00:00",
         "published_at": null,
-        "sha256": "79bb70b013bd73ba26c2e176d9eb1a955a0872818ee4a91a795a50d1b2d8d35a",
+        "sha256": "763c0a93e8575d923e8b99f070ecda04d440a234de12308b078ba497d6589562",
         "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
       },
       {
-        "fetched_at": "2026-09-08T11:32:18.533222+00:00",
+        "fetched_at": "2026-09-09T11:32:18.719444+00:00",
         "published_at": "Mon, 24 Aug 2026 12:32:59 GMT",
         "sha256": "39d8b4a9269e29e26354f5fb251a80cff9c5f1894c93803ac93f21cf6da54ccd",
         "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
@@ -134,13 +134,13 @@
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-09-08T11:32:17.433704+00:00",
+      "fetched_at": "2026-09-09T11:32:17.543719+00:00",
       "published_at": null,
-      "sha256": "79bb70b013bd73ba26c2e176d9eb1a955a0872818ee4a91a795a50d1b2d8d35a",
+      "sha256": "763c0a93e8575d923e8b99f070ecda04d440a234de12308b078ba497d6589562",
       "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
     },
     {
-      "fetched_at": "2026-09-08T11:32:18.533222+00:00",
+      "fetched_at": "2026-09-09T11:32:18.719444+00:00",
       "published_at": "Mon, 24 Aug 2026 12:32:59 GMT",
       "sha256": "39d8b4a9269e29e26354f5fb251a80cff9c5f1894c93803ac93f21cf6da54ccd",
       "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
@@ -148,6 +148,6 @@
   ],
   "rows": 384,
   "schema_version": 1,
-  "sha256": "c4bcda011df7091bd5dcf115710b3c38ec4f59e1e8d332893f3b31b303cdcdc3",
+  "sha256": "ef9dd14060dcf3d36a3a15cfe1993fac20746bb38bea643552098d99efa1cc94",
   "source_id": "ipc"
 }

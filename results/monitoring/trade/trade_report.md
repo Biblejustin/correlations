@@ -1,6 +1,6 @@
 # Trade, currencies and food-price monitoring
 
-Reference cutoff: 2026-09-08T06:37:15.001262-05:00 (America/Chicago).
+Reference cutoff: 2026-09-09T06:37:33.283516-05:00 (America/Chicago).
 
 192 frozen comparisons; 6 estimable fits; 0 pass BH q < 0.05, covering 0 distinct country/predictor/lag cells. Two fits of one cell are related sensitivities.
 
@@ -24,14 +24,14 @@ PortWatch estimates payload-weighted vessel transit from AIS, across all vessel 
 
 | Country | Latest official FX month / YoY | Latest cereal-dependence window / ratio | Fixed food-series currencies |
 |---|---|---|---|
-| ISR | 2026-03 / -14.8% | 2021–2023 / 93.7% (flag E) | No eligible basket |
+| ISR | 2026-08 / -12.1% | 2021–2023 / 93.7% (flag E) | No eligible basket |
 | PSE | Unavailable | Unavailable | ILS; incompatible with official FX |
-| LBN | 2026-03 / +0.0% | 2021–2023 / 86.6% (flag E) | LBP |
-| UKR | 2026-03 / +5.7% | 2021–2023 / -298.4% (flag E) | UAH |
+| LBN | 2026-08 / +0.0% | 2021–2023 / 86.6% (flag E) | LBP |
+| UKR | 2026-08 / +8.0% | 2021–2023 / -298.4% (flag E) | UAH |
 | SDN | 2024-10 / +2.0% | Unavailable | SDG |
-| ETH | 2026-03 / +20.9% | 2021–2023 / 8.6% (flag E) | ETB |
+| ETH | 2026-08 / +14.5% | 2021–2023 / 8.6% (flag E) | ETB |
 | SOM | 2018-06 / +1.4% | Unavailable | SLS;SOS; incompatible with official FX |
-| YEM | 2026-03 / -3.2% | 2021–2023 / 93.4% (flag E) | YER |
+| YEM | 2026-08 / -1.2% | 2021–2023 / 93.4% (flag E) | YER |
 
 Positive FX change means official local-currency depreciation against USD. Official rates may differ materially from retail or parallel-market rates. Only explicitly monthly World Bank GEM DPANUSLCU observations are used. A food basket must use one verified matching currency; missing countries, months and incompatible baskets stay unavailable.
 

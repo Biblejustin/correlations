@@ -18,14 +18,14 @@
     },
     "report.md": {
       "bytes": 4752,
-      "sha256": "d32e66f8aa770c896edf5bdecb456ec39826f614f72ea755091edf9ec8fc7828"
+      "sha256": "dfa50980339b675bf96a97c2add484ea0f96ae3355df810aa5b2d1a0c4986bda"
     },
     "validation.json": {
       "bytes": 918664,
       "sha256": "fd811b014dff5d9d21216349c13de4023f4f149896edde2d127ae83443bf6e14"
     }
   },
-  "as_of": "2026-09-08",
+  "as_of": "2026-09-09",
   "calculation": {
     "algorithm": "Unmodified NASA JSEX and JLEX program.js plus official century element arrays, separately versioned and hash-pinned",
     "environment": "Source idealized horizon/refraction conventions only. No terrain, buildings, clouds, atmospheric extinction, twilight contrast or all-Israel spatial footprint. Lunar source altitude input does not enter its simplified altitude calculation; no elevation precision claim.",
