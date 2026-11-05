@@ -19,6 +19,7 @@ import os
 from pathlib import Path
 import re
 import tempfile
+import time
 
 import numpy as np
 import pandas as pd
@@ -178,15 +179,32 @@ def _collect(get, as_of):
                   'item_modified': item.get('modified'), 'field_types': {r['name']: r['type'] for r in layer['fields']}}
 
 
+# services9.arcgis.com returns sporadic HTTP-200 bodies of {"error":{"code":400,"message":"Invalid URL"}}
+# (measured ~45% on the data query 2026-11-04). urllib3's status_forcelist cannot see a 200, so retry here.
+QUERY_RETRIES = 10
+QUERY_BACKOFF = (1, 2, 4, 8, 15, 30, 45, 60, 60)
+
+
 def capture(client, as_of):
     archive = []
     def get(name, url, params):
-        content = client.get(url, params)
-        meta = client.requests[-1] if client.requests else {}
-        archive.append({'name': name, 'url': url, 'params': params, 'content': content,
-                        'fetched_at': meta.get('fetched_at') or dt.datetime.now(dt.timezone.utc).isoformat(),
-                        'published_at': meta.get('published_at')})
-        return _decode(content, name)
+        attempts = 1 if client.offline else QUERY_RETRIES
+        last = None
+        for i in range(attempts):
+            try:
+                content = client.get(url, params)
+                value = _decode(content, name)
+            except Exception as exc:  # 200+error-body or transient network; re-raise after exhausting
+                last = exc
+                if i + 1 < attempts:
+                    time.sleep(QUERY_BACKOFF[min(i, len(QUERY_BACKOFF) - 1)])
+                continue
+            meta = client.requests[-1] if client.requests else {}
+            archive.append({'name': name, 'url': url, 'params': params, 'content': content,
+                            'fetched_at': meta.get('fetched_at') or dt.datetime.now(dt.timezone.utc).isoformat(),
+                            'published_at': meta.get('published_at')})
+            return value
+        raise last
     rows, source = _collect(get, as_of)
     return rows, source, archive
 
