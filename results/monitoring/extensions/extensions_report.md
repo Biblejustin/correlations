@@ -1,6 +1,6 @@
 # Climate, respiratory and purchasing-power monitors
 
-Reference date: 2026-09-09 (America/Chicago). Exact cutoff: 2026-09-09T06:37:28.445134-05:00.
+Reference date: 2026-11-05 (America/Chicago). Exact cutoff: 2026-11-05T22:44:49.742780-06:00.
 
 Historical exploratory extensions. Source revisions are retained; reference dates do not reconstruct release-time availability. These measures support observation and comparison, not prophetic-fulfillment claims.
 
@@ -8,9 +8,9 @@ Historical exploratory extensions. Source revisions are retained; reference date
 
 | Index | Latest complete observation window | Value, °C anomaly | Product |
 |---|---|---:|---|
-| RNI | 2026-08-01–2026-08-31 | +1.67 | Relative ERSSTv6; 1991-2020 baseline |
-| DMI | 2026-05-01–2026-05-31 | +0.15 | HadISST1.1; NOAA PSL Dipole Mode Index |
-| RONI | 2026-06-01–2026-08-31 | +1.36 | Relative ERSSTv6; 1991-2020 baseline; three-month running mean |
+| RNI | 2026-10-01–2026-10-31 | +2.16 | Relative ERSSTv6; 1991-2020 baseline |
+| DMI | 2026-07-01–2026-07-31 | +0.54 | HadISST1.1; NOAA PSL Dipole Mode Index |
+| RONI | 2026-08-01–2026-10-31 | +1.97 | Relative ERSSTv6; 1991-2020 baseline; three-month running mean |
 
 Paired complete calendar years: 1950–2025 (76 years). Monthly RNI supplies the annual ENSO control; seasonal RONI spans its full three-month window. DMI measures the Indian Ocean west-minus-east sea-surface-temperature gradient. CPC values may revise; DMI is preliminary. No partial annual values or inferred local rainfall.
 
@@ -41,14 +41,14 @@ Table lists all passing fits; [all 90 global fits](global_climate_sensitivity.cs
 
 | Country / stream | Expected ISO week | Tested | Positivity | Seasonal baseline | Difference | Status |
 |---|---|---:|---:|---:|---:|---|
-| ETH / 53b5453d | 2026-W35 | — | — | 6.4% | — | unobserved week |
-| ISR / 3007b668 | 2026-W35 | — | — | — | — | unobserved week |
-| LBN / 3c1f8d84 | 2026-W35 | — | — | — | — | unobserved week |
-| PSE / 877a128d | 2026-W35 | — | — | — | — | unobserved week |
-| SDN / ed1c35a0 | 2026-W35 | — | — | — | — | unobserved week |
-| SOM / 4a810eaf | 2026-W35 | — | — | — | — | unobserved week |
-| UKR / f2db5a97 | 2026-W35 | — | — | — | — | unobserved week |
-| YEM / 96269d5e | 2026-W35 | — | — | — | — | unobserved week |
+| ETH / 53b5453d | 2026-W43 | — | — | 7.0% | — | unobserved week |
+| ISR / 3007b668 | 2026-W43 | — | — | — | — | unobserved week |
+| LBN / 3c1f8d84 | 2026-W43 | 28 | — | — | — | low testing; provisional |
+| PSE / 877a128d | 2026-W43 | — | — | — | — | unobserved week |
+| SDN / 64ca22ca | 2026-W43 | — | — | — | — | unobserved week |
+| SOM / 4a810eaf | 2026-W43 | — | — | — | — | unobserved week |
+| UKR / f2db5a97 | 2026-W43 | — | — | — | — | unobserved week |
+| YEM / 96269d5e | 2026-W43 | — | — | — | — | unobserved week |
 
 References use only prior ISO years, with minimum specimen/week and historical-window coverage rules. Latest expected weeks remain visible when data are missing. Reporting-site coverage is unverified; these are descriptive positivity differences, not outbreak diagnoses or calibrated p-values.
 

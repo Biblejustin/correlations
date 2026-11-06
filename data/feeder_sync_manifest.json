@@ -48,7 +48,7 @@
     {
       "repository": "astronomical-signs",
       "repository_url": "https://github.com/Biblejustin/astronomical-signs",
-      "sha256": "f9d01a7e877ce4cb9929b7c6a29647b1a490a5606d9317dcf9fff109b5a402f0",
+      "sha256": "fe95b5c6c40a916be1cc461cd2083ef9526a40f08e13e0b06a982ea04b0bdb59",
       "size_bytes": 6710,
       "source_path": "data/eclipses/monitor.json",
       "source_state": "local_working_copy",
@@ -57,7 +57,7 @@
     {
       "repository": "astronomical-signs",
       "repository_url": "https://github.com/Biblejustin/astronomical-signs",
-      "sha256": "dfa50980339b675bf96a97c2add484ea0f96ae3355df810aa5b2d1a0c4986bda",
+      "sha256": "60f8ed69cb6d4c138aa145dfd1d1d667b4b0973264fab990247c9e1b838c6114",
       "size_bytes": 4752,
       "source_path": "data/eclipses/report.md",
       "source_state": "local_working_copy",
@@ -147,7 +147,7 @@
     {
       "repository": "israel-pressure-disasters",
       "repository_url": "https://github.com/Biblejustin/israel-pressure-disasters",
-      "sha256": "65bcfcafa82c2f81a40ae5fc2510b324fc9f01a607c3b0fb078f1ea8d6b55818",
+      "sha256": "d1d567741c882e1a1a29ce7afdab13be400f1ed43930e893622c9333e92d40b5",
       "size_bytes": 1963,
       "source_path": "data/analysis_manifest.json",
       "source_state": "local_working_copy",
@@ -237,7 +237,7 @@
     {
       "repository": "israel-rain-agriculture",
       "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
-      "sha256": "d3e914883108f633b5c9c35b4b0d273e1690480a0117bd738f797d7b0bda5881",
+      "sha256": "005eda7f329e4413f3ed7878df29e2ea1972d1228c60b9d72f95ec2c651e9903",
       "size_bytes": 12493,
       "source_path": "data/climate/source_manifest.json",
       "source_state": "local_working_copy",
@@ -264,8 +264,8 @@
     {
       "repository": "israel-rain-agriculture",
       "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
-      "sha256": "92b0e87f8896df573e6c53bcfa5e52cf1b9b5d188351ef8256c32415537c3c25",
-      "size_bytes": 2732211,
+      "sha256": "16dd158e5c07f2cfd99a0e180d2196d0d1c377c9a643990ef5455e5850c4889e",
+      "size_bytes": 2746524,
       "source_path": "data/kinneret_levels.csv",
       "source_state": "local_working_copy",
       "target": "data/israel_monitoring/israel-rain-agriculture/data/kinneret_levels.csv"
@@ -273,8 +273,8 @@
     {
       "repository": "israel-rain-agriculture",
       "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
-      "sha256": "5d881fb86ff2c81611103906eded9018b9c51e79f4ed9cc82b593056729f2793",
-      "size_bytes": 38925,
+      "sha256": "4e70a83b206c86feef5ff6393736664e80f937f7831228bd2694cd59a7a7e4d0",
+      "size_bytes": 39237,
       "source_path": "data/water_covariates_reported.csv",
       "source_state": "local_working_copy",
       "target": "data/israel_monitoring/israel-rain-agriculture/data/water_covariates_reported.csv"
@@ -282,8 +282,8 @@
     {
       "repository": "israel-rain-agriculture",
       "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
-      "sha256": "10b9770ac75ae84b2f1011b150a87db47e3141e924c0a7f53b5a0f1458ad1646",
-      "size_bytes": 4684,
+      "sha256": "589206c675edad28220fa13d3d462ace8c3724d45b0c25339200e08b1617b5cd",
+      "size_bytes": 4672,
       "source_path": "data/water_security_metadata.json",
       "source_state": "local_working_copy",
       "target": "data/israel_monitoring/israel-rain-agriculture/data/water_security_metadata.json"
@@ -300,7 +300,7 @@
     {
       "repository": "israel-rain-agriculture",
       "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
-      "sha256": "1236dcf2e3b2d107001d2856853a60daa561d36b607dfb5b174e2c2b2b08a70f",
+      "sha256": "813151b61c7dfd701fd0635adc704eca71732aaa789023cc6a16968a31c52ea3",
       "size_bytes": 2176,
       "source_path": "results/climate_heat_irrigation_sensitivity.csv",
       "source_state": "local_working_copy",
@@ -309,8 +309,8 @@
     {
       "repository": "israel-rain-agriculture",
       "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
-      "sha256": "dfe61248cc22dd38e5f475dc28ed4fa1c13f5cfaf01ea21e4d58148bf647fc2d",
-      "size_bytes": 8220,
+      "sha256": "0e583bd0409b990963e58bc2fbf8fd1511831af7f87f38e2806c8b9cbb2a4d94",
+      "size_bytes": 8232,
       "source_path": "results/climate_monitor.json",
       "source_state": "local_working_copy",
       "target": "data/israel_monitoring/israel-rain-agriculture/results/climate_monitor.json"
@@ -354,8 +354,8 @@
     {
       "repository": "israel-rain-agriculture",
       "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
-      "sha256": "b7036f0371235a012db7ea43dde6c741815113a0f7d8910d1799e8cb64c2d0f8",
-      "size_bytes": 13641,
+      "sha256": "9659405b4c10ef81b97feddf50c6e3c8d238ff03a53aee035ccc6aaeaf062383",
+      "size_bytes": 13671,
       "source_path": "results/crop_rain_54.csv",
       "source_state": "local_working_copy",
       "target": "data/israel_monitoring/israel-rain-agriculture/results/crop_rain_54.csv"
@@ -363,7 +363,7 @@
     {
       "repository": "israel-rain-agriculture",
       "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
-      "sha256": "da942585c39b797017dd7c3af3b0d8b161f6c0f75059a84b6248c257225fc55f",
+      "sha256": "b93a8ec8ebb0112246e8ef42d63bbe62b2ecfc138d965fba44da7a4460fdd64e",
       "size_bytes": 1595,
       "source_path": "results/crop_rain_manifest.json",
       "source_state": "local_working_copy",
@@ -381,8 +381,8 @@
     {
       "repository": "israel-rain-agriculture",
       "repository_url": "https://github.com/Biblejustin/israel-rain-agriculture",
-      "sha256": "fdcc1e6d3bd621ab3238d2dd8e81bc221fa3192d0004cca4cc508e40ca45e187",
-      "size_bytes": 1713,
+      "sha256": "2602a7e1fa4a571e022b0255c1a2ab2057b61b001806c2f223b25a51c9d0843f",
+      "size_bytes": 1709,
       "source_path": "results/irrigation_sensitivity.csv",
       "source_state": "local_working_copy",
       "target": "data/israel_monitoring/israel-rain-agriculture/results/irrigation_sensitivity.csv"

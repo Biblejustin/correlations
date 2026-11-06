@@ -1,6 +1,6 @@
 # Regional monitoring
 
-Generated 2026-09-09. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-11-05. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
@@ -12,7 +12,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
 | wfp | 103,671 | 2026-08-31 | — |
-| who | 2,623 | 2026-08-23 | — |
+| who | 2,671 | 2026-10-25 | — |
 | worldbank | 208 | 2025-12-31 | — |
 
 ## Food security: latest current assessment
@@ -64,14 +64,14 @@ IDMC annual GIDD export via HDX. Flows count displacement movements; one person 
 
 | Country | Observed week | Influenza-positive specimens | Specimens tested | Positivity |
 |---|---|---:|---:|---:|
-| ISR | 2026-02-09–2026-02-15 | 3 | 30 | 10.0% |
+| ISR | 2026-10-12–2026-10-18 | 14 | 58 | 24.1% |
 | PSE | 2026-03-16–2026-03-22 | 1 | 26 | 3.8% |
-| LBN | 2026-07-06–2026-07-12 | 1 | 30 | 3.3% |
-| UKR | 2026-08-17–2026-08-23 | 0 | 30 | 0.0% |
-| SDN | unavailable | — | — | — |
-| ETH | 2026-08-17–2026-08-23 | 3 | 104 | 2.9% |
+| LBN | 2026-10-19–2026-10-25 | 2 | 28 | 7.1% |
+| UKR | 2026-09-28–2026-10-04 | 0 | 59 | 0.0% |
+| SDN | 2026-10-12–2026-10-18 | 2 | 33 | 6.1% |
+| ETH | 2026-09-28–2026-10-04 | 4 | 59 | 6.8% |
 | SOM | 2026-07-27–2026-08-02 | 1 | 44 | 2.3% |
-| YEM | 2026-06-15–2026-06-21 | 1 | 44 | 2.3% |
+| YEM | 2026-09-14–2026-09-20 | 1 | 24 | 4.2% |
 
 WHO sentinel samples require at least 20 specimens. Provisional surveillance observations; positivity is not population prevalence. Missing/non-sentinel weeks are not substituted.
 
@@ -145,7 +145,7 @@ Religious freedom source PSE refers to West Bank; excluded from the combined-ter
 
 ## Israel crop and water observations
 
-Kinneret latest observation: **-213.400 m**, 2026-09-09; 11,328 measurements. Source dates/gaps retained; 10,596 unobserved dates inside catalog span. [Official measurements](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8).
+Kinneret latest observation: **-213.715 m**, 2026-11-05; 11,387 measurements. Source dates/gaps retained; 10,594 unobserved dates inside catalog span. [Official measurements](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8).
 Historical rainfall remains CRU TS4.08 through complete rain year 2023; current rainfall not integrated. Lake level also responds to pumping/transfers/evaporation.
 
 | Wheat outcome × total rain, 1991–2023 | n | r | HAC q, full 30-test follow-up |
@@ -154,7 +154,7 @@ Historical rainfall remains CRU TS4.08 through complete rain year 2023; current 
 | area_harvested_ha | 33 | +0.060 | 0.650459 |
 | yield_kg_ha | 33 | +0.558 | 0.000014 |
 Historical exploratory associations after linear detrending. Production, area and yield are dependent measures; source yield identity checked. Future holdout starts 2025; no held-out success claimed.
-Reported irrigation-share sensitivity: 17 observed years, gaps retained; adjusted rain coefficient +6.23 kg/ha/mm, calendar-HAC q=0.100 across six supplementary tests. National irrigation share is not wheat-specific; no causal attribution.
+Reported irrigation-share sensitivity: 17 observed years, gaps retained; adjusted rain coefficient +6.29 kg/ha/mm, calendar-HAC q=0.101 across six supplementary tests. National irrigation share is not wheat-specific; no causal attribution.
 Historical US diplomacy/disaster tests, frozen 1991–2024: minimum circular-shift BH q=0.169. Pressure uses upper tail; control deficit uses lower tail. Curated lists are not a current diplomacy feed.
 
 Separate CRU-CY4.10 national climate monitor through 2025-12: rain year 2025 received 218.8 mm (53.6% of the fixed 1991–2020 baseline). Spring mean daily maximum temperature was +1.29 °C relative to baseline. Rain-minus-PET departure was -2.04 baseline standard deviations.

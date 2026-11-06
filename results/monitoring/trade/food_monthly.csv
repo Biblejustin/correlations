@@ -139,6 +139,8 @@ ISR,2026-05,,,0,0,,,ILS,False,no eligible fixed price basket
 ISR,2026-06,,,0,0,,,ILS,False,no eligible fixed price basket
 ISR,2026-07,,,0,0,,,ILS,False,no eligible fixed price basket
 ISR,2026-08,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2026-09,,,0,0,,,ILS,False,no eligible fixed price basket
+ISR,2026-10,,,0,0,,,ILS,False,no eligible fixed price basket
 PSE,2015-01,,,4,47,0.0851063829787234,ILS,,False,incomplete fixed price basket
 PSE,2015-02,,,4,47,0.0851063829787234,ILS,,False,incomplete fixed price basket
 PSE,2015-03,,,4,47,0.0851063829787234,ILS,,False,incomplete fixed price basket
@@ -279,6 +281,8 @@ PSE,2026-05,,,0,47,0.0,ILS,,False,incomplete fixed price basket
 PSE,2026-06,,,0,47,0.0,ILS,,False,incomplete fixed price basket
 PSE,2026-07,,,0,47,0.0,ILS,,False,incomplete fixed price basket
 PSE,2026-08,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2026-09,,,0,47,0.0,ILS,,False,incomplete fixed price basket
+PSE,2026-10,,,0,47,0.0,ILS,,False,incomplete fixed price basket
 LBN,2015-01,,,8,14,0.5714285714285714,LBP,LBP,True,incomplete fixed price basket
 LBN,2015-02,,,6,14,0.42857142857142855,LBP,LBP,True,incomplete fixed price basket
 LBN,2015-03,,,6,14,0.42857142857142855,LBP,LBP,True,incomplete fixed price basket
@@ -419,6 +423,8 @@ LBN,2026-05,,,6,14,0.42857142857142855,LBP,LBP,True,incomplete fixed price baske
 LBN,2026-06,,,6,14,0.42857142857142855,LBP,LBP,True,incomplete fixed price basket
 LBN,2026-07,,,6,14,0.42857142857142855,LBP,LBP,True,incomplete fixed price basket
 LBN,2026-08,,,0,14,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2026-09,,,0,14,0.0,LBP,LBP,True,incomplete fixed price basket
+LBN,2026-10,,,0,14,0.0,LBP,LBP,True,incomplete fixed price basket
 UKR,2015-01,,,0,104,0.0,UAH,UAH,True,incomplete fixed price basket
 UKR,2015-02,,,0,104,0.0,UAH,UAH,True,incomplete fixed price basket
 UKR,2015-03,0.9401259231553777,156.03037995643808,104,104,1.0,UAH,UAH,True,eligible
@@ -559,6 +565,8 @@ UKR,2026-05,,,46,104,0.4423076923076923,UAH,UAH,True,incomplete fixed price bask
 UKR,2026-06,,,46,104,0.4423076923076923,UAH,UAH,True,incomplete fixed price basket
 UKR,2026-07,,,46,104,0.4423076923076923,UAH,UAH,True,incomplete fixed price basket
 UKR,2026-08,,,0,104,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2026-09,,,0,104,0.0,UAH,UAH,True,incomplete fixed price basket
+UKR,2026-10,,,0,104,0.0,UAH,UAH,True,incomplete fixed price basket
 SDN,2015-01,,,12,18,0.6666666666666666,SDG,SDG,True,incomplete fixed price basket
 SDN,2015-02,,,12,18,0.6666666666666666,SDG,SDG,True,incomplete fixed price basket
 SDN,2015-03,,,12,18,0.6666666666666666,SDG,SDG,True,incomplete fixed price basket
@@ -699,6 +707,8 @@ SDN,2026-05,,,10,18,0.5555555555555556,SDG,SDG,True,incomplete fixed price baske
 SDN,2026-06,,,10,18,0.5555555555555556,SDG,SDG,True,incomplete fixed price basket
 SDN,2026-07,,,10,18,0.5555555555555556,SDG,SDG,True,incomplete fixed price basket
 SDN,2026-08,,,10,18,0.5555555555555556,SDG,SDG,True,incomplete fixed price basket
+SDN,2026-09,,,0,18,0.0,SDG,SDG,True,incomplete fixed price basket
+SDN,2026-10,,,0,18,0.0,SDG,SDG,True,incomplete fixed price basket
 ETH,2015-01,,,8,12,0.6666666666666666,ETB,ETB,True,incomplete fixed price basket
 ETH,2015-02,0.0,0.0,9,12,0.75,ETB,ETB,True,eligible
 ETH,2015-03,0.002645504188424175,0.26490066225166586,9,12,0.75,ETB,ETB,True,eligible
@@ -839,6 +849,8 @@ ETH,2026-05,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
 ETH,2026-06,,,5,12,0.4166666666666667,ETB,ETB,True,incomplete fixed price basket
 ETH,2026-07,,,3,12,0.25,ETB,ETB,True,incomplete fixed price basket
 ETH,2026-08,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2026-09,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
+ETH,2026-10,,,0,12,0.0,ETB,ETB,True,incomplete fixed price basket
 SOM,2015-01,,,30,84,0.35714285714285715,SLS;SOS,SOS,False,incomplete fixed price basket
 SOM,2015-02,,,44,84,0.5238095238095238,SLS;SOS,SOS,False,incomplete fixed price basket
 SOM,2015-03,,,30,84,0.35714285714285715,SLS;SOS,SOS,False,incomplete fixed price basket
@@ -979,6 +991,8 @@ SOM,2026-05,,,0,84,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
 SOM,2026-06,,,0,84,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
 SOM,2026-07,,,0,84,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
 SOM,2026-08,,,0,84,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2026-09,,,0,84,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
+SOM,2026-10,,,0,84,0.0,SLS;SOS,SOS,False,incomplete fixed price basket
 YEM,2015-01,,,24,102,0.23529411764705882,YER,YER,True,incomplete fixed price basket
 YEM,2015-02,,,24,102,0.23529411764705882,YER,YER,True,incomplete fixed price basket
 YEM,2015-03,,,24,102,0.23529411764705882,YER,YER,True,incomplete fixed price basket
@@ -1119,3 +1133,5 @@ YEM,2026-05,,,44,102,0.43137254901960786,YER,YER,True,incomplete fixed price bas
 YEM,2026-06,,,44,102,0.43137254901960786,YER,YER,True,incomplete fixed price basket
 YEM,2026-07,,,44,102,0.43137254901960786,YER,YER,True,incomplete fixed price basket
 YEM,2026-08,,,0,102,0.0,YER,YER,True,incomplete fixed price basket
+YEM,2026-09,,,0,102,0.0,YER,YER,True,incomplete fixed price basket
+YEM,2026-10,,,0,102,0.0,YER,YER,True,incomplete fixed price basket

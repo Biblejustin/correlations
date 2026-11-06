@@ -2,14 +2,14 @@
   "aggregate_label": "fixed monitored-market purchasing-power index",
   "ambiguity_rule": "Exclude market/commodity with multiple baseline-eligible exact identities from basket; keep individual-series results.",
   "annual_method": "geometric mean of all 12 monthly values; exact previous complete year only",
-  "as_of": "2026-09-09",
+  "as_of": "2026-11-05",
   "baseline_years": [
     2015,
     2019
   ],
   "fixed_member_ids": [],
   "interpretation": "Descriptive local purchasing power. No national representativeness, CPI, seasonal adjustment or imputed missing observations.",
-  "last_complete_month": "2026-08",
+  "last_complete_month": "2026-10",
   "membership_scope": "Fixed across this snapshot by 2015\u201319 coverage only; historical source revisions can change eligibility, tracked by membership hash.",
   "membership_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "plan": {
