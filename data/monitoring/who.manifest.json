@@ -19,56 +19,56 @@
     "UKR",
     "YEM"
   ],
-  "fetched_at": "2026-11-06T05:26:52.552181+00:00",
+  "fetched_at": "2026-11-06T12:39:51.751757+00:00",
   "observed_from": "2000-01-03",
   "observed_through": "2026-10-25",
   "projected_through": null,
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-11-06T05:26:52.430516+00:00",
+      "fetched_at": "2026-11-06T12:39:45.407449+00:00",
       "published_at": null,
       "sha256": "cead00f343b535229fc0eae620edec229d5aafadf7d52000933eb405a8273a76",
       "url": "https://xmart-api-public.who.int/FLUMART/VIW_FNT?%24filter=COUNTRY_CODE+eq+%27ISR%27+and+ISO_YEAR+ge+2000&%24format=json&%24select=COUNTRY_CODE%2CISO_WEEKSTARTDATE%2CISO_YEAR%2CORIGIN_SOURCE%2CSPEC_PROCESSED_NB%2CINF_ALL%2CINF_A%2CINF_B&%24top=10000&%24skip=0"
     },
     {
-      "fetched_at": "2026-11-06T05:26:52.449009+00:00",
+      "fetched_at": "2026-11-06T12:39:46.560609+00:00",
       "published_at": null,
       "sha256": "0f42ca67735dba8950fbebe52ecc6e693e57d52d31f1e1517219ca343466e600",
       "url": "https://xmart-api-public.who.int/FLUMART/VIW_FNT?%24filter=COUNTRY_CODE+eq+%27PSE%27+and+ISO_YEAR+ge+2000&%24format=json&%24select=COUNTRY_CODE%2CISO_WEEKSTARTDATE%2CISO_YEAR%2CORIGIN_SOURCE%2CSPEC_PROCESSED_NB%2CINF_ALL%2CINF_A%2CINF_B&%24top=10000&%24skip=0"
     },
     {
-      "fetched_at": "2026-11-06T05:26:52.466494+00:00",
+      "fetched_at": "2026-11-06T12:39:47.474354+00:00",
       "published_at": null,
       "sha256": "931becba52b6084dcaddc787634a40b91b625538e1d37d77792e30151b5a15e4",
       "url": "https://xmart-api-public.who.int/FLUMART/VIW_FNT?%24filter=COUNTRY_CODE+eq+%27LBN%27+and+ISO_YEAR+ge+2000&%24format=json&%24select=COUNTRY_CODE%2CISO_WEEKSTARTDATE%2CISO_YEAR%2CORIGIN_SOURCE%2CSPEC_PROCESSED_NB%2CINF_ALL%2CINF_A%2CINF_B&%24top=10000&%24skip=0"
     },
     {
-      "fetched_at": "2026-11-06T05:26:52.488143+00:00",
+      "fetched_at": "2026-11-06T12:39:48.507866+00:00",
       "published_at": null,
       "sha256": "4cb47bfc9591e10dc3d7cb97ab373221823a7b2766bcb78846c2710148efe69f",
       "url": "https://xmart-api-public.who.int/FLUMART/VIW_FNT?%24filter=COUNTRY_CODE+eq+%27UKR%27+and+ISO_YEAR+ge+2000&%24format=json&%24select=COUNTRY_CODE%2CISO_WEEKSTARTDATE%2CISO_YEAR%2CORIGIN_SOURCE%2CSPEC_PROCESSED_NB%2CINF_ALL%2CINF_A%2CINF_B&%24top=10000&%24skip=0"
     },
     {
-      "fetched_at": "2026-11-06T05:26:52.506034+00:00",
+      "fetched_at": "2026-11-06T12:39:49.305430+00:00",
       "published_at": null,
       "sha256": "f8baa4b042930ca898867c0baa584a164443cbd71459a5dc26b8fcc390ac8677",
       "url": "https://xmart-api-public.who.int/FLUMART/VIW_FNT?%24filter=COUNTRY_CODE+eq+%27SDN%27+and+ISO_YEAR+ge+2000&%24format=json&%24select=COUNTRY_CODE%2CISO_WEEKSTARTDATE%2CISO_YEAR%2CORIGIN_SOURCE%2CSPEC_PROCESSED_NB%2CINF_ALL%2CINF_A%2CINF_B&%24top=10000&%24skip=0"
     },
     {
-      "fetched_at": "2026-11-06T05:26:52.521850+00:00",
+      "fetched_at": "2026-11-06T12:39:50.207033+00:00",
       "published_at": null,
       "sha256": "69a068476b9d89e03425d77e9e80cb7011705aef6a855ab45c26590726f0f864",
       "url": "https://xmart-api-public.who.int/FLUMART/VIW_FNT?%24filter=COUNTRY_CODE+eq+%27ETH%27+and+ISO_YEAR+ge+2000&%24format=json&%24select=COUNTRY_CODE%2CISO_WEEKSTARTDATE%2CISO_YEAR%2CORIGIN_SOURCE%2CSPEC_PROCESSED_NB%2CINF_ALL%2CINF_A%2CINF_B&%24top=10000&%24skip=0"
     },
     {
-      "fetched_at": "2026-11-06T05:26:52.537945+00:00",
+      "fetched_at": "2026-11-06T12:39:50.963042+00:00",
       "published_at": null,
       "sha256": "2bcd0744eeca61e5a83abde5d5c52fb99c06a547b038f23f8ec512929ae215a0",
       "url": "https://xmart-api-public.who.int/FLUMART/VIW_FNT?%24filter=COUNTRY_CODE+eq+%27SOM%27+and+ISO_YEAR+ge+2000&%24format=json&%24select=COUNTRY_CODE%2CISO_WEEKSTARTDATE%2CISO_YEAR%2CORIGIN_SOURCE%2CSPEC_PROCESSED_NB%2CINF_ALL%2CINF_A%2CINF_B&%24top=10000&%24skip=0"
     },
     {
-      "fetched_at": "2026-11-06T05:26:52.552181+00:00",
+      "fetched_at": "2026-11-06T12:39:51.751757+00:00",
       "published_at": null,
       "sha256": "9087611efcdef895b4f9132b72f810b5d12ab2a3eab83888539a3b3117ff4129",
       "url": "https://xmart-api-public.who.int/FLUMART/VIW_FNT?%24filter=COUNTRY_CODE+eq+%27YEM%27+and+ISO_YEAR+ge+2000&%24format=json&%24select=COUNTRY_CODE%2CISO_WEEKSTARTDATE%2CISO_YEAR%2CORIGIN_SOURCE%2CSPEC_PROCESSED_NB%2CINF_ALL%2CINF_A%2CINF_B&%24top=10000&%24skip=0"
@@ -76,6 +76,6 @@
   ],
   "rows": 2671,
   "schema_version": 1,
-  "sha256": "de041cd8d707854851e773a1d58ed253544af1e0a8930de90d05b879c93eda0e",
+  "sha256": "2aeb0b88a6658f82ce4302a766fae048f65db413ddd7dc605ad14a489a8e0e3f",
   "source_id": "who"
 }
