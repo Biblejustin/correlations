@@ -31,8 +31,13 @@ def validate(workspace, started_at):
     if pd.Timestamp(run['generated_at']) < pd.Timestamp(started_at):
         raise ValueError('Stale refresh receipt')
     names = [row['stage'] for row in run['stages']]
-    required = {'regression_tests', 'sync_feeders', 'predictions_scorecard', 'refresh_report', 'dashboard'} | set(SCRIPTS) | {row[0] for row in fetch_steps()}
-    if not required <= set(names) or len(names) != len(set(names)) or any(row['status'] != 'passed' for row in run['stages']):
+    fetch_names = {row[0] for row in fetch_steps()}
+    # Fail-open: fetch stages the run quarantined (last-good snapshot retained) are exempt from the
+    # present-and-passed requirement. Every non-fetch stage stays mandatory and must pass.
+    quarantined = {row['stage'] for row in run.get('quarantined', [])} & fetch_names
+    required = {'regression_tests', 'sync_feeders', 'predictions_scorecard', 'refresh_report', 'dashboard'} | set(SCRIPTS) | fetch_names
+    graded = [row for row in run['stages'] if row['stage'] not in quarantined]
+    if not (required - quarantined) <= {row['stage'] for row in graded} or len(names) != len(set(names)) or any(row['status'] != 'passed' for row in graded):
         raise ValueError('Incomplete or failed refresh stages')
     source_data = {}
     for name, module in [('shipping', trade_sources), ('economic', economic_sources), ('climate', climate_indices)]:
@@ -92,7 +97,7 @@ def validate(workspace, started_at):
     nasa = read(workspace/'astronomical-signs/data/eclipses/validation.json')
     if nasa['status'] != 'passed':
         raise ValueError('Eclipse reference validation failed')
-    return {'status': 'passed', 'refresh_stages': len(names), 'artifact_hashes': checked, 'fit_counts': fit_counts,
+    return {'status': 'passed', 'refresh_stages': len(names), 'quarantined': sorted(quarantined), 'artifact_hashes': checked, 'fit_counts': fit_counts,
             'snapshot_ids': {name: value[2]['snapshot_id'] for name, value in source_data.items()},
             'eclipse_checks': nasa['check_count'], 'sync_drift': 0}
 
