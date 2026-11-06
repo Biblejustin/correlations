@@ -142,23 +142,32 @@ def main(argv=None):
     if missing:ap.error('Missing sibling repos: '+', '.join(missing))
     account=verify_publish_targets() if args.publish else None
     results=[]
+    quarantined=[]
     def step(name,cmd,repo='correlations'):
         result=run_step(name,cmd,cwd=ROOT/repo);results.append(result)
         if result['status']!='passed':
             finish(False)
             raise SystemExit(f'{name} failed; local evidence retained; publication stopped. See {result["log"]}')
+    def fetch_step(name,cmd,repo):
+        # Fail-open: a flaky or gated upstream is quarantined (the fetcher retains its last-good
+        # snapshot on disk) and the run continues. Quarantine is recorded here, never silent.
+        result=run_step(name,cmd,cwd=ROOT/repo);results.append(result)
+        if result['status']!='passed':
+            quarantined.append({'stage':name,'repo':repo,'log':result['log']})
+            print(f'{name} failed; QUARANTINED (last-good snapshot retained); run continues. See {result["log"]}')
+        return result['status']=='passed'
     def finish(success):
         out=BASE/'results'/('fetch_run.json' if args.fetch_only else 'refresh_run.json');out.parent.mkdir(exist_ok=True)
         out.write_text(json.dumps({'generated_at':dt.datetime.now(dt.timezone.utc).isoformat(),
                                   'success':success,'fetch_skipped':args.skip_fetch,'fetch_only':args.fetch_only,
-                                  'selected_sources':args.sources,'stages':results},indent=2)+'\n')
+                                  'selected_sources':args.sources,'quarantined':quarantined,'stages':results},indent=2)+'\n')
     py=sys.executable
     # Fail fast on code/test defects before spending network requests or mutating source snapshots.
     step('regression_tests',[py,'-m','pytest','-q','tests'])
     if not args.skip_fetch:
         for name,repo,command in fetch_steps(py):
             if args.sources and name.removeprefix('fetch_') not in args.sources:continue
-            step(name,command,repo)
+            fetch_step(name,command,repo)
     if args.fetch_only:
         finish(True)
         print('Selected fetch stages passed; analytical validation/publication not attempted.')
