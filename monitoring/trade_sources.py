@@ -188,7 +188,7 @@ QUERY_BACKOFF = (1, 2, 4, 8, 15, 30, 45, 60, 60)
 def capture(client, as_of):
     archive = []
     def get(name, url, params):
-        attempts = 1 if client.offline else QUERY_RETRIES
+        attempts = 1 if getattr(client, "offline", False) else QUERY_RETRIES
         last = None
         for i in range(attempts):
             try:
