@@ -916,7 +916,7 @@ LBN,2018,population,5984119.0,people,1,source country definition,True,
 LBN,2018,refugees_origin_stock,5620.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2018,refugees_origin_stock_change,319.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 LBN,2018,religious_freedom,1.116,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-LBN,2018,retail_staple_price_yoy_pct,-0.22156102664170196,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+LBN,2018,retail_staple_price_yoy_pct,-0.12333090703854678,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 LBN,2018,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2019,asylum_seekers_origin_stock,8032.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2019,conflict_battle_deaths,0.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -931,7 +931,7 @@ LBN,2019,population,5794594.0,people,1,source country definition,True,
 LBN,2019,refugees_origin_stock,5647.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2019,refugees_origin_stock_change,27.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 LBN,2019,religious_freedom,1.116,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-LBN,2019,retail_staple_price_yoy_pct,-0.7347894955777334,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+LBN,2019,retail_staple_price_yoy_pct,-0.7285010156996046,percent year-on-year,10,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 LBN,2019,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2020,asylum_seekers_origin_stock,7964.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2020,conflict_battle_deaths,20.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -946,7 +946,7 @@ LBN,2020,population,5702398.0,people,1,source country definition,True,
 LBN,2020,refugees_origin_stock,5495.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2020,refugees_origin_stock_change,-152.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 LBN,2020,religious_freedom,1.282,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-LBN,2020,retail_staple_price_yoy_pct,167.22739016690525,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+LBN,2020,retail_staple_price_yoy_pct,164.65352598098022,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 LBN,2020,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2021,asylum_seekers_origin_stock,8873.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2021,conflict_battle_deaths,0.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -963,7 +963,7 @@ LBN,2021,population,5718122.0,people,1,source country definition,True,
 LBN,2021,refugees_origin_stock,6061.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2021,refugees_origin_stock_change,566.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 LBN,2021,religious_freedom,1.47,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-LBN,2021,retail_staple_price_yoy_pct,360.5091990518739,percent year-on-year,11,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+LBN,2021,retail_staple_price_yoy_pct,361.6016320293413,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 LBN,2021,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2022,asylum_seekers_origin_stock,10289.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2022,conflict_battle_deaths,0.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.
@@ -977,7 +977,7 @@ LBN,2022,population,5744489.0,people,1,source country definition,True,
 LBN,2022,refugees_origin_stock,6794.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2022,refugees_origin_stock_change,733.0,people net stock change,2,worldwide destinations by source country of origin,,"Net stock change, not newly displaced people; returns/reclassification also contribute."
 LBN,2022,religious_freedom,1.316,V-Dem latent interval score,1,source country definition,True,"Expert-coded freedom of religion; higher = more freedom. Not incident count. PSE unit is West Bank, not combined Palestinian territories."
-LBN,2022,retail_staple_price_yoy_pct,188.57608248492275,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
+LBN,2022,retail_staple_price_yoy_pct,189.82509011672613,percent year-on-year,12,fixed observed market basket within country,,"Matched-series median price changes; fixed 2015–19 basket membership, >=70% series and >=9 months; not CPI."
 LBN,2022,returned_refugees_flow,0.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2023,asylum_seekers_origin_stock,9793.0,people,1,source country definition,True,Origin-country aggregate. Stocks are not new displacement flows; dash remains missing.
 LBN,2023,conflict_battle_deaths,123.0,deaths,1,UCDP source-country territory,True,UCDP territory-coded best estimate; not intensity-band floor. Israel/Palestine source unit and pre-2012 Sudan are excluded from unmatched WDI population rates.

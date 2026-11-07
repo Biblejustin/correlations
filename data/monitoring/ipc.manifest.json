@@ -17,9 +17,9 @@
     "SOM",
     "YEM"
   ],
-  "fetched_at": "2026-09-09T11:32:18.719444+00:00",
+  "fetched_at": "2026-11-07T12:39:58.870657+00:00",
   "history": {
-    "accepted_periods": 94,
+    "accepted_periods": 98,
     "geographic_comparability_verified": false,
     "partition_tolerance": {
       "interpretation": "Conservative consistency screen allowing source rounding/process differences; not a precision guarantee. Never replace reported denominator with phase sum.",
@@ -111,43 +111,43 @@
     ],
     "requests": [
       {
-        "fetched_at": "2026-09-09T11:32:17.543719+00:00",
+        "fetched_at": "2026-11-07T12:39:57.377742+00:00",
         "published_at": null,
-        "sha256": "763c0a93e8575d923e8b99f070ecda04d440a234de12308b078ba497d6589562",
+        "sha256": "a59310fe1e850846c9efd4925b957d7e633ace2cd76170a41589d182bcc6b7c1",
         "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
       },
       {
-        "fetched_at": "2026-09-09T11:32:18.719444+00:00",
-        "published_at": "Mon, 24 Aug 2026 12:32:59 GMT",
-        "sha256": "39d8b4a9269e29e26354f5fb251a80cff9c5f1894c93803ac93f21cf6da54ccd",
+        "fetched_at": "2026-11-07T12:39:58.870657+00:00",
+        "published_at": "Fri, 06 Nov 2026 22:14:42 GMT",
+        "sha256": "ca943df0b3cd001086302ad64c86a4a84deb6819a53d8ec2a8bc53adaa77b17b",
         "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
       }
     ],
     "resource": "ipc_global_national_long.csv",
     "retained_prior_rows": 8,
     "revision_policy": "Only an unambiguous matching country/analysis-month/type/start/end period replaces prior rows, including withdrawn phase fields. Absent or ambiguous periods retain prior observations with original lineage; confirmed count-partition conflicts exclude matching prior observations from active data while preserving archives. No selection among ambiguous source rows.",
-    "source_rows": 735
+    "source_rows": 763
   },
   "observed_from": "2021-01-01",
-  "observed_through": "2026-06-30",
-  "projected_through": "2027-01-31",
+  "observed_through": "2027-02-28",
+  "projected_through": "2027-07-31",
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-09-09T11:32:17.543719+00:00",
+      "fetched_at": "2026-11-07T12:39:57.377742+00:00",
       "published_at": null,
-      "sha256": "763c0a93e8575d923e8b99f070ecda04d440a234de12308b078ba497d6589562",
+      "sha256": "a59310fe1e850846c9efd4925b957d7e633ace2cd76170a41589d182bcc6b7c1",
       "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
     },
     {
-      "fetched_at": "2026-09-09T11:32:18.719444+00:00",
-      "published_at": "Mon, 24 Aug 2026 12:32:59 GMT",
-      "sha256": "39d8b4a9269e29e26354f5fb251a80cff9c5f1894c93803ac93f21cf6da54ccd",
+      "fetched_at": "2026-11-07T12:39:58.870657+00:00",
+      "published_at": "Fri, 06 Nov 2026 22:14:42 GMT",
+      "sha256": "ca943df0b3cd001086302ad64c86a4a84deb6819a53d8ec2a8bc53adaa77b17b",
       "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
     }
   ],
-  "rows": 384,
+  "rows": 400,
   "schema_version": 1,
-  "sha256": "ef9dd14060dcf3d36a3a15cfe1993fac20746bb38bea643552098d99efa1cc94",
+  "sha256": "051638b0de1de944e8ad7e31299db8ea11b2841ef36347817d434ea9361fe1c1",
   "source_id": "ipc"
 }

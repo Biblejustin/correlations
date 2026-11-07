@@ -9,7 +9,7 @@ Food purchasing power uses exact matched WFP retail staple / non-qualified daily
 | SDN | No validated exact pairs | — | unavailable | unavailable | unavailable |
 | SOM | No validated exact pairs | — | unavailable | unavailable | unavailable |
 | UKR | No validated exact pairs | — | unavailable | unavailable | unavailable |
-| YEM | 192 / Rice (imported) (YER; KG) | 2026-07 | 8.80 | +5.9% | -5.6% |
+| YEM | 192 / Rice (imported) (YER; KG) | 2026-10 | 8.86 | +8.8% | -11.4% |
 
 Examples are nonrepresentative: alphabetical first market/staple among each country’s latest complete observations. Full tables preserve wage identity, prices, source timestamps, missing comparators and staleness.
 

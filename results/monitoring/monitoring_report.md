@@ -1,17 +1,17 @@
 # Regional monitoring
 
-Generated 2026-11-06. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-11-07. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
 | Source | Rows | Latest observed/assessment reference end | Latest projected reference end |
 |---|---:|---|---|
 | idmc | 241 | 2025-12-31 | — |
-| ipc | 384 | 2026-06-30 | 2027-01-31 |
+| ipc | 400 | 2027-02-28 | 2027-07-31 |
 | ucdp | 728 | 2025-12-31 | — |
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
-| wfp | 103,671 | 2026-08-31 | — |
+| wfp | 105,842 | 2026-10-31 | — |
 | who | 2,671 | 2026-10-25 | — |
 | worldbank | 208 | 2025-12-31 | — |
 
@@ -21,14 +21,14 @@ Observed dates, source coverage and projections remain separate. This is a resea
 |---|---|---:|---:|---|---|
 | ISR | unavailable | — | — | no fetched current assessment | unavailable |
 | PSE | 2026-04-01–2026-06-30 | 59.0% | 2,118,215 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
-| LBN | 2025-11-01–2026-03-31 | 17.0% | 5,191,667 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
+| LBN | 2026-09-01–2027-02-28 | 21.0% | 5,031,585 | current assessment window; country-wide territorial match unverified | present in full-history export |
 | UKR | unavailable | — | — | no fetched current assessment | unavailable |
 | SDN | 2026-02-01–2026-05-31 | 41.0% | 47,535,794 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
 | ETH | 2021-05-01–2021-06-30 | 30.0% | 56,346,877 | expired assessment; not present-day estimate; country-wide territorial match unverified | retained prior snapshot; current history identity quarantined |
-| SOM | 2026-04-01–2026-06-30 | 31.0% | 19,442,156 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
+| SOM | 2026-07-01–2026-09-30 | 26.0% | 19,442,156 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
 | YEM | 2026-03-01–2026-05-31 | 47.0% | 10,479,422 | expired assessment; not present-day estimate; country-wide territorial match unverified | present in full-history export |
 
-Food affordability: 7,783 matched market/staple/month observations. Units: kg per daily non-qualified labor wage. No affordability estimate where matching wages are absent.
+Food affordability: 7,882 matched market/staple/month observations. Units: kg per daily non-qualified labor wage. No affordability estimate where matching wages are absent.
 
 ## Latest annual conflict and displacement observations
 
@@ -101,7 +101,7 @@ V-Dem v16 latent interval score; higher means more religious freedom. Expert-cod
 | SDN | unavailable | — | — | — |
 | ETH | 1831 | Maize (white) | 2015-08 | 10.77 |
 | SOM | unavailable | — | — | — |
-| YEM | 192 | Rice (imported) | 2026-07 | 8.80 |
+| YEM | 192 | Rice (imported) | 2026-10 | 8.86 |
 
 Nonrepresentative market examples. Selection is fixed: latest available matched month, then alphabetical market ID/staple/currency; never highest or lowest outcome. Wage and retail staple must share market, month and currency; quantities require an explicit kg unit.
 

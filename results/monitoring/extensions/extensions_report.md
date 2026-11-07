@@ -1,6 +1,6 @@
 # Climate, respiratory and purchasing-power monitors
 
-Reference date: 2026-11-06 (America/Chicago). Exact cutoff: 2026-11-06T06:50:33.843905-06:00.
+Reference date: 2026-11-07 (America/Chicago). Exact cutoff: 2026-11-07T06:44:55.064356-06:00.
 
 Historical exploratory extensions. Source revisions are retained; reference dates do not reconstruct release-time availability. These measures support observation and comparison, not prophetic-fulfillment claims.
 
@@ -67,7 +67,7 @@ Food purchasing power uses exact matched WFP retail staple / non-qualified daily
 | SDN | No validated exact pairs | — | unavailable | unavailable | unavailable |
 | SOM | No validated exact pairs | — | unavailable | unavailable | unavailable |
 | UKR | No validated exact pairs | — | unavailable | unavailable | unavailable |
-| YEM | 192 / Rice (imported) (YER; KG) | 2026-07 | 8.80 | +5.9% | -5.6% |
+| YEM | 192 / Rice (imported) (YER; KG) | 2026-10 | 8.86 | +8.8% | -11.4% |
 
 Examples are nonrepresentative: alphabetical first market/staple among each country’s latest complete observations. Full tables preserve wage identity, prices, source timestamps, missing comparators and staleness.
 
