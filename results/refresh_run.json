@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T12:46:45.715803+00:00",
+  "generated_at": "2026-11-08T12:46:27.517088+00:00",
   "success": true,
   "fetch_skipped": false,
   "fetch_only": false,
@@ -10,56 +10,56 @@
       "stage": "regression_tests",
       "status": "passed",
       "returncode": 0,
-      "seconds": 477.84,
+      "seconds": 477.65,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/regression_tests.log"
     },
     {
       "stage": "fetch_spaceweather",
       "status": "passed",
       "returncode": 0,
-      "seconds": 4.53,
+      "seconds": 4.63,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_spaceweather.log"
     },
     {
       "stage": "fetch_quakes",
       "status": "passed",
       "returncode": 0,
-      "seconds": 4.28,
+      "seconds": 4.53,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_quakes.log"
     },
     {
       "stage": "fetch_historical_quakes",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.57,
+      "seconds": 1.27,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_historical_quakes.log"
     },
     {
       "stage": "fetch_significant",
       "status": "passed",
       "returncode": 0,
-      "seconds": 17.92,
+      "seconds": 17.67,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_significant.log"
     },
     {
       "stage": "fetch_ngdc",
       "status": "passed",
       "returncode": 0,
-      "seconds": 33.57,
+      "seconds": 34.02,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_ngdc.log"
     },
     {
       "stage": "fetch_canonical",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.17,
+      "seconds": 3.53,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_canonical.log"
     },
     {
       "stage": "fetch_monitoring",
       "status": "passed",
       "returncode": 0,
-      "seconds": 88.58,
+      "seconds": 84.47,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_monitoring.log"
     },
     {
@@ -73,35 +73,35 @@
       "stage": "fetch_trade_shipping",
       "status": "passed",
       "returncode": 0,
-      "seconds": 7.24,
+      "seconds": 5.68,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_trade_shipping.log"
     },
     {
       "stage": "fetch_economic_sources",
       "status": "passed",
       "returncode": 0,
-      "seconds": 4.33,
+      "seconds": 3.08,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_economic_sources.log"
     },
     {
       "stage": "fetch_astronomy",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.32,
+      "seconds": 1.27,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_astronomy.log"
     },
     {
       "stage": "fetch_israel_pressure",
       "status": "passed",
       "returncode": 0,
-      "seconds": 18.17,
+      "seconds": 15.81,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_israel_pressure.log"
     },
     {
       "stage": "fetch_israel_rain",
       "status": "passed",
       "returncode": 0,
-      "seconds": 43.46,
+      "seconds": 44.05,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/fetch_israel_rain.log"
     },
     {
@@ -115,112 +115,112 @@
       "stage": "famines-tracking_plots",
       "status": "passed",
       "returncode": 0,
-      "seconds": 2.72,
+      "seconds": 2.57,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/famines-tracking_plots.log"
     },
     {
       "stage": "flood-data_plots",
       "status": "passed",
       "returncode": 0,
-      "seconds": 6.58,
+      "seconds": 6.28,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/flood-data_plots.log"
     },
     {
       "stage": "pandemics-tracking_plots",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.42,
+      "seconds": 3.22,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/pandemics-tracking_plots.log"
     },
     {
       "stage": "volcanic-eruptions_plots",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.43,
+      "seconds": 3.38,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/volcanic-eruptions_plots.log"
     },
     {
       "stage": "tropical-cyclones_plots",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.68,
+      "seconds": 3.58,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/tropical-cyclones_plots.log"
     },
     {
       "stage": "droughts-tracking_plots",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.98,
+      "seconds": 3.83,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/droughts-tracking_plots.log"
     },
     {
       "stage": "astronomical-signs_plots",
       "status": "passed",
       "returncode": 0,
-      "seconds": 2.67,
+      "seconds": 2.57,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/astronomical-signs_plots.log"
     },
     {
       "stage": "israel-pressure-disasters_plots",
       "status": "passed",
       "returncode": 0,
-      "seconds": 4.68,
+      "seconds": 4.48,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/israel-pressure-disasters_plots.log"
     },
     {
       "stage": "israel-rain-agriculture_plots",
       "status": "passed",
       "returncode": 0,
-      "seconds": 5.03,
+      "seconds": 4.68,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/israel-rain-agriculture_plots.log"
     },
     {
       "stage": "analyze",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.08,
+      "seconds": 3.04,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/analyze.log"
     },
     {
       "stage": "lag_test",
       "status": "passed",
       "returncode": 0,
-      "seconds": 1.83,
+      "seconds": 1.73,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/lag_test.log"
     },
     {
       "stage": "cycle_fold",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.48,
+      "seconds": 3.49,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/cycle_fold.log"
     },
     {
       "stage": "spectral",
       "status": "passed",
       "returncode": 0,
-      "seconds": 4.73,
+      "seconds": 4.83,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/spectral.log"
     },
     {
       "stage": "wars",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.53,
+      "seconds": 3.63,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/wars.log"
     },
     {
       "stage": "famines",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.13,
+      "seconds": 3.23,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/famines.log"
     },
     {
       "stage": "israel",
       "status": "passed",
       "returncode": 0,
-      "seconds": 13.21,
+      "seconds": 12.91,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/israel.log"
     },
     {
@@ -234,196 +234,196 @@
       "stage": "floods",
       "status": "passed",
       "returncode": 0,
-      "seconds": 22.28,
+      "seconds": 20.83,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/floods.log"
     },
     {
       "stage": "pandemics",
       "status": "passed",
       "returncode": 0,
-      "seconds": 6.24,
+      "seconds": 6.44,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/pandemics.log"
     },
     {
       "stage": "volcanoes",
       "status": "passed",
       "returncode": 0,
-      "seconds": 2.92,
+      "seconds": 3.12,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/volcanoes.log"
     },
     {
       "stage": "cyclones",
       "status": "passed",
       "returncode": 0,
-      "seconds": 2.37,
+      "seconds": 2.32,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/cyclones.log"
     },
     {
       "stage": "astronomy",
       "status": "passed",
       "returncode": 0,
-      "seconds": 2.63,
+      "seconds": 2.58,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/astronomy.log"
     },
     {
       "stage": "meta_analysis",
       "status": "passed",
       "returncode": 0,
-      "seconds": 30.71,
+      "seconds": 30.96,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/meta_analysis.log"
     },
     {
       "stage": "trends_meta",
       "status": "passed",
       "returncode": 0,
-      "seconds": 22.89,
+      "seconds": 21.83,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/trends_meta.log"
     },
     {
       "stage": "pattern_analysis",
       "status": "passed",
       "returncode": 0,
-      "seconds": 18.87,
+      "seconds": 18.73,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/pattern_analysis.log"
     },
     {
       "stage": "signs_overlay",
       "status": "passed",
       "returncode": 0,
-      "seconds": 6.68,
+      "seconds": 6.79,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/signs_overlay.log"
     },
     {
       "stage": "contractions_analysis",
       "status": "passed",
       "returncode": 0,
-      "seconds": 6.28,
+      "seconds": 6.08,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/contractions_analysis.log"
     },
     {
       "stage": "periodogram_extended",
       "status": "passed",
       "returncode": 0,
-      "seconds": 18.19,
+      "seconds": 17.69,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/periodogram_extended.log"
     },
     {
       "stage": "sensitivity",
       "status": "passed",
       "returncode": 0,
-      "seconds": 2.58,
+      "seconds": 2.53,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/sensitivity.log"
     },
     {
       "stage": "wavelet",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.17,
+      "seconds": 2.98,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/wavelet.log"
     },
     {
       "stage": "chains",
       "status": "passed",
       "returncode": 0,
-      "seconds": 16.51,
+      "seconds": 17.63,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/chains.log"
     },
     {
       "stage": "wars_split",
       "status": "passed",
       "returncode": 0,
-      "seconds": 4.88,
+      "seconds": 4.83,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/wars_split.log"
     },
     {
       "stage": "granger",
       "status": "passed",
       "returncode": 0,
-      "seconds": 2.98,
+      "seconds": 2.88,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/granger.log"
     },
     {
       "stage": "regional",
       "status": "passed",
       "returncode": 0,
-      "seconds": 2.93,
+      "seconds": 2.69,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/regional.log"
     },
     {
       "stage": "regional_quakes",
       "status": "passed",
       "returncode": 0,
-      "seconds": 2.98,
+      "seconds": 3.05,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/regional_quakes.log"
     },
     {
       "stage": "ucdp_compare",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.68,
+      "seconds": 3.58,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/ucdp_compare.log"
     },
     {
       "stage": "canonical_compare",
       "status": "passed",
       "returncode": 0,
-      "seconds": 4.68,
+      "seconds": 4.58,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/canonical_compare.log"
     },
     {
       "stage": "monitor_regional",
       "status": "passed",
       "returncode": 0,
-      "seconds": 50.51,
+      "seconds": 46.75,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/monitor_regional.log"
     },
     {
       "stage": "monitor_trade",
       "status": "passed",
       "returncode": 0,
-      "seconds": 43.43,
+      "seconds": 42.08,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/monitor_trade.log"
     },
     {
       "stage": "flood_linkage_audit",
       "status": "passed",
       "returncode": 0,
-      "seconds": 50.66,
+      "seconds": 48.76,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/flood_linkage_audit.log"
     },
     {
       "stage": "make_figures",
       "status": "passed",
       "returncode": 0,
-      "seconds": 3.48,
+      "seconds": 3.38,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/make_figures.log"
     },
     {
       "stage": "make_more_figures",
       "status": "passed",
       "returncode": 0,
-      "seconds": 6.79,
+      "seconds": 6.63,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/make_more_figures.log"
     },
     {
       "stage": "dashboard",
       "status": "passed",
       "returncode": 0,
-      "seconds": 5.08,
+      "seconds": 5.33,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/dashboard.log"
     },
     {
       "stage": "predictions_scorecard",
       "status": "passed",
       "returncode": 0,
-      "seconds": 2.68,
+      "seconds": 2.57,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/predictions_scorecard.log"
     },
     {
       "stage": "refresh_report",
       "status": "passed",
       "returncode": 0,
-      "seconds": 6.43,
+      "seconds": 5.84,
       "log": "/home/ubuntu/correlations-workspace/correlations/logs/refresh_report.log"
     }
   ]

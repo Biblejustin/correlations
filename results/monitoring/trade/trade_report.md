@@ -1,6 +1,6 @@
 # Trade, currencies and food-price monitoring
 
-Reference cutoff: 2026-11-07T06:44:59.704129-06:00 (America/Chicago).
+Reference cutoff: 2026-11-08T06:44:45.130865-06:00 (America/Chicago).
 
 192 frozen comparisons; 6 estimable fits; 0 pass BH q < 0.05, covering 0 distinct country/predictor/lag cells. Two fits of one cell are related sensitivities.
 
@@ -12,9 +12,9 @@ Historical exploratory associations support observation, not causal or prophetic
 
 | Chokepoint | Latest eligible month | Mean estimated transit, metric tons/day | YoY decline |
 |---|---|---:|---:|
-| Suez Canal | 2026-09 | 1,565,090 | -3.6% |
-| Bab el-Mandeb | 2026-09 | 937,684 | +24.6% |
-| Strait of Hormuz | 2026-09 | 77,690 | +97.5% |
+| Suez Canal | 2026-10 | 1,796,814 | -18.7% |
+| Bab el-Mandeb | 2026-10 | 969,833 | +28.7% |
+| Strait of Hormuz | 2026-10 | 87,079 | +97.5% |
 
 PortWatch estimates payload-weighted vessel transit from AIS, across all vessel classes. They do not measure grain cargo or a country’s imports. Suez and Bab el-Mandeb often describe the same route. Every calendar day is required; seven elapsed days after month end are excluded by this project. This delay does not make preliminary IMF estimates final. Missing source days remain missing.
 

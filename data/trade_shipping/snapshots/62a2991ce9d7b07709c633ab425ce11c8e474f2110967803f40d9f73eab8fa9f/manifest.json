@@ -1,0 +1,341 @@
+{
+  "as_of_utc": "2026-11-08T12:41:08.777915+00:00",
+  "chokepoints": {
+    "chokepoint1": [
+      "Suez Canal",
+      "Suez Canal"
+    ],
+    "chokepoint4": [
+      "Bab el-Mandeb Strait",
+      "Bab el-Mandeb"
+    ],
+    "chokepoint6": [
+      "Strait of Hormuz",
+      "Strait of Hormuz"
+    ]
+  },
+  "citation": "Sources: UN Global Platform; IMF PortWatch (portwatch.imf.org).",
+  "documentation": [
+    "https://portwatch.imf.org/pages/data-and-methodology",
+    "https://www.arcgis.com/sharing/rest/content/items/3da2b9ca97684916b75c4013f95d18ab?f=json",
+    "https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025093-print-pdf.pdf"
+  ],
+  "fetched_at": "2026-11-08T12:41:12.553320+00:00",
+  "implementation_sha256": "f58a597323cfc5f51996af208848c3ca1006e80ea2096299c0b7df82a1e42599",
+  "inputs": [
+    {
+      "fetched_at": "2026-11-08T12:41:09.094839+00:00",
+      "name": "item",
+      "params": {
+        "f": "json"
+      },
+      "path": "raw/2eb8c5472b4756c6bb4365b3dc7190d2cc45285781522a17e7a44c6f42a58933.json.gz",
+      "published_at": null,
+      "sha256": "2eb8c5472b4756c6bb4365b3dc7190d2cc45285781522a17e7a44c6f42a58933",
+      "url": "https://www.arcgis.com/sharing/rest/content/items/3da2b9ca97684916b75c4013f95d18ab"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:09.195887+00:00",
+      "name": "service",
+      "params": {
+        "f": "json"
+      },
+      "path": "raw/7da087204548b289e93a1a29cd3012d00900b2e6ecc214066e0d56c7ec9dafdc.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "7da087204548b289e93a1a29cd3012d00900b2e6ecc214066e0d56c7ec9dafdc",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:09.205964+00:00",
+      "name": "layer_before",
+      "params": {
+        "f": "json"
+      },
+      "path": "raw/920551199e1817907690886ab9fed31ebe71de7ac7d506e2358bd9cc20c133a5.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "920551199e1817907690886ab9fed31ebe71de7ac7d506e2358bd9cc20c133a5",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:09.457722+00:00",
+      "name": "count_before",
+      "params": {
+        "f": "json",
+        "returnCountOnly": "true",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/f8a86b982854f9b551bfe8793a3b99c257fe9a97b0d416576de57ae91773d973.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "f8a86b982854f9b551bfe8793a3b99c257fe9a97b0d416576de57ae91773d973",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:10.704256+00:00",
+      "name": "ids_before",
+      "params": {
+        "f": "json",
+        "returnIdsOnly": "true",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/a1f65c2c56e85fac4650deaab0c9d1bedbf5d57a6cc31cbcde41fbc6aeff80e1.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "a1f65c2c56e85fac4650deaab0c9d1bedbf5d57a6cc31cbcde41fbc6aeff80e1",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:10.904112+00:00",
+      "name": "page_0",
+      "params": {
+        "f": "json",
+        "orderByFields": "ObjectId ASC",
+        "outFields": "date,year,month,day,portid,portname,n_container,n_dry_bulk,n_general_cargo,n_roro,n_tanker,n_cargo,n_total,capacity_container,capacity_dry_bulk,capacity_general_cargo,capacity_roro,capacity_tanker,capacity_cargo,capacity,ObjectId",
+        "resultOffset": 0,
+        "resultRecordCount": 1000,
+        "returnGeometry": "false",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/202d5b2c5b757a1e23d034b95f3651d0f76a10f7eef397f131165cbbcf27eb4f.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "202d5b2c5b757a1e23d034b95f3651d0f76a10f7eef397f131165cbbcf27eb4f",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:11.056715+00:00",
+      "name": "page_1000",
+      "params": {
+        "f": "json",
+        "orderByFields": "ObjectId ASC",
+        "outFields": "date,year,month,day,portid,portname,n_container,n_dry_bulk,n_general_cargo,n_roro,n_tanker,n_cargo,n_total,capacity_container,capacity_dry_bulk,capacity_general_cargo,capacity_roro,capacity_tanker,capacity_cargo,capacity,ObjectId",
+        "resultOffset": 1000,
+        "resultRecordCount": 1000,
+        "returnGeometry": "false",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/552ef4b54a16af78dd51d20683c4566f17ff180e5e2bd717b4fd2c32a6c79196.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "552ef4b54a16af78dd51d20683c4566f17ff180e5e2bd717b4fd2c32a6c79196",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:11.220800+00:00",
+      "name": "page_2000",
+      "params": {
+        "f": "json",
+        "orderByFields": "ObjectId ASC",
+        "outFields": "date,year,month,day,portid,portname,n_container,n_dry_bulk,n_general_cargo,n_roro,n_tanker,n_cargo,n_total,capacity_container,capacity_dry_bulk,capacity_general_cargo,capacity_roro,capacity_tanker,capacity_cargo,capacity,ObjectId",
+        "resultOffset": 2000,
+        "resultRecordCount": 1000,
+        "returnGeometry": "false",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/7ea37b901a74051d2c9f1743ac0f00c86e6418af12b1125b25d40835757a8c09.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "7ea37b901a74051d2c9f1743ac0f00c86e6418af12b1125b25d40835757a8c09",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:11.472391+00:00",
+      "name": "page_3000",
+      "params": {
+        "f": "json",
+        "orderByFields": "ObjectId ASC",
+        "outFields": "date,year,month,day,portid,portname,n_container,n_dry_bulk,n_general_cargo,n_roro,n_tanker,n_cargo,n_total,capacity_container,capacity_dry_bulk,capacity_general_cargo,capacity_roro,capacity_tanker,capacity_cargo,capacity,ObjectId",
+        "resultOffset": 3000,
+        "resultRecordCount": 1000,
+        "returnGeometry": "false",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/c777962a2991808d1e9fa9225891c9af3f15af703eff1976b24901b84ed0189c.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "c777962a2991808d1e9fa9225891c9af3f15af703eff1976b24901b84ed0189c",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:11.675416+00:00",
+      "name": "page_4000",
+      "params": {
+        "f": "json",
+        "orderByFields": "ObjectId ASC",
+        "outFields": "date,year,month,day,portid,portname,n_container,n_dry_bulk,n_general_cargo,n_roro,n_tanker,n_cargo,n_total,capacity_container,capacity_dry_bulk,capacity_general_cargo,capacity_roro,capacity_tanker,capacity_cargo,capacity,ObjectId",
+        "resultOffset": 4000,
+        "resultRecordCount": 1000,
+        "returnGeometry": "false",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/3300bed94642ceea90812b800c94cf8f39300be7c5e35f3a8f9db3c837a8287b.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "3300bed94642ceea90812b800c94cf8f39300be7c5e35f3a8f9db3c837a8287b",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:11.840320+00:00",
+      "name": "page_5000",
+      "params": {
+        "f": "json",
+        "orderByFields": "ObjectId ASC",
+        "outFields": "date,year,month,day,portid,portname,n_container,n_dry_bulk,n_general_cargo,n_roro,n_tanker,n_cargo,n_total,capacity_container,capacity_dry_bulk,capacity_general_cargo,capacity_roro,capacity_tanker,capacity_cargo,capacity,ObjectId",
+        "resultOffset": 5000,
+        "resultRecordCount": 1000,
+        "returnGeometry": "false",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/e272c606481e5cf38da0f76069b3d05e00206e848378c67248e9f3aa1607ee15.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "e272c606481e5cf38da0f76069b3d05e00206e848378c67248e9f3aa1607ee15",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:11.994926+00:00",
+      "name": "page_6000",
+      "params": {
+        "f": "json",
+        "orderByFields": "ObjectId ASC",
+        "outFields": "date,year,month,day,portid,portname,n_container,n_dry_bulk,n_general_cargo,n_roro,n_tanker,n_cargo,n_total,capacity_container,capacity_dry_bulk,capacity_general_cargo,capacity_roro,capacity_tanker,capacity_cargo,capacity,ObjectId",
+        "resultOffset": 6000,
+        "resultRecordCount": 1000,
+        "returnGeometry": "false",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/dac84d297cc34659636f0212860634fd852649c22d677ab08cff90e76d563454.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "dac84d297cc34659636f0212860634fd852649c22d677ab08cff90e76d563454",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:12.185140+00:00",
+      "name": "page_7000",
+      "params": {
+        "f": "json",
+        "orderByFields": "ObjectId ASC",
+        "outFields": "date,year,month,day,portid,portname,n_container,n_dry_bulk,n_general_cargo,n_roro,n_tanker,n_cargo,n_total,capacity_container,capacity_dry_bulk,capacity_general_cargo,capacity_roro,capacity_tanker,capacity_cargo,capacity,ObjectId",
+        "resultOffset": 7000,
+        "resultRecordCount": 1000,
+        "returnGeometry": "false",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/013af32fb5bc083c5b821f1f40c261ea1be3e53fc728c830ffb34aba61a581d5.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "013af32fb5bc083c5b821f1f40c261ea1be3e53fc728c830ffb34aba61a581d5",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:12.523782+00:00",
+      "name": "page_8000",
+      "params": {
+        "f": "json",
+        "orderByFields": "ObjectId ASC",
+        "outFields": "date,year,month,day,portid,portname,n_container,n_dry_bulk,n_general_cargo,n_roro,n_tanker,n_cargo,n_total,capacity_container,capacity_dry_bulk,capacity_general_cargo,capacity_roro,capacity_tanker,capacity_cargo,capacity,ObjectId",
+        "resultOffset": 8000,
+        "resultRecordCount": 1000,
+        "returnGeometry": "false",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/94c29e883400ee60078b323e38876ffb1527cfca411e3c3ccb44ae1d80e77fe9.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "94c29e883400ee60078b323e38876ffb1527cfca411e3c3ccb44ae1d80e77fe9",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:12.537446+00:00",
+      "name": "ids_after",
+      "params": {
+        "f": "json",
+        "returnIdsOnly": "true",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/a1f65c2c56e85fac4650deaab0c9d1bedbf5d57a6cc31cbcde41fbc6aeff80e1.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "a1f65c2c56e85fac4650deaab0c9d1bedbf5d57a6cc31cbcde41fbc6aeff80e1",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:12.547985+00:00",
+      "name": "count_after",
+      "params": {
+        "f": "json",
+        "returnCountOnly": "true",
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'"
+      },
+      "path": "raw/f8a86b982854f9b551bfe8793a3b99c257fe9a97b0d416576de57ae91773d973.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "f8a86b982854f9b551bfe8793a3b99c257fe9a97b0d416576de57ae91773d973",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
+    },
+    {
+      "fetched_at": "2026-11-08T12:41:12.553320+00:00",
+      "name": "layer_after",
+      "params": {
+        "f": "json"
+      },
+      "path": "raw/920551199e1817907690886ab9fed31ebe71de7ac7d506e2358bd9cc20c133a5.json.gz",
+      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
+      "sha256": "920551199e1817907690886ab9fed31ebe71de7ac7d506e2358bd9cc20c133a5",
+      "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0"
+    }
+  ],
+  "item_id": "3da2b9ca97684916b75c4013f95d18ab",
+  "limitations": [
+    "AIS-derived estimated transit volume in metric tons; not measured grain cargo, national imports, customs trade, or bare maximum ship capacity.",
+    "Transit counts and class aggregates overlap; never add cargo/total to component classes or treat the three routes as independent shocks.",
+    "Calendar rows do not establish complete AIS reception or vessel coverage. Missing records and null values remain unavailable, never zero.",
+    "Source publishes preliminary weekly updates (Tuesday 9 AM ET); seven elapsed days is a project exclusion rule, not an IMF stabilization guarantee.",
+    "All history can revise after AIS, methodology, or coverage changes. Retained snapshots do not reconstruct release-time historical availability.",
+    "No country, commodity, origin/destination, rerouting, price, or causal interpretation can be inferred from these route totals alone."
+  ],
+  "outputs": {
+    "coverage.csv": {
+      "path": "snapshots/62a2991ce9d7b07709c633ab425ce11c8e474f2110967803f40d9f73eab8fa9f/coverage.csv",
+      "rows": 3,
+      "sha256": "a68dbd10d2c40b683c11a43e634f412f6366060e53d7bb6ce047728bcd12631f"
+    },
+    "daily.csv": {
+      "path": "snapshots/62a2991ce9d7b07709c633ab425ce11c8e474f2110967803f40d9f73eab8fa9f/daily.csv",
+      "rows": 8607,
+      "sha256": "d8ee56ca49cb8101ec09fba29d0c0ef53fb8ebbe151ad1150f5cd6d02ea44e97"
+    }
+  },
+  "previous_snapshot_id": "ed61d2d4786be092e189c5bbf40beb363e360431544b6a600fd55dc06701b86c",
+  "reporting_lag_days": 7,
+  "schema_version": 1,
+  "snapshot_id": "62a2991ce9d7b07709c633ab425ce11c8e474f2110967803f40d9f73eab8fa9f",
+  "source": {
+    "editing_info": {
+      "dataLastEditDate": 1794063587722,
+      "lastEditDate": 1794063587722,
+      "schemaLastEditDate": 1794063587722
+    },
+    "field_types": {
+      "ObjectId": "esriFieldTypeOID",
+      "capacity": "esriFieldTypeInteger",
+      "capacity_cargo": "esriFieldTypeInteger",
+      "capacity_container": "esriFieldTypeInteger",
+      "capacity_dry_bulk": "esriFieldTypeInteger",
+      "capacity_general_cargo": "esriFieldTypeInteger",
+      "capacity_roro": "esriFieldTypeInteger",
+      "capacity_tanker": "esriFieldTypeInteger",
+      "date": "esriFieldTypeDateOnly",
+      "day": "esriFieldTypeInteger",
+      "month": "esriFieldTypeInteger",
+      "n_cargo": "esriFieldTypeInteger",
+      "n_container": "esriFieldTypeInteger",
+      "n_dry_bulk": "esriFieldTypeInteger",
+      "n_general_cargo": "esriFieldTypeInteger",
+      "n_roro": "esriFieldTypeInteger",
+      "n_tanker": "esriFieldTypeInteger",
+      "n_total": "esriFieldTypeInteger",
+      "portid": "esriFieldTypeString",
+      "portname": "esriFieldTypeString",
+      "year": "esriFieldTypeInteger"
+    },
+    "item_id": "3da2b9ca97684916b75c4013f95d18ab",
+    "item_modified": 1793988266000,
+    "owner": "IMF-portwatch_imf_dataviz",
+    "query_where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-08'",
+    "record_count": 8586,
+    "service_url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer"
+  },
+  "source_id": "imf_portwatch_daily_chokepoints",
+  "source_version": "3da2b9ca97684916b75c4013f95d18ab; source edit 1794063587722",
+  "start_date": "2019-01-01",
+  "trade_plan_sha256": "869b45de8bca7f9925bfd950d1b5585f135a231e4e3f931ff6623c6d9bab645c"
+}
