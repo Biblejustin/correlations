@@ -1,9 +1,9 @@
 {
-  "as_of_utc": "2026-11-08T12:44:41.426164+00:00",
+  "as_of_utc": "2026-11-09T12:48:50.662055+00:00",
   "design_fixed_at_utc": "2026-09-06T02:29:50Z",
   "input_rows": 110922,
-  "latest_expected_week_end": "2026-10-25",
-  "latest_expected_week_start": "2026-10-19",
+  "latest_expected_week_end": "2026-11-01",
+  "latest_expected_week_start": "2026-10-26",
   "limitations": [
     "Descriptive positivity differences, not outbreak diagnoses, calibrated p-values or population infection prevalence.",
     "Calendar-complete, sufficiently tested observations do not establish reporting-site coverage; site coverage remains unverified.",
@@ -12,10 +12,10 @@
     "Missing, invalid, partial, projected and low-testing weeks are unavailable; absent weeks are never filled with zero."
   ],
   "output_sha256": {
-    "seasonal_flu.md": "394ce3a861de51ec2661412029e4fb8bcda41eb569e683a280de4b378d0033c9",
-    "seasonal_flu_baseline_windows.csv": "dbeb20c340c719bdc17fb72031227fc81638e63376ac69240379f32f94670fae",
+    "seasonal_flu.md": "67d8e9b68e3b0e24d3eaf01bb903ad6d47f1b64b9dde643713943f403a5cb570",
+    "seasonal_flu_baseline_windows.csv": "f28b01f1ef63e685c71584bab8d7f44b74a8a619d1b56898a29ddd01f2c65a0c",
     "seasonal_flu_row_quality.csv": "9aa75832775fc03c7f4ddd50d90ac90f6e1f5b433e9688a19c3d226bd6fa3411",
-    "seasonal_flu_weekly.csv": "f369732ec256611a58794763727b8018f113d5e3b6e1cd17f0346b7c737379f1"
+    "seasonal_flu_weekly.csv": "6e5cf5913173b832e100d5af6eaea74869942229f01f1daeecd19032e303c6d8"
   },
   "plan": {
     "baseline": "Specimen-weighted positivity within each qualifying historical five-week seasonal window; median across qualifying windows. All baseline weeks end before the target starts and belong to earlier ISO years. ISO week53 maps to week52 only if the historical year lacks53.",
@@ -43,10 +43,10 @@
   "plan_sha256": "0ceb0605193ddb33d8400d3ffa7658d9d6fc429cf432ba2f4138740c70c52150",
   "schema_version": 1,
   "status_counts": {
-    "available": 20,
-    "insufficient_baseline": 23,
-    "low_testing": 127,
-    "unobserved_week": 246
+    "available": 19,
+    "insufficient_baseline": 22,
+    "low_testing": 122,
+    "unobserved_week": 253
   },
   "surveillance_streams": 8
 }
