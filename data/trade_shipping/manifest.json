@@ -1,5 +1,5 @@
 {
-  "as_of_utc": "2026-11-09T12:43:42.788542+00:00",
+  "as_of_utc": "2026-11-11T12:42:12.444161+00:00",
   "chokepoints": {
     "chokepoint1": [
       "Suez Canal",
@@ -20,70 +20,70 @@
     "https://www.arcgis.com/sharing/rest/content/items/3da2b9ca97684916b75c4013f95d18ab?f=json",
     "https://www.imf.org/-/media/files/publications/wp/2025/english/wpiea2025093-print-pdf.pdf"
   ],
-  "fetched_at": "2026-11-09T12:44:14.853552+00:00",
+  "fetched_at": "2026-11-11T12:42:21.237469+00:00",
   "implementation_sha256": "f58a597323cfc5f51996af208848c3ca1006e80ea2096299c0b7df82a1e42599",
   "inputs": [
     {
-      "fetched_at": "2026-11-09T12:43:43.040899+00:00",
+      "fetched_at": "2026-11-11T12:42:12.772998+00:00",
       "name": "item",
       "params": {
         "f": "json"
       },
-      "path": "raw/beb50b6741818b04b57dd0052648595ac4abb426ca6eea5c7f0fb100d9fa38ae.json.gz",
+      "path": "raw/d8b2f4d4c43f30bc9ad520543e751fbee30a6b878d58e73c4eb86f6382f8a0f0.json.gz",
       "published_at": null,
-      "sha256": "beb50b6741818b04b57dd0052648595ac4abb426ca6eea5c7f0fb100d9fa38ae",
+      "sha256": "d8b2f4d4c43f30bc9ad520543e751fbee30a6b878d58e73c4eb86f6382f8a0f0",
       "url": "https://www.arcgis.com/sharing/rest/content/items/3da2b9ca97684916b75c4013f95d18ab"
     },
     {
-      "fetched_at": "2026-11-09T12:43:43.138324+00:00",
+      "fetched_at": "2026-11-11T12:42:12.870077+00:00",
       "name": "service",
       "params": {
         "f": "json"
       },
-      "path": "raw/7da087204548b289e93a1a29cd3012d00900b2e6ecc214066e0d56c7ec9dafdc.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "7da087204548b289e93a1a29cd3012d00900b2e6ecc214066e0d56c7ec9dafdc",
+      "path": "raw/fc865d7d1f5d37309e005fc60c7db624bd992a3314d93e549c57ea298fa06046.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "fc865d7d1f5d37309e005fc60c7db624bd992a3314d93e549c57ea298fa06046",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer"
     },
     {
-      "fetched_at": "2026-11-09T12:43:43.144476+00:00",
+      "fetched_at": "2026-11-11T12:42:12.876465+00:00",
       "name": "layer_before",
       "params": {
         "f": "json"
       },
-      "path": "raw/920551199e1817907690886ab9fed31ebe71de7ac7d506e2358bd9cc20c133a5.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "920551199e1817907690886ab9fed31ebe71de7ac7d506e2358bd9cc20c133a5",
+      "path": "raw/a8343a4eecb2ceb5dd9b33eeecf2d5d13b5b81e3b31e511febc225caeb80286c.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "a8343a4eecb2ceb5dd9b33eeecf2d5d13b5b81e3b31e511febc225caeb80286c",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0"
     },
     {
-      "fetched_at": "2026-11-09T12:43:46.603630+00:00",
+      "fetched_at": "2026-11-11T12:42:15.343643+00:00",
       "name": "count_before",
       "params": {
         "f": "json",
         "returnCountOnly": "true",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/f8a86b982854f9b551bfe8793a3b99c257fe9a97b0d416576de57ae91773d973.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "f8a86b982854f9b551bfe8793a3b99c257fe9a97b0d416576de57ae91773d973",
+      "path": "raw/cdb7b51a8ce2336e4f500ec42476f17eebd87ca1418b43cc6cf18687e9ea8421.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "cdb7b51a8ce2336e4f500ec42476f17eebd87ca1418b43cc6cf18687e9ea8421",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:43:55.643573+00:00",
+      "fetched_at": "2026-11-11T12:42:16.677557+00:00",
       "name": "ids_before",
       "params": {
         "f": "json",
         "returnIdsOnly": "true",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/a1f65c2c56e85fac4650deaab0c9d1bedbf5d57a6cc31cbcde41fbc6aeff80e1.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "a1f65c2c56e85fac4650deaab0c9d1bedbf5d57a6cc31cbcde41fbc6aeff80e1",
+      "path": "raw/41aa18abfef5c988269e7f681a302b4234133ae18f99dbf97b5ef9644dcf27e8.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "41aa18abfef5c988269e7f681a302b4234133ae18f99dbf97b5ef9644dcf27e8",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:43:56.197799+00:00",
+      "fetched_at": "2026-11-11T12:42:16.822893+00:00",
       "name": "page_0",
       "params": {
         "f": "json",
@@ -92,15 +92,15 @@
         "resultOffset": 0,
         "resultRecordCount": 1000,
         "returnGeometry": "false",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/202d5b2c5b757a1e23d034b95f3651d0f76a10f7eef397f131165cbbcf27eb4f.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "202d5b2c5b757a1e23d034b95f3651d0f76a10f7eef397f131165cbbcf27eb4f",
+      "path": "raw/e9876ffcf01548385e86344785f409909c92f070ec0f715bc1999ae60f9bbf17.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "e9876ffcf01548385e86344785f409909c92f070ec0f715bc1999ae60f9bbf17",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:43:56.969008+00:00",
+      "fetched_at": "2026-11-11T12:42:16.971536+00:00",
       "name": "page_1000",
       "params": {
         "f": "json",
@@ -109,15 +109,15 @@
         "resultOffset": 1000,
         "resultRecordCount": 1000,
         "returnGeometry": "false",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/552ef4b54a16af78dd51d20683c4566f17ff180e5e2bd717b4fd2c32a6c79196.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "552ef4b54a16af78dd51d20683c4566f17ff180e5e2bd717b4fd2c32a6c79196",
+      "path": "raw/9a122f1191ca88bc46c427b346b277f45ab352115607c1811f728da1deb8fc77.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "9a122f1191ca88bc46c427b346b277f45ab352115607c1811f728da1deb8fc77",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:43:58.022537+00:00",
+      "fetched_at": "2026-11-11T12:42:17.625386+00:00",
       "name": "page_2000",
       "params": {
         "f": "json",
@@ -126,15 +126,15 @@
         "resultOffset": 2000,
         "resultRecordCount": 1000,
         "returnGeometry": "false",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/7ea37b901a74051d2c9f1743ac0f00c86e6418af12b1125b25d40835757a8c09.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "7ea37b901a74051d2c9f1743ac0f00c86e6418af12b1125b25d40835757a8c09",
+      "path": "raw/000ce46b1e284b54986b2d197ad2b96fa8c94cf89a4455b28a9b34bdfb77abde.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "000ce46b1e284b54986b2d197ad2b96fa8c94cf89a4455b28a9b34bdfb77abde",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:44:00.330098+00:00",
+      "fetched_at": "2026-11-11T12:42:18.191832+00:00",
       "name": "page_3000",
       "params": {
         "f": "json",
@@ -143,15 +143,15 @@
         "resultOffset": 3000,
         "resultRecordCount": 1000,
         "returnGeometry": "false",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/c777962a2991808d1e9fa9225891c9af3f15af703eff1976b24901b84ed0189c.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "c777962a2991808d1e9fa9225891c9af3f15af703eff1976b24901b84ed0189c",
+      "path": "raw/b01f42623794d7393a0b11da3aae9854e6bcd4f3d628b3da55d86b7a2f2a357c.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "b01f42623794d7393a0b11da3aae9854e6bcd4f3d628b3da55d86b7a2f2a357c",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:44:02.123780+00:00",
+      "fetched_at": "2026-11-11T12:42:18.405559+00:00",
       "name": "page_4000",
       "params": {
         "f": "json",
@@ -160,15 +160,15 @@
         "resultOffset": 4000,
         "resultRecordCount": 1000,
         "returnGeometry": "false",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/3300bed94642ceea90812b800c94cf8f39300be7c5e35f3a8f9db3c837a8287b.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "3300bed94642ceea90812b800c94cf8f39300be7c5e35f3a8f9db3c837a8287b",
+      "path": "raw/f59392ea945d8dc98d8e78689d91429c7ec69676f5c23e81045c0285ef309767.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "f59392ea945d8dc98d8e78689d91429c7ec69676f5c23e81045c0285ef309767",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:44:04.369691+00:00",
+      "fetched_at": "2026-11-11T12:42:18.806197+00:00",
       "name": "page_5000",
       "params": {
         "f": "json",
@@ -177,15 +177,15 @@
         "resultOffset": 5000,
         "resultRecordCount": 1000,
         "returnGeometry": "false",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/e272c606481e5cf38da0f76069b3d05e00206e848378c67248e9f3aa1607ee15.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "e272c606481e5cf38da0f76069b3d05e00206e848378c67248e9f3aa1607ee15",
+      "path": "raw/716c004dcd9a78062888dfb2745df99000629784ff88ac9f4cce2549b40a11f3.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "716c004dcd9a78062888dfb2745df99000629784ff88ac9f4cce2549b40a11f3",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:44:05.246272+00:00",
+      "fetched_at": "2026-11-11T12:42:19.652742+00:00",
       "name": "page_6000",
       "params": {
         "f": "json",
@@ -194,15 +194,15 @@
         "resultOffset": 6000,
         "resultRecordCount": 1000,
         "returnGeometry": "false",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/dac84d297cc34659636f0212860634fd852649c22d677ab08cff90e76d563454.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "dac84d297cc34659636f0212860634fd852649c22d677ab08cff90e76d563454",
+      "path": "raw/6ca1f10d314faf8e0b32f6bf39b66c5504bf94bed94e24a39bac2eae872f127e.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "6ca1f10d314faf8e0b32f6bf39b66c5504bf94bed94e24a39bac2eae872f127e",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:44:05.659413+00:00",
+      "fetched_at": "2026-11-11T12:42:20.691375+00:00",
       "name": "page_7000",
       "params": {
         "f": "json",
@@ -211,15 +211,15 @@
         "resultOffset": 7000,
         "resultRecordCount": 1000,
         "returnGeometry": "false",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/013af32fb5bc083c5b821f1f40c261ea1be3e53fc728c830ffb34aba61a581d5.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "013af32fb5bc083c5b821f1f40c261ea1be3e53fc728c830ffb34aba61a581d5",
+      "path": "raw/47cdba96a091ee99f3d79df3e7458e751d4d17abe23e7a0ce9271f2e8ddcfe19.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "47cdba96a091ee99f3d79df3e7458e751d4d17abe23e7a0ce9271f2e8ddcfe19",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:44:14.816345+00:00",
+      "fetched_at": "2026-11-11T12:42:21.206390+00:00",
       "name": "page_8000",
       "params": {
         "f": "json",
@@ -228,48 +228,48 @@
         "resultOffset": 8000,
         "resultRecordCount": 1000,
         "returnGeometry": "false",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/94c29e883400ee60078b323e38876ffb1527cfca411e3c3ccb44ae1d80e77fe9.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "94c29e883400ee60078b323e38876ffb1527cfca411e3c3ccb44ae1d80e77fe9",
+      "path": "raw/00a537e985696efeaca327fea435503511deb0b099c46bda7c8ee31deda7c3ae.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "00a537e985696efeaca327fea435503511deb0b099c46bda7c8ee31deda7c3ae",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:44:14.832798+00:00",
+      "fetched_at": "2026-11-11T12:42:21.220461+00:00",
       "name": "ids_after",
       "params": {
         "f": "json",
         "returnIdsOnly": "true",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/a1f65c2c56e85fac4650deaab0c9d1bedbf5d57a6cc31cbcde41fbc6aeff80e1.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "a1f65c2c56e85fac4650deaab0c9d1bedbf5d57a6cc31cbcde41fbc6aeff80e1",
+      "path": "raw/41aa18abfef5c988269e7f681a302b4234133ae18f99dbf97b5ef9644dcf27e8.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "41aa18abfef5c988269e7f681a302b4234133ae18f99dbf97b5ef9644dcf27e8",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:44:14.847330+00:00",
+      "fetched_at": "2026-11-11T12:42:21.231136+00:00",
       "name": "count_after",
       "params": {
         "f": "json",
         "returnCountOnly": "true",
-        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'"
+        "where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'"
       },
-      "path": "raw/f8a86b982854f9b551bfe8793a3b99c257fe9a97b0d416576de57ae91773d973.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "f8a86b982854f9b551bfe8793a3b99c257fe9a97b0d416576de57ae91773d973",
+      "path": "raw/cdb7b51a8ce2336e4f500ec42476f17eebd87ca1418b43cc6cf18687e9ea8421.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "cdb7b51a8ce2336e4f500ec42476f17eebd87ca1418b43cc6cf18687e9ea8421",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query"
     },
     {
-      "fetched_at": "2026-11-09T12:44:14.853552+00:00",
+      "fetched_at": "2026-11-11T12:42:21.237469+00:00",
       "name": "layer_after",
       "params": {
         "f": "json"
       },
-      "path": "raw/920551199e1817907690886ab9fed31ebe71de7ac7d506e2358bd9cc20c133a5.json.gz",
-      "published_at": "Sat, 07 Nov 2026 14:59:47 GMT",
-      "sha256": "920551199e1817907690886ab9fed31ebe71de7ac7d506e2358bd9cc20c133a5",
+      "path": "raw/a8343a4eecb2ceb5dd9b33eeecf2d5d13b5b81e3b31e511febc225caeb80286c.json.gz",
+      "published_at": "Tue, 10 Nov 2026 14:18:07 GMT",
+      "sha256": "a8343a4eecb2ceb5dd9b33eeecf2d5d13b5b81e3b31e511febc225caeb80286c",
       "url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0"
     }
   ],
@@ -284,25 +284,25 @@
   ],
   "outputs": {
     "coverage.csv": {
-      "path": "snapshots/d63abacbb1e63531e965fc8e57ff1037b9a95212f43e80f47596debcfedc057f/coverage.csv",
+      "path": "snapshots/8d58d7ff314435044f8456b54c4c3ad6a4a7fa2c2005789073c32fb67624a297/coverage.csv",
       "rows": 3,
-      "sha256": "ae0e1f40b5ba39212049c364625ae3b37c21271216c494c7086363db5e245615"
+      "sha256": "d44a0efdfe7c2450d5797b25b0ddc127914b4fb251a49774000465594efd2da3"
     },
     "daily.csv": {
-      "path": "snapshots/d63abacbb1e63531e965fc8e57ff1037b9a95212f43e80f47596debcfedc057f/daily.csv",
-      "rows": 8610,
-      "sha256": "c9f71f650b4be124323dd1b8e4e7cb23e834f3ae29d51ccc5c9f5e551bf84a7b"
+      "path": "snapshots/8d58d7ff314435044f8456b54c4c3ad6a4a7fa2c2005789073c32fb67624a297/daily.csv",
+      "rows": 8616,
+      "sha256": "9977cae801132e0e52a2a826cb12747ba17a7147ed1befcc840978338db6a63b"
     }
   },
-  "previous_snapshot_id": "62a2991ce9d7b07709c633ab425ce11c8e474f2110967803f40d9f73eab8fa9f",
+  "previous_snapshot_id": "d63abacbb1e63531e965fc8e57ff1037b9a95212f43e80f47596debcfedc057f",
   "reporting_lag_days": 7,
   "schema_version": 1,
-  "snapshot_id": "d63abacbb1e63531e965fc8e57ff1037b9a95212f43e80f47596debcfedc057f",
+  "snapshot_id": "8d58d7ff314435044f8456b54c4c3ad6a4a7fa2c2005789073c32fb67624a297",
   "source": {
     "editing_info": {
-      "dataLastEditDate": 1794063587722,
-      "lastEditDate": 1794063587722,
-      "schemaLastEditDate": 1794063587722
+      "dataLastEditDate": 1794309422897,
+      "lastEditDate": 1794320287009,
+      "schemaLastEditDate": 1794320287009
     },
     "field_types": {
       "ObjectId": "esriFieldTypeOID",
@@ -328,14 +328,14 @@
       "year": "esriFieldTypeInteger"
     },
     "item_id": "3da2b9ca97684916b75c4013f95d18ab",
-    "item_modified": 1793988266000,
+    "item_modified": 1794320292000,
     "owner": "IMF-portwatch_imf_dataviz",
-    "query_where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-09'",
-    "record_count": 8586,
+    "query_where": "portid IN ('chokepoint1','chokepoint4','chokepoint6') AND date >= DATE '2019-01-01' AND date <= DATE '2026-11-11'",
+    "record_count": 8607,
     "service_url": "https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer"
   },
   "source_id": "imf_portwatch_daily_chokepoints",
-  "source_version": "3da2b9ca97684916b75c4013f95d18ab; source edit 1794063587722",
+  "source_version": "3da2b9ca97684916b75c4013f95d18ab; source edit 1794320287009",
   "start_date": "2019-01-01",
   "trade_plan_sha256": "869b45de8bca7f9925bfd950d1b5585f135a231e4e3f931ff6623c6d9bab645c"
 }

@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-11-10T06:50:53.782186-06:00",
+  "as_of": "2026-11-11T06:45:53.708162-06:00",
   "eligible_fits": 6,
   "interpretation": "Historical exploratory associations; repeated shipping exposures and common crisis shocks limit causal interpretation. Official FX may differ from market rates. Pointwise slope intervals are not simultaneous.",
-  "observation_fingerprint": "a9881b41301a37c57ca46ba24112bab39b001e537b0967677358661840f16e02",
+  "observation_fingerprint": "77f8093053e9c558ddafef8c2ca509e33c3170c9469a3af4d9f1bc7e19e0b357",
   "outputs": {
     "cereal_dependence.csv": {
       "rows": 110,
@@ -26,11 +26,11 @@
     },
     "shipping_monthly.csv": {
       "rows": 282,
-      "sha256": "f66c3baa9b25b8b0a987ccfe2830b15094714b1fbbaa1888ce221194766bf13d"
+      "sha256": "f5f27f8c67712a147e2b2ac934bae10a5971f814549b48b0fd31dc97b6cb6959"
     },
     "trade_food_tests.csv": {
       "rows": 192,
-      "sha256": "3ac8f596553dbf464b0a149359b7dc37cc75ba4bf12a28bf324a911a522cd107"
+      "sha256": "d6ae0f266b8e53fdc20a2e3e4736c13412a28c4fcf9a5baa838b2c65df9ea97b"
     }
   },
   "passing_cells": 0,
@@ -38,20 +38,20 @@
   "plan_sha256": "869b45de8bca7f9925bfd950d1b5585f135a231e4e3f931ff6623c6d9bab645c",
   "planned_fits": 192,
   "plot_sha256": "a80f0e1dc82e1ab480cf2c0b91efa40ccf41460249e33c93c8a637d545a70d50",
-  "report_sha256": "2755ea5f92e852b4a7694e9b341146830c174fc66415c987976f3d120f17f015",
+  "report_sha256": "555f3ddfff6e71e5b8a7a14035019a4eeb4e9fcac60b5dcbc1b9828334273f08",
   "schema_version": 1,
   "source_manifests": {
     "climate": {
-      "sha256": "5e254899f6108348136a066312d68343e539e2d635b87dcda4ee99405fd838d4",
+      "sha256": "3f0af6b33b671022a51642b48db0b987a7e5cd861de9c0f7639dd6a5913f4b85",
       "snapshot_id": "98a3fa22b76d4f5641511c66fd0fb2a17221054f32d9f51b853cb9a7d6cbcef4"
     },
     "economic": {
-      "sha256": "fead34f90ad32561870b14f782a1160fefde1c9df19f4558379e09efaad32767",
+      "sha256": "08bdf189f6be36c65e55233385a8912dfa551b8a1ac1c6b75b7a89c4f17de461",
       "snapshot_id": "b165fa00b3606800117f4598cb638cfa108f0782c58b2288b288a01d82303aad"
     },
     "shipping": {
-      "sha256": "b50a29f11c07d33c8c3b15ae3747929ff00954a9e856aa7b346406be0815aff5",
-      "snapshot_id": "d63abacbb1e63531e965fc8e57ff1037b9a95212f43e80f47596debcfedc057f"
+      "sha256": "5a9b4cc686023f15fc4cd3c80bbce44a1e323d25be07afbf0b535a2e8bfe117d",
+      "snapshot_id": "8d58d7ff314435044f8456b54c4c3ad6a4a7fa2c2005789073c32fb67624a297"
     }
   }
 }

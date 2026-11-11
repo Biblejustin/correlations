@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_date": "2026-11-10",
+  "generated_date": "2026-11-11",
   "config": {
     "schema_version": 1,
     "countries": [
@@ -31,7 +31,7 @@
   },
   "n_permutations": 1999,
   "input_observation_rows": 110922,
-  "observation_table_fingerprint": "cc77784bd6eabcc85e8aa0cc782e22265bbcc8268a9300d63c12ebf3e5999333",
+  "observation_table_fingerprint": "1b6817ea17d3b4db3495ecddd51cce87177b50270e329b0910df4959096288f3",
   "annual_panel_rows": 2659,
   "registered_lag_tests": 72,
   "estimable_lag_tests": 18,
