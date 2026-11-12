@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-11-11T12:45:50.578742+00:00",
+  "as_of_utc": "2026-11-12T12:45:33.604813+00:00",
   "design_fixed_at_utc": "2026-09-06T02:29:50Z",
-  "input_rows": 110922,
+  "input_rows": 110924,
   "latest_expected_week_end": "2026-11-01",
   "latest_expected_week_start": "2026-10-26",
   "limitations": [
@@ -14,8 +14,8 @@
   "output_sha256": {
     "seasonal_flu.md": "67d8e9b68e3b0e24d3eaf01bb903ad6d47f1b64b9dde643713943f403a5cb570",
     "seasonal_flu_baseline_windows.csv": "f28b01f1ef63e685c71584bab8d7f44b74a8a619d1b56898a29ddd01f2c65a0c",
-    "seasonal_flu_row_quality.csv": "9aa75832775fc03c7f4ddd50d90ac90f6e1f5b433e9688a19c3d226bd6fa3411",
-    "seasonal_flu_weekly.csv": "6e5cf5913173b832e100d5af6eaea74869942229f01f1daeecd19032e303c6d8"
+    "seasonal_flu_row_quality.csv": "bf522bc628612f37f546a94d5d2a6ed62a742679aaff713dda66cfe53c2b416e",
+    "seasonal_flu_weekly.csv": "593053fd1fa6e6760a6852a95e3b1c7cc011375ac64e23b80065c939c61794ff"
   },
   "plan": {
     "baseline": "Specimen-weighted positivity within each qualifying historical five-week seasonal window; median across qualifying windows. All baseline weeks end before the target starts and belong to earlier ISO years. ISO week53 maps to week52 only if the historical year lacks53.",
@@ -45,8 +45,8 @@
   "status_counts": {
     "available": 19,
     "insufficient_baseline": 22,
-    "low_testing": 122,
-    "unobserved_week": 253
+    "low_testing": 123,
+    "unobserved_week": 252
   },
   "surveillance_streams": 8
 }

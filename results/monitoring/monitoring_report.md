@@ -1,6 +1,6 @@
 # Regional monitoring
 
-Generated 2026-11-11. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-11-12. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
@@ -12,7 +12,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
 | wfp | 105,842 | 2026-10-31 | — |
-| who | 2,671 | 2026-10-25 | — |
+| who | 2,673 | 2026-11-08 | — |
 | worldbank | 208 | 2025-12-31 | — |
 
 ## Food security: latest current assessment
@@ -66,12 +66,12 @@ IDMC annual GIDD export via HDX. Flows count displacement movements; one person 
 |---|---|---:|---:|---:|
 | ISR | 2026-10-12–2026-10-18 | 14 | 58 | 24.1% |
 | PSE | 2026-03-16–2026-03-22 | 1 | 26 | 3.8% |
-| LBN | 2026-10-19–2026-10-25 | 2 | 28 | 7.1% |
+| LBN | 2026-11-02–2026-11-08 | 5 | 27 | 18.5% |
 | UKR | 2026-09-28–2026-10-04 | 0 | 59 | 0.0% |
-| SDN | 2026-10-12–2026-10-18 | 2 | 33 | 6.1% |
+| SDN | 2026-10-12–2026-10-18 | 2 | 42 | 4.8% |
 | ETH | 2026-09-28–2026-10-04 | 4 | 59 | 6.8% |
 | SOM | 2026-07-27–2026-08-02 | 1 | 44 | 2.3% |
-| YEM | 2026-09-14–2026-09-20 | 1 | 24 | 4.2% |
+| YEM | 2026-09-14–2026-09-20 | 2 | 25 | 8.0% |
 
 WHO sentinel samples require at least 20 specimens. Provisional surveillance observations; positivity is not population prevalence. Missing/non-sentinel weeks are not substituted.
 
@@ -145,7 +145,7 @@ Religious freedom source PSE refers to West Bank; excluded from the combined-ter
 
 ## Israel crop and water observations
 
-Kinneret latest observation: **-213.715 m**, 2026-11-09; 11,389 measurements. Source dates/gaps retained; 10,596 unobserved dates inside catalog span. [Official measurements](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8).
+Kinneret latest observation: **-213.725 m**, 2026-11-11; 11,391 measurements. Source dates/gaps retained; 10,596 unobserved dates inside catalog span. [Official measurements](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8).
 Historical rainfall remains CRU TS4.08 through complete rain year 2023; current rainfall not integrated. Lake level also responds to pumping/transfers/evaporation.
 
 | Wheat outcome × total rain, 1991–2023 | n | r | HAC q, full 30-test follow-up |
