@@ -1,6 +1,6 @@
 # Regional monitoring
 
-Generated 2026-11-12. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-11-13. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
@@ -12,7 +12,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
 | wfp | 105,842 | 2026-10-31 | — |
-| who | 2,673 | 2026-11-08 | — |
+| who | 2,683 | 2026-11-08 | — |
 | worldbank | 208 | 2025-12-31 | — |
 
 ## Food security: latest current assessment
@@ -64,10 +64,10 @@ IDMC annual GIDD export via HDX. Flows count displacement movements; one person 
 
 | Country | Observed week | Influenza-positive specimens | Specimens tested | Positivity |
 |---|---|---:|---:|---:|
-| ISR | 2026-10-12–2026-10-18 | 14 | 58 | 24.1% |
+| ISR | 2026-10-19–2026-10-25 | 10 | 45 | 22.2% |
 | PSE | 2026-03-16–2026-03-22 | 1 | 26 | 3.8% |
 | LBN | 2026-11-02–2026-11-08 | 5 | 27 | 18.5% |
-| UKR | 2026-09-28–2026-10-04 | 0 | 59 | 0.0% |
+| UKR | 2026-10-26–2026-11-01 | 0 | 48 | 0.0% |
 | SDN | 2026-10-12–2026-10-18 | 2 | 42 | 4.8% |
 | ETH | 2026-09-28–2026-10-04 | 4 | 59 | 6.8% |
 | SOM | 2026-07-27–2026-08-02 | 1 | 44 | 2.3% |

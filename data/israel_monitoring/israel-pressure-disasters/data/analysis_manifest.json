@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T12:41:17.647433+00:00",
+  "generated_at": "2026-11-13T12:43:18.837149+00:00",
   "design": {
     "schema_version": 1,
     "study_start": "1991-01-01",
@@ -30,7 +30,7 @@
   "input_sha256": {
     "coverage.json": "8888d1b5c6b6f6ae2ec7d8ce7c0557d28eef8326a42c24c3e133549cb0ed68bc",
     "noaa_billion_dollar_events.csv": "fbe9bbcba93bd90e8e49aed9ca6f93869c5d136b1903ea00c50f8bc9ef36b976",
-    "fema_declarations.csv": "1729d89bb60ac8278a7261a4d2040dbcb5dd0ce2cc46e867f1a05379c32034be",
+    "fema_declarations.csv": "f5768a12746552d442b6e67e63aea44f413384da95e7cae92f58fcaf3d3caff5",
     "us_pressure_events.csv": "732e5b192b227ebffc3085af3bdfc338b0f28a57e484a3364f94598d447c93c9",
     "us_proisrael_events.csv": "55d308c38bb7029cc961942ae56b3f362d4405eb5a3f3a0b195913fbbcb403d7"
   }

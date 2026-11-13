@@ -1,6 +1,6 @@
 # Climate, respiratory and purchasing-power monitors
 
-Reference date: 2026-11-12 (America/Chicago). Exact cutoff: 2026-11-12T06:45:33.604813-06:00.
+Reference date: 2026-11-13 (America/Chicago). Exact cutoff: 2026-11-13T06:48:43.739015-06:00.
 
 Historical exploratory extensions. Source revisions are retained; reference dates do not reconstruct release-time availability. These measures support observation and comparison, not prophetic-fulfillment claims.
 
@@ -47,7 +47,7 @@ Table lists all passing fits; [all 90 global fits](global_climate_sensitivity.cs
 | PSE / 877a128d | 2026-W44 | — | — | — | — | unobserved week |
 | SDN / 64ca22ca | 2026-W44 | — | — | — | — | unobserved week |
 | SOM / 4a810eaf | 2026-W44 | — | — | — | — | unobserved week |
-| UKR / f2db5a97 | 2026-W44 | — | — | — | — | unobserved week |
+| UKR / f2db5a97 | 2026-W44 | 48 | — | — | — | low testing; provisional |
 | YEM / 96269d5e | 2026-W44 | — | — | — | — | unobserved week |
 
 References use only prior ISO years, with minimum specimen/week and historical-window coverage rules. Latest expected weeks remain visible when data are missing. Reporting-site coverage is unverified; these are descriptive positivity differences, not outbreak diagnoses or calibrated p-values.

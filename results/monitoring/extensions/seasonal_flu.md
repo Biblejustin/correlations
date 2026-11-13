@@ -8,7 +8,7 @@
 | PSE / 877a128d | 2026-W44 | — | — | — | — | unobserved week |
 | SDN / 64ca22ca | 2026-W44 | — | — | — | — | unobserved week |
 | SOM / 4a810eaf | 2026-W44 | — | — | — | — | unobserved week |
-| UKR / f2db5a97 | 2026-W44 | — | — | — | — | unobserved week |
+| UKR / f2db5a97 | 2026-W44 | 48 | — | — | — | low testing; provisional |
 | YEM / 96269d5e | 2026-W44 | — | — | — | — | unobserved week |
 
 References use only prior ISO years, with minimum specimen/week and historical-window coverage rules. Latest expected weeks remain visible when data are missing. Reporting-site coverage is unverified; these are descriptive positivity differences, not outbreak diagnoses or calibrated p-values.
