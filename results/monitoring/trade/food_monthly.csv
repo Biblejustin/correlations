@@ -708,7 +708,7 @@ SDN,2026-06,,,10,18,0.5555555555555556,SDG,SDG,True,incomplete fixed price baske
 SDN,2026-07,,,10,18,0.5555555555555556,SDG,SDG,True,incomplete fixed price basket
 SDN,2026-08,,,10,18,0.5555555555555556,SDG,SDG,True,incomplete fixed price basket
 SDN,2026-09,,,9,18,0.5,SDG,SDG,True,incomplete fixed price basket
-SDN,2026-10,,,0,18,0.0,SDG,SDG,True,incomplete fixed price basket
+SDN,2026-10,,,10,18,0.5555555555555556,SDG,SDG,True,incomplete fixed price basket
 ETH,2015-01,,,8,12,0.6666666666666666,ETB,ETB,True,incomplete fixed price basket
 ETH,2015-02,0.0,0.0,9,12,0.75,ETB,ETB,True,eligible
 ETH,2015-03,0.002645504188424175,0.26490066225166586,9,12,0.75,ETB,ETB,True,eligible
