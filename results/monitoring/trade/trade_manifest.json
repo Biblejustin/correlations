@@ -1,8 +1,8 @@
 {
-  "as_of": "2026-11-15T06:49:13.467844-06:00",
+  "as_of": "2026-11-16T06:52:41.702623-06:00",
   "eligible_fits": 6,
   "interpretation": "Historical exploratory associations; repeated shipping exposures and common crisis shocks limit causal interpretation. Official FX may differ from market rates. Pointwise slope intervals are not simultaneous.",
-  "observation_fingerprint": "9e8f522c93203b4928f81d1517abe541b73679498527cc567845d83ae259a1cb",
+  "observation_fingerprint": "13424a73c470693bfacd3922da1cca17fb5f8f727f990d65360339019d3ac9ae",
   "outputs": {
     "cereal_dependence.csv": {
       "rows": 110,
@@ -38,15 +38,15 @@
   "plan_sha256": "869b45de8bca7f9925bfd950d1b5585f135a231e4e3f931ff6623c6d9bab645c",
   "planned_fits": 192,
   "plot_sha256": "a80f0e1dc82e1ab480cf2c0b91efa40ccf41460249e33c93c8a637d545a70d50",
-  "report_sha256": "3f5fa913506ce5ba686c176b314fdd4e2ec24c4c1b4ecce34e2d5e02e4221af1",
+  "report_sha256": "2014538c12f86f2b64431468ffbe47c699edc91164cd24b44cb60e7959d50977",
   "schema_version": 1,
   "source_manifests": {
     "climate": {
-      "sha256": "645f4bb4b60cc7dac1d6c58278c3da204f63f621584c085babebd8b6a00e280c",
+      "sha256": "2f7a87ce72785f8c1d728b21fd53544a31220e2b215be2ef6cfdd5010c0e7edf",
       "snapshot_id": "98a3fa22b76d4f5641511c66fd0fb2a17221054f32d9f51b853cb9a7d6cbcef4"
     },
     "economic": {
-      "sha256": "517fb28a58d83a2c509b01307fea61972701dee08ed465f2bb46c75999a95790",
+      "sha256": "426d013c55a08de3cf34e7998d295390de9323b14f00fd5e16040fcc50e4b6d2",
       "snapshot_id": "b165fa00b3606800117f4598cb638cfa108f0782c58b2288b288a01d82303aad"
     },
     "shipping": {
