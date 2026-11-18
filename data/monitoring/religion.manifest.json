@@ -19,14 +19,14 @@
     "UKR",
     "YEM"
   ],
-  "fetched_at": "2026-11-17T12:41:04.282710+00:00",
+  "fetched_at": "2026-11-18T12:41:16.523205+00:00",
   "observed_from": "2000-01-01",
   "observed_through": "2025-12-31",
   "projected_through": null,
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-11-17T12:41:04.282710+00:00",
+      "fetched_at": "2026-11-18T12:41:16.523205+00:00",
       "published_at": "Mon, 16 Mar 2026 14:06:39 GMT",
       "sha256": "9055455c4adacd1ad9e78f1a7f3ac0768bdf26992e7651c0602a43ca7bdd4506",
       "url": "https://www.v-dem.net/media/datasets/V-Dem-CY-Core-v16_csv.zip"
@@ -34,6 +34,6 @@
   ],
   "rows": 208,
   "schema_version": 1,
-  "sha256": "ca4aa7c8e3480e7c53d155162798d7101a2a26b59cfa76bc4ad72ad7752c58a6",
+  "sha256": "bda562a322de67ed367fdb052e0726cd418d57c9b2705867e3d2de8f4af83155",
   "source_id": "religion"
 }

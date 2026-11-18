@@ -18,92 +18,92 @@
     "UKR",
     "YEM"
   ],
-  "fetched_at": "2026-11-17T12:40:41.316905+00:00",
+  "fetched_at": "2026-11-18T12:40:54.620210+00:00",
   "observed_from": "2000-01-01",
   "observed_through": "2026-10-31",
   "projected_through": null,
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-11-17T12:40:04.299584+00:00",
+      "fetched_at": "2026-11-18T12:40:22.090554+00:00",
       "published_at": null,
-      "sha256": "7be1df098ed9a6d72228bb6ef80a7fd4df5d5d8a8687031f6a02e6534aa50480",
+      "sha256": "d26e97eb72d0aabb364ed3078f993f5c7d3758fc952c231077ac40e01ea8239c",
       "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-state-of-palestine"
     },
     {
-      "fetched_at": "2026-11-17T12:40:05.418138+00:00",
+      "fetched_at": "2026-11-18T12:40:22.982261+00:00",
       "published_at": "Wed, 04 Nov 2026 01:36:33 GMT",
       "sha256": "aec67141f9dbee5194a2efb3ef1dc894003007d3f05ae4f818f939dd5651faa5",
       "url": "https://data.humdata.org/dataset/7d06b059-5831-4101-aa68-6d9123ad65b7/resource/b82509ec-d48e-41d7-b376-af51c7f66737/download/wfp_food_prices_pse.csv"
     },
     {
-      "fetched_at": "2026-11-17T12:40:07.150090+00:00",
+      "fetched_at": "2026-11-18T12:40:24.680460+00:00",
       "published_at": null,
-      "sha256": "429a5e100f15c541e9c284f98f4b7f631e0fe9faa7aa9749e3e001b729657c3a",
+      "sha256": "e5d148f7201b69c041f136c464c40d81468fe6490fcdbe3baac0f5fb6170c10b",
       "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-lebanon"
     },
     {
-      "fetched_at": "2026-11-17T12:40:08.616860+00:00",
+      "fetched_at": "2026-11-18T12:40:25.306167+00:00",
       "published_at": "Sun, 18 Oct 2026 18:44:33 GMT",
       "sha256": "23b2c20ef22494989c68c065117e4ccfc592d8f2b20d1a6a3c67e79c06683f20",
       "url": "https://data.humdata.org/dataset/db0b4fb1-ce11-458e-94e0-3342365a117a/resource/772bc34e-1327-4ada-b2eb-e72020a546f2/download/wfp_food_prices_lbn.csv"
     },
     {
-      "fetched_at": "2026-11-17T12:40:09.983247+00:00",
+      "fetched_at": "2026-11-18T12:40:26.648006+00:00",
       "published_at": null,
-      "sha256": "6d24624ffdd5b6b5b9dd3fdb287be72b4a2b24c5c8cd402f95eb487c8af9583f",
+      "sha256": "579dc4367a4c957982da2c03cbe8c252cbbf5358e8aa00bba8567c045b35d2c0",
       "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-ukraine"
     },
     {
-      "fetched_at": "2026-11-17T12:40:14.379308+00:00",
+      "fetched_at": "2026-11-18T12:40:27.500462+00:00",
       "published_at": "Wed, 04 Nov 2026 02:02:13 GMT",
       "sha256": "2dc57d8491ea9ee2600d7139816d741a472617355367eb9b629294094940d263",
       "url": "https://data.humdata.org/dataset/9b95de1b-d4e9-4c81-b2bb-db35bd9620e8/resource/1730560f-8e9f-4999-bec8-72118ac0ee5f/download/wfp_food_prices_ukr.csv"
     },
     {
-      "fetched_at": "2026-11-17T12:40:20.922115+00:00",
+      "fetched_at": "2026-11-18T12:40:34.072229+00:00",
       "published_at": null,
-      "sha256": "09861da127fb5fa790ce70c8f4a831b54924dc089c8e880c71186aa4b6bc3fee",
+      "sha256": "1543eb792cb2d5ee77345848c44c0980af308925bde69382027b3562d1a3d6cc",
       "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-sudan"
     },
     {
-      "fetched_at": "2026-11-17T12:40:21.918702+00:00",
+      "fetched_at": "2026-11-18T12:40:34.877778+00:00",
       "published_at": "Sun, 15 Nov 2026 09:05:19 GMT",
       "sha256": "2cd174ed90449a2c8d262fcf64493581cb6657191413f5aa853eac00adcf6dd0",
       "url": "https://data.humdata.org/dataset/369e003b-f0af-4e48-99d7-34fc85b44635/resource/8fea18b2-615f-4af5-9bd5-85cc31a25ffd/download/wfp_food_prices_sdn.csv"
     },
     {
-      "fetched_at": "2026-11-17T12:40:25.032303+00:00",
+      "fetched_at": "2026-11-18T12:40:37.821304+00:00",
       "published_at": null,
-      "sha256": "25a3b3574c94b753a8a1a2cd1654da3dc6cf45d881043eba12f9467411f030d0",
+      "sha256": "96461d398521c3c614c294fc4905f65056fb4a8721593e6a2a028ea18e488610",
       "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-ethiopia"
     },
     {
-      "fetched_at": "2026-11-17T12:40:25.842495+00:00",
+      "fetched_at": "2026-11-18T12:40:38.512434+00:00",
       "published_at": "Mon, 02 Nov 2026 12:53:36 GMT",
       "sha256": "22df31f0f8feeb960baff7aa8addb97c349fe20568f997e12ae660780ae4fc5f",
       "url": "https://data.humdata.org/dataset/2e4f1922-e446-4b57-a98a-d0e2d5e34afa/resource/87bac18e-f3aa-4b29-8cf8-76763e823dc5/download/wfp_food_prices_eth.csv"
     },
     {
-      "fetched_at": "2026-11-17T12:40:35.323504+00:00",
+      "fetched_at": "2026-11-18T12:40:48.338163+00:00",
       "published_at": null,
-      "sha256": "6396cd16737dabb7731d705da8042f8535a90e6e573af8aaa6339f725000745a",
+      "sha256": "d60a66380eb49bfafa4d8118a6c39563fbd4b0eae05441ac35a0924f01ad0adf",
       "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-somalia"
     },
     {
-      "fetched_at": "2026-11-17T12:40:36.199971+00:00",
+      "fetched_at": "2026-11-18T12:40:49.255777+00:00",
       "published_at": "Mon, 19 Oct 2026 02:02:58 GMT",
       "sha256": "d0844aac8f4d580dbf0801d6696ad44fbb3d8def15cf80e9e448eb1aa490c3cd",
       "url": "https://data.humdata.org/dataset/26727d1b-af49-4323-9215-c2ac479abb87/resource/39614bfb-0f9c-4800-8997-e68e41a38ced/download/wfp_food_prices_som.csv"
     },
     {
-      "fetched_at": "2026-11-17T12:40:40.666031+00:00",
+      "fetched_at": "2026-11-18T12:40:53.660891+00:00",
       "published_at": null,
-      "sha256": "bf7bf387bb02bea902677d54ec667b714f23861824b90f8ad3f349f77841592b",
+      "sha256": "0ef952425a0c9ba89fad77fb649000bff7c3625b4c7e0b7bb9c64ba0d5328b45",
       "url": "https://data.humdata.org/api/3/action/package_show?id=wfp-food-prices-for-yemen"
     },
     {
-      "fetched_at": "2026-11-17T12:40:41.316905+00:00",
+      "fetched_at": "2026-11-18T12:40:54.620210+00:00",
       "published_at": "Thu, 05 Nov 2026 21:37:08 GMT",
       "sha256": "72fcc7b24e3427716bf731d9dd768ba8fe62e55f10c9486b6812924c840bcd4e",
       "url": "https://data.humdata.org/dataset/98574e10-6866-4f13-a2b1-3c8312801af5/resource/2f0c1d18-d42d-4e43-b928-1bd1fc7f6c90/download/wfp_food_prices_yem.csv"
@@ -111,6 +111,6 @@
   ],
   "rows": 105885,
   "schema_version": 1,
-  "sha256": "d4f0bfae722bf2d50ad5ada4946cdb3310e49ccc5259cfccbcec14206b4c6ff8",
+  "sha256": "e44d77fdda7dfceb85e063eff819a15fc2b8498941e25cca654285d993c88ece",
   "source_id": "wfp"
 }
