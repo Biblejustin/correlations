@@ -19,21 +19,21 @@
     "UKR",
     "YEM"
   ],
-  "fetched_at": "2026-11-18T12:41:20.279823+00:00",
+  "fetched_at": "2026-11-19T12:41:31.144421+00:00",
   "observed_from": "2000-01-01",
   "observed_through": "2025-12-31",
   "projected_through": null,
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-11-18T12:41:20.279823+00:00",
-      "published_at": "Tue, 17 Nov 2026 12:44:23 GMT",
+      "fetched_at": "2026-11-19T12:41:31.144421+00:00",
+      "published_at": "Thu, 19 Nov 2026 12:41:31 GMT",
       "sha256": "e2c24dd6f3992a065dbf97a13acd14ab4a84aaa4ce19ca7cc815bf12ad512420",
       "url": "https://api.worldbank.org/v2/country/ISR;PSE;LBN;UKR;SDN;ETH;SOM;YEM/indicator/SP.POP.TOTL?format=json&date=2000%3A2025&per_page=1000&page=1"
     }
   ],
   "rows": 208,
   "schema_version": 1,
-  "sha256": "94da76f8916c0987ad95b9aacdb6a2c09253d3c26033a804dd378996f3e083b4",
+  "sha256": "c47c425cc3c2bafb43dd387c726dcf8da5c53eb4b5d68d7c239fb5fb599762e6",
   "source_id": "population"
 }

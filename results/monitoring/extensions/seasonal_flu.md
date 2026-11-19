@@ -2,7 +2,7 @@
 
 | Country / stream | Expected ISO week | Tested | Positivity | Seasonal baseline | Difference | Status |
 |---|---|---:|---:|---:|---:|---|
-| ETH / 53b5453d | 2026-W45 | — | — | 9.2% | — | unobserved week |
+| ETH / 53b5453d | 2026-W45 | 126 | 11.1% | 9.2% | +2.0 pp | available; provisional |
 | ISR / 3007b668 | 2026-W45 | — | — | — | — | unobserved week |
 | LBN / 3c1f8d84 | 2026-W45 | 27 | — | — | — | low testing; provisional |
 | PSE / 877a128d | 2026-W45 | — | — | — | — | unobserved week |

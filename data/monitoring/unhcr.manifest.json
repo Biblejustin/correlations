@@ -19,44 +19,44 @@
     "UKR",
     "YEM"
   ],
-  "fetched_at": "2026-11-18T12:40:19.376926+00:00",
+  "fetched_at": "2026-11-19T12:40:20.511618+00:00",
   "observed_from": "2000-01-01",
   "observed_through": "2025-12-31",
   "projected_through": null,
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-11-18T12:40:09.456818+00:00",
+      "fetched_at": "2026-11-19T12:40:06.547642+00:00",
       "published_at": null,
       "sha256": "49fa4ed2e9fb7e4805da50c7410673314dabaefe1ae8736a72936b20509cc731",
       "url": "https://api.unhcr.org/population/v1/population/?yearFrom=2000&yearTo=2025&coo_all=true&page=1&limit=1000"
     },
     {
-      "fetched_at": "2026-11-18T12:40:11.526600+00:00",
+      "fetched_at": "2026-11-19T12:40:09.622155+00:00",
       "published_at": null,
       "sha256": "63681e7568901a5f7eb0e12ca12f9a1e84deee3ae8fe9d813e523ed88a7e8dbf",
       "url": "https://api.unhcr.org/population/v1/population/?yearFrom=2000&yearTo=2025&coo_all=true&page=2&limit=1000"
     },
     {
-      "fetched_at": "2026-11-18T12:40:13.420859+00:00",
+      "fetched_at": "2026-11-19T12:40:13.738049+00:00",
       "published_at": null,
       "sha256": "91f545db28759377877acb2ebd549d88827fc4d4cc40e0c489c5c2225344b9d9",
       "url": "https://api.unhcr.org/population/v1/population/?yearFrom=2000&yearTo=2025&coo_all=true&page=3&limit=1000"
     },
     {
-      "fetched_at": "2026-11-18T12:40:15.307965+00:00",
+      "fetched_at": "2026-11-19T12:40:16.167029+00:00",
       "published_at": null,
       "sha256": "6b418fed05b9cd1df18c86776f654054d5d9da5a1621a4144baa48bcd7686f5e",
       "url": "https://api.unhcr.org/population/v1/population/?yearFrom=2000&yearTo=2025&coo_all=true&page=4&limit=1000"
     },
     {
-      "fetched_at": "2026-11-18T12:40:17.140557+00:00",
+      "fetched_at": "2026-11-19T12:40:18.094277+00:00",
       "published_at": null,
       "sha256": "900d6e59cebb5be6e7ca15afde73f60f3de5147cff7b29ef205e4b594c195bf7",
       "url": "https://api.unhcr.org/population/v1/population/?yearFrom=2000&yearTo=2025&coo_all=true&page=5&limit=1000"
     },
     {
-      "fetched_at": "2026-11-18T12:40:19.376926+00:00",
+      "fetched_at": "2026-11-19T12:40:20.511618+00:00",
       "published_at": null,
       "sha256": "e9afb83e253075a571fb8796edad1fc81ebb5ddb21e7e0ac1762812920dca25f",
       "url": "https://api.unhcr.org/population/v1/population/?yearFrom=2000&yearTo=2025&coo_all=true&page=6&limit=1000"
@@ -64,6 +64,6 @@
   ],
   "rows": 624,
   "schema_version": 1,
-  "sha256": "a70f43cec18fc398ffd8163e560d9c4e1c48075805cbcb2273b3606c214151b8",
+  "sha256": "b5c982eff5a7c8c229477d4507628f8fe293b178565efb0b3ab491b80cc05ba2",
   "source_id": "unhcr"
 }
