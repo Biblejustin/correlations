@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-11-20T12:48:50.905678+00:00",
+  "as_of_utc": "2026-11-21T12:45:21.577851+00:00",
   "design_fixed_at_utc": "2026-09-06T02:29:50Z",
-  "input_rows": 110985,
+  "input_rows": 110986,
   "latest_expected_week_end": "2026-11-08",
   "latest_expected_week_start": "2026-11-02",
   "limitations": [
@@ -14,7 +14,7 @@
   "output_sha256": {
     "seasonal_flu.md": "cdd589b60d177566789785c24a4ef061943d26ff5c3c59ec386277d17fb97c21",
     "seasonal_flu_baseline_windows.csv": "49327501ba270da1c96ee342fda8900a4d88be859a78a75e7bea0b8297acb5a9",
-    "seasonal_flu_row_quality.csv": "4a02f40a422e60c85af43528cfc86dbd36c0d3c2a79531434320980e43829cb2",
+    "seasonal_flu_row_quality.csv": "81e8f9f540996881550e55d90685764164be776cb6bffb8d5bb9d3f47708b4ed",
     "seasonal_flu_weekly.csv": "f0ea29dea14972aef6050f1b01df2d32e1dd61649512aed8fa4567912850f546"
   },
   "plan": {

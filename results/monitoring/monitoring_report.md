@@ -1,6 +1,6 @@
 # Regional monitoring
 
-Generated 2026-11-20. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-11-21. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
@@ -12,7 +12,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
 | wfp | 105,885 | 2026-10-31 | — |
-| who | 2,691 | 2026-11-08 | — |
+| who | 2,692 | 2026-11-15 | — |
 | worldbank | 208 | 2025-12-31 | — |
 
 ## Food security: latest current assessment
@@ -66,7 +66,7 @@ IDMC annual GIDD export via HDX. Flows count displacement movements; one person 
 |---|---|---:|---:|---:|
 | ISR | 2026-10-26–2026-11-01 | 14 | 63 | 22.2% |
 | PSE | 2026-03-16–2026-03-22 | 1 | 26 | 3.8% |
-| LBN | 2026-11-02–2026-11-08 | 5 | 27 | 18.5% |
+| LBN | 2026-11-09–2026-11-15 | 10 | 44 | 22.7% |
 | UKR | 2026-10-26–2026-11-01 | 0 | 48 | 0.0% |
 | SDN | 2026-10-26–2026-11-01 | 3 | 22 | 13.6% |
 | ETH | 2026-11-02–2026-11-08 | 14 | 126 | 11.1% |

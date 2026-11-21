@@ -91,13 +91,13 @@
   ],
   "requests": [
     {
-      "fetched_at": "2026-11-20T12:40:11.863440+00:00",
+      "fetched_at": "2026-11-21T12:40:14.714916+00:00",
       "published_at": null,
-      "sha256": "6f267fa7bc73f769e0bb0d8b320bea0f65918d016bc6c9ab2c5ce2d654de5756",
+      "sha256": "03e010c66119239f1f905f5328fd0255f4aa385cd4bd19467034d360489eb9d7",
       "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
     },
     {
-      "fetched_at": "2026-11-20T12:40:20.136043+00:00",
+      "fetched_at": "2026-11-21T12:40:16.048444+00:00",
       "published_at": "Fri, 20 Nov 2026 11:17:26 GMT",
       "sha256": "8c0cba6a695c7581cd487264e468f7057f7607b630851c9d7b1006c8ef757c49",
       "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
