@@ -1,7 +1,7 @@
 {
-  "as_of_utc": "2026-11-21T12:45:21.577851+00:00",
+  "as_of_utc": "2026-11-22T12:45:21.221725+00:00",
   "design_fixed_at_utc": "2026-09-06T02:29:50Z",
-  "input_rows": 110986,
+  "input_rows": 110918,
   "latest_expected_week_end": "2026-11-08",
   "latest_expected_week_start": "2026-11-02",
   "limitations": [

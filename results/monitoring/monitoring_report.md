@@ -1,6 +1,6 @@
 # Regional monitoring
 
-Generated 2026-11-21. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-11-22. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
@@ -11,7 +11,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | ucdp | 728 | 2025-12-31 | — |
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
-| wfp | 105,885 | 2026-10-31 | — |
+| wfp | 105,817 | 2026-10-31 | — |
 | who | 2,692 | 2026-11-15 | — |
 | worldbank | 208 | 2025-12-31 | — |
 

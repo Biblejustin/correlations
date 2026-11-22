@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_date": "2026-11-21",
+  "generated_date": "2026-11-22",
   "config": {
     "schema_version": 1,
     "countries": [
@@ -30,8 +30,8 @@
     "notes": "Fixed pilot geography, not a representative global sample. Observations remain separate by source, unit and survey scope. Existing historical data are exploratory; no prophetic fulfillment score."
   },
   "n_permutations": 1999,
-  "input_observation_rows": 110986,
-  "observation_table_fingerprint": "c657b5e929fffe008a2ddfdb1e0878e8d7c63890c075b02519fc3a0c0956b5de",
+  "input_observation_rows": 110918,
+  "observation_table_fingerprint": "a4aac4cf593c8fff0a34c312793a74518a2e9eecabc04ea8dd6812b576e785ec",
   "annual_panel_rows": 2659,
   "registered_lag_tests": 72,
   "estimable_lag_tests": 18,
