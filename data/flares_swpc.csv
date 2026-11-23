@@ -344,3 +344,7 @@ swpc:2026-11-21T01:18:00+00:00,2026-11-21T01:18:00+00:00,2026-11-21T01:24:00+00:
 swpc:2026-11-21T07:04:00+00:00,2026-11-21T07:04:00+00:00,2026-11-21T07:08:00+00:00,2026-11-21,B5.2,18,https://services.swpc.noaa.gov/json/goes/primary/xray-flares-7-day.json
 swpc:2026-11-21T09:10:00+00:00,2026-11-21T09:10:00+00:00,2026-11-21T09:17:00+00:00,2026-11-21,B5.1,18,https://services.swpc.noaa.gov/json/goes/primary/xray-flares-7-day.json
 swpc:2026-11-21T19:19:00+00:00,2026-11-21T19:19:00+00:00,2026-11-21T19:27:00+00:00,2026-11-21,B4.7,18,https://services.swpc.noaa.gov/json/goes/primary/xray-flares-7-day.json
+swpc:2026-11-22T19:54:00+00:00,2026-11-22T19:54:00+00:00,2026-11-22T19:58:00+00:00,2026-11-22,B3.2,18,https://services.swpc.noaa.gov/json/goes/primary/xray-flares-7-day.json
+swpc:2026-11-22T20:33:00+00:00,2026-11-22T20:33:00+00:00,2026-11-22T20:46:00+00:00,2026-11-22,B4.2,18,https://services.swpc.noaa.gov/json/goes/primary/xray-flares-7-day.json
+swpc:2026-11-23T06:23:00+00:00,2026-11-23T06:23:00+00:00,2026-11-23T06:30:00+00:00,2026-11-23,B4.7,18,https://services.swpc.noaa.gov/json/goes/primary/xray-flares-7-day.json
+swpc:2026-11-23T09:50:00+00:00,2026-11-23T09:50:00+00:00,2026-11-23T09:56:00+00:00,2026-11-23,B2.8,18,https://services.swpc.noaa.gov/json/goes/primary/xray-flares-7-day.json

@@ -1,12 +1,12 @@
 {
-  "as_of": "2026-11-22T06:45:25.441422-06:00",
+  "as_of": "2026-11-23T06:48:30.528598-06:00",
   "eligible_fits": 6,
   "interpretation": "Historical exploratory associations; repeated shipping exposures and common crisis shocks limit causal interpretation. Official FX may differ from market rates. Pointwise slope intervals are not simultaneous.",
-  "observation_fingerprint": "b6a0fc31a48bc2595568247fc53173678308e94f2e50b487e2f8a229376f24f4",
+  "observation_fingerprint": "ead5c7c69c94a8aeae65e233f54691d7491ef050d8612bbed724eea2e6d06bc1",
   "outputs": {
     "cereal_dependence.csv": {
-      "rows": 110,
-      "sha256": "a192f454511edb5cc4731992a25e106124fa981e060cfe7b73acb98be1ba835e"
+      "rows": 127,
+      "sha256": "6261115e709f5e89aad4317dbd5a80871f00429b639100629526e7917b7bff38"
     },
     "food_diagnostics.csv": {
       "rows": 0,
@@ -38,20 +38,20 @@
   "plan_sha256": "869b45de8bca7f9925bfd950d1b5585f135a231e4e3f931ff6623c6d9bab645c",
   "planned_fits": 192,
   "plot_sha256": "29c46a408c2ecb7d578883acaf5ae1820a8bd87d7f6b58bcfe6e9d5180167db8",
-  "report_sha256": "0d47123eb8250d8fb660f460368c8b21740de8fa01a61bb9242e30871052eeb8",
+  "report_sha256": "b0b4cef679766a7121e04ba63bb46844a5e8c5f47b76af94922705c11bd465a3",
   "schema_version": 1,
   "source_manifests": {
     "climate": {
-      "sha256": "3f6dc56a2173cd4b2aa401caf414b50b7771baef85de6bfd82bf71c252280a19",
+      "sha256": "7dba682ffdae7ae4c23735350bfab5ba9a2e3832b1e2b52e747b3595ad1f705b",
       "snapshot_id": "98a3fa22b76d4f5641511c66fd0fb2a17221054f32d9f51b853cb9a7d6cbcef4"
     },
     "economic": {
-      "sha256": "dc496569440774938650d5c085283eae45755ba62941aeba9ee7621a1175bf87",
-      "snapshot_id": "b165fa00b3606800117f4598cb638cfa108f0782c58b2288b288a01d82303aad"
+      "sha256": "ef3aba1c7243da4af23bae512d144ca15be7cab5a29193b5a41037a428a30190",
+      "snapshot_id": "926230a11f17cf2ac759779a3b362c78a3993aad953c142182d1cd3e054bd017"
     },
     "shipping": {
-      "sha256": "1c87b00f332a6eb07ac7da2df6ec8f06de715f62a569d50fa147016deae40355",
-      "snapshot_id": "7254ade2bf39c78f6ecdfdd699b857c874c516837413b2548b22959864e36d12"
+      "sha256": "ecbef772f5c1094f6f619f592625b9cf2cf333e37b7863630398a87e9f530516",
+      "snapshot_id": "0dc6b9ee225a018d74b61200ebef09362f143f2750ee1eb143c4ca2531041647"
     }
   }
 }

@@ -1473,7 +1473,7 @@ source_row,country,stream_id,period_start,period_end,reason,source_provisional
 1472,LBN,3c1f8d84c35f92a69284,2026-10-12,2026-10-18,low_testing,True
 1473,LBN,3c1f8d84c35f92a69284,2026-10-19,2026-10-25,low_testing,True
 1474,LBN,3c1f8d84c35f92a69284,2026-11-02,2026-11-08,low_testing,True
-1475,LBN,3c1f8d84c35f92a69284,2026-11-09,2026-11-15,reporting_lag,True
+1475,LBN,3c1f8d84c35f92a69284,2026-11-09,2026-11-15,low_testing,True
 1476,PSE,877a128da6a13a050a0d,2017-01-02,2017-01-08,low_testing,True
 1477,PSE,877a128da6a13a050a0d,2017-01-09,2017-01-15,low_testing,True
 1478,PSE,877a128da6a13a050a0d,2017-01-16,2017-01-22,low_testing,True
