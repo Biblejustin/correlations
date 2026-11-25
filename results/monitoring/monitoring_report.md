@@ -1,6 +1,6 @@
 # Regional monitoring
 
-Generated 2026-11-24. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-11-25. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
@@ -12,7 +12,7 @@ Observed dates, source coverage and projections remain separate. This is a resea
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
 | wfp | 105,817 | 2026-10-31 | — |
-| who | 2,692 | 2026-11-15 | — |
+| who | 2,695 | 2026-11-15 | — |
 | worldbank | 208 | 2025-12-31 | — |
 
 ## Food security: latest current assessment
@@ -68,7 +68,7 @@ IDMC annual GIDD export via HDX. Flows count displacement movements; one person 
 | PSE | 2026-03-16–2026-03-22 | 1 | 26 | 3.8% |
 | LBN | 2026-11-09–2026-11-15 | 10 | 44 | 22.7% |
 | UKR | 2026-10-26–2026-11-01 | 0 | 48 | 0.0% |
-| SDN | 2026-10-26–2026-11-01 | 3 | 22 | 13.6% |
+| SDN | 2026-11-02–2026-11-08 | 12 | 28 | 42.9% |
 | ETH | 2026-11-02–2026-11-08 | 14 | 126 | 11.1% |
 | SOM | 2026-07-27–2026-08-02 | 1 | 44 | 2.3% |
 | YEM | 2026-09-28–2026-10-04 | 2 | 20 | 10.0% |
@@ -145,7 +145,7 @@ Religious freedom source PSE refers to West Bank; excluded from the combined-ter
 
 ## Israel crop and water observations
 
-Kinneret latest observation: **-213.735 m**, 2026-11-22; 11,396 measurements. Source dates/gaps retained; 10,602 unobserved dates inside catalog span. [Official measurements](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8).
+Kinneret latest observation: **-213.735 m**, 2026-11-23; 11,397 measurements. Source dates/gaps retained; 10,602 unobserved dates inside catalog span. [Official measurements](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8).
 Historical rainfall remains CRU TS4.08 through complete rain year 2023; current rainfall not integrated. Lake level also responds to pumping/transfers/evaporation.
 
 | Wheat outcome × total rain, 1991–2023 | n | r | HAC q, full 30-test follow-up |
