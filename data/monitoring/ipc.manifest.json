@@ -17,9 +17,9 @@
     "SOM",
     "YEM"
   ],
-  "fetched_at": "2026-11-25T12:40:25.539579+00:00",
+  "fetched_at": "2026-11-26T12:40:24.797212+00:00",
   "history": {
-    "accepted_periods": 98,
+    "accepted_periods": 99,
     "geographic_comparability_verified": false,
     "partition_tolerance": {
       "interpretation": "Conservative consistency screen allowing source rounding/process differences; not a precision guarantee. Never replace reported denominator with phase sum.",
@@ -27,8 +27,8 @@
       "relative_to_assessed_population": 0.015
     },
     "publisher_analysis_ids_available": false,
-    "quarantine_evidence": "diagnostics/ipc_history/quarantine_9bb5371d7a02d594f8945c1df32b04f265a938d39bad23f6af39823226baf8e9.csv",
-    "quarantine_sha256": "9bb5371d7a02d594f8945c1df32b04f265a938d39bad23f6af39823226baf8e9",
+    "quarantine_evidence": "diagnostics/ipc_history/quarantine_d0f14ab197629e5c71536d740565f531ac8ef8599673c55df0b9d0ab14ae8426.csv",
+    "quarantine_sha256": "d0f14ab197629e5c71536d740565f531ac8ef8599673c55df0b9d0ab14ae8426",
     "quarantined_periods": [
       {
         "Country": "ETH",
@@ -111,22 +111,22 @@
     ],
     "requests": [
       {
-        "fetched_at": "2026-11-25T12:40:23.452728+00:00",
+        "fetched_at": "2026-11-26T12:40:09.480043+00:00",
         "published_at": null,
-        "sha256": "92293927dc1de72bf275484639bca48318ea2a52f0d91b0319275c813d1aea63",
+        "sha256": "843566a0be60742ab2ba3bd39fbb4fc1679326982fab2d93760ae7996ef348da",
         "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
       },
       {
-        "fetched_at": "2026-11-25T12:40:25.539579+00:00",
-        "published_at": "Tue, 24 Nov 2026 16:54:58 GMT",
-        "sha256": "616e960d38d957aadf3e47d15fbc34a356568fdf7be451941236110b2fae5061",
+        "fetched_at": "2026-11-26T12:40:24.797212+00:00",
+        "published_at": "Thu, 26 Nov 2026 11:16:50 GMT",
+        "sha256": "d329bcb9f80e50d3d92b5899e41393b169caae6ecc0d696d5c03d94e9588b901",
         "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
       }
     ],
     "resource": "ipc_global_national_long.csv",
     "retained_prior_rows": 8,
     "revision_policy": "Only an unambiguous matching country/analysis-month/type/start/end period replaces prior rows, including withdrawn phase fields. Absent or ambiguous periods retain prior observations with original lineage; confirmed count-partition conflicts exclude matching prior observations from active data while preserving archives. No selection among ambiguous source rows.",
-    "source_rows": 763
+    "source_rows": 770
   },
   "observed_from": "2021-01-01",
   "observed_through": "2027-02-28",
@@ -134,20 +134,20 @@
   "provenance_note": "Publication time may be unavailable; ingestion time is not publication time.",
   "requests": [
     {
-      "fetched_at": "2026-11-25T12:40:23.452728+00:00",
+      "fetched_at": "2026-11-26T12:40:09.480043+00:00",
       "published_at": null,
-      "sha256": "92293927dc1de72bf275484639bca48318ea2a52f0d91b0319275c813d1aea63",
+      "sha256": "843566a0be60742ab2ba3bd39fbb4fc1679326982fab2d93760ae7996ef348da",
       "url": "https://data.humdata.org/api/3/action/package_show?id=global-acute-food-insecurity-country-data"
     },
     {
-      "fetched_at": "2026-11-25T12:40:25.539579+00:00",
-      "published_at": "Tue, 24 Nov 2026 16:54:58 GMT",
-      "sha256": "616e960d38d957aadf3e47d15fbc34a356568fdf7be451941236110b2fae5061",
+      "fetched_at": "2026-11-26T12:40:24.797212+00:00",
+      "published_at": "Thu, 26 Nov 2026 11:16:50 GMT",
+      "sha256": "d329bcb9f80e50d3d92b5899e41393b169caae6ecc0d696d5c03d94e9588b901",
       "url": "https://data.humdata.org/dataset/7a7e7428-b8d7-4d2e-91d3-19100500e016/resource/23d51849-5926-422c-a58a-f9bd68088f20/download/ipc_global_national_long.csv"
     }
   ],
-  "rows": 400,
+  "rows": 404,
   "schema_version": 1,
-  "sha256": "79b7004cbd783be4e8043ccee0eaea5bdbd128027cdc2a8affa5aa3443858084",
+  "sha256": "732a4f3dc484521d8c5a7889254a7772f3792497b03e9b86785a2233b7bfd0a7",
   "source_id": "ipc"
 }

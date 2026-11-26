@@ -1,13 +1,13 @@
 # Regional monitoring
 
-Generated 2026-11-25. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
+Generated 2026-11-26. Fixed pilot: ISR, PSE, LBN, UKR, SDN, ETH, SOM, YEM.
 
 Observed dates, source coverage and projections remain separate. This is a research monitor, not a prophetic fulfillment score.
 
 | Source | Rows | Latest observed/assessment reference end | Latest projected reference end |
 |---|---:|---|---|
 | idmc | 241 | 2025-12-31 | — |
-| ipc | 400 | 2027-02-28 | 2027-07-31 |
+| ipc | 404 | 2027-02-28 | 2027-07-31 |
 | ucdp | 728 | 2025-12-31 | — |
 | unhcr | 624 | 2025-12-31 | — |
 | vdem | 208 | 2025-12-31 | — |
@@ -145,7 +145,7 @@ Religious freedom source PSE refers to West Bank; excluded from the combined-ter
 
 ## Israel crop and water observations
 
-Kinneret latest observation: **-213.735 m**, 2026-11-23; 11,397 measurements. Source dates/gaps retained; 10,602 unobserved dates inside catalog span. [Official measurements](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8).
+Kinneret latest observation: **-213.735 m**, 2026-11-24; 11,398 measurements. Source dates/gaps retained; 10,602 unobserved dates inside catalog span. [Official measurements](https://data.gov.il/api/3/action/datastore_search?resource_id=2de7b543-e13d-4e7e-b4c8-56071bc4d3c8).
 Historical rainfall remains CRU TS4.08 through complete rain year 2023; current rainfall not integrated. Lake level also responds to pumping/transfers/evaporation.
 
 | Wheat outcome × total rain, 1991–2023 | n | r | HAC q, full 30-test follow-up |
