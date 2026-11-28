@@ -1,6 +1,6 @@
 # Climate, respiratory and purchasing-power monitors
 
-Reference date: 2026-11-27 (America/Chicago). Exact cutoff: 2026-11-27T06:46:53.521449-06:00.
+Reference date: 2026-11-28 (America/Chicago). Exact cutoff: 2026-11-28T06:44:49.591979-06:00.
 
 Historical exploratory extensions. Source revisions are retained; reference dates do not reconstruct release-time availability. These measures support observation and comparison, not prophetic-fulfillment claims.
 

@@ -1,5 +1,5 @@
 {
-  "as_of_utc": "2026-11-27T12:42:03.076094",
+  "as_of_utc": "2026-11-28T12:41:23.968293",
   "cereal_definition": {
     "formula": "100*(imports-exports)/(production+imports-exports), three-year average",
     "item": "Cereal import dependency ratio (percent) (3-year average)",
@@ -95,31 +95,31 @@
   },
   "requests": [
     {
-      "fetched_at": "2026-11-27T12:42:04.220489+00:00",
+      "fetched_at": "2026-11-28T12:41:24.010004+00:00",
       "published_at": "Fri, 27 Nov 2026 12:42:04 GMT",
       "sha256": "6ae8f1f9d3dbf039b3b86dd84bb26b0a0fefcd2342e8e7dad289e97daa3f1d82",
       "url": "https://api.worldbank.org/v2/indicator/DPANUSLCU?format=json"
     },
     {
-      "fetched_at": "2026-11-27T12:42:04.713289+00:00",
+      "fetched_at": "2026-11-28T12:41:24.034604+00:00",
       "published_at": "Fri, 27 Nov 2026 12:42:04 GMT",
       "sha256": "eb5f5434221e4535ce11474bc35cd0d581127824ae951d06858fb700542b37e5",
       "url": "https://api.worldbank.org/v2/country/ISR;PSE;LBN;UKR;SDN;ETH;SOM;YEM?format=json&per_page=100"
     },
     {
-      "fetched_at": "2026-11-27T12:42:04.878176+00:00",
+      "fetched_at": "2026-11-28T12:41:24.281006+00:00",
       "published_at": "Mon, 23 Nov 2026 10:39:59 GMT",
       "sha256": "dc5b604debef710317979d563028b13daf2b8a0e1d5b6a9d2761c1001e114a9b",
       "url": "https://bulks-faostat.fao.org/production/Food_Security_Data_E_All_Data_(Normalized).zip"
     },
     {
-      "fetched_at": "2026-11-27T12:42:04.898334+00:00",
+      "fetched_at": "2026-11-28T12:41:24.312601+00:00",
       "published_at": "Mon, 23 Nov 2026 17:43:12 GMT",
       "sha256": "57a5318b8ff01f42d9b51f6668ab5138decc49303a52128b9c61885ba33f4719",
       "url": "https://bulks-faostat.fao.org/production/datasets_E.json"
     },
     {
-      "fetched_at": "2026-11-27T12:42:40.671810+00:00",
+      "fetched_at": "2026-11-28T12:41:24.350650+00:00",
       "published_at": "Fri, 27 Nov 2026 12:42:40 GMT",
       "sha256": "29b6eb762ba3dc0acb96c7c4822dbf10cd3e1a068a20f4a6af432bdc2d87ad49",
       "url": "https://api.worldbank.org/v2/country/ISR;PSE;LBN;UKR;SDN;ETH;SOM;YEM/indicator/DPANUSLCU?source=15&date=2015M01:2026M12&format=json&per_page=20000&gapfill=N"
